@@ -1,0 +1,16 @@
+(ns ui.scheme-set-list
+  (:require [ui.clustal-scheme-item :as scheme-item]
+            [ui.analysis-set-item   :as set-item]))
+
+;; All inputs are cells
+(defelem scheme-set-list
+  [{:keys [schemes selected-scheme-id
+           sets    selected-set-id   ]} children]
+  (div :style "max-height: 100%"
+   (div :class "ui pointing secondary menu"
+        (a :class "blue active item" :data-tab "clustal-schemes" (i :class "settings icon") "Clustal Schemes")
+        (a :class "blue item"        :data-tab "analysis-sets"   (i :class "cubes icon")   "Analysis Sets"))
+   (div :class "ui active basic tab segment" :data-tab "clustal-schemes")
+   (div :class "ui basic tab segment"        :data-tab "analysis-sets" :style "max-height: 100%; overflow-y: auto; padding-top: 2px;"
+        (div :class "ui cards" (loop-tpl :bindings [a-s sets]
+                                         (set-item/item :set-cell a-s :selected-id-cell selected-scheme-id))))))

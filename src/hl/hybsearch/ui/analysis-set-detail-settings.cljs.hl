@@ -1,7 +1,0 @@
-(ns ui.analysis-set-detail-settings
-  (:require [ui.clustal-scheme-detail :as clustal-detail]))
-
-(defelem detail
-  [{:keys [clustal-scheme]} children]
-  (clustal-detail/detail :clustal-scheme clustal-scheme))
-

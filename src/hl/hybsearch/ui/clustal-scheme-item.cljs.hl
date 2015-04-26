@@ -1,14 +1,14 @@
-(ns ui.analysis-set-item)
+(ns ui.clustal-scheme-item)
 
 ;; Currently expects :data [id "Set Name" num-processed num-total]
 
 (defelem item
-  [{:keys [set-cell selected-id-cell]} children]
+  [{:keys [scheme-cell selected-id-cell]} children]
   (let [id (cell= (get set-cell :db/id))
-        set-name (cell= (get set-cell :analysis-set/name))
-        proc (cell= (get set-cell :analysis-set/num-processed-triples))
-        total (cell= (get set-cell :analysis-set/num-triples))]
-        (let [state (cell= (if (= id selected-id-cell) "ui fluid blue card" "ui fluid card"))]
+        scheme-name (cell= (get set-cell :clustal-scheme/name))
+        proc (cell= (get set-cell :clustal-scheme/num-processed-triples))
+        total (cell= (get set-cell :clustal-scheme/num-triples))]
+        (let [state (cell= (if (= id selected-id-cell) "ui fluid green card" "ui fluid card"))]
         (a :class state ;; Todo: This isn't updating after selected id changes
            :on-click #(reset! selected-id-cell @id)
              (div :class "content"

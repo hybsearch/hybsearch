@@ -1,0 +1,25 @@
+(ns ui.scheme-set-detail
+  (:require [ui.clustal-scheme-detail :as settings]
+            [ui.jobs-detail :as jobs]))
+
+;; Inputs are formula cells
+
+(defelem detail
+  [{:keys [clustal-scheme analysis-set]} children]
+  (let [scheme-name (cell= (get clustal-scheme :clustal-scheme/name))
+        set-name (cell= (get analysis-set :analysis-set/name))
+        jobs nil ;;(cell= (get entity :analysis-set/jobs)) ;; Todo: jobs is an intersection query now
+        ]
+    (div
+      (div :class "ui pointing secondary menu"
+           (div :class "float right header item" (text "~{scheme-name}:~{set-name}")) ;; Todo use intersect symbol
+           (a :class "blue active item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
+           (a :class "blue item" :data-tab "analysis-set" (i :class "cube icon") "Analysis Set")
+           (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
+           (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
+      (div :class "ui active basic tab segment" :data-tab "clustal-scheme"
+           (settings/detail :clustal-scheme clustal-scheme))
+      (div :class "ui basic tab segment"        :data-tab "analysis-set" "Analysis Set Details Go Here")
+      (div :class "ui basic tab segment"        :data-tab "jobs"
+           (jobs/detail :jobs jobs))
+      (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))

@@ -2,8 +2,8 @@
   (:require
     [hybsearch.rpc :as rpc]
     [tailrecursion.hoplon.reload :refer [reload-all]]
-    [ui.analysis-set-item :as set-item]
-    [ui.analysis-set-detail :as set-detail]
+    [ui.scheme-set-list :as scheme-set-list]
+    [ui.scheme-set-detail :as scheme-set-detail]
     [ui.loci-upload :as loci-upload]
    ))
 
@@ -20,28 +20,24 @@
   (head)
   (body
      (loci-upload/upload-modal :id "upload-loci-modal")
-
-
-
      (div :class "ui menu"
-          (div :class "header item" (i :class "lab icon") (text "HybSearch"))
-          (div :class "item" (div :class "ui green button" (text "New Analysis Set")))
-          (div :class "item" (div :class "ui green button" :on-click #(show-upload-loci-modal) (text "Upload Loci")))
+          (div :class "header item" (i :class "lab icon") "HybSearch")
+          (div :class "item" (div :class "ui green button" "New Clustal Scheme"))
+          (div :class "item" (div :class "ui green button" "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-upload-loci-modal) "Upload Loci"))
           (div :class "item" (text "Selected analysis set: id: ~{rpc/selected-analysis-set-id}, name: ~{(get rpc/selected-analysis-set :analysis-set/name)}"))
-          (div :class "item" (div :class "ui green button" (text "Explore All Loci")))
-          )
+          (div :class "item" (div :class "ui green button" (i :class "bug icon") "Explore Loci")))
      (div :class "ui grid"
           (div :class "four wide column"
-               (div :class "ui horizontal segment" :style "height: 90vh; overflow-y: auto; padding-top: 2px;"
-                    (div :class "ui cards" (loop-tpl :bindings [x rpc/analysis-sets]
-                                                     (set-item/item :set-cell x
-                                                                        :selected-id-cell rpc/selected-analysis-set-id)))))
+               (div :class "ui horizontal segment" :style "height: 90vh;"
+                    (scheme-set-list/scheme-set-list :schemes rpc/clustal-schemes
+                                                     :selected-scheme-id rpc/selected-clustal-scheme-id
+                                                     :sets rpc/analysis-sets
+                                                     :selected-set-id rpc/selected-analysis-set-id)))
           (div :class "twelve wide column"
-               (div :class "ui horizontal segment" :style "height: 90vh;" (set-detail/detail :entity rpc/selected-analysis-set)))
-
-     )
-
-   ))
+               (div :class "ui horizontal segment" :style "height: 90vh;"
+                    (scheme-set-detail/detail :scheme-cell rpc/selected-clustal-scheme
+                                       :set-cell rpc/selected-analysis-set))))))
 
 ;; Initialize JS based elements
 (-> (js/jQuery ".ui.modal") .modal)
