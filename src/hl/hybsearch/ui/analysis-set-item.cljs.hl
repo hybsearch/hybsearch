@@ -1,22 +1,19 @@
-(ns ui.analysis-set-item
-  (:require [hybsearch.rpc :as rpc]))
+(ns ui.analysis-set-item)
 
 ;; Currently expects :data [id "Set Name" num-processed num-total]
 
-(defelem analysis-set-item
-  [{:keys [cell]} children]
-  (cell-let [[id set-name proc total] cell]
-            (print set-name)
-    (a :class "ui fluid card" :on-click #(reset! rpc/selected-analysis-set-id @id)
+(defelem item
+  [{:keys [set-cell selected-id-cell]} children]   ;; Todo: Upgrade this to use lazy entity evaluation instead of just 1 query's results
+  (cell-let [[id set-name proc total] set-cell]
+  (let [state (cell= (if (= id selected-id-cell) "ui fluid blue card" "ui fluid card"))]
+    (a :class state ;; Todo: This isn't updating after selected id changes
+       :on-click #(reset! selected-id-cell @id)
          (div :class "content"
-              (div :class "header" (text "~{set-name}")))
-         (div :class "extra content"
-              (i :class "circle notched")
-              (text "~{proc}/~{total} triples processed"))
-         (div :class "ui bottom attached progress"
-              :data-percent (* 100 (/ @proc @total)) ;; Todo: Get progress bars working.
-                   (div :class "bar"))
-                   )))
+              (div :class "header" (text "~{set-name}"))
+              (div :class "ui small progress"
+                   :data-percent (* 100 (/ @proc @total)) ;; Todo: Get progress bar init working.
+                   (div :class "bar")
+                   (div :class "label" (i :class "wait icon") (text "~{proc}/~{total} triples processed"))))))))
 
 
 

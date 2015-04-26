@@ -29,7 +29,7 @@
              ;; Will probably also need to enforce uniqueness on the clustal-schemes
              })
 
-(defonce conn (d/create-conn schema))
+(defonce db (d/create-conn schema))
 
 (def seed-data [
                 {:db/id -20
@@ -45,6 +45,9 @@
                 {:db/id -1
                  :clustal-scheme/ex-setting "Example Option 1"} ;; Todo: Maybe even allow people to view and manage their clustal schemes separately from analysis sets
 
+                {:db/id -80
+                 :clustal-scheme/ex-setting "Example Option 2"}
+
                 {:db/id -2
                  :job/name "Lepus 1"
                  :job/loci ["HM233091", "AB687524", "AB687525"]
@@ -59,15 +62,15 @@
                  :job/num-triples 1
                  :job/num-processed-triples 1}
 
-                {:db/id -4
-                 :analysis-set/name "Set 1"
+                {:db/id -5
+                 :analysis-set/name "A Set 1"
                  :analysis-set/jobs [-2, -3]
-                 :analysis-set/clustal-scheme -1
+                 :analysis-set/clustal-scheme -80
                  :analysis-set/loci ["HM233091", "AB687524", "AB687525"]
                  :analysis-set/num-triples 1
                  :analysis-set/num-processed-triples 1}
 
-                {:db/id -5
+                {:db/id -4
                  :analysis-set/name "Empty Set"
                  :analysis-set/jobs []
                  :analysis-set/clustal-scheme -1
@@ -75,93 +78,33 @@
                  :analysis-set/num-triples 0
                  :analysis-set/num-processed-triples 0}
 
-                {:db/id -6
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
 
-                {:db/id -7
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
 
-                {:db/id -8
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
 
-                {:db/id -9
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
-
-                {:db/id -10
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
-
-                {:db/id -12
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
-
-                {:db/id -11
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/loci []
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
 
 
                 ])
 
-(d/transact! conn seed-data)
+(d/transact! db seed-data)
 
 
 (defc state {:random nil})
 (defc error nil)
 (defc loading [])
 
-(defc= random-number (get state :random))
-
 (defc= analysis-sets (d/q '[ :find ?e ?name ?processed ?total
                                :where [?e :analysis-set/name ?name]
                                       [?e :analysis-set/num-triples ?total]
                                       [?e :analysis-set/num-processed-triples ?processed]
-                              ] @conn))
+                              ] @db))
 
 (defc selected-analysis-set-id (first (first @analysis-sets))) ;; Holds the id of the currently selected analysis set
+(defc= selected-analysis-set (d/entity @db selected-analysis-set-id))
 
 
 (enable-console-print!)
-(print "Query Result:")
-(print analysis-sets)
 
 
 
-(def get-state
-  (mkremote 'hybsearch.api/get-state state error loading))
 
-(defn init []
-  (get-state)
-  (js/setInterval get-state 1000)
-  )
+(defn init [])

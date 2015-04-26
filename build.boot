@@ -24,6 +24,7 @@
 (require '[tailrecursion.hoplon.boot :refer :all]
          '[tailrecursion.castra.task :as c])
 
+
 (deftask development
   "Build hybsearch for development."
   []

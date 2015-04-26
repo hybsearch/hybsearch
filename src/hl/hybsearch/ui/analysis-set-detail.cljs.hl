@@ -1,0 +1,21 @@
+(ns ui.analysis-set-detail
+  (:require [ui.analysis-set-detail-settings :as settings]
+            [ui.jobs-detail :as jobs]))
+
+;; `entity` is the formula cell containing the currently selected analysis set entity
+
+(defelem detail
+  [{:keys [entity]} children]
+    (div
+      (div :class "ui pointing secondary menu"
+           (div :class "float right header item" (text "~{(get entity :analysis-set/name)}"))
+           (a :class "blue active item" :data-tab "settings" (i :class "settings icon") "Clustal Settings")
+           (a :class "blue item" :data-tab "loci" (i :class "bug icon") "Loci")
+           (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
+           (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
+      (div :class "ui active basic tab segment" :data-tab "settings"
+           (settings/detail :clustal-scheme (cell= (get entity :analysis-set/clustal-scheme))))
+      (div :class "ui basic tab segment" :data-tab "loci" "Loci")
+      (div :class "ui basic tab segment" :data-tab "jobs"
+           (jobs/detail :jobs (cell= (get entity :analysis-set/jobs))))
+      (div :class "ui basic tab segment" :data-tab "query" "Query")))

@@ -1,0 +1,14 @@
+(ns ui.clustal-scheme-detail)
+
+(defelem setting-detail
+  [{:keys [setting-name value]} children]
+  (div :class "item"
+       (div :class "middle aligned content"
+            (h3 setting-name ":") (text "~{value}"))))
+
+(defelem detail
+  [{:keys [clustal-scheme]} children]
+  (cell-let [ex-setting (get clustal-scheme :clustal-scheme/ex-setting)]
+    (div :class "ui divided items"
+       (setting-detail :setting-name "Ex Setting" :value ex-setting)
+    )))
