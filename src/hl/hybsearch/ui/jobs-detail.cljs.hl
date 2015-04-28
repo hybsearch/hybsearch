@@ -26,7 +26,7 @@
 (defelem detail
   [{:keys [jobs]} children]
   (div :class "ui cards" :style "max-height 100%; overflow-y: auto;"
-       (print jobs)
+       (print "Jobs Detail:" jobs)
        (loop-tpl :bindings [job jobs]
                  (item :job-cell job)
                  )))

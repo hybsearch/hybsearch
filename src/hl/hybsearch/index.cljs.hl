@@ -16,17 +16,20 @@
 
 ;; Todo: Guard against anything other than a GenBank file being uploaded
 
+;; We should always pass the db to ui objects, in case we decide to extend them with custom queries later
+;; might be cleaner code (though... maybe less efficeint) to just pass client state db to ui objects and perform
+;; queries internally.
+
 (html
   (head)
   (body
      (loci-upload/upload-modal :id "upload-loci-modal")
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
-          (div :class "item" (div :class "ui green button" "New Clustal Scheme"))
-          (div :class "item" (div :class "ui green button" "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-upload-loci-modal) "Upload Loci"))
-          (div :class "item" (text "Selected analysis set: id: ~{rpc/selected-analysis-set-id}, name: ~{(get rpc/selected-analysis-set :analysis-set/name)}"))
-          (div :class "item" (div :class "ui green button" (i :class "bug icon") "Explore Loci")))
+          (div :class "item" (div :class "ui green button" (i :class "setting icon") "New Clustal Scheme"))
+          (div :class "item" (div :class "ui green button" (i :class "cube icon") "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-upload-loci-modal) (i :class "cloud upload icon") "Upload Loci"))
+          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Loci")))
      (div :class "ui grid"
           (div :class "four wide column"
                (div :class "ui horizontal segment" :style "height: 90vh;"
@@ -36,12 +39,14 @@
                                                      :selected-set-id rpc/selected-analysis-set-id)))
           (div :class "twelve wide column"
                (div :class "ui horizontal segment" :style "height: 90vh;"
-                    (scheme-set-detail/detail :scheme-cell rpc/selected-clustal-scheme
-                                       :set-cell rpc/selected-analysis-set))))))
+                    (scheme-set-detail/detail :clustal-scheme rpc/selected-clustal-scheme
+                                              :analysis-set rpc/selected-analysis-set
+                                              :db rpc/db))))))
 
 ;; Initialize JS based elements
 (-> (js/jQuery ".ui.modal") .modal)
 (-> (js/jQuery ".menu .item") .tab)
+(-> (js/jQuery ".progress") .progress)
 
 ;; Lorem ipsum for mockups:
 ;;(text "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")

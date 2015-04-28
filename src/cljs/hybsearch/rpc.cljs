@@ -18,6 +18,7 @@
              :analysis-set/num-triples             {:db/cardinality :db.cardinality/one}
              :analysis-set/num-processed-triples   {:db/cardinality :db.cardinality/one}
 
+
              :job/name                             {:db/cardinality :db.cardinality/one}
              :job/set-def                          {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
              :job/num-triples                      {:db/cardinality :db.cardinality/one}
@@ -84,8 +85,8 @@
 
                 {:db/id -3
                  :job/name "Lepus 2"
-                 :job/set-def -90
                  :job/clustal-scheme -80
+                 :job/set-def -90
                  :job/num-triples 1
                  :job/num-processed-triples 1}
 
@@ -114,26 +115,31 @@
 (defc error nil)
 (defc loading [])
 
-(print "hi 1")
+;; (defc= analysis-sets (d/q '[ :find ?e ?name ?processed ?total
+;;                                :where [?e :analysis-set/name ?name]
+;;                                       [?e :analysis-set/num-triples ?total]
+;;                                       [?e :analysis-set/num-processed-triples ?processed]
+;;                               ] @db))
 
 ;; Todo: wish there was a better way to query than just by name
 ;; Clustal Schemes
-;;(defc= clustal-scheme-ids (d/q '[find ?e :where [?e :clustal-scheme/name ?name]] @db))
-;; (defc= clustal-schemes (cell-map (fn [e] (d/entity @db e)) clustal-scheme-ids))
+(defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustal-scheme/name ?name]] @db))
+(defc= clustal-schemes (map (fn [e] (d/entity @db (first e))) clustal-scheme-ids))
 
-;; (defc selected-clustal-scheme-id (first (first @clustal-scheme-ids))) ;; Holds the id of the currently selected analysis set
-;; (defc= selected-clustal-scheme (d/entity @db selected-clustal-scheme-id))
+(defc selected-clustal-scheme-id (first (first @clustal-scheme-ids))) ;; Holds the id of the currently selected analysis set
+(defc= selected-clustal-scheme (d/entity @db selected-clustal-scheme-id))
 
-;; ;; Analysis Sets
-;; (defc= analysis-set-ids (d/q '[find ?e :where [?e :analysis-set/name ?name]] @db))
-;; (defc= analysis-sets (cell-map (fn [e] (d/entity @db e)) analysis-set-ids))
+;; Analysis Sets
+(defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysis-set/name ?name]] @db))
+(defc= analysis-sets (map (fn [e] (d/entity @db (first e))) analysis-set-ids))
 
-;; (defc selected-analysis-set-id (first (first @analysis-set-ids))) ;; Holds the id of the currently selected analysis set
-;; (defc= selected-analysis-set (d/entity @db selected-analysis-set-id))
+(defc selected-analysis-set-id (first (first @analysis-set-ids))) ;; Holds the id of the currently selected analysis set
+(defc= selected-analysis-set (d/entity @db selected-analysis-set-id) (fn [] (print analysis-sets)))
 
+(print analysis-sets)
+(print selected-clustal-scheme)
+(print selected-analysis-set)
 
-
-(print "hi 2")
 
 
 
