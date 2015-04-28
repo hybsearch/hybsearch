@@ -4,17 +4,23 @@
             [datascript :as d]))
 
 ;; Inputs are formula cells
-
 (defelem detail
   [{:keys [clustal-scheme analysis-set db]} children]
   (let [scheme-name (cell= (get clustal-scheme :clustal-scheme/name))
         set-name (cell= (get analysis-set :analysis-set/name))
         jobs (cell= (map (fn [e] (d/entity @db (first e)))
                          (d/q '[:find ?e
-                                :in $ ?scheme ?set
-                                :where [?e :job/clustal-scheme ]
-                                       [?e :job/set-def ]
-                                ] @db (get clustal-scheme :db/id) (get analysis-set :analysis-set/set-def))) (print "hi"))
+                                :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysis-set for their filter
+                                :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
+                                       [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
+                              @db
+                              (get clustal-scheme :db/id)
+                              (d/q '[:find ?e ;; TODO: Get this query's result formatted as a list of db ids for [?set-def ...]
+                                     :in $ ?set-def ;; ?set-def is the set-def for the analysis set
+                                     :where [?e :set-def/filter ?set-def]]
+                                   @db
+                                   (-> (get analysis-set :analysis-set/set-def) (get :db/id)))
+                              )))
         ]
     (print "Scheme-Set Detail: jobs: " jobs)
     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
@@ -23,13 +29,13 @@
       (div :class "ui pointing secondary menu"
            (div :class "float right header item"
                 (text "~{scheme-name} \u2229 ~{set-name}")) ;; Todo use intersect symbol
-           (a :class "blue active item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
+           (a :class "blue item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
            (a :class "blue item" :data-tab "analysis-set" (i :class "cube icon") "Analysis Set")
-           (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
+           (a :class "blue active item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
            (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
-      (div :class "ui active basic tab segment" :data-tab "clustal-scheme"
+      (div :class "ui basic tab segment" :data-tab "clustal-scheme"
            (settings/detail :clustal-scheme clustal-scheme))
       (div :class "ui basic tab segment"        :data-tab "analysis-set" "Analysis Set Details Go Here")
-      (div :class "ui basic tab segment"        :data-tab "jobs"
+      (div :class "ui basic active tab segment"        :data-tab "jobs"
            (jobs/detail :jobs jobs))
       (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))

@@ -8,7 +8,10 @@
 
 (enable-console-print!)
 
-(def schema {:clustal-scheme/name                  {:db/cardinality :db.cardinality/one}
+(def schema {
+
+
+             :clustal-scheme/name                  {:db/cardinality :db.cardinality/one}
              :clustal-scheme/ex-setting            {:db/cardinality :db.cardinality/one}
              :clustal-scheme/num-triples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all loci
              :clustal-scheme/num-processed-triples {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
@@ -31,7 +34,10 @@
              ;; all triples for the set = triples(loci for each binomial UNION loci list) INTERSECT analysis-set triples
              :set-def/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
              :set-def/loci                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
-             :set-def/analysis-set                 {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref} ;; Optional, leave empty to indicate global analysis set, or if this is the set-def for an analysis set
+             ;; Filter is ptional. Filter further restricts the set definition.
+             ;; Think of the filter as another set-def you must itersect the other parts
+             ;; of this definition with to fully resolve this set definition.
+             :set-def/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
 
              :locus/accession-num                  {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :locus/binomial                       {:db/cardinality :db.cardinality/one}
@@ -68,9 +74,14 @@
                  :clustal-scheme/num-processed-triples 67
                  }
 
-
+                ;; This will act as the set def for one of our example analysis sets
                 {:db/id -90
                  :set-def/loci ["HM233091", "AB687524", "AB687525"]}
+
+                ;; This will be the set def for our example jobs
+                {:db/id -1000
+                 :set-def/binomials ["Lepus timidus", "Lepus mandshuricus"]
+                 :set-def/filter -90}
 
                 {:db/id -100
                  :set-def/loci []}
@@ -78,20 +89,20 @@
 
                 {:db/id -2
                  :job/name "Lepus 1"
-                 :job/clustal-scheme -80
-                 :job/set-def -90
+                 :job/clustal-scheme -1
+                 :job/set-def -1000
                  :job/num-triples 1
                  :job/num-processed-triples 1}
 
                 {:db/id -3
                  :job/name "Lepus 2"
-                 :job/clustal-scheme -80
-                 :job/set-def -90
+                 :job/clustal-scheme -1
+                 :job/set-def -1000
                  :job/num-triples 1
                  :job/num-processed-triples 1}
 
                 {:db/id -5
-                 :analysis-set/name "A Set 1"
+                 :analysis-set/name "Set 1"
                  :analysis-set/jobs [-2, -3]
                  :analysis-set/clustal-scheme -80
                  :analysis-set/set-def -90
