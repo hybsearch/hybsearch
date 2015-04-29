@@ -12,8 +12,8 @@
         total (cell= (get scheme-cell :clustal-scheme/num-triples))
         isSelected (cell= (= id selected-id-cell))
         card-classes (cell= {:ui true :fluid true :blue isSelected :card true})]
-          (print "Clustal Scheme Item: scheme-cell: " set-cell)
-          (print "Clustal Scheme Item: selected-id-cell: " selected-id-cell)
+;;           (print "Clustal Scheme Item: scheme-cell: " scheme-cell)
+;;           (print "Clustal Scheme Item: selected-id-cell: " selected-id-cell)
    (a :class card-classes
       :on-click #(reset! selected-id-cell @id)
         (div :class "content"

@@ -1,0 +1,61 @@
+;; Todo: Validate to ensure that no clustal schemes that are technically equal to each other are created.
+
+(ns ui.clustal-scheme-create)
+
+(defelem create-form
+  [{} children]
+  (form :class "ui inverted form" ;; Todo: Create a UI that gives you options for the definition, and a button to add each item.
+        (div :class "ui info message"
+             (div :class "header" "Set up your new Clustal scheme using the settings below. "
+                                  "If the scheme's settings all equal the settings of an already "
+                                  "created scheme, you will not be allowed to create it. All schemes "
+                                  "must be unique."))
+        (div :class "ui inverted dividing header" "Meta:")
+        (div :class "field"
+             (label "Scheme Name:")
+             (input :type "text" :name "name"))
+        (div :class "ui inverted dividing header" "Clustal Settings:")
+        (div :class "field"
+             (label "ktuple")
+             (input :type "text" :name "ktuple" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "topdiags")
+             (input :type "text" :name "topdiags" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "window")
+             (input :type "text" :name "window" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "pairgap")
+             (input :type "text" :name "pairgap" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "fixedgap")
+             (input :type "text" :name "fixedgap" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "floatgap")
+             (input :type "text" :name "floatgap" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "matrix")
+             (input :type "text" :name "matrix" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "type")
+             (input :type "text" :name "type" :placeholder "Use Default (default)"))
+        (div :class "field"
+             (label "transmit")
+             (input :type "text" :name "transmit" :placeholder "Use Default (default)"))
+
+        ))
+
+
+
+
+(defelem create-modal
+  [{:keys [id]} children]
+  (div :id id :class "ui basic modal"
+          (div :class "header" "Create Clustal Scheme")
+          (div :class "content"
+               (div :class "image" (i :class "setting icon"))
+               (div :class "description" (create-form)))
+          (div :class "actions"
+               (div :class "two fluid ui inverted buttons"
+                    (div :class "ui red basic cancel inverted button" "Cancel")
+                    (div :class "ui green ok basic inverted button" "Create")))))

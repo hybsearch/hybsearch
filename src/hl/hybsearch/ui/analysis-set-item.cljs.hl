@@ -10,8 +10,8 @@
         total (cell= (get set-cell :analysis-set/num-triples))
         isSelected (cell= (= id selected-id-cell))
         card-classes (cell= {:ui true :fluid true :blue isSelected :card true})]
-          (print "Analysis Set Item: set-cell: " set-cell)
-          (print "Analysis Set Item: selected-id-cell: " selected-id-cell)
+;;           (print "Analysis Set Item: set-cell: " set-cell)
+;;           (print "Analysis Set Item: selected-id-cell: " selected-id-cell)
    (a :class card-classes
       :on-click #(reset! selected-id-cell @id)
         (div :class "content"

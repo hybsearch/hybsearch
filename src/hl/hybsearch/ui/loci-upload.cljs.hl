@@ -21,4 +21,4 @@
           (div :class "actions"
                (div :class "two fluid ui inverted buttons"
                     (div :class "ui red basic cancel inverted button" "Cancel")
-                    (div :class "ui blue ok basic inverted button" "Upload")))))
+                    (div :class "ui green ok basic inverted button" "Upload")))))

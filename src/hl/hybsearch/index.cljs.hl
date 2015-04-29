@@ -5,14 +5,18 @@
     [ui.scheme-set-list :as scheme-set-list]
     [ui.scheme-set-detail :as scheme-set-detail]
     [ui.loci-upload :as loci-upload]
+    [ui.analysis-set-create :as set-create]
+    [ui.clustal-scheme-create :as scheme-create]
    ))
 
 (reload-all 1000)
 
 (rpc/init)
 
-(defn show-upload-loci-modal [] (-> (js/jQuery "#upload-loci-modal") (.modal "show")))
-(defn hide-upload-loci-modal [] (-> (js/jQuery "#upload-loci-modal") (.modal "hide")))
+
+(defn show-modal [id] (-> (js/jQuery (str "#" id)) (.modal "show")))
+(defn hide-modal [id] (-> (js/jQuery (str "#" id)) (.modal "hide")))
+
 
 ;; Todo: Guard against anything other than a GenBank file being uploaded
 
@@ -23,12 +27,15 @@
 (html
   (head)
   (body
+     (scheme-create/create-modal :id "create-scheme-modal")
+     (set-create/create-modal :id "create-set-modal")
      (loci-upload/upload-modal :id "upload-loci-modal")
+
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
-          (div :class "item" (div :class "ui green button" (i :class "setting icon") "New Clustal Scheme"))
-          (div :class "item" (div :class "ui green button" (i :class "cube icon") "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-upload-loci-modal) (i :class "cloud upload icon") "Upload Loci"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "create-scheme-modal") (i :class "setting icon") "New Clustal Scheme"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "create-set-modal") (i :class "cube icon") "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "upload-loci-modal") (i :class "cloud upload icon") "Upload Loci"))
           (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Loci")))
      (div :class "ui grid"
           (div :class "four wide column"

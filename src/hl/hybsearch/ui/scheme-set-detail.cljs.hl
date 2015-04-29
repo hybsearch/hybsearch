@@ -23,20 +23,20 @@
                                         @db
                                         (-> (get analysis-set :analysis-set/set-def) (get :db/id)))))))
         ]
-    (print "Scheme-Set Detail: jobs: " jobs)
-    (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
-    (print "Scheme-Set Detail: analysis-set: " analysis-set)
+;;     (print "Scheme-Set Detail: jobs: " jobs)
+;;     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
+;;     (print "Scheme-Set Detail: analysis-set: " analysis-set)
     (div
       (div :class "ui pointing secondary menu"
            (div :class "float right header item"
                 (text "~{scheme-name} \u2229 ~{set-name}")) ;; Todo use intersect symbol
-           (a :class "blue item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
+           (a :class "blue active item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
            (a :class "blue item" :data-tab "analysis-set" (i :class "cube icon") "Analysis Set")
-           (a :class "blue active item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
+           (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
            (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
-      (div :class "ui basic tab segment" :data-tab "clustal-scheme"
+      (div :class "ui basic active tab segment" :data-tab "clustal-scheme"
            (settings/detail :clustal-scheme clustal-scheme))
       (div :class "ui basic tab segment"        :data-tab "analysis-set" "Analysis Set Details Go Here")
-      (div :class "ui basic active tab segment"        :data-tab "jobs"
+      (div :class "ui basic tab segment"        :data-tab "jobs"
            (jobs/detail :jobs jobs))
       (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))
