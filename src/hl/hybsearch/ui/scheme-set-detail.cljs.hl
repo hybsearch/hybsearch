@@ -5,24 +5,9 @@
 
 ;; Inputs are formula cells
 (defelem detail
-  [{:keys [clustal-scheme analysis-set db]} children]
+  [{:keys [clustal-scheme analysis-set jobs]} children]
   (let [scheme-name (cell= (get clustal-scheme :clustal-scheme/name))
-        set-name (cell= (get analysis-set :analysis-set/name))
-        jobs (cell= (map (fn [e] (d/entity @db (first e)))
-                         (d/q '[:find ?e
-                                :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysis-set for their filter
-                                :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
-                                       [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
-                              @db
-                              (get clustal-scheme :db/id)
-                              ;; All set-def entities that use the selected analysis-set as a filter
-                              (map (fn [e] (first e))
-                                   (d/q '[:find ?e
-                                          :in $ ?set-def
-                                          :where [?e :set-def/filter ?set-def]]
-                                        @db
-                                        (-> (get analysis-set :analysis-set/set-def) (get :db/id)))))))
-        ]
+        set-name (cell= (get analysis-set :analysis-set/name))]
 ;;     (print "Scheme-Set Detail: jobs: " jobs)
 ;;     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
 ;;     (print "Scheme-Set Detail: analysis-set: " analysis-set)

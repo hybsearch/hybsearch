@@ -41,9 +41,7 @@
              (input :type "text" :name "type" :placeholder "Use Default (default)"))
         (div :class "field"
              (label "transmit")
-             (input :type "text" :name "transmit" :placeholder "Use Default (default)"))
-
-        ))
+             (input :type "text" :name "transmit" :placeholder "Use Default (default)"))))
 
 
 

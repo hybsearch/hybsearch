@@ -10,5 +10,4 @@
   [{:keys [clustal-scheme]} children]
   (cell-let [ex-setting (get clustal-scheme :clustal-scheme/ex-setting)]
     (div :class "ui divided items"
-       (setting-detail :setting-name "Ex Setting" :value ex-setting)
-    )))
+       (setting-detail :setting-name "Ex Setting" :value ex-setting))))

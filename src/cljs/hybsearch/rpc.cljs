@@ -1,6 +1,6 @@
 (ns hybsearch.rpc
   (:require-macros
-    [tailrecursion.javelin :refer [defc defc=]])
+    [tailrecursion.javelin :refer [defc defc= set-cell!=]])
   (:require
    [tailrecursion.javelin :refer [cell-map]]
    [tailrecursion.castra :refer [mkremote]]
@@ -8,8 +8,9 @@
 
 (enable-console-print!)
 
-(def schema {
+(def jobs-db-schema {
 
+             :master/id                            {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
 
              :clustal-scheme/name                  {:db/cardinality :db.cardinality/one}
              :clustal-scheme/ex-setting            {:db/cardinality :db.cardinality/one}
@@ -39,120 +40,203 @@
              ;; of this definition with to fully resolve this set definition.
              :set-def/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
 
+
+             })
+
+
+(def loci-db-schema {
              :locus/accession-num                  {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :locus/binomial                       {:db/cardinality :db.cardinality/one}
 
              ;; Todo: Eventually allow more locus information on client.
              ;; There is also more species information than the binomial available in the GenBank files, i.e. the ncbi_taxid
              ;; Will probably also need to enforce uniqueness on the clustal-schemes
-             })
-
-(defonce db (d/create-conn schema))
-
-(def seed-data [
-                {:db/id -20
-                 :locus/accession-num "HM233091"
-                 :locus/binomial      "Lepus mandshuricus"}
-                {:db/id -21
-                 :locus/accession-num "AB687524"
-                 :locus/binomial      "Lepus timidus"}
-                {:db/id -22
-                 :locus/accession-num "AB687525"
-                 :locus/binomial      "Lepus timidus"}
-
-                {:db/id -1
-                 :clustal-scheme/name       "Scheme 1"
-                 :clustal-scheme/ex-setting "Example Option 1"
-                 :clustal-scheme/num-triples 900
-                 :clustal-scheme/num-processed-triples 23
-                 } ;; Todo: Maybe even allow people to view and manage their clustal schemes separately from analysis sets
-
-                {:db/id -80
-                 :clustal-scheme/name       "Scheme 2"
-                 :clustal-scheme/ex-setting "Example Option 2"
-                 :clustal-scheme/num-triples 900
-                 :clustal-scheme/num-processed-triples 67
-                 }
-
-                ;; This will act as the set def for one of our example analysis sets
-                {:db/id -90
-                 :set-def/loci ["HM233091", "AB687524", "AB687525"]}
-
-                ;; This will be the set def for our example jobs
-                {:db/id -1000
-                 :set-def/binomials ["Lepus timidus", "Lepus mandshuricus"]
-                 :set-def/filter -90}
-
-                {:db/id -100
-                 :set-def/loci []}
+            })
 
 
-                {:db/id -2
-                 :job/name "Lepus 1"
-                 :job/clustal-scheme -1
-                 :job/set-def -1000
-                 :job/num-triples 1
-                 :job/num-processed-triples 1}
+;; We do two client-side databases so locus data (of which there will be a lot) doesn't have to be
+;; pushed repeatedly in its entirety. (We can request entities as needed for loci, because we'll
+;; know from the job data or a dynamic form which ones we'll need). Job data is entirely an unknown,
+;; but is small, so we can just poll for that.
 
-                {:db/id -3
-                 :job/name "Lepus 2"
-                 :job/clustal-scheme -1
-                 :job/set-def -1000
-                 :job/num-triples 1
-                 :job/num-processed-triples 1}
+(defonce loci-db (d/create-conn loci-db-schema))
 
-                {:db/id -5
-                 :analysis-set/name "Set 1"
-                 :analysis-set/jobs [-2, -3]
-                 :analysis-set/clustal-scheme -80
-                 :analysis-set/set-def -90
-                 :analysis-set/num-triples 1
-                 :analysis-set/num-processed-triples 1}
+(defc jobs-state {})
+(defc jobs-error nil)
+(defc jobs-loading [])
 
-                {:db/id -4
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/set-def -100
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
+(defc loci-state {})
+(defc loci-error nil)
+(defc loci-loading [])
 
-                ])
+(defc= jobs-entities (:entities jobs-state))
+(defc= jobs-db (d/with (d/empty-db jobs-db-schema) jobs-entities))
 
-(d/transact! db seed-data)
+;; Todo: mkremote methods for getting specific locus state
+
+(def get-jobs-state (mkremote 'hybsearch.api/get-jobs-state jobs-state jobs-error jobs-loading))
 
 
-(defc state {:random nil})
-(defc error nil)
-(defc loading [])
+;; Todo: wish there was a better way to query than just by name (i.e. what if no name?)
 
-;; (defc= analysis-sets (d/q '[ :find ?e ?name ?processed ?total
-;;                                :where [?e :analysis-set/name ?name]
-;;                                       [?e :analysis-set/num-triples ?total]
-;;                                       [?e :analysis-set/num-processed-triples ?processed]
-;;                               ] @db))
+(defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustal-scheme/name ?name]] jobs-db))
+(defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysis-set/name ?name]] jobs-db))
+(defc= clustal-schemes (map (fn [e] (d/entity jobs-db (first e))) clustal-scheme-ids))
+(defc= analysis-sets   (map (fn [e] (d/entity jobs-db (first e))) analysis-set-ids))
 
-;; Todo: wish there was a better way to query than just by name
-;; Clustal Schemes
-(defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustal-scheme/name ?name]] @db))
-(defc= clustal-schemes (map (fn [e] (d/entity @db (first e))) clustal-scheme-ids))
+(defc  selected-clustal-scheme-id nil)
+(defc  selected-analysis-set-id nil)
+(defc= selected-clustal-scheme (if selected-clustal-scheme-id (d/entity jobs-db selected-clustal-scheme-id))) ;; Guard here, because if there are no schemes the selected id will be nil and d/entity will throw an exception on lazy eval.
+(defc= selected-analysis-set   (if selected-analysis-set-id   (d/entity jobs-db selected-analysis-set-id))) ;; Guard here, because if there are no sets the selected id will be nil and d/entity will throw an exception on lazy eval.
 
-(defc selected-clustal-scheme-id (first (first @clustal-scheme-ids))) ;; Holds the id of the currently selected analysis set
-(defc= selected-clustal-scheme (d/entity @db selected-clustal-scheme-id))
+;; Scheme-set Jobs
+(defc= scheme-set-jobs (if (and selected-clustal-scheme selected-analysis-set)
+                         (map (fn [e] (d/entity jobs-db (first e)))
+                              (d/q '[:find ?e
+                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysis-set for their filter
+                                     :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
+                                     [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
+                                   jobs-db
+                                   (get @selected-clustal-scheme :db/id)
+                                   ;; All set-def entities that use the selected analysis-set as a filter
+                                   (map (fn [e] (first e))
+                                        (d/q '[:find ?e
+                                               :in $ ?set-def
+                                               :where [?e :set-def/filter ?set-def]]
+                                             jobs-db
+                                             (-> (get @selected-analysis-set :analysis-set/set-def) (get :db/id))))))))
 
-;; Analysis Sets
-(defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysis-set/name ?name]] @db))
-(defc= analysis-sets (map (fn [e] (d/entity @db (first e))) analysis-set-ids))
 
-(defc selected-analysis-set-id (first (first @analysis-set-ids))) ;; Holds the id of the currently selected analysis set
-(defc= selected-analysis-set (d/entity @db selected-analysis-set-id) (fn [] (print analysis-sets)))
+(defn jobs-state-poll [interval]
+  (print "Jobs state: " jobs-state)
+  (print "Jobs entities: " jobs-entities)
+  (print "Jobs db: " jobs-db)
+  (get-jobs-state)
+  (js/setTimeout #(jobs-state-poll interval) interval))
 
-(print analysis-sets)
-(print selected-clustal-scheme)
-(print selected-analysis-set)
+;; Init
+(defn init [] (jobs-state-poll 3000))
 
 
 
 
 
-(defn init [])
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; Old diff-based code here, since we aren't ready to do that yet but will need to reference it later:
+
+
+
+;; (defc state {:diffs []
+;;              :source-version 0
+;;              :dest-version 0})
+;; (defc error nil)
+;; (defc loading [])
+
+;; ;; Would be really nice to implement this with a promise of a return value
+;; ;; once there are new diffs.
+
+
+
+;; (def diffs-since (mkremote 'hybsearch.api/diffs-since state error loading))
+;; (declare transact-diffs) ;; forward decl so transact-diffs isn't called immediately
+
+
+;; (defc local-version 0) ;; Todo: update this at then end of a successful diff transaction
+
+;; (defn state-target [s]
+;;   ;; Use setTimeout to defer call so changes propagate to cells that transact-diffs references
+;;   (if transact-diffs (js/setTimeout transact-diffs 1)))
+
+;; (defc= state-trigger (state-target state)) ;; Updates to the diff cell
+
+;; (defc= diffs (get state :diffs))
+;; (defc= source-version (get state :source-version))
+;; (defc= dest-version (get state :dest-version))
+
+;; ;; Only update local-version if transaction succeeds.
+;; ;; Do not send requests for new diffs until transaction is finished (success or fail). (because the local version number won't be up to date yet)
+;; ;; perform a check on local-version = :diffs/source-version before transacting
+;; ;; shouldn't worry about source-version = dest-version, since in that case there should be no diffs
+
+;; ;; WARNING: This function has side-effects!
+;; (defn transact-diffs [] ;; Update the database with the current diffs (or ignore illegal/up-to-date diffs) and trigger a request for the next set of diffs once current set is either transacted or ignored
+;;   (if (and (= @local-version @source-version) (not= @source-version @dest-version))
+;;     (do
+;;       (.log js/console "Transacting on diffs.")
+;;       (try
+;;         (do
+;;           (d/transact! db @diffs)
+;;           (reset! local-version @dest-version))
+;;         (catch :default e (print "Caught " e " during transact-diffs."))))
+;;     ;; illegal is source != local version, up-to-date is source = dest. Unlikely that we'll ever see illegal diffs, but better safe than sorry.
+;;     (.log js/console "Illegal or up-to-date diffs in most recent state update, did not transact them."))
+;;   (print "Requesting new diffs.")
+;;   (js/setTimeout diffs-since 1000 @local-version)) ;; Todo: If new data isn't different, requests stop.
+
+
+;; ;; Todo: wish there was a better way to query than just by name (i.e. what if no name?)
+
+;; (defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustal-scheme/name ?name]] jobs-db))
+;; (defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysis-set/name ?name]] jobs-db))
+;; (defc= clustal-schemes (map (fn [e] (d/entity jobs-db (first e))) clustal-scheme-ids))
+;; (defc= analysis-sets   (map (fn [e] (d/entity jobs-db (first e))) analysis-set-ids))
+;; (defc  selected-clustal-scheme-id nil)
+;; (defc  selected-analysis-set-id nil)
+;; (defc= selected-clustal-scheme (if selected-clustal-scheme-id (d/entity jobs-db selected-clustal-scheme-id))) ;; Guard here, because if there are no schemes the selected id will be nil and d/entity will throw an exception on lazy eval.
+;; (defc= selected-analysis-set   (if selected-analysis-set-id   (d/entity jobs-db selected-analysis-set-id))) ;; Guard here, because if there are no sets the selected id will be nil and d/entity will throw an exception on lazy eval.
+
+;; ;; Scheme-set Jobs
+;; (defc= scheme-set-jobs (if (and selected-clustal-scheme selected-analysis-set)
+;;                          (map (fn [e] (d/entity jobs-db (first e)))
+;;                               (d/q '[:find ?e
+;;                                      :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysis-set for their filter
+;;                                      :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
+;;                                      [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
+;;                                    jobs-db
+;;                                    (get @selected-clustal-scheme :db/id)
+;;                                    ;; All set-def entities that use the selected analysis-set as a filter
+;;                                    (map (fn [e] (first e))
+;;                                         (d/q '[:find ?e
+;;                                                :in $ ?set-def
+;;                                                :where [?e :set-def/filter ?set-def]]
+;;                                              jobs-db
+;;                                              (-> (get @selected-analysis-set :analysis-set/set-def) (get :db/id))))))))
+
+
+;; ;; Init
+;; (defn init [] (diffs-since 0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

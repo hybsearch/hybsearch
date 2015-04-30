@@ -7,6 +7,7 @@
   :version      "0.1.0-SNAPSHOT"
   :dependencies '[[tailrecursion/boot.task   "2.2.4"]
                   [tailrecursion/hoplon      "5.10.25"]
+                  ;;[tailrecursion/javelin     "3.8.0"]
                   [exicon/hoplon5-semantic-ui "1.10.2-SNAPSHOT"]
                   [org.clojure/clojurescript "0.0-3119"]
                   ;; 3119 (release) and 3178 (pre-release) are the latest clojurescript compilers
@@ -23,6 +24,8 @@
 
 (require '[tailrecursion.hoplon.boot :refer :all]
          '[tailrecursion.castra.task :as c])
+
+;; Todo: Modify core.clj so it uses http-kit or immutant and we can do websockets for everything (maybe still POST for uploads and forms...).
 
 
 (deftask development
