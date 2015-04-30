@@ -1,5 +1,38 @@
 (ns hybsearch.api
-  (:require [tailrecursion.castra :refer [defrpc]]))
+  (:require [tailrecursion.castra :refer [defrpc]]
+            [monger.core :as mg]
+            [monger.collection :as mc])
+  (:import [com.mongodb MongoOptions ServerAddress]))
+
+
+
+
+;; -----------------------------------------------------
+;;      Playing with MongoDB Java Driver
+;; -----------------------------------------------------
+
+;; Note: MongoDB uses MMAPV1 by default so we should be able to use Monger here (since Monger uses the 2.x Java driver)
+
+;; Todo: Authentication on both server and database
+
+(let [conn (mg/connect) ;; localhost, default port (27017)
+      db   (mg/get-db conn "test")
+      coll "restaurants"]
+  (println "Query: " (mc/find-maps db coll {"address.building" "1007"}))
+  (println "Number of addresses: " (mc/count db coll))
+
+  )
+
+;; As a note, it is recommended to always store new documents with the :_id key set,
+;; since the Monger driver will have to mutate the document, which given
+;; Clojure's immutable data structures might result in behavior the MongoDB authors
+;; did not anticipate.
+
+
+;; -----------------------------------------------------
+;; -----------------------------------------------------
+
+
 
 
 (def seed-locus-data [
