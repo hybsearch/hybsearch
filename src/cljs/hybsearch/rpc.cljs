@@ -10,8 +10,6 @@
 
 (def jobs-db-schema {
 
-             :master/id                            {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-
              :clustal-scheme/name                  {:db/cardinality :db.cardinality/one}
              :clustal-scheme/ex-setting            {:db/cardinality :db.cardinality/one}
              :clustal-scheme/num-triples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all loci
@@ -70,7 +68,7 @@
 (defc loci-loading [])
 
 (defc= jobs-entities (:entities jobs-state))
-(defc= jobs-db (d/with (d/empty-db jobs-db-schema) jobs-entities))
+(defc= jobs-db (:db-after (d/with (d/empty-db jobs-db-schema) jobs-entities)))
 
 ;; Todo: mkremote methods for getting specific locus state
 
@@ -97,20 +95,19 @@
                                      :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
                                      [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
                                    jobs-db
-                                   (get @selected-clustal-scheme :db/id)
+                                   (get selected-clustal-scheme :db/id)
                                    ;; All set-def entities that use the selected analysis-set as a filter
                                    (map (fn [e] (first e))
                                         (d/q '[:find ?e
                                                :in $ ?set-def
                                                :where [?e :set-def/filter ?set-def]]
                                              jobs-db
-                                             (-> (get @selected-analysis-set :analysis-set/set-def) (get :db/id))))))))
+                                             (-> (get selected-analysis-set :analysis-set/set-def) (get :db/id))))))))
 
 
 (defn jobs-state-poll [interval]
-  (print "Jobs state: " jobs-state)
-  (print "Jobs entities: " jobs-entities)
-  (print "Jobs db: " jobs-db)
+  (print "Selected Clustal scheme: " selected-clustal-scheme)
+  (print "Selected Analysis set: " selected-analysis-set)
   (get-jobs-state)
   (js/setTimeout #(jobs-state-poll interval) interval))
 
