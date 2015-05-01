@@ -160,7 +160,12 @@
   (if (= (:first-open? ?data) true)
     (do
       (print "Channel socket successfully established! Sending data request message. ")
-      (chsk-send! [:rpc/req-push-everywhere {:dataz "dataz"}]))
+      ; Request the initial state for the ui. After this, the server will send
+      ; a complete replacement state when updates have been made to the DB.
+      (chsk-send! [:rpc/get-jobs-state] 5000 ; Timeout
+                  (fn [cb-reply]             ; Callback with response
+                    (if (sente/cb-success? cb-reply)
+                      (reset! jobs-state cb-reply)))))
     (print "Channel socket state change: " ?data)))
 
 (defmethod event-msg-handler :chsk/recv
@@ -186,8 +191,7 @@
 
 ;; Init
 ;; Todo: Start router
-(defn start! [] (start-router!)
-  )
+(defn start! [] (start-router!))
 
 
 

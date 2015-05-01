@@ -60,19 +60,17 @@
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-from-server event}))))
 
-; (defmethod event-msg-handler :chsk/state
-;   [{:as ev-msg :keys [?data]}]
-;   (if (= (:first-open? ?data) true)
-;     (println "Channel socket successfully established.")
-;     (println "Channel socket state change: " ?data)))
+(defmethod event-msg-handler :chsk/state
+  [{:as ev-msg :keys [?data]}]
+  (if (= (:first-open? ?data) true)
+    (println "Channel socket successfully established.")
+    (println "Channel socket state change: " ?data)))
 
-;; IMPORTANT TODO HERE!
-(defmethod event-msg-handler :rpc/req-push-everywhere
-  [{:as ev-msg :keys [ring-req]}]
-  ;; Todo: For now there is only one user at a time, but we need to set the uid properly
-  ;; and send to that so we aren't broadcasting to everyone every time one person requests
-  ;; updated data.
-  (push-jobs-state-everywhere))
+
+(defmethod event-msg-handler :rpc/get-jobs-state
+  [{:as ev-msg :keys [?reply-fn]}]
+  (when ?reply-fn
+    (?reply-fn (api/get-jobs-state))))
 
 
 
