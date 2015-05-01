@@ -10,40 +10,40 @@
 
 (def jobs-db-schema {
 
-             :clustal-scheme/name                  {:db/cardinality :db.cardinality/one}
-             :clustal-scheme/ex-setting            {:db/cardinality :db.cardinality/one}
-             :clustal-scheme/num-triples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all loci
-             :clustal-scheme/num-processed-triples {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
+             :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
+             :clustalscheme/exsetting            {:db/cardinality :db.cardinality/one}
+             :clustalscheme/numtriples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all loci
+             :clustalscheme/numproc              {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
-             :analysis-set/name                    {:db/cardinality :db.cardinality/one}
-             :analysis-set/set-def                 {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
-             :analysis-set/num-triples             {:db/cardinality :db.cardinality/one}
-             :analysis-set/num-processed-triples   {:db/cardinality :db.cardinality/one}
+             :analysisset/name                    {:db/cardinality :db.cardinality/one}
+             :analysisset/setdef                  {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :analysisset/numtriples              {:db/cardinality :db.cardinality/one}
+             :analysisset/numproc                 {:db/cardinality :db.cardinality/one}
 
 
-             :job/name                             {:db/cardinality :db.cardinality/one}
-             :job/set-def                          {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
-             :job/num-triples                      {:db/cardinality :db.cardinality/one}
-             :job/num-processed-triples            {:db/cardinality :db.cardinality/one}
-             :job/clustal-scheme                   {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :job/name                            {:db/cardinality :db.cardinality/one}
+             :job/setdef                          {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :job/numtriples                      {:db/cardinality :db.cardinality/one}
+             :job/numproc                         {:db/cardinality :db.cardinality/one}
+             :job/clustalscheme                   {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
 
 
              ;; Todo: how to match up relational ref ids when downloading data from server?
 
-             ;; all triples for the set = triples(loci for each binomial UNION loci list) INTERSECT analysis-set triples
-             :set-def/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
-             :set-def/loci                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
+             ;; all triples for the set = triples(loci for each binomial UNION loci list) INTERSECT analysisset triples
+             :setdef/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
+             :setdef/loci                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
              ;; Filter is ptional. Filter further restricts the set definition.
              ;; Think of the filter as another set-def you must itersect the other parts
              ;; of this definition with to fully resolve this set definition.
-             :set-def/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :setdef/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
 
 
              })
 
 
 (def loci-db-schema {
-             :locus/accession-num                  {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :locus/accession                      {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :locus/binomial                       {:db/cardinality :db.cardinality/one}
 
              ;; Todo: Eventually allow more locus information on client.
@@ -77,8 +77,8 @@
 
 ;; Todo: wish there was a better way to query than just by name (i.e. what if no name?)
 
-(defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustal-scheme/name ?name]] jobs-db))
-(defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysis-set/name ?name]] jobs-db))
+(defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustalscheme/name ?name]] jobs-db))
+(defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysisset/name ?name]] jobs-db))
 (defc= clustal-schemes (map (fn [e] (d/entity jobs-db (first e))) clustal-scheme-ids))
 (defc= analysis-sets   (map (fn [e] (d/entity jobs-db (first e))) analysis-set-ids))
 
@@ -91,18 +91,18 @@
 (defc= scheme-set-jobs (if (and selected-clustal-scheme selected-analysis-set)
                          (map (fn [e] (d/entity jobs-db (first e)))
                               (d/q '[:find ?e
-                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysis-set for their filter
-                                     :where [?e :job/set-def ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
-                                     [?e :job/clustal-scheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysis-set/set-def
+                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysisset for their filter
+                                     :where [?e :job/setdef ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
+                                     [?e :job/clustalscheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysisset/set-def
                                    jobs-db
                                    (get selected-clustal-scheme :db/id)
-                                   ;; All set-def entities that use the selected analysis-set as a filter
+                                   ;; All set-def entities that use the selected analysisset as a filter
                                    (map (fn [e] (first e))
                                         (d/q '[:find ?e
                                                :in $ ?set-def
-                                               :where [?e :set-def/filter ?set-def]]
+                                               :where [?e :setdef/filter ?set-def]]
                                              jobs-db
-                                             (-> (get selected-analysis-set :analysis-set/set-def) (get :db/id))))))))
+                                             (-> (get selected-analysis-set :analysisset/setdef) (get :db/id))))))))
 
 
 (defn jobs-state-poll [interval]

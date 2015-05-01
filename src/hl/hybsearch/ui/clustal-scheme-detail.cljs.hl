@@ -8,6 +8,6 @@
 
 (defelem detail
   [{:keys [clustal-scheme]} children]
-  (cell-let [ex-setting (get clustal-scheme :clustal-scheme/ex-setting)]
+  (cell-let [ex-setting (get clustal-scheme :clustalscheme/exsetting)]
     (div :class "ui divided items"
        (setting-detail :setting-name "Ex Setting" :value ex-setting))))

@@ -1,109 +1,91 @@
 (ns hybsearch.api
   (:require [tailrecursion.castra :refer [defrpc]]
-            [monger.core :as mg]
-            [monger.collection :as mc])
-  (:import [com.mongodb MongoOptions ServerAddress]))
+;;            [db.init :as db-init]
+;;            [db.crud :as crud]
+            ))
 
 
 
 
 ;; -----------------------------------------------------
-;;      Playing with MongoDB Java Driver
+;;  RPC for mutating the database
 ;; -----------------------------------------------------
+(defrpc upload-loci [loci] {} nil)
 
-;; Note: MongoDB uses MMAPV1 by default so we should be able to use Monger here (since Monger uses the 2.x Java driver)
-
-;; Todo: Authentication on both server and database
-
-(let [conn (mg/connect) ;; localhost, default port (27017)
-      db   (mg/get-db conn "test")
-      coll "restaurants"]
-  (println "Query: " (mc/find-maps db coll {"address.building" "1007"}))
-  (println "Number of addresses: " (mc/count db coll))
-
-  )
-
-;; As a note, it is recommended to always store new documents with the :_id key set,
-;; since the Monger driver will have to mutate the document, which given
-;; Clojure's immutable data structures might result in behavior the MongoDB authors
-;; did not anticipate.
 
 
 ;; -----------------------------------------------------
 ;; -----------------------------------------------------
-
-
-
 
 (def seed-locus-data [
                 {:db/id -20
-                 :locus/accession-num "HM233091"
+                 :locus/accession     "HM233091"
                  :locus/binomial      "Lepus mandshuricus"}
                 {:db/id -21
-                 :locus/accession-num "AB687524"
+                 :locus/accession     "AB687524"
                  :locus/binomial      "Lepus timidus"}
                 {:db/id -22
-                 :locus/accession-num "AB687525"
+                 :locus/accession     "AB687525"
                  :locus/binomial      "Lepus timidus"}])
 
 
 (def seed-jobs-data [
                 {:db/id -1
-                 :clustal-scheme/name       "Scheme 1"
-                 :clustal-scheme/ex-setting "Example Option 1"
-                 :clustal-scheme/num-triples 900
-                 :clustal-scheme/num-processed-triples 23
+                 :clustalscheme/name       "Scheme 1"
+                 :clustalscheme/exsetting "Example Option 1"
+                 :clustalscheme/numtriples 900
+                 :clustalscheme/numproctriples 23
                  } ;; Todo: Maybe even allow people to view and manage their clustal schemes separately from analysis sets
 
                 {:db/id -80
-                 :clustal-scheme/name       "Scheme 2"
-                 :clustal-scheme/ex-setting "Example Option 2"
-                 :clustal-scheme/num-triples 900
-                 :clustal-scheme/num-processed-triples 67
+                 :clustalscheme/name       "Scheme 2"
+                 :clustalscheme/exsetting "Example Option 2"
+                 :clustalscheme/numtriples 900
+                 :clustalscheme/numproc 67
                  }
 
                 ;; This will act as the set def for one of our example analysis sets
                 {:db/id -90
-                 :set-def/loci ["HM233091", "AB687524", "AB687525"]}
+                 :setdef/loci ["HM233091", "AB687524", "AB687525"]}
 
                 ;; This will be the set def for our example jobs
                 {:db/id -1000
-                 :set-def/binomials ["Lepus timidus", "Lepus mandshuricus"]
-                 :set-def/filter -90}
+                 :setdef/binomials ["Lepus timidus", "Lepus mandshuricus"]
+                 :setdef/filter -90}
 
                 {:db/id -100
-                 :set-def/loci []}
+                 :setdef/loci []}
 
 
                 {:db/id -2
                  :job/name "Lepus 1"
-                 :job/clustal-scheme -1
-                 :job/set-def -1000
-                 :job/num-triples 1
-                 :job/num-processed-triples 1}
+                 :job/clustalscheme -1
+                 :job/setdef -1000
+                 :job/numtriples 1
+                 :job/numproc 1}
 
                 {:db/id -3
                  :job/name "Lepus 2"
-                 :job/clustal-scheme -1
-                 :job/set-def -1000
-                 :job/num-triples 1
-                 :job/num-processed-triples 1}
+                 :job/clustalscheme -1
+                 :job/setdef -1000
+                 :job/numtriples 1
+                 :job/numproc 1}
 
                 {:db/id -5
-                 :analysis-set/name "Set 1"
-                 :analysis-set/jobs [-2, -3]
-                 :analysis-set/clustal-scheme -80
-                 :analysis-set/set-def -90
-                 :analysis-set/num-triples 1
-                 :analysis-set/num-processed-triples 1}
+                 :analysisset/name "Set 1"
+                 :analysisset/jobs [-2, -3]
+                 :analysisset/clustalscheme -80
+                 :analysisset/setdef -90
+                 :analysisset/numtriples 1
+                 :analysisset/numproc 1}
 
                 {:db/id -4
-                 :analysis-set/name "Empty Set"
-                 :analysis-set/jobs []
-                 :analysis-set/clustal-scheme -1
-                 :analysis-set/set-def -100
-                 :analysis-set/num-triples 0
-                 :analysis-set/num-processed-triples 0}
+                 :analysisset/name "Empty Set"
+                 :analysisset/jobs []
+                 :analysisset/clustalscheme -1
+                 :analysisset/setdef -100
+                 :analysisset/numtriples 0
+                 :analysisset/numproc 0}
 
                 ])
 
@@ -112,9 +94,9 @@
   {:rpc/query [{:entities seed-jobs-data}]} nil)
 
 
-(defrpc create-clustal-scheme [clustal-scheme] {} nil)
-(defrpc create-analysis-set [analysis-set] {} nil)
-(defrpc upload-loci [loci] {} nil)
+(defrpc create-clustalscheme [clustalscheme] {} nil)
+(defrpc create-analysisset [analysisset] {} nil)
+
 
 
 ;; (defrpc diffs-since [version]

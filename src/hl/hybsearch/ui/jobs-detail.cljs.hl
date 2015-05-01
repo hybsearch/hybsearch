@@ -1,4 +1,4 @@
-(ns ui.jobs-detail)
+(ns ui.jobs-collection)
 
 
 ;; Todo: Play/Pause, Delete button wiring
@@ -9,8 +9,8 @@
   [{:keys [job-cell]} children]
   (let [job-name (cell= (get job-cell :job/name))
 ;;        loci (cell= (get job-cell :job/loci))
-        proc (cell= (get job-cell :job/num-processed-triples))
-        total (cell= (get job-cell :job/num-triples))
+        proc (cell= (get job-cell :job/numproc))
+        total (cell= (get job-cell :job/numtriples))
         ]
     (div :class "ui card" ;; Todo: This isn't updating after selected id changes
          (div :class "content"
@@ -23,7 +23,7 @@
                 (div :class "ui button" (i :class "trash outline icon") "Delete")
                 (div :class "ui primary button" (i :class "play icon") "Run")))))
 
-(defelem detail
+(defelem collection
   [{:keys [jobs]} children]
   (div :class "ui cards" :style "max-height 100%; overflow-y: auto; padding-top: 2px;"
        (print "Jobs Detail:" jobs)

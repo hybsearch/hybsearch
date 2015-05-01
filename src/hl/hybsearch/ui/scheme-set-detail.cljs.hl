@@ -1,13 +1,13 @@
 (ns ui.scheme-set-detail
   (:require [ui.clustal-scheme-detail :as settings]
-            [ui.jobs-detail :as jobs]
+            [ui.jobs-collection :as jobs]
             [datascript :as d]))
 
 ;; Inputs are formula cells
 (defelem detail
   [{:keys [clustal-scheme analysis-set jobs]} children]
-  (let [scheme-name (cell= (get clustal-scheme :clustal-scheme/name))
-        set-name (cell= (get analysis-set :analysis-set/name))]
+  (let [scheme-name (cell= (get clustal-scheme :clustalscheme/name))
+        set-name (cell= (get analysis-set :analysisset/name))]
 ;;     (print "Scheme-Set Detail: jobs: " jobs)
 ;;     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
 ;;     (print "Scheme-Set Detail: analysis-set: " analysis-set)
@@ -23,5 +23,5 @@
            (settings/detail :clustal-scheme clustal-scheme))
       (div :class "ui basic tab segment"        :data-tab "analysis-set" "Analysis Set Details Go Here")
       (div :class "ui basic tab segment"        :data-tab "jobs"
-           (jobs/detail :jobs jobs))
+           (jobs/collection :jobs jobs))
       (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))

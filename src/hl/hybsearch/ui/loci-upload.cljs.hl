@@ -4,7 +4,7 @@
 ;; Todo: Form validation
 
 (defelem upload-form
-  [{}] children
+  [{} children]
   (form :class "ui inverted form"
         (div :class "field"
              (label "GenBank file")
