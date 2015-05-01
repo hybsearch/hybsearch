@@ -6,6 +6,9 @@
 ;; the terms of this license.
 ;; You must not remove this notice, or any other, from this software.
 
+;; Mike's note: I don't think this file is used for anything until you try to do a
+;; production build.
+
 (ns hybsearch.core
   (:require
     [ring.adapter.jetty               :refer [run-jetty]]

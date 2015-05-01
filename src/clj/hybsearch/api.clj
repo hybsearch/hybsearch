@@ -1,16 +1,10 @@
-(ns hybsearch.api
-  (:require [tailrecursion.castra :refer [defrpc]]
-;;            [db.init :as db-init]
-;;            [db.crud :as crud]
-            ))
-
-
+(ns hybsearch.api)
 
 
 ;; -----------------------------------------------------
 ;;  RPC for mutating the database
 ;; -----------------------------------------------------
-(defrpc upload-loci [loci] {} nil)
+(defn upload-loci [loci] nil)
 
 
 
@@ -90,12 +84,13 @@
                 ])
 
 
-(defrpc get-jobs-state []
-  {:rpc/query [{:entities seed-jobs-data}]} nil)
+; Todo: Fix later
+; (defn get-jobs-state []
+;   {:rpc/query [{:entities seed-jobs-data}]})
 
 
-(defrpc create-clustalscheme [clustalscheme] {} nil)
-(defrpc create-analysisset [analysisset] {} nil)
+(defn create-clustalscheme [clustalscheme] nil)
+(defn create-analysisset [analysisset] nil)
 
 
 
