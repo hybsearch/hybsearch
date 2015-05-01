@@ -85,8 +85,8 @@
 
 
 ; Todo: Fix later
-; (defn get-jobs-state []
-;   {:rpc/query [{:entities seed-jobs-data}]})
+(defn get-jobs-state []
+  {:entities seed-jobs-data})
 
 
 (defn create-clustalscheme [clustalscheme] nil)

@@ -11,7 +11,7 @@
 
 ;;(reload-all 1000)
 
-(rpc/init)
+(rpc/start!)
 
 
 (defn show-modal [id] (-> (js/jQuery (str "#" id)) (.modal "show")))

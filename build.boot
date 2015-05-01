@@ -6,6 +6,7 @@
   :project      'hybsearch
   :version      "0.1.0-SNAPSHOT"
   :dependencies '[[http-kit "2.1.18"]
+                  [com.taoensso/sente "1.4.1"]
                   [compojure "1.3.3"]
                   [tailrecursion/boot.task   "2.2.4"]
                   [tailrecursion/hoplon      "5.10.25"]

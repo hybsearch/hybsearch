@@ -1,10 +1,12 @@
 (ns hybsearch.rpc
   (:require-macros
-    [tailrecursion.javelin :refer [defc defc= set-cell!=]])
+    [tailrecursion.javelin :refer [defc defc= set-cell!=]]
+    [cljs.core.async.macros :as asyncm :refer (go go-loop)])
   (:require
    [tailrecursion.javelin :refer [cell-map]]
-   [tailrecursion.castra :refer [mkremote]]
-   [datascript :as d]))
+   [datascript :as d]
+   [cljs.core.async :as async :refer (<! >! put! chan)]
+   [taoensso.sente :as sente :refer (cb-success?)]))
 
 (enable-console-print!)
 
@@ -70,10 +72,6 @@
 (defc= jobs-entities (:entities jobs-state))
 (defc= jobs-db (:db-after (d/with (d/empty-db jobs-db-schema) jobs-entities)))
 
-;; Todo: mkremote methods for getting specific locus state
-
-(def get-jobs-state (mkremote 'hybsearch.api/get-jobs-state jobs-state jobs-error jobs-loading))
-
 
 ;; Todo: wish there was a better way to query than just by name (i.e. what if no name?)
 
@@ -105,12 +103,91 @@
                                              (-> (get selected-analysis-set :analysisset/setdef) (get :db/id))))))))
 
 
-(defn jobs-state-poll [interval]
-  (get-jobs-state)
-  (js/setTimeout #(jobs-state-poll interval) interval))
+(let [{:keys [chsk ch-recv send-fn state]}
+      (sente/make-channel-socket! "/chsk"
+       {:type :auto ; auto falls back on ajax if necessary
+       })]
+  (def chsk       chsk)
+  (def ch-chsk    ch-recv) ; ChannelSocket's receive channel
+  (def chsk-send! send-fn) ; ChannelSocket's send API fn
+  (def chsk-state state)   ; Watchable, read-only atom
+  )
+
+
+
+
+
+
+;; ----------------------
+;; Recieve Message Routing
+;; (recv messages are always wrapped with :chsk/recv event,
+;; so we unwrap and forward to these methods)
+;; ----------------------
+(defmulti recv-msg-handler :id)
+
+(defmethod recv-msg-handler :default
+  [{:as ev-msg :keys [event]}]
+  (print "Unhandled recv event: " event))
+
+(defmethod recv-msg-handler :rpc/recv-jobs-state
+  [{:as ev-msg :keys [id ?data event]}]
+  (reset! jobs-state ?data))
+
+  ; (let [[?jobs-state] ?data]
+  ;   (print "In handler.")
+  ;   (print "Jobs state: " ?jobs-state)))
+
+
+
+
+;; ----------------------
+;; Primary Channel Socket Routing
+;; ----------------------
+
+(defmulti event-msg-handler :id) ;; Dispatch on the event id
+
+;; event-msg-handler* just calls event-msg-handler, but also logs the event
+(defn event-msg-handler* [{:as ev-msg :keys [id ?data event]}]
+  (print "Event: " event)
+  (event-msg-handler ev-msg))
+
+(defmethod event-msg-handler :default
+  [{:as ev-msg :keys [id ?data event]}]
+  (print "Unhandled event: " event))
+
+(defmethod event-msg-handler :chsk/state
+  [{:as ev-msg :keys [?data]}]
+  (if (= (:first-open? ?data) true)
+    (do
+      (print "Channel socket successfully established! Sending data request message. ")
+      (chsk-send! [:rpc/req-push-everywhere {:dataz "dataz"}]))
+    (print "Channel socket state change: " ?data)))
+
+(defmethod event-msg-handler :chsk/recv
+  [{:as ev-msg :keys [?data]}]
+  (recv-msg-handler {:id (first ?data)
+                     :?data (second ?data)
+                     :event ?data}))
+
+(defmethod event-msg-handler :chsk/handshake
+  [{:as ev-msg :keys [?data]}]
+  (let [[?uid ?csrf-token ?handshake-data] ?data]
+    (print "Handshake: " ?data)))
+
+
+
+
+(def router_ (atom nil))
+
+(defn  stop-router! [] (when-let [stop-f @router_] (stop-f)))
+(defn start-router! []
+  (stop-router!)
+  (reset! router_ (sente/start-chsk-router! ch-chsk event-msg-handler*)))
 
 ;; Init
-(defn init [] (jobs-state-poll 3000))
+;; Todo: Start router
+(defn start! [] (start-router!)
+  )
 
 
 
