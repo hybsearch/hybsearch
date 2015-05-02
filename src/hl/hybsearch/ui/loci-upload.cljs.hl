@@ -5,10 +5,12 @@
 
 (defelem upload-form
   [{} children]
-  (form :class "ui inverted form"
+  (form :class "ui inverted form" :id "loci-upload-form"
+        :action "/loci/upload"    :method "post"
+        :target "_blank"          :enctype "multipart/form-data"
         (div :class "field"
-             (label "GenBank file")
-             (input :type "file" :name "genbank-file" :placeholder "File Path"))))
+             (label "GenBank File")
+             (input :type "file" :name "file"))))
 
 
 (defelem upload-modal
@@ -21,4 +23,4 @@
           (div :class "actions"
                (div :class "two fluid ui inverted buttons"
                     (div :class "ui red basic cancel inverted button" "Cancel")
-                    (div :class "ui green ok basic inverted button" "Upload")))))
+                    (div :class "ui green ok basic inverted button"   "Upload")))))

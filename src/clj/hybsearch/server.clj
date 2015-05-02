@@ -1,24 +1,25 @@
 (ns hybsearch.server
-  (:require [org.httpkit.server      :as hk     ]
+  (:require [org.httpkit.server :as hk]
+            [clojure.java.io :as io]
             [taoensso.sente :as sente]
             [taoensso.sente.server-adapters.http-kit :refer [sente-web-server-adapter]]
-            [ring.middleware.file    :as file   ]
-            [ring.middleware.file-info    :as file-info   ]
+            [ring.middleware.file :as file]
+            [ring.middleware.file-info :as file-info]
             [ring.middleware.keyword-params :as keyword-params]
+            [ring.middleware.multipart-params :as multipart-params]
             [ring.middleware.params :as params]
             [ring.middleware.session :as session]
-            [compojure.core          :refer :all]
-            [compojure.route         :as route  ]
-            [ring.util.response      :as resp   ]
-            [hybsearch.api           :as api    ]
-            [tailrecursion.cljson    :refer [clj->cljson cljson->clj]]))
+            [compojure.core :refer :all]
+            [compojure.route :as route]
+            [ring.util.response :as resp]
+            [hybsearch.api :as api]
+            [tailrecursion.cljson :refer [clj->cljson cljson->clj]]))
 
 ;; This creates a Ring handler for the routes.
 ;; Todo: for some reason this part of the server isn't dynamically reloading during development.
 
 
 (defonce server (atom nil))
-
 
 
 
@@ -72,8 +73,24 @@
   (when ?reply-fn
     (?reply-fn (api/get-jobs-state))))
 
+;; -----------------------
+;; Other Routing Functions
+;; -----------------------
 
-
+(defn upload-genbank-file
+  [{tempfile :tempfile filename :filename :as file}]
+  ;;(io/copy (:tempfile file) (io/file "resources" "uploads" (:filename file))) ;; TODO: Currently, resources/uploads must exist for the upload to succeed. Figure out how to create it on demand.
+  (println "FILE: " file)
+  (println "TEMP: " tempfile)
+  (println "NAME: " filename)
+  (str "<!DOCTYPE html>
+        <html lang=\"en\">
+        <head><meta charset=\"UTF-8\" />
+        <title>Upload Status</title>
+        </head>
+        <body>
+        <h1>Your upload of " filename " was successful!</h1>
+        <p>Loci have been added to the database.</p></body></html>"))
 
 
 ;; -----------------------
@@ -82,7 +99,9 @@
 (defroutes all-routes
   (GET "/" [] (resp/file-response "index.html" {:root "public"}))
   (GET  "/chsk" req (ring-ajax-get-or-ws-handshake req))
-  (POST "/chsk" req (ring-ajax-post                req))
+  (POST "/loci/upload" {{file :file} :params :as params}
+        (upload-genbank-file file))
+  (POST "/chsk" req (ring-ajax-post req))
   (route/resources "/")
   (route/not-found "<h1>404.</h1>"))
 
@@ -96,13 +115,16 @@
 
 ;; Session setup
 ;;(defn make-session [])
+(defn middleware [public-path]
+  (-> all-routes
+      (keyword-params/wrap-keyword-params)
+      (multipart-params/wrap-multipart-params)
+      (params/wrap-params)
+      (file/wrap-file public-path)
+      (file-info/wrap-file-info)))
 
-
-(defn goto [port public-path]
+(defn start-server [port public-path]
   (start-router!)
-  (swap! server #(or % (hk/run-server (-> all-routes
-                                          (keyword-params/wrap-keyword-params)
-                                          (params/wrap-params)
-                                          (file/wrap-file public-path)
-                                          (file-info/wrap-file-info))
-                                      {:port port :join? false}))))
+  (swap! server #(or % (hk/run-server
+                         (middleware public-path)
+                         {:port port :join? false}))))

@@ -30,15 +30,15 @@
 (html
   (head)
   (body
-     (scheme-create/create-modal :id "create-scheme-modal")
-     (set-create/create-modal :id "create-set-modal")
-     (loci-upload/upload-modal :id "upload-loci-modal")
+     (scheme-create/create-modal :id "scheme-create-modal")
+     (set-create/create-modal :id "set-create-modal")
+     (loci-upload/upload-modal :id "loci-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "create-scheme-modal") (i :class "setting icon") "New Clustal Scheme"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "create-set-modal") (i :class "cube icon") "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "upload-loci-modal") (i :class "cloud upload icon") "Upload Loci"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "set-create-modal") (i :class "cube icon") "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "loci-upload-modal") (i :class "cloud upload icon") "Upload Loci"))
           (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Loci")))
      (div :class "ui grid"
           (div :class "four wide column"
@@ -62,11 +62,17 @@
 
 
 ;; Initialize JS based elements
-(-> (js/jQuery ".ui.modal") .modal)
+(-> (js/jQuery ".ui.modal"))
 (-> (js/jQuery ".menu .item") .tab)
 (-> (js/jQuery ".progress") .progress)
 
-;; Open a websocket for recieving state:
+;; Loci Upload Modal Init
+(-> (js/jQuery "#loci-upload-modal") (.modal
+                                       (clj->js
+                                         {
+                                          :closable false
+                                          :onApprove (fn [] (.submit (js/jQuery "#loci-upload-form")))
+                                          })))
 
 
 ;; Lorem ipsum for mockups:

@@ -10,7 +10,7 @@
 
 (enable-console-print!)
 
-(def jobs-db-schema {
+(defonce jobs-db-schema {
 
              :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
              :clustalscheme/exsetting            {:db/cardinality :db.cardinality/one}
@@ -44,7 +44,7 @@
              })
 
 
-(def loci-db-schema {
+(defonce loci-db-schema {
              :locus/accession                      {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :locus/binomial                       {:db/cardinality :db.cardinality/one}
 

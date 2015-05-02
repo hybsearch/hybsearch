@@ -4,7 +4,10 @@
 ;; -----------------------------------------------------
 ;;  RPC for mutating the database
 ;; -----------------------------------------------------
-(defn upload-loci [loci] nil)
+
+;; Give this bad boy a gb-file. It'll read it.
+(defn upload-loci [gb-file]
+  )
 
 
 
@@ -28,7 +31,7 @@
                  :clustalscheme/name       "Scheme 1"
                  :clustalscheme/exsetting "Example Option 1"
                  :clustalscheme/numtriples 900
-                 :clustalscheme/numproctriples 23
+                 :clustalscheme/numproc 23
                  } ;; Todo: Maybe even allow people to view and manage their clustal schemes separately from analysis sets
 
                 {:db/id -80
