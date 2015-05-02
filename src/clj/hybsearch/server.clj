@@ -90,7 +90,7 @@
         </head>
         <body>
         <h1>Your upload of " filename " was successful!</h1>
-        <p>Loci have been added to the database.</p></body></html>"))
+        <p>Sequences have been added to the database.</p></body></html>"))
 
 
 ;; -----------------------
@@ -99,7 +99,7 @@
 (defroutes all-routes
   (GET "/" [] (resp/file-response "index.html" {:root "public"}))
   (GET  "/chsk" req (ring-ajax-get-or-ws-handshake req))
-  (POST "/loci/upload" {{file :file} :params :as params}
+  (POST "/sequences/upload" {{file :file} :params :as params}
         (upload-genbank-file file))
   (POST "/chsk" req (ring-ajax-post req))
   (route/resources "/")

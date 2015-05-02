@@ -4,7 +4,7 @@
     [tailrecursion.hoplon.reload :refer [reload-all]]
     [ui.scheme-set-list :as scheme-set-list]
     [ui.scheme-set-detail :as scheme-set-detail]
-    [ui.loci-upload :as loci-upload]
+    [ui.sequences-upload :as sequences-upload]
     [ui.analysis-set-create :as set-create]
     [ui.clustal-scheme-create :as scheme-create]
    ))
@@ -32,14 +32,14 @@
   (body
      (scheme-create/create-modal :id "scheme-create-modal")
      (set-create/create-modal :id "set-create-modal")
-     (loci-upload/upload-modal :id "loci-upload-modal")
+     (sequences-upload/upload-modal :id "sequences-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "set-create-modal") (i :class "cube icon") "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "loci-upload-modal") (i :class "cloud upload icon") "Upload Loci"))
-          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Loci")))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload sequences"))
+          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore sequences")))
      (div :class "ui grid"
           (div :class "four wide column"
                (div :class "ui horizontal segment" :style "height: 90vh;"
@@ -66,12 +66,12 @@
 (-> (js/jQuery ".menu .item") .tab)
 (-> (js/jQuery ".progress") .progress)
 
-;; Loci Upload Modal Init
-(-> (js/jQuery "#loci-upload-modal") (.modal
+;; sequences Upload Modal Init
+(-> (js/jQuery "#sequences-upload-modal") (.modal
                                        (clj->js
                                          {
                                           :closable false
-                                          :onApprove (fn [] (.submit (js/jQuery "#loci-upload-form")))
+                                          :onApprove (fn [] (.submit (js/jQuery "#sequences-upload-form")))
                                           })))
 
 

@@ -3,7 +3,7 @@
 ;; ------------------------
 ;;  Collection Names
 ;; ------------------------
-(def ^:const loci "loci")
+(def ^:const sequences "sequences")
 (def ^:const clustal-schemes "clustalschemes")
 (def ^:const analysis-sets "analysissets")
 (def ^:const jobs "jobs")

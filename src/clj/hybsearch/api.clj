@@ -6,7 +6,7 @@
 ;; -----------------------------------------------------
 
 ;; Give this bad boy a gb-file. It'll read it.
-(defn upload-loci [gb-file]
+(defn upload-sequences [gb-file]
   )
 
 
@@ -14,16 +14,16 @@
 ;; -----------------------------------------------------
 ;; -----------------------------------------------------
 
-(def seed-locus-data [
+(def seed-sequence-data [
                 {:db/id -20
-                 :locus/accession     "HM233091"
-                 :locus/binomial      "Lepus mandshuricus"}
+                 :sequence/accession     "HM233091"
+                 :sequence/binomial      "Lepus mandshuricus"}
                 {:db/id -21
-                 :locus/accession     "AB687524"
-                 :locus/binomial      "Lepus timidus"}
+                 :sequence/accession     "AB687524"
+                 :sequence/binomial      "Lepus timidus"}
                 {:db/id -22
-                 :locus/accession     "AB687525"
-                 :locus/binomial      "Lepus timidus"}])
+                 :sequence/accession     "AB687525"
+                 :sequence/binomial      "Lepus timidus"}])
 
 
 (def seed-jobs-data [
@@ -43,7 +43,7 @@
 
                 ;; This will act as the set def for one of our example analysis sets
                 {:db/id -90
-                 :setdef/loci ["HM233091", "AB687524", "AB687525"]}
+                 :setdef/sequences ["HM233091", "AB687524", "AB687525"]}
 
                 ;; This will be the set def for our example jobs
                 {:db/id -1000
@@ -51,7 +51,7 @@
                  :setdef/filter -90}
 
                 {:db/id -100
-                 :setdef/loci []}
+                 :setdef/sequences []}
 
 
                 {:db/id -2

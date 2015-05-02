@@ -17,5 +17,5 @@
   (let [conn (mg/connect)
         db (mg/get-db conn "hybsearch")] ;; Will create database "hybsearch" if it does not exist.
     ;; Todo: Does creating an index create a collection?
-    (mc/ensure-index db "loci" (array-map :accession 1) {:unique true})
+    (mc/ensure-index db "sequences" (array-map :accession 1) {:unique true})
     db))

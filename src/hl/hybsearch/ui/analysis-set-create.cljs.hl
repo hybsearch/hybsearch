@@ -5,13 +5,13 @@
   [{} children]
   (form :class "ui inverted form" ;; Todo: Create a UI that gives you options for the definition, and a button to add each item.
         (div :class "ui info message"
-             (div :class "header" "Please define the loci you wish to focus on using the following formats. "
-                                  "Mixing and matching is ok, but if a locus or species doesn't exist on the "
+             (div :class "header" "Please define the sequences you wish to focus on using the following formats. "
+                                  "Mixing and matching is ok, but if a sequence or species doesn't exist on the "
                                   "server, you will be asked to remove it. Each item should be on its own line.")
              (ul :class "list"
-                 (li "Use " (code "#accession_number") " to include a specific locus.")
+                 (li "Use " (code "#accession_number") " to include a specific sequence.")
                  (li "For example: " (code "#HM233091")))
-                 (li "Use " (code "@binomial name") " to include all loci for an entire species.
+                 (li "Use " (code "@binomial name") " to include all sequences for an entire species.
                                                     The two components of the name should be space separated.")
                  (li "For example: " (code "@Lepus mandshuricus")))
         (div :class "field"

@@ -14,7 +14,7 @@
 
              :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
              :clustalscheme/exsetting            {:db/cardinality :db.cardinality/one}
-             :clustalscheme/numtriples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all loci
+             :clustalscheme/numtriples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all sequences
              :clustalscheme/numproc              {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
@@ -32,9 +32,9 @@
 
              ;; Todo: how to match up relational ref ids when downloading data from server?
 
-             ;; all triples for the set = triples(loci for each binomial UNION loci list) INTERSECT analysisset triples
+             ;; all triples for the set = triples(sequences for each binomial UNION sequences list) INTERSECT analysisset triples
              :setdef/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
-             :setdef/loci                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
+             :setdef/sequences                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
              ;; Filter is ptional. Filter further restricts the set definition.
              ;; Think of the filter as another set-def you must itersect the other parts
              ;; of this definition with to fully resolve this set definition.
@@ -44,30 +44,30 @@
              })
 
 
-(defonce loci-db-schema {
-             :locus/accession                      {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-             :locus/binomial                       {:db/cardinality :db.cardinality/one}
+(defonce sequences-db-schema {
+             :sequence/accession                      {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :sequence/binomial                       {:db/cardinality :db.cardinality/one}
 
-             ;; Todo: Eventually allow more locus information on client.
+             ;; Todo: Eventually allow more sequence information on client.
              ;; There is also more species information than the binomial available in the GenBank files, i.e. the ncbi_taxid
              ;; Will probably also need to enforce uniqueness on the clustal-schemes
             })
 
 
-;; We do two client-side databases so locus data (of which there will be a lot) doesn't have to be
-;; pushed repeatedly in its entirety. (We can request entities as needed for loci, because we'll
+;; We do two client-side databases so sequence data (of which there will be a lot) doesn't have to be
+;; pushed repeatedly in its entirety. (We can request entities as needed for sequences, because we'll
 ;; know from the job data or a dynamic form which ones we'll need). Job data is entirely an unknown,
 ;; but is small, so we can just poll for that.
 
-(defonce loci-db (d/create-conn loci-db-schema))
+(defonce sequences-db (d/create-conn sequences-db-schema))
 
 (defc jobs-state {})
 (defc jobs-error nil)
 (defc jobs-loading [])
 
-(defc loci-state {})
-(defc loci-error nil)
-(defc loci-loading [])
+(defc sequences-state {})
+(defc sequences-error nil)
+(defc sequences-loading [])
 
 (defc= jobs-entities (:entities jobs-state))
 (defc= jobs-db (:db-after (d/with (d/empty-db jobs-db-schema) jobs-entities)))

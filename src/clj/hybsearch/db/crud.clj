@@ -37,23 +37,23 @@
 
 
 ;; ------------------------
-;;  Loci
+;;  Sequences
 ;; ------------------------
 
-;; Loci are unique by accession number and immutable once created.
+;; Sequences are unique by accession number and immutable once created.
 ;; We do not yet allow deletion (this has to sync to deletions
 ;; on a lot of associated collections).
 
-;; This is a batch-write of loci objects.
-;; The loci should be an array of Clojure maps,
+;; This is a batch-write of sequence objects.
+;; The sequences should be an array of Clojure maps,
 ;; they will be converted to DB Objects inside this
 ;; method.
 
 ;; Returns write result
-(defn create-loci [db loci]
-  (mc/insert-batch db coll/loci loci)) ;; Insert
+(defn create-sequences [db sequences]
+  (mc/insert-batch db coll/sequences sequences)) ;; Insert
 
-(defn locus-by-accession [db accession])
+(defn sequence-by-accession [db accession])
 
 
 ;; ------------------------
