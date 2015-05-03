@@ -20,7 +20,8 @@
                   ;; compiler that boot was using also did this. I have a hunch that the default was 2814-4, but have not confirmed.
                   [datascript "0.10.0"]
                   [org.mongodb/bson "3.0.0"]
-                  [com.novemberain/monger "2.1.0"]]
+                  [com.novemberain/monger "2.1.0"]
+                  [org.biojava/biojava-core "4.0.0"]]
   :out-path     "resources/public"
   :src-paths    #{"src/hl" "src/cljs" "src/clj"})
 

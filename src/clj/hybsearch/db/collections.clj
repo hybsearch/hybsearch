@@ -1,4 +1,4 @@
-(ns db.collection-names)
+(ns hybsearch.db.collections)
 
 ;; ------------------------
 ;;  Collection Names

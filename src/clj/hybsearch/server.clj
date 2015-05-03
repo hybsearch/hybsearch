@@ -22,7 +22,7 @@
 (defonce server (atom nil))
 
 
-
+;; Channel socket definitions.
 (let [{:keys [ch-recv send-fn ajax-post-fn ajax-get-or-ws-handshake-fn
               connected-uids]}
       (sente/make-channel-socket! sente-web-server-adapter {})]
@@ -78,11 +78,12 @@
 ;; -----------------------
 
 (defn upload-genbank-file
-  [{tempfile :tempfile filename :filename :as file}]
+  [{tempfile :tempfile filename :filename :as fileinfo}]
   ;;(io/copy (:tempfile file) (io/file "resources" "uploads" (:filename file))) ;; TODO: Currently, resources/uploads must exist for the upload to succeed. Figure out how to create it on demand.
-  (println "FILE: " file)
+  (println "FILE: " fileinfo)
   (println "TEMP: " tempfile)
   (println "NAME: " filename)
+  (api/upload-sequences tempfile)
   (str "<!DOCTYPE html>
         <html lang=\"en\">
         <head><meta charset=\"UTF-8\" />

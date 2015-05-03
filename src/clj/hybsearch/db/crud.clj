@@ -1,12 +1,11 @@
-(ns db.crud
+(ns hybsearch.db.crud
   (:require [monger.core :as mg]
             [monger.collection :as mc]
-            [db.collection-names :as coll]
-            [validateur.validation :as v])
+            [hybsearch.db.collections :as coll])
   (:import org.bson.types.ObjectId))
 
 
-;; Note: MongoDB uses MMAPV1 by default so we can use Monger here (since Monger uses the 2.x Java driver)
+;; Note: MongoDB uses MMAPV1 by default so we can use Monger here (Can't use WiredTiger since Monger uses the 2.x Java driver)
 
 
 ; (let [conn (mg/connect) ;; localhost, default port (27017)
@@ -53,42 +52,54 @@
 (defn create-sequences [db sequences]
   (mc/insert-batch db coll/sequences sequences)) ;; Insert
 
-(defn sequence-by-accession [db accession])
+(defn sequence-by-accession [db accession]
+  (mc/find-one-as-map db coll/sequences {:accession accession}))
+
+(defn sequence-accessions [db]
+  (distinct db coll/sequences :accession))
 
 
 ;; ------------------------
 ;;  Clustal Schemes
 ;; ------------------------
 
-(defn create-clustal-scheme [db scheme])
+(defn create-clustal-scheme [db scheme]
+  (mc/insert db coll/clustal-schemes scheme))
 
 ;; ------------------------
 ;;  Set Defs
 ;; ------------------------
 
-(defn create-set-def [db set-def])
+(defn create-set-def [db set-def]
+  (mc/insert db coll/set-defs set-def))
 
 ;; ------------------------
 ;;  Analysis Sets
 ;; ------------------------
 
-(defn create-analysis-set [db analysis-set])
+;; API Todo: Remember set-def, handle the creation of it outside of CRUD
+(defn create-analysis-set [db analysis-set]
+  (mc/insert db coll/analysis-sets analysis-set))
 
 ;; ------------------------
 ;;  Jobs
 ;; ------------------------
 
-(defn create-job [db job])
+;; API Todo: Need to create the set-def separately, and put ref to proper analysis set's set-def in the job map.
+(defn create-job [db job]
+  (mc/insert db coll/jobs job))
 
 ;; ------------------------
 ;;  Triples
 ;; ------------------------
 
-(defn create-triple [db triple])
+(defn create-triple [db triple]
+  (mc/insert db coll/triples triple))
 
 ;; ------------------------
 ;;  Trees
 ;; ------------------------
 
-(defn create-tree [db tree])
+(defn create-tree [db tree]
+  (mc/insert db coll/trees tree))
 

@@ -1,4 +1,4 @@
-(ns db.init
+(ns hybsearch.db.init
   (:require [monger.core :as mg]
             [monger.collection :as mc]))
 
@@ -13,9 +13,10 @@
 ;;      If not index, create index,
 ;;      etc.
 
-(defn init-db
+(defn init-db []
   (let [conn (mg/connect)
         db (mg/get-db conn "hybsearch")] ;; Will create database "hybsearch" if it does not exist.
     ;; Todo: Does creating an index create a collection?
     (mc/ensure-index db "sequences" (array-map :accession 1) {:unique true})
+    (println "DB INIT: " db)
     db))

@@ -1,13 +1,58 @@
-(ns hybsearch.api)
+(ns hybsearch.api
+  (:require [clojure.java.io :as io]
+            [clojure.string :as s]
+            [hybsearch.db.crud :as crud]
+            [hybsearch.db.init :as db-init])
+  (:import [org.biojava.nbio.core.sequence.io GenbankReaderHelper
+                                               GenbankSequenceParser
+                                               DNASequenceCreator]
+            [org.biojava.nbio.core.sequence.compound DNACompoundSet])
+  )
 
+;; Note: In the version of BioJava that we currently use (4.0.0), the GenbankReaderHelper
+;; only reads the first record out of a given file. The code to read multiple records
+;; has already been commited to the BioJava GitHub repo, but that hasn't made it into the
+;; latest Jar available on Maven. Watch the codebase for a future release, then rewrite the
+;; internals of the upload-sequences function when you update the version of BioJava
+;; used to compile this application, if that update includes the multiple-record code.
+;; See the commit here: https://github.com/stefanharjes/biojava/commit/c860f193f4bb76f34f0bcaf7cbac7c0d98d04883
 
 ;; -----------------------------------------------------
 ;;  RPC for mutating the database
 ;; -----------------------------------------------------
 
-;; Give this bad boy a gb-file. It'll read it.
+(defonce db (atom nil))
+
+(defn if-not-db-init []
+  (if (not @db) (reset! db (db-init/init-db))))
+
+;; Reads the sequences out of a GenBank file and formats them for entry into the database.
 (defn upload-sequences [gb-file]
-  )
+    (if-not-db-init)
+  ;; Todo: This is probably inefficient in terms of memory.
+  ;; See the iota libray (lib for fast mapreduce on text files)
+  ;; for a brief expl. of why. Might want to switch to that as
+  ;; a later optimization.
+  ;;
+
+  ;; Todo: This currently expects genbank records to be
+  ;; separated by //\n, and then another blank line.
+  ;; Make it more robust so that it can separate on //\n.
+  ;; (we currently do it this way because we get a degenerate
+  ;; record at the end if we use //\n, since the file ends with a newline).
+  (let [sequences
+        (let [filestr (slurp gb-file)]
+            (map
+              (fn [entry] {:accession ((re-find #"ACCESSION\s*(\S*)" entry) 1)
+                           :binomial ((re-find #"ORGANISM\s*(.*)" entry) 1)
+                           :definition ((re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
+                           :sequence (s/replace
+                                       ((re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
+                                       #"[\d\s\n\/]"
+                                       "")})
+              (s/split filestr #"//\n")))]
+        (crud/create-sequences @db sequences)))
+
 
 
 

@@ -38,8 +38,8 @@
           (div :class "header item" (i :class "lab icon") "HybSearch")
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "set-create-modal") (i :class "cube icon") "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload sequences"))
-          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore sequences")))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload Sequences"))
+          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Sequences")))
      (div :class "ui grid"
           (div :class "four wide column"
                (div :class "ui horizontal segment" :style "height: 90vh;"
