@@ -11,9 +11,10 @@
         (div :class "ui info message"
              (div :class "header" "Please define the sequences you wish to focus on using the following formats. "
                                   "Mixing and matching is ok, but if a sequence or species doesn't exist on the "
-                                  "server, you will be asked to remove it (Todo: Actually notify of this, for now "
+                                  "server, it will be removed from the set (Todo: Actually notify of this, for now "
                                   "only accession nums are filtered server-side. Also add +all option for capturing "
-                                  "all sequences up to the filter). Each item should be on its own line. "
+                                  "all sequences up to the filter (filters are implicit on jobs when you choose their analysis set, "
+                                  "but are not important for this form)). Each item should be on its own line. "
                                   "You should also make sure you provide enough sequences (at least 3 between 2 species) to perform analysis,"
                                   "or an error could occur when running a job.")
              (ul :class "list"

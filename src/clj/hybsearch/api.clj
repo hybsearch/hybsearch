@@ -5,13 +5,6 @@
             [hybsearch.db.init :as db-init])
   (:import  [org.bson.types ObjectId]))
 
-;; Note: In the version of BioJava that we currently use (4.0.0), the GenbankReaderHelper
-;; only reads the first record out of a given file. The code to read multiple records
-;; has already been commited to the BioJava GitHub repo, but that hasn't made it into the
-;; latest Jar available on Maven. Watch the codebase for a future release, then rewrite the
-;; internals of the upload-sequences function when you update the version of BioJava
-;; used to compile this application, if that update includes the multiple-record code.
-;; See the commit here: https://github.com/stefanharjes/biojava/commit/c860f193f4bb76f34f0bcaf7cbac7c0d98d04883
 
 ;; -----------------------------------------------------
 ;;  RPC for mutating the database
@@ -97,7 +90,34 @@
 ;; Clustal Schemes
 ;; ----------
 
+(defn wrap-default [datum dv]
+  (if (= datum "") dv datum))
 
+(defn create-clustal-scheme [data]
+  (let [scheme {
+                :_id (ObjectId.)
+                :name (:name data)
+                :sequencetype   (wrap-default (:sequencetype  data)  "DNA")
+                :alignmenttype  (wrap-default (:alignmenttype data)  "slow")
+                :pwdnamatrix    (wrap-default (:pwdnamatrix   data)  "iub")
+                :pwgapopen      (wrap-default (:pwgapopen     data)  "10")
+                :pwgapext       (wrap-default (:pwgapext      data)  "0.10")
+                :ktuple         (wrap-default (:ktuple        data)  "1")
+                :window         (wrap-default (:window        data)  "5")
+                :topdiags       (wrap-default (:topdiags      data)  "5")
+                :pairgap        (wrap-default (:pairgap       data)  "3")
+                :dnamatrix      (wrap-default (:dnamatrix     data)  "iub")
+                :gapopen        (wrap-default (:gapopen       data)  "10")
+                :gapext         (wrap-default (:gapext        data)  "0.20")
+                :gapdist        (wrap-default (:gapdist       data)  "5")
+                :endgaps        (wrap-default (:endgaps       data)  "false") ;; true/false
+                :iteration      (wrap-default (:iteration     data)  "none")
+                :numiter        (wrap-default (:numiter       data)  "1")
+                :clustering     (wrap-default (:clustering    data)  "NJ")
+                :kimura         (wrap-default (:kimura        data)  "false") ;; true/false
+                }]
+    (if (= (:name scheme) "") (throw (Exception. "You must provide a name for your clustal scheme.")))
+    (crud/create-clustal-scheme @(db) scheme)))
 
 
 ;; -----------------------------------------------------
@@ -186,20 +206,12 @@
     (println "clustal-schemes: " (pr-str clustal-schemes))
     (println "analysis-sets: " (pr-str analysis-sets))
     (println "jobs: " (pr-str jobs))
-    (println "set-defs: " (pr-str set-defs))))
+    (println "set-defs: " (pr-str set-defs))
+
+    ))
 
 (defn get-jobs-state []
   (datascript-jobs-state)
   {:entities seed-jobs-data})
 
-
-(defn create-clustalscheme [clustalscheme] nil)
-(defn create-analysisset [analysisset] nil)
-
-
-
-;; (defrpc diffs-since [version]
-;;   {:rpc/query [{:diffs seed-data
-;;                 :source-version version
-;;                 :dest-version 1}]} nil)
 

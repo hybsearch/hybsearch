@@ -9,41 +9,148 @@
         :target "_blank"               :enctype "application/x-www-form-urlencoded"
         (div :class "ui info message"
              (div :class "header" "Set up your new Clustal scheme using the settings below. "
-                                  "If the scheme's Clustal settings equal those of an existing "
-                                  "scheme, you will not be allowed to create it. All schemes "
-                                  "must be unique."))
-        (div :class "ui inverted dividing header" "Meta:")
+                                  "Note that these settings are only for DNA sequences at present. "
+                                  "See http://www.clustal.org/download/clustalw_help.txt for more info on these settings."))
+
+        ;; --------------
+        ;; General
+        ;; --------------
+
+        (div :class "ui inverted dividing header" "General:")
+
+        (div :class "two fields"
+          (div :class "required field"
+               (label "Scheme Name:")
+               (input :type "text" :name "name" :placeholder "Scheme name"))
+
+          (div :class "field" ;; TODO: Disable
+               (label "Sequence Type:")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "sequencetype")
+                (div :class "default text" "Use Default (DNA)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "DNA" "DNA (Default)")))))
+
+        ;; --------------
+        ;; Pairwise Sequence Alignment
+        ;; --------------
+
+        (div :class "ui inverted dividing header" "Pairwise Alignment:")
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Alignment Type:")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "alignmenttype")
+                (div :class "default text" "Use Default (Slow)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "slow" "Slow (Default)")
+                     (div :class "item" :data-value "fast" "Fast"))))
+
+          (div :class "field"
+               (label "DNA Weight Matrix (Slow Only):")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "pwdnamatrix")
+                (div :class "default text" "Use Default (IUB)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "iub" "IUB (Default)")
+                     (div :class "item" :data-value "clustalw" "ClustalW")))))
+        (div :class "two fields"
+          (div :class "field"
+               (label "Gap Open (Slow Only):")
+               (input :type "number" :name "pwgapopen" :placeholder "Use Default (10)"))
+
+          (div :class "field"
+               (label "Gap Extension (Slow Only):")
+               (input :type "number" :name "pwgapext" :placeholder "Use Default (0.10)")))
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "KTUP (Word Size, Fast Only):")
+               (input :type "number" :name "ktuple" :placeholder "Use Default (1)"))
+
+          (div :class "field"
+               (label "Window Length (Fast Only):")
+               (input :type "number" :name "window" :placeholder "Use Default (5)")))
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Top Diags (Fast Only):")
+               (input :type "number" :name "topdiags" :placeholder "Use Default (5)"))
+
+          (div :class "field"
+               (label "Pair Gap (Fast Only):")
+               (input :type "number" :name "pairgap" :placeholder "Use Default (3)")))
+
+        ;; --------------
+        ;; Multiple Sequence Alignment
+        ;; --------------
+        (div :class "ui inverted dividing header" "Multiple Sequence Alignment:")
+
+
         (div :class "field"
-             (label "Scheme Name:")
-             (input :type "text" :name "name"))
-        (div :class "ui inverted dividing header" "Clustal Settings:")
-        (div :class "field"
-             (label "ktuple")
-             (input :type "text" :name "ktuple" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "topdiags")
-             (input :type "text" :name "topdiags" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "window")
-             (input :type "text" :name "window" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "pairgap")
-             (input :type "text" :name "pairgap" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "fixedgap")
-             (input :type "text" :name "fixedgap" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "floatgap")
-             (input :type "text" :name "floatgap" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "matrix")
-             (input :type "text" :name "matrix" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "type")
-             (input :type "text" :name "type" :placeholder "Use Default (default)"))
-        (div :class "field"
-             (label "transmit")
-             (input :type "text" :name "transmit" :placeholder "Use Default (default)"))))
+             (label "DNA Weight Matrix:")
+             (div :class "ui selection dropdown" (input :type "hidden" :name "dnamatrix")
+              (div :class "default text" "Use Default (IUB)") (i :class "dropdown icon")
+              (div :class "menu"
+                   (div :class "item" :data-value "iub" "IUB (Default)")
+                   (div :class "item" :data-value "clustalw" "ClustalW"))))
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Gap Open:")
+               (input :type "number" :name "gapopen" :placeholder "Use Default (10)"))
+
+          (div :class "field"
+               (label "Gap Extension:")
+               (input :type "number" :name "gapext" :placeholder "Use Default (0.20)")))
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Gap Distances:")
+               (input :type "number" :name "gapdist" :placeholder "Use Default (5)"))
+
+          (div :class "field"
+               (label "No End Gaps:")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "endgaps")
+                (div :class "default text" "Use Default (No)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "false" "No (Default)")
+                     (div :class "item" :data-value "true" "Yes")))))
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Iteration:")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "iteration")
+                (div :class "default text" "Use Default (None)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "none" "None (Default)")
+                     (div :class "item" :data-value "tree" "Tree")
+                     (div :class "item" :data-value "alignment" "Alignment"))))
+
+          (div :class "field"
+               (label "Num Iter:")
+               (input :type "number" :name "numiter" :placeholder "Use Default (1)")))
+
+
+        ;; --------
+        ;; Trees
+        ;; --------
+        (div :class "ui inverted dividing header" "Trees:")
+
+        (div :class "two fields"
+          (div :class "field"
+               (label "Clustering:") ;; This is for tree construction
+               (div :class "ui selection dropdown" (input :type "hidden" :name "clustering")
+                (div :class "default text" "Use Default (NJ)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "NJ" "NJ (Default)")
+                     (div :class "item" :data-value "UPGMA" "UPGMA"))))
+
+          (div :class "field"
+               (label "Use Kimura:") ;; This is for tree construction
+               (div :class "ui selection dropdown" (input :type "hidden" :name "kimura")
+                (div :class "default text" "Use Default (No)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "false" "No (Default)")
+                     (div :class "item" :data-value "true" "Yes")))))))
 
 
 

@@ -93,11 +93,21 @@
 
 
 (defn create-analysis-set
-  [{n :name set-def-str :set-def :as data}]
+  [{n :name set-def-str :set-def :as analysis-set-data}]
   (try
     (api/create-analysis-set n set-def-str)
+    ;; Set was created at this point, so push new state to clients.
+    (push-jobs-state-everywhere)
     "OK! Analysis set created!"
     (catch Exception e "Oops! An error occured. Your set was probably not created.")))
+
+(defn create-clustal-scheme [scheme-data]
+  (try
+    (api/create-clustal-scheme scheme-data)
+    ;; Scheme was created ok at this point, so push new state to clients.
+    (push-jobs-state-everywhere)
+    "Scheme successfully created."
+    (catch Exception e (str "Oops! An error occured: " e " Your scheme was probably not created."))))
 
 ;; -----------------------
 ;; Route Defs
@@ -108,6 +118,7 @@
   (POST "/sequences/upload" {{file :file} :params :as params}
         (upload-genbank-file file))
   (POST "/analysis-sets/new" {params :params} (create-analysis-set params))
+  (POST "/clustal-schemes/new" {params :params} (create-clustal-scheme params))
   (POST "/chsk" req (ring-ajax-post req))
   (route/resources "/")
   (route/not-found "<h1>404.</h1>"))

@@ -30,13 +30,13 @@
 (html
   (head)
   (body
-     (scheme-create/create-modal :id "scheme-create-modal")
+     (scheme-create/create-modal :id "clustal-scheme-create-modal")
      (set-create/create-modal :id "analysis-set-create-modal")
      (sequences-upload/upload-modal :id "sequences-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "clustal-scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "analysis-set-create-modal") (i :class "cube icon") "New Analysis Set"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload Sequences"))
           (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Sequences")))
@@ -65,6 +65,7 @@
 (-> (js/jQuery ".ui.modal"))
 (-> (js/jQuery ".menu .item") .tab)
 (-> (js/jQuery ".progress") .progress)
+(-> (js/jQuery ".ui.dropdown") .dropdown)
 
 ;; sequences Upload Modal Init
 (-> (js/jQuery "#sequences-upload-modal") (.modal
@@ -82,6 +83,11 @@
                                           :onApprove (fn [] (.submit (js/jQuery "#analysis-set-create-form")))
                                           })))
 
+;; clustal scheme create modal init
+(-> (js/jQuery "#clustal-scheme-create-modal") (.modal
+                                       (clj->js
+                                         {
+                                          :closable false
+                                          :onApprove (fn [] (.submit (js/jQuery "#clustal-scheme-create-form")))
+                                          })))
 
-;; Lorem ipsum for mockups:
-;;(text "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
