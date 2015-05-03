@@ -5,9 +5,9 @@
 
 (defelem upload-form
   [{} children]
-  (form :class "ui inverted form" :id "sequences-upload-form"
+  (form :class "ui inverted form"      :id "sequences-upload-form"
         :action "/sequences/upload"    :method "post"
-        :target "_blank"          :enctype "multipart/form-data"
+        :target "_blank"               :enctype "multipart/form-data"
         (div :class "field"
              (label "GenBank File")
              (input :type "file" :name "file"))))

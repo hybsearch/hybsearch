@@ -52,11 +52,14 @@
 (defn create-sequences [db sequences]
   (mc/insert-batch db coll/sequences sequences)) ;; Insert
 
-(defn sequence-by-accession [db accession]
+(defn read-sequence-by-accession [db accession]
   (mc/find-one-as-map db coll/sequences {:accession accession}))
 
-(defn sequence-accessions [db]
-  (distinct db coll/sequences :accession))
+(defn read-sequence-by-id [db id]
+  (mc/find-map-by-id db coll/sequences id))
+
+(defn read-sequence-accessions [db]
+  (mc/distinct db coll/sequences :accession))
 
 
 ;; ------------------------
@@ -66,12 +69,18 @@
 (defn create-clustal-scheme [db scheme]
   (mc/insert db coll/clustal-schemes scheme))
 
+(defn read-clustal-schemes [db]
+  (mc/find-maps db coll/clustal-schemes))
+
 ;; ------------------------
 ;;  Set Defs
 ;; ------------------------
 
 (defn create-set-def [db set-def]
   (mc/insert db coll/set-defs set-def))
+
+(defn read-set-defs [db]
+  (mc/find-maps db coll/set-defs))
 
 ;; ------------------------
 ;;  Analysis Sets
@@ -81,6 +90,9 @@
 (defn create-analysis-set [db analysis-set]
   (mc/insert db coll/analysis-sets analysis-set))
 
+(defn read-analysis-sets [db]
+  (mc/find-maps db coll/analysis-sets))
+
 ;; ------------------------
 ;;  Jobs
 ;; ------------------------
@@ -88,6 +100,9 @@
 ;; API Todo: Need to create the set-def separately, and put ref to proper analysis set's set-def in the job map.
 (defn create-job [db job]
   (mc/insert db coll/jobs job))
+
+(defn read-jobs [db]
+  (mc/find-maps db coll/jobs))
 
 ;; ------------------------
 ;;  Triples

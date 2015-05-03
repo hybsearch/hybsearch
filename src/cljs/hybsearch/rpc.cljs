@@ -11,6 +11,7 @@
 (enable-console-print!)
 
 (defonce jobs-db-schema {
+             :mongo/objectid                     {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
 
              :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
              :clustalscheme/exsetting            {:db/cardinality :db.cardinality/one}
@@ -35,7 +36,7 @@
              ;; all triples for the set = triples(sequences for each binomial UNION sequences list) INTERSECT analysisset triples
              :setdef/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
              :setdef/sequences                         {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
-             ;; Filter is ptional. Filter further restricts the set definition.
+             ;; Filter is optional. Filter further restricts the set definition.
              ;; Think of the filter as another set-def you must itersect the other parts
              ;; of this definition with to fully resolve this set definition.
              :setdef/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
@@ -45,8 +46,9 @@
 
 
 (defonce sequences-db-schema {
-             :sequence/accession                      {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-             :sequence/binomial                       {:db/cardinality :db.cardinality/one}
+             :mongo/objectid                     {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :sequence/accession                 {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :sequence/binomial                  {:db/cardinality :db.cardinality/one}
 
              ;; Todo: Eventually allow more sequence information on client.
              ;; There is also more species information than the binomial available in the GenBank files, i.e. the ncbi_taxid

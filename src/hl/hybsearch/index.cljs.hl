@@ -31,13 +31,13 @@
   (head)
   (body
      (scheme-create/create-modal :id "scheme-create-modal")
-     (set-create/create-modal :id "set-create-modal")
+     (set-create/create-modal :id "analysis-set-create-modal")
      (sequences-upload/upload-modal :id "sequences-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "set-create-modal") (i :class "cube icon") "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "analysis-set-create-modal") (i :class "cube icon") "New Analysis Set"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload Sequences"))
           (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Sequences")))
      (div :class "ui grid"
@@ -72,6 +72,14 @@
                                          {
                                           :closable false
                                           :onApprove (fn [] (.submit (js/jQuery "#sequences-upload-form")))
+                                          })))
+
+;; analysis set create modal init
+(-> (js/jQuery "#analysis-set-create-modal") (.modal
+                                       (clj->js
+                                         {
+                                          :closable false
+                                          :onApprove (fn [] (.submit (js/jQuery "#analysis-set-create-form")))
                                           })))
 
 

@@ -3,11 +3,7 @@
             [clojure.string :as s]
             [hybsearch.db.crud :as crud]
             [hybsearch.db.init :as db-init])
-  (:import [org.biojava.nbio.core.sequence.io GenbankReaderHelper
-                                               GenbankSequenceParser
-                                               DNASequenceCreator]
-            [org.biojava.nbio.core.sequence.compound DNACompoundSet])
-  )
+  (:import  [org.bson.types ObjectId]))
 
 ;; Note: In the version of BioJava that we currently use (4.0.0), the GenbankReaderHelper
 ;; only reads the first record out of a given file. The code to read multiple records
@@ -21,37 +17,85 @@
 ;;  RPC for mutating the database
 ;; -----------------------------------------------------
 
-(defonce db (atom nil))
+(defonce _db (atom nil))
 
-(defn if-not-db-init []
-  (if (not @db) (reset! db (db-init/init-db))))
+(defn ensure-db []
+  (if (nil? @_db) (reset! _db (db-init/init-db))))
+
+(defn db [] (ensure-db) _db) ;; ensure-db and return _db, use this to get the db atom so it's always initialized
+
+;; ----------
+;; Sequences
+;; ----------
 
 ;; Reads the sequences out of a GenBank file and formats them for entry into the database.
 (defn upload-sequences [gb-file]
-    (if-not-db-init)
   ;; Todo: This is probably inefficient in terms of memory.
   ;; See the iota libray (lib for fast mapreduce on text files)
   ;; for a brief expl. of why. Might want to switch to that as
   ;; a later optimization.
-  ;;
 
-  ;; Todo: This currently expects genbank records to be
-  ;; separated by //\n, and then another blank line.
-  ;; Make it more robust so that it can separate on //\n.
-  ;; (we currently do it this way because we get a degenerate
-  ;; record at the end if we use //\n, since the file ends with a newline).
   (let [sequences
         (let [filestr (slurp gb-file)]
             (map
-              (fn [entry] {:accession ((re-find #"ACCESSION\s*(\S*)" entry) 1)
-                           :binomial ((re-find #"ORGANISM\s*(.*)" entry) 1)
-                           :definition ((re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
+              (fn [entry] {:accession (get (re-find #"ACCESSION\s*(\S*)" entry) 1)
+                           :binomial (get (re-find #"ORGANISM\s*(.*)" entry) 1)
+                           :definition (get (re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
                            :sequence (s/replace
-                                       ((re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
+                                       (get (re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
                                        #"[\d\s\n\/]"
                                        "")})
               (s/split filestr #"//\n")))]
-        (crud/create-sequences @db sequences)))
+        (crud/create-sequences @(db) sequences)))
+
+
+;; ----------
+;; Construct Set-Def from String
+;; ----------
+
+(defn make-set-def [set-def-str]
+  (let [pre-set-def (reduce (fn [sd s]
+                          (let [sentinel (first s)
+                                item (re-find #".*" (subs s 1))]
+                            (cond
+                              (= sentinel \#) (update-in sd [:sequences] conj item)
+                              (= sentinel \@) (update-in sd [:binomials] conj item)
+                              :else sd)))
+                        ;; Starting set-def structure
+                        {:sequences []
+                         :binomials []
+                         :filter nil
+                         :_id (ObjectId.)}
+                        ;; Split the lines of the form submission
+                        (s/split set-def-str #"\n"))
+        ;; Convert accession numbers to the ObjectIds for their
+        ;; corresponding sequences. Anything not in the database is dropped.
+        ;; Todo: Validate binomials as well. But don't filter +all option.
+        set-def (update-in pre-set-def
+                           [:sequences]
+                           (partial keep ;; Filters out accession values that don't exist in the db
+                                    (fn [s]
+                                      (:_id (crud/read-sequence-by-accession @(db) s)))))]
+    set-def))
+
+;; ----------
+;; Analysis Sets
+;; ----------
+
+(defn create-analysis-set [n set-def-str]
+  ;; Create the set-def, then use its id to create the analysis set
+  (let [set-def (make-set-def set-def-str)
+        analysis-set {:name n
+                      :set-def (:_id set-def)
+                      :_id (ObjectId.)}]
+    (crud/create-set-def @(db) set-def)
+    (crud/create-analysis-set @(db) analysis-set)))
+
+
+
+;; ----------
+;; Clustal Schemes
+;; ----------
 
 
 
@@ -132,8 +176,20 @@
                 ])
 
 
-; Todo: Fix later
+
+(defn datascript-jobs-state []
+  (let [clustal-schemes (crud/read-clustal-schemes @(db))
+        analysis-sets (crud/read-analysis-sets @(db))
+        jobs (crud/read-jobs @(db))
+        set-defs (crud/read-set-defs @(db))
+        tempids nil] ;; Todo: tempids is a map of object ids to negative integers
+    (println "clustal-schemes: " (pr-str clustal-schemes))
+    (println "analysis-sets: " (pr-str analysis-sets))
+    (println "jobs: " (pr-str jobs))
+    (println "set-defs: " (pr-str set-defs))))
+
 (defn get-jobs-state []
+  (datascript-jobs-state)
   {:entities seed-jobs-data})
 
 
