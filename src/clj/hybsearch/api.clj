@@ -202,11 +202,14 @@
         analysis-sets (crud/read-analysis-sets @(db))
         jobs (crud/read-jobs @(db))
         set-defs (crud/read-set-defs @(db))
+        combined (concat clustal-schemes analysis-sets jobs set-defs)
         tempids nil] ;; Todo: tempids is a map of object ids to negative integers
     (println "clustal-schemes: " (pr-str clustal-schemes))
     (println "analysis-sets: " (pr-str analysis-sets))
     (println "jobs: " (pr-str jobs))
     (println "set-defs: " (pr-str set-defs))
+    (println "Combined: " (pr-str combined))
+
 
     ))
 
