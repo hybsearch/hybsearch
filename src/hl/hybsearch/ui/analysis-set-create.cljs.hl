@@ -23,11 +23,11 @@
                  (li "Use " (code "@binomial name") " to include all sequences for an entire species.
                                                     The two components of the name should be space separated.")
                  (li "For example: " (code "@Lepus mandshuricus")))
-        (div :class "name"
-             (label "Name:")
-             (input :type "text" :placeholder "Set Name" :name "name"))
-        (div :class "field"
-             (label "Enter set definition:")
+        (div :class "required field"
+             (label "Analysis Set Name:")
+             (input :type "text" :placeholder "Analysis Set Name" :name "name"))
+        (div :class "required field"
+             (label "Set definition:")
              (textarea :name "set-def"))))
 
 

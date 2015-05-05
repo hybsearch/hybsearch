@@ -1,0 +1,54 @@
+(ns ui.job-create)
+
+
+(defelem create-form
+  [{:keys [clustal-schemes analysis-sets]} children]
+  ;; Todo: Create a UI that gives you sequences allowed for the definition, and a button to add each item.
+  ;; Note that this might be resource-intensive, so play it by year.
+  (form :class "ui inverted form"    :id "job-create-form"
+        :action "/jobs/new" :method "post"
+        :target "_blank"             :enctype "application/x-www-form-urlencoded"
+        (div :class "ui info message"
+             (div :class "header" "Select a Clustal Scheme and Analysis Set. "
+                                  "You may optionally specify further restrictions on which sequences "
+                                  "to process using the set definition box below. The syntax is the same "
+                                  "as for defining analysis sets.")
+             (ul :class "list"
+                 (li "Use " (code "#accession_number") " to include a specific sequence.")
+                 (li "For example: " (code "#HM233091")))
+                 (li "Use " (code "@binomial name") " to include all sequences for an entire species.
+                                                    The two components of the name should be space separated.")
+                 (li "For example: " (code "@Lepus mandshuricus")))
+        (div :class "required field"
+             (label "Name:")
+             (input :type "text" :placeholder "Job Name" :name "name"))
+        (div :class "two fields"
+             (div :class "field"
+                  (label "Clustal Scheme:")
+                  (select :class "ui search dropdown" :name "clustal-scheme"
+                          (loop-tpl :bindings [c-s clustal-schemes]
+                                        (option :value (get @c-s :mongodb/objectid)
+                                                (text "~{(get c-s :clustalscheme/name)}")))))
+              (div :class "field"
+                  (label "Analysis Set:")
+                  (select :class "ui search dropdown" :name "clustal-scheme"
+                          (loop-tpl :bindings [a-s analysis-sets]
+                                        (option :value (get @a-s :mongodb/objectid)
+                                                (text "~{(get a-s :analysisset/name)}"))))))
+        (div :class "field"
+             (label "Set Definition:")
+             (textarea :name "set-def"))))
+
+
+(defelem create-modal
+  [{:keys [id clustal-schemes analysis-sets]} children]
+  (div :id id :class "ui basic modal"
+          (div :class "header" "Create Job")
+          (div :class "content"
+               (div :class "image" (i :class "dashboard icon"))
+               (div :class "description" (create-form :clustal-schemes clustal-schemes
+                                                      :analysis-sets analysis-sets)))
+          (div :class "actions"
+               (div :class "two fluid ui inverted buttons"
+                    (div :class "ui red basic cancel inverted button" "Cancel")
+                    (div :class "ui green ok basic inverted button" "Create")))))

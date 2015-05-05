@@ -7,6 +7,7 @@
     [ui.sequences-upload :as sequences-upload]
     [ui.analysis-set-create :as set-create]
     [ui.clustal-scheme-create :as scheme-create]
+    [ui.job-create :as job-create]
    ))
 
 ;;(reload-all 1000)
@@ -34,12 +35,16 @@
     (div :style "position: absolute; overflow-y: hidden; overflow-x: hidden; top: 5px; bottom: 5px; left: 5px; right: 5px; padding: 1px;"
      (scheme-create/create-modal :id "clustal-scheme-create-modal")
      (set-create/create-modal :id "analysis-set-create-modal")
+     (job-create/create-modal :id "job-create-modal"
+                              :clustal-schemes rpc/clustal-schemes
+                              :analysis-sets rpc/analysis-sets)
      (sequences-upload/upload-modal :id "sequences-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "clustal-scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "analysis-set-create-modal") (i :class "cube icon") "New Analysis Set"))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "job-create-modal") (i :class "dashboard icon") "New Job"))
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload Sequences"))
           (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Sequences")))
      (div :class "ui grid"
@@ -98,6 +103,15 @@
                                          {
                                           :closable false
                                           :onApprove (fn [] (.submit (js/jQuery "#analysis-set-create-form")))
+                                          })))
+
+;; job create modal init
+(setup-ajax-submit (js/jQuery "#job-create-form"))
+(-> (js/jQuery "#job-create-modal") (.modal
+                                       (clj->js
+                                         {
+                                          :closable false
+                                          :onApprove (fn [] (.submit (js/jQuery "#job-create-form")))
                                           })))
 
 ;; sequences Upload Modal Init
