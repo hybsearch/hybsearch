@@ -6,7 +6,7 @@
   ;; Todo: Create a UI that gives you sequences allowed for the definition, and a button to add each item.
   ;; Note that this might be resource-intensive, so play it by year.
   (form :class "ui inverted form"    :id "job-create-form"
-        :action "/jobs/new" :method "post"
+        :action "/jobs/new"          :method "post"
         :target "_blank"             :enctype "application/x-www-form-urlencoded"
         (div :class "ui info message"
              (div :class "header" "Select a Clustal Scheme and Analysis Set. "
@@ -31,10 +31,18 @@
                                                 (text "~{(get c-s :clustalscheme/name)}")))))
               (div :class "field"
                   (label "Analysis Set:")
-                  (select :class "ui search dropdown" :name "clustal-scheme"
+                  (select :class "ui search dropdown" :name "analysis-set"
                           (loop-tpl :bindings [a-s analysis-sets]
                                         (option :value (get @a-s :mongodb/objectid)
                                                 (text "~{(get a-s :analysisset/name)}"))))))
+        (div :class "field"
+               (label "Universal Set:")
+               (div :class "ui selection dropdown" (input :type "hidden" :name "universal")
+                (div :class "default text" "Use Default (Yes)") (i :class "dropdown icon")
+                (div :class "menu"
+                     (div :class "item" :data-value "true" "Yes (Default)")
+                     (div :class "item" :data-value "false" "No"))))
+
         (div :class "field"
              (label "Set Definition:")
              (textarea :name "set-def"))))

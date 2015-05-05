@@ -12,7 +12,9 @@
         proc (cell= (get job-cell :job/numproc))
         total (cell= (get job-cell :job/numtriples))
         ]
-    (div :class "ui card" ;; Todo: This isn't updating after selected id changes
+    (print "Job Cell: " job-cell)
+    (print "Job Name: " (get @job-cell :mongodb/objectid))
+    (div :class "ui card"
          (div :class "content"
               (div :class "header" (text "~{job-name}"))
               (div :class "ui small progress"

@@ -99,18 +99,28 @@
     (api/create-analysis-set n set-def-str)
     ;; Set was created at this point, so push new state to clients.
     (push-jobs-state-everywhere)
-    "OK! Analysis set created!"
+    "OK! Analysis set created!" ;; Todo: Correct status code
     (catch Exception e {:status 500
-                        :body (str e "Oops! An error occured: Your analysis set was probably not created.")})))
+                        :body (str e " Oops! An error occured: Your analysis set was probably not created.")})))
 
 (defn create-clustal-scheme [scheme-data]
   (try
     (api/create-clustal-scheme scheme-data)
     ;; Scheme was created ok at this point, so push new state to clients.
     (push-jobs-state-everywhere)
-    "Scheme successfully created."
+    "Scheme successfully created." ;; Todo: Correct status code
     (catch Exception e {:status 500
-                        :body (str "Oops! An error occured: Your clustal scheme was probably not created.")})))
+                        :body (str e " Oops! An error occured: Your clustal scheme was probably not created.")})))
+
+
+(defn create-job [job-data]
+  (try
+    (api/create-job job-data)
+    (push-jobs-state-everywhere)
+    "Job successfully created." ;; Todo: Correct status code
+    (catch Exception e {:status 500
+                        :body (str e " Oops! An error occured: Your clustal scheme was probably not created.")})))
+
 
 ;; -----------------------
 ;; Route Defs
@@ -122,6 +132,7 @@
         (upload-genbank-file file))
   (POST "/analysis-sets/new" {params :params} (create-analysis-set params))
   (POST "/clustal-schemes/new" {params :params} (create-clustal-scheme params))
+  (POST "/jobs/new" {params :params} (create-job params))
   (POST "/chsk" req (ring-ajax-post req))
   (route/resources "/")
   (route/not-found "<h1>404.</h1>"))

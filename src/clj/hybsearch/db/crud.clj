@@ -93,6 +93,9 @@
 (defn read-analysis-sets [db]
   (mc/find-maps db coll/analysis-sets))
 
+(defn read-analysis-set-by-id [db id]
+  (mc/find-map-by-id db coll/analysis-sets id))
+
 ;; ------------------------
 ;;  Jobs
 ;; ------------------------

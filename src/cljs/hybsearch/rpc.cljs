@@ -92,18 +92,19 @@
 (defc= scheme-set-jobs (if (and selected-clustal-scheme selected-analysis-set)
                          (map (fn [e] (d/entity jobs-db (first e)))
                               (d/q '[:find ?e
-                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysisset for their filter
+                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysisset's set-def for their filter
                                      :where [?e :job/setdef ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
                                      [?e :job/clustalscheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysisset/set-def
                                    jobs-db
-                                   (get selected-clustal-scheme :db/id)
-                                   ;; All set-def entities that use the selected analysisset as a filter
-                                   (map (fn [e] (first e))
-                                        (d/q '[:find ?e
-                                               :in $ ?set-def
-                                               :where [?e :setdef/filter ?set-def]]
+                                   (get selected-clustal-scheme :mongodb/objectid)
+                                   ;; All set-def entities that use the selected analysisset's set-def as a filter
+                                   (map (fn [e] (second e))
+                                        (d/q '[:find ?e ?set-def-object-id
+                                               :in $ ?analysisset-set-def
+                                               :where [?e :setdef/filter ?analysisset-set-def]
+                                                      [?e :mongodb/objectid ?set-def-object-id]]
                                              jobs-db
-                                             (-> (get selected-analysis-set :analysisset/setdef) (get :db/id))))))))
+                                             (get selected-analysis-set :analysisset/setdef)))))))
 
 
 (let [{:keys [chsk ch-recv send-fn state]}
@@ -142,7 +143,6 @@
 
 
 
-
 ;; ----------------------
 ;; Primary Channel Socket Routing
 ;; ----------------------
@@ -168,7 +168,11 @@
       (chsk-send! [:rpc/get-jobs-state] 5000 ; Timeout
                   (fn [cb-reply]             ; Callback with response
                     (if (sente/cb-success? cb-reply)
-                      (reset! jobs-state cb-reply)))))
+                      (do
+                        ;;(print cb-reply)
+                        (reset! jobs-state cb-reply)
+
+                        )))))
     (print "Channel socket state change: " ?data)))
 
 (defmethod event-msg-handler :chsk/recv

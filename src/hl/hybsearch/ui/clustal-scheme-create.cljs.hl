@@ -23,7 +23,7 @@
                (label "Scheme Name:")
                (input :type "text" :name "name" :placeholder "Scheme name"))
 
-          (div :class "field" ;; TODO: Disable
+          (div :class "field"
                (label "Sequence Type:")
                (div :class "ui selection dropdown" (input :type "hidden" :name "sequencetype")
                 (div :class "default text" "Use Default (DNA)") (i :class "dropdown icon")
