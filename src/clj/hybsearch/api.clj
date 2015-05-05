@@ -260,7 +260,7 @@
         ] ;; Todo: Provide an index of tempids to MongoDB ObjectId strings to
           ;;       the client so it can make specific requests for more data.
           ;;       Could probably store in datascript with this schema:
-          ;;                     :mongodb/_id {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+          ;;                     :mongodb/id {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
           ;;                     :mongodb/localref {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
 
           ;; Todo: Purge any inconsistent data. i.e. Analysis set missing its setdef, dead references, etc.
