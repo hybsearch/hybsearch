@@ -11,7 +11,7 @@
 (enable-console-print!)
 
 (defonce jobs-db-schema {
-             :mongodb/id                        {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :mongodb/objectid                    {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              ;;:mongodb/localref                   {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
 
              :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
@@ -20,16 +20,16 @@
              :clustalscheme/numproc              {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
-             :analysisset/setdef                  {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :analysisset/setdef                  {:db/cardinality :db.cardinality/one}
              :analysisset/numtriples              {:db/cardinality :db.cardinality/one}
              :analysisset/numproc                 {:db/cardinality :db.cardinality/one}
 
 
              :job/name                            {:db/cardinality :db.cardinality/one}
-             :job/setdef                          {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :job/setdef                          {:db/cardinality :db.cardinality/one}
              :job/numtriples                      {:db/cardinality :db.cardinality/one}
              :job/numproc                         {:db/cardinality :db.cardinality/one}
-             :job/clustalscheme                   {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :job/clustalscheme                   {:db/cardinality :db.cardinality/one}
 
 
              ;; Todo: how to match up relational ref ids when downloading data from server?
@@ -40,14 +40,14 @@
              ;; Filter is optional. Filter further restricts the set definition.
              ;; Think of the filter as another set-def you must itersect the other parts
              ;; of this definition with to fully resolve this set definition.
-             :setdef/filter                       {:db/cardinality :db.cardinality/one :db/valueType :db.type/ref}
+             :setdef/filter                       {:db/cardinality :db.cardinality/one}
 
 
              })
 
 
 (defonce sequences-db-schema {
-             :mongo/objectid                     {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+             :mongodb/objectid                   {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :sequence/accession                 {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              :sequence/binomial                  {:db/cardinality :db.cardinality/one}
 

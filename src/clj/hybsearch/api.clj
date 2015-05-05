@@ -200,7 +200,7 @@
 (defn datascript-jobs-state []
   (let [clustal-schemes (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
                                                   {
-                                                   :_id :mongodb/id
+                                                   :_id :mongodb/objectid
                                                    :name :clustalscheme/name
                                                    :sequencetype :clustalscheme/sequencetype
                                                    :alignmenttype :clustalscheme/alignmenttype
@@ -224,7 +224,7 @@
                              (crud/read-clustal-schemes @(db)))
         analysis-sets   (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
                                                   {
-                                                   :_id :mongodb/id
+                                                   :_id :mongodb/objectid
                                                    :name :analysisset/name
                                                    :setdef :analysisset/setdef
                                                    :numtriples :analysisset/numtriples
@@ -233,7 +233,7 @@
                              (crud/read-analysis-sets @(db)))
         jobs     (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
                                            {
-                                            :_id :mongodb/id
+                                            :_id :mongodb/objectid
                                             :setdef :job/setdef
                                             :clustalscheme :job/clustalscheme
                                             :numtriples :job/numtriples
@@ -242,7 +242,7 @@
                       (crud/read-jobs @(db)))
         set-defs (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
                                            {
-                                            :_id :mongodb/id
+                                            :_id :mongodb/objectid
                                             :binomials :setdef/binomials
                                             :sequences :setdef/sequences
                                             :filter :setdef/filter
@@ -253,14 +253,13 @@
         ;                 (map-indexed
         ;                   (fn [i ent] {(:db/id ent) (- (inc i))})
         ;                      combined))
-        ;; Now replace the ObjectIDs, including the ones on :db/id, with their tempids
-        ;; for the client-side datascript transaction.
+        ;; Convert ObjectIds to Strings
         entities (walk/prewalk #(if (instance? ObjectId %) (.toString %) ;;(get tempids %)
                                   %) combined)
         ] ;; Todo: Provide an index of tempids to MongoDB ObjectId strings to
           ;;       the client so it can make specific requests for more data.
           ;;       Could probably store in datascript with this schema:
-          ;;                     :mongodb/id {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+          ;;                     :mongodb/objectid {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
           ;;                     :mongodb/localref {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
 
           ;; Todo: Purge any inconsistent data. i.e. Analysis set missing its setdef, dead references, etc.
