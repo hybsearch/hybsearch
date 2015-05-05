@@ -1,6 +1,8 @@
 (ns hybsearch.api
   (:require [clojure.java.io :as io]
-            [clojure.string :as s]
+            [clojure.string :as cljstr]
+            [clojure.set :as cljset]
+            [clojure.walk :as walk]
             [hybsearch.db.crud :as crud]
             [hybsearch.db.init :as db-init])
   (:import  [org.bson.types ObjectId]))
@@ -34,11 +36,11 @@
               (fn [entry] {:accession (get (re-find #"ACCESSION\s*(\S*)" entry) 1)
                            :binomial (get (re-find #"ORGANISM\s*(.*)" entry) 1)
                            :definition (get (re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
-                           :sequence (s/replace
+                           :sequence (cljstr/replace
                                        (get (re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
                                        #"[\d\s\n\/]"
                                        "")})
-              (s/split filestr #"//\n")))]
+              (cljstr/split filestr #"//\n")))]
         (crud/create-sequences @(db) sequences)))
 
 
@@ -60,7 +62,7 @@
                          :filter nil
                          :_id (ObjectId.)}
                         ;; Split the lines of the form submission
-                        (s/split set-def-str #"\n"))
+                        (cljstr/split set-def-str #"\n"))
         ;; Convert accession numbers to the ObjectIds for their
         ;; corresponding sequences. Anything not in the database is dropped.
         ;; Todo: Validate binomials as well. But don't filter +all option.
@@ -79,7 +81,7 @@
   ;; Create the set-def, then use its id to create the analysis set
   (let [set-def (make-set-def set-def-str)
         analysis-set {:name n
-                      :set-def (:_id set-def)
+                      :setdef (:_id set-def)
                       :_id (ObjectId.)}]
     (crud/create-set-def @(db) set-def)
     (crud/create-analysis-set @(db) analysis-set)))
@@ -179,16 +181,12 @@
 
                 {:db/id -5
                  :analysisset/name "Set 1"
-                 :analysisset/jobs [-2, -3]
-                 :analysisset/clustalscheme -80
                  :analysisset/setdef -90
                  :analysisset/numtriples 1
                  :analysisset/numproc 1}
 
                 {:db/id -4
                  :analysisset/name "Empty Set"
-                 :analysisset/jobs []
-                 :analysisset/clustalscheme -1
                  :analysisset/setdef -100
                  :analysisset/numtriples 0
                  :analysisset/numproc 0}
@@ -196,25 +194,87 @@
                 ])
 
 
-
+;; cljset/rename-keys to match datascript schema immediately after query,
+;; to avoid inter-collection name collisions that could occur once combined.
+;; Also filter out nil entries, since these aren't allowed in datascript.
 (defn datascript-jobs-state []
-  (let [clustal-schemes (crud/read-clustal-schemes @(db))
-        analysis-sets (crud/read-analysis-sets @(db))
-        jobs (crud/read-jobs @(db))
-        set-defs (crud/read-set-defs @(db))
+  (let [clustal-schemes (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+                                                  {
+                                                   :_id :mongodb/id
+                                                   :name :clustalscheme/name
+                                                   :sequencetype :clustalscheme/sequencetype
+                                                   :alignmenttype :clustalscheme/alignmenttype
+                                                   :pwdnamatrix :clustalscheme/pwdnamatrix
+                                                   :pwgapopen :clustalscheme/pwgapopen
+                                                   :pwgapext :clustalscheme/pwgapext
+                                                   :ktuple :clustalscheme/ktuple
+                                                   :window :clustalscheme/window
+                                                   :topdiags :clustalscheme/topdiags
+                                                   :pairgap :clustalscheme/pairgap
+                                                   :dnamatrix :clustalscheme/dnamatrix
+                                                   :gapopen :clustalscheme/gapopen
+                                                   :gapext :clustalscheme/gapext
+                                                   :gapdist :clustalscheme/gapdist
+                                                   :endgaps :clustalscheme/endgaps
+                                                   :iteration :clustalscheme/iteration
+                                                   :numiter :clustalscheme/numiter
+                                                   :clustering :clustalscheme/clustering
+                                                   :kimura :clustalscheme/kimura
+                                                   })
+                             (crud/read-clustal-schemes @(db)))
+        analysis-sets   (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+                                                  {
+                                                   :_id :mongodb/id
+                                                   :name :analysisset/name
+                                                   :setdef :analysisset/setdef
+                                                   :numtriples :analysisset/numtriples
+                                                   :numproc :analysisset/numproc
+                                                   })
+                             (crud/read-analysis-sets @(db)))
+        jobs     (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+                                           {
+                                            :_id :mongodb/id
+                                            :setdef :job/setdef
+                                            :clustalscheme :job/clustalscheme
+                                            :numtriples :job/numtriples
+                                            :numproc :job/numproc
+                                            })
+                      (crud/read-jobs @(db)))
+        set-defs (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+                                           {
+                                            :_id :mongodb/id
+                                            :binomials :setdef/binomials
+                                            :sequences :setdef/sequences
+                                            :filter :setdef/filter
+                                            })
+                      (crud/read-set-defs @(db)))
         combined (concat clustal-schemes analysis-sets jobs set-defs)
-        tempids nil] ;; Todo: tempids is a map of object ids to negative integers
+        ; tempids  (reduce into {}
+        ;                 (map-indexed
+        ;                   (fn [i ent] {(:db/id ent) (- (inc i))})
+        ;                      combined))
+        ;; Now replace the ObjectIDs, including the ones on :db/id, with their tempids
+        ;; for the client-side datascript transaction.
+        entities (walk/prewalk #(if (instance? ObjectId %) (.toString %) ;;(get tempids %)
+                                  %) combined)
+        ] ;; Todo: Provide an index of tempids to MongoDB ObjectId strings to
+          ;;       the client so it can make specific requests for more data.
+          ;;       Could probably store in datascript with this schema:
+          ;;                     :mongodb/_id {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
+          ;;                     :mongodb/localref {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
+
+          ;; Todo: Purge any inconsistent data. i.e. Analysis set missing its setdef, dead references, etc.
     (println "clustal-schemes: " (pr-str clustal-schemes))
     (println "analysis-sets: " (pr-str analysis-sets))
     (println "jobs: " (pr-str jobs))
     (println "set-defs: " (pr-str set-defs))
     (println "Combined: " (pr-str combined))
-
-
-    ))
+    ;;(println "Temp IDs: " (pr-str tempids))
+    (println "Entities: " (pr-str entities))
+    entities))
 
 (defn get-jobs-state []
-  (datascript-jobs-state)
-  {:entities seed-jobs-data})
+  ;;seed-jobs-data
+  {:entities (datascript-jobs-state)})
 
 

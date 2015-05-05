@@ -5,7 +5,7 @@
 (defelem create-form
   [{} children]
   (form :class "ui inverted form"      :id "clustal-scheme-create-form"
-        :action "/clustal-schemes/new" :method "post"
+        :action "./clustal-schemes/new" :method "post"
         :target "_blank"               :enctype "application/x-www-form-urlencoded"
         (div :class "ui info message"
              (div :class "header" "Set up your new Clustal scheme using the settings below. "

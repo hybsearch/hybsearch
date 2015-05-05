@@ -1,0 +1,3329 @@
+(Lepus brachyurus,Lepus timidus): 0 / 64
+(Lepus brachyurus,Lepus coreanus): 0 / 16
+(Lepus brachyurus,Lepus mandshuricus): 0 / 225
+(Lepus coreanus,Lepus timidus): 0 / 160
+(Lepus mandshuricus,Lepus timidus): 0 / 1260
+(Lepus coreanus,Lepus mandshuricus): 0 / 510
+Task [0 -- build_triples] completed processing.
+Task [1 -- test_potential_hybridization] completed processing.
+
+(Lepus coreanus,Lepus mandshuricus): 0 / 510
+(Lepus coreanus,Lepus timidus): 0 / 160
+(Lepus brachyurus,Lepus coreanus): 0 / 16
+(Lepus mandshuricus,Lepus timidus): 0 / 1260
+(Lepus brachyurus,Lepus mandshuricus): 0 / 225
+(Lepus brachyurus,Lepus timidus): 0 / 64
+Task [0 -- build_triples] completed processing.
+(Lepus coreanus,Lepus mandshuricus): 2 / 510
+(Lepus coreanus,Lepus mandshuricus): 2 / 510
+(Lepus coreanus,Lepus mandshuricus): 3 / 510
+(Lepus coreanus,Lepus mandshuricus): 4 / 510
+(Lepus coreanus,Lepus mandshuricus): 5 / 510
+(Lepus coreanus,Lepus mandshuricus): 6 / 510
+(Lepus coreanus,Lepus mandshuricus): 7 / 510
+(Lepus coreanus,Lepus mandshuricus): 8 / 510
+(Lepus coreanus,Lepus mandshuricus): 9 / 510
+(Lepus coreanus,Lepus mandshuricus): 10 / 510
+(Lepus coreanus,Lepus mandshuricus): 11 / 510
+(Lepus coreanus,Lepus mandshuricus): 12 / 510
+(Lepus coreanus,Lepus mandshuricus): 13 / 510
+(Lepus coreanus,Lepus mandshuricus): 14 / 510
+(Lepus coreanus,Lepus mandshuricus): 16 / 510
+(Lepus coreanus,Lepus mandshuricus): 16 / 510
+(Lepus coreanus,Lepus mandshuricus): 17 / 510
+(Lepus coreanus,Lepus mandshuricus): 18 / 510
+(Lepus coreanus,Lepus mandshuricus): 19 / 510
+(Lepus coreanus,Lepus mandshuricus): 20 / 510
+(Lepus coreanus,Lepus mandshuricus): 21 / 510
+(Lepus coreanus,Lepus mandshuricus): 22 / 510
+(Lepus coreanus,Lepus mandshuricus): 23 / 510
+(Lepus coreanus,Lepus mandshuricus): 24 / 510
+(Lepus coreanus,Lepus mandshuricus): 25 / 510
+(Lepus coreanus,Lepus mandshuricus): 26 / 510
+(Lepus coreanus,Lepus mandshuricus): 28 / 510
+(Lepus coreanus,Lepus mandshuricus): 28 / 510
+(Lepus coreanus,Lepus mandshuricus): 29 / 510
+(Lepus coreanus,Lepus mandshuricus): 30 / 510
+(Lepus coreanus,Lepus mandshuricus): 31 / 510
+(Lepus coreanus,Lepus mandshuricus): 32 / 510
+(Lepus coreanus,Lepus mandshuricus): 33 / 510
+(Lepus coreanus,Lepus mandshuricus): 34 / 510
+(Lepus coreanus,Lepus mandshuricus): 35 / 510
+(Lepus coreanus,Lepus mandshuricus): 36 / 510
+(Lepus coreanus,Lepus mandshuricus): 37 / 510
+(Lepus coreanus,Lepus mandshuricus): 38 / 510
+(Lepus coreanus,Lepus mandshuricus): 39 / 510
+(Lepus coreanus,Lepus mandshuricus): 40 / 510
+(Lepus coreanus,Lepus mandshuricus): 41 / 510
+(Lepus coreanus,Lepus mandshuricus): 42 / 510
+(Lepus coreanus,Lepus mandshuricus): 43 / 510
+(Lepus coreanus,Lepus mandshuricus): 44 / 510
+(Lepus coreanus,Lepus mandshuricus): 45 / 510
+(Lepus coreanus,Lepus mandshuricus): 46 / 510
+(Lepus coreanus,Lepus mandshuricus): 47 / 510
+(Lepus coreanus,Lepus mandshuricus): 48 / 510
+(Lepus coreanus,Lepus mandshuricus): 49 / 510
+(Lepus coreanus,Lepus mandshuricus): 50 / 510
+(Lepus coreanus,Lepus mandshuricus): 51 / 510
+(Lepus coreanus,Lepus mandshuricus): 52 / 510
+(Lepus coreanus,Lepus mandshuricus): 54 / 510
+(Lepus coreanus,Lepus mandshuricus): 54 / 510
+(Lepus coreanus,Lepus mandshuricus): 55 / 510
+(Lepus coreanus,Lepus mandshuricus): 56 / 510
+(Lepus coreanus,Lepus mandshuricus): 57 / 510
+(Lepus coreanus,Lepus mandshuricus): 58 / 510
+(Lepus coreanus,Lepus mandshuricus): 59 / 510
+(Lepus coreanus,Lepus mandshuricus): 60 / 510
+(Lepus coreanus,Lepus mandshuricus): 61 / 510
+(Lepus coreanus,Lepus mandshuricus): 62 / 510
+(Lepus coreanus,Lepus mandshuricus): 63 / 510
+(Lepus coreanus,Lepus mandshuricus): 64 / 510
+(Lepus coreanus,Lepus mandshuricus): 65 / 510
+(Lepus coreanus,Lepus mandshuricus): 66 / 510
+(Lepus coreanus,Lepus mandshuricus): 67 / 510
+(Lepus coreanus,Lepus mandshuricus): 68 / 510
+(Lepus coreanus,Lepus mandshuricus): 69 / 510
+(Lepus coreanus,Lepus mandshuricus): 70 / 510
+(Lepus coreanus,Lepus mandshuricus): 71 / 510
+(Lepus coreanus,Lepus mandshuricus): 72 / 510
+(Lepus coreanus,Lepus mandshuricus): 73 / 510
+(Lepus coreanus,Lepus mandshuricus): 74 / 510
+(Lepus coreanus,Lepus mandshuricus): 75 / 510
+(Lepus coreanus,Lepus mandshuricus): 76 / 510
+(Lepus coreanus,Lepus mandshuricus): 77 / 510
+(Lepus coreanus,Lepus mandshuricus): 78 / 510
+(Lepus coreanus,Lepus mandshuricus): 79 / 510
+(Lepus coreanus,Lepus mandshuricus): 80 / 510
+(Lepus coreanus,Lepus mandshuricus): 81 / 510
+(Lepus coreanus,Lepus mandshuricus): 82 / 510
+(Lepus coreanus,Lepus mandshuricus): 84 / 510
+(Lepus coreanus,Lepus mandshuricus): 84 / 510
+(Lepus coreanus,Lepus mandshuricus): 85 / 510
+(Lepus coreanus,Lepus mandshuricus): 86 / 510
+(Lepus coreanus,Lepus mandshuricus): 87 / 510
+(Lepus coreanus,Lepus mandshuricus): 88 / 510
+(Lepus coreanus,Lepus mandshuricus): 89 / 510
+(Lepus coreanus,Lepus mandshuricus): 90 / 510
+(Lepus coreanus,Lepus mandshuricus): 91 / 510
+(Lepus coreanus,Lepus mandshuricus): 92 / 510
+(Lepus coreanus,Lepus mandshuricus): 93 / 510
+(Lepus coreanus,Lepus mandshuricus): 94 / 510
+(Lepus coreanus,Lepus mandshuricus): 95 / 510
+(Lepus coreanus,Lepus mandshuricus): 96 / 510
+(Lepus coreanus,Lepus mandshuricus): 97 / 510
+(Lepus coreanus,Lepus mandshuricus): 98 / 510
+(Lepus coreanus,Lepus mandshuricus): 99 / 510
+(Lepus coreanus,Lepus mandshuricus): 100 / 510
+(Lepus coreanus,Lepus mandshuricus): 101 / 510
+(Lepus coreanus,Lepus mandshuricus): 102 / 510
+(Lepus coreanus,Lepus mandshuricus): 103 / 510
+(Lepus coreanus,Lepus mandshuricus): 104 / 510
+(Lepus coreanus,Lepus mandshuricus): 105 / 510
+(Lepus coreanus,Lepus mandshuricus): 106 / 510
+(Lepus coreanus,Lepus mandshuricus): 107 / 510
+(Lepus coreanus,Lepus mandshuricus): 108 / 510
+(Lepus coreanus,Lepus mandshuricus): 109 / 510
+(Lepus coreanus,Lepus mandshuricus): 110 / 510
+(Lepus coreanus,Lepus mandshuricus): 111 / 510
+(Lepus coreanus,Lepus mandshuricus): 112 / 510
+(Lepus coreanus,Lepus mandshuricus): 114 / 510
+(Lepus coreanus,Lepus mandshuricus): 114 / 510
+(Lepus coreanus,Lepus mandshuricus): 115 / 510
+(Lepus coreanus,Lepus mandshuricus): 116 / 510
+(Lepus coreanus,Lepus mandshuricus): 117 / 510
+(Lepus coreanus,Lepus mandshuricus): 118 / 510
+(Lepus coreanus,Lepus mandshuricus): 119 / 510
+(Lepus coreanus,Lepus mandshuricus): 120 / 510
+(Lepus coreanus,Lepus mandshuricus): 121 / 510
+(Lepus coreanus,Lepus mandshuricus): 122 / 510
+(Lepus coreanus,Lepus mandshuricus): 123 / 510
+(Lepus coreanus,Lepus mandshuricus): 124 / 510
+(Lepus coreanus,Lepus mandshuricus): 125 / 510
+(Lepus coreanus,Lepus mandshuricus): 126 / 510
+(Lepus coreanus,Lepus mandshuricus): 127 / 510
+(Lepus coreanus,Lepus mandshuricus): 128 / 510
+(Lepus coreanus,Lepus mandshuricus): 129 / 510
+(Lepus coreanus,Lepus mandshuricus): 130 / 510
+(Lepus coreanus,Lepus mandshuricus): 132 / 510
+(Lepus coreanus,Lepus mandshuricus): 132 / 510
+(Lepus coreanus,Lepus mandshuricus): 133 / 510
+(Lepus coreanus,Lepus mandshuricus): 134 / 510
+(Lepus coreanus,Lepus mandshuricus): 135 / 510
+(Lepus coreanus,Lepus mandshuricus): 136 / 510
+(Lepus coreanus,Lepus mandshuricus): 137 / 510
+(Lepus coreanus,Lepus mandshuricus): 138 / 510
+(Lepus coreanus,Lepus mandshuricus): 139 / 510
+(Lepus coreanus,Lepus mandshuricus): 140 / 510
+(Lepus coreanus,Lepus mandshuricus): 141 / 510
+(Lepus coreanus,Lepus mandshuricus): 142 / 510
+(Lepus coreanus,Lepus mandshuricus): 143 / 510
+(Lepus coreanus,Lepus mandshuricus): 144 / 510
+(Lepus coreanus,Lepus mandshuricus): 146 / 510
+(Lepus coreanus,Lepus mandshuricus): 146 / 510
+(Lepus coreanus,Lepus mandshuricus): 147 / 510
+(Lepus coreanus,Lepus mandshuricus): 148 / 510
+(Lepus coreanus,Lepus mandshuricus): 149 / 510
+(Lepus coreanus,Lepus mandshuricus): 150 / 510
+(Lepus coreanus,Lepus mandshuricus): 151 / 510
+(Lepus coreanus,Lepus mandshuricus): 152 / 510
+(Lepus coreanus,Lepus mandshuricus): 153 / 510
+(Lepus coreanus,Lepus mandshuricus): 154 / 510
+(Lepus coreanus,Lepus mandshuricus): 155 / 510
+(Lepus coreanus,Lepus mandshuricus): 156 / 510
+(Lepus coreanus,Lepus mandshuricus): 158 / 510
+(Lepus coreanus,Lepus mandshuricus): 158 / 510
+(Lepus coreanus,Lepus mandshuricus): 159 / 510
+(Lepus coreanus,Lepus mandshuricus): 160 / 510
+(Lepus coreanus,Lepus mandshuricus): 161 / 510
+(Lepus coreanus,Lepus mandshuricus): 162 / 510
+(Lepus coreanus,Lepus mandshuricus): 163 / 510
+(Lepus coreanus,Lepus mandshuricus): 164 / 510
+(Lepus coreanus,Lepus mandshuricus): 165 / 510
+(Lepus coreanus,Lepus mandshuricus): 166 / 510
+(Lepus coreanus,Lepus mandshuricus): 168 / 510
+(Lepus coreanus,Lepus mandshuricus): 168 / 510
+(Lepus coreanus,Lepus mandshuricus): 169 / 510
+(Lepus coreanus,Lepus mandshuricus): 170 / 510
+(Lepus coreanus,Lepus mandshuricus): 171 / 510
+(Lepus coreanus,Lepus mandshuricus): 172 / 510
+(Lepus coreanus,Lepus mandshuricus): 173 / 510
+(Lepus coreanus,Lepus mandshuricus): 174 / 510
+(Lepus coreanus,Lepus mandshuricus): 175 / 510
+(Lepus coreanus,Lepus mandshuricus): 176 / 510
+(Lepus coreanus,Lepus mandshuricus): 177 / 510
+(Lepus coreanus,Lepus mandshuricus): 178 / 510
+(Lepus coreanus,Lepus mandshuricus): 179 / 510
+(Lepus coreanus,Lepus mandshuricus): 180 / 510
+(Lepus coreanus,Lepus mandshuricus): 181 / 510
+(Lepus coreanus,Lepus mandshuricus): 182 / 510
+(Lepus coreanus,Lepus mandshuricus): 183 / 510
+(Lepus coreanus,Lepus mandshuricus): 184 / 510
+(Lepus coreanus,Lepus mandshuricus): 185 / 510
+(Lepus coreanus,Lepus mandshuricus): 186 / 510
+(Lepus coreanus,Lepus mandshuricus): 187 / 510
+(Lepus coreanus,Lepus mandshuricus): 188 / 510
+(Lepus coreanus,Lepus mandshuricus): 189 / 510
+(Lepus coreanus,Lepus mandshuricus): 190 / 510
+(Lepus coreanus,Lepus mandshuricus): 191 / 510
+(Lepus coreanus,Lepus mandshuricus): 192 / 510
+(Lepus coreanus,Lepus mandshuricus): 193 / 510
+(Lepus coreanus,Lepus mandshuricus): 194 / 510
+(Lepus coreanus,Lepus mandshuricus): 195 / 510
+(Lepus coreanus,Lepus mandshuricus): 196 / 510
+(Lepus coreanus,Lepus mandshuricus): 197 / 510
+(Lepus coreanus,Lepus mandshuricus): 198 / 510
+(Lepus coreanus,Lepus mandshuricus): 199 / 510
+(Lepus coreanus,Lepus mandshuricus): 200 / 510
+(Lepus coreanus,Lepus mandshuricus): 201 / 510
+(Lepus coreanus,Lepus mandshuricus): 202 / 510
+(Lepus coreanus,Lepus mandshuricus): 203 / 510
+(Lepus coreanus,Lepus mandshuricus): 204 / 510
+(Lepus coreanus,Lepus mandshuricus): 205 / 510
+(Lepus coreanus,Lepus mandshuricus): 206 / 510
+(Lepus coreanus,Lepus mandshuricus): 207 / 510
+(Lepus coreanus,Lepus mandshuricus): 208 / 510
+(Lepus coreanus,Lepus mandshuricus): 209 / 510
+(Lepus coreanus,Lepus mandshuricus): 210 / 510
+(Lepus coreanus,Lepus mandshuricus): 211 / 510
+(Lepus coreanus,Lepus mandshuricus): 212 / 510
+(Lepus coreanus,Lepus mandshuricus): 214 / 510
+(Lepus coreanus,Lepus mandshuricus): 214 / 510
+(Lepus coreanus,Lepus mandshuricus): 215 / 510
+(Lepus coreanus,Lepus mandshuricus): 216 / 510
+(Lepus coreanus,Lepus mandshuricus): 217 / 510
+(Lepus coreanus,Lepus mandshuricus): 218 / 510
+(Lepus coreanus,Lepus mandshuricus): 220 / 510
+(Lepus coreanus,Lepus mandshuricus): 220 / 510
+(Lepus coreanus,Lepus mandshuricus): 221 / 510
+(Lepus coreanus,Lepus mandshuricus): 222 / 510
+(Lepus coreanus,Lepus mandshuricus): 223 / 510
+(Lepus coreanus,Lepus mandshuricus): 224 / 510
+(Lepus coreanus,Lepus mandshuricus): 225 / 510
+(Lepus coreanus,Lepus mandshuricus): 226 / 510
+(Lepus coreanus,Lepus mandshuricus): 227 / 510
+(Lepus coreanus,Lepus mandshuricus): 228 / 510
+(Lepus coreanus,Lepus mandshuricus): 230 / 510
+(Lepus coreanus,Lepus mandshuricus): 230 / 510
+(Lepus coreanus,Lepus mandshuricus): 231 / 510
+(Lepus coreanus,Lepus mandshuricus): 232 / 510
+(Lepus coreanus,Lepus mandshuricus): 233 / 510
+(Lepus coreanus,Lepus mandshuricus): 234 / 510
+(Lepus coreanus,Lepus mandshuricus): 235 / 510
+(Lepus coreanus,Lepus mandshuricus): 236 / 510
+(Lepus coreanus,Lepus mandshuricus): 237 / 510
+(Lepus coreanus,Lepus mandshuricus): 238 / 510
+(Lepus coreanus,Lepus mandshuricus): 239 / 510
+(Lepus coreanus,Lepus mandshuricus): 240 / 510
+(Lepus coreanus,Lepus mandshuricus): 241 / 510
+(Lepus coreanus,Lepus mandshuricus): 242 / 510
+(Lepus coreanus,Lepus mandshuricus): 243 / 510
+(Lepus coreanus,Lepus mandshuricus): 244 / 510
+(Lepus coreanus,Lepus mandshuricus): 245 / 510
+(Lepus coreanus,Lepus mandshuricus): 246 / 510
+(Lepus coreanus,Lepus mandshuricus): 247 / 510
+(Lepus coreanus,Lepus mandshuricus): 248 / 510
+(Lepus coreanus,Lepus mandshuricus): 249 / 510
+(Lepus coreanus,Lepus mandshuricus): 250 / 510
+(Lepus coreanus,Lepus mandshuricus): 251 / 510
+(Lepus coreanus,Lepus mandshuricus): 252 / 510
+(Lepus coreanus,Lepus mandshuricus): 253 / 510
+(Lepus coreanus,Lepus mandshuricus): 254 / 510
+(Lepus coreanus,Lepus mandshuricus): 255 / 510
+(Lepus coreanus,Lepus mandshuricus): 256 / 510
+(Lepus coreanus,Lepus mandshuricus): 258 / 510
+(Lepus coreanus,Lepus mandshuricus): 258 / 510
+(Lepus coreanus,Lepus mandshuricus): 259 / 510
+(Lepus coreanus,Lepus mandshuricus): 260 / 510
+(Lepus coreanus,Lepus mandshuricus): 261 / 510
+(Lepus coreanus,Lepus mandshuricus): 262 / 510
+(Lepus coreanus,Lepus mandshuricus): 263 / 510
+(Lepus coreanus,Lepus mandshuricus): 264 / 510
+(Lepus coreanus,Lepus mandshuricus): 265 / 510
+(Lepus coreanus,Lepus mandshuricus): 266 / 510
+(Lepus coreanus,Lepus mandshuricus): 267 / 510
+(Lepus coreanus,Lepus mandshuricus): 268 / 510
+(Lepus coreanus,Lepus mandshuricus): 269 / 510
+(Lepus coreanus,Lepus mandshuricus): 270 / 510
+(Lepus coreanus,Lepus mandshuricus): 271 / 510
+(Lepus coreanus,Lepus mandshuricus): 272 / 510
+(Lepus coreanus,Lepus mandshuricus): 273 / 510
+(Lepus coreanus,Lepus mandshuricus): 274 / 510
+(Lepus coreanus,Lepus mandshuricus): 275 / 510
+(Lepus coreanus,Lepus mandshuricus): 276 / 510
+(Lepus coreanus,Lepus mandshuricus): 277 / 510
+(Lepus coreanus,Lepus mandshuricus): 278 / 510
+(Lepus coreanus,Lepus mandshuricus): 280 / 510
+(Lepus coreanus,Lepus mandshuricus): 280 / 510
+(Lepus coreanus,Lepus mandshuricus): 282 / 510
+(Lepus coreanus,Lepus mandshuricus): 282 / 510
+(Lepus coreanus,Lepus mandshuricus): 283 / 510
+(Lepus coreanus,Lepus mandshuricus): 284 / 510
+(Lepus coreanus,Lepus mandshuricus): 285 / 510
+(Lepus coreanus,Lepus mandshuricus): 286 / 510
+(Lepus coreanus,Lepus mandshuricus): 287 / 510
+(Lepus coreanus,Lepus mandshuricus): 288 / 510
+(Lepus coreanus,Lepus mandshuricus): 289 / 510
+(Lepus coreanus,Lepus mandshuricus): 290 / 510
+(Lepus coreanus,Lepus mandshuricus): 291 / 510
+(Lepus coreanus,Lepus mandshuricus): 292 / 510
+(Lepus coreanus,Lepus mandshuricus): 293 / 510
+(Lepus coreanus,Lepus mandshuricus): 294 / 510
+(Lepus coreanus,Lepus mandshuricus): 295 / 510
+(Lepus coreanus,Lepus mandshuricus): 296 / 510
+(Lepus coreanus,Lepus mandshuricus): 297 / 510
+(Lepus coreanus,Lepus mandshuricus): 298 / 510
+(Lepus coreanus,Lepus mandshuricus): 300 / 510
+(Lepus coreanus,Lepus mandshuricus): 300 / 510
+(Lepus coreanus,Lepus mandshuricus): 301 / 510
+(Lepus coreanus,Lepus mandshuricus): 302 / 510
+(Lepus coreanus,Lepus mandshuricus): 303 / 510
+(Lepus coreanus,Lepus mandshuricus): 304 / 510
+(Lepus coreanus,Lepus mandshuricus): 305 / 510
+(Lepus coreanus,Lepus mandshuricus): 306 / 510
+(Lepus coreanus,Lepus mandshuricus): 307 / 510
+(Lepus coreanus,Lepus mandshuricus): 308 / 510
+(Lepus coreanus,Lepus mandshuricus): 310 / 510
+(Lepus coreanus,Lepus mandshuricus): 310 / 510
+(Lepus coreanus,Lepus mandshuricus): 311 / 510
+(Lepus coreanus,Lepus mandshuricus): 312 / 510
+(Lepus coreanus,Lepus mandshuricus): 313 / 510
+(Lepus coreanus,Lepus mandshuricus): 314 / 510
+(Lepus coreanus,Lepus mandshuricus): 315 / 510
+(Lepus coreanus,Lepus mandshuricus): 316 / 510
+(Lepus coreanus,Lepus mandshuricus): 317 / 510
+(Lepus coreanus,Lepus mandshuricus): 318 / 510
+(Lepus coreanus,Lepus mandshuricus): 319 / 510
+(Lepus coreanus,Lepus mandshuricus): 320 / 510
+(Lepus coreanus,Lepus mandshuricus): 321 / 510
+(Lepus coreanus,Lepus mandshuricus): 322 / 510
+(Lepus coreanus,Lepus mandshuricus): 324 / 510
+(Lepus coreanus,Lepus mandshuricus): 324 / 510
+(Lepus coreanus,Lepus mandshuricus): 325 / 510
+(Lepus coreanus,Lepus mandshuricus): 326 / 510
+(Lepus coreanus,Lepus mandshuricus): 327 / 510
+(Lepus coreanus,Lepus mandshuricus): 328 / 510
+(Lepus coreanus,Lepus mandshuricus): 329 / 510
+(Lepus coreanus,Lepus mandshuricus): 330 / 510
+(Lepus coreanus,Lepus mandshuricus): 331 / 510
+(Lepus coreanus,Lepus mandshuricus): 332 / 510
+(Lepus coreanus,Lepus mandshuricus): 333 / 510
+(Lepus coreanus,Lepus mandshuricus): 334 / 510
+(Lepus coreanus,Lepus mandshuricus): 335 / 510
+(Lepus coreanus,Lepus mandshuricus): 336 / 510
+(Lepus coreanus,Lepus mandshuricus): 337 / 510
+(Lepus coreanus,Lepus mandshuricus): 338 / 510
+(Lepus coreanus,Lepus mandshuricus): 339 / 510
+(Lepus coreanus,Lepus mandshuricus): 340 / 510
+(Lepus coreanus,Lepus mandshuricus): 342 / 510
+(Lepus coreanus,Lepus mandshuricus): 342 / 510
+(Lepus coreanus,Lepus mandshuricus): 343 / 510
+(Lepus coreanus,Lepus mandshuricus): 344 / 510
+(Lepus coreanus,Lepus mandshuricus): 345 / 510
+(Lepus coreanus,Lepus mandshuricus): 346 / 510
+(Lepus coreanus,Lepus mandshuricus): 347 / 510
+(Lepus coreanus,Lepus mandshuricus): 348 / 510
+(Lepus coreanus,Lepus mandshuricus): 349 / 510
+(Lepus coreanus,Lepus mandshuricus): 350 / 510
+(Lepus coreanus,Lepus mandshuricus): 351 / 510
+(Lepus coreanus,Lepus mandshuricus): 352 / 510
+(Lepus coreanus,Lepus mandshuricus): 353 / 510
+(Lepus coreanus,Lepus mandshuricus): 354 / 510
+(Lepus coreanus,Lepus mandshuricus): 355 / 510
+(Lepus coreanus,Lepus mandshuricus): 356 / 510
+(Lepus coreanus,Lepus mandshuricus): 357 / 510
+(Lepus coreanus,Lepus mandshuricus): 358 / 510
+(Lepus coreanus,Lepus mandshuricus): 359 / 510
+(Lepus coreanus,Lepus mandshuricus): 360 / 510
+(Lepus coreanus,Lepus mandshuricus): 361 / 510
+(Lepus coreanus,Lepus mandshuricus): 362 / 510
+(Lepus coreanus,Lepus mandshuricus): 364 / 510
+(Lepus coreanus,Lepus mandshuricus): 364 / 510
+(Lepus coreanus,Lepus mandshuricus): 365 / 510
+(Lepus coreanus,Lepus mandshuricus): 366 / 510
+(Lepus coreanus,Lepus mandshuricus): 367 / 510
+(Lepus coreanus,Lepus mandshuricus): 368 / 510
+(Lepus coreanus,Lepus mandshuricus): 369 / 510
+(Lepus coreanus,Lepus mandshuricus): 370 / 510
+(Lepus coreanus,Lepus mandshuricus): 371 / 510
+(Lepus coreanus,Lepus mandshuricus): 372 / 510
+(Lepus coreanus,Lepus mandshuricus): 373 / 510
+(Lepus coreanus,Lepus mandshuricus): 374 / 510
+(Lepus coreanus,Lepus mandshuricus): 375 / 510
+(Lepus coreanus,Lepus mandshuricus): 376 / 510
+(Lepus coreanus,Lepus mandshuricus): 377 / 510
+(Lepus coreanus,Lepus mandshuricus): 378 / 510
+(Lepus coreanus,Lepus mandshuricus): 379 / 510
+(Lepus coreanus,Lepus mandshuricus): 380 / 510
+(Lepus coreanus,Lepus mandshuricus): 382 / 510
+(Lepus coreanus,Lepus mandshuricus): 382 / 510
+(Lepus coreanus,Lepus mandshuricus): 383 / 510
+(Lepus coreanus,Lepus mandshuricus): 384 / 510
+(Lepus coreanus,Lepus mandshuricus): 385 / 510
+(Lepus coreanus,Lepus mandshuricus): 386 / 510
+(Lepus coreanus,Lepus mandshuricus): 387 / 510
+(Lepus coreanus,Lepus mandshuricus): 388 / 510
+(Lepus coreanus,Lepus mandshuricus): 389 / 510
+(Lepus coreanus,Lepus mandshuricus): 390 / 510
+(Lepus coreanus,Lepus mandshuricus): 391 / 510
+(Lepus coreanus,Lepus mandshuricus): 392 / 510
+(Lepus coreanus,Lepus mandshuricus): 393 / 510
+(Lepus coreanus,Lepus mandshuricus): 394 / 510
+(Lepus coreanus,Lepus mandshuricus): 395 / 510
+(Lepus coreanus,Lepus mandshuricus): 396 / 510
+(Lepus coreanus,Lepus mandshuricus): 397 / 510
+(Lepus coreanus,Lepus mandshuricus): 398 / 510
+(Lepus coreanus,Lepus mandshuricus): 399 / 510
+(Lepus coreanus,Lepus mandshuricus): 400 / 510
+(Lepus coreanus,Lepus mandshuricus): 401 / 510
+(Lepus coreanus,Lepus mandshuricus): 402 / 510
+(Lepus coreanus,Lepus mandshuricus): 403 / 510
+(Lepus coreanus,Lepus mandshuricus): 404 / 510
+(Lepus coreanus,Lepus mandshuricus): 405 / 510
+(Lepus coreanus,Lepus mandshuricus): 406 / 510
+(Lepus coreanus,Lepus mandshuricus): 407 / 510
+(Lepus coreanus,Lepus mandshuricus): 408 / 510
+(Lepus coreanus,Lepus mandshuricus): 409 / 510
+(Lepus coreanus,Lepus mandshuricus): 410 / 510
+(Lepus coreanus,Lepus mandshuricus): 411 / 510
+(Lepus coreanus,Lepus mandshuricus): 412 / 510
+(Lepus coreanus,Lepus mandshuricus): 413 / 510
+(Lepus coreanus,Lepus mandshuricus): 414 / 510
+(Lepus coreanus,Lepus mandshuricus): 415 / 510
+(Lepus coreanus,Lepus mandshuricus): 416 / 510
+(Lepus coreanus,Lepus mandshuricus): 417 / 510
+(Lepus coreanus,Lepus mandshuricus): 418 / 510
+(Lepus coreanus,Lepus mandshuricus): 419 / 510
+(Lepus coreanus,Lepus mandshuricus): 420 / 510
+(Lepus coreanus,Lepus mandshuricus): 421 / 510
+(Lepus coreanus,Lepus mandshuricus): 422 / 510
+(Lepus coreanus,Lepus mandshuricus): 423 / 510
+(Lepus coreanus,Lepus mandshuricus): 424 / 510
+(Lepus coreanus,Lepus mandshuricus): 425 / 510
+(Lepus coreanus,Lepus mandshuricus): 426 / 510
+(Lepus coreanus,Lepus mandshuricus): 427 / 510
+(Lepus coreanus,Lepus mandshuricus): 428 / 510
+(Lepus coreanus,Lepus mandshuricus): 429 / 510
+(Lepus coreanus,Lepus mandshuricus): 430 / 510
+(Lepus coreanus,Lepus mandshuricus): 431 / 510
+(Lepus coreanus,Lepus mandshuricus): 432 / 510
+(Lepus coreanus,Lepus mandshuricus): 433 / 510
+(Lepus coreanus,Lepus mandshuricus): 434 / 510
+(Lepus coreanus,Lepus mandshuricus): 435 / 510
+(Lepus coreanus,Lepus mandshuricus): 436 / 510
+(Lepus coreanus,Lepus mandshuricus): 437 / 510
+(Lepus coreanus,Lepus mandshuricus): 438 / 510
+(Lepus coreanus,Lepus mandshuricus): 440 / 510
+(Lepus coreanus,Lepus mandshuricus): 440 / 510
+(Lepus coreanus,Lepus mandshuricus): 441 / 510
+(Lepus coreanus,Lepus mandshuricus): 442 / 510
+(Lepus coreanus,Lepus mandshuricus): 443 / 510
+(Lepus coreanus,Lepus mandshuricus): 444 / 510
+(Lepus coreanus,Lepus mandshuricus): 446 / 510
+(Lepus coreanus,Lepus mandshuricus): 446 / 510
+(Lepus coreanus,Lepus mandshuricus): 448 / 510
+(Lepus coreanus,Lepus mandshuricus): 448 / 510
+(Lepus coreanus,Lepus mandshuricus): 449 / 510
+(Lepus coreanus,Lepus mandshuricus): 450 / 510
+(Lepus coreanus,Lepus mandshuricus): 451 / 510
+(Lepus coreanus,Lepus mandshuricus): 452 / 510
+(Lepus coreanus,Lepus mandshuricus): 453 / 510
+(Lepus coreanus,Lepus mandshuricus): 454 / 510
+(Lepus coreanus,Lepus mandshuricus): 455 / 510
+(Lepus coreanus,Lepus mandshuricus): 456 / 510
+(Lepus coreanus,Lepus mandshuricus): 457 / 510
+(Lepus coreanus,Lepus mandshuricus): 458 / 510
+(Lepus coreanus,Lepus mandshuricus): 459 / 510
+(Lepus coreanus,Lepus mandshuricus): 460 / 510
+(Lepus coreanus,Lepus mandshuricus): 461 / 510
+(Lepus coreanus,Lepus mandshuricus): 462 / 510
+(Lepus coreanus,Lepus mandshuricus): 463 / 510
+(Lepus coreanus,Lepus mandshuricus): 464 / 510
+(Lepus coreanus,Lepus mandshuricus): 465 / 510
+(Lepus coreanus,Lepus mandshuricus): 466 / 510
+(Lepus coreanus,Lepus mandshuricus): 467 / 510
+(Lepus coreanus,Lepus mandshuricus): 468 / 510
+(Lepus coreanus,Lepus mandshuricus): 469 / 510
+(Lepus coreanus,Lepus mandshuricus): 470 / 510
+(Lepus coreanus,Lepus mandshuricus): 471 / 510
+(Lepus coreanus,Lepus mandshuricus): 472 / 510
+(Lepus coreanus,Lepus mandshuricus): 473 / 510
+(Lepus coreanus,Lepus mandshuricus): 474 / 510
+(Lepus coreanus,Lepus mandshuricus): 475 / 510
+(Lepus coreanus,Lepus mandshuricus): 476 / 510
+(Lepus coreanus,Lepus mandshuricus): 477 / 510
+(Lepus coreanus,Lepus mandshuricus): 478 / 510
+(Lepus coreanus,Lepus mandshuricus): 479 / 510
+(Lepus coreanus,Lepus mandshuricus): 480 / 510
+(Lepus coreanus,Lepus mandshuricus): 481 / 510
+(Lepus coreanus,Lepus mandshuricus): 482 / 510
+(Lepus coreanus,Lepus mandshuricus): 483 / 510
+(Lepus coreanus,Lepus mandshuricus): 484 / 510
+(Lepus coreanus,Lepus mandshuricus): 485 / 510
+(Lepus coreanus,Lepus mandshuricus): 486 / 510
+(Lepus coreanus,Lepus mandshuricus): 487 / 510
+(Lepus coreanus,Lepus mandshuricus): 488 / 510
+(Lepus coreanus,Lepus mandshuricus): 489 / 510
+(Lepus coreanus,Lepus mandshuricus): 490 / 510
+(Lepus coreanus,Lepus mandshuricus): 491 / 510
+(Lepus coreanus,Lepus mandshuricus): 492 / 510
+(Lepus coreanus,Lepus mandshuricus): 493 / 510
+(Lepus coreanus,Lepus mandshuricus): 494 / 510
+(Lepus coreanus,Lepus mandshuricus): 495 / 510
+(Lepus coreanus,Lepus mandshuricus): 496 / 510
+(Lepus coreanus,Lepus mandshuricus): 497 / 510
+(Lepus coreanus,Lepus mandshuricus): 498 / 510
+(Lepus coreanus,Lepus mandshuricus): 499 / 510
+(Lepus coreanus,Lepus mandshuricus): 500 / 510
+(Lepus coreanus,Lepus mandshuricus): 501 / 510
+(Lepus coreanus,Lepus mandshuricus): 502 / 510
+(Lepus coreanus,Lepus mandshuricus): 503 / 510
+(Lepus coreanus,Lepus mandshuricus): 504 / 510
+(Lepus coreanus,Lepus mandshuricus): 505 / 510
+(Lepus coreanus,Lepus mandshuricus): 506 / 510
+(Lepus coreanus,Lepus mandshuricus): 507 / 510
+(Lepus coreanus,Lepus mandshuricus): 508 / 510
+(Lepus coreanus,Lepus mandshuricus): 509 / 510
+(Lepus coreanus,Lepus mandshuricus): 510 / 510
+(Lepus coreanus,Lepus timidus): 1 / 160
+(Lepus coreanus,Lepus timidus): 2 / 160
+(Lepus coreanus,Lepus timidus): 4 / 160
+(Lepus coreanus,Lepus timidus): 4 / 160
+(Lepus coreanus,Lepus timidus): 6 / 160
+(Lepus coreanus,Lepus timidus): 6 / 160
+(Lepus coreanus,Lepus timidus): 8 / 160
+(Lepus coreanus,Lepus timidus): 8 / 160
+(Lepus coreanus,Lepus timidus): 9 / 160
+(Lepus coreanus,Lepus timidus): 10 / 160
+(Lepus coreanus,Lepus timidus): 11 / 160
+(Lepus coreanus,Lepus timidus): 12 / 160
+(Lepus coreanus,Lepus timidus): 13 / 160
+(Lepus coreanus,Lepus timidus): 14 / 160
+(Lepus coreanus,Lepus timidus): 16 / 160
+(Lepus coreanus,Lepus timidus): 16 / 160
+(Lepus coreanus,Lepus timidus): 17 / 160
+(Lepus coreanus,Lepus timidus): 18 / 160
+(Lepus coreanus,Lepus timidus): 19 / 160
+(Lepus coreanus,Lepus timidus): 20 / 160
+(Lepus coreanus,Lepus timidus): 21 / 160
+(Lepus coreanus,Lepus timidus): 22 / 160
+(Lepus coreanus,Lepus timidus): 23 / 160
+(Lepus coreanus,Lepus timidus): 24 / 160
+(Lepus coreanus,Lepus timidus): 26 / 160
+(Lepus coreanus,Lepus timidus): 26 / 160
+(Lepus coreanus,Lepus timidus): 27 / 160
+(Lepus coreanus,Lepus timidus): 28 / 160
+(Lepus coreanus,Lepus timidus): 29 / 160
+(Lepus coreanus,Lepus timidus): 30 / 160
+(Lepus coreanus,Lepus timidus): 31 / 160
+(Lepus coreanus,Lepus timidus): 32 / 160
+(Lepus coreanus,Lepus timidus): 33 / 160
+(Lepus coreanus,Lepus timidus): 34 / 160
+(Lepus coreanus,Lepus timidus): 35 / 160
+(Lepus coreanus,Lepus timidus): 36 / 160
+(Lepus coreanus,Lepus timidus): 38 / 160
+(Lepus coreanus,Lepus timidus): 38 / 160
+(Lepus coreanus,Lepus timidus): 39 / 160
+(Lepus coreanus,Lepus timidus): 40 / 160
+(Lepus coreanus,Lepus timidus): 41 / 160
+(Lepus coreanus,Lepus timidus): 42 / 160
+(Lepus coreanus,Lepus timidus): 44 / 160
+(Lepus coreanus,Lepus timidus): 44 / 160
+(Lepus coreanus,Lepus timidus): 45 / 160
+(Lepus coreanus,Lepus timidus): 46 / 160
+(Lepus coreanus,Lepus timidus): 47 / 160
+(Lepus coreanus,Lepus timidus): 48 / 160
+(Lepus coreanus,Lepus timidus): 49 / 160
+(Lepus coreanus,Lepus timidus): 50 / 160
+(Lepus coreanus,Lepus timidus): 51 / 160
+(Lepus coreanus,Lepus timidus): 52 / 160
+(Lepus coreanus,Lepus timidus): 53 / 160
+(Lepus coreanus,Lepus timidus): 54 / 160
+(Lepus coreanus,Lepus timidus): 55 / 160
+(Lepus coreanus,Lepus timidus): 56 / 160
+(Lepus coreanus,Lepus timidus): 57 / 160
+(Lepus coreanus,Lepus timidus): 58 / 160
+(Lepus coreanus,Lepus timidus): 59 / 160
+(Lepus coreanus,Lepus timidus): 60 / 160
+(Lepus coreanus,Lepus timidus): 62 / 160
+(Lepus coreanus,Lepus timidus): 62 / 160
+(Lepus coreanus,Lepus timidus): 63 / 160
+(Lepus coreanus,Lepus timidus): 64 / 160
+(Lepus coreanus,Lepus timidus): 65 / 160
+(Lepus coreanus,Lepus timidus): 66 / 160
+(Lepus coreanus,Lepus timidus): 67 / 160
+(Lepus coreanus,Lepus timidus): 68 / 160
+(Lepus coreanus,Lepus timidus): 69 / 160
+(Lepus coreanus,Lepus timidus): 70 / 160
+(Lepus coreanus,Lepus timidus): 71 / 160
+(Lepus coreanus,Lepus timidus): 72 / 160
+(Lepus coreanus,Lepus timidus): 73 / 160
+(Lepus coreanus,Lepus timidus): 74 / 160
+(Lepus coreanus,Lepus timidus): 75 / 160
+(Lepus coreanus,Lepus timidus): 76 / 160
+(Lepus coreanus,Lepus timidus): 78 / 160
+(Lepus coreanus,Lepus timidus): 78 / 160
+(Lepus coreanus,Lepus timidus): 79 / 160
+(Lepus coreanus,Lepus timidus): 80 / 160
+(Lepus coreanus,Lepus timidus): 81 / 160
+(Lepus coreanus,Lepus timidus): 82 / 160
+(Lepus coreanus,Lepus timidus): 83 / 160
+(Lepus coreanus,Lepus timidus): 84 / 160
+(Lepus coreanus,Lepus timidus): 85 / 160
+(Lepus coreanus,Lepus timidus): 86 / 160
+(Lepus coreanus,Lepus timidus): 87 / 160
+(Lepus coreanus,Lepus timidus): 88 / 160
+(Lepus coreanus,Lepus timidus): 90 / 160
+(Lepus coreanus,Lepus timidus): 90 / 160
+(Lepus coreanus,Lepus timidus): 92 / 160
+(Lepus coreanus,Lepus timidus): 92 / 160
+(Lepus coreanus,Lepus timidus): 93 / 160
+(Lepus coreanus,Lepus timidus): 94 / 160
+(Lepus coreanus,Lepus timidus): 96 / 160
+(Lepus coreanus,Lepus timidus): 96 / 160
+(Lepus coreanus,Lepus timidus): 97 / 160
+(Lepus coreanus,Lepus timidus): 98 / 160
+(Lepus coreanus,Lepus timidus): 99 / 160
+(Lepus coreanus,Lepus timidus): 100 / 160
+(Lepus coreanus,Lepus timidus): 101 / 160
+(Lepus coreanus,Lepus timidus): 102 / 160
+(Lepus coreanus,Lepus timidus): 103 / 160
+(Lepus coreanus,Lepus timidus): 104 / 160
+(Lepus coreanus,Lepus timidus): 105 / 160
+(Lepus coreanus,Lepus timidus): 106 / 160
+(Lepus coreanus,Lepus timidus): 107 / 160
+(Lepus coreanus,Lepus timidus): 108 / 160
+(Lepus coreanus,Lepus timidus): 109 / 160
+(Lepus coreanus,Lepus timidus): 110 / 160
+(Lepus coreanus,Lepus timidus): 111 / 160
+(Lepus coreanus,Lepus timidus): 112 / 160
+(Lepus coreanus,Lepus timidus): 114 / 160
+(Lepus coreanus,Lepus timidus): 114 / 160
+(Lepus coreanus,Lepus timidus): 115 / 160
+(Lepus coreanus,Lepus timidus): 116 / 160
+(Lepus coreanus,Lepus timidus): 117 / 160
+(Lepus coreanus,Lepus timidus): 118 / 160
+(Lepus coreanus,Lepus timidus): 119 / 160
+(Lepus coreanus,Lepus timidus): 120 / 160
+(Lepus coreanus,Lepus timidus): 121 / 160
+(Lepus coreanus,Lepus timidus): 122 / 160
+(Lepus coreanus,Lepus timidus): 123 / 160
+(Lepus coreanus,Lepus timidus): 124 / 160
+(Lepus coreanus,Lepus timidus): 125 / 160
+(Lepus coreanus,Lepus timidus): 126 / 160
+(Lepus coreanus,Lepus timidus): 127 / 160
+(Lepus coreanus,Lepus timidus): 128 / 160
+(Lepus coreanus,Lepus timidus): 129 / 160
+(Lepus coreanus,Lepus timidus): 130 / 160
+(Lepus coreanus,Lepus timidus): 131 / 160
+(Lepus coreanus,Lepus timidus): 132 / 160
+(Lepus coreanus,Lepus timidus): 133 / 160
+(Lepus coreanus,Lepus timidus): 134 / 160
+(Lepus coreanus,Lepus timidus): 136 / 160
+(Lepus coreanus,Lepus timidus): 136 / 160
+(Lepus coreanus,Lepus timidus): 137 / 160
+(Lepus coreanus,Lepus timidus): 138 / 160
+(Lepus coreanus,Lepus timidus): 139 / 160
+(Lepus coreanus,Lepus timidus): 140 / 160
+(Lepus coreanus,Lepus timidus): 141 / 160
+(Lepus coreanus,Lepus timidus): 142 / 160
+(Lepus coreanus,Lepus timidus): 143 / 160
+(Lepus coreanus,Lepus timidus): 144 / 160
+(Lepus coreanus,Lepus timidus): 145 / 160
+(Lepus coreanus,Lepus timidus): 146 / 160
+(Lepus coreanus,Lepus timidus): 147 / 160
+(Lepus coreanus,Lepus timidus): 148 / 160
+(Lepus coreanus,Lepus timidus): 149 / 160
+(Lepus coreanus,Lepus timidus): 150 / 160
+(Lepus coreanus,Lepus timidus): 151 / 160
+(Lepus coreanus,Lepus timidus): 152 / 160
+(Lepus coreanus,Lepus timidus): 153 / 160
+(Lepus coreanus,Lepus timidus): 154 / 160
+(Lepus coreanus,Lepus timidus): 155 / 160
+(Lepus coreanus,Lepus timidus): 156 / 160
+(Lepus coreanus,Lepus timidus): 157 / 160
+(Lepus coreanus,Lepus timidus): 158 / 160
+(Lepus coreanus,Lepus timidus): 159 / 160
+(Lepus coreanus,Lepus timidus): 160 / 160
+(Lepus brachyurus,Lepus coreanus): 1 / 16
+(Lepus brachyurus,Lepus coreanus): 2 / 16
+(Lepus brachyurus,Lepus coreanus): 3 / 16
+(Lepus brachyurus,Lepus coreanus): 4 / 16
+(Lepus brachyurus,Lepus coreanus): 5 / 16
+(Lepus brachyurus,Lepus coreanus): 6 / 16
+(Lepus brachyurus,Lepus coreanus): 7 / 16
+(Lepus brachyurus,Lepus coreanus): 8 / 16
+(Lepus brachyurus,Lepus coreanus): 10 / 16
+(Lepus brachyurus,Lepus coreanus): 10 / 16
+(Lepus brachyurus,Lepus coreanus): 11 / 16
+(Lepus brachyurus,Lepus coreanus): 12 / 16
+(Lepus brachyurus,Lepus coreanus): 13 / 16
+(Lepus brachyurus,Lepus coreanus): 14 / 16
+(Lepus brachyurus,Lepus coreanus): 15 / 16
+(Lepus brachyurus,Lepus coreanus): 16 / 16
+(Lepus mandshuricus,Lepus timidus): 1 / 1260
+(Lepus mandshuricus,Lepus timidus): 2 / 1260
+(Lepus mandshuricus,Lepus timidus): 3 / 1260
+(Lepus mandshuricus,Lepus timidus): 4 / 1260
+(Lepus mandshuricus,Lepus timidus): 6 / 1260
+(Lepus mandshuricus,Lepus timidus): 6 / 1260
+(Lepus mandshuricus,Lepus timidus): 7 / 1260
+(Lepus mandshuricus,Lepus timidus): 8 / 1260
+(Lepus mandshuricus,Lepus timidus): 9 / 1260
+(Lepus mandshuricus,Lepus timidus): 10 / 1260
+(Lepus mandshuricus,Lepus timidus): 11 / 1260
+(Lepus mandshuricus,Lepus timidus): 12 / 1260
+(Lepus mandshuricus,Lepus timidus): 13 / 1260
+(Lepus mandshuricus,Lepus timidus): 14 / 1260
+(Lepus mandshuricus,Lepus timidus): 15 / 1260
+(Lepus mandshuricus,Lepus timidus): 16 / 1260
+(Lepus mandshuricus,Lepus timidus): 18 / 1260
+(Lepus mandshuricus,Lepus timidus): 18 / 1260
+(Lepus mandshuricus,Lepus timidus): 19 / 1260
+(Lepus mandshuricus,Lepus timidus): 20 / 1260
+(Lepus mandshuricus,Lepus timidus): 21 / 1260
+(Lepus mandshuricus,Lepus timidus): 22 / 1260
+(Lepus mandshuricus,Lepus timidus): 23 / 1260
+(Lepus mandshuricus,Lepus timidus): 24 / 1260
+(Lepus mandshuricus,Lepus timidus): 25 / 1260
+(Lepus mandshuricus,Lepus timidus): 26 / 1260
+(Lepus mandshuricus,Lepus timidus): 27 / 1260
+(Lepus mandshuricus,Lepus timidus): 28 / 1260
+(Lepus mandshuricus,Lepus tFound potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found poimidus): 29 / 1260
+(Lepus mandshuricus,Lepus timidus): 30 / 1260
+(Lepus mandshuricus,Lepus timidus): 31 / 1260
+(Lepus mandshuricus,Lepus timidus): 32 / 1260
+(Lepus mandshuricus,Lepus timidus): 33 / 1260
+(Lepus mandshuricus,Lepus timidus): 34 / 1260
+(Lepus mandshuricus,Lepus timidus): 35 / 1260
+(Lepus mandshuricus,Lepus timidus): 36 / 1260
+(Lepus mandshuricus,Lepus timidus): 37 / 1260
+(Lepus mandshuricus,Lepus timidus): 38 / 1260
+(Lepus mandshuricus,Lepus timidus): 39 / 1260
+(Lepus mandshuricus,Lepus timidus): 40 / 1260
+(Lepus mandshuricus,Lepus timidus): 41 / 1260
+(Lepus mandshuricus,Lepus timidus): 42 / 1260
+(Lepus mandshuricus,Lepus timidus): 43 / 1260
+(Lepus mandshuricus,Lepus timidus): 44 / 1260
+(Lepus mandshuricus,Lepus timidus): 45 / 1260
+(Lepus mandshuricus,Lepus timidus): 46 / 1260
+(Lepus mandshuricus,Lepus timidus): 47 / 1260
+(Lepus mandshuricus,Lepus timidus): 48 / 1260
+(Lepus mandshuricus,Lepus timidus): 49 / 1260
+(Lepus mandshuricus,Lepus timidus): 50 / 1260
+(Lepus mandshuricus,Lepus timidus): 51 / 1260
+(Lepus mandshuricus,Lepus timidus): 52 / 1260
+(Lepus mandshuricus,Lepus timidus): 53 / 1260
+(Lepus mandshuricus,Lepus timidus): 54 / 1260
+(Lepus mandshuricus,Lepus timidus): 55 / 1260
+(Lepus mandshuricus,Lepus timidus): 56 / 1260
+(Lepus mandshuricus,Lepus timidus): 57 / 1260
+(Lepus mandshuricus,Lepus timidus): 58 / 1260
+(Lepus mandshuricus,Lepus timidus): 60 / 1260
+(Lepus mandshuricus,Lepus timidus): 60 / 1260
+(Lepus mandshuricus,Lepus timidus): 61 / 1260
+(Lepus mandshuricus,Lepus timidus): 62 / 1260
+(Lepus mandshuricus,Lepus timidus): 63 / 1260
+(Lepus mandshuricus,Lepus timidus): 64 / 1260
+(Lepus mandshuricus,Lepus timidus): 66 / 1260
+(Lepus mandshuricus,Lepus timidus): 66 / 1260
+(Lepus mandshuricus,Lepus timidus): 67 / 1260
+(Lepus mandshuricus,Lepus timidus): 68 / 1260
+(Lepus mandshuricus,Lepus timidus): 69 / 1260
+(Lepus mandshuricus,Lepus timidus): 70 / 1260
+(Lepus mandshuricus,Lepus timidus): 71 / 1260
+(Lepus mandshuricus,Lepus timidus): 72 / 1260
+(Lepus mandshuricus,Lepus timidus): 73 / 1260
+(Lepus mandshuricus,Lepus timidus): 74 / 1260
+(Lepus mandshuricus,Lepus timidus): 75 / 1260
+(Lepus mandshuricus,Lepus timidus): 76 / 1260
+(Lepus mandshuricus,Lepus timidus): 77 / 1260
+(Lepus mandshuricus,Lepus timidus): 78 / 1260
+(Lepus mandshuricus,Lepus timidus): 79 / 1260
+(Lepus mandshuricus,Lepus timidus): 80 / 1260
+(Lepus mandshuricus,Lepus timidus): 81 / 1260
+(Lepus mandshuricus,Lepus timidus): 82 / 1260
+(Lepus mandshuricus,Lepus timidus): 83 / 1260
+(Lepus mandshuricus,Lepus timidus): 84 / 1260
+(Lepus mandshuricus,Lepus timidus): 85 / 1260
+(Lepus mandshuricus,Lepus timidus): 86 / 1260
+(Lepus mandshuricus,Lepus timidus): 87 / 1260
+(Lepus mandshuricus,Lepus timidus): 88 / 1260
+(Lepus mandshuricus,Lepus timidus): 89 / 1260
+(Lepus mandshuricus,Lepus timidus): 90 / 1260
+(Lepus mandshuricus,Lepus timidus): 91 / 1260
+(Lepus mandshuricus,Lepus timidus): 92 / 1260
+(Lepus mandshuricus,Lepus timidus): 93 / 1260
+(Lepus mandshuricus,Lepus timidus): 94 / 1260
+(Lepus mandshuricus,Lepus timidus): 95 / 1260
+(Lepus mandshuricus,Lepus timidus): 96 / 1260
+(Lepus mandshuricus,Lepus timidus): 97 / 1260
+(Lepus mandshuricus,Lepus timidus): 98 / 1260
+(Lepus mandshuricus,Lepus timidus): 100 / 1260
+(Lepus mandshuricus,Lepus timidus): 100 / 1260
+(Lepus mandshuricus,Lepus timidus): 101 / 1260
+(Lepus mandshuricus,Lepus timidus): 102 / 1260
+(Lepus mandshuricus,Lepus timidus): 103 / 1260
+(Lepus mandshuricus,Lepus timidus): 104 / 1260
+(Lepus mandshuricus,Lepus timidus): 105 / 1260
+(Lepus mandshuricus,Lepus timidus): 106 / 1260
+(Lepus mandshuricus,Lepus timidus): 107 / 1260
+(Lepus mandshuricus,Lepus timidus): 108 / 1260
+(Lepus mandshuricus,Lepus timidus): 109 / 1260
+(Lepus mandshuricus,Lepus timidus): 110 / 1260
+(Lepus mandshuricus,Lepus timidus): 111 / 1260
+(Lepus mandshuricus,Lepus timidus): 112 / 1260
+(Lepus mandshuricus,Lepus timidus): 113 / 1260
+(Lepus mandshuricus,Lepus timidus): 114 / 1260
+(Lepus mandshuricus,Lepus timidus): 115 / 1260
+(Lepus mandshuricus,Lepus timidus): 116 / 1260
+(Lepus mandshuricus,Lepus timidus): 117 / 1260
+(Lepus mandshuricus,Lepus timidus): 118 / 1260
+(Lepus mandshuricus,Lepus timidus): 119 / 1260
+(Lepus mandshuricus,Lepus timidus): 120 / 1260
+(Lepus mandshuricus,Lepus timidus): 121 / 1260
+(Lepus mandshuricus,Lepus timidus): 122 / 1260
+(Lepus mandshuricus,Lepus timidus): 123 / 1260
+(Lepus mandshuricus,Lepus timidus): 124 / 1260
+(Lepus mandshuricus,Lepus timidus): 125 / 1260
+(Lepus mandshuricus,Lepus timidus): 126 / 1260
+(Lepus mandshuricus,Lepus timidus): 127 / 1260
+(Lepus mandshuricus,Lepus timidus): 128 / 1260
+(Lepus mandshuricus,Lepus timidus): 129 / 1260
+(Lepus mandshuricus,Lepus timidus): 130 / 1260
+(Lepus mandshuricus,Lepus timidus): 131 / 1260
+(Lepus mandshuricus,Lepus timidus): 132 / 1260
+(Lepus mandshuricus,Lepus timidus): 133 / 1260
+(Lepus mandshuricus,Lepus timidus): 134 / 1260
+(Lepus mandshuricus,Lepus timidus): 135 / 1260
+(Lepus mandshuricus,Lepus timidus): 136 / 1260
+(Lepus mandshuricus,Lepus timidus): 137 / 1260
+(Lepus mandshuricus,Lepus timidus): 138 / 1260
+(Lepus mandshuricus,Lepus timidus): 139 / 1260
+(Lepus mandshuricus,Lepus timidus): 140 / 1260
+(Lepus mandshuricus,Lepus timidus): 141 / 1260
+(Lepus mandshuricus,Lepus timidus): 142 / 1260
+(Lepus mandshuricus,Lepus timidus): 143 / 1260
+(Lepus mandshuricus,Lepus timidus): 144 / 1260
+(Lepus mandshuricus,Lepus timidus): 145 / 1260
+(Lepus mandshuricus,Lepus timidus): 146 / 1260
+(Lepus mandshuricus,Lepus timidus): 147 / 1260
+(Lepus mandshuricus,Lepus timidus): 148 / 1260
+(Lepus mandshuricus,Lepus timidus): 149 / 1260
+(Lepus mandshuricus,Lepus timidus): 150 / 1260
+(Lepus mandshuricus,Lepus timidus): 151 / 1260
+(Lepus mandshuricus,Lepus timidus): 152 / 1260
+(Lepus mandshuricus,Lepus timidus): 153 / 1260
+(Lepus mandshuricus,Lepus timidus): 154 / 1260
+(Lepus mandshuricus,Lepus timidus): 155 / 1260
+(Lepus mandshuricus,Lepus timidus): 156 / 1260
+(Lepus mandshuricus,Lepus timidus): 157 / 1260
+(Lepus mandshuricus,Lepus timidus): 158 / 1260
+(Lepus mandshuricus,Lepus timidus): 159 / 1260
+(Lepus mandshuricus,Lepus timidus): 160 / 1260
+(Lepus mandshuricus,Lepus timidus): 161 / 1260
+(Lepus mandshuricus,Lepus timidus): 162 / 1260
+(Lepus mandshuricus,Lepus timidus): 163 / 1260
+(Lepus mandshuricus,Lepus timidus): 164 / 1260
+(Lepus mandshuricus,Lepus timidus): 165 / 1260
+(Lepus mandshuricus,Lepus timidus): 166 / 1260
+(Lepus mandshuricus,Lepus timidus): 168 / 1260
+(Lepus mandshuricus,Lepus timidus): 168 / 1260
+(Lepus mandshuricus,Lepus timidus): 169 / 1260
+(Lepus mandshuricus,Lepus timidus): 170 / 1260
+(Lepus mandshuricus,Lepus timidus): 171 / 1260
+(Lepus mandshuricus,Lepus timidus): 172 / 1260
+(Lepus mandshuricus,Lepus timidus): 173 / 1260
+(Lepus mandshuricus,Lepus timidus): 174 / 1260
+(Lepus mandshuricus,Lepus timidus): 176 / 1260
+(Lepus mandshuricus,Lepus timidus): 176 / 1260
+(Lepus mandshuricus,Lepus timidus): 178 / 1260
+(Lepus mandshuricus,Lepus timidus): 178 / 1260
+(Lepus mandshuricus,Lepus timidus): 179 / 1260
+(Lepus mandshuricus,Lepus timidus): 180 / 1260
+(Lepus mandshuricus,Lepus timidus): 181 / 1260
+(Lepus mandshuricus,Lepus timidus): 182 / 1260
+(Lepus mandshuricus,Lepus timidus): 183 / 1260
+(Lepus mandshuricus,Lepus timidus): 184 / 1260
+(Lepus mandshuricus,Lepus timidus): 185 / 1260
+(Lepus mandshuricus,Lepus timidus): 186 / 1260
+(Lepus mandshuricus,Lepus timidus): 187 / 1260
+(Lepus mandshuricus,Lepus timidus): 188 / 1260
+(Lepus mandshuricus,Lepus timidus): 189 / 1260
+(Lepus mandshuricus,Lepus timidus): 190 / 1260
+(Lepus mandshuricus,Lepus timidus): 191 / 1260
+(Lepus mandshuricus,Lepus timidus): 192 / 1260
+(Lepus mandshuricus,Lepus timidus): 193 / 1260
+(Lepus mandshuricus,Lepus timidus): 194 / 1260
+(Lepus mandshuricus,Lepus timidus): 195 / 1260
+(Lepus mandshuricus,Lepus timidus): 196 / 1260
+(Lepus mandshuricus,Lepus timidus): 197 / 1260
+(Lepus mandshuricus,Lepus timidus): 198 / 1260
+(Lepus mandshuricus,Lepus timidus): 199 / 1260
+(Lepus mandshuricus,Lepus timidus): 200 / 1260
+(Lepus mandshuricus,Lepus timidus): 201 / 1260
+(Lepus mandshuricus,Lepus timidus): 202 / 1260
+(Lepus mandshuricus,Lepus timidus): 203 / 1260
+(Lepus mandshuricus,Lepus timidus): 204 / 1260
+(Lepus mandshuricus,Lepus timidus): 205 / 1260
+(Lepus mandshuricus,Lepus timidus): 206 / 1260
+(Lepus mandshuricus,Lepus timidus): 207 / 1260
+(Lepus mandshuricus,Lepus timidus): 208 / 1260
+(Lepus mandshuricus,Lepus timidus): 209 / 1260
+(Lepus mandshuricus,Lepus timidus): 210 / 1260
+(Lepus mandshuricus,Lepus timidus): 211 / 1260
+(Lepus mandshuricus,Lepus timidus): 212 / 1260
+(Lepus mandshuricus,Lepus timidus): 213 / 1260
+(Lepus mandshuricus,Lepus timidus): 214 / 1260
+(Lepus mandshuricus,Lepus timidus): 216 / 1260
+(Lepus mandshuricus,Lepus timidus): 216 / 1260
+(Lepus mandshuricus,Lepus timidus): 217 / 1260
+(Lepus mandshuricus,Lepus timidus): 218 / 1260
+(Lepus mandshuricus,Lepus timidus): 219 / 1260
+(Lepus mandshuricus,Lepus timidus): 220 / 1260
+(Lepus mandshuricus,Lepus timidus): 221 / 1260
+(Lepus mandshuricus,Lepus timidus): 222 / 1260
+(Lepus mandshuricus,Lepus timidus): 223 / 1260
+(Lepus mandshuricus,Lepus timidus): 224 / 1260
+(Lepus mandshuricus,Lepus timidus): 226 / 1260
+(Lepus mandshuricus,Lepus timidus): 226 / 1260
+(Lepus mandshuricus,Lepus timidus): 228 / 1260
+(Lepus mandshuricus,Lepus timidus): 228 / 1260
+(Lepus mandshuricus,Lepus timidus): 229 / 1260
+(Lepus mandshuricus,Lepus timidus): 230 / 1260
+(Lepus mandshuricus,Lepus timidus): 231 / 1260
+(Lepus mandshuricus,Lepus timidus): 232 / 1260
+(Lepus mandshuricus,Lepus timidus): 233 / 1260
+(Lepus mandshuricus,Lepus timidus): 234 / 1260
+(Lepus mandshuricus,Lepus timidus): 235 / 1260
+(Lepus mandshuricus,Lepus timidus): 236 / 1260
+(Lepus mandshuricus,Lepus timidus): 237 / 1260
+(Lepus mandshuricus,Lepus timidus): 238 / 1260
+(Lepus mandshuricus,Lepus timidus): 239 / 1260
+(Lepus mandshuricus,Lepus timidus): 240 / 1260
+(Lepus mandshuricus,Lepus timidus): 241 / 1260
+(Lepus mandshuricus,Lepus timidus): 242 / 1260
+(Lepus mandshuricus,Lepus timidus): 243 / 1260
+(Lepus mandshuricus,Lepus timidus): 244 / 1260
+(Lepus mandshuricus,Lepus timidus): 245 / 1260
+(Lepus mandshuricus,Lepus timidus): 246 / 1260
+(Lepus mandshuricus,Lepus timidus): 247 / 1260
+(Lepus mandshuricus,Lepus timidus): 248 / 1260
+(Lepus mandshuricus,Lepus timidus): 249 / 1260
+(Lepus mandshuricus,Lepus timidus): 250 / 1260
+(Lepus mandshuricus,Lepus timidus): 251 / 1260
+(Lepus mandshuricus,Lepus timidus): 252 / 1260
+(Lepus mandshuricus,Lepus timidus): 253 / 1260
+(Lepus mandshuricus,Lepus timidus): 254 / 1260
+(Lepus mandshuricus,Lepus timidus): 256 / 1260
+(Lepus mandshuricus,Lepus timidus): 256 / 1260
+(Lepus mandshuricus,Lepus timidus): 257 / 1260
+(Lepus mandshuricus,Lepus timidus): 258 / 1260
+(Lepus mandshuricus,Lepus timidus): 259 / 1260
+(Lepus mandshuricus,Lepus timidus): 260 / 1260
+(Lepus mandshuricus,Lepus timidus): 261 / 1260
+(Lepus mandshuricus,Lepus timidus): 262 / 1260
+(Lepus mandshuricus,Lepus timidus): 263 / 1260
+(Lepus mandshuricus,Lepus timidus): 264 / 1260
+(Lepus mandshuricus,Lepus timidus): 265 / 1260
+(Lepus mandshuricus,Lepus timidus): 266 / 1260
+(Lepus mandshuricus,Lepus timidus): 267 / 1260
+(Lepus mandshuricus,Lepus timidus): 268 / 1260
+(Lepus mandshuricus,Lepus timidus): 269 / 1260
+(Lepus mandshuricus,Lepus timidus): 270 / 1260
+(Lepus mandshuricus,Lepus timidus): 272 / 1260
+(Lepus mandshuricus,Lepus timidus): 272 / 1260
+(Lepus mandshuricus,Lepus timidus): 273 / 1260
+(Lepus mandshuricus,Lepus timidus): 274 / 1260
+(Lepus mandshuricus,Lepus timidus): 275 / 1260
+(Lepus mandshuricus,Lepus timidus): 276 / 1260
+(Lepus mandshuricus,Lepus timidus): 277 / 1260
+(Lepus mandshuricus,Lepus timidus): 278 / 1260
+(Lepus mandshuricus,Lepus timidus): 280 / 1260
+(Lepus mandshuricus,Lepus timidus): 280 / 1260
+(Lepus mandshuricus,Lepus timidus): 281 / 1260
+(Lepus mandshuricus,Lepus timidus): 282 / 1260
+(Lepus mandshuricus,Lepus timidus): 283 / 1260
+(Lepus mandshuricus,Lepus timidus): 284 / 1260
+(Lepus mandshuricus,Lepus timidus): 285 / 1260
+(Lepus mandshuricus,Lepus timidus): 286 / 1260
+(Lepus mandshuricus,Lepus timidus): 287 / 1260
+(Lepus mandshuricus,Lepus timidus): 288 / 1260
+(Lepus mandshuricus,Lepus timidus): 289 / 1260
+(Lepus mandshuricus,Lepus timidus): 290 / 1260
+(Lepus mandshuricus,Lepus timidus): 291 / 1260
+(Lepus mandshuricus,Lepus timidus): 292 / 1260
+(Lepus mandshuricus,Lepus timidus): 293 / 1260
+(Lepus mandshuricus,Lepus timidus): 294 / 1260
+(Lepus mandshuricus,Lepus timidus): 295 / 1260
+(Lepus mandshuricus,Lepus timidus): 296 / 1260
+(Lepus mandshuricus,Lepus timidus): 297 / 1260
+(Lepus mandshuricus,Lepus timidus): 298 / 1260
+(Lepus mandshuricus,Lepus timidus): 299 / 1260
+(Lepus mandshuricus,Lepus timidus): 300 / 1260
+(Lepus mandshuricus,Lepus timidus): 301 / 1260
+(Lepus mandshuricus,Lepus timidus): 302 / 1260
+(Lepus mandshuricus,Lepus timidus): 303 / 1260
+(Lepus mandshuricus,Lepus timidus): 304 / 1260
+(Lepus mandshuricus,Lepus timidus): 305 / 1260
+(Lepus mandshuricus,Lepus timidus): 306 / 1260
+(Lepus mandshuricus,Lepus timidus): 307 / 1260
+(Lepus mandshuricus,Lepus timidus): 308 / 1260
+(Lepus mandshuricus,Lepus timidus): 309 / 1260
+(Lepus mandshuricus,Lepus timidus): 310 / 1260
+(Lepus mandshuricus,Lepus timidus): 311 / 1260
+(Lepus mandshuricus,Lepus timidus): 312 / 1260
+(Lepus mandshuricus,Lepus timidus): 313 / 1260
+(Lepus mandshuricus,Lepus timidus): 314 / 1260
+(Lepus mandshuricus,Lepus timidus): 316 / 1260
+(Lepus mandshuricus,Lepus timidus): 316 / 1260
+(Lepus mandshuricus,Lepus timidus): 317 / 1260
+(Lepus mandshuricus,Lepus timidus): 318 / 1260
+(Lepus mandshuricus,Lepus timidus): 320 / 1260
+(Lepus mandshuricus,Lepus timidus): 320 / 1260
+(Lepus mandshuricus,Lepus timidus): 321 / 1260
+(Lepus mandshuricus,Lepus timidus): 322 / 1260
+(Lepus mandshuricus,Lepus timidus): 324 / 1260
+(Lepus mandshuricus,Lepus timidus): 324 / 1260
+(Lepus mandshuricus,Lepus timidus): 325 / 1260
+(Lepus mandshuricus,Lepus timidus): 326 / 1260
+(Lepus mandshuricus,Lepus timidus): 327 / 1260
+(Lepus mandshuricus,Lepus timidus): 328 / 1260
+(Lepus mandshuricus,Lepus timidus): 329 / 1260
+(Lepus mandshuricus,Lepus timidus): 330 / 1260
+(Lepus mandshuricus,Lepus timidus): 331 / 1260
+(Lepus mandshuricus,Lepus timidus): 332 / 1260
+(Lepus mandshuricus,Lepus timidus): 333 / 1260
+(Lepus mandshuricus,Lepus timidus): 334 / 1260
+(Lepus mandshuricus,Lepus timidus): 335 / 1260
+(Lepus mandshuricus,Lepus timidus): 336 / 1260
+(Lepus mandshuricus,Lepus timidus): 337 / 1260
+(Lepus mandshuricus,Lepus timidus): 338 / 1260
+(Lepus mandshuricus,Lepus timidus): 339 / 1260
+(Lepus mandshuricus,Lepus timidus): 340 / 1260
+(Lepus mandshuricus,Lepus timidus): 341 / 1260
+(Lepus mandshuricus,Lepus timidus): 342 / 1260
+(Lepus mandshuricus,Lepus timidus): 343 / 1260
+(Lepus mandshuricus,Lepus timidus): 344 / 1260
+(Lepus mandshuricus,Lepus timidus): 345 / 1260
+(Lepus mandshuricus,Lepus timidus): 346 / 1260
+(Lepus mandshuricus,Lepus timidus): 347 / 1260
+(Lepus mandshuricus,Lepus timidus): 348 / 1260
+(Lepus mandshuricus,Lepus timidus): 350 / 1260
+(Lepus mandshuricus,Lepus timidus): 350 / 1260
+(Lepus mandshuricus,Lepus timidus): 351 / 1260
+(Lepus mandshuricus,Lepus timidus): 352 / 1260
+(Lepus mandshuricus,Lepus timidus): 353 / 1260
+(Lepus mandshuricus,Lepus timidus): 354 / 1260
+(Lepus mandshuricus,Lepus timidus): 355 / 1260
+(Lepus mandshuricus,Lepus timidus): 356 / 1260
+(Lepus mandshuricus,Lepus timidus): 357 / 1260
+(Lepus mandshuricus,Lepus timidus): 358 / 1260
+(Lepus mandshuricus,Lepus timidus): 359 / 1260
+(Lepus mandshuricus,Lepus timidus): 360 / 1260
+(Lepus mandshuricus,Lepus timidus): 361 / 1260
+(Lepus mandshuricus,Lepus timidus): 362 / 1260
+(Lepus mandshuricus,Lepus timidus): 363 / 1260
+(Lepus mandshuricus,Lepus timidus): 364 / 1260
+(Lepus mandshuricus,Lepus timidus): 365 / 1260
+(Lepus mandshuricus,Lepus timidus): 366 / 1260
+(Lepus mandshuricus,Lepus timidus): 367 / 1260
+(Lepus mandshuricus,Lepus timidus): 368 / 1260
+(Lepus mandshuricus,Lepus timidus): 369 / 1260
+(Lepus mandshuricus,Lepus timidus): 370 / 1260
+(Lepus mandshuricus,Lepus timidus): 371 / 1260
+(Lepus mandshuricus,Lepus timidus): 372 / 1260
+(Lepus mandshuricus,Lepus timidus): 373 / 1260
+(Lepus mandshuricus,Lepus timidus): 374 / 1260
+(Lepus mandshuricus,Lepus timidus): 375 / 1260
+(Lepus mandshuricus,Lepus timidus): 376 / 1260
+(Lepus mandshuricus,Lepus timidus): 377 / 1260
+(Lepus mandshuricus,Lepus timidus): 378 / 1260
+(Lepus mandshuricus,Lepus timidtential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential us): 379 / 1260
+(Lepus mandshuricus,Lepus timidus): 380 / 1260
+(Lepus mandshuricus,Lepus timidus): 381 / 1260
+(Lepus mandshuricus,Lepus timidus): 382 / 1260
+(Lepus mandshuricus,Lepus timidus): 383 / 1260
+(Lepus mandshuricus,Lepus timidus): 384 / 1260
+(Lepus mandshuricus,Lepus timidus): 385 / 1260
+(Lepus mandshuricus,Lepus timidus): 386 / 1260
+(Lepus mandshuricus,Lepus timidus): 387 / 1260
+(Lepus mandshuricus,Lepus timidus): 388 / 1260
+(Lepus mandshuricus,Lepus timidus): 389 / 1260
+(Lepus mandshuricus,Lepus timidus): 390 / 1260
+(Lepus mandshuricus,Lepus timidus): 391 / 1260
+(Lepus mandshuricus,Lepus timidus): 392 / 1260
+(Lepus mandshuricus,Lepus timidus): 393 / 1260
+(Lepus mandshuricus,Lepus timidus): 394 / 1260
+(Lepus mandshuricus,Lepus timidus): 395 / 1260
+(Lepus mandshuricus,Lepus timidus): 396 / 1260
+(Lepus mandshuricus,Lepus timidus): 397 / 1260
+(Lepus mandshuricus,Lepus timidus): 398 / 1260
+(Lepus mandshuricus,Lepus timidus): 399 / 1260
+(Lepus mandshuricus,Lepus timidus): 400 / 1260
+(Lepus mandshuricus,Lepus timidus): 401 / 1260
+(Lepus mandshuricus,Lepus timidus): 402 / 1260
+(Lepus mandshuricus,Lepus timidus): 403 / 1260
+(Lepus mandshuricus,Lepus timidus): 404 / 1260
+(Lepus mandshuricus,Lepus timidus): 405 / 1260
+(Lepus mandshuricus,Lepus timidus): 406 / 1260
+(Lepus mandshuricus,Lepus timidus): 407 / 1260
+(Lepus mandshuricus,Lepus timidus): 408 / 1260
+(Lepus mandshuricus,Lepus timidus): 409 / 1260
+(Lepus mandshuricus,Lepus timidus): 410 / 1260
+(Lepus mandshuricus,Lepus timidus): 411 / 1260
+(Lepus mandshuricus,Lepus timidus): 412 / 1260
+(Lepus mandshuricus,Lepus timidus): 413 / 1260
+(Lepus mandshuricus,Lepus timidus): 414 / 1260
+(Lepus mandshuricus,Lepus timidus): 415 / 1260
+(Lepus mandshuricus,Lepus timidus): 416 / 1260
+(Lepus mandshuricus,Lepus timidus): 417 / 1260
+(Lepus mandshuricus,Lepus timidus): 418 / 1260
+(Lepus mandshuricus,Lepus timidus): 419 / 1260
+(Lepus mandshuricus,Lepus timidus): 420 / 1260
+(Lepus mandshuricus,Lepus timidus): 421 / 1260
+(Lepus mandshuricus,Lepus timidus): 422 / 1260
+(Lepus mandshuricus,Lepus timidus): 423 / 1260
+(Lepus mandshuricus,Lepus timidus): 424 / 1260
+(Lepus mandshuricus,Lepus timidus): 425 / 1260
+(Lepus mandshuricus,Lepus timidus): 426 / 1260
+(Lepus mandshuricus,Lepus timidus): 427 / 1260
+(Lepus mandshuricus,Lepus timidus): 428 / 1260
+(Lepus mandshuricus,Lepus timidus): 429 / 1260
+(Lepus mandshuricus,Lepus timidus): 430 / 1260
+(Lepus mandshuricus,Lepus timidus): 431 / 1260
+(Lepus mandshuricus,Lepus timidus): 432 / 1260
+(Lepus mandshuricus,Lepus timidus): 433 / 1260
+(Lepus mandshuricus,Lepus timidus): 434 / 1260
+(Lepus mandshuricus,Lepus timidus): 435 / 1260
+(Lepus mandshuricus,Lepus timidus): 436 / 1260
+(Lepus mandshuricus,Lepus timidus): 437 / 1260
+(Lepus mandshuricus,Lepus timidus): 438 / 1260
+(Lepus mandshuricus,Lepus timidus): 439 / 1260
+(Lepus mandshuricus,Lepus timidus): 440 / 1260
+(Lepus mandshuricus,Lepus timidus): 441 / 1260
+(Lepus mandshuricus,Lepus timidus): 442 / 1260
+(Lepus mandshuricus,Lepus timidus): 443 / 1260
+(Lepus mandshuricus,Lepus timidus): 444 / 1260
+(Lepus mandshuricus,Lepus timidus): 445 / 1260
+(Lepus mandshuricus,Lepus timidus): 446 / 1260
+(Lepus mandshuricus,Lepus timidus): 447 / 1260
+(Lepus mandshuricus,Lepus timidus): 448 / 1260
+(Lepus mandshuricus,Lepus timidus): 450 / 1260
+(Lepus mandshuricus,Lepus timidus): 450 / 1260
+(Lepus mandshuricus,Lepus timidus): 451 / 1260
+(Lepus mandshuricus,Lepus timidus): 452 / 1260
+(Lepus mandshuricus,Lepus timidus): 453 / 1260
+(Lepus mandshuricus,Lepus timidus): 454 / 1260
+(Lepus mandshuricus,Lepus timidus): 455 / 1260
+(Lepus mandshuricus,Lepus timidus): 456 / 1260
+(Lepus mandshuricus,Lepus timidus): 457 / 1260
+(Lepus mandshuricus,Lepus timidus): 458 / 1260
+(Lepus mandshuricus,Lepus timidus): 459 / 1260
+(Lepus mandshuricus,Lepus timidus): 460 / 1260
+(Lepus mandshuricus,Lepus timidus): 461 / 1260
+(Lepus mandshuricus,Lepus timidus): 462 / 1260
+(Lepus mandshuricus,Lepus timidus): 463 / 1260
+(Lepus mandshuricus,Lepus timidus): 464 / 1260
+(Lepus mandshuricus,Lepus timidus): 466 / 1260
+(Lepus mandshuricus,Lepus timidus): 466 / 1260
+(Lepus mandshuricus,Lepus timidus): 468 / 1260
+(Lepus mandshuricus,Lepus timidus): 468 / 1260
+(Lepus mandshuricus,Lepus timidus): 469 / 1260
+(Lepus mandshuricus,Lepus timidus): 470 / 1260
+(Lepus mandshuricus,Lepus timidus): 471 / 1260
+(Lepus mandshuricus,Lepus timidus): 472 / 1260
+(Lepus mandshuricus,Lepus timidus): 473 / 1260
+(Lepus mandshuricus,Lepus timidus): 474 / 1260
+(Lepus mandshuricus,Lepus timidus): 475 / 1260
+(Lepus mandshuricus,Lepus timidus): 476 / 1260
+(Lepus mandshuricus,Lepus timidus): 477 / 1260
+(Lepus mandshuricus,Lepus timidus): 478 / 1260
+(Lepus mandshuricus,Lepus timidus): 479 / 1260
+(Lepus mandshuricus,Lepus timidus): 480 / 1260
+(Lepus mandshuricus,Lepus timidus): 481 / 1260
+(Lepus mandshuricus,Lepus timidus): 482 / 1260
+(Lepus mandshuricus,Lepus timidus): 483 / 1260
+(Lepus mandshuricus,Lepus timidus): 484 / 1260
+(Lepus mandshuricus,Lepus timidus): 485 / 1260
+(Lepus mandshuricus,Lepus timidus): 486 / 1260
+(Lepus mandshuricus,Lepus timidus): 487 / 1260
+(Lepus mandshuricus,Lepus timidus): 488 / 1260
+(Lepus mandshuricus,Lepus timidus): 489 / 1260
+(Lepus mandshuricus,Lepus timidus): 490 / 1260
+(Lepus mandshuricus,Lepus timidus): 491 / 1260
+(Lepus mandshuricus,Lepus timidus): 492 / 1260
+(Lepus mandshuricus,Lepus timidus): 493 / 1260
+(Lepus mandshuricus,Lepus timidus): 494 / 1260
+(Lepus mandshuricus,Lepus timidus): 495 / 1260
+(Lepus mandshuricus,Lepus timidus): 496 / 1260
+(Lepus mandshuricus,Lepus timidus): 497 / 1260
+(Lepus mandshuricus,Lepus timidus): 498 / 1260
+(Lepus mandshuricus,Lepus timidus): 499 / 1260
+(Lepus mandshuricus,Lepus timidus): 500 / 1260
+(Lepus mandshuricus,Lepus timidus): 501 / 1260
+(Lepus mandshuricus,Lepus timidus): 502 / 1260
+(Lepus mandshuricus,Lepus timidus): 503 / 1260
+(Lepus mandshuricus,Lepus timidus): 504 / 1260
+(Lepus mandshuricus,Lepus timidus): 505 / 1260
+(Lepus mandshuricus,Lepus timidus): 506 / 1260
+(Lepus mandshuricus,Lepus timidus): 507 / 1260
+(Lepus mandshuricus,Lepus timidus): 508 / 1260
+(Lepus mandshuricus,Lepus timidus): 509 / 1260
+(Lepus mandshuricus,Lepus timidus): 510 / 1260
+(Lepus mandshuricus,Lepus timidus): 511 / 1260
+(Lepus mandshuricus,Lepus timidus): 512 / 1260
+(Lepus mandshuricus,Lepus timidus): 513 / 1260
+(Lepus mandshuricus,Lepus timidus): 514 / 1260
+(Lepus mandshuricus,Lepus timidus): 515 / 1260
+(Lepus mandshuricus,Lepus timidus): 516 / 1260
+(Lepus mandshuricus,Lepus timidus): 517 / 1260
+(Lepus mandshuricus,Lepus timidus): 518 / 1260
+(Lepus mandshuricus,Lepus timidus): 519 / 1260
+(Lepus mandshuricus,Lepus timidus): 520 / 1260
+(Lepus mandshuricus,Lepus timidus): 521 / 1260
+(Lepus mandshuricus,Lepus timidus): 522 / 1260
+(Lepus mandshuricus,Lepus timidus): 523 / 1260
+(Lepus mandshuricus,Lepus timidus): 524 / 1260
+(Lepus mandshuricus,Lepus timidus): 526 / 1260
+(Lepus mandshuricus,Lepus timidus): 526 / 1260
+(Lepus mandshuricus,Lepus timidus): 527 / 1260
+(Lepus mandshuricus,Lepus timidus): 528 / 1260
+(Lepus mandshuricus,Lepus timidus): 529 / 1260
+(Lepus mandshuricus,Lepus timidus): 530 / 1260
+(Lepus mandshuricus,Lepus timidus): 531 / 1260
+(Lepus mandshuricus,Lepus timidus): 532 / 1260
+(Lepus mandshuricus,Lepus timidus): 533 / 1260
+(Lepus mandshuricus,Lepus timidus): 534 / 1260
+(Lepus mandshuricus,Lepus timidus): 535 / 1260
+(Lepus mandshuricus,Lepus timidus): 536 / 1260
+(Lepus mandshuricus,Lepus timidus): 537 / 1260
+(Lepus mandshuricus,Lepus timidus): 538 / 1260
+(Lepus mandshuricus,Lepus timidus): 539 / 1260
+(Lepus mandshuricus,Lepus timidus): 540 / 1260
+(Lepus mandshuricus,Lepus timidus): 542 / 1260
+(Lepus mandshuricus,Lepus timidus): 542 / 1260
+(Lepus mandshuricus,Lepus timidus): 543 / 1260
+(Lepus mandshuricus,Lepus timidus): 544 / 1260
+(Lepus mandshuricus,Lepus timidus): 545 / 1260
+(Lepus mandshuricus,Lepus timidus): 546 / 1260
+(Lepus mandshuricus,Lepus timidus): 547 / 1260
+(Lepus mandshuricus,Lepus timidus): 548 / 1260
+(Lepus mandshuricus,Lepus timidus): 549 / 1260
+(Lepus mandshuricus,Lepus timidus): 550 / 1260
+(Lepus mandshuricus,Lepus timidus): 551 / 1260
+(Lepus mandshuricus,Lepus timidus): 552 / 1260
+(Lepus mandshuricus,Lepus timidus): 554 / 1260
+(Lepus mandshuricus,Lepus timidus): 554 / 1260
+(Lepus mandshuricus,Lepus timidus): 555 / 1260
+(Lepus mandshuricus,Lepus timidus): 556 / 1260
+(Lepus mandshuricus,Lepus timidus): 557 / 1260
+(Lepus mandshuricus,Lepus timidus): 558 / 1260
+(Lepus mandshuricus,Lepus timidus): 559 / 1260
+(Lepus mandshuricus,Lepus timidus): 560 / 1260
+(Lepus mandshuricus,Lepus timidus): 561 / 1260
+(Lepus mandshuricus,Lepus timidus): 562 / 1260
+(Lepus mandshuricus,Lepus timidus): 563 / 1260
+(Lepus mandshuricus,Lepus timidus): 564 / 1260
+(Lepus mandshuricus,Lepus timidus): 565 / 1260
+(Lepus mandshuricus,Lepus timidus): 566 / 1260
+(Lepus mandshuricus,Lepus timidus): 567 / 1260
+(Lepus mandshuricus,Lepus timidus): 568 / 1260
+(Lepus mandshuricus,Lepus timidus): 569 / 1260
+(Lepus mandshuricus,Lepus timidus): 570 / 1260
+(Lepus mandshuricus,Lepus timidus): 571 / 1260
+(Lepus mandshuricus,Lepus timidus): 572 / 1260
+(Lepus mandshuricus,Lepus timidus): 573 / 1260
+(Lepus mandshuricus,Lepus timidus): 574 / 1260
+(Lepus mandshuricus,Lepus timidus): 575 / 1260
+(Lepus mandshuricus,Lepus timidus): 576 / 1260
+(Lepus mandshuricus,Lepus timidus): 577 / 1260
+(Lepus mandshuricus,Lepus timidus): 578 / 1260
+(Lepus mandshuricus,Lepus timidus): 579 / 1260
+(Lepus mandshuricus,Lepus timidus): 580 / 1260
+(Lepus mandshuricus,Lepus timidus): 581 / 1260
+(Lepus mandshuricus,Lepus timidus): 582 / 1260
+(Lepus mandshuricus,Lepus timidus): 583 / 1260
+(Lepus mandshuricus,Lepus timidus): 584 / 1260
+(Lepus mandshuricus,Lepus timidus): 585 / 1260
+(Lepus mandshuricus,Lepus timidus): 586 / 1260
+(Lepus mandshuricus,Lepus timidus): 587 / 1260
+(Lepus mandshuricus,Lepus timidus): 588 / 1260
+(Lepus mandshuricus,Lepus timidus): 589 / 1260
+(Lepus mandshuricus,Lepus timidus): 590 / 1260
+(Lepus mandshuricus,Lepus timidus): 591 / 1260
+(Lepus mandshuricus,Lepus timidus): 592 / 1260
+(Lepus mandshuricus,Lepus timidus): 593 / 1260
+(Lepus mandshuricus,Lepus timidus): 594 / 1260
+(Lepus mandshuricus,Lepus timidus): 596 / 1260
+(Lepus mandshuricus,Lepus timidus): 596 / 1260
+(Lepus mandshuricus,Lepus timidus): 598 / 1260
+(Lepus mandshuricus,Lepus timidus): 598 / 1260
+(Lepus mandshuricus,Lepus timidus): 599 / 1260
+(Lepus mandshuricus,Lepus timidus): 600 / 1260
+(Lepus mandshuricus,Lepus timidus): 601 / 1260
+(Lepus mandshuricus,Lepus timidus): 602 / 1260
+(Lepus mandshuricus,Lepus timidus): 603 / 1260
+(Lepus mandshuricus,Lepus timidus): 604 / 1260
+(Lepus mandshuricus,Lepus timidus): 605 / 1260
+(Lepus mandshuricus,Lepus timidus): 606 / 1260
+(Lepus mandshuricus,Lepus timidus): 607 / 1260
+(Lepus mandshuricus,Lepus timidus): 608 / 1260
+(Lepus mandshuricus,Lepus timidus): 609 / 1260
+(Lepus mandshuricus,Lepus timidus): 610 / 1260
+(Lepus mandshuricus,Lepus timidus): 611 / 1260
+(Lepus mandshuricus,Lepus timidus): 612 / 1260
+(Lepus mandshuricus,Lepus timidus): 613 / 1260
+(Lepus mandshuricus,Lepus timidus): 614 / 1260
+(Lepus mandshuricus,Lepus timidus): 616 / 1260
+(Lepus mandshuricus,Lepus timidus): 616 / 1260
+(Lepus mandshuricus,Lepus timidus): 617 / 1260
+(Lepus mandshuricus,Lepus timidus): 618 / 1260
+(Lepus mandshuricus,Lepus timidus): 619 / 1260
+(Lepus mandshuricus,Lepus timidus): 620 / 1260
+(Lepus mandshuricus,Lepus timidus): 621 / 1260
+(Lepus mandshuricus,Lepus timidus): 622 / 1260
+(Lepus mandshuricus,Lepus timidus): 623 / 1260
+(Lepus mandshuricus,Lepus timidus): 624 / 1260
+(Lepus mandshuricus,Lepus timidus): 625 / 1260
+(Lepus mandshuricus,Lepus timidus): 626 / 1260
+(Lepus mandshuricus,Lepus timidus): 627 / 1260
+(Lepus mandshuricus,Lepus timidus): 628 / 1260
+(Lepus mandshuricus,Lepus timidus): 629 / 1260
+(Lepus mandshuricus,Lepus timidus): 630 / 1260
+(Lepus mandshuricus,Lepus timidus): 631 / 1260
+(Lepus mandshuricus,Lepus timidus): 632 / 1260
+(Lepus mandshuricus,Lepus timidus): 633 / 1260
+(Lepus mandshuricus,Lepus timidus): 634 / 1260
+(Lepus mandshuricus,Lepus timidus): 635 / 1260
+(Lepus mandshuricus,Lepus timidus): 636 / 1260
+(Lepus mandshuricus,Lepus timidus): 637 / 1260
+(Lepus mandshuricus,Lepus timidus): 638 / 1260
+(Lepus mandshuricus,Lepus timidus): 639 / 1260
+(Lepus mandshuricus,Lepus timidus): 640 / 1260
+(Lepus mandshuricus,Lepus timidus): 641 / 1260
+(Lepus mandshuricus,Lepus timidus): 642 / 1260
+(Lepus mandshuricus,Lepus timidus): 643 / 1260
+(Lepus mandshuricus,Lepus timidus): 644 / 1260
+(Lepus mandshuricus,Lepus timidus): 645 / 1260
+(Lepus mandshuricus,Lepus timidus): 646 / 1260
+(Lepus mandshuricus,Lepus timidus): 647 / 1260
+(Lepus mandshuricus,Lepus timidus): 648 / 1260
+(Lepus mandshuricus,Lepus timidus): 649 / 1260
+(Lepus mandshuricus,Lepus timidus): 650 / 1260
+(Lepus mandshuricus,Lepus timidus): 651 / 1260
+(Lepus mandshuricus,Lepus timidus): 652 / 1260
+(Lepus mandshuricus,Lepus timidus): 653 / 1260
+(Lepus mandshuricus,Lepus timidus): 654 / 1260
+(Lepus mandshuricus,Lepus timidus): 655 / 1260
+(Lepus mandshuricus,Lepus timidus): 656 / 1260
+(Lepus mandshuricus,Lepus timidus): 657 / 1260
+(Lepus mandshuricus,Lepus timidus): 658 / 1260
+(Lepus mandshuricus,Lepus timidus): 659 / 1260
+(Lepus mandshuricus,Lepus timidus): 660 / 1260
+(Lepus mandshuricus,Lepus timidus): 661 / 1260
+(Lepus mandshuricus,Lepus timidus): 662 / 1260
+(Lepus mandshuricus,Lepus timidus): 663 / 1260
+(Lepus mandshuricus,Lepus timidus): 664 / 1260
+(Lepus mandshuricus,Lepus timidus): 665 / 1260
+(Lepus mandshuricus,Lepus timidus): 666 / 1260
+(Lepus mandshuricus,Lepus timidus): 667 / 1260
+(Lepus mandshuricus,Lepus timidus): 668 / 1260
+(Lepus mandshuricus,Lepus timidus): 669 / 1260
+(Lepus mandshuricus,Lepus timidus): 670 / 1260
+(Lepus mandshuricus,Lepus timidus): 671 / 1260
+(Lepus mandshuricus,Lepus timidus): 672 / 1260
+(Lepus mandshuricus,Lepus timidus): 673 / 1260
+(Lepus mandshuricus,Lepus timidus): 674 / 1260
+(Lepus mandshuricus,Lepus timidus): 676 / 1260
+(Lepus mandshuricus,Lepus timidus): 676 / 1260
+(Lepus mandshuricus,Lepus timidus): 678 / 1260
+(Lepus mandshuricus,Lepus timidus): 678 / 1260
+(Lepus mandshuricus,Lepus timidus): 679 / 1260
+(Lepus mandshuricus,Lepus timidus): 680 / 1260
+(Lepus mandshuricus,Lepus timidus): 681 / 1260
+(Lepus mandshuricus,Lepus timidus): 682 / 1260
+(Lepus mandshuricus,Lepus timidus): 683 / 1260
+(Lepus mandshuricus,Lepus timidus): 684 / 1260
+(Lepus mandshuricus,Lepus timidus): 685 / 1260
+(Lepus mandshuricus,Lepus timidus): 686 / 1260
+(Lepus mandshuricus,Lepus timidus): 687 / 1260
+(Lepus mandshuricus,Lepus timidus): 688 / 1260
+(Lepus mandshuricus,Lepus timidus): 689 / 1260
+(Lepus mandshuricus,Lepus timidus): 690 / 1260
+(Lepus mandshuricus,Lepus timidus): 691 / 1260
+(Lepus mandshuricus,Lepus timidus): 692 / 1260
+(Lepus mandshuricus,Lepus timidus): 693 / 1260
+(Lepus mandshuricus,Lepus timidus): 694 / 1260
+(Lepus mandshuricus,Lepus timidus): 695 / 1260
+(Lepus mandshuricus,Lepus timidus): 696 / 1260
+(Lepus mandshuricus,Lepus timidus): 697 / 1260
+(Lepus mandshuricus,Lepus timidus): 698 / 1260
+(Lepus mandshuricus,Lepus timidus): 699 / 1260
+(Lepus mandshuricus,Lepus timidus): 700 / 1260
+(Lepus mandshuricus,Lepus timidus): 701 / 1260
+(Lepus mandshuricus,Lepus timidus): 702 / 1260
+(Lepus mandshuricus,Lepus timidus): 703 / 1260
+(Lepus mandshuricus,Lepus timidus): 704 / 1260
+(Lepus mandshuricus,Lepus timidus): 705 / 1260
+(Lepus mandshuricus,Lepus timidus): 706 / 1260
+(Lepus mandshuricus,Lepus timidus): 707 / 1260
+(Lepus mandshuricus,Lepus timidus): 708 / 1260
+(Lepus mandshuricus,Lepus timidus): 709 / 1260
+(Lepus mandshuricus,Lepus timidus): 710 / 1260
+(Lepus mandshuricus,Lepus timidus): 711 / 1260
+(Lepus mandshuricus,Lepus timidus): 712 / 1260
+(Lepus mandshuricus,Lepus timidus): 713 / 1260
+(Lepus mandshuricus,Lepus timidus): 714 / 1260
+(Lepus mandshuricus,Lepus timidus): 715 / 1260
+(Lepus mandshuricus,Lepus timidus): 716 / 1260
+(Lepus mandshuricus,Lepus timidus): 717 / 1260
+(Lepus mandshuricus,Lepus timidus): 718 / 1260
+(Lepus mandshuricus,Lepus timidus): 719 / 1260
+(Lepus mandshuricus,Lepus timidus): 720 / 1260
+(Lepus mandshuricus,Lepus timidus): 721 / 1260
+(Lepus mandshuricus,Lepus timidus): 722 / 1260
+(Lepus mandshuricus,Lepus timidus): 724 / 1260
+(Lepus mandshuricus,Lepus timidus): 724 / 1260
+(Lepus mandshuricus,Lepus timidus): 725 / 1260
+(Lepus mandshuricus,Lepus timidus): 726 / 1260
+(Lepus mandshuricus,Lepus timidus): 728 / 1260
+(Lepus mandshuricus,Lepus timidus): 728 / 1260
+(Lepus mandshuricus,Lepus timidus): 729 / 1260
+(Lepus mandshuricus,Lepus timidus): 730 / 1260
+(Lepus mandshuricus,Lepus timidus): 731 / 1260
+(Lepus mandshuricus,Lepus timidus): 732 / 1260
+(Lepus mandshuricus,Lepus timidus): 733 / 1260
+(Lepus mandshuricus,Lepus timidus): 734 / 1260
+(Lepus mandshuricus,Lepus timidus): 735 / 1260
+(Lepus mandshuricus,Lepus timidus): 736 / 1260
+(Lepus mandshuricus,Lepus timidus): 737 / 1260
+(Lepus mandshuricus,Lepus timidus): 738 / 1260
+(Lepus mandshuricus,Lepus timidus): 739 / 1260
+(Lepus mandshuricus,Lepus timidus): 740 / 1260
+(Lepus mandshuricus,Lepus timidus): 741 / 1260
+(Lepus mandshuricus,Lepus timidus): 742 / 1260
+(Lepus mandshuricus,Lepus timidus): 744 / 1260
+(Lepus mandshuricus,Lepus timidus): 744 / 1260
+(Lepus mandshuricus,Lepus timidus): 745 / 1260
+(Lepus mandshuricus,Lepus timidus): 746 / 1260
+(Lepus mandshuricus,Lepus timidus): 747 / 1260
+(Lepus mandshuricus,Lepus timidus): 748 / 1260
+(Lepus mandshuricus,Lepus timidus): 749 / 1260
+(Lepus mandshuricus,Lepus timidus): 750 / 1260
+(Lepus mandshuricus,Lepus timidus): 752 / 1260
+(Lepus mandshuricus,Lepus timidus): 752 / 1260
+(Lepus mandshuricus,Lepus timidus): 753 / 1260
+(Lepus mandshuricus,Lepus timidus): 754 / 1260
+(Lepus mandshuricus,Lepus timidus): 755 / 1260
+(Lepus mandshuricus,Lepus timidus): 756 / 1260
+(Lepus mandshuricus,Lepus timidus): 757 / 1260
+(Lepus mandshuricus,Lepus timidus): 758 / 1260
+(Lepus mandshuricus,Lepus timidus): 759 / 1260
+(Lepus mandshuricus,Lepus timidus): 760 / 1260
+(Lepus mandshuricus,Lepus timidus): 761 / 1260
+(Lepus mandshuricus,Lepus timidus): 762 / 1260
+(Lepus mandshuricus,Lepus timidus): 763 / 1260
+(Lepus mandshuricus,Lepus timidus): 764 / 1260
+(Lepus mandshuricus,Lepus timidus): 765 / 1260
+(Lepus mandshuricus,Lepus timidus): 766 / 1260
+(Lepus mandshuricus,Lepus timidus): 767 / 1260
+(Lepus mandshuricus,Lepus timidus): 768 / 1260
+(Lepus mandshuricus,Lepus timidus): 769 / 1260
+(Lepus mandshuricus,Lepus timidus): 770 / 1260
+(Lepus mandshuricus,Lepus timidus): 772 / 1260
+(Lepus mandshuricus,Lepus timidus): 772 / 1260
+(Lepus mandshuricus,Lepus timidus): 773 / 1260
+(Lepus mandshuricus,Lepus timidus): 774 / 1260
+(Lepus mandshuricus,Lepus timidus): 775 / 1260
+(Lepus mandshuricus,Lepus timidus): 776 / 1260
+(Lepus mandshuricus,Lepus timidus): 777 / 1260
+(Lepus mandshuricus,Lepus timidus): 778 / 1260
+(Lepus mandshuricus,Lepus timidus): 779 / 1260
+(Lepus mandshuricus,Lepus timidus): 780 / 1260
+(Lepus mandshuricus,Lepus timidus): 781 / 1260
+(Lepus mandshuricus,Lepus timidus): 782 / 1260
+(Lepus mandshuricus,Lepus timidus): 783 / 1260
+(Lepus mandshuricus,Lepus timidus): 784 / 1260
+(Lepus mandshuricus,Lepus timidus): 785 / 1260
+(Lepus mandshuricus,Lepus timidus): 786 / 1260
+(Lepus mandshuricus,Lepus timidus): 787 / 1260
+(Lepus mandshuricus,Lepus timidus): 788 / 1260
+(Lepus mandshuricus,Lepus timidus): 789 / 1260
+(Lepus mandshuricus,Lepus timidus): 790 / 1260
+(Lepus mandshuricus,Lepus timidus): 791 / 1260
+(Lepus mandshuricus,Lepus timidus): 792 / 1260
+(Lepus mandshuricus,Lepus timidus): 793 / 1260
+(Lepus mandshuricus,Lepus timidus): 794 / 1260
+(Lepus mandshuricus,Lepus timidus): 795 / 1260
+(Lepus mandshuricus,Lepus timidus): 796 / 1260
+(Lepus mandshuricus,Lepus timidus): 797 / 1260
+(Lepus mandshuricus,Lepus timidus): 798 / 1260
+(Lepus mandshuricus,Lepus timidus): 799 / 1260
+(Lepus mandshuricus,Lepus timidus): 800 / 1260
+(Lepus mandshuricus,Lepus timidus): 801 / 1260
+(Lepus mandshuricus,Lepus timidus): 802 / 1260
+(Lepus mandshuricus,Lepus timidus): 803 / 1260
+(Lepus mandshuricus,Lepus timidus): 804 / 1260
+(Lepus mandshuricus,Lepus timidus): 805 / 1260
+(Lepus mandshuricus,Lepus timidus): 806 / 1260
+(Lepus mandshuricus,Lepus timidus): 807 / 1260
+(Lepus mandshuricus,Lepus timidus): 808 / 1260
+(Lepus mandshuricus,Lepus timidus): 810 / 1260
+(Lepus mandshuricus,Lepus timidus): 810 / 1260
+(Lepus mandshuricus,Lepus timidus): 811 / 1260
+(Lepus mandshuricus,Lepus timidus): 812 / 1260
+(Lepus mandshuricus,Lepus timidus): 813 / 1260
+(Lepus mandshuricus,Lepus timidus): 814 / 1260
+(Lepus mandshuricus,Lepus timidus): 815 / 1260
+(Lepus mandshuricus,Lepus timidus): 816 / 1260
+(Lepus mandshuricus,Lepus timidus): 817 / 1260
+(Lepus mandshuricus,Lepus timidus): 818 / 1260
+(Lepus mandshuricus,Lepus timidus): 819 / 1260
+(Lepus mandshuricus,Lepus timidus): 820 / 1260
+(Lepus mandshuricus,Lepus timidus): 821 / 1260
+(Lepus mandshuricus,Lepus timidus): 822 / 1260
+(Lepus mandshuricus,Lepus timidus): 823 / 1260
+(Lepus mandshuricus,Lepus timidus): 824 / 1260
+(Lepus mandshuricus,Lepus timidus): 825 / 1260
+(Lepus mandshuricus,Lepus timidus): 826 / 1260
+(Lepus mandshuricus,Lepus timidus): 827 / 1260
+(Lepus mandshuricus,Lepus timidus): 828 / 1260
+(Lepus mandshuricus,Lepus timidus): 830 / 1260
+(Lepus mandshuricus,Lepus timidus): 830 / 1260
+(Lepus mandshuricus,Lepus timidus): 831 / 1260
+(Lepus mandshuricus,Lepus timidus): 832 / 1260
+(Lepus mandshuricus,Lepus timidus): 834 / 1260
+(Lepus mandshuricus,Lepus timidus): 834 / 1260
+(Lepus mandshuricus,Lepus timidus): 835 / 1260
+(Lepus mandshuricus,Lepus timidus): 836 / 1260
+(Lepus mandshuricus,Lepus timidus): 837 / 1260
+(Lepus mandshuricus,Lepus timidus): 838 / 1260
+(Lepus mandshuricus,Lepus timidus): 839 / 1260
+(Lepus mandshuricus,Lepus timidus): 840 / 1260
+(Lepus mandshuricus,Lepus timidus): 841 / 1260
+(Lepus mandshuricus,Lepus timidus): 842 / 1260
+(Lepus mandshuricus,Lepus timidus): 843 / 1260
+(Lepus mandshuricus,Lepus timidus): 844 / 1260
+(Lepus mandshuricus,Lepus timidus): 845 / 1260
+(Lepus mandshuricus,Lepus timidus): 846 / 1260
+(Lepus mandshuricus,Lepus timidus): 847 / 1260
+(Lepus mandshuricus,Lepus timidus): 848 / 1260
+(Lepus mandshuricus,Lepus timidus): 849 / 1260
+(Lepus mandshuricus,Lepus timidus): 850 / 1260
+(Lepus mandshuricus,Lepus timidus): 851 / 1260
+(Lepus mandshuricus,Lepus timidus): 852 / 1260
+(Lepus mandshuricus,Lepus timidus): 853 / 1260
+(Lepus mandshuricus,Lepus timidus): 854 / 1260
+(Lepus mandshuricus,Lepus timidus): 855 / 1260
+(Lepus mandshuricus,Lepus timidus): 856 / 1260
+(Lepus mandshuricus,Lepus timidus): 857 / 1260
+(Lepus mandshuricus,Lepus timidus): 858 / 1260
+(Lepus mandshuricus,Lepus timidus): 859 / 1260
+(Lepus mandshuricus,Lepus timidus): 860 / 1260
+(Lepus mandshuricus,Lepus timidus): 861 / 1260
+(Lepus mandshuricus,Lepus timidus): 862 / 1260
+(Lepus mandshuricus,Lepus timidus): 863 / 1260
+(Lepus mandshuricus,Lepus timidus): 864 / 1260
+(Lepus mandshuricus,Lepus timidus): 865 / 1260
+(Lepus mandshuricus,Lepus timidus): 866 / 1260
+(Lepus mandshuricus,Lepus timidus): 867 / 1260
+(Lepus mandshuricus,Lepus timidus): 868 / 1260
+(Lepus mandshuricus,Lepus timidus): 869 / 1260
+(Lepus mandshuricus,Lepus timidus): 870 / 1260
+(Lepus mandshuricus,Lepus timidus): 871 / 1260
+(Lepus mandshuricus,Lepus timidus): 872 / 1260
+(Lepus mandshuricus,Lepus timidus): 873 / 1260
+(Lepus mandshuricus,Lepus timidus): 874 / 1260
+(Lepus mandshuricus,Lepus timidus): 875 / 1260
+(Lepus mandshuricus,Lepus timidus): 876 / 1260
+(Lepus mandshuricus,Lepus timidus): 877 / 1260
+(Lepus mandshuricus,Lepus timidus): 878 / 1260
+(Lepus mandshuricus,Lepus timidus): 880 / 1260
+(Lepus mandshuricus,Lepus timidus): 880 / 1260
+(Lepus mandshuricus,Lepus timidus): 881 / 1260
+(Lepus mandshuricus,Lepus timidus): 882 / 1260
+(Lepus mandshuricus,Lepus timidus): 884 / 1260
+(Lepus mandshuricus,Lepus timidus): 884 / 1260
+(Lepus mandshuricus,Lepus timidus): 885 / 1260
+(Lepus mandshuricus,Lepus timidus): 886 / 1260
+(Lepus mandshuricus,Lepus timidus): 888 / 1260
+(Lepus mandshuricus,Lepus timidus): 888 / 1260
+(Lepus mandshuricus,Lepus timidus): 889 / 1260
+(Lepus mandshuricus,Lepus timidus): 890 / 1260
+(Lepus mandshuricus,Lepus timidus): 891 / 1260
+(Lepus mandshuricus,Lepus timidus): 892 / 1260
+(Lepus mandshuricus,Lepus timidus): 893 / 1260
+(Lepus mandshuricus,Lepus timidus): 894 / 1260
+(Lepus mandshuricus,Lepus timidus): 896 / 1260
+(Lepus mandshuricus,Lepus timidus): 896 / 1260
+(Lepus mandshuricus,Lepus timidus): 898 / 1260
+(Lepus mandshuricus,Lepus timidus): 898 / 1260
+(Lepus mandshuricus,Lepus timidus): 899 / 1260
+(Lepus mandshuricus,Lepus timidus): 900 / 1260
+(Lepus mandshuricus,Lepus timidus): 901 / 1260
+(Lepus mandshuricus,Lepus timidus): 902 / 1260
+(Lepus mandshuricus,Lepus timidus): 903 / 1260
+(Lepus mandshuricus,Lepus timidus): 904 / 1260
+(Lepus mandshuricus,Lepus timidus): 905 / 1260
+(Lepus mandshuricus,Lepus timidus): 906 / 1260
+(Lepus mandshuricus,Lepus timidus): 907 / 1260
+(Lepus mandshuricus,Lepus timidus): 908 / 1260
+(Lepus mandshuricus,Lepus timidus): 909 / 1260
+(Lepus mandshuricus,Lepus timidus): 910 / 1260
+(Lepus mandshuricus,Lepus timidus): 911 / 1260
+(Lepus mandshuricus,Lepus timidus): 912 / 1260
+(Lepus mandshuricus,Lepus timidus): 913 / 1260
+(Lepus mandshuricus,Lepus timidus): 914 / 1260
+(Lepus mandshuricus,Lepus timidus): 915 / 1260
+(Lepus mandshuricus,Lepus timidus): 916 / 1260
+(Lepus mandshuricus,Lepus timidus): 918 / 1260
+(Lepus mandshuricus,Lepus timidus): 918 / 1260
+(Lepus mandshuricus,Lepus timidus): 919 / 1260
+(Lepus mandshuricus,Lepus timidus): 920 / 1260
+(Lepus mandshuricus,Lepus timidus): 922 / 1260
+(Lepus mandshuricus,Lepus timidus): 922 / 1260
+(Lepus mandshuricus,Lepus timidus): 923 / 1260
+(Lepus mandshuricus,Lepus timidus): 924 / 1260
+(Lepus mandshuricus,Lepus timidus): 925 / 1260
+(Lepus mandshuricus,Lepus timidus): 926 / 1260
+(Lepus mandshuricus,Lepus timidus): 927 / 1260
+(Lepus mandshuricus,Lepus timidus): 928 / 1260
+(Lepus mandshuricus,Lepus timidus): 929 / 1260
+(Lepus mandshuricus,Lepus timidus): 930 / 1260
+(Lepus mandshuricus,Lepus timidus): 931 / 1260
+(Lepus mandshuricus,Lepus timidus): 932 / 1260
+(Lepus mandshuricus,Lepus timidus): 933 / 1260
+(Lepus mandshuricus,Lepus timidus): 934 / 1260
+(Lepus mandshuricus,Lepus timidus): 935 / 1260
+(Lepus mandshuricus,Lepus timidus): 936 / 1260
+(Lepus mandshuricus,Lepus timidus): 937 / 1260
+(Lepus mandshuricus,Lepus timidus): 938 / 1260
+(Lepus mandshuricus,Lepus timidus): 939 / 1260
+(Lepus mandshuricus,Lepus timidus): 940 / 1260
+(Lepus mandshuricus,Lepus timidus): 941 / 1260
+(Lepus mandshuricus,Lepus timidus): 942 / 1260
+(Lepus mandshuricus,Lepus timidus): 943 / 1260
+(Lepus mandshuricus,Lepus timidus): 944 / 1260
+(Lepus mandshuricus,Lepus timidus): 945 / 1260
+(Lepus mandshuricus,Lepus timidus): 946 / 1260
+(Lepus mandshuricus,Lepus timidus): 947 / 1260
+(Lepus mandshuricus,Lepus timidus): 948 / 1260
+(Lepus mandshuricus,Lepus timidus): 949 / 1260
+(Lepus mandshuricus,Lepus timidus): 950 / 1260
+(Lepus mandshuricus,Lepus timidus): 951 / 1260
+(Lepus mandshuricus,Lepus timidus): 952 / 1260
+(Lepus mandshuricus,Lepus timidus): 953 / 1260
+(Lepus mandshuricus,Lepus timidus): 954 / 1260
+(Lepus mandshuricus,Lepus timidus): 955 / 1260
+(Lepus mandshuricus,Lepus timidus): 956 / 1260
+(Lepus mandshuricus,Lepus timidus): 958 / 1260
+(Lepus mandshuricus,Lepus timidus): 958 / 1260
+(Lepus mandshuricus,Lepus timidus): 959 / 1260
+(Lepus mandshuricus,Lepus timidus): 960 / 1260
+(Lepus mandshuricus,Lepus timidus): 962 / 1260
+(Lepus mandshuricus,Lepus timidus): 962 / 1260
+(Lepus mandshuricus,Lepus timidus): 963 / 1260
+(Lepus mandshuricus,Lepus timidus): 964 / 1260
+(Lepus mandshuricus,Lepus timidus): 965 / 1260
+(Lepus mandshuricus,Lepus timidus): 966 / 1260
+(Lepus mandshuricus,Lepus timidus): 967 / 1260
+(Lepus mandshuricus,Lepus timidus): 968 / 1260
+(Lepus mandshuricus,Lepus timidus): 969 / 1260
+(Lepus mandshuricus,Lepus timidus): 970 / 1260
+(Lepus mandshuricus,Lepus timidus): 971 / 1260
+(Lepus mandshuricus,Lepus timidus): 972 / 1260
+(Lepus mandshuricus,Lepus timidus): 973 / 1260
+(Lepus mandshuricus,Lepus timidus): 974 / 1260
+(Lepus mandshuricus,Lepus timidus): 975 / 1260
+(Lepus mandshuricus,Lepus timidus): 976 / 1260
+(Lepus mandshuricus,Lepus timidus): 977 / 1260
+(Lepus mandshuricus,Lepus timidus): 978 / 1260
+(Lepus mandshuricus,Lepus timidus): 979 / 1260
+(Lepus mandshuricus,Lepus timidus): 980 / 1260
+(Lepus mandshuricus,Lepus timidus): 981 / 1260
+(Lepus mandshuricus,Lepus timidus): 982 / 1260
+(Lepus mandshuricus,Lepus timidus): 983 / 1260
+(Lepus mandshuricus,Lepus timidus): 984 / 1260
+(Lepus mandshuricus,Lepus timidus): 985 / 1260
+(Lepus mandshuricus,Lepus timidus): 986 / 1260
+(Lepus mandshuricus,Lepus timidus): 987 / 1260
+(Lepus mandshuricus,Lepus timidus): 988 / 1260
+(Lepus mandshuricus,Lepus timidus): 989 / 1260
+(Lepus mandshuricus,Lepus timidus): 990 / 1260
+(Lepus mandshuricus,Lepus timidus): 991 / 1260
+(Lepus mandshuricus,Lepus timidus): 992 / 1260
+(Lepus mandshuricus,Lepus timidus): 994 / 1260
+(Lepus mandshuricus,Lepus timidus): 994 / 1260
+(Lepus mandshuricus,Lepus timidus): 995 / 1260
+(Lepus mandshuricus,Lepus timidus): 996 / 1260
+(Lepus mandshuricus,Lepus timidus): 997 / 1260
+(Lepus mandshuricus,Lepus timidus): 998 / 1260
+(Lepus mandshuricus,Lepus timidus): 999 / 1260
+(Lepus mandshuricus,Lepus timidus): 1000 / 1260
+(Lepus mandshuricus,Lepus timidus): 1001 / 1260
+(Lepus mandshuricus,Lepus timidus): 1002 / 1260
+(Lepus mandshuricus,Lepus timidus): 1003 / 1260
+(Lepus mandshuricus,Lepus timidus): 1004 / 1260
+(Lepus mandshuricus,Lepus timidus): 1005 / 1260
+(Lepus mandshuricus,Lepus timidus): 1006 / 1260
+(Lepus mandshuricus,Lepus timidus): 1007 / 1260
+(Lepus mandshuricus,Lepus timidus): 1008 / 1260
+(Lepus mandshuricus,Lepus timidus): 1009 / 1260
+(Lepus mandshuricus,Lepus timidus): 1010 / 1260
+(Lepus mandshuricus,Lepus timidus): 1011 / 1260
+(Lepus mandshuricus,Lepus timidus): 1012 / 1260
+(Lepus mandshuricus,Lepus timidus): 1013 / 1260
+(Lepus mandshuricus,Lepus timidus): 1014 / 1260
+(Lepus mandshuricus,Lepus timidus): 1015 / 1260
+(Lepus mandshuricus,Lepus timidus): 1016 / 1260
+(Lepus mandshuricus,Lepus timidus): 1017 / 1260
+(Lepus mandshuricus,Lepus timidus): 1018 / 1260
+(Lepus mandshuricus,Lepus timidus): 1019 / 1260
+(Lepus mandshuricus,Lepus timidus): 1020 / 1260
+(Lepus mandshuricus,Lepus timidus): 1021 / 1260
+(Lepus mandshuricus,Lepus timidus): 1022 / 1260
+(Lepus mandshuricus,Lepus timidus): 1023 / 1260
+(Lepus mandshuricus,Lepus timidus): 1024 / 1260
+(Lepus mandshuricus,Lepus timidus): 1025 / 1260
+(Lepus mandshuricus,Lepus timidus): 1026 / 1260
+(Lepus mandshuricus,Lepus timidus): 1028 / 1260
+(Lepus mandshuricus,Lepus timidus): 1028 / 1260
+(Lepus mandshuricus,Lepus timidus): 1029 / 1260
+(Lepus mandshuricus,Lepus timidus): 1030 / 1260
+(Lepus mandshuricus,Lepus timidus): 1031 / 1260
+(Lepus mandshuricus,Lepus timidus): 1032 / 1260
+(Lepus mandshuricus,Lepus timidus): 1033 / 1260
+(Lepus mandshuricus,Lepus timidus): 1034 / 1260
+(Lepus mandshuricus,Lepus timidus): 1035 / 1260
+(Lepus mandshuricus,Lepus timidus): 1036 / 1260
+(Lepus mandshuricus,Lepus timidus): 1037 / 1260
+(Lepus mandshuricus,Lepus timidus): 1038 / 1260
+(Lepus mandshuricus,Lepus timidus): 1039 / 1260
+(Lepus mandshuricus,Lepus timidus): 1040 / 1260
+(Lepus mandshuricus,Lepus timidus): 1042 / 1260
+(Lepus mandshuricus,Lepus timidus): 1042 / 1260
+(Lepus mandshuricus,Lepus timidus): 1043 / 1260
+(Lepus mandshuricus,Lepus timidus): 1044 / 1260
+(Lepus mandshuricus,Lepus timidus): 1045 / 1260
+(Lepus mandshuricus,Lepus timidus): 1046 / 1260
+(Lepus mandshuricus,Lepus timidus): 1047 / 1260
+(Lepus mandshuricus,Lepus timidus): 1048 / 1260
+(Lepus mandshuricus,Lepus timidus): 1049 / 1260
+(Lepus mandshuricus,Lepus timidus): 1050 / 1260
+(Lepus mandshuricus,Lepus timidus): 1051 / 1260
+(Lepus mandshuricus,Lepus timidus): 1052 / 1260
+(Lepus mandshuricus,Lepus timidus): 1053 / 1260
+(Lepus mandshuricus,Lepus timidus): 1054 / 1260
+(Lepus mandshuricus,Lepus timidus): 1055 / 1260
+(Lepus mandshuricus,Lepus timidus): 1056 / 1260
+(Lepus mandshuricus,Lepus timidus): 1057 / 1260
+(Lepus mandshuricus,Lepus timidus): 1058 / 1260
+(Lepus mandshuricus,Lepus timidus): 1059 / 1260
+(Lepus mandshuricus,Lepus timidus): 1060 / 1260
+(Lepus mandshuricus,Lepus timidus): 1061 / 1260
+(Lepus mandshuricus,Lepus timidus): 1062 / 1260
+(Lepus mandshuricus,Lepus timidus): 1064 / 1260
+(Lepus mandshuricus,Lepus timidus): 1064 / 1260
+(Lepus mandshuricus,Lepus timidus): 1065 / 1260
+(Lepus mandshuricus,Lepus timidus): 1066 / 1260
+(Lepus mandshuricus,Lepus timidus): 1067 / 1260
+(Lepus mandshuricus,Lepus timidus): 1068 / 1260
+(Lepus mandshuricus,Lepus timidus): 1069 / 1260
+(Lepus mandshuricus,Lepus timidus): 1070 / 1260
+(Lepus mandshuricus,Lepus timidus): 1072 / 1260
+(Lepus mandshuricus,Lepus timidus): 1072 / 1260
+(Lepus mandshuricus,Lepus timidus): 1073 / 1260
+(Lepus mandshuricus,Lepus timidus): 1074 / 1260
+(Lepus mandshuricus,Lepus timidus): 1075 / 1260
+(Lepus mandshuricus,Lepus timidus): 1076 / 1260
+(Lepus mandshuricus,Lepus timidus): 1077 / 1260
+(Lepus mandshuricus,Lepus timidus): 1078 / 1260
+(Lepus mandshuricus,Lepus timidus): 1079 / 1260
+(Lepus mandshuricus,Lepus timidus): 1080 / 1260
+(Lepus mandshuricus,Lepus timidus): 1081 / 1260
+(Lepus mandshuricus,Lepus timidus): 1082 / 1260
+(Lepus mandshuricus,Lepus timidus): 1083 / 1260
+(Lepus mandshuricus,Lepus timidus): 1084 / 1260
+(Lepus mandshuricus,Lepus timidus): 1085 / 1260
+(Lepus mandshuricus,Lepus timidus): 1086 / 1260
+(Lepus mandshuricus,Lepus timidus): 1087 / 1260
+(Lepus mandshuricus,Lepus timidus): 1088 / 1260
+(Lepus mandshuricus,Lepus timidus): 1089 / 1260
+(Lepus mandshuricus,Lepus timidus): 1090 / 1260
+(Lepus mandshuricus,Lepus timidus): 1091 / 1260
+(Lepus mandshuricus,Lepus timidus): 1092 / 1260
+(Lepus mandshuricus,Lepus timidus): 1093 / 1260
+(Lepus mandshuricus,Lepus timidus): 1094 / 1260
+(Lepus mandshuricus,Lepus timidus): 1095 / 1260
+(Lepus mandshuricus,Lepus timidus): 1096 / 1260
+(Lepus mandshuricus,Lepus timidus): 1097 / 1260
+(Lepus mandshuricus,Lepus timidus): 1098 / 1260
+(Lepus mandshuricus,Lepus timidus): 1099 / 1260
+(Lepus mandshuricus,Lepus timidus): 1100 / 1260
+(Lepus mandshuricus,Lepus timidus): 1101 / 1260
+(Lepus mandshuricus,Lepus timidus): 1102 / 1260
+(Lepus mandshuricus,Lepus timidus): 1103 / 1260
+(Lepus mandshuricus,Lepus timidus): 1104 / 1260
+(Lepus mandshuricus,Lepus timidus): 1105 / 1260
+(Lepus mandshuricus,Lepus timidus): 1106 / 1260
+(Lepus mandshuricus,Lepus timidus): 1108 / 1260
+(Lepus mandshuricus,Lepus timidus): 1108 / 1260
+(Lepus mandshuricus,Lepus timidus): 1109 / 1260
+(Lepus mandshuricus,Lepus timidus): 1110 / 1260
+(Lepus mandshuricus,Lepus timidus): 1112 / 1260
+(Lepus mandshuricus,Lepus timidus): 1112 / 1260
+(Lepus mandshuricus,Lepus timidus): 1113 / 1260
+(Lepus mandshuricus,Lepus timidus): 1114 / 1260
+(Lepus mandshuricus,Lepus timidus): 1115 / 1260
+(Lepus mandshuricus,Lepus timidus): 1116 / 1260
+(Lepus mandshuricus,Lepus timidus): 1117 / 1260
+(Lepus mandshuricus,Lepus timidus): 1118 / 1260
+(Lepus mandshuricus,Lepus timidus): 1119 / 1260
+(Lepus mandshuricus,Lepus timidus): 1120 / 1260
+(Lepus mandshuricus,Lepus timidus): 1121 / 1260
+(Lepus mandshuricus,Lepus timidus): 1122 / 1260
+(Lepus mandshuricus,Lepus timidus): 1123 / 1260
+(Lepus mandshuricus,Lepus timidus): 1124 / 1260
+(Lepus mandshuricus,Lepus timidus): 1125 / 1260
+(Lepus mandshuricus,Lepus timidus): 1126 / 1260
+(Lepus mandshuricus,Lepus timidus): 1127 / 1260
+(Lepus mandshuricus,Lepus timidus): 1128 / 1260
+(Lepus mandshuricus,Lepus timidus): 1129 / 1260
+(Lepus mandshuricus,Lepus timidus): 1130 / 1260
+(Lepus mandshuricus,Lepus timidus): 1131 / 1260
+(Lepus mandshuricus,Lepus timidus): 1132 / 1260
+(Lepus mandshuricus,Lepus timidus): 1133 / 1260
+(Lepus mandshuricus,Lepus timidus): 1134 / 1260
+(Lepus mandshuricus,Lepus timidus): 1135 / 1260
+(Lepus mandshuricus,Lepus timidus): 1136 / 1260
+(Lepus mandshuricus,Lepus timidus): 1138 / 1260
+(Lepus mandshuricus,Lepus timidus): 1138 / 1260
+(Lepus mandshuricus,Lepus timidus): 1139 / 1260
+(Lepus mandshuricus,Lepus timidus): 1140 / 1260
+(Lepus mandshuricus,Lepus timidus): 1142 / 1260
+(Lepus mandshuricus,Lepus timidus): 1142 / 1260
+(Lepus mandshuricus,Lepus timidus): 1143 / 1260
+(Lepus mandshuricus,Lepus timidus): 1144 / 1260
+(Lepus mandshuricus,Lepus timidus): 1145 / 1260
+(Lepus mandshuricus,Lepus timidus): 1146 / 1260
+(Lepus mandshuricus,Lepus timidus): 1147 / 1260
+(Lepus mandshuricus,Lepus timidus): 1148 / 1260
+(Lepus mandshuricus,Lepus timidus): 1149 / 1260
+(Lepus mandshuricus,Lepus timidus): 1150 / 1260
+(Lepus mandshuricus,Lepus timidus): 1151 / 1260
+(Lepus mandshuricus,Lepus timidus): 1152 / 1260
+(Lepus mandshuricus,Lepus timidus): 1153 / 1260
+(Lepus mandshuricus,Lepus timidus): 1154 / 1260
+(Lepus mandshuricus,Lepus timidus): 1155 / 1260
+(Lepus mandshuricus,Lepus timidus): 1156 / 1260
+(Lepus mandshuricus,Lepus timidus): 1157 / 1260
+(Lepus mandshuricus,Lepus timidus): 1158 / 1260
+(Lepus mandshuricus,Lepus timidus): 1159 / 1260
+(Lepus mandshuricus,Lepus timidus): 1160 / 1260
+(Lepus mandshuricus,Lepus timidus): 1161 / 1260
+(Lepus mandshuricus,Lepus timidus): 1162 / 1260
+(Lepus mandshuricus,Lepus timidus): 1163 / 1260
+(Lepus mandshuricus,Lepus timidus): 1164 / 1260
+(Lepus mandshuricus,Lepus timidus): 1165 / 1260
+(Lepus mandshuricus,Lepus timidus): 1166 / 1260
+(Lepus mandshuricus,Lepus timidus): 1168 / 1260
+(Lepus mandshuricus,Lepus timidus): 1168 / 1260
+(Lepus mandshuricus,Lepus timidus): 1169 / 1260
+(Lepus mandshuricus,Lepus timidus): 1170 / 1260
+(Lepus mandshuricus,Lepus timidus): 1171 / 1260
+(Lepus mandshuricus,Lepus timidus): 1172 / 1260
+(Lepus mandshuricus,Lepus timidus): 1173 / 1260
+(Lepus mandshuricus,Lepus timidus): 1174 / 1260
+(Lepus mandshuricus,Lepus timidus): 1175 / 1260
+(Lepus mandshuricus,Lepus timidus): 1176 / 1260
+(Lepus mandshuricus,Lepus timidus): 1177 / 1260
+(Lepus mandshuricus,Lepus timidus): 1178 / 1260
+(Lepus mandshuricus,Lepus timidus): 1180 / 1260
+(Lepus mandshuricus,Lepus timidus): 1180 / 1260
+(Lepus mandshuricus,Lepus timidus): 1181 / 1260
+(Lepus mandshuricus,Lepus timidus): 1182 / 1260
+(Lepus mandshuricus,Lepus timidus): 1183 / 1260
+(Lepus mandshuricus,Lepus timidus): 1184 / 1260
+(Lepus mandshuricus,Lepus timidus): 1185 / 1260
+(Lepus mandshuricus,Lepus timidus): 1186 / 1260
+(Lepus mandshuricus,Lepus timidus): 1187 / 1260
+(Lepus mandshuricus,Lepus timidus): 1188 / 1260
+(Lepus mandshuricus,Lepus timidus): 1189 / 1260
+(Lepus mandshuricus,Lepus timidus): 1190 / 1260
+(Lepus mandshuricus,Lepus timidus): 1192 / 1260
+(Lepus mandshuricus,Lepus timidus): 1192 / 1260
+(Lepus mandshuricus,Lepus timidus): 1193 / 1260
+(Lepus mandshuricus,Lepus timidus): 1194 / 1260
+(Lepus mandshuricus,Lepus timidus): 1195 / 1260
+(Lepus mandshuricus,Lepus timidus): 1196 / 1260
+(Lepus mandshuricus,Lepus timidus): 1197 / 1260
+(Lepus mandshuricus,Lepus timidus): 1198 / 1260
+(Lepus mandshuricus,Lepus timidus): 1199 / 1260
+(Lepus mandshuricus,Lepus timidus): 1200 / 1260
+(Lepus mandshuricus,Lepus timidus): 1201 / 1260
+(Lepus mandshuricus,Lepus timidus): 1202 / 1260
+(Lepus mandshuricus,Lepus timidus): 1203 / 1260
+(Lepus mandshuricus,Lepus timidus): 1204 / 1260
+(Lepus mandshuricus,Lepus timidus): 1205 / 1260
+(Lepus mandshuricus,Lepus timidus): 1206 / 1260
+(Lepus mandshuricus,Lepus timidus): 1207 / 1260
+(Lepus mandshuricus,Lepus timidus): 1208 / 1260
+(Lepus mandshuricus,Lepus timidus): 1209 / 1260
+(Lepus mandshuricus,Lepus timidus): 1210 / 1260
+(Lepus mandshuricus,Lepus timidus): 1211 / 1260
+(Lepus mandshuricus,Lepus timidus): 1212 / 1260
+(Lepus mandshuricus,Lepus timidus): 1213 / 1260
+(Lepus mandshuricus,Lepus timidus): 1214 / 1260
+(Lepus mandshuricus,Lepus timidus): 1215 / 1260
+(Lepus mandshuricus,Lepus timidus): 1216 / 1260
+(Lepus mandshuricus,Lepus timidus): 1217 / 1260
+(Lepus mandshuricus,Lepus timidus): 1218 / 1260
+(Lepus mandshuricus,Lepus timidus): 1219 / 1260
+(Lepus mandshuricus,Lepus timidus): 1220 / 1260
+(Lepus mandshuricus,Lepus timidus): 1221 / 1260
+(Lepus mandshuricus,Lepus timidus): 1222 / 1260
+(Lepus mandshuricus,Lepus timidus): 1223 / 1260
+(Lepus mandshuricus,Lepus timidus): 1224 / 1260
+(Lepus mandshuricus,Lepus timidus): 1226 / 1260
+(Lepus mandshuricus,Lepus timidus): 1226 / 1260
+(Lepus mandshuricus,Lepus timidus): 1227 / 1260
+(Lepus mandshuricus,Lepus timidus): 1228 / 1260
+(Lepus mandshuricus,Lepus timidus): 1229 / 1260
+(Lepus mandshuricus,Lepus timidus): 1230 / 1260
+(Lepus mandshuricus,Lepus timidus): 1231 / 1260
+(Lepus mandshuricus,Lepus timidus): 1232 / 1260
+(Lepus mandshuricus,Lepus timidus): 1234 / 1260
+(Lepus mandshuricus,Lepus timidus): 1234 / 1260
+(Lepus mandshuricus,Lepus timidus): 1235 / 1260
+(Lepus mandshuricus,Lepus timidus): 1236 / 1260
+(Lepus mandshuricus,Lepus timidus): 1237 / 1260
+(Lepus mandshuricus,Lepus timidus): 1238 / 1260
+(Lepus mandshuricus,Lepus timidus): 1239 / 1260
+(Lepus mandshuricus,Lepus timidus): 1240 / 1260
+(Lepus mandshuricus,Lepus timidus): 1241 / 1260
+(Lepus mandshuricus,Lepus timidus): 1242 / 1260
+(Lepus mandshuricus,Lepus timidus): 1243 / 1260
+(Lepus mandshuricus,Lepus timidus): 1244 / 1260
+(Lepus mandshuricus,Lepus timidus): 1245 / 1hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+260
+(Lepus mandshuricus,Lepus timidus): 1246 / 1260
+(Lepus mandshuricus,Lepus timidus): 1247 / 1260
+(Lepus mandshuricus,Lepus timidus): 1248 / 1260
+(Lepus mandshuricus,Lepus timidus): 1249 / 1260
+(Lepus mandshuricus,Lepus timidus): 1250 / 1260
+(Lepus mandshuricus,Lepus timidus): 1251 / 1260
+(Lepus mandshuricus,Lepus timidus): 1252 / 1260
+(Lepus mandshuricus,Lepus timidus): 1253 / 1260
+(Lepus mandshuricus,Lepus timidus): 1254 / 1260
+(Lepus mandshuricus,Lepus timidus): 1255 / 1260
+(Lepus mandshuricus,Lepus timidus): 1256 / 1260
+(Lepus mandshuricus,Lepus timidus): 1257 / 1260
+(Lepus mandshuricus,Lepus timidus): 1258 / 1260
+(Lepus mandshuricus,Lepus timidus): 1259 / 1260
+(Lepus mandshuricus,Lepus timidus): 1260 / 1260
+(Lepus brachyurus,Lepus mandshuricus): 1 / 225
+(Lepus brachyurus,Lepus mandshuricus): 2 / 225
+(Lepus brachyurus,Lepus mandshuricus): 3 / 225
+(Lepus brachyurus,Lepus mandshuricus): 4 / 225
+(Lepus brachyurus,Lepus mandshuricus): 6 / 225
+(Lepus brachyurus,Lepus mandshuricus): 6 / 225
+(Lepus brachyurus,Lepus mandshuricus): 7 / 225
+(Lepus brachyurus,Lepus mandshuricus): 8 / 225
+(Lepus brachyurus,Lepus mandshuricus): 9 / 225
+(Lepus brachyurus,Lepus mandshuricus): 10 / 225
+(Lepus brachyurus,Lepus mandshuricus): 11 / 225
+(Lepus brachyurus,Lepus mandshuricus): 12 / 225
+(Lepus brachyurus,Lepus mandshuricus): 13 / 225
+(Lepus brachyurus,Lepus mandshuricus): 14 / 225
+(Lepus brachyurus,Lepus mandshuricus): 15 / 225
+(Lepus brachyurus,Lepus mandshuricus): 16 / 225
+(Lepus brachyurus,Lepus mandshuricus): 17 / 225
+(Lepus brachyurus,Lepus mandshuricus): 18 / 225
+(Lepus brachyurus,Lepus mandshuricus): 19 / 225
+(Lepus brachyurus,Lepus mandshuricus): 20 / 225
+(Lepus brachyurus,Lepus mandshuricus): 21 / 225
+(Lepus brachyurus,Lepus mandshuricus): 22 / 225
+(Lepus brachyurus,Lepus mandshuricus): 23 / 225
+(Lepus brachyurus,Lepus mandshuricus): 24 / 225
+(Lepus brachyurus,Lepus mandshuricus): 25 / 225
+(Lepus brachyurus,Lepus mandshuricus): 26 / 225
+(Lepus brachyurus,Lepus mandshuricus): 27 / 225
+(Lepus brachyurus,Lepus mandshuricus): 28 / 225
+(Lepus brachyurus,Lepus mandshuricus): 29 / 225
+(Lepus brachyurus,Lepus mandshuricus): 30 / 225
+(Lepus brachyurus,Lepus mandshuricus): 31 / 225
+(Lepus brachyurus,Lepus mandshuricus): 32 / 225
+(Lepus brachyurus,Lepus mandshuricus): 33 / 225
+(Lepus brachyurus,Lepus mandshuricus): 34 / 225
+(Lepus brachyurus,Lepus mandshuricus): 35 / 225
+(Lepus brachyurus,Lepus mandshuricus): 36 / 225
+(Lepus brachyurus,Lepus mandshuricus): 37 / 225
+(Lepus brachyurus,Lepus mandshuricus): 38 / 225
+(Lepus brachyurus,Lepus mandshuricus): 39 / 225
+(Lepus brachyurus,Lepus mandshuricus): 40 / 225
+(Lepus brachyurus,Lepus mandshuricus): 42 / 225
+(Lepus brachyurus,Lepus mandshuricus): 42 / 225
+(Lepus brachyurus,Lepus mandshuricus): 43 / 225
+(Lepus brachyurus,Lepus mandshuricus): 44 / 225
+(Lepus brachyurus,Lepus mandshuricus): 45 / 225
+(Lepus brachyurus,Lepus mandshuricus): 46 / 225
+(Lepus brachyurus,Lepus mandshuricus): 47 / 225
+(Lepus brachyurus,Lepus mandshuricus): 48 / 225
+(Lepus brachyurus,Lepus mandshuricus): 49 / 225
+(Lepus brachyurus,Lepus mandshuricus): 50 / 225
+(Lepus brachyurus,Lepus mandshuricus): 51 / 225
+(Lepus brachyurus,Lepus mandshuricus): 52 / 225
+(Lepus brachyurus,Lepus mandshuricus): 53 / 225
+(Lepus brachyurus,Lepus mandshuricus): 54 / 225
+(Lepus brachyurus,Lepus mandshuricus): 55 / 225
+(Lepus brachyurus,Lepus mandshuricus): 56 / 225
+(Lepus brachyurus,Lepus mandshuricus): 57 / 225
+(Lepus brachyurus,Lepus mandshuricus): 58 / 225
+(Lepus brachyurus,Lepus mandshuricus): 59 / 225
+(Lepus brachyurus,Lepus mandshuricus): 60 / 225
+(Lepus brachyurus,Lepus mandshuricus): 61 / 225
+(Lepus brachyurus,Lepus mandshuricus): 62 / 225
+(Lepus brachyurus,Lepus mandshuricus): 63 / 225
+(Lepus brachyurus,Lepus mandshuricus): 64 / 225
+(Lepus brachyurus,Lepus mandshuricus): 65 / 225
+(Lepus brachyurus,Lepus mandshuricus): 66 / 225
+(Lepus brachyurus,Lepus mandshuricus): 67 / 225
+(Lepus brachyurus,Lepus mandshuricus): 68 / 225
+(Lepus brachyurus,Lepus mandshuricus): 69 / 225
+(Lepus brachyurus,Lepus mandshuricus): 70 / 225
+(Lepus brachyurus,Lepus mandshuricus): 71 / 225
+(Lepus brachyurus,Lepus mandshuricus): 72 / 225
+(Lepus brachyurus,Lepus mandshuricus): 73 / 225
+(Lepus brachyurus,Lepus mandshuricus): 74 / 225
+(Lepus brachyurus,Lepus mandshuricus): 75 / 225
+(Lepus brachyurus,Lepus mandshuricus): 76 / 225
+(Lepus brachyurus,Lepus mandshuricus): 77 / 225
+(Lepus brachyurus,Lepus mandshuricus): 78 / 225
+(Lepus brachyurus,Lepus mandshuricus): 79 / 225
+(Lepus brachyurus,Lepus mandshuricus): 80 / 225
+(Lepus brachyurus,Lepus mandshuricus): 81 / 225
+(Lepus brachyurus,Lepus mandshuricus): 82 / 225
+(Lepus brachyurus,Lepus mandshuricus): 83 / 225
+(Lepus brachyurus,Lepus mandshuricus): 84 / 225
+(Lepus brachyurus,Lepus mandshuricus): 85 / 225
+(Lepus brachyurus,Lepus mandshuricus): 86 / 225
+(Lepus brachyurus,Lepus mandshuricus): 87 / 225
+(Lepus brachyurus,Lepus mandshuricus): 88 / 225
+(Lepus brachyurus,Lepus mandshuricus): 89 / 225
+(Lepus brachyurus,Lepus mandshuricus): 90 / 225
+(Lepus brachyurus,Lepus mandshuricus): 91 / 225
+(Lepus brachyurus,Lepus mandshuricus): 92 / 225
+(Lepus brachyurus,Lepus mandshuricus): 93 / 225
+(Lepus brachyurus,Lepus mandshuricus): 94 / 225
+(Lepus brachyurus,Lepus mandshuricus): 95 / 225
+(Lepus brachyurus,Lepus mandshuricus): 96 / 225
+(Lepus brachyurus,Lepus mandshuricus): 97 / 225
+(Lepus brachyurus,Lepus mandshuricus): 98 / 225
+(Lepus brachyurus,Lepus mandshuricus): 99 / 225
+(Lepus brachyurus,Lepus mandshuricus): 100 / 225
+(Lepus brachyurus,Lepus mandshuricus): 101 / 225
+(Lepus brachyurus,Lepus mandshuricus): 102 / 225
+(Lepus brachyurus,Lepus mandshuricus): 103 / 225
+(Lepus brachyurus,Lepus mandshuricus): 104 / 225
+(Lepus brachyurus,Lepus mandshuricus): 105 / 225
+(Lepus brachyurus,Lepus mandshuricus): 106 / 225
+(Lepus brachyurus,Lepus mandshuricus): 107 / 225
+(Lepus brachyurus,Lepus mandshuricus): 108 / 225
+(Lepus brachyurus,Lepus mandshuricus): 109 / 225
+(Lepus brachyurus,Lepus mandshuricus): 110 / 225
+(Lepus brachyurus,Lepus mandshuricus): 111 / 225
+(Lepus brachyurus,Lepus mandshuricus): 112 / 225
+(Lepus brachyurus,Lepus mandshuricus): 113 / 225
+(Lepus brachyurus,Lepus mandshuricus): 114 / 225
+(Lepus brachyurus,Lepus mandshuricus): 115 / 225
+(Lepus brachyurus,Lepus mandshuricus): 116 / 225
+(Lepus brachyurus,Lepus mandshuricus): 117 / 225
+(Lepus brachyurus,Lepus mandshuricus): 118 / 225
+(Lepus brachyurus,Lepus mandshuricus): 119 / 225
+(Lepus brachyurus,Lepus mandshuricus): 120 / 225
+(Lepus brachyurus,Lepus mandshuricus): 121 / 225
+(Lepus brachyurus,Lepus mandshuricus): 122 / 225
+(Lepus brachyurus,Lepus mandshuricus): 123 / 225
+(Lepus brachyurus,Lepus mandshuricus): 124 / 225
+(Lepus brachyurus,Lepus mandshuricus): 125 / 225
+(Lepus brachyurus,Lepus mandshuricus): 126 / 225
+(Lepus brachyurus,Lepus mandshuricus): 127 / 225
+(Lepus brachyurus,Lepus mandshuricus): 128 / 225
+(Lepus brachyurus,Lepus mandshuricus): 129 / 225
+(Lepus brachyurus,Lepus mandshuricus): 130 / 225
+(Lepus brachyurus,Lepus mandshuricus): 131 / 225
+(Lepus brachyurus,Lepus mandshuricus): 132 / 225
+(Lepus brachyurus,Lepus mandshuricus): 133 / 225
+(Lepus brachyurus,Lepus mandshuricus): 134 / 225
+(Lepus brachyurus,Lepus mandshuricus): 135 / 225
+(Lepus brachyurus,Lepus mandshuricus): 136 / 225
+(Lepus brachyurus,Lepus mandshuricus): 137 / 225
+(Lepus brachyurus,Lepus mandshuricus): 138 / 225
+(Lepus brachyurus,Lepus mandshuricus): 139 / 225
+(Lepus brachyurus,Lepus mandshuricus): 140 / 225
+(Lepus brachyurus,Lepus mandshuricus): 141 / 225
+(Lepus brachyurus,Lepus mandshuricus): 142 / 225
+(Lepus brachyurus,Lepus mandshuricus): 143 / 225
+(Lepus brachyurus,Lepus mandshuricus): 144 / 225
+(Lepus brachyurus,Lepus mandshuricus): 145 / 225
+(Lepus brachyurus,Lepus mandshuricus): 146 / 225
+(Lepus brachyurus,Lepus mandshuricus): 147 / 225
+(Lepus brachyurus,Lepus mandshuricus): 148 / 225
+(Lepus brachyurus,Lepus mandshuricus): 149 / 225
+(Lepus brachyurus,Lepus mandshuricus): 150 / 225
+(Lepus brachyurus,Lepus mandshuricus): 151 / 225
+(Lepus brachyurus,Lepus mandshuricus): 152 / 225
+(Lepus brachyurus,Lepus mandshuricus): 153 / 225
+(Lepus brachyurus,Lepus mandshuricus): 154 / 225
+(Lepus brachyurus,Lepus mandshFound potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+Found potential hybrid.
+uricus): 155 / 225
+(Lepus brachyurus,Lepus mandshuricus): 156 / 225
+(Lepus brachyurus,Lepus mandshuricus): 157 / 225
+(Lepus brachyurus,Lepus mandshuricus): 158 / 225
+(Lepus brachyurus,Lepus mandshuricus): 159 / 225
+(Lepus brachyurus,Lepus mandshuricus): 160 / 225
+(Lepus brachyurus,Lepus mandshuricus): 161 / 225
+(Lepus brachyurus,Lepus mandshuricus): 162 / 225
+(Lepus brachyurus,Lepus mandshuricus): 163 / 225
+(Lepus brachyurus,Lepus mandshuricus): 164 / 225
+(Lepus brachyurus,Lepus mandshuricus): 165 / 225
+(Lepus brachyurus,Lepus mandshuricus): 166 / 225
+(Lepus brachyurus,Lepus mandshuricus): 167 / 225
+(Lepus brachyurus,Lepus mandshuricus): 168 / 225
+(Lepus brachyurus,Lepus mandshuricus): 169 / 225
+(Lepus brachyurus,Lepus mandshuricus): 170 / 225
+(Lepus brachyurus,Lepus mandshuricus): 171 / 225
+(Lepus brachyurus,Lepus mandshuricus): 172 / 225
+(Lepus brachyurus,Lepus mandshuricus): 174 / 225
+(Lepus brachyurus,Lepus mandshuricus): 174 / 225
+(Lepus brachyurus,Lepus mandshuricus): 175 / 225
+(Lepus brachyurus,Lepus mandshuricus): 176 / 225
+(Lepus brachyurus,Lepus mandshuricus): 178 / 225
+(Lepus brachyurus,Lepus mandshuricus): 178 / 225
+(Lepus brachyurus,Lepus mandshuricus): 180 / 225
+(Lepus brachyurus,Lepus mandshuricus): 180 / 225
+(Lepus brachyurus,Lepus mandshuricus): 181 / 225
+(Lepus brachyurus,Lepus mandshuricus): 182 / 225
+(Lepus brachyurus,Lepus mandshuricus): 183 / 225
+(Lepus brachyurus,Lepus mandshuricus): 184 / 225
+(Lepus brachyurus,Lepus mandshuricus): 186 / 225
+(Lepus brachyurus,Lepus mandshuricus): 186 / 225
+(Lepus brachyurus,Lepus mandshuricus): 187 / 225
+(Lepus brachyurus,Lepus mandshuricus): 188 / 225
+(Lepus brachyurus,Lepus mandshuricus): 190 / 225
+(Lepus brachyurus,Lepus mandshuricus): 190 / 225
+(Lepus brachyurus,Lepus mandshuricus): 192 / 225
+(Lepus brachyurus,Lepus mandshuricus): 192 / 225
+(Lepus brachyurus,Lepus mandshuricus): 193 / 225
+(Lepus brachyurus,Lepus mandshuricus): 194 / 225
+(Lepus brachyurus,Lepus mandshuricus): 195 / 225
+(Lepus brachyurus,Lepus mandshuricus): 196 / 225
+(Lepus brachyurus,Lepus mandshuricus): 198 / 225
+(Lepus brachyurus,Lepus mandshuricus): 198 / 225
+(Lepus brachyurus,Lepus mandshuricus): 200 / 225
+(Lepus brachyurus,Lepus mandshuricus): 200 / 225
+(Lepus brachyurus,Lepus mandshuricus): 202 / 225
+(Lepus brachyurus,Lepus mandshuricus): 202 / 225
+(Lepus brachyurus,Lepus mandshuricus): 203 / 225
+(Lepus brachyurus,Lepus mandshuricus): 204 / 225
+(Lepus brachyurus,Lepus mandshuricus): 205 / 225
+(Lepus brachyurus,Lepus mandshuricus): 206 / 225
+(Lepus brachyurus,Lepus mandshuricus): 207 / 225
+(Lepus brachyurus,Lepus mandshuricus): 208 / 225
+(Lepus brachyurus,Lepus mandshuricus): 209 / 225
+(Lepus brachyurus,Lepus mandshuricus): 210 / 225
+(Lepus brachyurus,Lepus mandshuricus): 211 / 225
+(Lepus brachyurus,Lepus mandshuricus): 212 / 225
+(Lepus brachyurus,Lepus mandshuricus): 213 / 225
+(Lepus brachyurus,Lepus mandshuricus): 214 / 225
+(Lepus brachyurus,Lepus mandshuricus): 215 / 225
+(Lepus brachyurus,Lepus mandshuricus): 216 / 225
+(Lepus brachyurus,Lepus mandshuricus): 217 / 225
+(Lepus brachyurus,Lepus mandshuricus): 218 / 225
+(Lepus brachyurus,Lepus mandshuricus): 220 / 225
+(Lepus brachyurus,Lepus mandshuricus): 220 / 225
+(Lepus brachyurus,Lepus mandshuricus): 221 / 225
+(Lepus brachyurus,Lepus mandshuricus): 222 / 225
+(Lepus brachyurus,Lepus mandshuricus): 223 / 225
+(Lepus brachyurus,Lepus mandshuricus): 224 / 225
+(Lepus brachyurus,Lepus timidus): 1 / 64
+(Lepus brachyurus,Lepus mandshuricus): 225 / 225
+(Lepus brachyurus,Lepus timidus): 2 / 64
+(Lepus brachyurus,Lepus timidus): 3 / 64
+(Lepus brachyurus,Lepus timidus): 4 / 64
+(Lepus brachyurus,Lepus timidus): 5 / 64
+(Lepus brachyurus,Lepus timidus): 7 / 64
+(Lepus brachyurus,Lepus timidus): 7 / 64
+(Lepus brachyurus,Lepus timidus): 9 / 64
+(Lepus brachyurus,Lepus timidus): 9 / 64
+(Lepus brachyurus,Lepus timidus): 10 / 64
+(Lepus brachyurus,Lepus timidus): 11 / 64
+(Lepus brachyurus,Lepus timidus): 12 / 64
+(Lepus brachyurus,Lepus timidus): 13 / 64
+(Lepus brachyurus,Lepus timidus): 14 / 64
+(Lepus brachyurus,Lepus timidus): 15 / 64
+(Lepus brachyurus,Lepus timidus): 16 / 64
+(Lepus brachyurus,Lepus timidus): 17 / 64
+(Lepus brachyurus,Lepus timidus): 18 / 64
+(Lepus brachyurus,Lepus timidus): 19 / 64
+(Lepus brachyurus,Lepus timidus): 20 / 64
+(Lepus brachyurus,Lepus timidus): 21 / 64
+(Lepus brachyurus,Lepus timidus): 22 / 64
+(Lepus brachyurus,Lepus timidus): 23 / 64
+(Lepus brachyurus,Lepus timidus): 24 / 64
+(Lepus brachyurus,Lepus timidus): 25 / 64
+(Lepus brachyurus,Lepus timidus): 26 / 64
+(Lepus brachyurus,Lepus timidus): 27 / 64
+(Lepus brachyurus,Lepus timidus): 28 / 64
+(Lepus brachyurus,Lepus timidus): 29 / 64
+(Lepus brachyurus,Lepus timidus): 30 / 64
+(Lepus brachyurus,Lepus timidus): 31 / 64
+(Lepus brachyurus,Lepus timidus): 32 / 64
+(Lepus brachyurus,Lepus timidus): 33 / 64
+(Lepus brachyurus,Lepus timidus): 34 / 64
+(Lepus brachyurus,Lepus timidus): 35 / 64
+(Lepus brachyurus,Lepus timidus): 36 / 64
+(Lepus brachyurus,Lepus timidus): 37 / 64
+(Lepus brachyurus,Lepus timidus): 38 / 64
+(Lepus brachyurus,Lepus timidus): 39 / 64
+(Lepus brachyurus,Lepus timidus): 41 / 64
+(Lepus brachyurus,Lepus timidus): 41 / 64
+(Lepus brachyurus,Lepus timidus): 42 / 64
+(Lepus brachyurus,Lepus timidus): 43 / 64
+(Lepus brachyurus,Lepus timidus): 44 / 64
+(Lepus brachyurus,Lepus timidus): 45 / 64
+(Lepus brachyurus,Lepus timidus): 47 / 64
+(Lepus brachyurus,Lepus timidus): 47 / 64
+(Lepus brachyurus,Lepus timidus): 48 / 64
+(Lepus brachyurus,Lepus timidus): 49 / 64
+(Lepus brachyurus,Lepus timidus): 50 / 64
+(Lepus brachyurus,Lepus timidus): 51 / 64
+(Lepus brachyurus,Lepus timidus): 52 / 64
+(Lepus brachyurus,Lepus timidus): 53 / 64
+(Lepus brachyurus,Lepus timidus): 54 / 64
+(Lepus brachyurus,Lepus timidus): 55 / 64
+(Lepus brachyurus,Lepus timidus): 56 / 64
+(Lepus brachyurus,Lepus timidus): 57 / 64
+(Lepus brachyurus,Lepus timidus): 58 / 64
+(Lepus brachyurus,Lepus timidus): 59 / 64
+(Lepus brachyurus,Lepus timidus): 60 / 64
+(Lepus brachyurus,Lepus timidus): 61 / 64
+(Lepus brachyurus,Lepus timidus): 62 / 64
+(Lepus brachyurus,Lepus timidus): 63 / 64
+(Lepus brachyurus,Lepus timidus): 64 / 64
+Task [1 -- test_potential_hybridization] completed processing.
+

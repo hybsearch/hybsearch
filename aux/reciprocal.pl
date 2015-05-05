@@ -14,14 +14,14 @@ use Bio::Tools::Run::Alignment::Clustalw;
 use Bio::SeqIO;
 use Bio::TreeIO;
 
-use Curses;
-use Curses::UI;
-use Curses::UI::Common;
-
 # TODO: Come up with a better name for this file.
 # TODO: Add the xls output?
 
 # $| = 1; # Turn on stdout flushing
+
+# reassign STDERR
+open my $log_fh, '>>', './STDERR.out';
+*STDERR = $log_fh;
 
 
 # --------------------
@@ -318,7 +318,7 @@ sub find_hybridizations {
     # TODO: Do we have to ask how many cores, then adjust max_workers manually?
     #       Use 'auto' option for max_workers?
     my $max_build_triples_workers = 1;
-    my $max_test_potential_hybridization_workers = 'auto';
+    my $max_test_potential_hybridization_workers = 2; # Set to 'auto' to max out machine. This will make your computer cry.
 
     # Build pair_queue
     for (my $i = 0; $i < scalar @binomial_list; ++$i) {
@@ -407,17 +407,21 @@ sub find_hybridizations {
                         my $frame = $$loci{ $A }->species->binomial;
                         my $hinge = pair_string($B, $C);
                         MCE->do('add_potential_tree', $frame, $hinge, $tree);
-                        #MCE->say(\*STDERR, "Found potential hybrid.");
+
+                        $reporting_lock->lock();
+                            MCE->say(\*STDERR, "Found potential hybrid.");
+                        $reporting_lock->unlock();
                     }
 
                     # Update pair progress. # Distinct names will be on edges of sorted array.
                     my @binomials = sort map { $$loci{ $_ }->species->binomial; } @$tree;
                     my $pair_key = pair_string( $binomials[ 0 ], $binomials[ 2 ] );
 
-                    #$reporting_lock->lock();
-                        MCE->do('increment_pair_progress', $pair_key);
+                    MCE->do('increment_pair_progress', $pair_key);
+
+                    $reporting_lock->lock();
                         MCE->do('report_pair_progress', $pair_key);
-                    #$reporting_lock->unlock();
+                    $reporting_lock->unlock();
 
                 }
             }
@@ -428,12 +432,57 @@ sub find_hybridizations {
 
 }
 
+sub output_results {
+    my $outfilename = 'hybrids.out';
+    open (my $fh, '>', $outfilename) or die "Could not open file '$outfilename' $!";
 
-sub launch_ui {
-    #print "Processing complete, you are now in the query interface.\n"
-    #print "Commands: reciprocal_hybridizations"
-    # For now, just print all data to a file.
+    # For now, just print all instances of hybridization to a file.
+    my @binomials = keys %potential_trees;
+    print @binomials;
+    for (my $i = 0; $i < scalar @binomials; ++$i) {
+        my $binomial_A = $binomials[$i];
+        # If a hinge doesn't exist for both species, no reciprocal non-monophyly,
+        # and we can ignore that hinge pair, so we only need the list of hinges
+        # from one species.
+        my @hinges = keys %{$potential_trees{ $binomial_A }};
+        for (my $j = $i+1; $j < scalar @binomials; ++$j) {
+            my $binomial_B = $binomials[$j];
+            print $fh qq(between:$binomial_A,$binomial_B\n);
+            for (my $k = 0; $k < scalar @hinges; ++$k) {
+                # We know potential hybrids with this hinge exist for A,
+                # do any exist for B?
+                if (exists $potential_trees{ $binomial_B }{ $hinges[$k] }) {
+                    my $hinge = $hinges[$k];
+                    my $A_framed = $potential_trees{ $binomial_A }{ $hinge };
+                    my $B_framed = $potential_trees{ $binomial_B }{ $hinge };
+                    print $fh qq(hinge:($hinge)\n);
+                    print $fh qq(frame:$binomial_A:);
+                    my $cur_tree;
+                    my $first;
+                    my $second;
+                    my $third;
+                    for (my $a = 0; $a < scalar @{$A_framed}; ++$a) {
+                        $cur_tree = $A_framed->[$a];
+                        $first = $cur_tree->[0];
+                        $second = $cur_tree->[1];
+                        $third = $cur_tree->[2];
+                        print $fh qq([$first,$second,$third],);
+                    }
+                    print $fh qq(\n);
+                    print $fh qq(frame:$binomial_B:);
+                    for (my $b = 0; $b < scalar @{$B_framed}; ++$b) {
+                        $cur_tree = $A_framed->[$b];
+                        $first = $cur_tree->[0];
+                        $second = $cur_tree->[1];
+                        $third = $cur_tree->[2];
+                        print $fh qq([$first,$second,$third],);
+                    }
+                    print $fh qq(\n);
+                }
+            }
 
+        }
+    }
 
 
 }
@@ -456,7 +505,7 @@ sub start {
     find_hybridizations( $loci, $loci_lists, $factory );
 
     # After processing, launch UI to view data
-    launch_ui();
+    output_results();
 
 }
 

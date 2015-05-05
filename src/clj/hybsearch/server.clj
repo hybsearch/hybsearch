@@ -89,7 +89,8 @@
         <body>
         <h1>Your upload of " filename " was successful!</h1>
         <p>Sequences have been added to the database.</p></body></html>")
-    (catch Exception e "<h1>An error occured.</h1>")))
+    (catch Exception e {:status 500
+                        :body "<h1>An error occured.</h1>"})))
 
 
 (defn create-analysis-set
@@ -99,7 +100,8 @@
     ;; Set was created at this point, so push new state to clients.
     (push-jobs-state-everywhere)
     "OK! Analysis set created!"
-    (catch Exception e "Oops! An error occured. Your set was probably not created.")))
+    (catch Exception e {:status 500
+                        :body (str e "Oops! An error occured: Your analysis set was probably not created.")})))
 
 (defn create-clustal-scheme [scheme-data]
   (try
@@ -107,7 +109,8 @@
     ;; Scheme was created ok at this point, so push new state to clients.
     (push-jobs-state-everywhere)
     "Scheme successfully created."
-    (catch Exception e (str "Oops! An error occured: " e " Your scheme was probably not created."))))
+    (catch Exception e {:status 500
+                        :body (str "Oops! An error occured: Your clustal scheme was probably not created.")})))
 
 ;; -----------------------
 ;; Route Defs
