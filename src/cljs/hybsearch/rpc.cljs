@@ -14,10 +14,27 @@
              :mongodb/objectid                    {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
              ;;:mongodb/localref                   {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
 
-             :clustalscheme/name                 {:db/cardinality :db.cardinality/one}
-             :clustalscheme/exsetting            {:db/cardinality :db.cardinality/one}
-             :clustalscheme/numtriples           {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all sequences
-             :clustalscheme/numproc              {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
+             :clustalscheme/name                  {:db/cardinality :db.cardinality/one}
+             :clustalscheme/sequencetype          {:db/cardinality :db.cardinality/one}
+             :clustalscheme/alignmenttype         {:db/cardinality :db.cardinality/one}
+             :clustalscheme/pwdnamatrix           {:db/cardinality :db.cardinality/one}
+             :clustalscheme/pwgapopen             {:db/cardinality :db.cardinality/one}
+             :clustalscheme/pwgapext              {:db/cardinality :db.cardinality/one}
+             :clustalscheme/ktuple                {:db/cardinality :db.cardinality/one}
+             :clustalscheme/window                {:db/cardinality :db.cardinality/one}
+             :clustalscheme/topdiags              {:db/cardinality :db.cardinality/one}
+             :clustalscheme/pairgap               {:db/cardinality :db.cardinality/one}
+             :clustalscheme/dnamatrix             {:db/cardinality :db.cardinality/one}
+             :clustalscheme/gapopen               {:db/cardinality :db.cardinality/one}
+             :clustalscheme/gapext                {:db/cardinality :db.cardinality/one}
+             :clustalscheme/gapdist               {:db/cardinality :db.cardinality/one}
+             :clustalscheme/endgaps               {:db/cardinality :db.cardinality/one}
+             :clustalscheme/iteration             {:db/cardinality :db.cardinality/one}
+             :clustalscheme/numiter               {:db/cardinality :db.cardinality/one}
+             :clustalscheme/clustering            {:db/cardinality :db.cardinality/one}
+             :clustalscheme/kimura                {:db/cardinality :db.cardinality/one}
+             :clustalscheme/numtriples            {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all sequences
+             :clustalscheme/numproc               {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
              :analysisset/setdef                  {:db/cardinality :db.cardinality/one}

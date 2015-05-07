@@ -126,7 +126,7 @@
                      (div :class "item" :data-value "alignment" "Alignment"))))
 
           (div :class "field"
-               (label "Num Iter:")
+               (label "Num Iterations:")
                (input :type "number" :name "numiter" :placeholder "Use Default (1)")))
 
 

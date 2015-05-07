@@ -1,5 +1,6 @@
 (ns ui.scheme-set-detail
-  (:require [ui.clustal-scheme-detail :as settings]
+  (:require [ui.clustal-scheme-detail :as scheme-detail]
+            [ui.analysis-set-detail :as set-detail]
             [ui.jobs-collection :as jobs]
             [datascript :as d]))
 
@@ -11,7 +12,7 @@
 ;;     (print "Scheme-Set Detail: jobs: " jobs)
 ;;     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
 ;;     (print "Scheme-Set Detail: analysis-set: " analysis-set)
-    (div
+    (div :style "height: 100%;"
       (div :class "ui pointing secondary menu"
            (div :class "float right header item"
                 (text "~{scheme-name} \u2229 ~{set-name}")) ;; Todo use intersect symbol
@@ -20,8 +21,11 @@
            (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
            (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
       (div :class "ui basic active tab segment" :data-tab "clustal-scheme"
-           (settings/detail :clustal-scheme clustal-scheme))
-      (div :class "ui basic tab segment"        :data-tab "analysis-set" "Analysis Set Details Go Here")
+           :style "height: 100%; overflow-y: scroll;"
+           (scheme-detail/detail :clustal-scheme clustal-scheme))
+      (div :class "ui basic tab segment"        :data-tab "analysis-set"
+           :style "height: 100%; overflow-y: scroll;"
+           (set-detail/detail :analysis-set analysis-set))
       (div :class "ui basic tab segment"        :data-tab "jobs"
            (jobs/collection :jobs jobs))
       (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))

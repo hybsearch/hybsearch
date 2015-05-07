@@ -489,7 +489,7 @@ sub output_results {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./smallerlepus.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./trionychcytb.gb');
 
 
     # Construct factory object:
