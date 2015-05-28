@@ -319,7 +319,7 @@ sub find_hybridizations {
     # TODO: Do we have to ask how many cores, then adjust max_workers manually?
     #       Use 'auto' option for max_workers?
     my $max_build_triples_workers = 1;
-    my $max_test_potential_hybridization_workers = 2; # Set to 'auto' to max out machine. This will make your computer cry.
+    my $max_test_potential_hybridization_workers = 4; # Set to 'auto' to max out machine. This will make your computer cry.
 
     # Build pair_queue
     for (my $i = 0; $i < scalar @binomial_list; ++$i) {
@@ -498,7 +498,7 @@ sub output_reciprocals {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./plaamyd.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./trionychcytb.gb');
 
 
     # Construct factory object:
