@@ -20,9 +20,10 @@ use Bio::TreeIO;
 # $| = 1; # Turn on stdout flushing
 
 # reassign STDERR
-open my $log_fh, '>>', './STDERR.out';
+open my $log_fh, '>>', './output/STDERR.out';
 *STDERR = $log_fh;
 
+open my $pots_fh, '>', './output/pots.out';
 
 # --------------------
 # Utiliy
@@ -341,14 +342,16 @@ sub find_hybridizations {
             # which act as completion sentinels for the test_potential_hybridization workers.
             # The number of undefs needs to equal the number of workers for that task,
             # so that each worker knows to stop. (TODO: Is it really the workers that need to stop? I need to read the MCE architecture docs to be sure.)
-            if (defined $mce->{user_tasks}->[1]) {
+            if ($task_id eq 0 && defined $mce->{user_tasks}->[1]) {
+                print STDERR "Task $task_id -- $task_name end adding task 1 shutdown sentinels.";
                 my $n_w = $mce->{user_tasks}->[1]->{max_workers};
                 $triple_queue->enqueue( (undef) x $n_w );
             }
         },
 
         user_tasks => [{
-           max_workers => $max_build_triples_workers, task_name => 'build_triples',
+           max_workers => $max_build_triples_workers,
+           task_name => 'build_triples',
              # build_triples:
              # dequeues a pair from the binomial_pair_queue,
              # retrieves the accession numbers for each species,
@@ -389,7 +392,8 @@ sub find_hybridizations {
            } # End user_func
         },
         {
-            max_workers => $max_test_potential_hybridization_workers, task_name => 'test_potential_hybridization', # Tests for potential hybridizations
+            max_workers => $max_test_potential_hybridization_workers,
+            task_name => 'test_potential_hybridization', # Tests for potential hybridizations
             # test_potential_hybridization:
             # dequeues a triple from the triple_queue,
             # constructs its clustalw tree,
@@ -403,13 +407,19 @@ sub find_hybridizations {
                     my $tree = internal_tree( clustal_tree($triple, $loci, $factory) );
                     # Check for potential hybridization.
                     if ( potential_hybridization($tree, $loci) ) {
-                        my ( $A, $B, $C ) = @$tree; # TODO: I think this works for assignment of accession numbers from array
+                        my ( $A, $B, $C ) = @$tree;
                         my $frame = $$loci{ $A }->species->binomial;
                         my $hinge = pair_string($B, $C);
                         MCE->do('add_potential_tree', $frame, $hinge, $tree);
 
+                        # Output
                         $reporting_lock->lock();
-                            MCE->say(\*STDERR, "Found potential hybrid.");
+
+                            my $first = $tree->[0];
+                            my $second = $tree->[1];
+                            my $third = $tree->[2];
+                            MCE->say($pots_fh, qq([$first,$second,$third],));
+                            MCE->say(\*STDERR, qq(Found potential hybrid: [$first,$second,$third]));
                         $reporting_lock->unlock();
                     }
 
@@ -432,13 +442,12 @@ sub find_hybridizations {
 
 }
 
-sub output_results {
-    my $outfilename = 'hybrids.out';
-    open (my $fh, '>', $outfilename) or die "Could not open file '$outfilename' $!";
+sub output_reciprocals {
+    my $fh = shift @_;
 
     # For now, just print all instances of hybridization to a file.
     my @binomials = keys %potential_trees;
-    print @binomials;
+    print qq(Potential hybrids found in these species: @binomials\n);
     for (my $i = 0; $i < scalar @binomials; ++$i) {
         my $binomial_A = $binomials[$i];
         # If a hinge doesn't exist for both species, no reciprocal non-monophyly,
@@ -471,7 +480,7 @@ sub output_results {
                     print $fh qq(\n);
                     print $fh qq(frame:$binomial_B:);
                     for (my $b = 0; $b < scalar @{$B_framed}; ++$b) {
-                        $cur_tree = $A_framed->[$b];
+                        $cur_tree = $B_framed->[$b];
                         $first = $cur_tree->[0];
                         $second = $cur_tree->[1];
                         $third = $cur_tree->[2];
@@ -489,7 +498,7 @@ sub output_results {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./trionychcytb.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./plaamyd.gb');
 
 
     # Construct factory object:
@@ -505,7 +514,9 @@ sub start {
     find_hybridizations( $loci, $loci_lists, $factory );
 
     # After processing, launch UI to view data
-    output_results();
+    my $outfilename = './output/hybrids.out';
+    open (my $fh, '>', $outfilename) or die "Could not open file '$outfilename' $!";
+    output_reciprocals($fh);
 
 }
 
