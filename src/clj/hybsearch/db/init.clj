@@ -23,6 +23,8 @@
     (mc/ensure-index db "sequences" (array-map :accession 1) {:unique true})
     db))
 
+;; TODO: Throw error if ensure-db fails
+
 (defn ensure-db []
   (if (nil? @_db) (reset! _db (init-db))))
 
