@@ -12,6 +12,7 @@
 ;; Utility
 ;; ----------
 
+;; Todo: Extend wrap-default so you can provide a vector of valid options to match against
 (defn wrap-default [datum dv]
   (if (= datum "") dv datum))
 

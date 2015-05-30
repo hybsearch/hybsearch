@@ -33,6 +33,7 @@ The docs are written as if most of these are finished, so they might change as t
 - Build the query UI
 - Validate incoming data
 - There are probably more.
+- Enforce our schema on the MongoDB database.
 
 
 ##Getting Started
@@ -118,14 +119,56 @@ Notice that all data travels from the server to the DataScript database, from th
 
 
 ##Server Architecture
-- http kit
-- sente websockets
-- routing
+The code in the `server.clj` file forwards incoming data to the API or sends data back to the client.
+
+The server is built on top of [HTTP Kit](http://www.http-kit.org/), which is a Ring-compatible client-server library for Clojure. [Ring](https://github.com/ring-clojure/ring) is a set of standard interfaces wrapping HTTP and allowing you to functionally compose the middleware of your server.
+
+Communication with the server happens over two media: HTTP routes and web sockets. The routing for HTTP is defined with the [Compojure](https://github.com/weavejester/compojure) library, which composes into the Ring middleware. We use the [Sente](https://github.com/ptaoussanis/sente) library for the websocket connections.
+
+The HTTP routes are used for setting up a web socket with the client and for uploading data. The web socket allows the client to request state and allows the server to push state to the client. When the web socket becomes active, the client immediately uses it to request state.
+
+The schemas for the DataScript databases are in the `rpc.cljs` file. The server converts MongoDB objects to DataScript entities by renaming their keys to match the DataScript schema and then converting MongoDB ObjectIds to strings.
 
 ##Database Architecture
-- collection definitions
-- indexes (frame-hinge, binomial name, accession number)
-- Monger
+This represents something close to our desired architecture, may change as development progresses.
+###Collections
+These collection names are mapped to their string identifiers in the database in the `collections.clj` file. The general structure of an individual object in each collection is below each collection name. MongoDB does not enforce a schema, so one of the things we should do at some point is ensure that objects fit our schema when they're added.
+
+- sequences
+  - accession : `string`
+  - binomial : `string`
+  - definition : `string`
+  - sequence : `string`
+- clustal-schemes
+  - name : `string`
+  - There is a parameter for each Clustal option, see code in `api.clj` for more detail.
+- analysis-sets
+  - name : `string`
+  - sequences : `array of accession number strings`
+  - unprocessed_triples : `list of triple ids`
+  - processing_triples : `list of triple ids`
+  - processed_triples : `list of triple ids`
+- triples
+  - sequences : `unordered array of sequence ids`
+- trees
+  - triple_id : `id of the associated triple`
+  - scheme_id : `id of the clustal scheme used to produce this tree`
+  - frame : `accession of the sequence framing the tree`
+  - hinge : `unordered array of the accessions of the two sequences in the hinge`
+  - distances : `{accession: dist, accession: dist, accession: dist }`
+
+
+###Indexing
+This is an idea of the kind of indexing that will make our lives easier. Some have not yet been implemented.
+accession->sequence
+scheme->trees
+scheme->frame->hinge
+binomial->loci
+unique keys
+can we do a unique index on the sequences field of a triple?
+
+###Monger
+
 
 ##Client Architecture (User Interface)
 - Hoplon templating language
@@ -133,3 +176,5 @@ Notice that all data travels from the server to the DataScript database, from th
 - Datascript
 
 ##Processing Strategy
+- structures.html covers the theoretical side of this
+- cover the sequence of events from a user pushing the "play" button to processing completing.
