@@ -405,6 +405,7 @@ sub find_hybridizations {
                     # Construct clustalw tree.
                     # Convert tree to internal representation.
                     my $tree = internal_tree( clustal_tree($triple, $loci, $factory) );
+
                     # Check for potential hybridization.
                     if ( potential_hybridization($tree, $loci) ) {
                         my ( $A, $B, $C ) = @$tree;
@@ -413,18 +414,19 @@ sub find_hybridizations {
                         MCE->do('add_potential_tree', $frame, $hinge, $tree);
 
                         # Output
-                        $reporting_lock->lock();
-
+                        $reporting_lock->lock;
                             my $first = $tree->[0];
                             my $second = $tree->[1];
                             my $third = $tree->[2];
                             MCE->say($pots_fh, qq([$first,$second,$third],));
                             MCE->say(\*STDERR, qq(Found potential hybrid: [$first,$second,$third]));
-                        $reporting_lock->unlock();
+                        $reporting_lock->unlock;
                     }
 
                     # Update pair progress. # Distinct names will be on edges of sorted array.
-                    my @binomials = sort map { $$loci{ $_ }->species->binomial; } @$tree;
+                    my @binomials;
+                    eval { @binomials = sort map { $$loci{ $_ }->species->binomial; } @$tree; };
+                    if ($@) { MCE->say(\*STDERR, qq(Error on triple: [$triple->[0], $triple->[1], $triple->[2]])); }
                     my $pair_key = pair_string( $binomials[ 0 ], $binomials[ 2 ] );
 
                     MCE->do('increment_pair_progress', $pair_key);
@@ -498,7 +500,7 @@ sub output_reciprocals {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./trionychcytb.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./smallerlepus.gb');
 
 
     # Construct factory object:
