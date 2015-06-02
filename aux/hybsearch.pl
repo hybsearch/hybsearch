@@ -500,7 +500,7 @@ sub output_reciprocals {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./smallerlepus.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./plaamyd.gb');
 
 
     # Construct factory object:
