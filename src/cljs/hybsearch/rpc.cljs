@@ -12,7 +12,6 @@
 
 (defonce jobs-db-schema {
              :mongodb/objectid                    {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-             ;;:mongodb/localref                   {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
 
              :clustalscheme/name                  {:db/cardinality :db.cardinality/one}
              :clustalscheme/sequencetype          {:db/cardinality :db.cardinality/one}
@@ -37,29 +36,16 @@
              :clustalscheme/numproc               {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
-             :analysisset/setdef                  {:db/cardinality :db.cardinality/one}
-             :analysisset/numtriples              {:db/cardinality :db.cardinality/one}
-             :analysisset/numproc                 {:db/cardinality :db.cardinality/one}
+             ;; Todo: Include list of sequences?
 
-
-             :job/name                            {:db/cardinality :db.cardinality/one}
-             :job/setdef                          {:db/cardinality :db.cardinality/one}
-             :job/numtriples                      {:db/cardinality :db.cardinality/one}
-             :job/numproc                         {:db/cardinality :db.cardinality/one}
              :job/clustalscheme                   {:db/cardinality :db.cardinality/one}
-
-
-             ;; Todo: how to match up relational ref ids when downloading data from server?
-
-             ;; all triples for the set = triples(sequences for each binomial UNION sequences list) INTERSECT analysisset triples
-             :setdef/binomials                    {:db/cardinality :db.cardinality/many} ;; Currently a list of binomial species names
-             :setdef/sequences                    {:db/cardinality :db.cardinality/many} ;; Currently a list of accession numbers
-             ;; Filter is optional. Filter further restricts the set definition.
-             ;; Think of the filter as another set-def you must itersect the other parts
-             ;; of this definition with to fully resolve this set definition.
-             :setdef/filter                       {:db/cardinality :db.cardinality/one}
-
-
+             :job/analysisset                     {:db/cardinality :db.cardinality/one}
+             :job/status                          {:db/cardinality :db.cardinality/one}
+             :job/errors                          {:db/cardinality :db.cardinality/many}
+             :job/initialized                     {:db/cardinality :db.cardinality/one}
+             :job/unprocessed                     {:db/cardinality :db.cardinality/one}
+             :job/processing                      {:db/cardinality :db.cardinality/one}
+             :job/processed                       {:db/cardinality :db.cardinality/one}
              })
 
 

@@ -187,19 +187,13 @@
                                                   {
                                                    :_id :mongodb/objectid
                                                    :name :analysisset/name
-                                                   :setdef :analysisset/setdef
-                                                   :numtriples :analysisset/numtriples
-                                                   :numproc :analysisset/numproc
                                                    })
                              (crud/read-analysis-sets @(db/db)))
         jobs     (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
                                            {
                                             :_id :mongodb/objectid
-                                            :name :job/name
-                                            :setdef :job/setdef
                                             :clustalscheme :job/clustalscheme
-                                            :numtriples :job/numtriples
-                                            :numproc :job/numproc
+
                                             })
                       (crud/read-jobs @(db/db)))
         combined (concat clustal-schemes analysis-sets jobs)
