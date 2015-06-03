@@ -1,7 +1,7 @@
 (ns ui.scheme-set-detail
   (:require [ui.clustal-scheme-detail :as scheme-detail]
             [ui.analysis-set-detail :as set-detail]
-            [ui.jobs-collection :as jobs]
+            [ui.job-detail :as job]
             [datascript :as d]))
 
 ;; Inputs are formula cells
@@ -18,7 +18,7 @@
                 (text "~{scheme-name} \u2229 ~{set-name}")) ;; Todo use intersect symbol
            (a :class "blue active item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
            (a :class "blue item" :data-tab "analysis-set" (i :class "cube icon") "Analysis Set")
-           (a :class "blue item" :data-tab "jobs" (i :class "dashboard icon") "Jobs")
+           (a :class "blue item" :data-tab "job" (i :class "dashboard icon") "Processing")
            (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
       (div :class "ui basic active tab segment" :data-tab "clustal-scheme"
            :style "height: 100%; overflow-y: scroll;"
@@ -26,6 +26,6 @@
       (div :class "ui basic tab segment"        :data-tab "analysis-set"
            :style "height: 100%; overflow-y: scroll;"
            (set-detail/detail :analysis-set analysis-set))
-      (div :class "ui basic tab segment"        :data-tab "jobs"
-           (jobs/collection :jobs jobs))
+      (div :class "ui basic tab segment"        :data-tab "job"
+           (job/detail :jobs jobs))
       (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))

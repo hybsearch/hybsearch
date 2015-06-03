@@ -8,9 +8,9 @@
         :action "./clustal-schemes/new" :method "post"
         :target "_blank"               :enctype "application/x-www-form-urlencoded"
         (div :class "ui info message"
-             (div :class "header" "Set up your new Clustal scheme using the settings below. "
-                                  "Note that these settings are only for DNA sequences at present. "
-                                  "See http://www.clustal.org/download/clustalw_help.txt for more info on these settings."))
+             (div "Set up your new Clustal scheme using the settings below. "
+                  "Note that these settings are only for DNA sequences at present. "
+                  "See http://www.clustal.org/download/clustalw_help.txt for more info on these settings."))
 
         ;; --------------
         ;; General

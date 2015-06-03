@@ -7,28 +7,15 @@
   ;; Note that this might be resource-intensive, so play it by year.
   (form :class "ui inverted form"    :id "analysis-set-create-form"
         :action "/analysis-sets/new" :method "post"
-        :target "_blank"             :enctype "application/x-www-form-urlencoded"
+        :target "_blank"             :enctype "multipart/form-data"
         (div :class "ui info message"
-             (div :class "header" "Please define the sequences you wish to focus on using the following formats. "
-                                  "Mixing and matching is ok, but if a sequence or species doesn't exist on the "
-                                  "server, it will be removed from the set (Todo: Actually notify of this, for now "
-                                  "only accession nums are filtered server-side. Also add +all option for capturing "
-                                  "all sequences up to the filter (filters are implicit on jobs when you choose their analysis set, "
-                                  "but are not important for this form)). Each item should be on its own line. "
-                                  "You should also make sure you provide enough sequences (at least 3 between 2 species) to perform analysis,"
-                                  "or an error could occur when running a job.")
-             (ul :class "list"
-                 (li "Use " (code "#accession_number") " to include a specific sequence.")
-                 (li "For example: " (code "#HM233091")))
-                 (li "Use " (code "@binomial name") " to include all sequences for an entire species.
-                                                    The two components of the name should be space separated.")
-                 (li "For example: " (code "@Lepus mandshuricus")))
+             (div "Please name your analysis set and upload the associated GenBank library file."))
         (div :class "required field"
              (label "Analysis Set Name:")
              (input :type "text" :placeholder "Analysis Set Name" :name "name"))
         (div :class "required field"
-             (label "Set definition:")
-             (textarea :name "set-def"))))
+             (label "GenBank Library File:")
+             (input :type "file" :name "file"))))
 
 
 (defelem create-modal

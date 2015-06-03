@@ -43,10 +43,7 @@
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
           (div :class "item" (div :class "ui green button" :on-click #(show-modal "clustal-scheme-create-modal") (i :class "setting icon") "New Clustal Scheme"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "analysis-set-create-modal") (i :class "cube icon") "New Analysis Set"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "job-create-modal") (i :class "dashboard icon") "New Job"))
-          (div :class "item" (div :class "ui green button" :on-click #(show-modal "sequences-upload-modal") (i :class "cloud upload icon") "Upload Sequences"))
-          (div :class "item" (div :class "ui primary button" (i :class "bug icon") "Explore Sequences")))
+          (div :class "item" (div :class "ui green button" :on-click #(show-modal "analysis-set-create-modal") (i :class "cube icon") "New Analysis Set")))
      (div :class "ui grid"
           (div :class "four wide column"
                (div :class "ui horizontal segment" :style "height: 90vh;"
@@ -97,7 +94,7 @@
                                           })))
 
 ;; analysis set create modal init
-(setup-ajax-submit (js/jQuery "#analysis-set-create-form"))
+;;(setup-ajax-submit (js/jQuery "#analysis-set-create-form"))
 (-> (js/jQuery "#analysis-set-create-modal") (.modal
                                        (clj->js
                                          {
@@ -106,13 +103,13 @@
                                           })))
 
 ;; job create modal init
-(setup-ajax-submit (js/jQuery "#job-create-form"))
-(-> (js/jQuery "#job-create-modal") (.modal
-                                       (clj->js
-                                         {
-                                          :closable false
-                                          :onApprove (fn [] (.submit (js/jQuery "#job-create-form")))
-                                          })))
+; (setup-ajax-submit (js/jQuery "#job-create-form"))
+; (-> (js/jQuery "#job-create-modal") (.modal
+;                                        (clj->js
+;                                          {
+;                                           :closable false
+;                                           :onApprove (fn [] (.submit (js/jQuery "#job-create-form")))
+;                                           })))
 
 ;; sequences Upload Modal Init
 (-> (js/jQuery "#sequences-upload-modal") (.modal

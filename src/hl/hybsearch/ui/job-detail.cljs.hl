@@ -1,4 +1,4 @@
-(ns ui.jobs-collection)
+(ns ui.job-detail)
 
 
 ;; Todo: Play/Pause, Delete button wiring
@@ -25,7 +25,7 @@
                 (div :class "ui button" (i :class "trash outline icon") "Delete")
                 (div :class "ui primary button" (i :class "play icon") "Run")))))
 
-(defelem collection
+(defelem detail
   [{:keys [jobs]} children]
   (div :class "ui cards" :style "max-height 100%; overflow-y: auto; padding-top: 2px;"
        (print "Jobs Detail:" jobs)

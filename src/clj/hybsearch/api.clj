@@ -22,6 +22,7 @@
 ;; ----------
 
 ;; Reads the sequences out of a GenBank file and formats them for entry into the database.
+;; Returns a vector of accession numbers for the sequences on success.
 (defn upload-sequences [gb-file]
   ;; Todo: This is probably inefficient in terms of memory.
   ;; See the iota libray (lib for fast mapreduce on text files)
@@ -39,52 +40,22 @@
                                        #"[\d\s\n\/]"
                                        "")})
               (cljstr/split filestr #"//\n")))]
-        (crud/create-sequences @(db/db) sequences)))
+        (crud/create-sequences @(db/db) sequences)
+        ;; Return a vector of the accession numbers of the sequences.
+        (mapv #(:accession %) sequences)))
 
 
-;; ----------
-;; Construct Set-Def from String
-;; ----------
-
-(defn make-set-def [universal set-def-str]
-  (if (= universal "true")
-    {:_id (ObjectId.) :sequences [] :binomials [] :filter nil :universal true}
-    (let [pre-set-def (reduce (fn [sd s]
-                            (let [sentinel (first s)
-                                  item (re-find #".*" (subs s 1))]
-                              (cond
-                                (= sentinel \#) (update-in sd [:sequences] conj item)
-                                (= sentinel \@) (update-in sd [:binomials] conj item)
-                                :else sd)))
-                          ;; Starting set-def structure
-                          {:_id (ObjectId.)
-                           :sequences []
-                           :binomials []
-                           :filter nil
-                           :universal false}
-                          ;; Split the lines of the form submission
-                          (cljstr/split set-def-str #"\n"))
-          ;; Convert accession numbers to the ObjectIds for their
-          ;; corresponding sequences. Anything not in the database is dropped.
-          ;; Todo: Validate binomials as well. But don't filter +all option.
-          set-def (update-in pre-set-def
-                             [:sequences]
-                             (partial keep ;; Filters out accession values that don't exist in the db
-                                      (fn [s]
-                                        (:_id (crud/read-sequence-by-accession @(db/db) s)))))]
-      set-def)))
 
 ;; ----------
 ;; Analysis Sets
 ;; ----------
 
-(defn create-analysis-set [n set-def-str]
+(defn create-analysis-set [set-name gb-file]
   ;; Create the set-def, then use its id to create the analysis set
-  (let [set-def (make-set-def "false" set-def-str)
-        analysis-set {:name n
-                      :setdef (:_id set-def)
+  (let [accessions (upload-sequences gb-file)
+        analysis-set {:name set-name
+                      :sequences accessions
                       :_id (ObjectId.)}]
-    (crud/create-set-def @(db/db) set-def)
     (crud/create-analysis-set @(db/db) analysis-set)))
 
 
@@ -130,29 +101,29 @@
 
 ;; Todo: Validate this data to ensure that the scheme and set are
 ;; in the database before creating the job.
-(defn create-job [data]
-  (let [pre-set-def (make-set-def
-                  (wrap-default (:universal data) "true")
-                  (:set-def data))
-        ;; Set the set-def's filter to the set-def used by the analysis set
-        set-def (assoc-in pre-set-def
-                          [:filter]
-                          (:setdef (crud/read-analysis-set-by-id
-                                     @(db/db)
-                                     (ObjectId. (:analysis-set data)))))
-        job {
-             :_id (ObjectId.)
-             :name (:name data)
-             :setdef (:_id set-def)
-             :clustalscheme (ObjectId. (:clustal-scheme data))
-             }]
-    ; (println "Data: "        (pr-str data))
-    ; (println "pre-set-def: " (pr-str pre-set-def))
-    ; (println "set-def: "     (pr-str set-def))
-    ; (println "job: "         (pr-str job))
-  ;; Create set-def then create job
-  (crud/create-set-def @(db/db) set-def)
-  (crud/create-job @(db/db) job)))
+; (defn create-job [data]
+;   (let [pre-set-def (make-set-def
+;                   (wrap-default (:universal data) "true")
+;                   (:set-def data))
+;         ;; Set the set-def's filter to the set-def used by the analysis set
+;         set-def (assoc-in pre-set-def
+;                           [:filter]
+;                           (:setdef (crud/read-analysis-set-by-id
+;                                      @(db/db)
+;                                      (ObjectId. (:analysis-set data)))))
+;         job {
+;              :_id (ObjectId.)
+;              :name (:name data)
+;              :setdef (:_id set-def)
+;              :clustalscheme (ObjectId. (:clustal-scheme data))
+;              }]
+;     ; (println "Data: "        (pr-str data))
+;     ; (println "pre-set-def: " (pr-str pre-set-def))
+;     ; (println "set-def: "     (pr-str set-def))
+;     ; (println "job: "         (pr-str job))
+;   ;; Create set-def then create job
+;   (crud/create-set-def @(db/db) set-def)
+;   (crud/create-job @(db/db) job)))
 
 
 
