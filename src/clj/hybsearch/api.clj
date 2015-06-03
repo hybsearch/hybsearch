@@ -183,17 +183,28 @@
                                                    :kimura :clustalscheme/kimura
                                                    })
                              (crud/read-clustal-schemes @(db/db)))
-        analysis-sets   (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+        analysis-sets   (map #(cljset/rename-keys (dissoc
+                                                    (into {} (filter (comp not nil? val) %))
+                                                    :sequences)
                                                   {
                                                    :_id :mongodb/objectid
                                                    :name :analysisset/name
                                                    })
                              (crud/read-analysis-sets @(db/db)))
-        jobs     (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
+        jobs     (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
+                                             (update-in [:unprocessed] count)
+                                             (update-in [:processing] count)
+                                             (update-in [:processed] count))
                                            {
                                             :_id :mongodb/objectid
                                             :clustalscheme :job/clustalscheme
-
+                                            :analysisset :job/analysisset
+                                            :status :job/status
+                                            :errors :job/errors
+                                            :initialized :job/initialized
+                                            :unprocessed :job/unprocessed
+                                            :processing :job/processing
+                                            :processed :job/processed
                                             })
                       (crud/read-jobs @(db/db)))
         combined (concat clustal-schemes analysis-sets jobs)
