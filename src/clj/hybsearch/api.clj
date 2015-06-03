@@ -183,9 +183,8 @@
                                                    :kimura :clustalscheme/kimura
                                                    })
                              (crud/read-clustal-schemes @(db/db)))
-        analysis-sets   (map #(cljset/rename-keys (dissoc
-                                                    (into {} (filter (comp not nil? val) %))
-                                                    :sequences)
+        analysis-sets   (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
+                                                      (dissoc :sequences))
                                                   {
                                                    :_id :mongodb/objectid
                                                    :name :analysisset/name
