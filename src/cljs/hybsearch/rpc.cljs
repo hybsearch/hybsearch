@@ -91,24 +91,14 @@
 (defc= selected-clustal-scheme (if selected-clustal-scheme-id (d/entity jobs-db selected-clustal-scheme-id))) ;; Guard here, because if there are no schemes the selected id will be nil and d/entity will throw an exception on lazy eval.
 (defc= selected-analysis-set   (if selected-analysis-set-id   (d/entity jobs-db selected-analysis-set-id))) ;; Guard here, because if there are no sets the selected id will be nil and d/entity will throw an exception on lazy eval.
 
-;; Scheme-set Jobs
-(defc= scheme-set-jobs (if (and selected-clustal-scheme selected-analysis-set)
-                         (map (fn [e] (d/entity jobs-db (first e)))
-                              (d/q '[:find ?e
-                                     :in $ ?scheme [?set-def ...] ;; [?set-def ...] is all of the set definitions that use the analysisset's set-def for their filter
-                                     :where [?e :job/setdef ?set-def] ;; Datomic docs say put most restricting clauses first for optimal performance, not sure if this applies to DataScript but doing it anyway
-                                     [?e :job/clustalscheme ?scheme]] ;; Todo: Should check job/set-def/filter -> analysisset/set-def
-                                   jobs-db
-                                   (get selected-clustal-scheme :mongodb/objectid)
-                                   ;; All set-def entities that use the selected analysisset's set-def as a filter
-                                   (map (fn [e] (second e))
-                                        (d/q '[:find ?e ?set-def-object-id
-                                               :in $ ?analysisset-set-def
-                                               :where [?e :setdef/filter ?analysisset-set-def]
-                                                      [?e :mongodb/objectid ?set-def-object-id]]
-                                             jobs-db
-                                             (get selected-analysis-set :analysisset/setdef)))))))
-
+(defc= scheme-set-job (print "scheme-set-job: " (if (and selected-clustal-scheme selected-analysis-set)
+                        (d/q '[:find ?e
+                               :in $ ?scheme ?set
+                               :where [?e :job/clustalscheme ?scheme]
+                                      [?e :job/analysisset ?set]]
+                             jobs-db
+                             (:mongodb/objectid selected-clustal-scheme)
+                             (:mongodb/objectid selected-analysis-set)))))
 
 (let [{:keys [chsk ch-recv send-fn state]}
       (sente/make-channel-socket! "/chsk"

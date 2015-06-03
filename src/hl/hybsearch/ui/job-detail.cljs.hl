@@ -26,10 +26,34 @@
                 (div :class "ui primary button" (i :class "play icon") "Run")))))
 
 (defelem detail
-  [{:keys [jobs]} children]
-  (div :class "ui cards" :style "max-height 100%; overflow-y: auto; padding-top: 2px;"
-       (print "Jobs Detail:" jobs)
-       (loop-tpl :bindings [job jobs]
-                 (item :job-cell job)
-                 )))
+  [{:keys [job]} children]
+  (div :class "ui three column grid"
+       (div :class "row" ;; Controls
+            (div :class "ui center aligned basic segment"
+                 (div :class "ui green button" (i :class "play icon") "Run Analysis")
+                 (div :class "ui blue button" (i :class "pause icon") "Pause Analysis")
+                 (div :class "ui red button" (i :class "power icon")  "Reset Analysis")))
+       (div :class "row" ;; Statistics
+            (div :class "column"
+                 (div :class "ui center aligned horizontal segment"
+                      (div :class "ui statistic"
+                           (div :class "value" "0/0")
+                           (div :class "label" "Triples Processed"))))
+            (div :class "column"
+                 (div :class "ui center aligned horizontal segment"
+                      (div :class "ui statistic"
+                           (div :class "value" "0")
+                           (div :class "label" "Triples/Second"))))
+            (div :class "column"
+                 (div :class "ui center aligned horizontal segment"
+                      (div :class "ui statistic"
+                           (div :class "value" "0")
+                           (div :class "label" "Est. Time Remaining")))))
+       (div :class "row" ;; Status
+            (div :class "sixteen wide column"
+                 (h3 :class "ui header" "Status:")))
+       (div :class "row" ;; Error log
+            (div :class "sixteen wide column"
+                 (h3 :class "ui header" "Error Log:")))))
+
 
