@@ -1,6 +1,7 @@
 (ns hybsearch.db.init
   (:require [monger.core :as mg]
-            [monger.collection :as mc]))
+            [monger.collection :as mc]
+            [hybsearch.db.collections :as coll]))
 
 
 ;; Note: MongoDB uses MMAPV1 by default so we can use Monger here (since Monger uses the 2.x Java driver)
@@ -20,7 +21,8 @@
   (let [conn (mg/connect)
         db (mg/get-db conn "hybsearch")] ;; Will create database "hybsearch" if it does not exist.
     ;; Todo: Does creating an index create a collection?
-    (mc/ensure-index db "sequences" (array-map :accession 1) {:unique true})
+    (mc/ensure-index db coll/sequences (array-map :accession 1) {:unique true})
+    (mc/ensure-index db coll/jobs (array-map :clustalscheme 1 :analysisset 1) {:unique true})
     db))
 
 ;; TODO: Throw error if ensure-db fails

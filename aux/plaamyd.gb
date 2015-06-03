@@ -48,7 +48,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcg
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
@@ -122,7 +122,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
@@ -196,7 +196,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
@@ -270,7 +270,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
        61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
@@ -343,7 +343,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -416,7 +416,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -489,7 +489,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -562,7 +562,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -636,7 +636,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
@@ -710,7 +710,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
@@ -784,7 +784,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
@@ -858,7 +858,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atgaccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -932,7 +932,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atgaccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcg
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -1006,7 +1006,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
@@ -1080,7 +1080,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacagatcat cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1154,7 +1154,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1228,7 +1228,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacagatcat cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1302,7 +1302,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
        61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1376,7 +1376,7 @@ FEATURES             Location/Qualifiers
      tRNA            1141..>1167
                      /gene="tRNA-Thr"
                      /product="tRNA-Thr"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
        61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1446,7 +1446,7 @@ FEATURES             Location/Qualifiers
                      VTMFYPNLLGDPNNFTPANPLSTPPHIKPEWYFLFAYAILRSIPNKLGGVLALLFSIL
                      VLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIMLLTWIGGQPVENPFIHIGQVASIL
                      HFTILLMLMPISNMIENKIMN"
-ORIGIN      
+ORIGIN
         1 gcccatccaa catctccatt tgatgaaatt tcggatccct attaggtgcc tgcttagcct
        61 tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc tcaacagcat
       121 tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc cgcaacacac
@@ -1511,7 +1511,7 @@ FEATURES             Location/Qualifiers
                      IPFHPYFSYKDLLGFMMMLTLLLLITMFFPNLLGDPDNFTPANPLSTPPHIKPEWYFL
                      FAYAILRSIPNKLGGVLALLLSILVLFILPLLHTSKQRTLTYRPITQTLFWLFVANLM
                      VLTWIGGQPVENPFISIGQTASIFYFTILLVLMPISNMIENKTTN"
-ORIGIN      
+ORIGIN
         1 atgaccatca atctacgaaa atcccaccca ataattaaaa ttatcaataa ctcattaatt
        61 gatttaccaa gcccatccaa tatctccact tgatgaaact ttggatccct attaggtgct
       121 tgcctaatcc tacaaatcat tacaggacta ttcttagcca tacattattc accaaacatc
@@ -1577,7 +1577,7 @@ FEATURES             Location/Qualifiers
                      IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPNNFTPANPLSTPPHIKPEWYFL
                      FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
                      LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
@@ -1644,7 +1644,7 @@ FEATURES             Location/Qualifiers
                      IPFHPYFSYKDLLGLMMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
                      FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
                      LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
-ORIGIN      
+ORIGIN
         1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
        61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
       121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tgcattattc accaaatatc

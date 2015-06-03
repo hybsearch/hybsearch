@@ -4,7 +4,9 @@
             [clojure.set :as cljset]
             [clojure.walk :as walk]
             [hybsearch.db.crud :as crud]
-            [hybsearch.db.init :as db])
+            [monger.collection :as mc]
+            [hybsearch.db.init :as db]
+            [clojure.math.combinatorics :as combo])
   (:import  [org.bson.types ObjectId]))
 
 
@@ -28,18 +30,23 @@
   ;; See the iota libray (lib for fast mapreduce on text files)
   ;; for a brief expl. of why. Might want to switch to that as
   ;; a later optimization.
-
   (let [sequences
-        (let [filestr (slurp gb-file)]
-            (map
-              (fn [entry] {:accession (get (re-find #"ACCESSION\s*(\S*)" entry) 1)
-                           :binomial (get (re-find #"ORGANISM\s*(.*)" entry) 1)
-                           :definition (get (re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
-                           :sequence (cljstr/replace
-                                       (get (re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
-                                       #"[\d\s\n\/]"
-                                       "")})
-              (cljstr/split filestr #"//\n")))]
+        ;; Note: We remove sequences where any field is nil (sometimes non-entry data is parsed,
+        ;; i.e. an extra newline at the end of the file)
+        ;; TODO: when bad data is filtered out, it should be logged somewhere or reported to the user.
+        (remove #(some nil? (vals %))
+                (let [filestr (slurp gb-file)]
+                  (map
+                    (fn [entry] {:accession (get (re-find #"ACCESSION\s*(\S*)" entry) 1)
+                                 :binomial (get (re-find #"ORGANISM\s*(.*)" entry) 1)
+                                 :definition (get (re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
+                                 :sequence (try
+                                             (cljstr/replace
+                                               (get (re-find #"ORIGIN\s*\n([\s\S]*)" entry) 1)
+                                               #"[\d\s\n\/]"
+                                               "")
+                                             (catch Exception e nil))})
+                    (cljstr/split filestr #"//\n"))))]
         (crud/create-sequences @(db/db) sequences)
         ;; Return a vector of the accession numbers of the sequences.
         (mapv #(:accession %) sequences)))
@@ -47,24 +54,68 @@
 
 
 ;; ----------
+;; Jobs
+;; ----------
+
+; Todo: Validate this data to ensure that the scheme and set are
+; in the database before creating the job.
+(defn create-job [scheme-id set-id]
+  (let [job {:_id (ObjectId.)
+             :clustalscheme scheme-id
+             :analysisset set-id
+             :unprocessed []
+             :processing []
+             :processed []
+             :errors []
+             :status "Not yet initialized."
+             :initialized false}]
+  (crud/create-job @(db/db) job)))
+
+;; Todo: Could optimize this by allowing the provision of an id for a clustal scheme,
+;;       analysis-set, or both, which constrains the Cartesian product to pairs
+;;       containing that id.
+
+;; Compute Cartesian product of clustal schemes and analysis sets
+;; Filter out pairs for which jobs exist
+;; Create jobs for all the rest
+
+(defn job-pair-exists? [scheme-id set-id]
+  (> (count (crud/read-job-by-pair @(db/db) scheme-id set-id)) 0))
+
+;; Returns a vector [[scheme-id set-id] ...] of pairs for which no jobs exist
+(defn missing-job-pairs []
+  (let [scheme-ids (crud/read-clustal-scheme-ids @(db/db))
+        set-ids (crud/read-analysis-set-ids @(db/db))
+        jobs (crud/read-jobs @(db/db))]
+    (remove #(apply job-pair-exists? %)
+            (combo/cartesian-product scheme-ids set-ids))))
+
+
+;; Makes sure a job exists for every clustal scheme/analysis set combination
+(defn ensure-jobs []
+  (let [missing (missing-job-pairs)]
+    (doseq [pair missing] (apply create-job pair))))
+
+;; ----------
 ;; Analysis Sets
 ;; ----------
 
 (defn create-analysis-set [set-name gb-file]
   ;; Create the set-def, then use its id to create the analysis set
+  (println "create-analysis-set")
   (let [accessions (upload-sequences gb-file)
         analysis-set {:name set-name
                       :sequences accessions
                       :_id (ObjectId.)}]
-    (crud/create-analysis-set @(db/db) analysis-set)))
-
+    (println "accessions: " accessions)
+    (println "analysis-set: " analysis-set)
+    (crud/create-analysis-set @(db/db) analysis-set)
+    (ensure-jobs)))
 
 
 ;; ----------
 ;; Clustal Schemes
 ;; ----------
-
-
 
 (defn create-clustal-scheme [data]
   (let [scheme {
@@ -90,40 +141,11 @@
                 :kimura         (wrap-default (:kimura        data)  "false") ;; true/false
                 }]
     (if (= (:name scheme) "") (throw (Exception. "You must provide a name for your clustal scheme.")))
-    (crud/create-clustal-scheme @(db/db) scheme)))
+    (crud/create-clustal-scheme @(db/db) scheme)
+    (ensure-jobs)))
 
 
 
-
-;; ----------
-;; Jobs
-;; ----------
-
-;; Todo: Validate this data to ensure that the scheme and set are
-;; in the database before creating the job.
-; (defn create-job [data]
-;   (let [pre-set-def (make-set-def
-;                   (wrap-default (:universal data) "true")
-;                   (:set-def data))
-;         ;; Set the set-def's filter to the set-def used by the analysis set
-;         set-def (assoc-in pre-set-def
-;                           [:filter]
-;                           (:setdef (crud/read-analysis-set-by-id
-;                                      @(db/db)
-;                                      (ObjectId. (:analysis-set data)))))
-;         job {
-;              :_id (ObjectId.)
-;              :name (:name data)
-;              :setdef (:_id set-def)
-;              :clustalscheme (ObjectId. (:clustal-scheme data))
-;              }]
-;     ; (println "Data: "        (pr-str data))
-;     ; (println "pre-set-def: " (pr-str pre-set-def))
-;     ; (println "set-def: "     (pr-str set-def))
-;     ; (println "job: "         (pr-str job))
-;   ;; Create set-def then create job
-;   (crud/create-set-def @(db/db) set-def)
-;   (crud/create-job @(db/db) job)))
 
 
 
@@ -180,15 +202,7 @@
                                             :numproc :job/numproc
                                             })
                       (crud/read-jobs @(db/db)))
-        set-defs (map #(cljset/rename-keys (into {} (filter (comp not nil? val) %))
-                                           {
-                                            :_id :mongodb/objectid
-                                            :binomials :setdef/binomials
-                                            :sequences :setdef/sequences
-                                            :filter :setdef/filter
-                                            })
-                      (crud/read-set-defs @(db/db)))
-        combined (concat clustal-schemes analysis-sets jobs set-defs)
+        combined (concat clustal-schemes analysis-sets jobs)
         ; tempids  (reduce into {}
         ;                 (map-indexed
         ;                   (fn [i ent] {(:db/id ent) (- (inc i))})

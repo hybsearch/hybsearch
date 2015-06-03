@@ -61,6 +61,9 @@
 (defn read-sequence-accessions [db]
   (mc/distinct db coll/sequences :accession))
 
+(defn read-sequence-ids [db]
+  (mc/distinct db coll/sequences :_id))
+
 
 ;; ------------------------
 ;;  Clustal Schemes
@@ -72,15 +75,9 @@
 (defn read-clustal-schemes [db]
   (mc/find-maps db coll/clustal-schemes))
 
-;; ------------------------
-;;  Set Defs
-;; ------------------------
+(defn read-clustal-scheme-ids [db]
+  (mc/distinct db coll/clustal-schemes :_id))
 
-(defn create-set-def [db set-def]
-  (mc/insert db coll/set-defs set-def))
-
-(defn read-set-defs [db]
-  (mc/find-maps db coll/set-defs))
 
 ;; ------------------------
 ;;  Analysis Sets
@@ -96,6 +93,9 @@
 (defn read-analysis-set-by-id [db id]
   (mc/find-map-by-id db coll/analysis-sets id))
 
+(defn read-analysis-set-ids [db]
+  (mc/distinct db coll/analysis-sets :_id))
+
 ;; ------------------------
 ;;  Jobs
 ;; ------------------------
@@ -106,6 +106,12 @@
 
 (defn read-jobs [db]
   (mc/find-maps db coll/jobs))
+
+(defn read-job-by-pair [db scheme-id set-id]
+  (mc/find-maps db coll/jobs {:clustalscheme scheme-id :analysisset set-id}))
+
+(defn read-job-ids [db]
+  (mc/distinct db coll/jobs :_id))
 
 ;; ------------------------
 ;;  Triples

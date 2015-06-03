@@ -128,11 +128,8 @@
 (defroutes all-routes
   (GET "/" [] (resp/file-response "index.html" {:root "public"}))
   (GET  "/chsk" req (ring-ajax-get-or-ws-handshake req))
-  (POST "/sequences/upload" {{file :file} :params :as params}
-        (upload-genbank-file file))
   (POST "/analysis-sets/new" {params :params} (create-analysis-set params))
   (POST "/clustal-schemes/new" {params :params} (create-clustal-scheme params))
-  ;;(POST "/jobs/new" {params :params} (create-job params))
   (POST "/chsk" req (ring-ajax-post req))
   (route/resources "/")
   (route/not-found "<h1>404.</h1>"))
