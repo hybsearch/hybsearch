@@ -27,33 +27,46 @@
 
 (defelem detail
   [{:keys [job]} children]
-  (div :class "ui three column grid"
-       (div :class "row" ;; Controls
-            (div :class "ui center aligned basic segment"
-                 (div :class "ui green button" (i :class "play icon") "Run Analysis")
-                 (div :class "ui blue button" (i :class "pause icon") "Pause Analysis")
-                 (div :class "ui red button" (i :class "power icon")  "Reset Analysis")))
-       (div :class "row" ;; Statistics
-            (div :class "column"
-                 (div :class "ui center aligned horizontal segment"
-                      (div :class "ui statistic"
-                           (div :class "value" "0/0")
-                           (div :class "label" "Triples Processed"))))
-            (div :class "column"
-                 (div :class "ui center aligned horizontal segment"
-                      (div :class "ui statistic"
-                           (div :class "value" "0")
-                           (div :class "label" "Triples/Second"))))
-            (div :class "column"
-                 (div :class "ui center aligned horizontal segment"
-                      (div :class "ui statistic"
-                           (div :class "value" "0")
-                           (div :class "label" "Est. Time Remaining")))))
-       (div :class "row" ;; Status
-            (div :class "sixteen wide column"
-                 (h3 :class "ui header" "Status:")))
-       (div :class "row" ;; Error log
-            (div :class "sixteen wide column"
-                 (h3 :class "ui header" "Error Log:")))))
+  (let [initialized (cell= (:job/initialized job))
+        unprocessed (cell= (:job/unprocessed job))
+        processing (cell= (:job/processing job))
+        processed (cell= (:job/processed job))
+        total (cell= (+ unprocessed processing processed))
+        proc-stat (cell= (if initialized (text "~{processed}/~{total}") "-"))
+        rate-stat (cell= (if initialized (text "0") "-"))
+        time-stat (cell= (if initialized (text "0") "-"))
+        status (cell= (:job/status job))
+        errors (cell= (:job/errors job))]
+    (div :class "ui three column grid"
+         (div :class "row" ;; Controls
+              (div :class "ui center aligned basic segment"
+                   (div :class "ui green button" (i :class "play icon") "Run Analysis")
+                   (div :class "ui blue button" (i :class "pause icon") "Pause Analysis")))
+         (div :class "row" ;; Statistics
+              (div :class "column"
+                   (div :class "ui center aligned horizontal segment"
+                        (div :class "ui statistic"
+                             (div :class "value" "-")
+                             (div :class "label" "Triples Processed"))))
+              (div :class "column"
+                   (div :class "ui center aligned horizontal segment"
+                        (div :class "ui statistic"
+                             (div :class "value" "-")
+                             (div :class "label" "Triples/Second"))))
+              (div :class "column"
+                   (div :class "ui center aligned horizontal segment"
+                        (div :class "ui statistic"
+                             (div :class "value" "-")
+                             (div :class "label" "Est. Time Remaining")))))
+         (div :class "row" ;; Status
+              (div :class "sixteen wide column"
+                   (h3 :class "ui header" "Status:")
+                   (p (text "~{status}"))))
+         (div :class "row" ;; Error log
+              (div :class "sixteen wide column"
+                   (h3 :class "ui header" "Error Log:")
+                   (loop-tpl :bindings [e errors]
+                             e))))))
+
 
 
