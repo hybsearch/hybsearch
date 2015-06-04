@@ -181,7 +181,15 @@
   (let [[?uid ?csrf-token ?handshake-data] ?data]
     (print "Handshake: " ?data)))
 
+; ---------------
+; Job RPC over channel-socket
+; ---------------
 
+(defn run-job [id]
+  (chsk-send! [:rpc/run-job id]))
+
+(defn pause-job [id]
+  (chsk-send! [:rpc/pause-job id]))
 
 
 (def router_ (atom nil))

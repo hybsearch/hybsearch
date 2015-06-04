@@ -35,10 +35,6 @@
     (div :style "position: absolute; overflow-y: hidden; overflow-x: hidden; top: 5px; bottom: 5px; left: 5px; right: 5px; padding: 1px;"
      (scheme-create/create-modal :id "clustal-scheme-create-modal")
      (set-create/create-modal :id "analysis-set-create-modal")
-     (job-create/create-modal :id "job-create-modal"
-                              :clustal-schemes rpc/clustal-schemes
-                              :analysis-sets rpc/analysis-sets)
-     (sequences-upload/upload-modal :id "sequences-upload-modal")
 
      (div :class "ui menu"
           (div :class "header item" (i :class "lab icon") "HybSearch")
@@ -100,22 +96,5 @@
                                          {
                                           :closable false
                                           :onApprove (fn [] (.submit (js/jQuery "#analysis-set-create-form")))
-                                          })))
-
-;; job create modal init
-; (setup-ajax-submit (js/jQuery "#job-create-form"))
-; (-> (js/jQuery "#job-create-modal") (.modal
-;                                        (clj->js
-;                                          {
-;                                           :closable false
-;                                           :onApprove (fn [] (.submit (js/jQuery "#job-create-form")))
-;                                           })))
-
-;; sequences Upload Modal Init
-(-> (js/jQuery "#sequences-upload-modal") (.modal
-                                       (clj->js
-                                         {
-                                          :closable false
-                                          :onApprove (fn [] (.submit (js/jQuery "#sequences-upload-form")))
                                           })))
 

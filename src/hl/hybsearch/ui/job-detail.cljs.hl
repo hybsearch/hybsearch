@@ -1,33 +1,10 @@
-(ns ui.job-detail)
-
-
-;; Todo: Play/Pause, Delete button wiring
-;; Add more info about the job, like ability to view its sequences. Or even to see which triples are complete.
-
-
-(defelem item
-  [{:keys [job-cell]} children]
-  (let [job-name (cell= (get job-cell :job/name))
-;;        sequences (cell= (get job-cell :job/sequences))
-        proc (cell= (get job-cell :job/numproc))
-        total (cell= (get job-cell :job/numtriples))
-        ]
-    (print "Job Cell: " job-cell)
-    (print "Job Name: " (get @job-cell :mongodb/objectid))
-    (div :class "ui card"
-         (div :class "content"
-              (div :class "header" (text "~{job-name}"))
-              (div :class "ui small progress"
-                   :data-percent (* 100 (/ @proc @total)) ;; Todo: Get progress bar init working.
-                   (div :class "bar")
-                   (div :class "label" (i :class "wait icon") (text "~{proc}/~{total} triples processed"))))
-         (div :class "ui two bottom attached buttons"
-                (div :class "ui button" (i :class "trash outline icon") "Delete")
-                (div :class "ui primary button" (i :class "play icon") "Run")))))
+(ns ui.job-detail
+  (:require [hybsearch.rpc :as rpc]))
 
 (defelem detail
   [{:keys [job]} children]
-  (let [initialized (cell= (:job/initialized job))
+  (let [id (cell= (:mongodb/objectid job))
+        initialized (cell= (:job/initialized job))
         unprocessed (cell= (:job/unprocessed job))
         processing (cell= (:job/processing job))
         processed (cell= (:job/processed job))
@@ -40,8 +17,8 @@
     (div :class "ui three column grid"
          (div :class "row" ;; Controls
               (div :class "ui center aligned basic segment"
-                   (div :class "ui green button" (i :class "play icon") "Run Analysis")
-                   (div :class "ui blue button" (i :class "pause icon") "Pause Analysis")))
+                   (div :click #(rpc/run-job @id) :class "ui green button" (i :class "play icon") "Run Analysis")
+                   (div :click #(rpc/pause-job @id) :class "ui blue button" (i :class "pause icon") "Pause Analysis")))
          (div :class "row" ;; Statistics
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"

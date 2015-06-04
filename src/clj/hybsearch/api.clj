@@ -4,11 +4,19 @@
             [clojure.set :as cljset]
             [clojure.walk :as walk]
             [hybsearch.db.crud :as crud]
-            [monger.collection :as mc]
             [hybsearch.db.init :as db]
+            [hybsearch.jobmanager :as jm]
             [clojure.math.combinatorics :as combo])
   (:import  [org.bson.types ObjectId]))
 
+
+;; This function is called when new data is available for clients.
+;; Set it by calling reset-updated-fn!.
+(defonce updated-fn (atom (fn [] nil)))
+
+(defn reset-updated-fn! [new-fn]
+  (reset! updated-fn new-fn)
+  (jm/reset-updated-fn! new-fn))
 
 ;; ----------
 ;; Utility
@@ -56,6 +64,9 @@
 ;; ----------
 ;; Jobs
 ;; ----------
+
+(defn run-job [id] (jm/run-job (ObjectId. id)))
+(defn pause-job [id] (jm/pause-job (ObjectId. id)))
 
 ; Todo: Validate this data to ensure that the scheme and set are
 ; in the database before creating the job.
@@ -110,7 +121,8 @@
     (println "accessions: " accessions)
     (println "analysis-set: " analysis-set)
     (crud/create-analysis-set @(db/db) analysis-set)
-    (ensure-jobs)))
+    (ensure-jobs)
+    (updated-fn)))
 
 
 ;; ----------
@@ -142,7 +154,8 @@
                 }]
     (if (= (:name scheme) "") (throw (Exception. "You must provide a name for your clustal scheme.")))
     (crud/create-clustal-scheme @(db/db) scheme)
-    (ensure-jobs)))
+    (ensure-jobs)
+    (updated-fn)))
 
 
 

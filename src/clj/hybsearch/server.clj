@@ -67,6 +67,17 @@
     (println "Channel socket successfully established.")
     (println "Channel socket state change: " ?data)))
 
+(defmethod event-msg-handler :rpc/run-job
+  [{:as ev-msg :keys [?data]}]
+  (try
+    (api/run-job ?data)
+    (catch Exception e (print (str "Error running job: " e)))))
+
+(defmethod event-msg-handler :rpc/pause-job
+  [{:as ev-msg :keys [?data]}]
+  (try
+    (api/pause-job ?data)
+    (catch Exception e (print (str "Error pausing job: " e)))))
 
 (defmethod event-msg-handler :rpc/get-jobs-state
   [{:as ev-msg :keys [?reply-fn]}]
@@ -90,15 +101,13 @@
         <h1>Your upload of " filename " was successful!</h1>
         <p>Sequences have been added to the database.</p></body></html>")
     (catch Exception e {:status 500
-                        :body "<h1>An error occured.</h1>"})))
+                        :body (str e "An error occured.")})))
 
 
 (defn create-analysis-set
   [{set-name :name {tempfile :tempfile} :file :as params}]
   (try
     (api/create-analysis-set set-name tempfile)
-    ;; Set was created at this point, so push new state to clients.
-    (push-jobs-state-everywhere)
     "OK! Analysis set created!" ;; Todo: Correct status code
     (catch Exception e {:status 500
                         :body (str e " Oops! An error occured: Your analysis set was probably not created.")})))
@@ -106,8 +115,6 @@
 (defn create-clustal-scheme [scheme-data]
   (try
     (api/create-clustal-scheme scheme-data)
-    ;; Scheme was created ok at this point, so push new state to clients.
-    (push-jobs-state-everywhere)
     "Scheme successfully created." ;; Todo: Correct status code
     (catch Exception e {:status 500
                         :body (str e " Oops! An error occured: Your clustal scheme was probably not created.")})))
@@ -134,6 +141,9 @@
   (route/resources "/")
   (route/not-found "<h1>404.</h1>"))
 
+
+;; Set updated-fn in api:
+(api/reset-updated-fn! push-jobs-state-everywhere)
 
 ;; Sente router
 (defonce router_ (atom nil))
