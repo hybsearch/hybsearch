@@ -9,4 +9,3 @@
 (def ^:const jobs "jobs")
 (def ^:const triples "triples")
 (def ^:const trees "trees")
-(def ^:const set-defs "setdefs")

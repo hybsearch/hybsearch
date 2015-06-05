@@ -23,6 +23,7 @@
     ;; Todo: Does creating an index create a collection?
     (mc/ensure-index db coll/sequences (array-map :accession 1) {:unique true})
     (mc/ensure-index db coll/jobs (array-map :clustalscheme 1 :analysisset 1) {:unique true})
+    (mc/ensure-index db coll/triples (array-map :unique_key 1) {:unique true})
     db))
 
 ;; TODO: Throw error if ensure-db fails

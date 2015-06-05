@@ -127,10 +127,20 @@
 (defn create-triple [db triple]
   (mc/insert db coll/triples triple))
 
+;; Like create-triple, but returns the created document,
+;; which allows us to retrieve the id
+(defn create-triple-ret [db triple]
+  (mc/insert-and-return db coll/triples triple))
+
+(defn read-triple-by-unique-key [db k]
+  (mc/find-one-as-map db coll/triples {:unique_key k}))
+
 ;; ------------------------
 ;;  Trees
 ;; ------------------------
 
 (defn create-tree [db tree]
   (mc/insert db coll/trees tree))
+
+
 

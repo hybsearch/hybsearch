@@ -2,6 +2,7 @@
   (:require [monger.collection :as mc]
             [hybsearch.db.init :as db]
             [hybsearch.db.crud :as crud]
+            [clojure.string :as cljstr]
             [clojure.math.combinatorics :as combo]
             [clojure.core.async :as a
              :refer [>! <! >!! <!! go chan buffer close!
@@ -57,44 +58,56 @@
           {} seqs))
 
 
-;; TODO: This can be optimized to avoid redundant work by writing a
-;;       unique-pairs function that can replace the (remove ... (cartesian-product ...)) composition.
 
 ;; Takes sequences a and b
 ;; returns all triples that can be created where
 ;; at least one element is from a and at least one
 ;; element is from b
 (defn triples [a b]
-  (let [unique-a (remove #(= (nth % 0) (nth % 1)) (combo/cartesian-product a a))
-        unique-b (remove #(= (nth % 0) (nth % 1)) (combo/cartesian-product b b))]
-    (concat (map #(flatten %) (combo/cartesian-product unique-a b))
-            (map #(flatten %) (combo/cartesian-product unique-b a)))))
+  (let [a-pairs (combo/combinations a 2)
+        b-pairs (combo/combinations b 2)]
+    (concat (map #(flatten %) (combo/cartesian-product a-pairs b))
+            (map #(flatten %) (combo/cartesian-product b-pairs a)))))
 
 ;; Takes a map of vectors keyed by binomial names
 ;; Returns all triples (as map sequences: [accession, accession, accession]) that can be formed between pairs of binomial vectors
 (defn binom-triples [m]
   (let [binoms (keys m)
-        binom-pairs (remove #(= (nth % 0) (nth % 1)) ;; remove pairs like [binom_A, binom_A], since we don't want to compare those
-                          (combo/cartesian-product binoms binoms))]
+        binom-pairs (combo/combinations binoms 2)]
+    (println "Binom pairs: " binom-pairs)
     (apply concat (map (fn [pair] (triples (get m (nth pair 0)) (get m (nth pair 1))))
                   binom-pairs))))
+
+
+
+;; Tries to construct and insert every triple in ts in the database
+;; If an insertion violates triple uniqueness, finds the triple id for that triple instead of inserting
+;; Returns a sequence of ObjectIds corresponding to the triples in ts
+(defn write-triples [ts]
+  (mapv (fn [t]
+         (try
+           (:_id (crud/create-triple-ret @(db/db) {:sequences t
+                                                   :unique_key (cljstr/join "," (sort t))}))
+           (catch com.mongodb.DuplicateKeyException e (:_id (crud/read-triple-by-unique-key @(db/db) (cljstr/join "," (sort t)))))))
+       ts))
 
 ;; Initializes the job (creates triples) if it is not yet initialized.
 ;;         1) Checks if the job is not yet initialized, if not, creates the triples and sets initialized to true.
 ;; Returns true if just initialized, false if already initialized.
-(defn init-job! [job]
+(defn init-job [job]
   (if (:initialized job)
     false
-    (do
-      (println "Triples-test: (triples [1 2 3] [4 5]): " (triples [1 2 3] [4 5]))
-      (println "Triples: " (->>
-                              (:analysisset job)
-                              (crud/read-analysis-set-by-id @(db/db))
-                              (:sequences)
-                              (crud/read-sequences-by-accessions @(db/db))
-                              (bucket-binomial)
-                              (binom-triples)));; Compute the triples for the job (sequences in binomial buckets, triples from bucket pairs)
-      ;; Write the triples to the database
+    (let [trip-ids (write-triples ;; Write the triples to the database, returns a sequence of ids for those triples
+                     (->>
+                       (:analysisset job)
+                       (crud/read-analysis-set-by-id @(db/db))
+                       (:sequences)
+                       (crud/read-sequences-by-accessions @(db/db))
+                       (bucket-binomial)
+                       (binom-triples)));; Compute the triples for the job (sequences in binomial buckets, triples from bucket pairs)
+      ]
+      (println "Trip-ids: " trip-ids)
+      ;; Assign list of ids to the job's triples array in the database
       true)))
 
 ;; Creates the channel, stores it with
@@ -109,7 +122,7 @@
     (println "job: " job)
     (if job ;; If the job doesn't exist in the database, no point in continuing.
       (if (activate-job! job-id) ;; If the job is already active (false return val), this run-job! call is redundant.
-        (if (init-job! job)   ;; If the job was just initialized (true return val), we know that every triple still needs processing.
+        (if (init-job job)   ;; If the job was just initialized (true return val), we know that every triple still needs processing.
           nil)))))
 
 
