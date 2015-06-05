@@ -50,8 +50,8 @@
 ;; method.
 
 ;; Returns write result
-(defn create-sequences [db sequences]
-  (mc/insert-batch db coll/sequences sequences)) ;; Insert
+(defn create-sequence-ret [db sequence]
+  (mc/insert-and-return db coll/sequences sequence))
 
 (defn read-sequence-by-accession [db accession]
   (mc/find-one-as-map db coll/sequences {:accession accession}))

@@ -3,10 +3,6 @@
             [clojure.java.io :as io])
   (:import [java.lang.Runtime]))
 
-;; Todo: Figure out how to run it off of a specified
-;; file path. For now, we just rely on the fact that
-;; it's in my path.
-
 ; :sequencetype
 ; :alignmenttype
 ; :pwdnamatrix

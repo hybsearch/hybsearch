@@ -55,9 +55,13 @@
                                                "")
                                              (catch Exception e nil))})
                     (cljstr/split filestr #"//\n"))))]
-        (crud/create-sequences @(db/db) sequences)
+        ;; Try to insert the sequences in the database, ignoring duplicates.
         ;; Return a vector of the accession numbers of the sequences.
-        (mapv #(:accession %) sequences)))
+        (mapv (fn [s]
+                (try
+                  (:accession (crud/create-sequence-ret @(db/db) s))
+                  (catch com.mongodb.DuplicateKeyException e (:accession s))))
+              sequences)))
 
 
 

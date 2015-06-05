@@ -157,6 +157,7 @@
                  (while (let [t (<!! t-chan)]
                           (if (some? t)
                             (>!! output-chan (str "Job: " job-id " Triple: " t)))
+                          (Thread/sleep 500)
                           t)))) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
              (loop [ts triples]
                (if (and (seq ts) (not (Thread/interrupted)))

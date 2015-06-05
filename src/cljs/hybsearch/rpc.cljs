@@ -129,7 +129,7 @@
 
 (defmethod recv-msg-handler :rpc/recv-jobs-state
   [{:as ev-msg :keys [id ?data event]}]
-  (do (print "Recv Jobs Data: " (pr-str ?data)) (reset! jobs-state ?data)))
+  (do (print "Recv Jobs Data") (reset! jobs-state ?data)))
 
   ; (let [[?jobs-state] ?data]
   ;   (print "In handler.")
@@ -145,7 +145,7 @@
 
 ;; event-msg-handler* just calls event-msg-handler, but also logs the event
 (defn event-msg-handler* [{:as ev-msg :keys [id ?data event]}]
-  (print "Event: " event)
+  ;;(print "Event: " event)
   (event-msg-handler ev-msg))
 
 (defmethod event-msg-handler :default
