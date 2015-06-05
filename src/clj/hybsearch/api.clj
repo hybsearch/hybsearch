@@ -77,7 +77,6 @@
              :triples []
              :processed 0
              :errors []
-             :status "Not yet initialized."
              :initialized false}]
   (crud/create-job @(db/db) job)))
 
@@ -121,7 +120,7 @@
     (println "analysis-set: " analysis-set)
     (crud/create-analysis-set @(db/db) analysis-set)
     (ensure-jobs)
-    (updated-fn)))
+    (@updated-fn)))
 
 
 ;; ----------
@@ -154,7 +153,7 @@
     (if (= (:name scheme) "") (throw (Exception. "You must provide a name for your clustal scheme.")))
     (crud/create-clustal-scheme @(db/db) scheme)
     (ensure-jobs)
-    (updated-fn)))
+    (@updated-fn)))
 
 
 
@@ -203,7 +202,12 @@
                                                    })
                              (crud/read-analysis-sets @(db/db)))
         jobs     (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
-                                             (update-in [:triples] count))
+                                             (update-in [:triples] count)
+                                             (assoc-in [:status] (if (:initialized %) ;; Todo: Status should be "Complete." when finished
+                                                                   (if (contains? @jm/active-jobs (:_id %))
+                                                                     "Running."
+                                                                     "Paused.")
+                                                                   "Not yet initialized.")))
                                            {
                                             :_id :mongodb/objectid
                                             :clustalscheme :job/clustalscheme

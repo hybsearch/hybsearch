@@ -1,19 +1,20 @@
 (ns hybsearch.jobmanager
-  (:require [monger.collection :as mc]
+  (:require
             [hybsearch.db.init :as db]
             [hybsearch.db.crud :as crud]
             [clojure.string :as cljstr]
             [clojure.math.combinatorics :as combo]
             [clojure.core.async :as a
              :refer [>! <! >!! <!! go chan buffer close!
-                     thread alts! alts!! timeout]]))
+                     thread alts! alts!! timeout]])
+  (:import [java.lang Thread]))
 
 
 ;; This is one of the few modules where we have to manage state
 ;; by hand, so be careful!
 
 ;; The number of thread workers created for each job
-(def ^:const job-threads 4)
+(def ^:const num-job-workers 4)
 
 ;; This function is called when new data is available for clients.
 ;; Set it by calling reset-updated-fn!.
@@ -21,6 +22,11 @@
 (defn reset-updated-fn! [new-fn]
   (reset! updated-fn new-fn))
 
+(defonce output-chan (chan))
+(thread
+  (while true
+    (let [msg (<!! output-chan)]
+      (println msg))))
 
 ;; Tracking jobs
 ;; Job in active-jobs is objectid: {:rate 0
@@ -33,7 +39,15 @@
 
 
 ;; Caluclates the ids of the triples that still need processing.
-(defn triples-left [job-id])
+(defn triples-left [job-id]
+  (let [job (crud/read-job-by-id @(db/db) job-id)]
+    (if (= 0 (:processed job))
+      ;; If nothing's processed, return everything.
+      (:triples job)
+      ;; Otherwise calculate which triples still need to be processed. ;; TODO: This would be a good place to double-check that "processed" is correct, in case it missed an update during a crash.
+      (remove nil? (map #(if (some? (crud/read-tree-by-scheme-and-triple @(db/db) (:clustalscheme job) %)) ;; If this triple has a tree, it doesn't need to be processed.
+                           nil %)
+                        (:triples job))))))
 
 
 ;; Returns true if activated job, false if job already active.
@@ -41,7 +55,8 @@
   (if (contains? @active-jobs job-id)
     false
     (do
-      (swap! active-jobs assoc-in [job-id] {:rate 0 :channel nil})
+      (swap! active-jobs assoc-in [job-id] {:rate 0 :future nil})
+      (@updated-fn)
       true)))
 
 ;; Takes a vector of sequence objects as its argument
@@ -74,7 +89,6 @@
 (defn binom-triples [m]
   (let [binoms (keys m)
         binom-pairs (combo/combinations binoms 2)]
-    (println "Binom pairs: " binom-pairs)
     (apply concat (map (fn [pair] (triples (get m (nth pair 0)) (get m (nth pair 1))))
                   binom-pairs))))
 
@@ -88,7 +102,8 @@
          (try
            (:_id (crud/create-triple-ret @(db/db) {:sequences t
                                                    :unique_key (cljstr/join "," (sort t))}))
-           (catch com.mongodb.DuplicateKeyException e (:_id (crud/read-triple-by-unique-key @(db/db) (cljstr/join "," (sort t)))))))
+           (catch com.mongodb.DuplicateKeyException e
+             (:_id (crud/read-triple-by-unique-key @(db/db) (cljstr/join "," (sort t)))))))
        ts))
 
 ;; Initializes the job (creates triples) if it is not yet initialized.
@@ -97,33 +112,70 @@
 (defn init-job [job]
   (if (:initialized job)
     false
-    (let [trip-ids (write-triples ;; Write the triples to the database, returns a sequence of ids for those triples
+    (let [trip-ids (write-triples
                      (->>
                        (:analysisset job)
                        (crud/read-analysis-set-by-id @(db/db))
                        (:sequences)
                        (crud/read-sequences-by-accessions @(db/db))
                        (bucket-binomial)
-                       (binom-triples)));; Compute the triples for the job (sequences in binomial buckets, triples from bucket pairs)
-      ]
-      (println "Trip-ids: " trip-ids)
+                       (binom-triples)))]
       ;; Assign list of ids to the job's triples array in the database
+      ;; Setting the triples automatically changes initialized to true.
+      (crud/set-job-triples @(db/db) (:_id job) trip-ids)
+      (@updated-fn)
       true)))
 
 ;; Creates the channel, stores it with
 ;; the job in active-jobs, and launches the threads for
 ;; processing the triples.
-(defn process-triples! [job-id triples] true)
+; (defn process-triples! [job-id triples]
+;   (println "Triples to process count:" (count triples))
+;   ;; create channel and save in active-jobs atom
+;   (swap! active-jobs assoc-in [job-id :channel] (chan)) ;; Todo: Need to test whether or not this messes up active channels (to test, just try pausing a job and see if it actually stops when the channel is closed).
+;   ;; launch workers
+;   (let [t-channel (get-in @active-jobs [job-id :channel])]
+;     (dotimes [_ num-job-workers]
+;       (thread
+;         (while true
+;           (let [t (<!! t-channel)]
+;             (>!! output-chan (str "Job: " job-id " Triple: " t))
+;             (Thread/sleep 1000)))))
+;     ;; toss triples on the channel 'til we're done
+;     (thread
+;       (doseq [t triples]
+;         (if (nil? (>!! t-channel t)) ;; returns nil once channel is closed and all has been consumed
+;           (throw (Exception. "Killing thread."))))))) ;; Todo: Is throwing an exception the only way to kill the thread?
+
+
+(defn process-triples! [job-id triples]
+  (swap! active-jobs assoc-in [job-id :future]
+         (future
+           (let [t-chan (chan)]
+             (dotimes [_ num-job-workers]
+               (thread
+                 (while (let [t (<!! t-chan)]
+                          (if (some? t)
+                            (>!! output-chan (str "Job: " job-id " Triple: " t)))
+                          t)))) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
+             (loop [ts triples]
+               (if (and (seq ts) (not (Thread/interrupted)))
+                 (do
+                   (>!! t-chan (first ts))
+                   (recur (rest ts)))))
+             (close! t-chan)))))
+
+
 
 ;; Expects the database object id as a
 ;; constructed ObjectId object, not as a string
 (defn run-job! [job-id]
   (let [job (crud/read-job-by-id @(db/db) job-id)]
-    (println "job: " job)
-    (if job ;; If the job doesn't exist in the database, no point in continuing.
+    (if (some? job) ;; If the job doesn't exist in the database, no point in continuing.
       (if (activate-job! job-id) ;; If the job is already active (false return val), this run-job! call is redundant.
-        (if (init-job job)   ;; If the job was just initialized (true return val), we know that every triple still needs processing.
-          nil)))))
+        (do
+          (init-job job)
+          (process-triples! job-id (triples-left job-id)))))))
 
 
 

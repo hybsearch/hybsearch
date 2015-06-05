@@ -69,15 +69,11 @@
 
 (defmethod event-msg-handler :rpc/run-job
   [{:as ev-msg :keys [?data]}]
-  (try
-    (api/run-job ?data)
-    (catch Exception e (print (str "Error running job: " e)))))
+  (api/run-job ?data))
 
 (defmethod event-msg-handler :rpc/pause-job
   [{:as ev-msg :keys [?data]}]
-  (try
-    (api/pause-job ?data)
-    (catch Exception e (print (str "Error pausing job: " e)))))
+  (api/pause-job ?data))
 
 (defmethod event-msg-handler :rpc/get-jobs-state
   [{:as ev-msg :keys [?reply-fn]}]

@@ -108,6 +108,10 @@
 (defn create-job [db job]
   (mc/insert db coll/jobs job))
 
+;; Automatically changes initialized to true, since this is the necessary condition for initialization.
+(defn set-job-triples [db job-id triple-ids]
+  (mc/update-by-id db coll/jobs job-id {$set {:triples triple-ids, :initialized true}}))
+
 (defn read-jobs [db]
   (mc/find-maps db coll/jobs))
 
@@ -141,6 +145,9 @@
 
 (defn create-tree [db tree]
   (mc/insert db coll/trees tree))
+
+(defn read-tree-by-scheme-and-triple [db scheme-id triple-id]
+  (mc/find-one-as-map db coll/trees {:clustalscheme scheme-id :triple triple-id}))
 
 
 
