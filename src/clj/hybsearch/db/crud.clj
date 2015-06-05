@@ -1,6 +1,7 @@
 (ns hybsearch.db.crud
   (:require [monger.core :as mg]
             [monger.collection :as mc]
+            [monger.operators :refer :all]
             [hybsearch.db.collections :as coll])
   (:import org.bson.types.ObjectId))
 
@@ -58,6 +59,9 @@
 (defn read-sequence-by-id [db id]
   (mc/find-map-by-id db coll/sequences id))
 
+(defn read-sequences-by-accessions [db accs]
+  (mc/find-maps db coll/sequences {:accession {$in accs}}))
+
 (defn read-sequence-accessions [db]
   (mc/distinct db coll/sequences :accession))
 
@@ -109,6 +113,9 @@
 
 (defn read-job-by-pair [db scheme-id set-id]
   (mc/find-maps db coll/jobs {:clustalscheme scheme-id :analysisset set-id}))
+
+(defn read-job-by-id [db id]
+  (mc/find-map-by-id db coll/jobs id))
 
 (defn read-job-ids [db]
   (mc/distinct db coll/jobs :_id))

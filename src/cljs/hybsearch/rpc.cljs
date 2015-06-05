@@ -43,8 +43,7 @@
              :job/status                          {:db/cardinality :db.cardinality/one}
              :job/errors                          {:db/cardinality :db.cardinality/many}
              :job/initialized                     {:db/cardinality :db.cardinality/one}
-             :job/unprocessed                     {:db/cardinality :db.cardinality/one}
-             :job/processing                      {:db/cardinality :db.cardinality/one}
+             :job/triples                         {:db/cardinality :db.cardinality/one}
              :job/processed                       {:db/cardinality :db.cardinality/one}
              })
 

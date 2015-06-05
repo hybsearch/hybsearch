@@ -5,11 +5,9 @@
   [{:keys [job]} children]
   (let [id (cell= (:mongodb/objectid job))
         initialized (cell= (:job/initialized job))
-        unprocessed (cell= (:job/unprocessed job))
-        processing (cell= (:job/processing job))
+        triples (cell= (:job/triples job))
         processed (cell= (:job/processed job))
-        total (cell= (+ unprocessed processing processed))
-        proc-stat (cell= (if initialized (text "~{processed}/~{total}") "-"))
+        proc-stat (cell= (if initialized (text "~{processed}/~{triples}") "-"))
         rate-stat (cell= (if initialized (text "0") "-"))
         time-stat (cell= (if initialized (text "0") "-"))
         status (cell= (:job/status job))

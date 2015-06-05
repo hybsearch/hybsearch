@@ -65,8 +65,8 @@
 ;; Jobs
 ;; ----------
 
-(defn run-job [id] (jm/run-job (ObjectId. id)))
-(defn pause-job [id] (jm/pause-job (ObjectId. id)))
+(defn run-job [id] (jm/run-job! (ObjectId. id)))
+(defn pause-job [id] (jm/pause-job! (ObjectId. id)))
 
 ; Todo: Validate this data to ensure that the scheme and set are
 ; in the database before creating the job.
@@ -74,9 +74,8 @@
   (let [job {:_id (ObjectId.)
              :clustalscheme scheme-id
              :analysisset set-id
-             :unprocessed []
-             :processing []
-             :processed []
+             :triples []
+             :processed 0
              :errors []
              :status "Not yet initialized."
              :initialized false}]
@@ -204,9 +203,7 @@
                                                    })
                              (crud/read-analysis-sets @(db/db)))
         jobs     (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
-                                             (update-in [:unprocessed] count)
-                                             (update-in [:processing] count)
-                                             (update-in [:processed] count))
+                                             (update-in [:triples] count))
                                            {
                                             :_id :mongodb/objectid
                                             :clustalscheme :job/clustalscheme
@@ -214,8 +211,7 @@
                                             :status :job/status
                                             :errors :job/errors
                                             :initialized :job/initialized
-                                            :unprocessed :job/unprocessed
-                                            :processing :job/processing
+                                            :triples :job/triples
                                             :processed :job/processed
                                             })
                       (crud/read-jobs @(db/db)))
