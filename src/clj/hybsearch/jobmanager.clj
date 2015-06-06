@@ -8,7 +8,8 @@
             [clojure.core.async :as a
              :refer [>! <! >!! <!! go chan buffer close!
                      thread alts! alts!! timeout]])
-  (:import [java.lang Thread]))
+  (:import [java.lang Thread]
+           [org.bson.types ObjectId]))
 
 
 ;; This is one of the few modules where we have to manage state
@@ -142,6 +143,22 @@
       (@updated-fn)
       true)))
 
+(defn potential-hybrid? [g-tree]
+  (let [hinge-accs (map first (rest g-tree))
+        A (:binomial (crud/read-sequence-by-accession @(db/db) (first hinge-accs)))
+        B (:binomial (crud/read-sequence-by-accession @(db/db) (first (rest hinge-accs))))
+        ]
+    (not (= A B)))) ;; If the binomials in the hinge are not equal, this is a potential hybrid.
+
+(defn make-tree [g-tree triple-id scheme-id]
+  {:_id (ObjectId.)
+   :clustalscheme scheme-id
+   :triple triple-id
+   :tree g-tree
+   :frame_binomial (:binomial (crud/read-sequence-by-accession @(db/db) (first (first g-tree))))
+   :hinge_key (cljstr/join "," (sort (map first (rest g-tree))))
+   :nonmonophyly (potential-hybrid? g-tree)
+   })
 
 (defn process-triples! [job-id triples]
   (swap! active-jobs assoc-in [job-id :future]
@@ -158,11 +175,14 @@
                                     B (crud/read-sequence-by-accession @(db/db) (nth accessions 1))
                                     C (crud/read-sequence-by-accession @(db/db) (nth accessions 2))
                                     options (crud/read-clustal-scheme-by-id @(db/db) (:clustalscheme job))
-                                    g-tree (cw/grouped-tree (cw/clustalw-tree [A B C] options))]
-                                (>!! output-chan (str "Job: " job-id " Tree: " g-tree))
+                                    g-tree (cw/grouped-tree (cw/clustalw-tree [A B C] options))
+                                    tree (make-tree g-tree t (:clustalscheme job))]
+                                ;;(>!! output-chan (str "Job: " job-id " Tree: " tree))
+                                (try
+                                  (crud/create-tree @(db/db) tree)
+                                  (catch com.mongodb.DuplicateKeyException e nil)) ;; So redundant work, if it happens, doesn't crash the thread.
                                 (crud/inc-job-processed @(db/db) job-id)
                                 (@updated-fn))
-                              (Thread/sleep 500)
                               (insert-time! job-id (/ (- (System/nanoTime) start) 1000000000.0)) ;; Seconds
                               ))
                           t)) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
