@@ -170,11 +170,14 @@
 ;; -----------------------------------------------------
 
 ;; Utility to average the time vector
-;; handles edge cases too.
+;; handles edge cases
+;; Divides average time per triple by the number
+;; of workers per job, to estimate advantage of
+;; parallelism.
 (defn avgtime [v]
   (if (or (nil? v) (= 0 (count v)))
     0
-    (/ (apply + v) (count v))))
+    (/ (apply + v) (count v) jm/num-job-workers)))
 
 ;; cljset/rename-keys to match datascript schema immediately after query,
 ;; to avoid inter-collection name collisions that could occur once combined.
