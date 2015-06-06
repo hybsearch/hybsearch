@@ -30,7 +30,7 @@
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
                              (div :class "value" (text "~{avgtime-stat}"))
-                             (div :class "label" "Avg. Seconds/Triple"))))
+                             (div :class "label" "Avg. Seconds/Triple (Last 4)"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
