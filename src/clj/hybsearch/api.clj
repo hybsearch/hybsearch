@@ -69,8 +69,8 @@
 ;; Jobs
 ;; ----------
 
-(defn run-job [id] (jm/run-job! (ObjectId. id)))
-(defn pause-job [id] (jm/pause-job! (ObjectId. id)))
+(defn run-job [id] (when (some? id) (jm/run-job! (ObjectId. id))))
+(defn pause-job [id] (when (some? id) (jm/pause-job! (ObjectId. id))))
 
 ; Todo: Validate this data to ensure that the scheme and set are
 ; in the database before creating the job.

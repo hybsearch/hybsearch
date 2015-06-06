@@ -90,16 +90,25 @@
 (defc= selected-clustal-scheme (if selected-clustal-scheme-id (d/entity jobs-db selected-clustal-scheme-id))) ;; Guard here, because if there are no schemes the selected id will be nil and d/entity will throw an exception on lazy eval.
 (defc= selected-analysis-set   (if selected-analysis-set-id   (d/entity jobs-db selected-analysis-set-id))) ;; Guard here, because if there are no sets the selected id will be nil and d/entity will throw an exception on lazy eval.
 
-(defc= scheme-set-job (if (and selected-clustal-scheme selected-analysis-set)
-                        (d/entity jobs-db
-                        (first (first
-                                 (d/q '[:find ?e
-                                        :in $ ?scheme ?set
-                                        :where [?e :job/clustalscheme ?scheme]
-                                               [?e :job/analysisset ?set]]
-                                    jobs-db
-                                    (:mongodb/objectid selected-clustal-scheme)
-                                    (:mongodb/objectid selected-analysis-set)))))))
+(def prev-update-num (atom 0))
+(defc= scheme-set-job (when (and selected-clustal-scheme selected-analysis-set)
+                        (println "job cell uptd")
+                        ;; We wrap the query result in a vector with a new number
+                        ;; at the end because Javelin can't tell that the job changed
+                        ;; based on the query result alone. The new number triggers
+                        ;; propagation to continue.
+                        (swap! prev-update-num #(mod (inc %) 2))
+                        (vector
+                          (d/entity jobs-db
+                                    (first (first
+                                             (d/q '[:find ?e
+                                                    :in $ ?scheme ?set
+                                                    :where [?e :job/clustalscheme ?scheme]
+                                                           [?e :job/analysisset ?set]]
+                                                  jobs-db
+                                                  (:mongodb/objectid selected-clustal-scheme)
+                                                  (:mongodb/objectid selected-analysis-set)))))
+                          @prev-update-num)))
 
 (let [{:keys [chsk ch-recv send-fn state]}
       (sente/make-channel-socket! "/chsk"

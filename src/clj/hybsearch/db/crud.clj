@@ -112,6 +112,9 @@
 (defn set-job-triples [db job-id triple-ids]
   (mc/update-by-id db coll/jobs job-id {$set {:triples triple-ids, :initialized true}}))
 
+(defn inc-job-processed [db job-id]
+  (mc/update-by-id db coll/jobs job-id {$inc {:processed 1}}))
+
 (defn read-jobs [db]
   (mc/find-maps db coll/jobs))
 

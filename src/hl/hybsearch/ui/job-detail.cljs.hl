@@ -3,15 +3,15 @@
 
 (defelem detail
   [{:keys [job]} children]
-  (let [id (cell= (:mongodb/objectid job))
-        initialized (cell= (:job/initialized job))
-        triples (cell= (:job/triples job))
-        processed (cell= (:job/processed job))
-        proc-stat (cell= (if initialized (text "~{processed}/~{triples}") "-"))
-        rate-stat (cell= (if initialized (text "0") "-"))
-        time-stat (cell= (if initialized (text "0") "-"))
-        status (cell= (:job/status job))
-        errors (cell= (:job/errors job))]
+  (let [id (cell= (:mongodb/objectid (first job)))
+        initialized (cell= (do (println "updating, job: " job) (:job/initialized (first job))))
+        triples (cell= (:job/triples (first job)))
+        processed (cell= (:job/processed (first job)))
+        proc-stat (cell= (if initialized (str processed "/" triples) "-"))
+        rate-stat (cell= (if initialized "0" "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+        time-stat (cell= (if initialized "0" "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+        status (cell= (:job/status (first job)))
+        errors (cell= (:job/errors (first job)))]
     (div :class "ui three column grid"
          (div :class "row" ;; Controls
               (div :class "ui center aligned basic segment"
@@ -21,17 +21,17 @@
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
-                             (div :class "value" "-")
+                             (div :class "value" (text "~{proc-stat}"))
                              (div :class "label" "Triples Processed"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
-                             (div :class "value" "-")
+                             (div :class "value" (text "~{rate-stat}"))
                              (div :class "label" "Triples/Second"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
-                             (div :class "value" "-")
+                             (div :class "value" (text "~{time-stat}"))
                              (div :class "label" "Est. Time Remaining")))))
          (div :class "row" ;; Status
               (div :class "sixteen wide column"

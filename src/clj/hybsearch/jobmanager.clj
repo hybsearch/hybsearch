@@ -30,8 +30,8 @@
 
 ;; Tracking jobs
 ;; Job in active-jobs is objectid: {:rate 0
-;;                                  :channel chan}
-;; You can pause (cancel without undoing work) a job by closing its channel.
+;;                                  :future fut}
+;; You can pause (cancel without undoing work) a job by calling future-cancel on its future.
 ;; Once you've taken all the values off a closed channel,
 ;; subsequent takes will return nil.
 ;; Workers know to exit when they take nil from a channel.
@@ -126,46 +126,31 @@
       (@updated-fn)
       true)))
 
-;; Creates the channel, stores it with
-;; the job in active-jobs, and launches the threads for
-;; processing the triples.
-; (defn process-triples! [job-id triples]
-;   (println "Triples to process count:" (count triples))
-;   ;; create channel and save in active-jobs atom
-;   (swap! active-jobs assoc-in [job-id :channel] (chan)) ;; Todo: Need to test whether or not this messes up active channels (to test, just try pausing a job and see if it actually stops when the channel is closed).
-;   ;; launch workers
-;   (let [t-channel (get-in @active-jobs [job-id :channel])]
-;     (dotimes [_ num-job-workers]
-;       (thread
-;         (while true
-;           (let [t (<!! t-channel)]
-;             (>!! output-chan (str "Job: " job-id " Triple: " t))
-;             (Thread/sleep 1000)))))
-;     ;; toss triples on the channel 'til we're done
-;     (thread
-;       (doseq [t triples]
-;         (if (nil? (>!! t-channel t)) ;; returns nil once channel is closed and all has been consumed
-;           (throw (Exception. "Killing thread."))))))) ;; Todo: Is throwing an exception the only way to kill the thread?
-
 
 (defn process-triples! [job-id triples]
   (swap! active-jobs assoc-in [job-id :future]
          (future
            (let [t-chan (chan)]
              (dotimes [_ num-job-workers]
-               (thread
+               (thread ;; These threads will die with the parent thread if the future is canceled.
                  (while (let [t (<!! t-chan)]
                           (if (some? t)
-                            (>!! output-chan (str "Job: " job-id " Triple: " t)))
-                          (Thread/sleep 500)
-                          t)))) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
+                            (do
+                              (>!! output-chan (str "Job: " job-id " Triple: " t))
+                              (crud/inc-job-processed @(db/db) job-id)
+                              (@updated-fn)
+                              (Thread/sleep 500)))
+                          t)) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
+                 (>!! output-chan (str "Consumer exiting."))))
              (loop [ts triples]
                (if (and (seq ts) (not (Thread/interrupted)))
                  (do
                    (>!! t-chan (first ts))
                    (recur (rest ts)))))
-             (close! t-chan)))))
-
+             ;; When finished, close the channel and remove the job from active-jobs
+             (>!! output-chan (str "Job: " job-id " finished."))
+             (close! t-chan)
+             (swap! active-jobs dissoc job-id)))))
 
 
 ;; Expects the database object id as a
@@ -173,19 +158,21 @@
 (defn run-job! [job-id]
   (let [job (crud/read-job-by-id @(db/db) job-id)]
     (if (some? job) ;; If the job doesn't exist in the database, no point in continuing.
-      (if (activate-job! job-id) ;; If the job is already active (false return val), this run-job! call is redundant.
+      (if (activate-job! job-id) ;; If the job is already active (false return val), this run-job! call is redundant, and exits.
         (do
           (init-job job)
           (process-triples! job-id (triples-left job-id)))))))
 
-
-
-
-
-;; will have to swap dissoc on active-jobs
-;; and kill any threads in the job
-(defn pause-job! [job-id] nil)
-
-
-;; Todo: Handle run-job on an already-running job
-;;       Handle pause-job on an already-paused job
+;; Attempts to pause the job by calling future-cancel on the job's future
+;; Then removes the job from active-jobs
+;; Technically this could remove the job from active-jobs while it's future
+;; were still running, but in testing it reliably cancels. I think that the
+;; future manages to deal with the interrupt when it's waiting on the channel,
+;; because the channel operations block, and InterruptedException is often
+;; thrown by blocking operations. That's just a theory though.
+(defn pause-job! [job-id]
+  (let [f (get-in @active-jobs [job-id :future])]
+    (if (future? f)
+      (do
+        (future-cancel f)
+        (swap! active-jobs dissoc job-id)))))

@@ -6,10 +6,6 @@
 (defelem scheme-set-list
   [{:keys [schemes selected-scheme-id
            sets    selected-set-id ]} children]
-  (print "Scheme-Set List: selected-scheme-id: " selected-scheme-id)
-  (print "Scheme-Set List: selected-set-id: " selected-set-id)
-  (print "Scheme-Set List: schemes: " schemes)
-  (print "Scheme-Set List: sets: " sets)
   (div :style "height: 100%;"
    (div :class "ui pointing secondary menu"
         (a :class "blue active item" :data-tab "clustal-schemes" (i :class "settings icon") "Clustal Schemes")

@@ -9,9 +9,6 @@
   [{:keys [clustal-scheme analysis-set job]} children]
   (let [scheme-name (cell= (get clustal-scheme :clustalscheme/name))
         set-name (cell= (get analysis-set :analysisset/name))]
-;;     (print "Scheme-Set Detail: jobs: " jobs)
-;;     (print "Scheme-Set Detail: clustal-scheme: " clustal-scheme)
-;;     (print "Scheme-Set Detail: analysis-set: " analysis-set)
     (div :style "height: 100%;"
       (div :class "ui pointing secondary menu"
            (div :class "float right header item"

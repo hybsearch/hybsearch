@@ -51,7 +51,7 @@
                (div :class "ui horizontal segment" :style "height: 90vh;"
                     (let [full-detail (cell= (and rpc/selected-clustal-scheme rpc/selected-analysis-set))] ;; Needed this hack so all dom would be in the page before JS init, even though we don't want all dom visible right away
                       (div :style "height: 100%;" ;; wrapper for let return
-                              (div :style (cell= (if full-detail "height: 80%;" "display: none;"))
+                              (div :style (cell= (if full-detail "height: 100%;" "display: none;"))
                                    (scheme-set-detail/detail :clustal-scheme rpc/selected-clustal-scheme
                                                              :analysis-set rpc/selected-analysis-set
                                                              :job rpc/scheme-set-job))
