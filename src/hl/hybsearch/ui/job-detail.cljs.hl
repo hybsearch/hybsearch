@@ -39,12 +39,7 @@
          (div :class "row" ;; Status
               (div :class "sixteen wide column"
                    (h3 :class "ui header" "Status:")
-                   (p (text "~{status}"))))
-         (div :class "row" ;; Error log
-              (div :class "sixteen wide column"
-                   (h3 :class "ui header" "Error Log:")
-                   (loop-tpl :bindings [e errors]
-                             e))))))
+                   (p (text "~{status}")))))))
 
 
 

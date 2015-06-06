@@ -1,4 +1,4 @@
-(ns clustalw-interface.clustalw
+(ns hybsearch.clustalw
   (:require [clojure.java.shell :refer [sh]]
             [clojure.java.io :as io])
   (:import [java.lang.Runtime]))
@@ -57,7 +57,8 @@
     :iteration     (str "-iteration=" setting)
     :numiter       (str "-numiter=" setting)
     :clustering    (str "-clustering=" setting)
-    :kimura        (if (= setting "true") "-kimura" nil)))
+    :kimura        (if (= setting "true") "-kimura" nil)
+    nil)) ;; case default is nil, so command will be removed in build-args if it doesn't match the above
 
 (defn build-args [options]
   (reduce-kv (fn [result kw setting]
@@ -102,8 +103,9 @@
           (clojure.string/split #","))))))
 
 ;; Takes the output of clustalw-tree and converts it to the internal,
-;; grouped representation, as a vector, flattened and with distances removed.
-(defn internal-tree [c-tree]
+;; grouped representation, as a vector, with distances in the second
+;; position and accession numbers in the first position of each element.
+(defn grouped-tree [c-tree]
   (let [sorted (sort-by last c-tree)
         dist0 (nth (nth sorted 0) 1)
         dist1 (nth (nth sorted 1) 1)
@@ -112,7 +114,7 @@
                        (java.lang.Math/abs (- dist1 dist2)))
                   (reverse sorted)
                   sorted)]
-    (mapv #(nth % 0) grouped)))
+    (into [] grouped)))
 
 ;; Gets tree with example data and default options
 (defn testrun []
@@ -139,5 +141,5 @@
         B { :accession "AB687534" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggctcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcataatattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
         C { :accession "AB687533" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggttcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcatagtattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
         ]
-    (println (internal-tree (clustalw-tree [A B C] options)))
+    (println (grouped-tree (clustalw-tree [A B C] options)))
     ))

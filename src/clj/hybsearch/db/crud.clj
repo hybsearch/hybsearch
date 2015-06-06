@@ -76,6 +76,9 @@
 (defn create-clustal-scheme [db scheme]
   (mc/insert db coll/clustal-schemes scheme))
 
+(defn read-clustal-scheme-by-id [db id]
+  (mc/find-map-by-id db coll/clustal-schemes id))
+
 (defn read-clustal-schemes [db]
   (mc/find-maps db coll/clustal-schemes))
 
@@ -112,6 +115,9 @@
 (defn set-job-triples [db job-id triple-ids]
   (mc/update-by-id db coll/jobs job-id {$set {:triples triple-ids, :initialized true}}))
 
+(defn set-job-processed [db job-id n]
+  (mc/update-by-id db coll/jobs job-id {$set {:processed n}}))
+
 (defn inc-job-processed [db job-id]
   (mc/update-by-id db coll/jobs job-id {$inc {:processed 1}}))
 
@@ -133,6 +139,9 @@
 
 (defn create-triple [db triple]
   (mc/insert db coll/triples triple))
+
+(defn read-triple-by-id [db id]
+  (mc/find-map-by-id db coll/triples id))
 
 ;; Like create-triple, but returns the created document,
 ;; which allows us to retrieve the id

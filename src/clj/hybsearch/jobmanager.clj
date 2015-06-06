@@ -2,6 +2,7 @@
   (:require
             [hybsearch.db.init :as db]
             [hybsearch.db.crud :as crud]
+            [hybsearch.clustalw :as cw]
             [clojure.string :as cljstr]
             [clojure.math.combinatorics :as combo]
             [clojure.core.async :as a
@@ -43,17 +44,18 @@
 ;; be a big deal.
 (defonce timings (atom {}))
 
+(defn correct-processed-metric [job-id num-left]
+  (let [job (crud/read-job-by-id @(db/db) job-id)
+        ts (:triples job)]
+    (crud/set-job-processed @(db/db) job-id (- (count ts) num-left))))
 
 ;; Caluclates the ids of the triples that still need processing.
 (defn triples-left [job-id]
   (let [job (crud/read-job-by-id @(db/db) job-id)]
-    (if (= 0 (:processed job))
-      ;; If nothing's processed, return everything.
-      (:triples job)
-      ;; Otherwise calculate which triples still need to be processed. ;; TODO: This would be a good place to double-check that "processed" is correct, in case it missed an update during a crash.
-      (remove nil? (map #(if (some? (crud/read-tree-by-scheme-and-triple @(db/db) (:clustalscheme job) %)) ;; If this triple has a tree, it doesn't need to be processed.
-                           nil %)
-                        (:triples job))))))
+    ;; If the triple has a tree corresponding to this job's clustalscheme, it doesn't need to be processed.
+    (remove nil? (map #(if (some? (crud/read-tree-by-scheme-and-triple @(db/db) (:clustalscheme job) %))
+                         nil %)
+                      (:triples job)))))
 
 (defn insert-time! [job-id t]
   (swap! timings update-in [job-id]
@@ -92,7 +94,7 @@
 ;; returns all triples that can be created where
 ;; at least one element is from a and at least one
 ;; element is from b
-(defn triples [a b]
+(defn gen-triples [a b]
   (let [a-pairs (combo/combinations a 2)
         b-pairs (combo/combinations b 2)]
     (concat (map #(flatten %) (combo/cartesian-product a-pairs b))
@@ -103,7 +105,7 @@
 (defn binom-triples [m]
   (let [binoms (keys m)
         binom-pairs (combo/combinations binoms 2)]
-    (apply concat (map (fn [pair] (triples (get m (nth pair 0)) (get m (nth pair 1))))
+    (apply concat (map (fn [pair] (gen-triples (get m (nth pair 0)) (get m (nth pair 1))))
                   binom-pairs))))
 
 
@@ -144,15 +146,22 @@
 (defn process-triples! [job-id triples]
   (swap! active-jobs assoc-in [job-id :future]
          (future
-           (let [t-chan (chan)]
+           (let [t-chan (chan)
+                 job (crud/read-job-by-id @(db/db) job-id)]
              (dotimes [_ num-job-workers]
                (thread ;; These threads will die with the parent thread if the future is canceled.
                  (while (let [t (<!! t-chan)]
                           (if (some? t)
                             (let [start (System/nanoTime)]
-                              (>!! output-chan (str "Job: " job-id " Triple: " t))
-                              (crud/inc-job-processed @(db/db) job-id)
-                              (@updated-fn)
+                              (let [accessions (:sequences (crud/read-triple-by-id @(db/db) t))
+                                    A (crud/read-sequence-by-accession @(db/db) (nth accessions 0))
+                                    B (crud/read-sequence-by-accession @(db/db) (nth accessions 1))
+                                    C (crud/read-sequence-by-accession @(db/db) (nth accessions 2))
+                                    options (crud/read-clustal-scheme-by-id @(db/db) (:clustalscheme job))
+                                    g-tree (cw/grouped-tree (cw/clustalw-tree [A B C] options))]
+                                (>!! output-chan (str "Job: " job-id " Tree: " g-tree))
+                                (crud/inc-job-processed @(db/db) job-id)
+                                (@updated-fn))
                               (Thread/sleep 500)
                               (insert-time! job-id (/ (- (System/nanoTime) start) 1000000000.0)) ;; Seconds
                               ))
@@ -169,6 +178,8 @@
              (swap! active-jobs dissoc job-id)))))
 
 
+
+
 ;; Expects the database object id as a
 ;; constructed ObjectId object, not as a string
 (defn run-job! [job-id]
@@ -177,7 +188,10 @@
       (if (activate-job! job-id) ;; If the job is already active (false return val), this run-job! call is redundant, and exits.
         (do
           (init-job job)
-          (process-triples! job-id (triples-left job-id)))))))
+          (let [remaining (triples-left job-id)]
+            (correct-processed-metric job-id (count remaining))
+            (process-triples! job-id remaining)))))))
+
 
 ;; Attempts to pause the job by calling future-cancel on the job's future
 ;; Then removes the job from active-jobs
