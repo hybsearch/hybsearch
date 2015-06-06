@@ -45,6 +45,7 @@
              :job/initialized                     {:db/cardinality :db.cardinality/one}
              :job/triples                         {:db/cardinality :db.cardinality/one}
              :job/processed                       {:db/cardinality :db.cardinality/one}
+             :job/avgtime                         {:db/cardinality :db.cardinality/one}
              })
 
 

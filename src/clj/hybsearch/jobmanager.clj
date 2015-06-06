@@ -29,13 +29,19 @@
       (println msg))))
 
 ;; Tracking jobs
-;; Job in active-jobs is objectid: {:rate 0
-;;                                  :future fut}
+;; Job in active-jobs is objectid: {:future fut}
+;; :times is a vector of times (in seconds) of previously processed triples.
+;; :times currently ignores channel overhead.
 ;; You can pause (cancel without undoing work) a job by calling future-cancel on its future.
 ;; Once you've taken all the values off a closed channel,
 ;; subsequent takes will return nil.
 ;; Workers know to exit when they take nil from a channel.
 (defonce active-jobs (atom {}))
+;; Split this out of active-jobs, because update-in from a
+;; sub-thread would re-insert a job when we tried to pause jobs.
+;; This will grow by 1 array of 4 doubles per job run, shouldn't
+;; be a big deal.
+(defonce timings (atom {}))
 
 
 ;; Caluclates the ids of the triples that still need processing.
@@ -49,13 +55,21 @@
                            nil %)
                         (:triples job))))))
 
+(defn insert-time! [job-id t]
+  (swap! timings update-in [job-id]
+         (fn [a t]
+           (if (< (count (or a [])) 4) ;; Only stores the last 4 timings.
+             (into [] (concat [t] (or a [])))
+             (into [] (concat [t] (pop a)))))
+         t))
+
 
 ;; Returns true if activated job, false if job already active.
 (defn activate-job! [job-id]
   (if (contains? @active-jobs job-id)
     false
     (do
-      (swap! active-jobs assoc-in [job-id] {:rate 0 :future nil})
+      (swap! active-jobs assoc-in [job-id] {:times [] :future nil})
       (@updated-fn)
       true)))
 
@@ -135,11 +149,13 @@
                (thread ;; These threads will die with the parent thread if the future is canceled.
                  (while (let [t (<!! t-chan)]
                           (if (some? t)
-                            (do
+                            (let [start (System/nanoTime)]
                               (>!! output-chan (str "Job: " job-id " Triple: " t))
                               (crud/inc-job-processed @(db/db) job-id)
                               (@updated-fn)
-                              (Thread/sleep 500)))
+                              (Thread/sleep 500)
+                              (insert-time! job-id (/ (- (System/nanoTime) start) 1000000000.0)) ;; Seconds
+                              ))
                           t)) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
                  (>!! output-chan (str "Consumer exiting."))))
              (loop [ts triples]

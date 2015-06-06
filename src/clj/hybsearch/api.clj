@@ -169,6 +169,12 @@
 ;; -----------------------------------------------------
 ;; -----------------------------------------------------
 
+;; Utility to average the time vector
+;; handles edge cases too.
+(defn avgtime [v]
+  (if (or (nil? v) (= 0 (count v)))
+    0
+    (/ (apply + v) (count v))))
 
 ;; cljset/rename-keys to match datascript schema immediately after query,
 ;; to avoid inter-collection name collisions that could occur once combined.
@@ -207,6 +213,7 @@
                              (crud/read-analysis-sets @(db/db)))
         jobs     (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
                                              (update-in [:triples] count)
+                                             (assoc-in [:avgtime] (avgtime (get @jm/timings (:_id %))))
                                              (assoc-in [:status] (if (:initialized %) ;; Todo: Status should be "Complete." when finished
                                                                    (if (contains? @jm/active-jobs (:_id %))
                                                                      "Running."
@@ -221,6 +228,7 @@
                                             :initialized :job/initialized
                                             :triples :job/triples
                                             :processed :job/processed
+                                            :avgtime :job/avgtime
                                             })
                       (crud/read-jobs @(db/db)))
         combined (concat clustal-schemes analysis-sets jobs)

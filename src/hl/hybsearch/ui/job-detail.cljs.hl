@@ -8,8 +8,11 @@
         triples (cell= (:job/triples (first job)))
         processed (cell= (:job/processed (first job)))
         proc-stat (cell= (if initialized (str processed "/" triples) "-"))
-        rate-stat (cell= (if initialized "0" "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
-        time-stat (cell= (if initialized "0" "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+        avgtime-stat (cell= (if initialized (.toFixed (:job/avgtime (first job)) 4) "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+        time-stat (cell= (if initialized (.toFixed (/ (* (:job/avgtime (first job))
+                                                         (- triples processed))
+                                                      60)
+                                                   1) "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
         status (cell= (:job/status (first job)))
         errors (cell= (:job/errors (first job)))]
     (div :class "ui three column grid"
@@ -26,12 +29,12 @@
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
-                             (div :class "value" (text "~{rate-stat}"))
-                             (div :class "label" "Triples/Second"))))
+                             (div :class "value" (text "~{avgtime-stat}"))
+                             (div :class "label" "Avg. Seconds/Triple"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
                         (div :class "ui statistic"
-                             (div :class "value" (text "~{time-stat}"))
+                             (div :class "value" (text "~{time-stat}m"))
                              (div :class "label" "Est. Time Remaining")))))
          (div :class "row" ;; Status
               (div :class "sixteen wide column"
