@@ -19,14 +19,14 @@
            (a :class "blue item" :data-tab "job" (i :class "dashboard icon") "Processing")
            (a :class "blue item" :data-tab "query" (i :class "search icon") "Query"))
       (div :class "ui basic active tab segment" :data-tab "clustal-scheme"
-           :style "height: 100%; overflow-y: auto;"
+           :style "height: 95%; overflow-y: auto;"
            (scheme-detail/detail :clustal-scheme clustal-scheme))
       (div :class "ui basic tab segment"        :data-tab "analysis-set"
-           :style "height: 100%; overflow-y: auto;"
+           :style "height: 95%; overflow-y: auto;"
            (set-detail/detail :analysis-set analysis-set))
       (div :class "ui basic tab segment"        :data-tab "job"
-           :style "height: 100%; overflow-y: auto;"
+           :style "height: 95%; overflow-y: auto;"
            (job/detail :job job))
       (div :class "ui basic tab segment" :data-tab "query"
-           :style "height: 100%; overflow-y: auto;"
+           :style "height: 95%; overflow-y: auto;"
            (query/qui :job job :results results)))))
