@@ -75,6 +75,8 @@
 (defc sequences-error nil)
 (defc sequences-loading [])
 
+(defc query-results {})
+
 (defc= jobs-entities (:entities jobs-state))
 (defc= jobs-db (:db-after (d/with (d/empty-db jobs-db-schema) jobs-entities)))
 
@@ -174,9 +176,7 @@
                     (if (sente/cb-success? cb-reply)
                       (do
                         ;;(print cb-reply)
-                        (reset! jobs-state cb-reply)
-
-                        )))))
+                        (reset! jobs-state cb-reply))))))
     (print "Channel socket state change: " ?data)))
 
 (defmethod event-msg-handler :chsk/recv
@@ -193,12 +193,20 @@
 ; ---------------
 ; Job RPC over channel-socket
 ; ---------------
-
 (defn run-job [id]
   (chsk-send! [:rpc/run-job id]))
 
 (defn pause-job [id]
   (chsk-send! [:rpc/pause-job id]))
+
+; ---------------
+; Query RPC over channel-socket
+; ---------------
+(defn query-nonmonophyly [job-id]
+  (chsk-send! [:rpc/query-nonmonophyly job-id] 5000
+              (fn [cb-reply]
+                (if (sente/cb-success? cb-reply)
+                  (swap! query-results update-in [job-id] cb-reply)))))
 
 
 (def router_ (atom nil))

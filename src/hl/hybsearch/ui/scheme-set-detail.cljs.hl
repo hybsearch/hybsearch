@@ -2,11 +2,12 @@
   (:require [ui.clustal-scheme-detail :as scheme-detail]
             [ui.analysis-set-detail :as set-detail]
             [ui.job-detail :as job]
+            [ui.query :as query]
             [datascript :as d]))
 
 ;; Inputs are formula cells
 (defelem detail
-  [{:keys [clustal-scheme analysis-set job]} children]
+  [{:keys [clustal-scheme analysis-set job results]} children]
   (let [scheme-name (cell= (get clustal-scheme :clustalscheme/name))
         set-name (cell= (get analysis-set :analysisset/name))]
     (div :style "height: 100%;"
@@ -26,4 +27,6 @@
       (div :class "ui basic tab segment"        :data-tab "job"
            :style "height: 100%; overflow-y: auto;"
            (job/detail :job job))
-      (div :class "ui basic tab segment" :data-tab "query" "Query UI Goes Here"))))
+      (div :class "ui basic tab segment" :data-tab "query"
+           :style "height: 100%; overflow-y: auto;"
+           (query/qui :job job :results results)))))

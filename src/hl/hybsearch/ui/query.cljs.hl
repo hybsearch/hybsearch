@@ -1,0 +1,15 @@
+(ns ui.query
+  (:require [hybsearch.rpc :as rpc]))
+
+(defelem qui
+  [{:keys [job results]} children]
+  (let [id (cell= (:mongodb/objectid (first job)))
+        result (cell= (get results id))]
+    (div :class "ui grid"
+         (div :class "row"
+              (div :class "ui basic segment"
+                   (div :click #(rpc/query-nonmonophyly @id) :class "ui blue button" (i :class "refresh icon") "Refresh")))
+         (div :class "row"
+              (div :class "sixteen wide column"
+                   (h3 :class "ui header" "Results (Non-monophyly):")
+                   (pre (text "~{result}")))))))

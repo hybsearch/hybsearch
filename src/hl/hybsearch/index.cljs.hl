@@ -54,7 +54,8 @@
                               (div :style (cell= (if full-detail "height: 100%;" "display: none;"))
                                    (scheme-set-detail/detail :clustal-scheme rpc/selected-clustal-scheme
                                                              :analysis-set rpc/selected-analysis-set
-                                                             :job rpc/scheme-set-job))
+                                                             :job rpc/scheme-set-job
+                                                             :results rpc/query-results))
                               (div :class "ui message" :style (cell= (if full-detail "display: none;" ""))
                                    (div :class "header" "Getting started:")
                                    (p "Please select a Clustal scheme and analysis set to see more detail. "

@@ -161,5 +161,37 @@
 (defn read-tree-by-scheme-and-triple [db scheme-id triple-id]
   (mc/find-one-as-map db coll/trees {:clustalscheme scheme-id :triple triple-id}))
 
+;; -------------------------
+;; Query
+;; -------------------------
+
+;; Trees with :triple in job's :triples
+;; and same :clustalscheme as job
+;; and have :nonmonophyly true
+;;
+(defn query-nonmonophyly [db job-id]
+  (let [job (read-job-by-id db job-id)]
+    (when (some? job)
+      (mc/find-maps db coll/trees {:triple {$in (:triples job)}
+                                  :clustalscheme (:clustalscheme job)
+                                  :nonmonophyly true}))))
+
+
+
+;; If you ever want to query for reciprocal non-monophyly,
+;; these are the logical conditions the query needs to satisfy:
+;;
+;; Trees with :triple in job's :triples
+;; and same :clustalscheme as job
+;; and have :nonmonophyly true
+;; and another tree exists with the same :hinge_key,
+;; but a different :frame_binomial.
+;;
+;; The condition of a different :frame_binomial is
+;; enough, because the :hinge_key means the binomial
+;; must correspond to one of the sequences in the hinge.
+;;
+;;(defn query-reciprocal-nonmonophyly [db job-id])
+
 
 

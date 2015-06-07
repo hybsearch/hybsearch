@@ -157,6 +157,7 @@
    :tree g-tree
    :frame_binomial (:binomial (crud/read-sequence-by-accession @(db/db) (first (first g-tree))))
    :hinge_key (cljstr/join "," (sort (map first (rest g-tree))))
+   :pair_key (cljstr/join "," (sort []))
    :nonmonophyly (potential-hybrid? g-tree)
    })
 
