@@ -265,7 +265,14 @@
 ;; ------------------
 ;; Query
 ;; ------------------
+
+;; Reduces the crud result into a map of tree sequences by binomial pair keys
 (defn query-nonmonophyly [job-id]
-  (map #(:tree %) (crud/query-nonmonophyly @(db/db) (ObjectId. job-id))))
+  (reduce (fn [m t]
+            (if (some? (get m (:pair_key t)))
+              (update-in m [(:pair_key t)] conj (:tree t))
+              (assoc-in m [(:pair_key t)] [])))
+          {}
+          (crud/query-nonmonophyly @(db/db) (ObjectId. job-id))))
 
 

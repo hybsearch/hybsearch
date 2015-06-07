@@ -4,7 +4,8 @@
 (defelem qui
   [{:keys [job results]} children]
   (let [id (cell= (:mongodb/objectid (first job)))
-        result (cell= (get results id))]
+        result (cell= (or (get results id) {}))
+        pairs (cell= (sort (keys result)))]
     (div :class "ui grid"
          (div :class "row"
               (div :class "ui basic segment"
@@ -12,4 +13,14 @@
          (div :class "row"
               (div :class "sixteen wide column"
                    (h3 :class "ui header" "Results (Non-monophyly):")
-                   (pre (text "~{result}")))))))
+                   (loop-tpl :bindings [pair pairs]
+                             (div :class "ui inverted segment"
+                               (h4 :class "ui header" (str "Pair: " @pair))
+                               (loop-tpl :bindings [tree (cell= (get result pair))]
+                                         (pre (str "[["  (first (nth @tree 0))
+                                                   " "   (last (nth @tree 0))
+                                                   "] [" (first (nth @tree 1))
+                                                   " "   (last (nth @tree 1))
+                                                   "] [" (first (nth @tree 2))
+                                                   " "   (last (nth @tree 2))
+                                                   "]]"))))))))))

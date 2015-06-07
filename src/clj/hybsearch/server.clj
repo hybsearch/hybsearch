@@ -78,6 +78,7 @@
 (defmethod event-msg-handler :rpc/query-nonmonophyly
   [{:as ev-msg :keys [?data ?reply-fn]}]
   (when ?reply-fn
+    (println (api/query-nonmonophyly ?data))
     (?reply-fn (api/query-nonmonophyly ?data))))
 
 (defmethod event-msg-handler :rpc/get-jobs-state

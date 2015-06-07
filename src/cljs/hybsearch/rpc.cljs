@@ -205,8 +205,8 @@
 (defn query-nonmonophyly [job-id]
   (chsk-send! [:rpc/query-nonmonophyly job-id] 5000
               (fn [cb-reply]
-                (if (sente/cb-success? cb-reply)
-                  (swap! query-results update-in [job-id] cb-reply)))))
+                (when (sente/cb-success? cb-reply)
+                  (swap! query-results assoc-in [job-id] cb-reply)))))
 
 
 (def router_ (atom nil))
@@ -217,7 +217,6 @@
   (reset! router_ (sente/start-chsk-router! ch-chsk event-msg-handler*)))
 
 ;; Init
-;; Todo: Start router
 (defn start! [] (start-router!))
 
 
