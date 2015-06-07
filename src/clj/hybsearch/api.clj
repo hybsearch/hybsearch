@@ -266,6 +266,6 @@
 ;; Query
 ;; ------------------
 (defn query-nonmonophyly [job-id]
-  (map #(:tree %) (crud/query-nonmonophyly @(db/db) (ObjectId. job-id)))
+  (map #(:tree %) (crud/query-nonmonophyly @(db/db) (ObjectId. job-id))))
 
 

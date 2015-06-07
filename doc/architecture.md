@@ -1,44 +1,34 @@
 #Architecture Documentation
 
 ##Contents
-- Future Changes
-- To-Do
+- Things you might want to do/add
 - Getting Started
 - Project Structure
 - Data Flow
 - Server Architecture
-- Database Architecture
+- Data Model
 - Client Architecture (User Interface)
 - Processing Strategy
 
-##Future Changes
-After my most recent meeting with Steve, it seems that his desired workflow is as follows:
-1. Upload a library file.
-2. Process the library file under a given Clustal scheme.
-3. Explore the reciprocal hybrids.
-
-Because Steve is already filtering the sequences he wants when he searches for them in GenBank, it doesn't really make sense for us to define analysis sets from anything other than library file uploads. This is a boon, because it means that we don't need to worry about mutable sets (those defined on species names, which can expand as sequences are uploaded) anymore. It also means we can think of processing at the analysis set level (since this list of sequences is now guaranteed immutable), which removes the need for the "job" abstraction. Since we're no longer worried about the "job" abstraction, we're no longer worried about computing intersections between the job's sequences and it's analysis set's sequences. If Steve wants finer-grained processing in the future we can add it, but this should let us get the app out the door faster.
-
-The following architecture documentation takes this into account, so it may be a little different from what is currently implemented.
-
-##To-Do (in no particular order)
-The docs are written as if most of these are finished, so they might change as time progresses, or not appear to match the implementation.
-- Finish implementing the Clustal interface
-- Build the sequence processing side of the server
-- Build the UI for starting/stopping processing on an analysis set
-- Fix some UI bugs affecting the size and scrollability of certain components
-- Implement the rest of the CRUD methods
-- Implement the indexing on the database
-- Update the UI to match Steve's workflow
-- Build the query UI
-- Validate incoming data
-- There are probably more.
-- Enforce our schema on the MongoDB database.
+##Things you might want to do/add
+- Test the app a lot. I tested a lot of things but there are probably edge cases I missed on, like, malformed file uploads or something.
+- Validate incoming data before saving it in the database to make sure nothing malformed makes it in.
+- Upload the GenBank files over AJAX. For some reason jQuery's `.post` method won't set the right enctype on
+- Log errors that clustalw prints to stderr. Right now it doesn't appear to be printing any errors, but in the event that it does in the future it would be nice to inform users.
+- Allow deletion of clustal schemes and analysis sets. I didn't implement this because it doesn't seem like it would be desireable to lose the data from a long-running job through accidental deletion. If you really need to delete something, you can do it manually through the MongoDB shell (though be sure to also delete associated trees if you delete a clustal scheme).
+- Data export. Maybe Steve and co. want to be able to download data into a file.
+- Expand the query UI with more options.
+- Fix UI bugs. Some of the scrollable sections occasionally cut off the very bottom. If the numbers in a stat on the Processing tab get to long, they will overflow into the next stat panel.
+- Supply a new `updated-fn` to the api that can put a cap on the rate of state pushes.
+- Rather than compiling the server directly on the cluster, it might be easier to compile a production binary that can just be run on the cluster. I imagine that you would run `boot production` to do this, and I'm pretty sure that `core.clj` is the entry point for a production build. I never modified `core.clj` beyond a brief comment, so you'll have to modify it to start the server. See the `devserver.clj` file for an example of how to start the server. I think you'd want to run the same code, but without the `with-pre-wrap` wrapper.
+- Optimize stuff.
+- Audit the app for security. IT IS NOT SECURE RIGHT NOW, and I imagine it will only ever be used on St. Olaf's internal network, so maybe that's not a big deal. But here are some potential security issues off the top of my head right now: No CSRF token set for Sente (websocket comms), no authentication to access the server, no authentication to access the database, no data validation before saving data.
 
 
 ##Getting Started
 - Installing Clojure tools
 - Installing MongoDB
+- Installing ClustalW
 - Running the database
 - Running the server
 
@@ -50,6 +40,11 @@ To run Clojure code and build this application, you need to have Java 1.6 ("vers
 
 ###Installing MongoDB
 - Platform-specific instructions: http://docs.mongodb.org/manual/installation/
+
+###Installing ClustalW
+- Go here http://www.clustal.org/clustal2/#Download
+- Download the ClustalW 2.1 binary for your system.
+- Make sure it is in your `PATH` environment var, so the server can find it.
 
 ###Running the database
 - Instructions here: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/#run-mongodb
@@ -84,6 +79,8 @@ hybsearch
  |  |  |  |           not used in development builds.
  |  |  |  | devserver.clj: Code for launching the server in development mode.
  |  |  |  | server.clj: Ring middleware, routing, and web socket handlers.
+ |  |  |  | job_manager.clj: Runs triple processing.
+ |  |  |  | clustalw.clj: Interface to ClustalW
  |  | cljs
  |  |  | hybsearch
  |  |  |  | rpc.cljs: Client side endpoints for client-server api.
@@ -129,52 +126,18 @@ The HTTP routes are used for setting up a web socket with the client and for upl
 
 The schemas for the DataScript databases are in the `rpc.cljs` file. The server converts MongoDB objects to DataScript entities by renaming their keys to match the DataScript schema and then converting MongoDB ObjectIds to strings.
 
-##Database Architecture
-This represents something close to our desired architecture, may change as development progresses.
-###Collections
-These collection names are mapped to their string identifiers in the database in the `collections.clj` file. The general structure of an individual object in each collection is below each collection name. MongoDB does not enforce a schema, so one of the things we should do at some point is ensure that objects fit our schema when they're added.
-
-- sequences
-  - accession : `string`
-  - binomial : `string`
-  - definition : `string`
-  - sequence : `string`
-- clustal-schemes
-  - name : `string`
-  - There is a parameter for each Clustal option, see code in `api.clj` for more detail.
-- analysis-sets
-  - name : `string`
-  - sequences : `array of accession number strings`
-  - unprocessed_triples : `list of triple ids`
-  - processing_triples : `list of triple ids`
-  - processed_triples : `list of triple ids`
-- triples
-  - sequences : `unordered array of sequence ids`
-- trees
-  - triple_id : `id of the associated triple`
-  - scheme_id : `id of the clustal scheme used to produce this tree`
-  - frame : `accession of the sequence framing the tree`
-  - hinge : `unordered array of the accessions of the two sequences in the hinge`
-  - distances : `{accession: dist, accession: dist, accession: dist }`
-
-
-###Indexing
-This is an idea of the kind of indexing that will make our lives easier. Some have not yet been implemented.
-accession->sequence
-scheme->trees
-scheme->frame->hinge
-binomial->loci
-unique keys
-can we do a unique index on the sequences field of a triple?
+##Data Model
+This section originally specified what objects in various collections in the database look like. I recommend that you instead refer to the methods that construct objects in `api.clj` and `job_manager.clj`, since those will always be the most up-to-date authority. That said, MongoDB does not enforce a strict schema (that's another reason data validation could be something useful to add), so there's always the possibility of old data not matching data that was constructed after a change was made to a constructor. This will not be a problem if you never edit the constructors, or if modified constructors only ever touch a fresh, empty database.
 
 ###Monger
+All of the interaction with the database is ultimately performed through Monger, which you can find here: http://clojuremongodb.info/. It has pretty good docs of its own.
 
 
 ##Client Architecture (User Interface)
-- Hoplon templating language
-- Javelin cells
-- Datascript
+The UI relies on the following dependencies:
+- Hoplon templating language:
+- Javelin cells:
+- Datascript:
 
 ##Processing Strategy
 - structures.html covers the theoretical side of this
-- cover the sequence of events from a user pushing the "play" button to processing completing.

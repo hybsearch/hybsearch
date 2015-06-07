@@ -143,23 +143,24 @@
       (@updated-fn)
       true)))
 
-(defn potential-hybrid? [g-tree]
+(defn potential-hybrid? [g-tree seq-map]
   (let [hinge-accs (map first (rest g-tree))
-        A (:binomial (crud/read-sequence-by-accession @(db/db) (first hinge-accs)))
-        B (:binomial (crud/read-sequence-by-accession @(db/db) (first (rest hinge-accs))))
-        ]
+        A (get-in seq-map [(first hinge-accs) :binomial])
+        B (get-in seq-map [(first (rest hinge-accs)) :binomial])]
     (not (= A B)))) ;; If the binomials in the hinge are not equal, this is a potential hybrid.
 
-(defn make-tree [g-tree triple-id scheme-id]
-  {:_id (ObjectId.)
-   :clustalscheme scheme-id
-   :triple triple-id
-   :tree g-tree
-   :frame_binomial (:binomial (crud/read-sequence-by-accession @(db/db) (first (first g-tree))))
-   :hinge_key (cljstr/join "," (sort (map first (rest g-tree))))
-   :pair_key (cljstr/join "," (sort []))
-   :nonmonophyly (potential-hybrid? g-tree)
-   })
+(defn make-tree [g-tree triple-id scheme-id seq-map]
+  (let [binomials (sort (map #(:binomial %) (vals seq-map)))]
+    {:_id (ObjectId.)
+     :clustalscheme scheme-id
+     :triple triple-id
+     :tree g-tree
+     :frame_binomial (get-in seq-map [(first (first g-tree)) :binomial])
+     :hinge_key (cljstr/join "," (sort (map first (rest g-tree))))
+     :pair_key (cljstr/join "," [(nth binomials 0) (nth binomials 2)])
+     :nonmonophyly (potential-hybrid? g-tree seq-map)
+     }))
+
 
 (defn process-triples! [job-id triples]
   (swap! active-jobs assoc-in [job-id :future]
@@ -177,7 +178,10 @@
                                     C (crud/read-sequence-by-accession @(db/db) (nth accessions 2))
                                     options (crud/read-clustal-scheme-by-id @(db/db) (:clustalscheme job))
                                     g-tree (cw/grouped-tree (cw/clustalw-tree [A B C] options))
-                                    tree (make-tree g-tree t (:clustalscheme job))]
+                                    tree (make-tree g-tree t (:clustalscheme job) {(:accession A) A
+                                                                                   (:accession B) B
+                                                                                   (:accession C) C
+                                                                                   })]
                                 ;;(>!! output-chan (str "Job: " job-id " Tree: " tree))
                                 (try
                                   (crud/create-tree @(db/db) tree)
