@@ -137,11 +137,12 @@ This section originally specified what objects in various collections in the dat
 All of the interaction with the database is ultimately performed through Monger, which you can find here: http://clojuremongodb.info/. It has pretty good docs of its own.
 
 
-##Client Architecture (User Interface)
+##Client (User Interface)
 The UI relies on the following dependencies:
-- Hoplon templating language:
-- Javelin cells:
-- Datascript:
+- Hoplon templating language: https://github.com/tailrecursion/hoplon
+- Javelin cells: https://github.com/tailrecursion/javelin
+- Datascript: https://github.com/tonsky/datascript
+- Sente (websockets): https://github.com/ptaoussanis/sente
 
 ##Processing Strategy
-- structures.html covers the theoretical side of this
+The structures.html file included with the docs covers the mathy/theoretical side of this. You should be able to understand what's going on just by reading the code in the job manager. Don't hesitate to ask if you have questions.
