@@ -8,11 +8,11 @@
         triples (cell= (:job/triples (first job)))
         processed (cell= (:job/processed (first job)))
         proc-stat (cell= (if initialized (str processed "/" triples) "-"))
-        avgtime-stat (cell= (if initialized (.toFixed (:job/avgtime (first job)) 4) "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+        avgtime-stat (cell= (if initialized (.toFixed (:job/avgtime (first job)) 4) "-"))
         time-stat (cell= (if initialized (str (.toFixed (/ (* (:job/avgtime (first job))
                                                               (- triples processed))
                                                            60)
-                                                        1) "m") "-")) ;; Todo: Maybe it would be better to display this when status = "Running."
+                                                        1) "m") "-"))
         status (cell= (:job/status (first job)))
         errors (cell= (:job/errors (first job)))]
     (div :class "ui three column grid"

@@ -13,7 +13,7 @@
     (div :style "height: 100%;"
       (div :class "ui pointing secondary menu"
            (div :class "float right header item"
-                (text "Scheme: ~{scheme-name} | Set: ~{set-name}")) ;; Todo use intersect symbol
+                (text "Scheme: ~{scheme-name} | Set: ~{set-name}"))
            (a :class "blue active item" :data-tab "clustal-scheme" (i :class "setting icon") "Clustal Scheme")
            (a :class "blue item" :data-tab "analysis-set" (i :class "cube icon") "Analysis Set")
            (a :class "blue item" :data-tab "job" (i :class "dashboard icon") "Processing")

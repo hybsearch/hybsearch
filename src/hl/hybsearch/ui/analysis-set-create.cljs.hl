@@ -1,10 +1,8 @@
 (ns ui.analysis-set-create)
 
-
+;; Todo: Guard against anything other than a GenBank file being uploaded?
 (defelem create-form
   [{} children]
-  ;; Todo: Create a UI that gives you sequences allowed for the definition, and a button to add each item.
-  ;; Note that this might be resource-intensive, so play it by year.
   (form :class "ui inverted form"    :id "analysis-set-create-form"
         :action "/analysis-sets/new" :method "post"
         :target "_blank"             :enctype "multipart/form-data"

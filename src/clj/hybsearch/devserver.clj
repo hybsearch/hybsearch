@@ -12,7 +12,7 @@
                 (do
                   (server/start-router!)
                   (swap! server/server
-                         #(or % (hk/run-server ;; Add additional middleware here if desired
+                         #(or % (hk/run-server ;; Add additional middleware for development here if desired
                                     (server/middleware (core/get-env :out-path))
                                   {:port 8000 :join? false}))))))
 

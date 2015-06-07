@@ -5,19 +5,6 @@
             [hybsearch.db.collections :as coll])
   (:import org.bson.types.ObjectId))
 
-
-;; Note: MongoDB uses MMAPV1 by default so we can use Monger here (Can't use WiredTiger since Monger uses the 2.x Java driver)
-
-
-; (let [conn (mg/connect) ;; localhost, default port (27017)
-;       db   (mg/get-db conn "test")
-;       coll "restaurants"]
-;   (println "Query: " (mc/find-maps db coll {"address.building" "1007"}))
-;   (println "Number of addresses: " (mc/count db coll))
-
-;   )
-
-
 ;; As a note, it is recommended to always store new documents with the :_id key set,
 ;; since the Monger driver will have to mutate the document, which given
 ;; Clojure's immutable data structures might result in behavior the MongoDB authors
@@ -26,28 +13,20 @@
 
 
 ;; IMPORTANT TODO:
-;; Todo: Add Validateur for data validation on create methods
+;; PossibleTodo: Add Validateur for data validation on create methods
 ;; Implement validations as separate methods for each document type (not internal to any crud methods)
 
 
 ;; Note: All of these methods take Clojure data structures as arguments.
 
 
-
-
-
 ;; ------------------------
 ;;  Sequences
 ;; ------------------------
 
-;; Sequences are unique by accession number and immutable once created.
-;; We do not yet allow deletion (this has to sync to deletions
-;; on a lot of associated collections).
-
-;; This is a batch-write of sequence objects.
-;; The sequences should be an array of Clojure maps,
-;; they will be converted to DB Objects inside this
-;; method.
+;; Sequences are unique by accession number.
+;; We do not yet allow deletion (this will have to sync to deletions
+;; on associated collections if we ever do it).
 
 ;; Returns write result
 (defn create-sequence-ret [db sequence]
@@ -90,7 +69,6 @@
 ;;  Analysis Sets
 ;; ------------------------
 
-;; API Todo: Remember set-def, handle the creation of it outside of CRUD
 (defn create-analysis-set [db analysis-set]
   (mc/insert db coll/analysis-sets analysis-set))
 
@@ -107,7 +85,6 @@
 ;;  Jobs
 ;; ------------------------
 
-;; API Todo: Need to create the set-def separately, and put ref to proper analysis set's set-def in the job map.
 (defn create-job [db job]
   (mc/insert db coll/jobs job))
 

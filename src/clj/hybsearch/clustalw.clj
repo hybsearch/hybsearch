@@ -22,11 +22,6 @@
 ; :clustering
 ; :kimura "true/false"
 
-;; 1) Write sequences to a temporary FASTA file
-;; 2) Run clustalw with that file as input, (?) specify a temporary output file
-;; 3) (?) Scrape scores off of the process's output stream
-;; 4) Use clustalw's temporary output file to generate a tree
-
 ;; Clustal doesn't appear to care if we exceed 80 characters per line in a FASTA file,
 ;; it still produced the same results however the sequence was split up in my experiments
 ;; (obviously not a comprehensive test, but it's probably ok not to bother enforcing the 80 char/line limit)
@@ -116,30 +111,30 @@
                   sorted)]
     (into [] grouped)))
 
-;; Gets tree with example data and default options
-(defn testrun []
-  (let [options {:sequencetype     "DNA" ;; (called "type" on command line)
-                 :alignmenttype    "slow" ;; (specify "quicktree" if fast)
-                 :pwdnamatrix      "iub"
-                 :pwgapopen        "10"
-                 :pwgapext         "0.10"
-                 :ktuple           "1"
-                 :window           "5"
-                 :topdiags         "5"
-                 :pairgap          "3"
-                 :dnamatrix        "iub"
-                 :gapopen          "10"
-                 :gapext           "0.20"
-                 :gapdist          "5"
-                 :endgaps          "false" ;; true/false (leave flag out of command if false)
-                 :iteration        "none"
-                 :numiter          "1"
-                 :clustering       "NJ"
-                 :kimura           "false"
-                 } ;; true/false (leave flag out of command if false)
-        A { :accession "DQ793161" :binomial "Lepus mandshuricus" :sequence "atgaccaatcccgtgcgccctcaccccctacaaaaacttggtaaccactcccgaattgaccttcccgcccccgctcgcatttcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctcactggcctattcctccatataccatacacattcgacacagcaacagcattttcttcaatcacacatatttgccaagacgtaaactatggctgacttaatcgttacctgccggccgatgaagcatcaatattttttatctgcttatatctacctgtaggtcgggaaaactactaccccacagatacgtacataaaaacctggaatattgccattattctattatttgccccgcgcgcaaactcagttatgggctatgttcccccatgaggaccaatatcaatgtgaggcccttctgcatgtacgagtctttcatatcctatcccctagattggaacatgcctagttgaatgaatttgtttccgatttcctgtcgacaaagctaccctcacccgattcttcgctttccacttcattctccctttcatcatcgccgatgtacagatgagtcacttacttttactccctgaccatggctaccctaacctctcagagagcctctcacactccgataagaatcacttccagctccataaccaagttacggaccttcaaagaatcctcggacatatactcctactcatacacctagtcctattctcctccgagcgtgaaggagaccccgacaactactcccctgccaatcctctcagcattactcacccagtaaaacctggatggtatttgacatttgcttacgccattttacgctctagccctaactgactggtaggtgttcgagacccagttatagcaattctcattcaagcaattatccccttcgtccacatatccaaacaacgcagcataatattccgaccgattagccaagtggtgttgagaatcctcgttgcagaccttctaacactcacatggatcggaggacaaccagttgaacacccacctattgatattggacaaggagcatctagcacgaacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaagcattcaaggaagg" }
-        B { :accession "AB687534" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggctcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcataatattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
-        C { :accession "AB687533" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggttcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcatagtattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
-        ]
-    (println (grouped-tree (clustalw-tree [A B C] options)))
-    ))
+; ;; Gets tree with example data and default options
+; (defn testrun []
+;   (let [options {:sequencetype     "DNA" ;; (called "type" on command line)
+;                  :alignmenttype    "slow" ;; (specify "quicktree" if fast)
+;                  :pwdnamatrix      "iub"
+;                  :pwgapopen        "10"
+;                  :pwgapext         "0.10"
+;                  :ktuple           "1"
+;                  :window           "5"
+;                  :topdiags         "5"
+;                  :pairgap          "3"
+;                  :dnamatrix        "iub"
+;                  :gapopen          "10"
+;                  :gapext           "0.20"
+;                  :gapdist          "5"
+;                  :endgaps          "false" ;; true/false (leave flag out of command if false)
+;                  :iteration        "none"
+;                  :numiter          "1"
+;                  :clustering       "NJ"
+;                  :kimura           "false"
+;                  } ;; true/false (leave flag out of command if false)
+;         A { :accession "DQ793161" :binomial "Lepus mandshuricus" :sequence "atgaccaatcccgtgcgccctcaccccctacaaaaacttggtaaccactcccgaattgaccttcccgcccccgctcgcatttcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctcactggcctattcctccatataccatacacattcgacacagcaacagcattttcttcaatcacacatatttgccaagacgtaaactatggctgacttaatcgttacctgccggccgatgaagcatcaatattttttatctgcttatatctacctgtaggtcgggaaaactactaccccacagatacgtacataaaaacctggaatattgccattattctattatttgccccgcgcgcaaactcagttatgggctatgttcccccatgaggaccaatatcaatgtgaggcccttctgcatgtacgagtctttcatatcctatcccctagattggaacatgcctagttgaatgaatttgtttccgatttcctgtcgacaaagctaccctcacccgattcttcgctttccacttcattctccctttcatcatcgccgatgtacagatgagtcacttacttttactccctgaccatggctaccctaacctctcagagagcctctcacactccgataagaatcacttccagctccataaccaagttacggaccttcaaagaatcctcggacatatactcctactcatacacctagtcctattctcctccgagcgtgaaggagaccccgacaactactcccctgccaatcctctcagcattactcacccagtaaaacctggatggtatttgacatttgcttacgccattttacgctctagccctaactgactggtaggtgttcgagacccagttatagcaattctcattcaagcaattatccccttcgtccacatatccaaacaacgcagcataatattccgaccgattagccaagtggtgttgagaatcctcgttgcagaccttctaacactcacatggatcggaggacaaccagttgaacacccacctattgatattggacaaggagcatctagcacgaacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaagcattcaaggaagg" }
+;         B { :accession "AB687534" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggctcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcataatattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
+;         C { :accession "AB687533" :binomial "Lepus coreanus"     :sequence "atgaccaacattcgtaaaactcatcccctactaaaaattgttaaccactccctaattgaccttcccgccccctcaaacatctcagcctgatgaaactttggctccctattaggactatgcctaataatccaaatcctaactggcctgttcctagccatacactacacatcagacacagcaacagcattttcttcagtcacacatatttgccgagacgtaaaccatggctgacttattcgttacctgcacgccaatggggcatcaatattttttatctgcttatatatacatgtaggtcgtggaatctactacggttcatatacttacctagaaacctggaatattggcattattctactatttgcagtaatagccacagcatttataggctatgttctcccatgaggacaaatatcattctgaggcgctactgtaattaccaatcttttatcagctatcccctacattggaacaaccctagttgaatgaatttgaggaggattttcagtcgacaaagctacactcacccgattcttcgctttccacttcattctcccattcatcatcgcagcactagtgatgattcacttacttttcctccatgaaactggctccaataacccatcaggtatcccatcagactctgataagattccattccacccctattacacaattaaagaccttctaggatttctcgtacttatcctcctactcatactcctagtcttattctcccctgaccttctcggagacccagacaactacacccctgccaatcctctcaacactcctccccacatcaaacctgaatggtattttctattcgcctacgccattttacgctcgatccctaacaaactaggaggtgttctagccctagttatatcaattctcatcctagcaattatccccttcctccacatatccaaacaacgcagcatagtattccgaccgattagccaagttctcttctgaatcctcgttgcagaccttctaacactcacatggatcggagggcaaccagttgaacacccatttattactattgggcaagtagcatctatcctttacttctctatcatccttatccttataccccttgcaagcttaattgagaataaaatccttaaatgaagg" }
+;         ]
+;     (println (grouped-tree (clustalw-tree [A B C] options)))
+;     ))

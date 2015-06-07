@@ -22,10 +22,8 @@
 ;; Utility
 ;; ----------
 
-;; Todo: Extend wrap-default so you can provide a vector of valid options to match against
 (defn wrap-default [datum dv]
   (if (= datum "") dv datum))
-
 
 ;; ----------
 ;; Sequences
@@ -84,14 +82,6 @@
              :initialized false}]
   (crud/create-job @(db/db) job)))
 
-;; Todo: Could optimize this by allowing the provision of an id for a clustal scheme,
-;;       analysis-set, or both, which constrains the Cartesian product to pairs
-;;       containing that id.
-
-;; Compute Cartesian product of clustal schemes and analysis sets
-;; Filter out pairs for which jobs exist
-;; Create jobs for all the rest
-
 (defn job-pair-exists? [scheme-id set-id]
   (> (count (crud/read-job-by-pair @(db/db) scheme-id set-id)) 0))
 
@@ -114,14 +104,10 @@
 ;; ----------
 
 (defn create-analysis-set [set-name gb-file]
-  ;; Create the set-def, then use its id to create the analysis set
-  (println "create-analysis-set")
   (let [accessions (upload-sequences gb-file)
         analysis-set {:name set-name
                       :sequences accessions
                       :_id (ObjectId.)}]
-    (println "accessions: " accessions)
-    (println "analysis-set: " analysis-set)
     (crud/create-analysis-set @(db/db) analysis-set)
     (ensure-jobs)
     (@updated-fn)))
@@ -160,17 +146,11 @@
     (@updated-fn)))
 
 
-
-
-
-
-
-
 ;; -----------------------------------------------------
+;; State construction:
 ;; -----------------------------------------------------
 
 ;; Utility to average the time vector
-;; handles edge cases
 ;; Divides average time per triple by the number
 ;; of workers per job, to estimate advantage of
 ;; parallelism.
@@ -179,7 +159,7 @@
     0
     (/ (apply + v) (count v) jm/num-job-workers)))
 
-;; cljset/rename-keys to match datascript schema immediately after query,
+;; Rename keys to match datascript schema immediately after query,
 ;; to avoid inter-collection name collisions that could occur once combined.
 ;; Also filter out nil entries, since these aren't allowed in datascript.
 (defn datascript-jobs-state []
@@ -236,27 +216,15 @@
                                             })
                       (crud/read-jobs @(db/db)))
         combined (concat clustal-schemes analysis-sets jobs)
-        ; tempids  (reduce into {}
-        ;                 (map-indexed
-        ;                   (fn [i ent] {(:db/id ent) (- (inc i))})
-        ;                      combined))
         ;; Convert ObjectIds to Strings
-        entities (walk/prewalk #(if (instance? ObjectId %) (.toString %) ;;(get tempids %)
+        entities (walk/prewalk #(if (instance? ObjectId %) (.toString %)
                                   %) combined)
-        ] ;; Todo: Provide an index of tempids to MongoDB ObjectId strings to
-          ;;       the client so it can make specific requests for more data.
-          ;;       Could probably store in datascript with this schema:
-          ;;                     :mongodb/objectid {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-          ;;                     :mongodb/localref {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity :db/valueType :db.type/ref}
-
-          ;; Todo: Purge any inconsistent data. i.e. Analysis set missing its setdef, dead references, etc.
+        ]
     ; (println "clustal-schemes: " (pr-str clustal-schemes))
     ; (println "analysis-sets: " (pr-str analysis-sets))
     ; (println "jobs: " (pr-str jobs))
-    ; (println "set-defs: " (pr-str set-defs))
     ; (println "Combined: " (pr-str combined))
-    ;;(println "Temp IDs: " (pr-str tempids))
-    ;;(println "Entities: " (pr-str entities))
+    ; (println "Entities: " (pr-str entities))
     entities))
 
 (defn get-jobs-state []

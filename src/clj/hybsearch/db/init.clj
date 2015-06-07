@@ -3,9 +3,6 @@
             [monger.collection :as mc]
             [hybsearch.db.collections :as coll]))
 
-
-;; Note: MongoDB uses MMAPV1 by default so we can use Monger here (since Monger uses the 2.x Java driver)
-
 ;; Shared DB access point
 
 (defonce _db (atom nil))
@@ -27,9 +24,11 @@
     (mc/ensure-index db coll/trees (array-map :clustalscheme 1 :triple 1) {:unique true})
     db))
 
-;; TODO: Throw error if ensure-db fails
-
+;; TODO: Might be a good idea to throw an error if ensure-db fails.
+;; Otherwise an error will probably occur when you try to perform
+;; a db operation without an initialized database.
 (defn ensure-db []
   (if (nil? @_db) (reset! _db (init-db))))
 
-(defn db [] (ensure-db) _db) ;; ensure-db and return _db, use this to get the db atom so it's always initialized
+;; Use this to get the db atom so it's always initialized
+(defn db [] (ensure-db) _db)

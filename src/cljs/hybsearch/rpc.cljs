@@ -32,8 +32,6 @@
              :clustalscheme/numiter               {:db/cardinality :db.cardinality/one}
              :clustalscheme/clustering            {:db/cardinality :db.cardinality/one}
              :clustalscheme/kimura                {:db/cardinality :db.cardinality/one}
-             :clustalscheme/numtriples            {:db/cardinality :db.cardinality/one} ;; Always the same, equal to the number of triples that can be created for all sequences
-             :clustalscheme/numproc               {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
              :analysisset/sequences               {:db/cardinality :db.cardinality/one} ;; Number of sequences
@@ -48,41 +46,15 @@
              :job/avgtime                         {:db/cardinality :db.cardinality/one}
              })
 
-
-(defonce sequences-db-schema {
-             :mongodb/objectid                   {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-             :sequence/accession                 {:db/cardinality :db.cardinality/one :db/unique :db.unique/identity}
-             :sequence/binomial                  {:db/cardinality :db.cardinality/one}
-
-             ;; Todo: Eventually allow more sequence information on client.
-             ;; There is also more species information than the binomial available in the GenBank files, i.e. the ncbi_taxid
-             ;; Will probably also need to enforce uniqueness on the clustal-schemes
-            })
-
-
-;; We do two client-side databases so sequence data (of which there will be a lot) doesn't have to be
-;; pushed repeatedly in its entirety. (We can request entities as needed for sequences, because we'll
-;; know from the job data or a dynamic form which ones we'll need). Job data is entirely an unknown,
-;; but is small, so we can just poll for that.
-
-(defonce sequences-db (d/create-conn sequences-db-schema))
-
 (defc jobs-state {})
 (defc jobs-error nil)
 (defc jobs-loading [])
-
-(defc sequences-state {})
-(defc sequences-error nil)
-(defc sequences-loading [])
 
 (defc analysis-set-seqs {}) ;; Stores the sequences for each analysis set
 (defc query-results {})
 
 (defc= jobs-entities (:entities jobs-state))
 (defc= jobs-db (:db-after (d/with (d/empty-db jobs-db-schema) jobs-entities)))
-
-
-;; Todo: wish there was a better way to query than just by name (i.e. what if no name?)
 
 (defc= clustal-scheme-ids (d/q '[:find ?e :where [?e :clustalscheme/name ?name]] jobs-db))
 (defc= analysis-set-ids (d/q '[:find ?e :where [?e :analysisset/name ?name]] jobs-db))
@@ -122,11 +94,6 @@
   (def chsk-send! send-fn) ; ChannelSocket's send API fn
   (def chsk-state state)   ; Watchable, read-only atom
   )
-
-
-
-
-
 
 ;; ----------------------
 ;; Recieve Message Routing
@@ -220,26 +187,3 @@
 
 ;; Init
 (defn start! [] (start-router!))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

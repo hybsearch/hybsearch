@@ -1,5 +1,3 @@
-;; Todo: Validate to ensure that no clustal schemes that are technically equal to each other are created.
-
 (ns ui.clustal-scheme-create)
 
 (defelem create-form
@@ -151,8 +149,6 @@
                 (div :class "menu"
                      (div :class "item" :data-value "false" "No (Default)")
                      (div :class "item" :data-value "true" "Yes")))))))
-
-
 
 
 (defelem create-modal

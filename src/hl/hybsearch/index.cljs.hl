@@ -4,29 +4,15 @@
     [tailrecursion.hoplon.reload :refer [reload-all]]
     [ui.scheme-set-list :as scheme-set-list]
     [ui.scheme-set-detail :as scheme-set-detail]
-    [ui.sequences-upload :as sequences-upload]
     [ui.analysis-set-create :as set-create]
     [ui.clustal-scheme-create :as scheme-create]
-    [ui.job-create :as job-create]
    ))
 
-;;(reload-all 1000)
-
 (rpc/start!)
-
 
 (defn show-modal [id] (-> (js/jQuery (str "#" id)) (.modal "show")))
 (defn hide-modal [id] (-> (js/jQuery (str "#" id)) (.modal "hide")))
 
-
-;; Todo: Guard against anything other than a GenBank file being uploaded
-
-;; We should always pass the db to ui objects, in case we decide to extend them with custom queries later
-;; might be cleaner code (though... maybe less efficeint) to just pass client state db to ui objects and perform
-;; queries internally.
-
-
-;; Todo: Open a state serving websocket with the server. Is RPC already a websocket?
 
 (html
   (head)
@@ -61,7 +47,6 @@
                                    (p "Please select a Clustal scheme and analysis set to see more detail. "
                                       "You can create these using the menu above."))))))))))
 
-
 ;; Initialize JS based elements
 (-> (js/jQuery ".ui.modal"))
 (-> (js/jQuery ".menu .item") .tab)
@@ -74,6 +59,8 @@
 ;; jQuery .ajax kept sending GET requests instead of
 ;; POST, so we force it with .post() instead.
 ;; This, unfortunately, removes some of the generality of this function.
+;; For some reason, though, this still doesn't keep the enctype defined on the form
+;; (instead it always substitutes application/x-www-form-urlencoded)
 (defn setup-ajax-submit [form]
   (.submit form
            (fn [ev]
@@ -91,7 +78,7 @@
                                           })))
 
 ;; analysis set create modal init
-;;(setup-ajax-submit (js/jQuery "#analysis-set-create-form"))
+;;(setup-ajax-submit (js/jQuery "#analysis-set-create-form")) ;; Todo: Wish I could just use this, but the enctype is an issue...
 (-> (js/jQuery "#analysis-set-create-modal") (.modal
                                        (clj->js
                                          {

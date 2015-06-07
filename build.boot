@@ -10,7 +10,6 @@
                   [compojure "1.3.3"]
                   [tailrecursion/boot.task   "2.2.4"]
                   [tailrecursion/hoplon      "5.10.25"]
-                  ;;[tailrecursion/javelin     "3.8.0"]
                   [exicon/hoplon5-semantic-ui "1.10.2-SNAPSHOT"]
                   [org.clojure/clojurescript "0.0-3119"]
                   ;; 3119 (release) and 3178 (pre-release) are the latest clojurescript compilers

@@ -12,8 +12,8 @@
            [org.bson.types ObjectId]))
 
 
-;; This is one of the few modules where we have to manage state
-;; by hand, so be careful!
+;; This is one of the few modules where we have to manage
+;; state outside of functions by hand, so be careful!
 
 ;; The number of thread workers created for each job
 (def ^:const num-job-workers 4)
@@ -31,18 +31,20 @@
       (println msg))))
 
 ;; Tracking jobs
-;; Job in active-jobs is objectid: {:future fut}
-;; :times is a vector of times (in seconds) of previously processed triples.
-;; :times currently ignores channel overhead.
+;; active-jobs looks like {:objectid {:future fut}}
 ;; You can pause (cancel without undoing work) a job by calling future-cancel on its future.
-;; Once you've taken all the values off a closed channel,
-;; subsequent takes will return nil.
+;; Job completion closes the channel.
+;; Once you've taken all the values off a closed channel, subsequent takes will return nil.
 ;; Workers know to exit when they take nil from a channel.
 (defonce active-jobs (atom {}))
-;; Split this out of active-jobs, because update-in from a
-;; sub-thread would re-insert a job when we tried to pause jobs.
-;; This will grow by 1 array of 4 doubles per job run, shouldn't
-;; be a big deal.
+
+;; We split this out of active-jobs, because trying to update timings stored in active-jobs
+;; from a sub-thread post-pause (pause is not immediate, but removal from active-jobs is)
+;; would cause the key path to the job to be recreated. Existence of a job in active-jobs
+;; is the "redundance" condition used to prevent more than one instance of the same job
+;; from being run. Thus, storing timings in active-jobs could result in a condition
+;; where paused jobs are prevented from resuming.
+;; This will grow by 1 array of 4 doubles per job run, shouldn't be a big deal.
 (defonce timings (atom {}))
 
 (defn correct-processed-metric [job-id num-left]
@@ -92,7 +94,7 @@
 
 
 ;; Takes sequences a and b
-;; returns all triples that can be created where
+;; Returns all triples that can be created where
 ;; at least one element is from a and at least one
 ;; element is from b
 (defn gen-triples [a b]
@@ -123,8 +125,7 @@
              (:_id (crud/read-triple-by-unique-key @(db/db) (cljstr/join "," (sort t)))))))
        ts))
 
-;; Initializes the job (creates triples) if it is not yet initialized.
-;;         1) Checks if the job is not yet initialized, if not, creates the triples and sets initialized to true.
+;; Checks if the job is not yet initialized, if not, creates the triples and sets initialized to true.
 ;; Returns true if just initialized, false if already initialized.
 (defn init-job [job]
   (if (:initialized job)
@@ -191,14 +192,15 @@
                               (insert-time! job-id (/ (- (System/nanoTime) start) 1000000000.0)) ;; Seconds
                               ))
                           t)) ;; Note returned t here, while loop exits when t is nil (channel closed condition)
-                 (>!! output-chan (str "Consumer exiting."))))
+                 ;; (>!! output-chan (str "Consumer exiting."))
+                 ))
              (loop [ts triples]
                (if (and (seq ts) (not (Thread/interrupted)))
                  (do
                    (>!! t-chan (first ts))
                    (recur (rest ts)))))
              ;; When finished, close the channel and remove the job from active-jobs
-             (>!! output-chan (str "Job: " job-id " finished."))
+             ;; (>!! output-chan (str "Job: " job-id " finished."))
              (close! t-chan)
              (swap! active-jobs dissoc job-id)))))
 
@@ -223,8 +225,8 @@
 ;; Technically this could remove the job from active-jobs while it's future
 ;; were still running, but in testing it reliably cancels. I think that the
 ;; future manages to deal with the interrupt when it's waiting on the channel,
-;; because the channel operations block, and InterruptedException is often
-;; thrown by blocking operations. That's just a theory though.
+;; because the channel operations block, and interrupts can usually kill a thread
+;; during blocking operations. That's just a theory though.
 (defn pause-job! [job-id]
   (let [f (get-in @active-jobs [job-id :future])]
     (if (future? f)

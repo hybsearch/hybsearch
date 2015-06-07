@@ -15,12 +15,8 @@
             [hybsearch.api :as api]
             [tailrecursion.cljson :refer [clj->cljson cljson->clj]]))
 
-;; This creates a Ring handler for the routes.
-;; Todo: for some reason this part of the server isn't dynamically reloading during development.
-
-
+;; The server, in all its glory!
 (defonce server (atom nil))
-
 
 ;; Channel socket definitions.
 (let [{:keys [ch-recv send-fn ajax-post-fn ajax-get-or-ws-handshake-fn
@@ -52,6 +48,7 @@
 ;; Channel Socket Handler functions
 ;; -----------------------
 (defmulti event-msg-handler :id) ; Dispatch on event-id
+
 ;; Wrap for logging, catching, etc.:
 (defn event-msg-handler* [{:as ev-msg :keys [id ?data event]}]
   (println "Event:" event)
@@ -82,7 +79,6 @@
 (defmethod event-msg-handler :rpc/query-nonmonophyly
   [{:as ev-msg :keys [?data ?reply-fn]}]
   (when ?reply-fn
-    (println (api/query-nonmonophyly ?data))
     (?reply-fn (api/query-nonmonophyly ?data))))
 
 (defmethod event-msg-handler :rpc/get-jobs-state
@@ -96,24 +92,8 @@
     (?reply-fn (api/get-analysis-set-sequences))))
 
 ;; -----------------------
-;; Other Routing Functions
+;; URL Routing Functions
 ;; -----------------------
-
-(defn upload-genbank-file
-  [{tempfile :tempfile filename :filename :as fileinfo}]
-  (try
-    (api/upload-sequences tempfile)
-    (str "<!DOCTYPE html>
-        <html lang=\"en\">
-        <head><meta charset=\"UTF-8\" />
-        <title>Upload Status</title>
-        </head>
-        <body>
-        <h1>Your upload of " filename " was successful!</h1>
-        <p>Sequences have been added to the database.</p></body></html>")
-    (catch Exception e {:status 500
-                        :body (str e "An error occured.")})))
-
 
 (defn create-analysis-set
   [{set-name :name {tempfile :tempfile} :file :as params}]
@@ -132,15 +112,6 @@
                         :body (str e " Oops! An error occured: Your clustal scheme was probably not created.")})))
 
 
-; (defn create-job [job-data]
-;   (try
-;     (api/create-job job-data)
-;     (push-jobs-state-everywhere)
-;     "Job successfully created." ;; Todo: Correct status code
-;     (catch Exception e {:status 500
-;                         :body (str e " Oops! An error occured: Your clustal scheme was probably not created.")})))
-
-
 ;; -----------------------
 ;; Route Defs
 ;; -----------------------
@@ -154,7 +125,7 @@
   (route/not-found "<h1>404.</h1>"))
 
 
-;; Set updated-fn in api:
+;; Set updated-fn for api to use.
 (api/reset-updated-fn! push-jobs-state-everywhere)
 
 ;; Sente router
@@ -165,7 +136,6 @@
   (reset! router_ (sente/start-chsk-router! ch-chsk event-msg-handler*)))
 
 ;; Session setup
-;;(defn make-session [])
 (defn middleware [public-path]
   (-> all-routes
       (keyword-params/wrap-keyword-params)
