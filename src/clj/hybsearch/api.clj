@@ -260,8 +260,19 @@
     entities))
 
 (defn get-jobs-state []
-  ;;seed-jobs-data
   {:entities (datascript-jobs-state)})
+
+(defn get-analysis-set-sequences []
+  (let [sets (crud/read-analysis-sets @(db/db))
+        full-seqs (map (fn [s] (-> s
+                                   (update-in [:_id] #(.toString %))
+                                   (update-in [:sequences] #(map (fn [seqn] (assoc-in seqn [:_id] (.toString (:_id seqn))))
+                                                              (crud/read-sequences-by-accessions @(db/db) %)))))
+                      sets)
+        by-id (reduce (fn [m s] (assoc-in m [(:_id s)] (:sequences s)))
+                          {} full-seqs)
+        ]
+    by-id))
 
 ;; ------------------
 ;; Query

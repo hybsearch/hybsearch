@@ -75,6 +75,7 @@
 (defc sequences-error nil)
 (defc sequences-loading [])
 
+(defc analysis-set-seqs {}) ;; Stores the sequences for each analysis set
 (defc query-results {})
 
 (defc= jobs-entities (:entities jobs-state))
@@ -95,7 +96,6 @@
 
 (def prev-update-num (atom 0))
 (defc= scheme-set-job (when (and selected-clustal-scheme selected-analysis-set)
-                        (println "job cell uptd")
                         ;; We wrap the query result in a vector with a new number
                         ;; at the end because Javelin can't tell that the job changed
                         ;; based on the query result alone. The new number triggers
@@ -140,13 +140,12 @@
   (print "Unhandled recv event: " event))
 
 (defmethod recv-msg-handler :rpc/recv-jobs-state
-  [{:as ev-msg :keys [id ?data event]}]
+  [{:as ev-msg :keys [?data]}]
   (do (print "Recv Jobs Data") (reset! jobs-state ?data)))
 
-  ; (let [[?jobs-state] ?data]
-  ;   (print "In handler.")
-  ;   (print "Jobs state: " ?jobs-state)))
-
+(defmethod recv-msg-handler :rpc/recv-analysis-set-sequences
+  [{:as ev-msg :keys [?data]}]
+  (reset! analysis-set-seqs ?data))
 
 
 ;; ----------------------
@@ -174,9 +173,12 @@
       (chsk-send! [:rpc/get-jobs-state] 5000 ; Timeout
                   (fn [cb-reply]             ; Callback with response
                     (if (sente/cb-success? cb-reply)
-                      (do
-                        ;;(print cb-reply)
-                        (reset! jobs-state cb-reply))))))
+                      (reset! jobs-state cb-reply))))
+      (chsk-send! [:rpc/get-analysis-set-sequences] 5000 ; Timeout
+                  (fn [cb-reply]             ; Callback with response
+                    (if (sente/cb-success? cb-reply)
+                      (reset! analysis-set-seqs cb-reply))))
+      )
     (print "Channel socket state change: " ?data)))
 
 (defmethod event-msg-handler :chsk/recv

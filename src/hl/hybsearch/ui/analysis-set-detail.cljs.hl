@@ -1,32 +1,12 @@
-(ns ui.analysis-set-detail)
+(ns ui.analysis-set-detail
+  (:require [hybsearch.rpc :as rpc]))
 
 (defelem detail
   [{:keys [analysis-set]} children]
-       (div :class "ui active dimmer"
-            (div :class "ui text loader" "Put Analysis Set Details Here")))
-  ; (div
-  ;   (table :class "ui table"
-  ;   (thead
-  ;     (tr
-  ;       (th "Species Binomials:")))
-  ;   (tbody
-  ;     ;;(loop-tpl :bindings [x (get analysis-set :setdef)]
-  ;     (tr(td "Scheme Name")                             (td (cell= (get  clustal-scheme :clustalscheme/name))))
-  ;     (tr(td "Sequence Type")                           (td (cell= (get  clustal-scheme :clustalscheme/sequencetype))))
-  ;     (tr(td "Alignment Type")                          (td (cell= (get  clustal-scheme :clustalscheme/alignmenttype))))
-  ;     (tr(td "Pairwise DNA Weight Matrix (Slow Only)")  (td (cell= (get  clustal-scheme :clustalscheme/pwdnamatrix))))
-  ;     (tr(td "Gap Open (Slow Only)")                    (td (cell= (get  clustal-scheme :clustalscheme/pwgapopen))))
-  ;     (tr(td "Gap Extension (Slow Only)")               (td (cell= (get  clustal-scheme :clustalscheme/pwgapext))))
-  ;     (tr(td "KTUP (Word Size, Fast Only)")             (td (cell= (get  clustal-scheme :clustalscheme/ktuple))))
-  ;     (tr(td "Window Length (Fast Only)")               (td (cell= (get  clustal-scheme :clustalscheme/window))))
-  ;     (tr(td "Top Diags (Fast Only)")                   (td (cell= (get      clustal-scheme :clustalscheme/topdiags))))
-  ;     (tr(td "Pair Gap (Fast Only)")                    (td (cell= (get       clustal-scheme :clustalscheme/pairgap))))
-  ;     (tr(td "DNA Weight Matrix")                       (td (cell= (get     clustal-scheme :clustalscheme/dnamatrix))))
-  ;     (tr(td "Gap Open")                                (td (cell= (get       clustal-scheme :clustalscheme/gapopen))))
-  ;     (tr(td "Gap Extension")                           (td (cell= (get        clustal-scheme :clustalscheme/gapext))))
-  ;     (tr(td "Gap Distances")                           (td (cell= (get       clustal-scheme :clustalscheme/gapdist))))
-  ;     (tr(td "No End Gaps")                             (td (cell= (get       clustal-scheme :clustalscheme/endgaps))))
-  ;     (tr(td "Iteration")                               (td (cell= (get     clustal-scheme :clustalscheme/iteration))))
-  ;     (tr(td "Num Iterations")                          (td (cell= (get       clustal-scheme :clustalscheme/numiter))))
-  ;     (tr(td "Clustering")                              (td (cell= (get    clustal-scheme :clustalscheme/clustering))))
-  ;     (tr(td "Use Kimura")                              (td (cell= (get        clustal-scheme :clustalscheme/kimura))))))))
+  (let [id (cell= (:mongodb/objectid analysis-set))]
+    (div :class "ui divided items"
+         (loop-tpl :bindings [s (cell= (or (get rpc/analysis-set-seqs id) []))]
+                   (div :class "item"
+                        (div :class "content"
+                             (div :class "header"
+                                  (:accession @s))))))))

@@ -42,6 +42,10 @@
     :sente/all-users-without-uid
     [:rpc/recv-jobs-state (api/get-jobs-state)]))
 
+(defn push-analysis-set-seqs-everywhere []
+  (chsk-send!
+    :sente/all-users-without-uid
+    [:rpc/recv-analysis-set-sequences (api/get-analysis-set-sequences)]))
 
 
 ;; -----------------------
@@ -86,6 +90,11 @@
   (when ?reply-fn
     (?reply-fn (api/get-jobs-state))))
 
+(defmethod event-msg-handler :rpc/get-analysis-set-sequences
+  [{:as ev-msg :keys [?reply-fn]}]
+  (when ?reply-fn
+    (?reply-fn (api/get-analysis-set-sequences))))
+
 ;; -----------------------
 ;; Other Routing Functions
 ;; -----------------------
@@ -110,6 +119,7 @@
   [{set-name :name {tempfile :tempfile} :file :as params}]
   (try
     (api/create-analysis-set set-name tempfile)
+    (push-analysis-set-seqs-everywhere)
     "OK! Analysis set created!" ;; Todo: Correct status code
     (catch Exception e {:status 500
                         :body (str e " Oops! An error occured: Your analysis set was probably not created.")})))
