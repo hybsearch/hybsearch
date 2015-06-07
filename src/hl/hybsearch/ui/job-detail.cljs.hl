@@ -23,17 +23,17 @@
          (div :class "row" ;; Statistics
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
-                        (div :class "ui statistic"
+                        (div :class "ui small statistic"
                              (div :class "value" (text "~{proc-stat}"))
                              (div :class "label" "Triples Processed"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
-                        (div :class "ui statistic"
+                        (div :class "ui small statistic"
                              (div :class "value" (text "~{avgtime-stat}"))
                              (div :class "label" "Avg. Seconds/Triple (Last 4)"))))
               (div :class "column"
                    (div :class "ui center aligned horizontal segment"
-                        (div :class "ui statistic"
+                        (div :class "ui small statistic"
                              (div :class "value" (text "~{time-stat}"))
                              (div :class "label" "Est. Time Remaining")))))
          (div :class "row" ;; Status

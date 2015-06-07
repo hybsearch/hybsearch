@@ -21,7 +21,7 @@
 - Fix UI bugs. Some of the scrollable sections occasionally cut off the very bottom. If the numbers in a stat on the Processing tab get to long, they will overflow into the next stat panel.
 - Supply a new `updated-fn` to the api that can put a cap on the rate of state pushes.
 - Rather than compiling the server directly on the cluster, it might be easier to compile a production binary that can just be run on the cluster. I imagine that you would run `boot production` to do this, and I'm pretty sure that `core.clj` is the entry point for a production build. I never modified `core.clj` beyond a brief comment, so you'll have to modify it to start the server. See the `devserver.clj` file for an example of how to start the server. I think you'd want to run the same code, but without the `with-pre-wrap` wrapper.
-- Optimize stuff.
+- Optimize stuff. Especially the code that shuffles data around in the job manager prior to processing, or the code that determines how many triples are left. You don't really notice the delay on smaller jobs, but I ran one that involved 300,000+ triples, and it takes about 20-30 seconds to verify and spin up a job on that size dataset.
 - Audit the app for security. IT IS NOT SECURE RIGHT NOW, and I imagine it will only ever be used on St. Olaf's internal network, so maybe that's not a big deal. But here are some potential security issues off the top of my head right now: No CSRF token set for Sente (websocket comms), no authentication to access the server, no authentication to access the database, no data validation before saving data.
 
 

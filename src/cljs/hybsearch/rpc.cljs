@@ -36,7 +36,7 @@
              :clustalscheme/numproc               {:db/cardinality :db.cardinality/one} ;; Depends on how well processed the global set is for this clustal scheme
 
              :analysisset/name                    {:db/cardinality :db.cardinality/one}
-             ;; Todo: Include list of sequences?
+             :analysisset/sequences               {:db/cardinality :db.cardinality/one} ;; Number of sequences
 
              :job/clustalscheme                   {:db/cardinality :db.cardinality/one}
              :job/analysisset                     {:db/cardinality :db.cardinality/one}

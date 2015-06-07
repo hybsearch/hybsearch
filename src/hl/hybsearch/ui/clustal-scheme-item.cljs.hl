@@ -1,24 +1,15 @@
 (ns ui.clustal-scheme-item)
 
-;; Currently expects :data [id "Set Name" num-processed num-total]
-
-
-
 (defelem item
   [{:keys [scheme-cell selected-id-cell]} children]
   (let [id (cell= (get scheme-cell :db/id))
         scheme-name (cell= (get scheme-cell :clustalscheme/name))
-        proc (cell= (get scheme-cell :clustalscheme/numproc))
-        total (cell= (get scheme-cell :clustalscheme/numtriples))
+        obj-id (cell= (get scheme-cell :mongodb/objectid))
         isSelected (cell= (= id selected-id-cell))
         card-classes (cell= {:ui true :fluid true :blue isSelected :card true})]
-;;           (print "Clustal Scheme Item: scheme-cell: " scheme-cell)
-;;           (print "Clustal Scheme Item: selected-id-cell: " selected-id-cell)
    (a :class card-classes
       :on-click #(reset! selected-id-cell @id)
         (div :class "content"
-             (div :class "header" (text "~{scheme-name}"))
-             (div :class "ui small progress"
-                  ;; :data-percent (* 100 (/ @proc @total)) ;; Todo: Get progress bar init working.
-                  (div :class "bar")
-                  (div :class "label" (i :class "wait icon") (text "~{proc}/~{total} triples processed")))))))
+             (div :class "header" (text "~{scheme-name}")))
+        (div :class "extra content"
+             (div :class "ui label" (text "_id: ~{obj-id}"))))))

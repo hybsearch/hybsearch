@@ -1,25 +1,17 @@
 (ns ui.analysis-set-item)
 
-;; Currently expects :data [id "Set Name" num-processed num-total]
-
 (defelem item
   [{:keys [set-cell selected-id-cell]} children]
   (let [id (cell= (get set-cell :db/id))
-        set-name (cell= (get set-cell :analysisset/name))
-        proc (cell= (get set-cell :analysisset/numproc))
-        total (cell= (get set-cell :analysisset/numtriples))
+        scheme-name (cell= (get set-cell :analysisset/name))
+        obj-id (cell= (get set-cell :mongodb/objectid))
+        seqs (cell= (get set-cell :analysisset/sequences))
         isSelected (cell= (= id selected-id-cell))
         card-classes (cell= {:ui true :fluid true :blue isSelected :card true})]
-;;           (print "Analysis Set Item: set-cell: " set-cell)
-;;           (print "Analysis Set Item: selected-id-cell: " selected-id-cell)
    (a :class card-classes
       :on-click #(reset! selected-id-cell @id)
         (div :class "content"
-             (div :class "header" (text "~{set-name}"))
-             (div :class "ui small progress"
-                  ;; :data-percent (* 100 (/ @proc @total)) ;; Todo: Get progress bar init working.
-                  (div :class "bar")
-                  (div :class "label" (i :class "wait icon") (text "~{proc}/~{total} triples processed")))))))
-
-
-
+             (div :class "header" (text "~{scheme-name}"))
+             (div :class "meta" (text "~{seqs} sequences")))
+        (div :class "extra content"
+             (div :class "ui label" (text "_id: ~{obj-id}"))))))

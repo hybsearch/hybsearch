@@ -208,10 +208,11 @@
                                                    })
                              (crud/read-clustal-schemes @(db/db)))
         analysis-sets   (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
-                                                      (dissoc :sequences))
+                                                      (update-in [:sequences] count))
                                                   {
                                                    :_id :mongodb/objectid
                                                    :name :analysisset/name
+                                                   :sequences :analysisset/sequences
                                                    })
                              (crud/read-analysis-sets @(db/db)))
         jobs     (map #(cljset/rename-keys (-> (into {} (filter (comp not nil? val) %))
