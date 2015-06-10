@@ -8,7 +8,7 @@
          (loop-tpl :bindings [s (cell= (or (get rpc/analysis-set-seqs id) []))]
                    (div :class "item"
                         (div :class "content"
-                             (div :class "header" (:accession @s))
-                             (div :class "meta" (:definition @s))
+                             (div :class "header" :text (cell= (:accession s)))
+                             (div :class "meta" :text (cell= (:definition s)))
                              (div :class "extra" :style "word-wrap: break-word;"
-                                  (:sequence @s))))))))
+                                  :text (cell= (:sequence s)))))))))

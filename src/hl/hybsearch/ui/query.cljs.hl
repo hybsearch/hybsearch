@@ -15,12 +15,13 @@
                    (h3 :class "ui header" "Results (Non-monophyly):")
                    (loop-tpl :bindings [pair pairs]
                              (div :class "ui inverted segment"
-                               (h4 :class "ui header" (str "Pair: " @pair))
+                               (h4 :class "ui header" :text (cell= (str "Pair: " pair)))
                                (loop-tpl :bindings [tree (cell= (get result pair))]
-                                         (pre (str "[["  (first (nth @tree 0))
-                                                   " "   (last (nth @tree 0))
-                                                   "] [" (first (nth @tree 1))
-                                                   " "   (last (nth @tree 1))
-                                                   "] [" (first (nth @tree 2))
-                                                   " "   (last (nth @tree 2))
-                                                   "]]"))))))))))
+                                         (pre :text
+                                              (cell= (str "[["  (first (nth tree 0))
+                                                          " "   (last (nth tree 0))
+                                                          "] [" (first (nth tree 1))
+                                                          " "   (last (nth tree 1))
+                                                          "] [" (first (nth tree 2))
+                                                          " "   (last (nth tree 2))
+                                                          "]]")))))))))))
