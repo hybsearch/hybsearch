@@ -101,15 +101,10 @@
 ;; grouped representation, as a vector, with distances in the second
 ;; position and accession numbers in the first position of each element.
 (defn grouped-tree [c-tree]
-  (let [sorted (sort-by last c-tree)
-        dist0 (nth (nth sorted 0) 1)
-        dist1 (nth (nth sorted 1) 1)
-        dist2 (nth (nth sorted 2) 1)
-        grouped (if (< (java.lang.Math/abs (- dist0 dist1))
-                       (java.lang.Math/abs (- dist1 dist2)))
-                  (reverse sorted)
-                  sorted)]
-    (into [] grouped)))
+  (let [sorted (reverse(sort-by last c-tree))
+        ;; grouped (reverse sorted)
+        ]
+    (into [] sorted)))
 
 ; ;; Gets tree with example data and default options
 ; (defn testrun []

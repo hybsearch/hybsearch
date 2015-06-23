@@ -57,6 +57,8 @@ sub GenBank_get_loci_data {
         my $accession_number = $seq->accession_number;
         my $binomial = $seq->species->binomial;
 
+        #print qq(Binomial: $binomial\n);
+
         $loci{$accession_number} = $seq;
 
         # Build lists of indices for each species so we can properly
@@ -128,14 +130,38 @@ sub internal_tree {
     my ($A_accession) = $desc[0]->id =~ /(.*)\//;
 
     # Sort descendents.
-    @desc = sort { $a->branch_length <=> $b->branch_length } @desc; #TODO: never tested this sort to see if it works properly
+    @desc = sort { $a->branch_length <=> $b->branch_length } @desc; #TODO: never tested this sort to see if it works properly, but seems to work
+
+
+#Use loci hash to get species binomial from accession number
+
+=head
+    my $A_species = $desc[0]->species->binomial;
+    my $B_species = $desc[1]->species->binomial;
+    my $C_species = $desc[2]->species->binomial;
+
+    if (($desc[1]->branch_length eq $desc[2]->branch_length) && ($B_species ne $C_species)) {
+        print qq(2 and 3 same length diff species\n);
+        if ($A_species ne $B_species) {
+            @desc[1,2] = @desc[2,1];
+        }
+        
+    }
+=cut
 
     # If distance between last two is greater than first two after sorting,
     # reverse the array to group loci properly.
-    if ( abs($desc[0]->branch_length - $desc[1]->branch_length)
-        < abs($desc[1]->branch_length - $desc[2]->branch_length) ) {
-        @desc = reverse( @desc );
-    }
+    #if ( abs($desc[0]->branch_length - $desc[1]->branch_length)
+    #    < abs($desc[1]->branch_length - $desc[2]->branch_length) ) {
+    #    @desc = reverse( @desc );
+    #}
+
+
+    #my $length0 = $desc[0]->branch_length;
+    #my $length1 = $desc[1]->branch_length;
+    #my $length2 = $desc[2]->branch_length;
+
+    #print qq(Lengths after sort: $length0, $length1, $length2\n);
 
     # Map the accession numbers from desc to tree in the same order.
     my @tree = map { $_->id =~ /(.*)\// } @desc;
@@ -152,10 +178,12 @@ sub internal_tree {
 sub potential_hybridization {
     my ($tree, $loci) = @_;
 
+    my $A_species = $$loci{$$tree[0]}->species->binomial;
     my $B_species = $$loci{$$tree[1]}->species->binomial;
-    my $C_species = $$loci{$$tree[2]}->species->binomial;
+    #my $C_species = $$loci{$$tree[2]}->species->binomial;
 
-    if ($B_species ne $C_species) {
+
+    if ($A_species ne $B_species) {
         return 1;
     }
     return 0;
@@ -411,6 +439,11 @@ sub find_hybridizations {
                         my ( $A, $B, $C ) = @$tree;
                         my $frame = $$loci{ $A }->species->binomial;
                         my $hinge = pair_string($B, $C);
+
+                        my $specA = $$loci{ $A }->species->binomial;
+                        my $specB = $$loci{ $B }->species->binomial;
+                        my $specC = $$loci{ $C }->species->binomial;
+
                         MCE->do('add_potential_tree', $frame, $hinge, $tree);
 
                         # Output
@@ -418,7 +451,7 @@ sub find_hybridizations {
                             my $first = $tree->[0];
                             my $second = $tree->[1];
                             my $third = $tree->[2];
-                            MCE->say($pots_fh, qq([$first,$second,$third],));
+                            MCE->say($pots_fh, qq([$specA: $first, $specB: $second, $specC: $third],));
                             MCE->say(\*STDERR, qq(Found potential hybrid: [$first,$second,$third]));
                         $reporting_lock->unlock;
                     }
@@ -500,7 +533,7 @@ sub output_reciprocals {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./plaamyd.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./chelid.gb');
 
 
     # Construct factory object:
@@ -539,7 +572,7 @@ sub run_tests {
 
     print STDERR "Data checks:\n";
 
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./smallerlepus.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./kino_edit1.gb');
 
     assert(scalar keys %$loci > 0, "%loci is non-empty") if DEBUG;
     assert(scalar keys %$loci_lists > 0, "%loci_lists is non-empty") if DEBUG;
