@@ -101,7 +101,7 @@
 ;; grouped representation, as a vector, with distances in the second
 ;; position and accession numbers in the first position of each element.
 (defn grouped-tree [c-tree]
-  (let [sorted (reverse(sort-by last c-tree))
+  (let [sorted (sort-by last c-tree)
         ;; grouped (reverse sorted)
         ]
     (into [] sorted)))
