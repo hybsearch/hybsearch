@@ -145,10 +145,10 @@
       true)))
 
 (defn potential-hybrid? [g-tree seq-map]
-  (let [hinge-accs (drop-last g-tree)
+  (let [hinge-accs (map first (drop-last g-tree))
         A (get-in seq-map [(first hinge-accs) :binomial])
         B (get-in seq-map [(second hinge-accs) :binomial])]
-        print (str "Tree: " g-tree))
+        ;;print (str "Tree: " g-tree))
     (not (= A B)))) ;; If the binomials in the hinge are not equal, this is a potential hybrid.
 
 (defn make-tree [g-tree triple-id scheme-id seq-map]
