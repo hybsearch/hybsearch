@@ -533,7 +533,7 @@ sub output_reciprocals {
 
 
 sub start {
-    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./chelid.gb');
+    my ( $loci, $loci_lists ) = GenBank_get_loci_data('./lepus.gb');
 
 
     # Construct factory object:
@@ -543,6 +543,10 @@ sub start {
     my @params = (   'ktuple' => 2
                     ,'matrix' => 'BLOSUM'
                     ,'quiet' => 1
+                    ,'pwdnamatrix' => 'IUB'
+                    ,'pwgapopen' => 10
+                    ,'pwgapext' => .10
+                    ,''
                     );
     my $factory = \(Bio::Tools::Run::Alignment::Clustalw->new(@params)); #TODO: See if this works for making a ref
 

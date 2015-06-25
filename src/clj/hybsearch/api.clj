@@ -44,7 +44,7 @@
                 (let [filestr (slurp gb-file)]
                   (map
                     (fn [entry] {:accession (get (re-find #"ACCESSION\s*(\S*)" entry) 1)
-                                 :binomial (get (re-find #"ORGANISM\s*(.*)" entry) 1)
+                                 :binomial (get (re-find #"ORGANISM\s+([^\s]+\s+[^\s]+)" entry) 1)
                                  :definition (get (re-find #"DEFINITION([\s\S]*)ACCESSION" entry) 1)
                                  :sequence (try
                                              (cljstr/replace
