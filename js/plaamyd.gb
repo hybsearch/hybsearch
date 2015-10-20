@@ -1,0 +1,1668 @@
+LOCUS       LM537490                1167 bp    DNA     linear   VRT 03-SEP-2014
+DEFINITION  Amyda ornata mitochondrial cytb gene and partial tRNA-Thr gene,
+            specimen voucher MTD T 11232.
+ACCESSION   LM537490
+VERSION     LM537490.1  GI:671744174
+KEYWORDS    .
+SOURCE      mitochondrion Amyda ornata
+  ORGANISM  Amyda ornata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda ornata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 11232"
+                     /db_xref="taxon:1541068"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16993.1"
+                     /db_xref="GI:671744175"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISIWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPDISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLILFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIV
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcg
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgcta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatca
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttatt
+      721 ttatttatca ccatattcta cccgaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattagga ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatcg tattactaac atgaattggg
+     1021 gggcaacctg tagaaaaccc attcatccac atcggccaag tagcatccat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537482                1167 bp    DNA     linear   VRT 03-SEP-2014
+DEFINITION  Amyda ornata mitochondrial cytb gene and partial tRNA-Thr gene,
+            specimen voucher MTD D 40366.
+ACCESSION   LM537482
+VERSION     LM537482.1  GI:671744158
+KEYWORDS    .
+SOURCE      mitochondrion Amyda ornata
+  ORGANISM  Amyda ornata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda ornata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD D 40366"
+                     /db_xref="taxon:1541068"
+                     /country="Myanmar:Lake Inle"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16985.1"
+                     /db_xref="GI:671744159"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISIWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPDISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLILFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIV
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgcta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatca
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttatt
+      721 ttatttatca ccatattcta cccgaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattagga ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatcg tattactaac atgaattggg
+     1021 gggcaacctg tagaaaaccc attcatccac atcggccaag tagcctccat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537478                1167 bp    DNA     linear   VRT 03-SEP-2014
+DEFINITION  Amyda ornata mitochondrial cytb gene and partial tRNA-Thr gene,
+            specimen voucher MTD T 5312.
+ACCESSION   LM537478
+VERSION     LM537478.1  GI:671744150
+KEYWORDS    .
+SOURCE      mitochondrion Amyda ornata
+  ORGANISM  Amyda ornata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda ornata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 5312"
+                     /db_xref="taxon:1541068"
+                     /country="Laos:Vang Vieng"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16981.1"
+                     /db_xref="GI:671744151"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPVGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggactat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggaaccaca
+      481 atggtacaat gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtatca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccagta ggattaaact caaacaccga taaaatccca
+      661 ttccacccct atttttcata caaggacctc cttggcctag taataacact cacccttctt
+      721 ttatttgtca ccatattcta cccaaaccta ctgggcgacc cagacaactt cacaccagcc
+      781 aacccattat ccaccccacc ccacatcaaa ccagaatgat attttctatt tgcatatgca
+      841 atcctacgat ccatcccaaa caaattaggg ggcgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacccg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537462                1167 bp    DNA     linear   VRT 03-SEP-2014
+DEFINITION  Amyda ornata mitochondrial cytb gene and partial tRNA-Thr gene,
+            specimen voucher MTD T 6122.
+ACCESSION   LM537462
+VERSION     LM537462.1  GI:671744118
+KEYWORDS    .
+SOURCE      mitochondrion Amyda ornata
+  ORGANISM  Amyda ornata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda ornata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 6122"
+                     /db_xref="taxon:1541068"
+                     /country="Bangladesh:Chittagong"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16965.1"
+                     /db_xref="GI:671744119"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLMPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLLSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
+       61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgctt ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctactattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatct
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctaatacc attcataacc ttaggtatca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttctc
+      721 ttatttatca ccatattcta cccaaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccactat ctaccccacc ccacatcaaa ccagagtgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattaggg ggtgtattag ccctactact ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aaaaaag
+//
+
+LOCUS       LM537494                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 7077.
+ACCESSION   LM537494
+VERSION     LM537494.1  GI:671744182
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 7077"
+                     /db_xref="taxon:161655"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16997.1"
+                     /db_xref="GI:671744183"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgaaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgaggag ctacagtaat tacaaaccta ctatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccactttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ctaggtatca caataataca tctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacact cactcttctt
+      721 ttatttatca ccatattcta cccaaaccta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaactagga ggtgtattag ccctactatt ctcaatcctg
+      901 gtactcctca ccctaccaat actacacaca tcaaaacaac gaacactaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggtcaag tagcctccat tctccacttt
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537493                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 7076.
+ACCESSION   LM537493
+VERSION     LM537493.1  GI:671744180
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 7076"
+                     /db_xref="taxon:161655"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16996.1"
+                     /db_xref="GI:671744181"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgaaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgaggag ctacagtaat tacaaaccta ctatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccactttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ctaggtatca caataataca tctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacact cactcttctt
+      721 ttatttatca ccatattcta cccaaaccta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaactagga ggtgtattag ccctactatt ctcaatcctg
+      901 gtactcctca ccctaccaat actacacaca tcaaaacaac gaacactaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggtcaag tagcctccat tctccacttt
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537492                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 7075.
+ACCESSION   LM537492
+VERSION     LM537492.1  GI:671744178
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 7075"
+                     /db_xref="taxon:161655"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16995.1"
+                     /db_xref="GI:671744179"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMT"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgaaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgaggag ctacagtaat tacaaaccta ctatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccactttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatca caataataca tctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacact cactcttctt
+      721 ttatttatca ccatattcta cccaaaccta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaactagga ggtgtattag ccctactatt ctcaatcctg
+      901 gtactcctca ccctaccaat actacacaca tcaaaacaac gaacactaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggccaag tagcctccat tctccacttc
+     1081 acaattttac tcatacttat accaatctca aacataattg aaaacaaaat cataacctaa
+     1141 atcactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537491                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 7074.
+ACCESSION   LM537491
+VERSION     LM537491.1  GI:671744176
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 7074"
+                     /db_xref="taxon:161655"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16994.1"
+                     /db_xref="GI:671744177"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMT"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgaaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgaggag ctacagtaat tacaaaccta ctatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccactttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatca caataataca tctactcttc
+      601 ctgcacgaaa cagggtcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacact cactcttctt
+      721 ttatttatca ccatattcta cccaaaccta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaactagga ggtgtattag ccctactatt ctcaatcctg
+      901 gtactcctca ccctaccaat actacacaca tcaaaacaac gaacactaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggccaag tagcctccat tctccacttc
+     1081 acaattttac tcatacttat accaatctca aacataattg aaaacaaaat cataacctaa
+     1141 atcactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537485                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 9860.
+ACCESSION   LM537485
+VERSION     LM537485.1  GI:671744164
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 9860"
+                     /db_xref="taxon:161655"
+                     /country="Thailand"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16988.1"
+                     /db_xref="GI:671744165"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISIWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPDISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLILFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIV
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgcta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatca
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttatt
+      721 ttatttatca ccatattcta cccgaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattagga ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatcg tattactaac atgaattggg
+     1021 gggcaacctg tagaaaaccc attcatccac atcggccaag tagcctccat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537484                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 9859.
+ACCESSION   LM537484
+VERSION     LM537484.1  GI:671744162
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 9859"
+                     /db_xref="taxon:161655"
+                     /country="Thailand"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16987.1"
+                     /db_xref="GI:671744163"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISIWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPDISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLILFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIV
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgcta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatca
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttatt
+      721 ttatttatca ccatattcta cccgaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattagga ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatcg tattactaac atgaattggg
+     1021 gggcaacctg tagaaaaccc attcatccac atcggccaag tagcctccat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537483                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 9858.
+ACCESSION   LM537483
+VERSION     LM537483.1  GI:671744160
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 9858"
+                     /db_xref="taxon:161655"
+                     /country="Thailand"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16986.1"
+                     /db_xref="GI:671744161"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISIWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPDISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLILFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIV
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccatt tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacattattc accagatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgcta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatca
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttatt
+      721 ttatttatca ccatattcta cccgaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattagga ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatcg tattactaac atgaattggg
+     1021 gggcaacctg tagaaaaccc attcatccac atcggccaag tagcctccat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537481                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 11233.
+ACCESSION   LM537481
+VERSION     LM537481.1  GI:671744156
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 11233"
+                     /db_xref="taxon:161655"
+                     /country="Malaysia:Sarawak"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16984.1"
+                     /db_xref="GI:671744157"
+                     /translation="MTINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAMPYIGTT
+                     MVQWVWGGFSVDSATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atgaccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatt
+      241 cgcaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctatat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagcca taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggcttctcc gtagatagtg ccaccttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatta ccataataca cctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggactaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacgct cacccttctt
+      721 ttatttgtca ccatattcta cccaaatcta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacattaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggccaag tagcctccat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 accactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537480                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 11234.
+ACCESSION   LM537480
+VERSION     LM537480.1  GI:671744154
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 11234"
+                     /db_xref="taxon:161655"
+                     /country="Malaysia:Sarawak"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16983.1"
+                     /db_xref="GI:671744155"
+                     /translation="MTINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAMPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atgaccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcg
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatt
+      241 cgcaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctatat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagcca taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggcttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatta ccataataca cctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggactaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacgct cacccttctt
+      721 ttatttgtca ccatattcta cccaaatcta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacattaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggccaag tagcctccat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 accactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537476                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 10673.
+ACCESSION   LM537476
+VERSION     LM537476.1  GI:671744146
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 10673"
+                     /db_xref="taxon:161655"
+                     /country="Indonesia:Sulawesi"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16979.1"
+                     /db_xref="GI:671744147"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcctagcct tacaaatcat cacaggatta ttcctagcta tacattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgaaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg ggtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgaggag ctacagtaat tacaaaccta ctatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccactttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatca caataataca tctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacact cactcttctt
+      721 ttatttatca ccatattcta cccaaaccta ctaggagacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaactagga ggtgtattag ccctactatt ctcaatcctg
+      901 gtactcctca ccctaccaat actacacaca tcaaaacaac gaacactaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggtcaag tagcctccat tctccacttt
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaac aacaaag
+//
+
+LOCUS       LM537467                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD D 42529.
+ACCESSION   LM537467
+VERSION     LM537467.1  GI:671744128
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD D 42529"
+                     /db_xref="taxon:161655"
+                     /country="Cambodia:Ratanakiri"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16970.1"
+                     /db_xref="GI:671744129"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPVGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacagatcat cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg ggcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggactat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atggtacaat gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccagta ggattaaact caaacaccga taaaatccca
+      661 ttccacccct atttttcata caaggacctc cttggcctag taataacact cacccttctt
+      721 ttatttgtca ccatattcta cccaaaccta ctgggcgacc cagacaactt cacaccagcc
+      781 aacccattat ccaccccacc ccacatcaaa ccagaatgat actttctatt tgcatatgca
+      841 atcctacgat ccatcccaaa caaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacccg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537466                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 10672.
+ACCESSION   LM537466
+VERSION     LM537466.1  GI:671744126
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 10672"
+                     /db_xref="taxon:161655"
+                     /country="Cambodia"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16969.1"
+                     /db_xref="GI:671744127"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPVGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggactat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atggtacaat gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccagta gggttaaact caaacaccga taaaatccca
+      661 ttccacccct atttttcata caaggacctc cttggcctag taataacact cacccttctt
+      721 ttatttgtca ccatattcta cccaaaccta ctgggcgacc cagacaactt cacaccagcc
+      781 aacccattat ccaccccacc ccacatcaaa ccagaatgat attttctatt tgcatatgca
+      841 atcctacgat ccatcccaaa caaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacccg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537465                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD D 42530.
+ACCESSION   LM537465
+VERSION     LM537465.1  GI:671744124
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD D 42530"
+                     /db_xref="taxon:161655"
+                     /country="Cambodia"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16968.1"
+                     /db_xref="GI:671744125"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPVGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacagatcat cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg ggcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cgaggactat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atggtacaat gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccagta ggattaaact caaacaccga taaaatccca
+      661 ttccacccct atttttcata caaggacctc cttggcctag taataacact cacccttctt
+      721 ttatttgtca ccatattcta cccaaaccta ctgggcgacc cagacaactt cacaccagcc
+      781 aacccattat ccaccccacc ccacatcaaa ccagaatgat actttctatt tgcatatgca
+      841 atcctacgat ccatcccaaa caaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacccg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aacaaag
+//
+
+LOCUS       LM537464                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 6124.
+ACCESSION   LM537464
+VERSION     LM537464.1  GI:671744122
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 6124"
+                     /db_xref="taxon:161655"
+                     /country="Bangladesh:Chittagong"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16967.1"
+                     /db_xref="GI:671744123"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLMPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLLSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
+       61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgctt ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctactattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatct
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctaatacc attcataacc ttaggtatca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttctc
+      721 ttatttatca ccatattcta cccaaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccactat ctaccccacc ccacatcaaa ccagagtgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattaggg ggtgtattag ccctactact ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aaaaaag
+//
+
+LOCUS       LM537463                1167 bp    DNA     linear   VRT 06-AUG-2014
+DEFINITION  Amyda cartilaginea mitochondrial cytb gene and partial tRNA-Thr
+            gene, specimen voucher MTD T 6123.
+ACCESSION   LM537463
+VERSION     LM537463.1  GI:671744120
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1
+  AUTHORS   Fritz,U., Gemel,R., Kehlmaier,C., Vamberger,M. and Praschag,P.
+  TITLE     Phylogeography of the Asian softshell turtle Amyda cartilaginea
+            (Boddaert, 1770): evidence for a species complex
+  JOURNAL   Vertebr Zool 64 (2), 229-243 (2014)
+REFERENCE   2  (bases 1 to 1167)
+  AUTHORS   Kehlmaier,C.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-JUN-2014) Senckenberg Natural History Collections,
+            Museum of Zoology, Koenigsbruecker Landstrasse 159, Dresden, 01109,
+            GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1167
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MTD T 6123"
+                     /db_xref="taxon:161655"
+                     /country="Bangladesh:Chittagong"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CDW16966.1"
+                     /db_xref="GI:671744121"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QITTGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLMPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFITMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLLSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+     gene            1141..>1167
+                     /gene="tRNA-Thr"
+     tRNA            1141..>1167
+                     /gene="tRNA-Thr"
+                     /product="tRNA-Thr"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca atgattaaaa tcattaataa ctcactaatc
+       61 gacctgccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcac cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg agcctcgctt ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctactattaa ccatagccac tgcattcata ggctatgtcc taccatgagg acaaatatct
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact tcctaatacc attcataacc ttaggtatca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt atttttcata caaggacctc cttggcctag taataacact cacccttctc
+      721 ttatttatca ccatattcta cccaaatcta ctaggtgacc cagacaactt cacaccagcc
+      781 aacccactat ctaccccacc ccacatcaaa ccagagtgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa caaattaggg ggtgtattag ccctactact ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+     1141 atcactcaag tagcttaaat aaaaaag
+//
+
+LOCUS       JN232534                1077 bp    DNA     linear   VRT 13-MAR-2012
+DEFINITION  Amyda cartilaginea cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   JN232534
+VERSION     JN232534.1  GI:379647553
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1  (bases 1 to 1077)
+  AUTHORS   Baruah,C., Shanker,K. and Sharma,D.K.
+  TITLE     Phylogenetic relationships of Indian freshwater turtles and
+            tortoises based on mitochondrial cytochrome b sequences
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1077)
+  AUTHORS   Baruah,C., Shanker,K. and Sharma,D.K.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-JUL-2011) Bioinformatics Centre, Department of
+            Zoology, Gauahti University, LGB Nagar, Guwahati, Assam 781014,
+            India
+FEATURES             Location/Qualifiers
+     source          1..1077
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="TCRP020"
+                     /db_xref="taxon:161655"
+                     /country="India: Manipur"
+     gene            <1..1070
+                     /gene="cytb"
+     CDS             <1..1070
+                     /gene="cytb"
+                     /function="electron carrier activity"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AFD04741.1"
+                     /db_xref="GI:379647554"
+                     /translation="PSNISIWWNFGSLLGACLALQIITGLFLAMHYSPNISTAFSSIS
+                     HITRDVQYGWLIRNTHANGASLFFMCIYLHIGRGLYYGSYLYKQTWNTGVILLLLTMA
+                     TAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTTMVQWVWGGFSVDNATLTRFFTLHF
+                     LLPFMTLGVTMMHLLFLHETGSNNPVGLNSNTDKIPFHPYFSYKDLLGLVMTLTLLLF
+                     VTMFYPNLLGDPNNFTPANPLSTPPHIKPEWYFLFAYAILRSIPNKLGGVLALLFSIL
+                     VLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIMLLTWIGGQPVENPFIHIGQVASIL
+                     HFTILLMLMPISNMIENKIMN"
+ORIGIN
+        1 gcccatccaa catctccatt tgatgaaatt tcggatccct attaggtgcc tgcttagcct
+       61 tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc tcaacagcat
+      121 tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc cgcaacacac
+      181 atgcaaacgg ggcctcacta ttcttcatgt gcatctacct tcacatcgga cggggactat
+      241 attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc ctattattaa
+      301 ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc ttttgagggg
+      361 ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca atggtacaat
+      421 gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttc accctacact
+      481 tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc ctacacgaaa
+      541 caggatcaaa caacccagta ggattaaact caaacaccga taaaatccca ttccacccct
+      601 atttttcata caaggacctc cttggcctag taataacact cacccttctt ttatttgtca
+      661 ccatattcta cccaaaccta ctgggcgacc caaacaactt cacaccagcc aacccattat
+      721 ccaccccacc ccacatcaaa ccagaatgat actttctatt tgcatatgca atcctacgat
+      781 ccatcccaaa caaattaggg ggtgtattag ccctactatt ctcaatccta gtactcctca
+      841 ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct attacacaaa
+      901 tactattttg atcattcgta gccaacatca tattactaac atgaattgga ggacaacccg
+      961 tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc acaattctac
+     1021 tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa accactc
+//
+
+LOCUS       AY259552                1140 bp    DNA     linear   VRT 25-MAR-2005
+DEFINITION  Palea steindachneri cytochrome b (cytb) gene, complete cds;
+            mitochondrial gene for mitochondrial product.
+ACCESSION   AY259552
+VERSION     AY259552.1  GI:37956086
+KEYWORDS    .
+SOURCE      mitochondrion Palea steindachneri (wattle-necked softshell turtle)
+  ORGANISM  Palea steindachneri
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Palea.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Engstrom,T.N., Shaffer,H.B. and McCord,W.P.
+  TITLE     Multiple data sets, high homoplasy, and the phylogeny of softshell
+            turtles (Testudines: Trionychidae)
+  JOURNAL   Syst. Biol. 53 (5), 693-710 (2004)
+   PUBMED   15545250
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Engstrom,T.N., Shaffer,H.B. and McCord,W.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-MAR-2003) Ecology and Evolution, State University of
+            New York, 650 Life Sciences, Stony Brook, NY 11794, USA
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Palea steindachneri"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:161718"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AAP20662.1"
+                     /db_xref="GI:37956087"
+                     /translation="MTINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLIL
+                     QIITGLFLAMHYSPNISTAFSSIAHITRDVQYGWLIRNTHANGASMFFFCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMILGFAMIHLLLLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGFMMMLTLLLLITMFFPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLLSILVLFILPLLHTSKQRTLTYRPITQTLFWLFVANLM
+                     VLTWIGGQPVENPFISIGQTASIFYFTILLVLMPISNMIENKTTN"
+ORIGIN
+        1 atgaccatca atctacgaaa atcccaccca ataattaaaa ttatcaataa ctcattaatt
+       61 gatttaccaa gcccatccaa tatctccact tgatgaaact ttggatccct attaggtgct
+      121 tgcctaatcc tacaaatcat tacaggacta ttcttagcca tacattattc accaaacatc
+      181 tcaacagcat tctcatcaat cgcccatatc acccgagacg tacaatacgg ttgactaatc
+      241 cgcaatacac atgccaacgg agcctcaata ttctttttct gcatttacct acatatcgga
+      301 cgaggattat attacggctc atacctttac aaacaaacct gaaacacagg cgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctacgtcc taccatgagg acaaatatcc
+      421 ttttgaggcg ctacagtcat tacaaactta ctctcagcta tcccctacat cggcaccaca
+      481 atagtacaat gagtttgagg gggcttctct gtagacaacg ccaccctaac acgattcttc
+      541 accctacatt tcctacttcc atttataatc ctaggcttcg ccataattca cttacttcta
+      601 ctacacgaaa caggctcaaa caacccaaca gggttaaact caaacaccga caaaatccca
+      661 ttccatccat atttttcata caaagacctc ctaggtttta taataatact aaccctactc
+      721 ctattaatta ccatattctt cccaaactta ctaggcgacc cagacaactt cactccagcc
+      781 aacccactat ctaccccacc ccacatcaaa ccagaatgat actttctatt tgcctacgca
+      841 atcctacgat ctatccccaa taaactagga ggcgtactag ctctactact ttctatccta
+      901 gtactattca tcctacccct actacacaca tcaaaacaac gaacacttac ataccgccct
+      961 attacccaaa cactattttg gttatttgta gccaacctca tagtactgac atgaatcgga
+     1021 ggacaaccag tagaaaaccc attcatctct attggccaaa cagcctccat cttttacttc
+     1081 acaatcttac tcgtactcat accaatctca aatataattg aaaacaaaac taccaactaa
+//
+
+LOCUS       AY259550                1140 bp    DNA     linear   VRT 25-MAR-2005
+DEFINITION  Amyda cartilaginea cytochrome b (cytb) gene, complete cds;
+            mitochondrial gene for mitochondrial product.
+ACCESSION   AY259550
+VERSION     AY259550.1  GI:37956082
+KEYWORDS    .
+SOURCE      mitochondrion Amyda cartilaginea (black-rayed soft-shelled turtle)
+  ORGANISM  Amyda cartilaginea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Amyda.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Engstrom,T.N., Shaffer,H.B. and McCord,W.P.
+  TITLE     Multiple data sets, high homoplasy, and the phylogeny of softshell
+            turtles (Testudines: Trionychidae)
+  JOURNAL   Syst. Biol. 53 (5), 693-710 (2004)
+   PUBMED   15545250
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Engstrom,T.N., Shaffer,H.B. and McCord,W.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-MAR-2003) Ecology and Evolution, State University of
+            New York, 650 Life Sciences, Stony Brook, NY 11794, USA
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Amyda cartilaginea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:161655"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AAP20660.1"
+                     /db_xref="GI:37956083"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAVPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGVTMMHLLFLHETGSNNPVGLNSNTDK
+                     IPFHPYFSYKDLLGLVMTLTLLLFVTMFYPNLLGDPNNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIHIGQVASILHFTILLMLMPISNMIENKIMN"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tacactattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatc
+      241 cgcaacacac atgcaaacgg ggcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggactat attacggctc atacctgtat aaacaaactt gaaacacagg tgtaatcctc
+      361 ctattattaa ccatagccac tgcattcata ggctatgtcc ttccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagccg taccatacat cggcaccaca
+      481 atggtacaat gggtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttc
+      541 accctacact tcctactacc attcataacc ttaggtgtca ccataataca tctactcttc
+      601 ctacacgaaa caggatcaaa caacccagta ggattaaact caaacaccga taaaatccca
+      661 ttccacccct atttttcata caaggacctc cttggcctag taataacact cacccttctt
+      721 ttatttgtca ccatattcta cccaaaccta ctgggcgacc caaacaactt cacaccagcc
+      781 aacccattat ccaccccacc ccacatcaaa ccagaatgat actttctatt tgcatatgca
+      841 atcctacgat ccatcccaaa caaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacactaac attccgtcct
+      961 attacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacccg tagaaaaccc attcatccac atcggccaag tagcctctat tctccacttc
+     1081 acaattctac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+//
+
+LOCUS       AY743417                1140 bp    DNA     linear   VRT 18-OCT-2004
+DEFINITION  Palea steindachneri cytochrome b (CYTB) gene, complete cds;
+            mitochondrial.
+ACCESSION   AY743417
+VERSION     AY743417.1  GI:54112003
+KEYWORDS    .
+SOURCE      mitochondrion Palea steindachneri (wattle-necked softshell turtle)
+  ORGANISM  Palea steindachneri
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Trionychia; Trionychidae;
+            Palea.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Chen,H. and Zhang,X.
+  TITLE     Comparative sequence analysis of mitochondrial DNA cytb gene among
+            Trionyx sinensis, Trionyx axenaria and Palea steindachneri and
+            their molecular marker for identification
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Chen,H. and Zhang,X.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-SEP-2004) The Laboratory of Developmental Biology,
+            College of Life Science, Hunan Normal University, ChangSha, Hunan
+            410081, P.R. China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Palea steindachneri"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:161718"
+     gene            1..1140
+                     /gene="CYTB"
+     CDS             1..1140
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AAV28715.1"
+                     /db_xref="GI:54112004"
+                     /translation="MAINLRKSHPMIKIINNSLIDLPSPSNISTWWNFGSLLGACLAL
+                     QIITGLFLAMHYSPNISTAFSSISHITRDVQYGWLIRNTHANGASLFFMCIYLHIGRG
+                     LYYGSYLYKQTWNTGVILLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAMPYIGTT
+                     MVQWVWGGFSVDNATLTRFFTLHFLLPFMTLGITMMHLLFLHETGSNNPTGLNSNTDK
+                     IPFHPYFSYKDLLGLMMTLTLLLFVTMFYPNLLGDPDNFTPANPLSTPPHIKPEWYFL
+                     FAYAILRSVPNKLGGVLALLFSILVLLTLPMLHTSKQRTLTFRPITQMLFWSFVANIM
+                     LLTWIGGQPVENPFIYIGQVASILHFTILLMLMPISNMIENKIMN"
+ORIGIN
+        1 atggccatca acctacgaaa atcccaccca ataattaaaa tcattaataa ctcactaatc
+       61 gacctaccaa gcccatccaa catctccact tgatgaaact tcggatccct attaggtgcc
+      121 tgcttagcct tacaaatcat cacaggatta ttcctagcta tgcattattc accaaatatc
+      181 tcaacagcat tctcatcaat ctcacacatc acccgagacg tacaatacgg atgactaatt
+      241 cgcaacacac atgcaaatgg agcctcacta ttcttcatgt gcatctacct tcacatcgga
+      301 cggggcctat attacggctc atacctgtat aaacaaactt gaaacacagg agtaatcctc
+      361 ctattattaa ctatagccac tgcattcata ggctatgtcc taccatgagg acaaatatcc
+      421 ttttgagggg ctacagtaat tacaaaccta ttatcagcca taccatacat cggcaccaca
+      481 atagtacaat gagtctgagg tggtttctcc gtagataatg ccaccttaac acgattcttt
+      541 accctacact ttctactacc attcataacc ttaggtatta ccataataca tctactcttc
+      601 ctgcacgaaa caggatcaaa caacccaaca ggattaaact caaacaccga taaaatccca
+      661 ttccaccctt acttttcata caaggacctc cttggcctaa taataacgct cacccttctt
+      721 ttatttgtca ccatattcta cccaaatcta ctaggggacc cagacaactt cacaccagcc
+      781 aacccattat ctaccccacc ccacatcaaa ccagaatgat attttctatt tgcatacgca
+      841 atcctacgat ccgtcccaaa taaattaggg ggtgtattag ccctactatt ctcaatccta
+      901 gtactcctca ccctaccaat actacacaca tcaaagcaac gaacattaac attccgtcct
+      961 atcacacaaa tactattttg atcattcgta gccaacatca tattactaac atgaattgga
+     1021 ggacaacctg tagaaaaccc attcatctac atcggccaag tagcctccat tctccacttc
+     1081 acaattttac tcatactcat accaatctca aacataattg aaaacaaaat cataaactaa
+//
+
