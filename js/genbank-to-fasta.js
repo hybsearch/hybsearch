@@ -27,7 +27,7 @@ module.exports.extractInfoFromGenbank = extractInfoFromGenbank
 
 function genbackToFasta(genbankFile) {
   const data = extractInfoFromGenbank(genbankFile)
-  return data.map(e => `> ${e.accession}\n${e.sequence}\n`).join('\n')
+  return data.map(e => `> ${e.binomial.replace(' ', '_')}-${e.accession}\n${e.sequence}\n`).join('\n')
 }
 
 module.exports.genbackToFasta = genbackToFasta
