@@ -29,7 +29,7 @@ function clustal(data, args) {
 	args.infile = tempInputFile
 	const argstring = make_clustal_arguments(args)
 
-	child.execSync(`clustalw2 ${argstring}`)
+	child.execSync(`clustalw ${argstring}`)
 
 	if (desiredOutputFile) {
 		fs.renameSync(outputFile, `${desiredOutputFile}.ph`)
