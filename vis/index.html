@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+	<meta content='text/html;charset=UTF-8' http-equiv='content-type'>
+	<title>Right-angle phylograms and dendrograms with d3</title>
+	<script src="d3.min.js" type="text/javascript"></script>
+	<script src="newick.js" type="text/javascript"></script>
+	<script src="d3.phylogram.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+		body {
+			font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+			color: #1C1C1C;
+		    -webkit-font-smoothing: antialiased;
+		    text-rendering: optimizeLegibility;
+		    text-shadow: 0 0 0 rgba(255,255,255,.01);
+		    -webkit-text-size-adjust: 100%;
+		}
+
+		h1 {
+		    font-size: 3em;
+		    font-weight: 600;
+		    text-transform: uppercase;
+		}
+
+		h2 {
+		    font-size: 1.5em;
+		    font-weight: 400;
+		    color: steelblue;
+		    -webkit-font-smoothing: subpixel-antialiased;
+		    margin: 20px 0;
+		}
+		
+		td {
+			vertical-align: top;
+		}
+		
+		textarea {
+			width: 100%;
+			height: 100px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			outline: none;
+		}
+
+		textarea:hover {
+			border: 1px solid #bbb;
+		}
+
+		textarea:focus {
+			border: 1px solid steelblue;
+		}
+
+		.clickable-node {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Phylogram Visualizer</h1>
+	<h2>Newick</h2>
+	<textarea id="newickInput">(((Crotalus_oreganus_oreganus_cytochrome_b:0.00800,Crotalus_horridus_cytochrome_b:0.05866):0.04732,(Thamnophis_elegans_terrestris_cytochrome_b:0.00366,Thamnophis_atratus_cytochrome_b:0.00172):0.06255):0.00555,(Pituophis_catenifer_vertebralis_cytochrome_b:0.00552,Lampropeltis_getula_cytochrome_b:0.02035):0.05762,((Diadophis_punctatus_cytochrome_b:0.06486,Contia_tenuis_cytochrome_b:0.05342):0.01037,Hypsiglena_torquata_cytochrome_b:0.05346):0.00779);</textarea>
+
+	<h2>Dominant Species</h2>
+	<textarea id="dominantSpeciesInput">Hypsiglena_torquata_cytochrome_b,Diadophis_punctatus_cytochrome_b,Pituophis_catenifer_vertebralis_cytochrome_b,Lampropeltis_getula_cytochrome_b</textarea>
+
+	<button id="submit">Visualize</button>
+
+	<h2>Phylogram</h2>
+	<div id="phylogram"></div>
+
+	<script src="logic.js" type="text/javascript"></script>
+</body>
+
+</html>

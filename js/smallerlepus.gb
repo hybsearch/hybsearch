@@ -1,0 +1,1992 @@
+LOCUS       HM233091                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA13 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233091
+VERSION     HM233091.1  GI:333796875
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA13"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98103.1"
+                     /db_xref="GI:333796876"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIVLLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDVLGFLMLILMLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLVENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 ctccccgccc cctcaaacat ctcagcctga tgaaactttg gctctctatt aggattatgc
+      121 ctaataattc aaatcctaac tggactattc ctagctatac actatacatc agatacagca
+      181 acagcattct cctcagtcac acatatttgc cgagatgtaa actacggctg acttatccgt
+      241 tacctgcacg ctaatggagc atcaatattc tttatctgcc tatacataca tgtaggccgt
+      301 ggaatttact acggctcata tacttaccta gaaacttgga atattggcat cgttcttcta
+      361 tttgcagtaa tagccacagc atttataggc tatgttcttc catgaggaca aatatcattc
+      421 tgaggcgcta ccgtcattac taatctttta tcagctatcc cctacatcgg aacaacccta
+      481 gtcgaatgaa tctgaggtgg attttcagtc gataaagcca cacttacccg attcttcgct
+      541 ttccacttca tcctcccatt tatcatcgca gcactagtaa taattcactt actctttctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa aatcccattc
+      661 cacccctatt atacaatcaa agatgtctta gggtttctta tactaattct catacttata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactatac ccctgccaat
+      781 cccctcaata ctcctcctca catcaaaccc gaatgatact tcctatttgc ctacgccatt
+      841 ttacgctcta tccctaacaa actaggaggt gttctagctc tagtcatatc aatccttatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgacccatt
+      961 agccaagtcc ttttttgaat ccttgtcgca gaccttctga cactcacatg aattggaggc
+     1021 caaccagttg aacacccatt tattactatt ggtcaagtgg catctatcct ctacttctcc
+     1081 atcatcctta tcctcatgcc cctcgcaagc ttagtcgaaa ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233090                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate ME5 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233090
+VERSION     HM233090.1  GI:333796873
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ME5"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98102.1"
+                     /db_xref="GI:333796874"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIVLLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDVLGFLMLILMLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVTDLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLVENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 ctccccgccc cctcaaacat ctcagcctga tgaaactttg gctctctatt aggattatgc
+      121 ctaataattc aaatcctaac tggactattc ctagctatac actatacatc agatacagca
+      181 acagcattct cctcagtcac acatatttgc cgagatgtaa actacggctg acttatccgt
+      241 tacctgcacg ctaatggagc atcaatattc tttatctgcc tatacataca tgtaggccgt
+      301 ggaatttact acggctcata tacttaccta gaaacttgga atattggcat cgttcttcta
+      361 tttgcagtaa tagccacagc atttataggc tatgttcttc catgaggaca aatatcattc
+      421 tgaggcgcta ccgtcattac taatctttta tcagccatcc cctacatcgg aacaacccta
+      481 gtcgaatgaa tctgaggtgg attttcagtc gataaagcca cacttacccg attcttcgct
+      541 ttccacttca tcctcccatt tatcatcgca gcactagtaa taattcactt actctttctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa aatcccattc
+      661 cacccctatt atacaatcaa agatgtctta gggtttctta tactaattct catacttata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactatac ccctgccaat
+      781 cccctcaata ctcctcctca catcaaaccc gaatgatact tcctatttgc ctacgccatt
+      841 ttacgctcta tccctaacaa actaggaggt gttctagctc tagtcatatc aatccttatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgacccatt
+      961 agccaagtcc ttttttgaat ccttgtcaca gaccttctga cactcacatg aattggaggc
+     1021 caaccagttg aacacccatt tattactatt ggtcaagtgg catctatcct ctacttctcc
+     1081 atcatcctta tcctcatgcc cctcgcaagc ttagtcgaaa ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233089                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA8 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233089
+VERSION     HM233089.1  GI:333796871
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA8"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98101.1"
+                     /db_xref="GI:333796872"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIVLLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDVLGFLMLILMLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLVENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 ctccccgccc cctcaaacat ctcagcctga tgaaactttg gctctctatt aggattatgc
+      121 ctaataattc aaatcctaac tggactattc ctagctatac actatacatc agatacagca
+      181 acagcattct cctcagtcac acatatttgc cgagatgtaa actacggctg acttatccgt
+      241 tacctgcacg ctaatggagc atcaatattc tttatctgcc tatacataca tgtaggccgt
+      301 ggaatttact acggctcata tacttaccta gaaacttgga atattggcat cgttcttcta
+      361 tttgcagtaa tagccacagc atttataggc tatgttcttc catgaggaca aatatcattc
+      421 tgaggcgcta ccgtcattac taatctttta tcagccatcc cctacatcgg aacaacccta
+      481 gtcgaatgaa tctgaggtgg attttcagtc gataaagcca cacttacccg attcttcgct
+      541 ttccacttca tcctcccatt tatcatcgca gcactagtaa taattcactt actctttctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa aatcccattc
+      661 cacccctatt atacaatcaa agatgtctta gggtttctta tactaattct catacttata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactatac ccctgccaat
+      781 cccctcaata ctcctcctca catcaaaccc gaatgatact tcctatttgc ctacgccatt
+      841 ttacgctcta tccctaacaa actaggaggt gttctagctc tagtcatatc aatccttatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgacccatt
+      961 agccaagtcc ttttttgaat ccttgtcgca gaccttctga cactcacatg aattggaggc
+     1021 caaccagttg aacacccatt tattactatt ggtcaagtgg catctatcct ctacttctcc
+     1081 atcatcctta tcctcatgcc cctcgcaagc ttagtcgaaa ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233088                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA10 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233088
+VERSION     HM233088.1  GI:333796869
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA10"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98100.1"
+                     /db_xref="GI:333796870"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     IEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDVLGFLMLILMLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLVENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 ctccccgccc cctcaaacat ctcagcctga tgaaattttg gctctctatt aggattatgc
+      121 ctaataattc aaatcctaac tggactattc ctagctatac actatacatc agatacagca
+      181 acagcattct cctcagtcac acatatttgc cgagatgtaa actacggctg acttatccgt
+      241 tacctgcacg ctaacggagc atcaatattc tttatctgcc tatacataca tgtaggccgt
+      301 ggaatttact acggctcata tacttaccta gaaacttgaa atattggcat cattcttcta
+      361 tttgcagtaa tagccacagc atttataggc tatgttcttc catgaggaca aatatcattc
+      421 tgaggcgcta ccgtcattac taatctttta tcagccatcc cctacatcgg aacaacccta
+      481 atcgaatgaa tctgaggtgg attctcagtc gataaagcca cacttacccg attcttcgct
+      541 ttccacttca tcctcccatt tatcatcgca gcactagtaa taattcactt actctttctc
+      601 catgaaactg gttccaataa cccatcaggc atcccatcag actctgataa aatcccattc
+      661 cacccctatt atacaatcaa agatgtctta gggtttctta tacttattct catacttata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactatac ccctgccaat
+      781 cccctcaata ctcctcctca catcaaaccc gaatgatact tcctatttgc ctacgccatt
+      841 ttacgttcta tccctaacaa actaggaggt gttctagccc tagtcatatc aatccttatc
+      901 ctagcaatta ttcccttcct ccacatatcc aaacaacgca gcataatatt ccgacccatt
+      961 agccaagtcc ttttttgaat ccttgtcgca gaccttctga cactcacatg aattggagga
+     1021 caaccagttg aacacccatt tattactatt ggtcaagtgg catctatcct ttacttctcc
+     1081 atcatcctca tcctcatgcc tctcgcaagc ttagtcgaaa ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233077                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA12 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233077
+VERSION     HM233077.1  GI:333796847
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA12"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98089.1"
+                     /db_xref="GI:333796848"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDVLGFLMLILMLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLVENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 ctccccgccc cctcaaacat ctcagcctga tgaaactttg gctctctatt aggattatgc
+      121 ctaataattc aaatcctaac tggactattc ctagctatac actacacatc agatacagca
+      181 acagcattct cctcagtcac acatatttgc cgagatgtaa actacggctg acttatccgt
+      241 tacctgcacg ctaacggagc atcaatattc tttatctgcc tatacataca tgtaggccgt
+      301 ggaatttact acggctcata tacttaccta gaaacttgga atattggcat catccttcta
+      361 tttgcagtaa tagccacagc atttataggc tatgttcttc catgaggaca aatatcattc
+      421 tgaggcgcta ccgtcattac taatctttta tcagccatcc cctacatcgg aacaacccta
+      481 gtcgaatgaa tctgaggtgg attttcagtc gataaagcca cacttacccg attcttcgct
+      541 ttccacttca tcctcccatt tatcatcgca gcactagtaa taattcacct actctttctc
+      601 catgaaactg gttccaataa cccatcaggc atcccatcag actctgataa aatcccattc
+      661 cacccctatt atacaatcaa agatgtctta gggtttctta tacttattct catacttata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactatac ccctgccaat
+      781 cccctcaata ctcctcctca catcaaaccc gaatgatact tcctatttgc ctacgccatt
+      841 ttacgttcta tccctaacaa actaggaggt gttctagctc tagtcatatc aatccttatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgacccatt
+      961 agccaagtcc ttttttgaat ccttgtcgca gaccttctga cacttacatg aattggaggg
+     1021 caaccagttg aacacccatt tattactatt ggtcaagtgg catctatcct ttacttctcc
+     1081 atcatcctca tcctcatgcc cctcgcaagc ttagtcgaaa ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233014                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA9 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233014
+VERSION     HM233014.1  GI:333796721
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA9"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98026.1"
+                     /db_xref="GI:333796722"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLTLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWVLVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctgac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcaca
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccaatt
+      961 agccaagttc tcttctgagt cctcgttgca gaccttctaa cactcacatg aatcggagga
+     1021 caaccagttg aacacccatt cattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233011                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA1 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233011
+VERSION     HM233011.1  GI:333796715
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA1"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98023.1"
+                     /db_xref="GI:333796716"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ttcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggggg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa aattccattc
+      661 cacccctatt acacaattaa agaccttcta ggattcctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctatgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ctacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM233010                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate ME cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM233010
+VERSION     HM233010.1  GI:333796713
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ME"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98022.1"
+                     /db_xref="GI:333796714"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLRANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcaccctcta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ttcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc cttgctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcgcg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattcttatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ctacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232996                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate ME6 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232996
+VERSION     HM232996.1  GI:333796685
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ME6"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98008.1"
+                     /db_xref="GI:333796686"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILIADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 cacgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcattgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232995                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA7 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232995
+VERSION     HM232995.1  GI:333796683
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA7"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98007.1"
+                     /db_xref="GI:333796684"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILIADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 cacgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcattgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232994                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA3 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232994
+VERSION     HM232994.1  GI:333796681
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA3"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98006.1"
+                     /db_xref="GI:333796682"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILIADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 cacgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcattgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232993                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA2 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232993
+VERSION     HM232993.1  GI:333796679
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA2"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98005.1"
+                     /db_xref="GI:333796680"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILIADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 cacgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcattgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232992                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA4 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232992
+VERSION     HM232992.1  GI:333796677
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA4"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98004.1"
+                     /db_xref="GI:333796678"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILIADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 cacgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcattgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       HM232991                1140 bp    DNA     linear   MAM 10-AUG-2011
+DEFINITION  Lepus mandshuricus isolate MA11 cytochrome b (Cytb) gene, complete
+            cds; mitochondrial.
+ACCESSION   HM232991
+VERSION     HM232991.1  GI:333796675
+KEYWORDS    .
+SOURCE      mitochondrion Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Arnold,M.L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Reticulate evolution: frequent introgressive hybridization among
+            Chinese hares (genus Lepus) revealed by analyses of multiple
+            mitochondrial and nuclear DNA loci
+  JOURNAL   BMC Evol. Biol. 11 (1), 223 (2011)
+   PUBMED   21794180
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Liu,J., Yu,L., Wu,C.H., Wu,S.F., Lu,X. and Zhang,Y.P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2010) Laboratory for Conservation and Utilization
+            of Bio-resource, 2 North Cuihu Road, Kunming, Yunnan, China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MA11"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="Cytb"
+     CDS             1..1140
+                     /gene="Cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AEF98003.1"
+                     /db_xref="GI:333796676"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacctta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctt ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB058616                1140 bp    DNA     linear   MAM 08-JAN-2003
+DEFINITION  Lepus brachyurus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate:Lbra_Honsyu 3.
+ACCESSION   AB058616
+VERSION     AB058616.2  GI:14164380
+KEYWORDS    .
+SOURCE      mitochondrion Lepus brachyurus
+  ORGANISM  Lepus brachyurus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Yamada,F., Takaki,M. and Suzuki,H.
+  TITLE     Molecular phylogeny of Japanese Leporidae, the Amami rabbit
+            Pentalagus furnessi, the Japanese hare Lepus brachyurus, and the
+            mountain hare Lepus timidus, inferred from mitochondrial DNA
+            sequences
+  JOURNAL   Genes Genet. Syst. 77 (2), 107-116 (2002)
+   PUBMED   12087193
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Takaki,M., Yamada,F. and Suzuki,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-MAR-2001) Mika Takaki, Hokkaido Univ., Graduate
+            School of Environmental Earth Science; North 10, West 5, Kita-ku,
+            Sapporo, Hokkaido 060-0810, Japan (E-mail:takaki@ees.hokudai.ac.jp,
+            Tel:81-11-706-2251, Fax:81-11-706-4867)
+COMMENT     On May 21, 2001 this sequence version replaced gi:13488734.
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus brachyurus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Lbra_Honsyu 3"
+                     /db_xref="taxon:156448"
+                     /country="Japan:Ibaraki, Ami"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAB40225.2"
+                     /db_xref="GI:14164381"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLLIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLSLILLLLLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPLLHMSKQRSMMFRPVSQALFWVLVADLLT
+                     LTWIGGQPVEHPFITIGQVASVLYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ttaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaatat ctcagcttga tggaactttg gctctctatt agggttatgc
+      121 ctactaatcc aaatcctaac tggtctattc ctagctatac actatacatc agacacagca
+      181 acagcattct cctccgtcac acacatttgc cgagacgtaa actacggctg acttatccgt
+      241 tacctacacg ccaacggagc atcaatattt tttatctgct tgtatataca tgtaggccgt
+      301 ggaatctact atggctcata tacttatcta gaaacctgaa atattggcat tattctatta
+      361 tttgcagtaa tagccacagc attcataggc tatgtccttc catgaggaca aatatcattc
+      421 tgaggggcca ccgtaattac taatctccta tcagccatcc cgtatattgg aacaacccta
+      481 gttgaatgaa tctgaggagg gttctcagtt gataaagcta cactcacccg attcttcgcc
+      541 ttccacttta tcctcccatt tatcattgca gcactagtaa taattcactt actttttctt
+      601 catgaaactg gctccaacaa tccatcaggt atcccatcag actctgataa aatcccgttc
+      661 cacccctatt atacaattaa agatcttcta ggatttcttt cactcatcct cctactttta
+      721 ctcctagttt tattctcccc tgaccttctc ggcgacccag acaactatac ccctgcgaat
+      781 cccctcaaca ctcctcctca catcaaacct gaatgatact tcctatttgc ctacgccatt
+      841 ctacgctcca tccctaacaa actaggaggc gttctagccc tagttatatc aattctcatt
+      901 ctagcaatca tcccccttct ccatatgtcc aaacaacgca gcataatatt ccgacccgtc
+      961 agccaagctc tcttctgagt ccttgttgca gaccttctca cactcacatg gatcggtggg
+     1021 caaccagttg aacacccatt tatcactatt ggacaagtag catctgtcct ttacttctct
+     1081 attattctca tcctgatacc cctcgcaagc ttaatcgaaa ataaaatcct caaatgaagg
+//
+
+LOCUS       AB058615                1140 bp    DNA     linear   MAM 08-JAN-2003
+DEFINITION  Lepus brachyurus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate:Lbra_Honsyu 2.
+ACCESSION   AB058615
+VERSION     AB058615.2  GI:14164378
+KEYWORDS    .
+SOURCE      mitochondrion Lepus brachyurus
+  ORGANISM  Lepus brachyurus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Yamada,F., Takaki,M. and Suzuki,H.
+  TITLE     Molecular phylogeny of Japanese Leporidae, the Amami rabbit
+            Pentalagus furnessi, the Japanese hare Lepus brachyurus, and the
+            mountain hare Lepus timidus, inferred from mitochondrial DNA
+            sequences
+  JOURNAL   Genes Genet. Syst. 77 (2), 107-116 (2002)
+   PUBMED   12087193
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Takaki,M., Yamada,F. and Suzuki,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-MAR-2001) Mika Takaki, Hokkaido Univ., Graduate
+            School of Environmental Earth Science; North 10, West 5, Kita-ku,
+            Sapporo, Hokkaido 060-0810, Japan (E-mail:takaki@ees.hokudai.ac.jp,
+            Tel:81-11-706-2251, Fax:81-11-706-4867)
+COMMENT     On May 21, 2001 this sequence version replaced gi:13488732.
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus brachyurus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Lbra_Honsyu 2"
+                     /db_xref="taxon:156448"
+                     /country="Japan:ibaraki, Ushiku"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAB40224.2"
+                     /db_xref="GI:14164379"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLLIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGASVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLSLILLLLLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPLLHMSKQRSMMFRPVSQALFWVLVADLLT
+                     LTWIGGQPVEHPFITIGQVASVLYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca tccgtaaaac tcacccccta ttaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaatat ctcagcttga tgaaactttg gctctctatt agggttatgc
+      121 ctactaatcc aaatcctaac tggtctattc ctagctatac actatacatc agacacagca
+      181 acagcattct cctccgtcac acacatttgc cgagacgtaa actacggctg acttatccgt
+      241 tacctacacg ccaacggagc atcaatattc tttatctgct tgtatataca tgtaggccgt
+      301 ggaatctact acggctcata tacttatcta gaaacctgaa atattggcat tattctatta
+      361 tttgcagtaa tagccacagc attcataggc tatgtccttc catgaggaca aatatcattc
+      421 tgaggggcct ccgtaattac taatctccta tcagccatcc cgtatattgg aacaacccta
+      481 gttgaatgaa tctgaggagg gttctcagtt gataaagcta cactcacccg attcttcgcc
+      541 ttccacttta tcctcccatt tatcattgca gcactagtaa taattcactt actttttctt
+      601 catgaaactg gctccaacaa tccatcaggt atcccatcag actctgataa aatcccgttc
+      661 cacccctatt atacaattaa agatcttcta ggatttcttt cactcatcct cctactttta
+      721 ctcctagttt tattctcccc tgacctcctc ggcgacccag acaactatac ccctgcgaat
+      781 cccctcaaca ctcctcctca catcaaacct gaatgatact tcctatttgc ctacgccatt
+      841 ctacgctcca tccctaacaa actaggaggc gttctagccc tagttatatc aattctcatt
+      901 ctagcaatca tcccccttct ccatatgtcc aaacaacgca gcataatatt ccgacccgtc
+      961 agccaagctc tcttctgagt ccttgttgca gaccttctca cactcacatg gatcggtggg
+     1021 caaccagttg agcacccatt tatcactatt ggacaagtag catctgtcct ttacttctct
+     1081 attattctca tcctgatacc cctcgcaagc ttaatcgaaa ataaaatcct caaatgaagg
+//
+
+LOCUS       AB058607                1140 bp    DNA     linear   MAM 08-JAN-2003
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate:Ltim_Hokkaido 1.
+ACCESSION   AB058607
+VERSION     AB058607.1  GI:13488723
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Yamada,F., Takaki,M. and Suzuki,H.
+  TITLE     Molecular phylogeny of Japanese Leporidae, the Amami rabbit
+            Pentalagus furnessi, the Japanese hare Lepus brachyurus, and the
+            mountain hare Lepus timidus, inferred from mitochondrial DNA
+            sequences
+  JOURNAL   Genes Genet. Syst. 77 (2), 107-116 (2002)
+   PUBMED   12087193
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Takaki,M., Yamada,F. and Suzuki,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-MAR-2001) Mika Takaki, Hokkaido Univ., Graduate
+            School of Environmental Earth Science; North 10, West 5, Kita-ku,
+            Sapporo, Hokkaido 060-0810, Japan (E-mail:takaki@ees.hokudai.ac.jp,
+            Tel:81-11-706-2251, Fax:81-11-706-4867)
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Ltim_Hokkaido 1"
+                     /db_xref="taxon:62621"
+                     /country="Japan:Hokkaido, Sapporo"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAB40223.1"
+                     /db_xref="GI:13488724"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattc tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctctaataa cccatcaggt atcccatcag actctgacaa aattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaattacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtact ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       DQ793161                1140 bp    DNA     linear   MAM 24-JUL-2006
+DEFINITION  Lepus mandshuricus isolate black12 cytochrome b (cytb) pseudogene,
+            complete sequence; nuclear copy of mitoochondrial gene.
+ACCESSION   DQ793161
+VERSION     DQ793161.1  GI:110559175
+KEYWORDS    .
+SOURCE      Lepus mandshuricus (Manchurian hare)
+  ORGANISM  Lepus mandshuricus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Zheng,D., Liu,J., Pan,Y. and Zhou,Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-JUN-2006) College of Wildlife Resources, Northeast
+            Forestry University, 26 Hexing Road, Harbin, Heilongjiang 150040,
+            China
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus mandshuricus"
+                     /mol_type="genomic DNA"
+                     /strain="Lepus melainus"
+                     /isolate="black12"
+                     /db_xref="taxon:112021"
+     gene            1..1140
+                     /gene="cytb"
+                     /note="cytochrome b"
+                     /pseudo
+ORIGIN
+        1 atgaccaatc ccgtgcgccc tcacccccta caaaaacttg gtaaccactc ccgaattgac
+       61 cttcccgccc ccgctcgcat ttcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctcac tggcctattc ctccatatac catacacatt cgacacagca
+      181 acagcatttt cttcaatcac acatatttgc caagacgtaa actatggctg acttaatcgt
+      241 tacctgccgg ccgatgaagc atcaatattt tttatctgct tatatctacc tgtaggtcgg
+      301 gaaaactact accccacaga tacgtacata aaaacctgga atattgccat tattctatta
+      361 tttgccccgc gcgcaaactc agttatgggc tatgttcccc catgaggacc aatatcaatg
+      421 tgaggccctt ctgcatgtac gagtctttca tatcctatcc cctagattgg aacatgccta
+      481 gttgaatgaa tttgtttccg atttcctgtc gacaaagcta ccctcacccg attcttcgct
+      541 ttccacttca ttctcccttt catcatcgcc gatgtacaga tgagtcactt acttttactc
+      601 cctgaccatg gctaccctaa cctctcagag agcctctcac actccgataa gaatcacttc
+      661 cagctccata accaagttac ggaccttcaa agaatcctcg gacatatact cctactcata
+      721 cacctagtcc tattctcctc cgagcgtgaa ggagaccccg acaactactc ccctgccaat
+      781 cctctcagca ttactcaccc agtaaaacct ggatggtatt tgacatttgc ttacgccatt
+      841 ttacgctcta gccctaactg actggtaggt gttcgagacc cagttatagc aattctcatt
+      901 caagcaatta tccccttcgt ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagtgg tgttgagaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccacc tattgatatt ggacaaggag catctagcac gaacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaagcat tcaaggaagg
+//
+
+LOCUS       AB687534                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus coreanus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate: GK230.
+ACCESSION   AB687534
+VERSION     AB687534.1  GI:390516756
+KEYWORDS    .
+SOURCE      mitochondrion Lepus coreanus (Korean hare)
+  ORGANISM  Lepus coreanus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus coreanus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="GK230"
+                     /db_xref="taxon:258242"
+                     /country="South Korea"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21112.1"
+                     /db_xref="GI:390516757"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNHGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcatccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa accatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctattcgc ctacgccatt
+      841 ttacgctcga tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggaggg
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687533                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus coreanus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate: GK229.
+ACCESSION   AB687533
+VERSION     AB687533.1  GI:390516754
+KEYWORDS    .
+SOURCE      mitochondrion Lepus coreanus (Korean hare)
+  ORGANISM  Lepus coreanus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus coreanus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="GK229"
+                     /db_xref="taxon:258242"
+                     /country="South Korea"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21111.1"
+                     /db_xref="GI:390516755"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNHGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMVFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcatccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa accatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggttcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctattcgc ctacgccatt
+      841 ttacgctcga tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcatagtatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggaggg
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687532                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus coreanus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate: GK228.
+ACCESSION   AB687532
+VERSION     AB687532.1  GI:390516752
+KEYWORDS    .
+SOURCE      mitochondrion Lepus coreanus (Korean hare)
+  ORGANISM  Lepus coreanus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus coreanus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="GK228"
+                     /db_xref="taxon:258242"
+                     /country="South Korea"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21110.1"
+                     /db_xref="GI:390516753"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNHGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcatccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa accatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggttcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctattcgc ctacgccatt
+      841 ttacgctcga tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggaggg
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687531                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus coreanus mitochondrial cytb gene for cytochrome b, complete
+            cds, isolate: GK227.
+ACCESSION   AB687531
+VERSION     AB687531.1  GI:390516750
+KEYWORDS    .
+SOURCE      mitochondrion Lepus coreanus (Korean hare)
+  ORGANISM  Lepus coreanus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus coreanus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="GK227"
+                     /db_xref="taxon:258242"
+                     /country="South Korea"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21109.1"
+                     /db_xref="GI:390516751"
+                     /translation="MTNIRKTHTLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNHGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcatacccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaattctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa accatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcga tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggaggg
+     1021 caaccagttg aacacccatt tattactatt gggcaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687530                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap15.
+ACCESSION   AB687530
+VERSION     AB687530.1  GI:390516748
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap15"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21108.1"
+                     /db_xref="GI:390516749"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSSISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PLHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILVIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaagcat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccactc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagtaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687529                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap14-e.
+ACCESSION   AB687529
+VERSION     AB687529.1  GI:390516746
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap14-e"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21107.1"
+                     /db_xref="GI:390516747"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSSISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILVIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaagcat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagtaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687528                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap14-d.
+ACCESSION   AB687528
+VERSION     AB687528.1  GI:390516744
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap14-d"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21106.1"
+                     /db_xref="GI:390516745"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcctgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687527                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap14-c.
+ACCESSION   AB687527
+VERSION     AB687527.1  GI:390516742
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap14-c"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21105.1"
+                     /db_xref="GI:390516743"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctgtt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687526                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap14-b.
+ACCESSION   AB687526
+VERSION     AB687526.1  GI:390516740
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap14-b"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21104.1"
+                     /db_xref="GI:390516741"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattaccatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687525                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap14-a.
+ACCESSION   AB687525
+VERSION     AB687525.1  GI:390516738
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap14-a"
+                     /country="Russia: Sakhalin"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21103.1"
+                     /db_xref="GI:390516739"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tggaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctattc ctagctatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggagc atcaatattt tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggcca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgca gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctccaataa cccatcaggt atcccatcag actctgataa gattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctc ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca cccctcccca catcaaacct gaatggtatt ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta ttcttatacc ccttgcaagc ttgattgaga ataaaatcct taaatgaagg
+//
+
+LOCUS       AB687524                1140 bp    DNA     linear   MAM 09-JUN-2012
+DEFINITION  Lepus timidus mitochondrial cytb gene for cytochrome b, complete
+            cds, haplotype: hap13.
+ACCESSION   AB687524
+VERSION     AB687524.1  GI:390516736
+KEYWORDS    .
+SOURCE      mitochondrion Lepus timidus (Mountain hare)
+  ORGANISM  Lepus timidus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Lagomorpha;
+            Leporidae; Lepus.
+REFERENCE   1
+  AUTHORS   Kinoshita,G., Nunome,M., Han,S.H., Hirakawa,H. and Suzuki,H.
+  TITLE     Ancient colonization and within-island vicariance revealed by
+            mitochondrial DNA phylogeography of the mountain hare (Lepus
+            timidus) in Hokkaido, Japan
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Kinoshita,G. and Nunome,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2011) Contact:Gohta Kinoshita Hokkaido
+            University, Graduate School of Environmental Earth Science; North
+            10, West 5, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Lepus timidus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:62621"
+                     /haplotype="hap13"
+                     /country="Japan: Hokkaido"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAM21102.1"
+                     /db_xref="GI:390516737"
+                     /translation="MTNIRKTHPLLKIVNHSLIDLPAPSNISAWWNFGSLLGLCLMIQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWLIRYLHANGASMFFICLYMHVGRGI
+                     YYGSYTYLETWNIGIILLFAVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTTL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALVMIHLLFLHETGSNNPSGIPSDSDKI
+                     PFHPYYTIKDLLGFLVLILLLMLLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVMSILILAIIPFLHMSKQRSMMFRPISQVLFWILVADLLT
+                     LTWIGGQPVEHPFITIGQVASILYFSIILILMPLASLIENKILKW"
+ORIGIN
+        1 atgaccaaca ttcgtaaaac tcacccccta ctaaaaattg ttaaccactc cctaattgac
+       61 cttcccgccc cctcaaacat ctcagcctga tgaaactttg gctccctatt aggactatgc
+      121 ctaataatcc aaatcctaac tggcctgttc ctagccatac actacacatc agacacagca
+      181 acagcatttt cttcagtcac acatatttgc cgagacgtaa actatggctg acttattcgt
+      241 tacctgcacg ccaatggggc atcaatattc tttatctgct tatatataca tgtaggtcgt
+      301 ggaatctact acggctcata tacttaccta gaaacctgga atattggcat tattctacta
+      361 tttgcagtaa tagccacagc atttataggc tatgttctcc catgaggaca aatatcattc
+      421 tgaggcgcta ctgtaattac caatctttta tcagctatcc cctacattgg aacaacccta
+      481 gttgaatgaa tttgaggagg attttcagtc gacaaagcta cactcacccg attcttcgct
+      541 ttccacttca ttctcccatt catcatcgcg gcactagtga tgattcactt acttttcctc
+      601 catgaaactg gctctaataa cccatcaggt atcccatcag actctgacaa aattccattc
+      661 cacccctatt acacaattaa agaccttcta ggatttctcg tacttatcct cctactcata
+      721 ctcctagtct tattctcccc tgaccttctt ggagacccag acaactacac ccctgccaat
+      781 cctctcaaca ctcctcccca catcaaacct gaatggtact ttctatttgc ctacgccatt
+      841 ttacgctcca tccctaacaa actaggaggt gttctagccc tagttatatc aattctcatc
+      901 ctagcaatta tccccttcct ccacatatcc aaacaacgca gcataatatt ccgaccgatt
+      961 agccaagttc tcttctgaat cctcgttgca gaccttctaa cactcacatg gatcggagga
+     1021 caaccagttg aacacccatt tattactatt ggacaagtag catctatcct ttacttctct
+     1081 atcatcctta tccttatacc ccttgcaagc ttaattgaga ataaaatcct taaatgaagg
+//
