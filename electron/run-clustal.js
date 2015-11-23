@@ -3,6 +3,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const _ = require('lodash')
 
 function make_clustal_arguments(args) {
 	let argString = ''
@@ -20,9 +21,9 @@ function make_clustal_arguments(args) {
 	return argString
 }
 
-function clustal(data, args) {
+function clustal(data, args, extension) {
 	const tempInputFile = tempfile('.file')
-	const outputFile = tempInputFile.replace('.file', '.ph')
+	const outputFile = tempInputFile.replace('.file', extension)
 	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
 
 	args.infile = tempInputFile
