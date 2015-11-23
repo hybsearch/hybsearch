@@ -8,7 +8,7 @@ d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
 const ninja = require('./ninja.js')
-const clustal = require('./run-clustal')
+const clustal = require('./clustal.js')
 
 const fs = require('fs')
 var input = document.getElementById('input')
