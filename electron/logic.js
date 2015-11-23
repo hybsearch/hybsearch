@@ -5,19 +5,34 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
+const ninja = require('./ninja.js')
 const clustal = require('./run-clustal')
 
 const fs = require('fs')
 var input = document.getElementById('input')
 input.onchange = e => {
 	e.preventDefault()
-	let file = e.target.files[0]
-	console.log('File you dragged here is', file.path)
-	const genbank = genbankToFasta(fs.readFileSync(file.path, {encoding: 'utf-8'}))
+	const file = e.target.files[0]
 
-	const clustaldata = clustal(genbank, {tree: true, output: 'FASTA'})
+	console.log('The file is', file.path)
 
-	load(clustaldata)
+	const fasta = genbankToFasta(fs.readFileSync(file.path, {encoding: 'utf-8'}))
+
+	const aligned = clustal(fasta, {
+		align: true,
+		pwgapopen: 15,
+		pwgapext: 6.66,
+		pwdnamatrix: 'IUB',
+		transweight: 0.5,
+		gapext: 6.66,
+		gapopen: 15,
+		// gapdist: 5,
+		numiter: 1,
+	}, '.aln')
+
+	const tree = ninja(aligned, '.ph')
+
+	load(tree)
 	return false
 }
 
@@ -45,7 +60,7 @@ function load(newickStr) {
 	console.log("Width ratio is", ratio)
 
 	d3.phylogram.build('#phylogram', newick, {
-		width: 25 * ratio,
+		width: 10 * ratio,
 		height: 800
 	})
 }
