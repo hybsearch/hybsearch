@@ -16,4 +16,4 @@ const args = {
 	output: 'FASTA',
 }
 
-clustal(fs.readFileSync(process.argv[2], 'utf-8'), args, '.aln')
+console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), args, '.aln'))
