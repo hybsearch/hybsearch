@@ -27,9 +27,10 @@ function clustal(data, args, extension) {
 	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
 
 	args.infile = tempInputFile
-	const argstring = make_clustal_arguments(args)
+	args.outfile = outputFile
+	const argString = `clustalw ${make_clustal_arguments(args)}`
 
-	child.execSync(`clustalw ${argstring}`)
+	child.execSync(argString)
 
 	return fs.readFileSync(outputFile, {encoding: 'utf-8'})
 }
