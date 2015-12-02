@@ -11,6 +11,7 @@ const ninja = require('./ninja.js')
 const clustal = require('./clustal.js')
 
 const fs = require('fs')
+
 var input = document.getElementById('input')
 input.onchange = e => {
 	e.preventDefault()
@@ -30,6 +31,7 @@ input.onchange = e => {
 		gapopen: 15,
 		// gapdist: 5,
 		numiter: 1,
+		output: 'FASTA',
 	}, '.aln')
 
 	const tree = ninja(aligned, '.ph')
