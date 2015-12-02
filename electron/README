@@ -1,0 +1,3 @@
+./run-convert-genbank-to-fasta.js emydura-short.gb > emydura-short.fasta
+./run-clustal.js emydura-short.fasta > emydura-short.aligned
+./run-ninja.js emydura-short.aligned > emydura-short.tree
