@@ -27,7 +27,7 @@ function extractInfoFromGenbank(gbFile) {
 function genbankToFasta(genbankFile) {
   const data = extractInfoFromGenbank(genbankFile)
   const organism_list = uniq(data.map(o => o.organism))
-  console.log(organism_list)
+  // console.log(organism_list)
 
   return data
     .map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
