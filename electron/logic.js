@@ -12,8 +12,8 @@ const clustal = require('./clustal.js')
 
 const fs = require('fs')
 
-var input = document.getElementById('input')
-input.onchange = e => {
+var fileLoader = document.getElementById('load-file')
+fileLoader.onchange = e => {
 	e.preventDefault()
 	const file = e.target.files[0]
 
@@ -37,6 +37,16 @@ input.onchange = e => {
 	const tree = ninja(aligned, '.ph')
 
 	load(tree)
+	return false
+}
+
+var treeTextButton = document.getElementById('tree-box-submit')
+treeTextButton.onclick = e => {
+	e.preventDefault()
+
+	var data = document.getElementById('tree-box')
+
+	load(data.value)
 	return false
 }
 
