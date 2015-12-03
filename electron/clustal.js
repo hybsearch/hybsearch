@@ -56,7 +56,7 @@ function main() {
 		throw Error('usage: node clustal.js <input>')
 	}
 
-	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), args, '.aln'))
+	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), '.aln'))
 }
 
 if (require.main === module) {
