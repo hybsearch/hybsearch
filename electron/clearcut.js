@@ -6,11 +6,11 @@ const fs = require('fs')
 const _ = require('lodash')
 
 function clearcut(data, extension) {
-	const tempInputFile = tempfile('.file')
+	const tempInputFile = tempfile('.file').replace(' ', '\ ')
 	const outputFile = tempInputFile.replace('.file', extension)
 	fs.writeFileSync(tempInputFile, data, 'utf-8')
 
-	child.execSync(`./vendor/clearcut --aligned --DNA --stdin --stdout < '${tempInputFile.replace(' ', '\ ')}' > '${outputFile.replace(' ', '\ ')}'`)
+	child.execSync(`./vendor/clearcut --alignment --DNA < ${tempInputFile} > ${outputFile}`)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
