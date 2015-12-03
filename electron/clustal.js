@@ -21,25 +21,26 @@ function make_clustal_arguments(args) {
 	return argString
 }
 
-const defaultArgs = {
-	align: true,
-	pwgapopen: 15,
-	pwgapext: 6.66,
-	pwdnamatrix: 'IUB',
-	transweight: 0.5,
-	gapext: 6.66,
-	gapopen: 15,
-	numiter: 1,
-	output: 'FASTA',
-}
-
-function clustal(data, args=defaultArgs, extension) {
+function clustal(data, extension) {
 	const tempInputFile = tempfile('.file')
 	const outputFile = tempInputFile.replace('.file', extension)
 	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
 
-	args.infile = tempInputFile.replace(' ', '\ ')
-	args.outfile = outputFile.replace(' ', '\ ')
+	const args = {
+		align: true,
+		pwgapopen: 15,
+		pwgapext: 6.66,
+		pwdnamatrix: 'IUB',
+		transweight: 0.5,
+		gapext: 6.66,
+		gapopen: 15,
+		numiter: 1,
+		output: 'FASTA',
+
+		infile: tempInputFile.replace(' ', '\ '),
+		outfile: outputFile.replace(' ', '\ '),
+	}
+
 	const argString = `clustalw ${make_clustal_arguments(args)}`
 
 	child.execSync(argString)
