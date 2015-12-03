@@ -7,8 +7,8 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
-const ninja = require('./ninja.js')
-const clustal = require('./clustal.js')
+const clearcut = require('./clearcut')
+const clustal = require('./clustal')
 
 const fs = require('fs')
 
@@ -19,22 +19,9 @@ fileLoader.onchange = e => {
 
 	console.log('The file is', file.path)
 
-	const fasta = genbankToFasta(fs.readFileSync(file.path, {encoding: 'utf-8'}))
-
-	const aligned = clustal(fasta, {
-		align: true,
-		pwgapopen: 15,
-		pwgapext: 6.66,
-		pwdnamatrix: 'IUB',
-		transweight: 0.5,
-		gapext: 6.66,
-		gapopen: 15,
-		// gapdist: 5,
-		numiter: 1,
-		output: 'FASTA',
-	}, '.aln')
-
-	const tree = ninja(aligned, '.ph')
+	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
+	const aligned = clustal(fasta, '.aln')
+	const tree = clearcut(aligned, '.ph')
 
 	load(tree)
 	return false
