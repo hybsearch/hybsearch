@@ -10,7 +10,7 @@ function ninja(data, extension) {
 	const outputFile = tempInputFile.replace('.file', extension)
 	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
 
-	child.execSync(`./ninja '${tempInputFile.replace(' ', '\ ')}' > '${outputFile.replace(' ', '\ ')}'`)
+	child.execSync(`./vendor/ninja '${tempInputFile.replace(' ', '\ ')}' > '${outputFile.replace(' ', '\ ')}'`)
 	console.log(fs.readFileSync(outputFile, {encoding: 'utf-8'}))
 
 	return fs.readFileSync(outputFile, {encoding: 'utf-8'})
