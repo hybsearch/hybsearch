@@ -45,7 +45,7 @@ function main() {
 		throw Error('usage: node genbank-to-fasta.js <input>')
 	}
 
-	console.log(genbankToFasta(fs.readFileSync(process.argv[2], {encoding: 'utf-8'})))
+	console.log(genbankToFasta(fs.readFileSync(process.argv[2], 'utf-8')))
 }
 
 if (require.main === module) {

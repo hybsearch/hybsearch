@@ -24,7 +24,7 @@ function make_clustal_arguments(args) {
 function clustal(data, extension) {
 	const tempInputFile = tempfile('.file')
 	const outputFile = tempInputFile.replace('.file', extension)
-	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
+	fs.writeFileSync(tempInputFile, data, 'utf-8')
 
 	const args = {
 		align: true,
@@ -45,7 +45,7 @@ function clustal(data, extension) {
 
 	child.execSync(argString)
 
-	return fs.readFileSync(outputFile, {encoding: 'utf-8'})
+	return fs.readFileSync(outputFile, 'utf-8')
 }
 
 module.exports = clustal

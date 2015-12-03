@@ -19,7 +19,7 @@ fileLoader.onchange = e => {
 
 	console.log('The file is', file.path)
 
-	const fasta = genbankToFasta(fs.readFileSync(file.path, {encoding: 'utf-8'}))
+	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
 	const aligned = clustal(fasta, '.aln')
 	const tree = clearcut(aligned, '.ph')
 
