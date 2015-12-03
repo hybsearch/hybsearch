@@ -1,6 +1,6 @@
 'use strict'
 
-var tree
+var ntree
 
 const Newick = require('./vendor/newick')
 const d3 = require('d3')
@@ -66,7 +66,7 @@ function load(newickStr) {
 	buildNewickNodes(newick)
 
 	console.log("Got nodes:", newickNodes)
-	tree = newickNodes
+	ntree = newickNodes
 
 	// Find the min and max to calc width
 	const smallest = getSmallestLength(newickNodes, Infinity)
