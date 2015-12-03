@@ -21,30 +21,31 @@ function make_clustal_arguments(args) {
 	return argString
 }
 
-const defaultArgs = {
-	align: true,
-	pwgapopen: 15,
-	pwgapext: 6.66,
-	pwdnamatrix: 'IUB',
-	transweight: 0.5,
-	gapext: 6.66,
-	gapopen: 15,
-	numiter: 1,
-	output: 'FASTA',
-}
-
-function clustal(data, args=defaultArgs, extension) {
+function clustal(data, extension) {
 	const tempInputFile = tempfile('.file')
 	const outputFile = tempInputFile.replace('.file', extension)
-	fs.writeFileSync(tempInputFile, data, {encoding: 'utf-8'})
+	fs.writeFileSync(tempInputFile, data, 'utf-8')
 
-	args.infile = tempInputFile.replace(' ', '\ ')
-	args.outfile = outputFile.replace(' ', '\ ')
+	const args = {
+		align: true,
+		pwgapopen: 15,
+		pwgapext: 6.66,
+		pwdnamatrix: 'IUB',
+		transweight: 0.5,
+		gapext: 6.66,
+		gapopen: 15,
+		numiter: 1,
+		output: 'FASTA',
+
+		infile: tempInputFile.replace(' ', '\ '),
+		outfile: outputFile.replace(' ', '\ '),
+	}
+
 	const argString = `clustalw ${make_clustal_arguments(args)}`
 
 	child.execSync(argString)
 
-	return fs.readFileSync(outputFile, {encoding: 'utf-8'})
+	return fs.readFileSync(outputFile, 'utf-8')
 }
 
 module.exports = clustal
@@ -55,7 +56,7 @@ function main() {
 		throw Error('usage: node clustal.js <input>')
 	}
 
-	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), args, '.aln'))
+	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), '.aln'))
 }
 
 if (require.main === module) {
