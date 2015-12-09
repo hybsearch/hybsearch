@@ -22,9 +22,9 @@ function make_clustal_arguments(args) {
 }
 
 function clustal(data, extension) {
-	const tempInputFile = tempfile('.file')
-	const outputFile = tempInputFile.replace('.file', extension)
-	fs.writeFileSync(tempInputFile, data, 'utf-8')
+	const inputFile = tempfile().replace(' ', '\ ')
+	const outputFile = tempfile().replace(' ', '\ ')
+	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	const args = {
 		align: true,
@@ -35,9 +35,9 @@ function clustal(data, extension) {
 		gapext: 6.66,
 		gapopen: 15,
 		numiter: 1,
-		output: 'FASTA',
+		output: 'PHYLIP',
 
-		infile: tempInputFile.replace(' ', '\ '),
+		infile: inputFile.replace(' ', '\ '),
 		outfile: outputFile.replace(' ', '\ '),
 	}
 

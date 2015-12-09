@@ -7,8 +7,9 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
-const clearcut = require('./clearcut')
 const clustal = require('./clustal')
+const dnadist = require('./dnadist')
+const neighborJoining = require('./neighbor')
 
 const fs = require('fs')
 
@@ -20,8 +21,9 @@ fileLoader.onchange = e => {
 	console.log('The file is', file.path)
 
 	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
-	const aligned = clustal(fasta, '.aln')
-	const tree = clearcut(aligned, '.ph')
+	const aligned = clustal(fasta)
+	const postDnadist = dnadist(aligned)
+	const tree = neighborJoining(postDnadist)
 
 	load(tree)
 	return false
@@ -62,7 +64,7 @@ function load(newickStr) {
 	console.log("Width ratio is", ratio)
 
 	d3.phylogram.build('#phylogram', newick, {
-		width: 10 * ratio,
+		width: 3 * ratio,
 		height: 800
 	})
 }

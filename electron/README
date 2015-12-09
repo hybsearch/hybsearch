@@ -1,3 +1,4 @@
 node ./genbank-to-fasta.js data/emydura-short.gb > data/emydura-short.fasta
-node ./clustal.js data/emydura-short.fasta > data/emydura-short.aligned
-node ./clearcut.js data/emydura-short.aligned > data/emydura-short.tree
+node ./clustal.js data/emydura-short.fasta > data/emydura-short.phylip-aligned
+node ./dnadist.js data/emydura-short.phylip-aligned > data/emydura-short.dist
+node ./neighbor.js data/emydura-short.dist > data/emydura-short.tree
