@@ -22,7 +22,7 @@ function neighbor(data) {
 
 	child.execSync(`echo "${commands}" | neighbor`, {stdio: 'inherit'})
 
-	return fs.readFileSync(outputFile, 'utf-8')
+	return fs.readFileSync(outputFile, 'utf-8').split(';')[0] + ';'
 }
 
 module.exports = neighbor
