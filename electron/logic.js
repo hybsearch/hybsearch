@@ -7,8 +7,9 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
-const clearcut = require('./clearcut')
 const clustal = require('./clustal')
+const dnadist = require('./dnadist')
+const neighborJoining = require('./neighbor')
 
 const fs = require('fs')
 
@@ -21,7 +22,8 @@ fileLoader.onchange = e => {
 
 	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
 	const aligned = clustal(fasta, '.aln')
-	const tree = clearcut(aligned, '.ph')
+	const postDnadist = dnadist(aligned)
+	const tree = neighborJoining(postDnadist)
 
 	load(tree)
 	return false
