@@ -21,7 +21,7 @@ fileLoader.onchange = e => {
 	console.log('The file is', file.path)
 
 	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
-	const aligned = clustal(fasta, '.aln')
+	const aligned = clustal(fasta)
 	const postDnadist = dnadist(aligned)
 	const tree = neighborJoining(postDnadist)
 
