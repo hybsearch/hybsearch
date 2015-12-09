@@ -1,2 +1,3 @@
-(((((Emydura_tanybaraga-KC755187:0.002087,Emydura_tanybaraga-KC755186:0.002681):0.003739,Emydura_subglobosa-KC755184:0.003378):0.030750,(Emydura_subglobosa-KC755190:0.017223,Emydura_subglobosa-KC755185:0.021970):0.007403):0.042890,Emydura_macquarii-KC755183:0.019276),(Emydura_victoriae-KC755189:0.000593,Emydura_victoriae-KC755188:0.000593):0.011566) ;
-
+(Emydura_su:0.02236,(((Emydura_vi:0.00014,Emydura_vi:0.00104):0.01137,
+Emydura_ma:0.01893):0.04615,((Emydura_ta:0.00170,Emydura_su:0.00308):0.00053,
+Emydura_ta:0.00306):0.03241):0.00798,Emydura_su:0.01676);
