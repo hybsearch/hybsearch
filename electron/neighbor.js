@@ -20,7 +20,7 @@ function neighbor(data) {
 		'R', // and overwrite it
 	].join('\n')
 
-	child.execSync(`echo "${commands}" | neighbor`, {stdio: 'inherit'})
+	child.execSync(`echo "${commands}" | ./vendor/neighbor`)
 
 	return fs.readFileSync(outputFile, 'utf-8').split(';')[0] + ';'
 }

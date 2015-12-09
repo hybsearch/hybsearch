@@ -17,7 +17,7 @@ function dnadist(data, extension) {
 		'Y',
 	].join('\n')
 
-	child.execSync(`echo "${commands}" | dnadist`)
+	child.execSync(`echo "${commands}" | ./vendor/dnadist`)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
