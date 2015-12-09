@@ -64,7 +64,7 @@ function load(newickStr) {
 	console.log("Width ratio is", ratio)
 
 	d3.phylogram.build('#phylogram', newick, {
-		width: 10 * ratio,
+		width: 3 * ratio,
 		height: 800
 	})
 }
