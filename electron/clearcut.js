@@ -10,7 +10,7 @@ function clearcut(data, extension) {
 	const outputFile = tempInputFile.replace('.file', extension)
 	fs.writeFileSync(tempInputFile, data, 'utf-8')
 
-	child.execSync(`./vendor/clearcut --alignment --DNA < ${tempInputFile} > ${outputFile}`)
+	child.execSync(`./vendor/clearcut --alignment --DNA --neighbor --stdin --stdout < ${tempInputFile} > ${outputFile}`)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
