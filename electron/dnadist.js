@@ -5,19 +5,19 @@ const tempfile = require('tempfile')
 const fs = require('fs')
 const _ = require('lodash')
 
-function dnadist(data, extension) {
-	const inputFile = tempfile().replace(' ', '\ ')
-	const outputFile = tempfile().replace(' ', '\ ')
+function dnadist(data) {
+	const inputFile = './infile'
+	const outputFile = './outfile'
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let commands = [
-		inputFile,
-		'F',
-		outputFile,
-		'Y',
-	].join('\n')
+	// let commands = [
+	// 	'D',
+	// 	'D',
+	// 	'Y',
+	// ].join('\n')
+	let commands = ''
 
-	child.execSync(`echo "${commands}" | ./vendor/dnadist`)
+	child.execSync(`./vendor/dnadist`, {stdio: 'inherit'})
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
@@ -30,7 +30,7 @@ function main() {
 		throw Error('usage: node dnadist.js <input>')
 	}
 
-	console.log(dnadist(fs.readFileSync(process.argv[2], 'utf-8'), '.dnadist'))
+	console.log(dnadist(fs.readFileSync(process.argv[2], 'utf-8')))
 }
 
 if (require.main === module) {
