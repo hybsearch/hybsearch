@@ -8,8 +8,6 @@ d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./genbank-to-fasta')
 const clustal = require('./clustal')
-const dnadist = require('./dnadist')
-const neighborJoining = require('./neighbor')
 
 const fs = require('fs')
 

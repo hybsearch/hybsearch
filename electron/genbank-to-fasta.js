@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const uniq = require('lodash/array/uniq')
+const uniq = require('lodash/uniq')
 
 function removeWhitespace(str) {
 	return str
