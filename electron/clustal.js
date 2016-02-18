@@ -3,7 +3,6 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
-const _ = require('lodash')
 
 function make_clustal_arguments(args) {
 	let argString = ''
@@ -21,7 +20,7 @@ function make_clustal_arguments(args) {
 	return argString
 }
 
-function clustal(data, extension) {
+function clustal(data) {
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = tempfile().replace(' ', '\ ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
@@ -35,13 +34,13 @@ function clustal(data, extension) {
 		gapext: 6.66,
 		gapopen: 15,
 		numiter: 1,
-		output: 'PHYLIP',
+		output: 'NEXUS',
 
 		infile: inputFile.replace(' ', '\ '),
 		outfile: outputFile.replace(' ', '\ '),
 	}
 
-	const argString = `clustalw ${make_clustal_arguments(args)}`
+	const argString = `clustalw2 ${make_clustal_arguments(args)}`
 
 	child.execSync(argString)
 
@@ -56,7 +55,7 @@ function main() {
 		throw Error('usage: node clustal.js <input>')
 	}
 
-	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8'), '.aln'))
+	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8')))
 }
 
 if (require.main === module) {
