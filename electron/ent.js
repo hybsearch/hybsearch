@@ -64,7 +64,8 @@ let sample2 = {
                   "name": "Emydura_vi",
                   "length": 0.00104,
                   "branchset": [
-                  	{"name": "alkjdals", "length": 1}
+                  	{"name": "alkjdals", "length": 1},
+                    {"name": "alkjdals2", "length": 1}
                   ]
                 }
               ],
@@ -105,4 +106,53 @@ function walk(node, path) {
 	return longest
 }
 
-console.log(walk(sample2))
+function marknm(node, species1, species2){
+  if (node.branchset){
+    marknm(node.branchset[0], species1, species2)
+    marknm(node.branchset[1], species1, species2)
+  }
+  else{
+    if (node.name === species1){
+      node.nminner = node.nminner || []
+      node.nminner.push(species2)
+    }
+    else if (node.name === species2){
+      node.nmouter = node.nmouter || []
+      node.nmouter.push(species1)
+    }
+
+  }
+
+}
+
+function mutatenm(node) {
+  console.log(node)
+  if (!node.branchset) {
+    console.log("no branchset")
+    return [node.name]
+  }
+  else{
+    console.log("has branchset")
+    let speciesA = mutatenm(node.branchset[0])
+    let speciesB = mutatenm(node.branchset[1])
+    speciesA.forEach((species1) => {
+      if ((speciesB.indexOf(species1) > -1 ) && speciesB.every((x) => x !== species1)) {
+        speciesB.forEach((species2) => {
+          marknm(node, species1, species2)
+        })
+        speciesA.forEach((species3) => {
+          if (species3 !== species1){
+            marknm(node, species1, species3)
+          }
+        })
+      }
+    })
+    let species_list = []
+    species_list = species_list.concat(speciesA, speciesB)
+    
+    return species_list
+  }
+}
+
+mutatenm(sample2)
+console.log(JSON.stringify(sample2, null, 2))
