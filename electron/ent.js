@@ -63,10 +63,10 @@ let sample2 = {
                 {
                   "name": "Emydura_vi",
                   "length": 0.00104,
-                  "branchset": [
+                  /*"branchset": [
                   	{"name": "alkjdals", "length": 1},
                     {"name": "alkjdals2", "length": 1}
-                  ]
+                  ]*/
                 }
               ],
               "length": 0.01137
@@ -126,29 +126,35 @@ function marknm(node, species1, species2){
 }
 
 function mutatenm(node) {
-  console.log(node)
+  //console.log(node)
   if (!node.branchset) {
-    console.log("no branchset")
+    //console.log("no branchset")
     return [node.name]
   }
   else{
-    console.log("has branchset")
+    //console.log("has branchset")
     let speciesA = mutatenm(node.branchset[0])
     let speciesB = mutatenm(node.branchset[1])
     speciesA.forEach((species1) => {
-      if ((speciesB.indexOf(species1) > -1 ) && speciesB.every((x) => x !== species1)) {
+      console.log(speciesB.indexOf(species1)," ",speciesB.every((x) => x === species1))
+      if ((speciesB.indexOf(species1) > -1 ) && (speciesB.every((x) => x === species1))) {
         speciesB.forEach((species2) => {
-          marknm(node, species1, species2)
+          if (species2 !== species1){
+            marknm(node, species1, species2)
+            //console.log("markednm called on ",species1," and ",species2)
+          }
         })
         speciesA.forEach((species3) => {
           if (species3 !== species1){
             marknm(node, species1, species3)
+            //console.log("markednm called on ",species1," and ",species3)
           }
         })
       }
     })
     let species_list = []
     species_list = species_list.concat(speciesA, speciesB)
+    //console.log(species_list)
     
     return species_list
   }
