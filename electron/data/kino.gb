@@ -1,0 +1,2435 @@
+LOCUS       JN860673                 992 bp    DNA     linear   VRT 20-DEC-2014
+DEFINITION  Sternotherus carinatus voucher ANUM26080325 cytochrome b (cytb)
+            gene, partial cds; mitochondrial.
+ACCESSION   JN860673
+VERSION     JN860673.1  GI:403309906
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus carinatus (Razorback musk turtle)
+  ORGANISM  Sternotherus carinatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 992)
+  AUTHORS   Nie,W.L. and Xia,Q.X.
+  TITLE     Molecular phylogeny and divergence times of the turtle family
+            Geoemydida
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 992)
+  AUTHORS   Nie,W.L. and Xia,Q.X.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-OCT-2011) College of Life Science, Anhui Normal
+            University, Beijing East Road No. 1, Wuhu, Anhui 241000, China
+FEATURES             Location/Qualifiers
+     source          1..992
+                     /organism="Sternotherus carinatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ANUM26080325"
+                     /db_xref="taxon:573971"
+                     /tissue_type="tail tip muscle"
+                     /collected_by="Xia XQ"
+                     /identified_by="Nie LW"
+     gene            <1..>992
+                     /gene="cytb"
+     CDS             <1..>992
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AFR33800.1"
+                     /db_xref="GI:403309907"
+                     /translation="TGIFLAMHYSSDMSLAFSSVTHTIRDVQYGWLIRNLHANGASLF
+                     FMCIYMHIGRGIYYGSYLYKETWNTGIMLLLLTMATAFMGYVLPWGQMSFWGATVITN
+                     LLSAIPYIGTSLVQWIWGGFSVDNATLTRFFTLHFLLPFTIAGLAMTHLLFLHETGSN
+                     NPTGLNSNTDKIPFHPYFSYKDLLGMILMLTLLLLLALFSPNLLGDPDNFIPANPLIT
+                     PPHIKPEWYFLFAYAILRSIPNKLGGVLALLSSILILFMLPILHTSKQRTAMFRPFTQ
+                     TLFWILVADLLILTWIGGQPVENPFILIGQMASITYFTVLLALMPVAGLMENKM"
+ORIGIN      
+        1 accggtatct tcctagcaat acactattca tctgacatat cactagcatt ctcatcagtt
+       61 acccatacaa ttcgagacgt acaatacggc tgactcattc gaaacctcca tgccaacggc
+      121 gcttctctat tctttatatg tatctacatg cacattggac gaggaatcta ctacggctca
+      181 tacctgtaca aagaaacttg aaacactgga attatactat tactactaac catagccacc
+      241 gcattcatag gatatgttct accatgagga caaatatcat tttgaggagc taccgtaatt
+      301 accaacctcc tatcagctat cccctatatt ggcacctcac tagtacaatg aatttgaggt
+      361 ggattctcag tagacaatgc aactttaact cgattcttta cactccactt cttactacct
+      421 tttacaattg caggcctcgc aataacacac ctacttttcc ttcacgaaac tggctcaaat
+      481 aacccaacag gactcaattc aaatactgat aaaatcccat tccacccata cttttcatac
+      541 aaggacctcc taggcataat cctaatactc accttactac tattactagc actattctca
+      601 cccaacctct taggagaccc agacaacttc attccagcca atcctcttat tactccccca
+      661 catattaaac cagaatgata cttcctcttt gcctatgcaa tcctacgatc aattccaaat
+      721 aaattaggag gtgtacttgc cctactatcc tcaatcctca tcctctttat attgccaatc
+      781 ttacacacat ccaaacaacg aacagccatg ttccgaccat tcacccaaac cctattctga
+      841 atcctagtag ccgacctact aatcctaacg tgaattgggg gacaaccagt tgaaaacccc
+      901 ttcatcttaa tcggacaaat agcctccatc acctatttca ccgtcctatt agcacttata
+      961 ccagtagcag gcctaataga aaataaaata at
+//
+
+LOCUS       KF301391                1043 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon subrubrum steindachneri isolate K118 cytochrome b
+            (cytb) gene, partial cds; mitochondrial.
+ACCESSION   KF301391
+VERSION     KF301391.1  GI:523451865
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon subrubrum steindachneri
+  ORGANISM  Kinosternon subrubrum steindachneri
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1043)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1043)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1043
+                     /organism="Kinosternon subrubrum steindachneri"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K118"
+                     /sub_species="steindachneri"
+                     /specimen_voucher="UF:84961"
+                     /db_xref="taxon:1354802"
+                     /country="USA: Florida, Lee Co."
+     gene            <1..>1043
+                     /gene="cytb"
+     CDS             <1..>1043
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43429.1"
+                     /db_xref="GI:523451866"
+                     /translation="WWNFGSLLGTCLILQITTGIFLAMHYSSDMSLAFSSITHTIRDV
+                     QYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLHKETWNTGVMLLLLTMATAFMGY
+                     VLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATLTRFFTLHFLLPFMI
+                     AGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMILMLTLLLMLALFSP
+                     NLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGVLALLSSILILFMLP
+                     ILHTSKQRTTMFRPFTQILFWMLVADLLILTWIGGQPVENPFILIGQMASITYFTILL
+                     VLMPMAGLMENKM"
+ORIGIN      
+        1 cctgatgaaa cttcggatca ttacttggca cctgcttaat cctacaaatt actaccggta
+       61 tcttcctagc aatacactat tcatccgaca tatcattagc attctcatca atcacccata
+      121 caattcgaga cgtacaatac ggctgactta tccgaaacct ccatgctaat ggtgcttctc
+      181 tatttttcat atgtatctac atacacatcg gacgaggaat ctactacggc tcatacctcc
+      241 acaaagaaac ttgaaacacc ggagttatac tactactact aaccatagct actgcattta
+      301 taggatatgt cctaccatga ggacaaatat cattttgagg ggctaccgta attaccaatc
+      361 tactatcagc tatcccatat attggcacct cactagtaca atgaatttga ggcggattct
+      421 cagtagataa tgcaactcta acccgattct tcacactaca cttcctatta ccttttataa
+      481 ttgcaggtct cgcaataata cacctacttt tccttcacga aaccggctca aataacccaa
+      541 caggacttaa ttcaaatacc gataaaatcc catttcaccc gtatttttct tataaggacc
+      601 ttttaggcat aatcctaatg cttaccttac tacttatact agcactattt tcacctaatc
+      661 tattaggtga cccagacaac tttattccag ccaaccccct tattactccc ccacatatta
+      721 agccagaatg atacttcctc ttcgcctatg caattctacg atcaattcca aataaattag
+      781 gaggtgtact tgccctacta tcctcaattc tcatcctatt catactacca atcctacata
+      841 catctaaaca acgaacaact atattccgac catttaccca aattctattc tgaatactag
+      901 tagctgattt actaatccta acatgaattg gaggccaacc agttgaaaac cctttcatcc
+      961 taatcggaca aatagcttca attacctact tcaccatcct attagtactt ataccaatag
+     1021 caggcctaat agaaaataaa ata
+//
+
+LOCUS       KF301390                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon subrubrum hippocrepis isolate K74 cytochrome b (cytb)
+            gene, partial cds; mitochondrial.
+ACCESSION   KF301390
+VERSION     KF301390.1  GI:523451863
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon subrubrum hippocrepis
+  ORGANISM  Kinosternon subrubrum hippocrepis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon subrubrum hippocrepis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K74"
+                     /sub_species="hippocrepis"
+                     /specimen_voucher="UTA:CJF 4122"
+                     /db_xref="taxon:1354801"
+                     /country="USA: Louisiana, Cameron Parish"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43428.1"
+                     /db_xref="GI:523451864"
+                     /translation="SSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLHKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMIVGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLMLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTTMFRPFTQTLFWMLAADLLILTWIGGQPVENPFIL
+                     IGQMASIIYFIILLVLMPMAGLMENKM"
+ORIGIN      
+        1 atagctcatt cattgacctg ccaagtcctt caaacatttc aatctgatga aactttggat
+       61 cattactcgg cacctgctta attctacaaa ttactaccgg catcttccta gcaatacact
+      121 actcatctga catatcatta gcattctcat cagtcaccca cacaattcga gacgtacaat
+      181 acggctgact tatccgaaac ctccacgcca atggcgcttc cttatttttc atatgcatct
+      241 acatacacat cggacgagga atctactatg gctcatacct ccacaaagaa acttgaaaca
+      301 ctggagttat actactacta ctaaccatag ccactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atccttttga ggagctaccg taattaccaa tctactatca gccatcccct
+      421 atattggcac ctcattagta caatgaattt gaggtggatt ttcagtagac aatgcaaccc
+      481 taactcgatt cttcacatta cacttcctat taccttttat aattgtaggt ctcgcaataa
+      541 tacacctact tttccttcac gaaaccggct caaataaccc aacaggactt aattcaaata
+      601 ccgataaaat cccattccac ccatattttt catataagga cctactaggc ataatcctaa
+      661 tacttacctt actacttata ctagcactat tttcacctaa tctattagga gacccagaca
+      721 actttattcc agccaacccc cttattactc ccccccatat taagccagaa tgatacttcc
+      781 tctttgccta cgcaatccta cgatccattc caaataaatt gggaggtgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac caatcctaca tacatctaaa caacgaacaa
+      901 ctatattccg accattcacc caaactctat tctgaatact agcggccgat ctactaatcc
+      961 taacatgaat tggaggccaa ccagttgaaa accctttcat cctaatcgga caaatagcct
+     1021 caattatcta ctttatcatc ctattagtac ttataccaat agcaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301389                1021 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon sonoriense isolate K116 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301389
+VERSION     KF301389.1  GI:523451861
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon sonoriense (Sonoran mud turtle)
+  ORGANISM  Kinosternon sonoriense
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1021)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1021)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1021
+                     /organism="Kinosternon sonoriense"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K116"
+                     /db_xref="taxon:904203"
+                     /country="USA: Arizona, Yavapai Co."
+     gene            <1..>1021
+                     /gene="cytb"
+     CDS             <1..>1021
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43427.1"
+                     /db_xref="GI:523451862"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGICLILQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASMFFMCIYVHIGRGIYYGSYFYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTTFRPFTQTLFWTLVADLLILTWIGGQPVEAPFIL
+                     IGQMAS"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagtccat caaacatttc agcctgatga aacttcggat
+       61 cattacttgg catctgccta atcctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caattaccca tacaattcga gatgtacaat
+      181 acggctgact catccgaaac ctacacgcca acggtgcctc catatttttc atatgtatct
+      241 atgtacacat tggacgagga atctactacg gctcatactt ctacaaagaa acttgaaaca
+      301 ctggaattat actactccta ctaaccatag ctactgcatt catagggtat gtcctaccat
+      361 gaggacaaat atcattttga ggagctaccg taattactaa tttactatca gctatcccct
+      421 atattggcac ctcactagta cagtgaattt gaggtgggtt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctac taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccat gaaaccggct caaataaccc aacaggactc aactcaaata
+      601 ccgataaaat cccattccac ccatattttt catacaaaga ccttttaggt ataatcctaa
+      661 tacttaccct actacttata ctaacactgt tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaacccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact aggaggcgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ctacattccg accattcacc caaactctat tctgaacact agtagctgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaag cccccttcat cctaatcgga caaatagcct
+     1021 c
+//
+
+LOCUS       KF301387                1034 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon scorpioides cruentatum isolate K70 cytochrome b (cytb)
+            gene, partial cds; mitochondrial.
+ACCESSION   KF301387
+VERSION     KF301387.1  GI:523451857
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon scorpioides cruentatum
+  ORGANISM  Kinosternon scorpioides cruentatum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1034)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1034)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1034
+                     /organism="Kinosternon scorpioides cruentatum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K70"
+                     /sub_species="cruentatum"
+                     /specimen_voucher="UTA:R50302"
+                     /db_xref="taxon:1354799"
+                     /country="Guatemala"
+     gene            <1..>1034
+                     /gene="cytb"
+     CDS             <1..>1034
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43425.1"
+                     /db_xref="GI:523451858"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLTLQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVHYGWLIRNLHANGASLFFMCIYVHVGRGIYYGSYLYKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLALMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVI
+                     LMLALLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTMFRPFTQTLFWVLVADLLILTWIGGQPVENPFIL
+                     IGQMASITYF"
+ORIGIN      
+        1 acaactcatt tattgatctg ccaagtcctt caaacatttc agcctgatga aacttcggat
+       61 cattacttgg cacctgccta accctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcaccca cacaattcga gatgtacatt
+      181 acggctgact catccgaaac ctccacgcta acggtgcctc cctatttttt atatgtatct
+      241 acgtacacgt tggacgagga atctactacg gctcatacct ctacaaagaa acttgaaaca
+      301 ctggagttat actactacta ctaaccatag ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattactaa tttactatca gctatcccct
+      421 atattggtac ctcactagta caatgaattt gagggggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacatta cacttcctat taccatttac aattgcaggt ctcgcattaa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaata
+      601 ctgataaaat cccattccac ccatattttt catacaaaga tcttttaggt gtaatcctaa
+      661 tacttgcctt actacttata ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaaccca cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaatt aggaggcgta ctcgccctat
+      841 tatcctcaat tctcatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ccatattccg accattcacc caaactctat tctgagtact agtagctgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cctaatcgga caaatagcct
+     1021 caatcaccta cttc
+//
+
+LOCUS       KF301386                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon scorpioides albogulare isolate K16 cytochrome b (cytb)
+            gene, partial cds; mitochondrial.
+ACCESSION   KF301386
+VERSION     KF301386.1  GI:523451855
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon scorpioides albogulare
+  ORGANISM  Kinosternon scorpioides albogulare
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon scorpioides albogulare"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K16"
+                     /sub_species="albogulare"
+                     /specimen_voucher="REL 041"
+                     /db_xref="taxon:1354798"
+                     /country="Honduras: Finca La Libertad"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43424.1"
+                     /db_xref="GI:523451856"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLALQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVHYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLALLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFTILLVLMPMTGLMENKM"
+ORIGIN      
+        1 acaactcatt cattgacctg ccaagtccct caaacatttc agcctggtga aacttcggat
+       61 cattacttgg cacctgctta gccctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcaccca tacaattcga gatgtacatt
+      181 acggctgact catccgaaac ctccacgcta acggtgcctc cctatttttt atgtgtatct
+      241 acatacacat tggacgagga atctactatg gctcatacct ctataaagaa acctgaaaca
+      301 ctggagtcat actactacta ctaaccatag ctactgcctt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattactaa tttactatca gctatcccct
+      421 atattggtac ctcgctagta cagtgaattt gaggaggatt ctcagtagac aacgcgaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctacac gaaactggct caaataaccc aacaggactc aactcaaata
+      601 ctgataaaat cccattccac ccatattttt catacaaaga ccttttaggc ataatcctaa
+      661 tacttgcctt actacttata ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaacccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact agggggcgta ctcgccctat
+      841 tatcctcaat tctcatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ccatattccg accattcacc caaactctat tctgaatact agtagctgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccctttat cctaatcgga caaatagcct
+     1021 caatcaccta cttcaccatc ctattagtac ttataccaat aacaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301385                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon scorpioides abaxillare isolate K95 cytochrome b (cytb)
+            gene, partial cds; mitochondrial.
+ACCESSION   KF301385
+VERSION     KF301385.1  GI:523451853
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon scorpioides abaxillare
+  ORGANISM  Kinosternon scorpioides abaxillare
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon scorpioides abaxillare"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K95"
+                     /sub_species="abaxillare"
+                     /specimen_voucher="UTA:R52532"
+                     /db_xref="taxon:1354797"
+                     /country="Mexico: Chiapas, Rizo De Oro"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43423.1"
+                     /db_xref="GI:523451854"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLTLQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVHYGWLIRNLHANGASLFFMCIYAHIGRGIYYGLYLYKKTWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVI
+                     LMLALLLTLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPTLHTSKQRATMFRPFTQTLFWVLVANLLILTWIGGQPVENPFIL
+                     IGQMASITYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagtcctt caaacatttc agcctgatga aactttggat
+       61 cattacttgg cacctgccta accctacaaa ttattaccgg tatcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcactca tacaattcga gatgtacatt
+      181 acggctgact catccgaaac ctccatgcca acggtgcctc cctattcttt atatgtatct
+      241 acgcacatat tggacgagga atttactacg gcttatacct ctacaaaaaa acttgaaaca
+      301 ctggagttat actgctacta ttaaccatag ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggccaccg taattactaa tttactatca gctatccctt
+      421 atattggcac ctcattagta cagtgaattt gaggaggatt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaata
+      601 ccgataaaat cccattccac ccatattttt catacaaaga ccttttaggt gtaatcctaa
+      661 tacttgcctt actactcaca ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttatccc agccaacccc cttatcactc ccccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact aggaggcgta ctagccctac
+      841 tattttcaat tctcatccta ttcatattac caaccctaca cacatctaaa caacgagcaa
+      901 ccatattccg accattcacc caaactctat tctgagtact agtagctaat ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccattcat cctaatcgga caaatagcct
+     1021 caatcaccta cttcaccatc ctattagtac ttataccaat agcaggccta atagaaaaca
+     1081 aaata
+//
+
+LOCUS       KF301384                 886 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon oaxacae cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   KF301384
+VERSION     KF301384.1  GI:523451851
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon oaxacae (Oaxaca mud turtle)
+  ORGANISM  Kinosternon oaxacae
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 886)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 886)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..886
+                     /organism="Kinosternon oaxacae"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:1355154"
+                     /country="Mexico: Guerrero"
+     gene            <1..>886
+                     /gene="cytb"
+     CDS             <1..>886
+                     /gene="cytb"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43422.1"
+                     /db_xref="GI:523451852"
+                     /translation="LHANGASLFFMCIYAHIGRGIYYGLYLYKETWNTGVMLLLLTMA
+                     TAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATLTRFFTLHF
+                     LLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVILMLALLLM
+                     LTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGVLALLSSIL
+                     ILFMLPTLHTSKQRATMFRPFTQTLFWVLAADLLILTWIGGQPVENPFILIGQMASIT
+                     YFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 cctacacgcc aacggtgcct ccctattttt tatatgtatc tacgcacaca ttggacgagg
+       61 aatctactac ggcttatacc tctacaaaga aacttgaaac actggagtta tactactact
+      121 actaaccata gccactgcat tcataggata tgtcctacca tgaggacaaa tatcattttg
+      181 aggggctacc gtaattacta atttactatc agctatccca tatattggca cctcactagt
+      241 acaatgaatt tgagggggat tctcagtaga caacgcaacc ctaacccgat tcttcacact
+      301 acacttccta ttacccttta caattgcagg tctcgcaata atacacctac ttttcctcca
+      361 cgaaactggc tcaaataacc caacaggact caactcaaat accgataaaa tcccattcca
+      421 cccatatttt tcatacaaag accttttagg tgtaatccta atacttgcct tactacttat
+      481 actaacacta ttttcaccta acctattagg agacccagac aactttattc cagccaaccc
+      541 ccttatcact cctccacata ttaaaccaga atgatacttc ctcttcgcct atgcaatcct
+      601 acgatcaatt ccaaacaaac tagggggcgt actagcccta ctatcctcaa ttctcatcct
+      661 attcatacta ccgaccctac acacatctaa acaacgagca accatattcc gaccattcac
+      721 ccaaactcta ttctgagtac tagcagctga cctgttaatc ctaacatgaa tcggaggaca
+      781 accagttgaa aaccccttca tcctaatcgg acaaatagcc tcaatcacct acttcaccat
+      841 cctattagta cttataccaa tagcaggcct aatagaaaat aaaata
+//
+
+LOCUS       KF301383                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys leucostoma isolate K64 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301383
+VERSION     KF301383.1  GI:523451849
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon leucostomum (white-lipped mud turtle)
+  ORGANISM  Kinosternon leucostomum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon leucostomum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K64"
+                     /specimen_voucher="UTA:JAC 22365"
+                     /db_xref="taxon:641010"
+                     /country="Guatemala: Izabel, Morales"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43421.1"
+                     /db_xref="GI:523451850"
+                     /translation="NSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASLFFACIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMVAGLAMTHLLFLHETGSNNPTGLNSNIDKIPFHPYFSYKDLLGMI
+                     LMFTLLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTMFRPFTQTLFWILVTDLLILTWIGGQPVENPFIL
+                     IGQMASTIYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagccctt caaacatttc aatctgatga aatttcgggt
+       61 cattacttgg tacctgccta atcctacaaa tcactaccgg tatcttccta gcaatacact
+      121 actcatctga tatatcatta gcattctcat ctatcaccca cacaattcga gatgtacaat
+      181 acggctgact catccgaaac ctccatgcca acggtgcctc cctatttttc gcatgtatct
+      241 acatacacat cggacgagga atctattacg gatcgtactt atacaaagaa acttgaaaca
+      301 ccggaattat actactacta cttaccatag ctactgcatt tataggatat gtcctaccat
+      361 gaggtcaaat atcattttga ggagctaccg taatcaccaa tctactatca gccatccctt
+      421 acattggcac atcattagta caatgaattt gaggcggatt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacacta cacttcttat taccttttat agtggcaggc ctcgcaataa
+      541 cacacctact cttccttcac gaaactggct caaataaccc aacaggactc aactcaaaca
+      601 tcgataaaat cccatttcac ccttattttt catataaaga cctcctaggt ataatcctaa
+      661 tattcacctt actattaata ctaacactat tttcacctaa cctgctggga gaccccgaca
+      721 actttatccc agccaacccc cttattaccc ccccacacat caaaccagaa tgatatttcc
+      781 tcttcgccta tgcaattcta cgatcaatcc caaacaaatt aggaggtgta cttgccctac
+      841 tatcctcaat tctaatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ctatattccg accatttacc caaactctat tctgaatcct agtaaccgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cttaattgga caaatagcct
+     1021 ccactatcta cttcaccatt ttattagtac ttataccaat agcaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301382                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon integrum isolate K92 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301382
+VERSION     KF301382.1  GI:523451847
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon integrum (Mexican mud turtle)
+  ORGANISM  Kinosternon integrum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon integrum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K92"
+                     /specimen_voucher="UTA:R52531"
+                     /db_xref="taxon:904200"
+                     /country="Mexico: Puebla"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43420.1"
+                     /db_xref="GI:523451848"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLTLQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVHYGWLIRNLHANGASLFFMCIYMHIGRGIYYGLYLYKETWNTGV
+                     MLLLLTMTTAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNIDKIPFHPYFSYKDLLGMI
+                     LMLALLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRATMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFPILLVLMPVAGLMEDKM"
+ORIGIN      
+        1 acaactcatt cattgacctg ccaagtccct caaacatttc agcctggtga aacttcggat
+       61 cattacttgg gacctgccta accctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcaccca tacaattcga gacgtacatt
+      181 atggctgact catccgaaac ctccacgcca acggtgcctc cctatttttt atgtgtatct
+      241 atatacacat tggacgagga atctactacg gattatacct ctacaaagaa acttgaaaca
+      301 ctggggttat actattacta ctaaccataa ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattactaa tttactatca gctatcccct
+      421 atattggcac ctcgctagta cagtgaattt gaggaggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaaca
+      601 tcgataaaat cccattccac ccatattttt catacaaaga ccttttaggt ataatcctaa
+      661 tacttgcctt actacttata ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaacccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact agggggcgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac cgaccctaca cacatctaaa caacgagcaa
+      901 ccatattccg accattcacc caaactctat tctgaatgtt agtagctgac ttactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cctaattgga caaatagcct
+     1021 caatcaccta cttccccatc ctattagtac ttataccagt agcaggccta atagaagata
+     1081 aaata
+//
+
+LOCUS       KF301381                1081 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon integrum isolate K86 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301381
+VERSION     KF301381.1  GI:523451845
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon integrum (Mexican mud turtle)
+  ORGANISM  Kinosternon integrum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1081)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1081)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1081
+                     /organism="Kinosternon integrum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K86"
+                     /specimen_voucher="UTA:R51954"
+                     /db_xref="taxon:904200"
+                     /country="Mexico: Oaxaca"
+     gene            <1..>1081
+                     /gene="cytb"
+     CDS             <1..>1081
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43419.1"
+                     /db_xref="GI:523451846"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLTLQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVHYGWLIRNLHANGASLFFMCIYMHIGRGIYYGLYLYKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNIDKIPFHPYFSYKDLLGMI
+                     LMLALLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPTLHTSKQRATMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFTILLVLMPVAGLMED"
+ORIGIN      
+        1 acaactcatt cattgacctg ccaagtccct caaacatttc agcctggtga aacttcggat
+       61 cattacttgg gacctgccta accctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcactca tacaattcga gacgtacatt
+      181 atggctgact catccgaaac ctccacgcca acggtgcctc cctatttttt atatgtatct
+      241 atatacacat tggacgagga atctactacg gattatacct ctacaaagaa acttgaaaca
+      301 ctggggttat actattacta ctaaccatag ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattactaa tttactatca gctatcccct
+      421 atattggcac ctcgctagta cagtgaattt gaggagggtt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaaca
+      601 tcgataaaat cccattccac ccatattttt catacaaaga ccttttaggt ataatcctaa
+      661 tacttgcctt actacttata ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaacccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact agggggcgta ctcgccctac
+      841 tattctcaat tctcatccta ttcatactac cgaccctaca cacatctaaa caacgagcaa
+      901 ccatattccg accattcacc caaactctat tctgaatgtt agtagctgac ttactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cctaattgga caaatagcct
+     1021 caatcaccta cttcacaatc ctattagtac ttataccagt agcaggccta atagaagata
+     1081 a
+//
+
+LOCUS       KF301380                1028 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon integrum isolate K46 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301380
+VERSION     KF301380.1  GI:523451843
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon integrum (Mexican mud turtle)
+  ORGANISM  Kinosternon integrum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1028)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1028)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1028
+                     /organism="Kinosternon integrum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K46"
+                     /db_xref="taxon:904200"
+                     /country="Mexico: Colima"
+     gene            <1..>1028
+                     /gene="cytb"
+     CDS             <1..>1028
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43418.1"
+                     /db_xref="GI:523451844"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLTLQIITGIFLAMHYSSDM
+                     SLAFSSIAHTIRDVHYGWLIRNLHANGASLFFMCIYVHIGRGIYYGLYLYKETWNTGV
+                     TLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNIDKIPFHPYFSYKDLLGMI
+                     LMLALLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRATMFRPFTQTLFWMLVADLLILTWVGGQPVENPFIL
+                     IGQMASIT"
+ORIGIN      
+        1 acaactcatt cattgacctg ccaagtccct caaacatttc agcctggtga aacttcggat
+       61 cattacttgg gacctgccta accctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcgccca tacaattcga gacgtacatt
+      181 atggctgact catccgaaac ctccacgcca acggtgcctc cctatttttt atatgtatct
+      241 atgtacacat cggacgagga atctactacg gattatacct ctacaaagaa acttgaaaca
+      301 ctggggttac actattacta ctaaccatag ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattactaa tttactatca gctatcccct
+      421 atattggcac ctcgctagta cagtgaattt gaggaggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctac taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaaca
+      601 tcgataaaat cccattccac ccatattttt catacaaaga ccttttaggt ataatcctaa
+      661 tacttgcctt actacttata ctaacactat tttcacctaa cctattagga gacccagaca
+      721 actttattcc agccaacccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact aggaggcgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatattac cgactctaca cacatctaaa caacgagcaa
+      901 ccatattccg accattcacc caaactctat tctgaatatt agtagctgac ttactaatcc
+      961 taacatgagt tggaggacaa ccagttgaaa accccttcat cctaattgga caaatagcct
+     1021 caatcacc
+//
+
+LOCUS       KF301379                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon hirtipes isolate K111 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301379
+VERSION     KF301379.1  GI:523451841
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon hirtipes (rough-footed mud turtle)
+  ORGANISM  Kinosternon hirtipes
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon hirtipes"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K111"
+                     /specimen_voucher="UF:40410"
+                     /db_xref="taxon:142486"
+                     /country="Mexico: Durango"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43417.1"
+                     /db_xref="GI:523451842"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASLFFMCIYVHIGRGIYYGSYFYKNTWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLTMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLTLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTTFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQTASIIYFTILLVLMPTAGLMENKM"
+ORIGIN      
+        1 ataactcatt cattgaccta ccaagtccct caaacatttc agcctgatga aacttcgggt
+       61 cattacttgg cacctgccta atcctacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcaccca tacaattcga gatgtacaat
+      181 atggctgact catccgaaac ctccacgcca atggtgcctc actatttttt atgtgtatct
+      241 atgtacacat tggacgagga atctactacg gctcatactt ctacaaaaac acttgaaaca
+      301 ctggaattat actactccta ctaaccatag ctactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atcattttga ggagctaccg taattactaa cttactatca gctatccctt
+      421 atattggtac ctcactagta caatgaattt gaggtggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcacaataa
+      541 tacacctact tttcctccat gaaaccggct caaataaccc aacaggactc aactcaaata
+      601 ccgataaaat cccattccac ccatattttt catacaaaga ccttttaggt ataatcctaa
+      661 tacttaccct actacttaca ctaacactat tttcacctaa cctcttggga gacccagaca
+      721 actttattcc agccaatccc cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact aggaggcgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ctacattccg accatttacc caaactctat tctgaatact agtagctgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cctaatcgga caaacagcct
+     1021 caatcatcta cttcaccatc ctcttagtac ttataccaac agccggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301378                1077 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys herrerai isolate K110 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301378
+VERSION     KF301378.1  GI:523451839
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon herrerai (Herrara's mud turtle)
+  ORGANISM  Kinosternon herrerai
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1077)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1077)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1077
+                     /organism="Kinosternon herrerai"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K110"
+                     /specimen_voucher="MVUZ 0455"
+                     /db_xref="taxon:904199"
+                     /country="Mexico: Veracruz, Xalapa"
+     gene            <1..>1077
+                     /gene="cytb"
+     CDS             <1..>1077
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43416.1"
+                     /db_xref="GI:523451840"
+                     /translation="SSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHMIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGMSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMVAGLAMTHLLFLHETGSNNPTGINSNTDKIPFHPYFSYKDLLGVI
+                     LMSTLLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPTLHTSQQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASITYFTILLVLMPIAGLME"
+ORIGIN      
+        1 acagctcatt cattgaccta ccaagcccct caaacatttc aatctgatga aattttggat
+       61 cattacttgg cacttgttta atcctacaaa ttactaccgg tatcttccta gcaatacact
+      121 actcatctga tatatcatta gcattctcat cagtcaccca cataattcga gacgtacaat
+      181 acggctgact cattcgaaac ctccatgcta atggtgcctc tctattcttc atatgtatct
+      241 acatacacat cggacgagga atctactacg gatcatatct atacaaagaa acctgaaaca
+      301 ctggaattat actactatta ctcaccatag ctacagcgtt cataggatac gtcctaccat
+      361 gaggtcaaat atcattctga ggggccacag taatcaccaa tctactatca gctatcccct
+      421 acattggcat atcactagta caatgaattt gaggtgggtt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacactc cacttcctac taccctttat ggtagcaggt ctagcaataa
+      541 cacacctact cttccttcat gaaactggct caaacaatcc aacaggaatc aattcaaaca
+      601 ccgataaaat cccattccac ccatactttt cttataaaga cctcctaggt gtaattctaa
+      661 tatccacctt actactaaca ctagcactat tctcacctaa tttactagga gaccccgaca
+      721 acttcattcc agccaacccc cttattaccc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgccta cgcaatccta cgatctatcc caaataaatt aggcggtgta cttgctctac
+      841 tattctcaat cctaattctc tttatactac caaccctaca cacatctcaa caacgaacag
+      901 ctatattccg accattcact caaactctat tctgaatcct agtagccgac ctattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa atccattcat cttaatcgga caaacagcct
+     1021 ccattaccta ctttacaatc ctattagtac ttataccaat cgcaggtcta atagaaa
+//
+
+LOCUS       KF301377                1083 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys herrerai isolate K93 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301377
+VERSION     KF301377.1  GI:523451837
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon herrerai (Herrara's mud turtle)
+  ORGANISM  Kinosternon herrerai
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1083)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1083)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1083
+                     /organism="Kinosternon herrerai"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K93"
+                     /specimen_voucher="UTA:JAC 22435"
+                     /db_xref="taxon:904199"
+                     /country="Mexico: Puebla, Sierra Norte"
+     gene            <1..>1083
+                     /gene="cytb"
+     CDS             <1..>1083
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43415.1"
+                     /db_xref="GI:523451838"
+                     /translation="SSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHMIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGMSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMVAGLAMTHLLFLHETGSNNPTGINSNTDKIPFHPYFSYKDLLGVI
+                     LMSTLLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPTLHTSQQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASITYFTILLVLMPIAGLMENK"
+ORIGIN      
+        1 acagctcatt cattgaccta ccaagcccct caaacatttc aatctgatga aattttggat
+       61 cattacttgg cacttgttta atcctacaaa ttactaccgg tatcttccta gcaatacact
+      121 actcatctga tatatcatta gcattctcat cagtcaccca cataattcga gacgtacaat
+      181 acggctgact cattcgaaac ctccatgcta atggtgcctc tctattcttc atatgtatct
+      241 acatacacat cggacgagga atctactacg gatcatatct atacaaagaa acctgaaaca
+      301 ctggaattat actactatta ctcaccatag ctacagcgtt cataggatac gtcctaccat
+      361 gaggtcaaat atcattctga ggggccacag taatcaccaa tctactatca gctatcccct
+      421 acattggcat atcactagta caatgaattt gaggtgggtt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacactc cacttcctac taccctttat ggtagcaggt ctagcaataa
+      541 cacacctact cttccttcat gaaactggct caaacaatcc aacaggaatc aattcaaaca
+      601 ccgataaaat cccattccac ccatactttt cttataaaga cctcctaggt gtaattctaa
+      661 tatccacctt actactaaca ctagcactat tctcacctaa tttactagga gaccccgaca
+      721 acttcattcc agccaacccc cttattaccc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgccta cgcaatccta cgatctatcc caaataaatt aggcggtgta cttgctctac
+      841 tattctcaat cctaattctc tttatactac caaccctaca cacatctcaa caacgaacag
+      901 ctatattccg accattcact caaactctat tctgaatcct agtagccgac ctattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa atccattcat cttaatcgga caaacagcct
+     1021 ccattaccta ctttacaatc ctattagtac ttataccaat cgcaggtcta atagaaaata
+     1081 aaa
+//
+
+LOCUS       KF301376                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon flavescens isolate K81 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301376
+VERSION     KF301376.1  GI:523451835
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon flavescens (yellow mud turtle)
+  ORGANISM  Kinosternon flavescens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon flavescens"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K81"
+                     /db_xref="taxon:142484"
+                     /country="USA: Texas, Wise Co."
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43414.1"
+                     /db_xref="GI:523451836"
+                     /translation="SSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLRKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFVIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLMLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTTMFRPFTQILFWTLVADLLILTWIGGQPVENPFIL
+                     IGQMASIIYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 atagctcatt cattgacctg ccaagtcctt caaacatttc aatctgatga aactttggat
+       61 cattactcgg cacctgccta attctacaaa ttactaccgg catcttccta gcaatacact
+      121 actcatctga catatcatta gcattctcat cagtcaccca tacaattcga gacgtacaat
+      181 acggttgact tatccgaaac ctccacgcca atggcgcttc cttatttttc atgtgcatct
+      241 acatacacat cggacgagga atctactacg gctcatacct ccgcaaagaa acttgaaaca
+      301 ctggagttat actactacta ctaaccatag ccactgcatt cataggatat gtcctaccat
+      361 gaggacaaat atccttttga ggagctaccg taattaccaa tctactatca gccatcccct
+      421 atattggcac ctcattagta caatgaattt gaggtggatt ctcagtagac aatgcaactc
+      481 tcactcgatt cttcacacta catttcctat taccttttgt aattgcaggt ctcgcaataa
+      541 tacacctact tttccttcac gaaactggct caaataaccc aacaggactt aattcaaata
+      601 ccgataaaat cccattccac ccatattttt catataagga cctcctaggc ataatcctaa
+      661 tgcttacctt actacttata ctagcactat tttcacctaa tctattagga gacccagaca
+      721 actttattcc agccaacccc cttattactc ccccccatat taagccagaa tgatacttcc
+      781 tctttgccta cgcaatccta cgatccatcc caaataaatt aggaggtgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac caatcctaca tacatctaaa caacgaacaa
+      901 ctatattccg accattcacc caaattctat tctgaacact agtggccgat ctactaatcc
+      961 taacatgaat tggaggccaa ccagttgaaa accctttcat cctaatcgga caaatagcct
+     1021 caattatcta ctttaccatc ctattagtac ttataccaat agcaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301375                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon durangoense isolate K9 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301375
+VERSION     KF301375.1  GI:523451833
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon durangoense (Durango mud turtle)
+  ORGANISM  Kinosternon durangoense
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon durangoense"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K9"
+                     /specimen_voucher="UF:157325"
+                     /db_xref="taxon:142483"
+                     /country="Mexico: Durango, Presa El Mascarillo"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43413.1"
+                     /db_xref="GI:523451834"
+                     /translation="NSFIDLASPSNISAWWNFGSLLGTWLILQIITGIFLAMHYSSDM
+                     SLAFSSVTHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMT
+                     LMLALLLMLVLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTMHTSKQRTTMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASIIYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 ataactcatt cattgacctg gcaagtccat caaacatttc agcctgatga aacttcggat
+       61 cattacttgg cacctggcta atcctacaaa ttattaccgg catcttccta gcaatacatt
+      121 attcatctga tatatcacta gcattctcat cagtcaccca tacaattcga gacgtacaat
+      181 atggctgact catccgaaac ctccacgcta acggtgcctc cctatttttt atatgtatct
+      241 acatacacat tggacgagga atctactacg gctcatacct ctacaaagaa acttgaaaca
+      301 ctggaattat attactacta ctaaccatag ctaccgcatt tatagggtat gtcctaccat
+      361 gagggcaaat atcattttga ggagctaccg taattactaa cttattatca gctatcccat
+      421 atattggcac ctcactagta caatgaattt gaggcggatt ctcagtagat aatgcaactc
+      481 taacccgatt cttcacatta catttcctat taccttttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactc aactcaaaca
+      601 ccgataaaat tccatttcac ccatattttt catacaaaga ccttttaggt ataaccctaa
+      661 tacttgcctt actacttata ctagtactat tttcacccaa tctactaggt gacccagaca
+      721 actttatccc agccaatcca ctcattactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaatccta cggtcaattc caaataaatt aggaggtgta ctcgccttac
+      841 tatcctcaat tctcatctta tttatactac caactataca cacatctaaa caacgaacaa
+      901 ctatattccg accattcacc caaactctat tctgaatact agtagctgac ctattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccattcat cctaatcgga caaatagcct
+     1021 caatcatcta cttcactatt ctattagtac ttataccaat agcaggccta atagagaata
+     1081 aaata
+//
+
+LOCUS       KF301374                1008 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys dunni isolate K38 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301374
+VERSION     KF301374.1  GI:523451831
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon dunni (Colombian mud turtle)
+  ORGANISM  Kinosternon dunni
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1008)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1008)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1008
+                     /organism="Kinosternon dunni"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K38"
+                     /db_xref="taxon:904198"
+                     /country="Colombia"
+     gene            <1..>1008
+                     /gene="cytb"
+     CDS             <1..>1008
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43412.1"
+                     /db_xref="GI:523451832"
+                     /translation="LILQITTGTFLAMHYSSDMSLAFSSITHTIRDVQYGWLIRNLHA
+                     NGASLFFMCIYMHIGRGMYYGSYLYKETWNTGIMLLLLTMATAFMGYVLPWGQMSFWG
+                     ATVITNLLSAIPYVGTSLVQWIWGGFSVDNATLTRFFTFHFLLPFTMAGLAMMHLLFL
+                     HETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMILMSILLLMLALFSPNLLGDPDNFIP
+                     ANPLITPPHIKPEWYFLFAYAILRSIPNKLGGVLALLSSILVLFMLPTLHTSQQRTAM
+                     FRPFTQTLFWILVADLLILTWIGGQPVENPFISIGQTASIIYFTVLLVLMPMAGLMEN
+                     KM"
+ORIGIN      
+        1 ctaatcctac aaatcactac tgggaccttc ctagcaatac actactcatc tgatatatca
+       61 ttagcattct catccatcac tcatacaatc cgagacgtac aatacggttg actcatccga
+      121 aacctccatg ccaacggtgc ctccctattc ttcatatgta tctacataca catcggacga
+      181 ggaatatact acggatcata cctgtataaa gaaacctgaa acactggaat tatactacta
+      241 ctactcacta tagctaccgc attcatagga tatgtcctac catgaggtca aatatcattc
+      301 tgaggagcta ccgtaatcac caacctacta tcagccatcc cctatgttgg cacatcatta
+      361 gtacaatgaa tttgaggtgg attctcagta gacaatgcaa ctctgacccg attcttcaca
+      421 ttccacttct tattaccttt cacaatagca ggtctcgcaa taatacacct acttttcctt
+      481 cacgaaactg gttcaaataa cccaacagga cttaactcaa acaccgataa aatcccattt
+      541 cacccatact tttcatacaa agaccttcta ggtataatct taatatccat cttactacta
+      601 atactagcat tattctcacc taacctatta ggagaccccg acaacttcat tccagccaat
+      661 ccccttatta cccccccaca cattaaacca gagtgatact tcctctttgc ctacgcaatc
+      721 ctacgatcaa ttccaaataa attaggaggc gtacttgccc tactatcctc aattttagtc
+      781 ctatttatac taccaaccct acatacatcc caacaacgaa cggctatatt ccgaccattc
+      841 acccaaaccc tattttgaat cttagtagct gacctattaa tcctaacatg aattggagga
+      901 caaccagttg aaaatccatt catctcaatt ggacaaacag cctccattat ctactttacc
+      961 gtcctattag tacttatacc aatagcaggc ctaatagaaa ataaaata
+//
+
+LOCUS       KF301373                1082 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys creaseri isolate K35 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301373
+VERSION     KF301373.1  GI:523451829
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon creaseri (Creaser's mud turtle)
+  ORGANISM  Kinosternon creaseri
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1082)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1082)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1082
+                     /organism="Kinosternon creaseri"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K35"
+                     /db_xref="taxon:904197"
+                     /country="Mexico: Quintana Roo"
+     gene            <1..>1082
+                     /gene="cytb"
+     CDS             <1..>1082
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43411.1"
+                     /db_xref="GI:523451830"
+                     /translation="NSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTTRDVQYGWLIRNLHANGASLFFVCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMMAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVI
+                     LMLTLLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPILHTSQQRTAMFRPFTQTLFWVLVADLLILTWIGGQPVENPFIL
+                     IGQTASIIYFTILLLFMPIVGLMENK"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagcccct caaacatttc aatctgatga aattttggat
+       61 cattacttgg cacttgttta atcctacaaa ttactaccgg tattttccta gcaatacact
+      121 actcatcaga tatatcatta gcattctcat cagtaaccca cacaactcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcta acggcgcctc cctattcttc gtatgtatct
+      241 atatacacat tggacgagga atctactacg gatcatattt gtataaagaa acctgaaaca
+      301 ctggaattat actactacta ctcaccatag ctacagcatt cataggatat gtcctaccat
+      361 gaggtcaaat atcattctga ggagctaccg tgatcaccaa tctactatca gctatcccct
+      421 acattggtac atcattagta cagtgaattt gaggtgggtt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacactc cacttcctac taccattcat aatagcaggc ctagcaataa
+      541 cacacctact cttccttcac gaaactggct caaataatcc aacaggactc aattcaaaca
+      601 ccgataaaat cccattccac ccatactttt catataaaga cctcctaggt gtaattctaa
+      661 tactcacctt actactaaca ctagcactat tctcacctaa cctactagga gaccccgaca
+      721 acttcatccc agccaacccc ctcattactc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgccta cgcaatccta cgatctatcc caaataaact aggaggcgta cttgctctac
+      841 tattctcaat cctaatcctc tttatattac caatcctaca cacgtcccaa caacgaacag
+      901 ccatattccg accattcact caaactctat tctgagtcct agtagccgac ttattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccattcat tttaatcgga caaacagcct
+     1021 ccattatcta ctttacaatc ctattactat ttataccaat tgtcggccta atagaaaaca
+     1081 aa
+//
+
+LOCUS       KF301372                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon chimalhuaca cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   KF301372
+VERSION     KF301372.1  GI:523451827
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon chimalhuaca (Jalisco mud turtle)
+  ORGANISM  Kinosternon chimalhuaca
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon chimalhuaca"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:904196"
+                     /country="Mexico: Jalisco"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43410.1"
+                     /db_xref="GI:523451828"
+                     /translation="NSFIDLPSPSNISTWWNFGSLLGTCLILQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASLFFMCIYVHIGRGIYYGSYFYKETWNTGI
+                     MLLLLTMATAFMGYILPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMT
+                     LMFTLLLMLTLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTTTFRPFTQILFWMLVADLLILTWIGWQPVENPFIL
+                     IGQMASIIYFTILLVLMPTAGLMENKM"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagtccct caaacatttc aacctgatga aacttcggat
+       61 cattacttgg cacctgccta atcctacaaa ttattactgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat caatcaccca tacaattcga gatgtacaat
+      181 acggctgact catccgaaac ctccacgcca acggtgcctc cctatttttt atatgtatct
+      241 atgtacacat tggacgggga atctactacg gctcatactt ctacaaagaa acttgaaaca
+      301 ccggaattat actactccta ttaaccatag ctactgcatt cataggatat atcctaccat
+      361 gaggacaaat atcattttga ggggctactg taattactaa tttactatca gctatccctt
+      421 atattggcac ctcactagta caatgaattt gaggtggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttac aattgcaggt ctcgcaataa
+      541 tacacctact tttcctccat gaaaccggct caaacaaccc aacaggactt aactcaaata
+      601 ccgataaaat cccattccac ccatactttt catacaaaga ccttttaggt ataaccctaa
+      661 tatttaccct actacttata ctaacactat tttctcctaa cctcttagga gacccagaca
+      721 actttattcc agccaatcca cttatcactc ctccacatat taaaccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaacaaact aggaggcgta ctcgccctac
+      841 tatcctcaat tctcatccta ttcatactac caaccctaca cacatctaaa caacgaacaa
+      901 ctacattccg accattcacc caaattctat tctgaatact agtagctgac ctactgatcc
+      961 taacatgaat tggatgacaa ccagttgaga accctttcat cctaatcgga caaatagcct
+     1021 caattatcta cttcaccatc ctattagtac ttataccaac agccggtcta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301371                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon baurii isolate K8 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301371
+VERSION     KF301371.1  GI:523451825
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon baurii (striped mud turtle)
+  ORGANISM  Kinosternon baurii
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon baurii"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K8"
+                     /db_xref="taxon:142482"
+                     /country="USA: Florida, Orange Co."
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43409.1"
+                     /db_xref="GI:523451826"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYNSYLYKETWNTGV
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTALVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMIAGLAMMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLMLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPMLHTSKQRTTMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 ataactcatt tattgaccta ccaagtccat caaacatttc agcctgatga aactttggat
+       61 cactacttgg cacctgctta atcctacaaa ttactaccgg tatcttccta gcaatacact
+      121 attcatctga tatatcatta gcattctcat caattactca tacaattcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcca acggtgcttc cctattcttc atatgtatct
+      241 acatacacat cggacgagga atctactaca actcatacct ttacaaagaa acttgaaaca
+      301 ccggagttat actactacta ctaaccatag ctactgcatt catagggtat gtcttaccat
+      361 gaggacaaat atcattttga ggagctaccg taattaccaa tctactatca gctatcccat
+      421 atattggcac cgcattagta caatgaattt gaggcggatt ctcagtagac aatgcaactc
+      481 taacccgatt cttcacacta cacttcctat tacctttcat aattgcgggt ctcgcaataa
+      541 tgcacctact tttccttcac gaaaccggct caaataaccc aacaggactt aattcaaata
+      601 ccgataaaat cccatttcac ccatattttt catataagga ccttttaggc ataatcctaa
+      661 tactcacctt actacttata ctagcactat tttcacctaa tttattagga gacccagaca
+      721 actttattcc agccaacccc cttattactc ccccacatat taagccagaa tgatacttcc
+      781 tcttcgccta tgcaattcta cgatcaattc caaataaatt aggaggtgta cttgccctac
+      841 tatcctcaat tctcatccta ttcatactcc caatactaca cacatctaaa caacgaacaa
+      901 ctatattccg accatttacc caaaccttat tctgaatgtt agtggctgat ttactaatcc
+      961 taacatgaat tgggggccaa ccagttgaaa accccttcat cctaatcgga caaatagcct
+     1021 caattaccta cttcactatc ctattagtac taataccaat agcaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301370                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon arizonense cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   KF301370
+VERSION     KF301370.1  GI:523451823
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon arizonense (Arizona mud turtle)
+  ORGANISM  Kinosternon arizonense
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon arizonense"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="TCWC:72419"
+                     /db_xref="taxon:142481"
+                     /country="USA: Arizona"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43408.1"
+                     /db_xref="GI:523451824"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQIITGIFLAMHYSSDM
+                     SLAFSSITHTIRDVQYGWLIRNLHANGASLFFMCIYTHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLTTMHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMT
+                     MMLALLLMLVLFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     IALLSSILILFVLPVMHTSKQRTAMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASIIYFTILLVLMPMAGLMENEM"
+ORIGIN      
+        1 ataactcatt cattgacctg ccaagtccat caaacatttc agcctgatga aacttcggat
+       61 cattacttgg cacatgctta atcctacaaa ttattaccgg catcttccta gcaatacatt
+      121 attcatctga tatatcacta gcattctcat caattaccca tacaattcga gatgtacaat
+      181 atggctgact catccgaaac ctccacgcca acggtgcctc cctatttttt atatgtatct
+      241 acacacacat tggacgagga atctactacg gctcatacct ctataaagaa acttgaaaca
+      301 ctggaattat actactacta ctaaccatag ctactgcatt cataggctat gtcctaccat
+      361 gaggacaaat atcattttga ggagctaccg taattactaa tttactatca gctatcccat
+      421 atattggcac ctcattagta caatgaatct gaggtggatt ctccgtagat aatgcaaccc
+      481 taacccgatt cttcacatta catttcctat taccttttac aattgcaggt ctcacaacaa
+      541 tacacctact tttcctccac gaaactggct caaataaccc aacaggactt aactcaaaca
+      601 cagataaaat ccccttccac ccatactttt catacaaaga ccttttaggt ataaccataa
+      661 tacttgcctt actacttata ctagtactat tttcacccaa tctattagga gacccagaca
+      721 actttatccc agctaaccca cttattactc ctccacacat taaaccagaa tgatatttcc
+      781 tctttgccta tgcaatccta cgatcaattc caaataaatt aggaggtgta atcgccttac
+      841 tatcctcaat tctcatctta tttgtactgc cagttataca tacatctaag caacgaacag
+      901 ctatattccg accatttacc caaactctat tctgaatact agtagctgac ctattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa atccattcat cctaatcgga caaatagcct
+     1021 caatcatcta cttcactatt ctattagtac ttataccaat agcaggtcta atagaaaatg
+     1081 aaata
+//
+
+LOCUS       KF301369                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys angustipons cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   KF301369
+VERSION     KF301369.1  GI:523451821
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon angustipons (Central American mud turtle)
+  ORGANISM  Kinosternon angustipons
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon angustipons"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="UU<USA-UT>:3766"
+                     /db_xref="taxon:904195"
+                     /country="Costa Rica"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43407.1"
+                     /db_xref="GI:523451822"
+                     /translation="NSFIDLPSPSNISTSWNFGSLLGTCLILQITTGTFLAMHYSSDM
+                     SLAFSSITHMIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGMYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYVGTSLVQWIWGGFSVDNATL
+                     TRFFTFHFLLPFMMAGLAMMHXXXXXXXXXXXXXXXXXXXDKIPFHPYFSYKDLLGMI
+                     LMFILLLMLALFSPNLLGDPDNFIPANPLITPSHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPTLHTSKQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASIIYFTILLVLMPMAGLMENKM"
+ORIGIN      
+        1 ataactcatt cattgaccta ccaagcccct caaacatttc aacctcatga aatttcggat
+       61 cattacttgg cacctgtcta atcctacaaa ttactaccgg taccttccta gcaatacact
+      121 actcatctga tatatcatta gcattctcat ccatcactca cataattcga gatgtacaat
+      181 acggttgact catccgaaac ctccatgcca acggtgcctc cctattcttt atatgtatct
+      241 acatacacat cggacgagga atatactacg gatcttactt gtacaaagaa acctgaaaca
+      301 ctggaattat actactacta ctcactatag ctaccgcatt tataggatat gtcctaccat
+      361 gaggtcaaat atcattctga ggagctaccg taatcaccaa cctactatca gccattccct
+      421 atgtcggcac atcattagta caatgaatct gaggtggatt ctcagtagac aatgcaactc
+      481 tgacccgatt tttcacattc cacttcttac taccttttat aatagcaggt ctcgcaataa
+      541 tacaccnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      601 nngataaaat tccatttcac ccatactttt catacaaaga tctcctaggt ataatcctaa
+      661 tatttatctt actactaata ctagcattat tctcacctaa cctattagga gaccccgaca
+      721 acttcattcc agccaatccc ctcattaccc cctcacatat taaaccagaa tggtacttcc
+      781 tctttgccta cgcaatccta cgatcaattc caaacaaact aggaggtgta ctcgccctac
+      841 tatcctcaat tttaatccta ttcatactac caaccctaca cacatccaaa caacgaacag
+      901 ctatattccg accattcacc caaaccctgt tctgaatcct agtagccgac ctgttaattc
+      961 taacatgaat tggaggacaa ccagttgaaa atccattcat cttaattgga caaacagcct
+     1021 ccattatcta cttcaccatc ctattagtac taataccaat agcaggccta atagaaaaca
+     1081 aaata
+//
+
+LOCUS       KF301368                1030 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Kinosternon alamosae cytochrome b (cytb) gene, partial cds;
+            mitochondrial.
+ACCESSION   KF301368
+VERSION     KF301368.1  GI:523451819
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon alamosae (Alamos mud turtle)
+  ORGANISM  Kinosternon alamosae
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1030)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1030)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1030
+                     /organism="Kinosternon alamosae"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="UF:99877-78"
+                     /db_xref="taxon:904194"
+                     /country="Mexico: Sonora, Presa La Noria"
+     gene            <1..>1030
+                     /gene="cytb"
+     CDS             <1..>1030
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43406.1"
+                     /db_xref="GI:523451820"
+                     /translation="NSFIDLPTPSNISSWWNFGSLLGTCLMLQIITGIFLAMHYSSDM
+                     SLAFQSITHTIRDVQYGWLIRNLHANGASLFFMCIYIHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMIAGLTMMHLLFLHETGSNNPTGLNPYTDKIPFHPYFSYKDLLGMI
+                     LMLALLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFTLPALHTSKQRTTMFRPFTQTLFWMLVADLLILTWIGGQPVENPFIL
+                     IGQMASII"
+ORIGIN      
+        1 acaactcatt cattgacctg ccaaccccat caaacatttc atcctgatga aacttcggat
+       61 cattacttgg cacctgctta atactacaaa ttattaccgg catcttccta gcaatacact
+      121 attcatctga catatcacta gcattccaat caatcaccca tacaattcga gacgtacaat
+      181 acggctgact catccgaaac ctccacgcca atggcgcctc cctatttttt atatgtatct
+      241 acattcatat tggacgagga atctactacg gctcatacct ctacaaagaa acttgaaata
+      301 ccggaattat attactacta ctaaccatag ctactgcatt tataggatat gtcttaccat
+      361 gggggcaaat atcattttga ggagctaccg taattactaa tctactatca gctatcccct
+      421 acattggcac ctcattagta caatgaattt gaggtggatt ctcagtagac aacgcaaccc
+      481 taacccgatt cttcacacta cacttcctat taccctttat aattgcaggt cttacaataa
+      541 tacacctact tttccttcac gaaactggct caaataaccc aacaggactt aacccatata
+      601 ctgataaaat cccattccac ccatatttct catataaaga ccttttaggt ataatcctaa
+      661 tacttgcctt actacttaca ttagcactat tttcacccaa tttattagga gacccagaca
+      721 acttcattcc agccaacccc cttatcaccc ctccacacat taaaccagaa tgatacttcc
+      781 tattcgccta tgcaattcta cgatcaattc caaataaatt gggaggcgta ctcgccctac
+      841 tatcctcaat tctcatctta ttcacacttc cagccctaca cacctccaaa caacgaacaa
+      901 ctatatttcg accattcacc caaactctat tctgaatact agtagctgac ctacttatcc
+      961 taacatgaat tggaggacaa ccagttgaaa accccttcat cctaattgga caaatagcct
+     1021 caattatcta
+//
+
+LOCUS       KF301367                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys acuta isolate K34 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301367
+VERSION     KF301367.1  GI:523451817
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon acutum (Tabasco mud turtle)
+  ORGANISM  Kinosternon acutum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Kinosternon acutum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K34"
+                     /db_xref="taxon:904193"
+                     /country="Belize"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43405.1"
+                     /db_xref="GI:523451818"
+                     /translation="NSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTTRDVQYGWLIRNLHANGASLFFVCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMMAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVI
+                     LMLTLLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPILHTSQQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASIIYFTILLLFMPIVGLMENKM"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagcccct caaacatttc aatctgatga aattttgggt
+       61 cattacttgg cacttgttta atcctacaaa ttactaccgg tattttccta gcaatacact
+      121 actcatcaga tatatcatta gcattctcat cagtaaccca cacaactcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcta atggcgcctc cctattcttc gtatgtatct
+      241 atatacacat cggacgagga atctactacg gatcgtattt gtataaggaa acctgaaaca
+      301 ctggaattat actactacta ctcaccatag ctacagcatt cataggatat gtcctaccat
+      361 gaggtcaaat atcattctga ggagctaccg tgatcaccaa cctactatca gctatcccct
+      421 acatcggtac gtcactagta caatgaattt gaggtgggtt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacactc cacttcctac taccattcat aatagcaggc ctagcaataa
+      541 cacacctact cttccttcac gaaactggct caaataatcc aacaggactc aattcaaaca
+      601 ccgataaaat cccattccac ccatactttt cgtataaaga cctcctaggt gtaattctaa
+      661 tactcacctt actactaaca ctagcactat tctcacctaa cctactagga gaccccgaca
+      721 acttcatccc agccaacccc ctcattactc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgccta cgcaatccta cgatctatcc caaataaact aggaggcgta cttgctctac
+      841 tattctcaat cctaatcctc tttatattac caatcctaca cacatcccaa caacgaacag
+      901 ccatattccg accattcact caaactctat tctgaatcct agtagccgac ttattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccattcat tttaatcgga caaacagcct
+     1021 ccattatcta ctttacaatc ctattactat ttataccaat tgtcggccta atagaaaaca
+     1081 aaata
+//
+
+LOCUS       KF301366                1082 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Cryptochelys acuta isolate K33 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301366
+VERSION     KF301366.1  GI:523451815
+KEYWORDS    .
+SOURCE      mitochondrion Kinosternon acutum (Tabasco mud turtle)
+  ORGANISM  Kinosternon acutum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Kinosternon.
+REFERENCE   1  (bases 1 to 1082)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1082)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1082
+                     /organism="Kinosternon acutum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K33"
+                     /db_xref="taxon:904193"
+                     /country="Mexico"
+     gene            <1..>1082
+                     /gene="cytb"
+     CDS             <1..>1082
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43404.1"
+                     /db_xref="GI:523451816"
+                     /translation="NSFIDLPSPSNISIWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTTRDVQYGWLIRNLHANGASLFFVCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFMMAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGVI
+                     LMLTLLLTLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLFSILILFMLPILHTSQQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASIIYFTILLLFMPIVGLMENK"
+ORIGIN      
+        1 acaactcatt cattgaccta ccaagcccct caaacatttc aatctgatga aattttgggt
+       61 cattacttgg cacttgttta atcctacaaa ttactaccgg tattttccta gcaatacact
+      121 actcatcaga tatatcatta gcattctcat cagtaaccca cacaactcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcta atggcgcctc cctattcttc gtatgtatct
+      241 atatacacat cggacgagga atctactacg gatcgtattt gtataaggaa acctgaaaca
+      301 ctggaattat actactacta ctcaccatag ctacagcatt cataggatat gtcctaccat
+      361 gaggtcaaat atcattctga ggagctaccg tgatcaccaa cctactatca gctatcccct
+      421 acatcggtac gtcactagta caatgaattt gaggtgggtt ctcagtagac aatgcaaccc
+      481 taacccgatt cttcacactc cacttcctac taccattcat aatagcaggc ctagcaataa
+      541 cacacctact cttccttcac gaaactggct caaataatcc aacaggactc aattcaaaca
+      601 ccgataaaat cccattccac ccatactttt cgtataaaga cctcctaggt gtaattctaa
+      661 tactcacctt actactaaca ctagcactat tctcacctaa cctactagga gaccccgaca
+      721 acttcatccc agccaacccc ctcattactc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgccta cgcaatccta cgatctatcc caaataaact aggaggcgta cttgctctac
+      841 tattctcaat cctaatcctc tttatattac caatcctaca cacatcccaa caacgaacag
+      901 ccatattccg accattcact caaactctat tctgaatcct agtagccgac ttattaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa acccattcat tttaatcgga caaacagcct
+     1021 ccattatcta ctttacaatc ctattactat ttataccaat tgtcggccta atagaaaaca
+     1081 aa
+//
+
+LOCUS       KF301365                 824 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Sternotherus odoratus isolate K78 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301365
+VERSION     KF301365.1  GI:523451813
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus odoratus
+  ORGANISM  Sternotherus odoratus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 824)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 824)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..824
+                     /organism="Sternotherus odoratus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K78"
+                     /specimen_voucher="UTA:R54409"
+                     /db_xref="taxon:142480"
+                     /country="USA: Texas, Menard Co."
+     gene            <1..>824
+                     /gene="cytb"
+     CDS             <1..>824
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43403.1"
+                     /db_xref="GI:523451814"
+                     /translation="ANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGIMLLLLTMATA
+                     FMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATLTRFFTLHFLL
+                     PFTITGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLMGMILMLTLLLSLT
+                     LFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGVLALLSSILIL
+                     FMLPILHTSKQRTAMFRPFTQTLLWVLMADLLILTWIGGQPVETPFILIGQMASIT"
+ORIGIN      
+        1 atgccaacgg cgcttcctta ttctttatat gtatctatat gcacattgga cgaggaatct
+       61 actacggctc atacctgtac aaagaaactt gaaacactgg aattatacta ctactactaa
+      121 ctatagccac cgcattcata gggtatgtcc taccatgagg acaaatatca ttttgagggg
+      181 ctaccgtaat taccaaccta ctatcagcca tcccttacat tggcacttca ctagtacagt
+      241 gaatctgagg tggattctca gtagacaatg caactttaac ccgattcttc acacttcact
+      301 tcttactacc ctttacaatt acaggcctcg caataacaca cctacttttc ctccatgaaa
+      361 ctggctcaaa taacccaaca ggacttaact caaatactga taaaatccca tttcacccat
+      421 acttttcata taaggacctc ataggcataa tcctaatact taccttacta ttatcactaa
+      481 cactgttttc acccaacctc ttaggggacc cagacaactt catcccagcg aaccctctta
+      541 ttactccccc acatattaaa ccagaatgat atttcctctt tgcctatgca atcctacgat
+      601 caatcccaaa taaattagga ggtgtacttg ccctactatc ctcaattctc atcctcttta
+      661 tactaccaat cttacacaca tccaaacaac gaacagccat attccgacca ttcacccaaa
+      721 ctctattatg ggtcctaata gccgacctac taatcctaac atgaattgga ggacaaccag
+      781 ttgaaacccc cttcatctta atcggacaaa tagcctctat tacc
+//
+
+LOCUS       KF301364                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Sternotherus minor peltifer isolate K13 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301364
+VERSION     KF301364.1  GI:523451811
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus minor peltifer
+  ORGANISM  Sternotherus minor peltifer
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Sternotherus minor peltifer"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K13"
+                     /sub_species="peltifer"
+                     /db_xref="taxon:1354752"
+                     /country="USA: Alabama, St. Clair Co."
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43402.1"
+                     /db_xref="GI:523451812"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTTRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLLLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFAILLALMPMAGLAENKM"
+ORIGIN      
+        1 acaattcatt cattgaccta ccaagcccct caaacatttc agcctgatga aacttcggat
+       61 cattactcgg cacctgctta atcctacaaa tcactactgg catcttccta gcaatacact
+      121 attcatctga catatcatta gcattctcat cagtcaccca tacaactcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcca acggcgcctc cctatttttt atgtgtatct
+      241 acatgcatat cggacgagga atctactacg gctcatacct atacaaagaa acttgaaaca
+      301 ctggaattat attactacta ctgactatag ctaccgcatt cataggatac gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattaccaa cctattatca gctatcccct
+      421 atattggcac ctcactagta caatgaattt gaggcggatt ctcagtagac aatgcaactt
+      481 taacccgatt cttcacactt cacttcttat tacctttcac aatcgcaggc ctcgcaataa
+      541 cgcacctact tttccttcac gaaactggct caaacaaccc aacaggactt aactcaaata
+      601 ccgataaaat tccatttcac ccatactttt catataaaga cctcttaggc ataatcctaa
+      661 tactcacctt actactatta ctagcactat tttcacccaa cctcctagga gacccagaca
+      721 acttcattcc agccaacccc cttattactc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgctta cgcaatccta cggtcaattc caaacaaact aggaggtgta ctcgccctac
+      841 tatcctcaat tcttatcctc ttcatactac caatcttaca cacatccaaa caacgaacag
+      901 ccatattccg accatttacc caaactctat tctgaatcct agtggccgac ctactaatct
+      961 taacatgaat tggaggacaa ccagttgaaa atccctttat cttaatcgga caaatagcct
+     1021 ctattaccta cttcgccatc ctattagcac ttataccaat agcaggccta gcagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301363                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Sternotherus minor minor isolate K11 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301363
+VERSION     KF301363.1  GI:523451809
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus minor minor
+  ORGANISM  Sternotherus minor minor
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Sternotherus minor minor"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K11"
+                     /sub_species="minor"
+                     /specimen_voucher="UF:80827"
+                     /db_xref="taxon:1354751"
+                     /country="USA: Florida, Marion Co."
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43401.1"
+                     /db_xref="GI:523451810"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQIITGIFLAMHYSSDM
+                     SLAFSSVTHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMT
+                     LMLTLLLLLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQTASITYFAILLVLMPMAGLAENNM"
+ORIGIN      
+        1 acaattcatt cattgaccta ccaagtccct caaacatttc agcctgatga aacttcggat
+       61 cattactcgg cacctgttta atcctacaaa tcattactgg tatcttccta gcaatacact
+      121 actcatctga catatcatta gcattctcat cagtcaccca tacaattcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcca acggcgcttc cctatttttt atgtgtatct
+      241 acatgcatat cggacgagga atctactacg gctcatacct atacaaagaa acttgaaaca
+      301 ccggaattat actactacta ctaactatag ctaccgcatt cataggctat gtcctaccat
+      361 gaggacaaat atcattttga ggagctaccg taattaccaa cctactatca gctatccctt
+      421 atattggcac ctcactagta caatgaattt gaggcggatt ctcagtagac aatgcaacct
+      481 taacccgatt cttcacactt cacttcttat tacctttcac aattgcaggc ctcgcaataa
+      541 cgcacctact tttccttcac gaaactggct caaacaaccc aacaggactt aactcaaata
+      601 ccgataaaat tccatttcac ccatactttt catataagga cctcttaggc ataactctaa
+      661 tactcacctt actactatta ctagcactat tttcacccaa cctcttagga gacccagaca
+      721 acttcattcc agccaacccc cttattactc ccccacatat caaaccagaa tgatacttcc
+      781 tctttgctta cgcaatccta cggtcaattc caaacaaatt aggaggtgta ctcgccctac
+      841 tatcctcaat tctcatcctc ttcatactac caatcttaca cacatccaaa caacgaacag
+      901 ccatattccg accattcacc caaactctat tttgaatcct agtggccgac ctactaatcc
+      961 taacatgaat tggaggacaa ccagttgaaa atccctttat cttaatcgga caaacagcct
+     1021 ccattaccta cttcgccatc ctattagtac tcataccaat agcaggccta gcagaaaata
+     1081 atata
+//
+
+LOCUS       KF301362                1073 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Sternotherus depressus isolate M125 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301362
+VERSION     KF301362.1  GI:523451807
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus depressus
+  ORGANISM  Sternotherus depressus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 1073)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1073)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1073
+                     /organism="Sternotherus depressus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="M125"
+                     /db_xref="taxon:904226"
+                     /country="USA"
+     gene            <1..>1073
+                     /gene="cytb"
+     CDS             <1..>1073
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43400.1"
+                     /db_xref="GI:523451808"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGTCLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTTRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGMI
+                     LMLTLLLLLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFAILLALMPMAGLA"
+ORIGIN      
+        1 acaattcatt cattgaccta ccaagcccct caaacatttc agcctgatga aacttcggat
+       61 cattactcgg cacctgctta atcctacaaa tcactactgg catcttccta gcaatacact
+      121 attcatctga catatcatta gcattctcat cagtcaccca tacaactcga gacgtacaat
+      181 acggctgact tatccgaaac ctccatgcca acggcgcctc cctatttttt atgtgtatct
+      241 acatgcatat cggacgagga atctactacg gctcatacct atacaaagaa acttgaaaca
+      301 ctggaattat attactacta ctgactatag ctaccgcatt cataggatac gtcctaccat
+      361 gaggacaaat atcattttga ggggctaccg taattaccaa cctattatca gctatcccct
+      421 atattggtac ctcactagta caatgaattt gaggcggatt ctcagtagac aatgcaactt
+      481 taacccgatt cttcacactt cacttcttat tacctttcac aatcgcaggc ctcgcaataa
+      541 cgcacctact tttccttcac gaaactggct caaacaaccc aacaggactt aactcaaata
+      601 ccgataaaat tccatttcac ccatactttt catataaaga cctcttaggc ataatcctaa
+      661 tactcacctt actactatta ctagcactat tttcacccaa cctcctagga gacccagaca
+      721 acttcattcc agccaacccc cttattactc ctccacatat caaaccagaa tgatacttcc
+      781 tcttcgctta cgcaatccta cggtcaattc caaacaaact aggaggtgta ctcgccctac
+      841 tatcctcaat tcttatcctc ttcatactac caatcttaca cacatccaaa caacgaacag
+      901 ccatattccg accatttacc caaactctat tctgaatcct agtggccgac ctactaatct
+      961 taacatgaat tggaggacaa ccagttgaaa atccctttat cttaatcgga caaatagcct
+     1021 ctattaccta cttcgccatc ctattagcac ttataccaat agcaggccta gca
+//
+
+LOCUS       KF301361                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Sternotherus carinatus isolate K1 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301361
+VERSION     KF301361.1  GI:523451805
+KEYWORDS    .
+SOURCE      mitochondrion Sternotherus carinatus (Razorback musk turtle)
+  ORGANISM  Sternotherus carinatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Sternotherus.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Sternotherus carinatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K1"
+                     /db_xref="taxon:573971"
+                     /country="USA: Oklahoma"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43399.1"
+                     /db_xref="GI:523451806"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGICLILQITTGIFLAMHYSSDM
+                     SLAFSSVTHTIRDVQYGWLIRNLHANGASLFFMCIYMHIGRGIYYGSYLYKETWNTGI
+                     MLLLLTMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNATL
+                     TRFFTLHFLLPFTIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFLYKDLLGMI
+                     LMLTLLLLLALFSPNLLGDPDNFIPANPLITPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLSSILILFMLPILHTSKQRTAMFRPFTQTLFWILVADLLILTWIGGQPVENPFIL
+                     IGQMASITYFTVLLALMPVAGLMENKM"
+ORIGIN      
+        1 acaattcatt cattgaccta ccaagcccct caaacatttc agcctgatga aacttcggat
+       61 cattactcgg catctgctta atcctgcaaa tcactaccgg tatcttccta gcaatacact
+      121 attcatctga catatcacta gcattctcat cagttaccca tacaattcga gacgtacaat
+      181 acggctgact cattcgaaac ctccatgcca acggcgcttc tctattcttt atatgtatct
+      241 acatgcacat tggacgagga atctactacg gctcatacct gtacaaagaa acttgaaaca
+      301 ctggaattat actattacta ctaaccatag ccaccgcatt cataggatat gttctaccat
+      361 gaggacaaat atcattttga ggagctaccg taattaccaa cctcctatca gctatcccct
+      421 atattggcac ctcactagta caatgaattt gaggtggatt ctcagtagac aatgcaactt
+      481 taactcgatt ctttacactc cacttcttac taccttttac aattgcaggc ctcgcaataa
+      541 cacacctact tttccttcac gaaactggct caaataaccc aacaggactc aattcaaata
+      601 ctgataaaat cccattccac ccatactttt tatacaagga cctcctaggc ataatcctaa
+      661 tactcacctt actactatta ctagcactat tctcacccaa cctcttagga gacccagaca
+      721 acttcattcc agccaatcct cttattactc ccccacatat taaaccagaa tgatacttcc
+      781 tctttgccta tgcaatccta cgatcaattc caaataaatt aggaggtgta cttgccctac
+      841 tatcctcaat cctcatcctc tttatattgc caatcttaca cacatccaaa caacgaacag
+      901 ccatgttccg accattcacc caaaccctat tctgaatcct agtagccgac ctactaatcc
+      961 taacgtgaat tgggggacaa ccagttgaaa accccttcat cttaatcgga caaatagcct
+     1021 ccatcaccta tttcaccgtc ctattagcac ttataccagt agcaggccta atagaaaata
+     1081 aaata
+//
+
+LOCUS       KF301360                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Staurotypus triporcatus isolate K45 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   KF301360
+VERSION     KF301360.1  GI:523451803
+KEYWORDS    .
+SOURCE      mitochondrion Staurotypus triporcatus
+  ORGANISM  Staurotypus triporcatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Staurotypus.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Staurotypus triporcatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K45"
+                     /db_xref="taxon:55537"
+                     /country="Mexico: Tabasco"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43398.1"
+                     /db_xref="GI:523451804"
+                     /translation="NSFIDLPSPSNISAWWNFGSLLGICLILQITTGIFLAMHYSSDM
+                     SLAFSTVAHITRDVQYGWLIRNLHANGASMFFICIYMHIGRGIYYGSYLYKETWNTGI
+                     LLLLLTMMTAFMGYVLPWGQMSFWGATVITNLLSAIPYIGVSLVQWIWGGFSVDNPTL
+                     TRFFTLHFLLPFMIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGII
+                     LLLIILLTLTLFSPYLLGDPDNFTPANPLTTPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLASILILFLLPMMHTSKQRTTMFRPLTQILFWMLTANLLILTWIGGQPVEDPFIL
+                     IGQTASINYFTTLLILLPTAGLIENKM"
+ORIGIN      
+        1 ataactcatt catcgatcta ccaagcccct caaacatctc agcctggtgg aattttggat
+       61 cacttcttgg catctgctta atcctacaaa ttaccaccgg catcttctta gctatacact
+      121 actcatccga catatcccta gcattctcaa cagtagccca cattactcga gacgtacaat
+      181 acggctgact tatccgcaac ctacacgcca acggcgcttc aatattcttc atctgcattt
+      241 atatgcacat cggacgaggc atttactacg gctcatacct ctataaagaa acttgaaaca
+      301 caggaattct tctactacta ttaactataa taactgcatt catagggtac gtcctaccat
+      361 gaggccaaat atcattctga ggggccaccg taatcactaa tctcctctca gccatccctt
+      421 atattggtgt ctcacttgta caatgaatct gaggagggtt ctcagtagat aatccaaccc
+      481 taacccgatt cttcacactc catttcctac tcccctttat aatcgcaggt ttagcaataa
+      541 cacacctcct ttttttacac gaaactggct caaataaccc aacaggatta aattcaaaca
+      601 ctgataaaat cccattccac ccatattttt catacaaaga cttactaggc attatcctac
+      661 tacttattat tctactaaca ctaacattat tctcacccta cctactagga gacccagaca
+      721 acttcacccc agctaaccct ttaaccactc cccctcacat taaaccagag tgatacttcc
+      781 ttttcgccta tgcaattcta cgatcaatcc caaacaaatt aggaggagta ctcgccctac
+      841 tagcttccat ccttatcctc ttcttactcc caataataca cacatccaaa caacgaacaa
+      901 ccatattccg accacttacc caaatcctat tctgaatact aacagccaac ctactaatcc
+      961 taacatgaat cggaggacaa ccagttgaag atccattcat cctaatcgga caaacagcct
+     1021 ctatcaacta cttcacaacc ctgctaatcc tccttccaac agcaggccta attgaaaata
+     1081 aaata
+//
+
+LOCUS       KF301359                 877 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Staurotypus salvinii isolate K32 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301359
+VERSION     KF301359.1  GI:523451801
+KEYWORDS    .
+SOURCE      mitochondrion Staurotypus salvinii
+  ORGANISM  Staurotypus salvinii
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Staurotypus.
+REFERENCE   1  (bases 1 to 877)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 877)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..877
+                     /organism="Staurotypus salvinii"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="K32"
+                     /db_xref="taxon:904227"
+                     /country="Mexico"
+     gene            <1..>877
+                     /gene="cytb"
+     CDS             <1..>877
+                     /gene="cytb"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43397.1"
+                     /db_xref="GI:523451802"
+                     /translation="NGASMFFICIYMHIGRGIYYGSYLYKETWNTGILLLLLTMMTAF
+                     MGYVLPWGQMSFWGATVITNLLSAIPYMGVSLVQWIWGGFSVDNPTLTRFFTLHFLLP
+                     FMITGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGIILLLIILLTLTL
+                     FSPYLLGDPDNFTPANPLTTPPHIKPEWYFLFAYAILRSIPNKLGGVLALLASILILF
+                     LLPMMHTSKQRTTMFRPLTQILFWMLTANLLILTWIGGQPVEDPFILIGQTASINYFT
+                     TLLILLPTAGLIENKM"
+ORIGIN      
+        1 caacggcgct tcaatattct tcatctgcat ttatatgcac atcggacgag gcatttacta
+       61 cggctcatac ctctacaaag aaacttgaaa cacaggaatt cttctactac tattaactat
+      121 aataactgca ttcatagggt acgtcctacc atgaggccaa atatcattct gaggggccac
+      181 cgtaatcact aatctcctct cagccatccc ttatatgggt gtctcacttg tacaatgaat
+      241 ctgagggggg ttctcagtag ataatccaac cctaacccga ttcttcacac tccatttcct
+      301 actccccttt ataatcacag gtttagcaat aacacacctc ctttttttac acgaaactgg
+      361 ctcaaataac ccaacaggct taaattcaaa cactgataaa atcccatttc acccatactt
+      421 ttcatacaaa gacttactag gcattatcct actacttatt attctactaa cactaacatt
+      481 attctcaccc tacctactag gagacccaga caacttcacc ccagctaacc ctttaaccac
+      541 tccccctcac attaaaccag aatgatactt ccttttcgcc tatgcaattc tacgatcaat
+      601 cccaaacaaa ttaggaggag tactcgccct attagcttcc atccttatcc tcttcttact
+      661 cccaataata cacacatcca aacaacgaac aactatattc cgaccactta cccaaatcct
+      721 attctgaata ctaacagcca acctactaat cctaacatga atcggaggac aaccagttga
+      781 agatccattc atcctaattg gacaaacagc ctctatcaac tacttcacaa ccctactaat
+      841 cctccttcca acagcaggcc taattgaaaa taaaata
+//
+
+LOCUS       KF301358                1085 bp    DNA     linear   VRT 15-NOV-2013
+DEFINITION  Claudius angustatus isolate M126 cytochrome b (cytb) gene, partial
+            cds; mitochondrial.
+ACCESSION   KF301358
+VERSION     KF301358.1  GI:523451799
+KEYWORDS    .
+SOURCE      mitochondrion Claudius angustatus (Narrow-bridged musk turtle)
+  ORGANISM  Claudius angustatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudines; Cryptodira; Durocryptodira;
+            Americhelydia; Chelydroidea; Kinosternidae; Claudius.
+REFERENCE   1  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.
+  TITLE     Molecular phylogenetics of the mud and musk turtle family
+            Kinosternidae
+  JOURNAL   Mol. Phylogenet. Evol. 69 (3), 929-939 (2013)
+   PUBMED   23823161
+REFERENCE   2  (bases 1 to 1085)
+  AUTHORS   Iverson,J.B., Le,M. and Ingram,C.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (26-JUN-2013) Herpetology, American Museum of Natural
+            History, Central Park West at 79th St, New York, NY 10024, USA
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: Geneious v. 5.4.6
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1085
+                     /organism="Claudius angustatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="M126"
+                     /db_xref="taxon:904233"
+                     /country="Mexico"
+     gene            <1..>1085
+                     /gene="cytb"
+     CDS             <1..>1085
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGQ43396.1"
+                     /db_xref="GI:523451800"
+                     /translation="SSFIDLPSPSNISAWWNFGSLIGICLILQITTGIFLAMHYSSDM
+                     SLAFSTVAHITRDVQYGWLIRNMHANGASMFFICIYMHIGRGVYYGSYLYKETWNTGI
+                     FLLLLTMMTAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTSLVQWIWGGFSVDNPTL
+                     TRFFTLHFLLPFMIAGLAMTHLLFLHETGSNNPTGLNSNTDKIPFHPYFSYKDLLGII
+                     LLLTTLLTLTLFSPYLLGDPDNFTPANPLTTPPHIKPEWYFLFAYAILRSIPNKLGGV
+                     LALLASILILFLLPMTHTSKQRTAMFRPLTQILFWILTANLLILTWIGGQPVENPFIL
+                     IGQTASINYFMTLLILLPTAGLIENKM"
+ORIGIN      
+        1 acagttcatt cattgaccta ccaagcccct caaacatttc agcctgatga aattttggat
+       61 cacttattgg catttgctta atcctacaaa ttactaccgg tatcttctta gccatacact
+      121 actcatctga tatatcctta gcattctcaa cagtagccca catcacccga gacgtacaat
+      181 acggttgact catccgcaac atacatgcca acggtgcctc aatattcttc atctgcatct
+      241 acatacacat cggacgaggt gtttactacg gttcatacct ctacaaagaa acttgaaaca
+      301 caggaatttt cttactgcta ctaactataa taactgcatt cataggatac gtcctaccat
+      361 gaggccaaat atcattctga ggcgccaccg taatcaccaa tctgctctca gccatccctt
+      421 acatcggtac ttcacttgta caatgaattt gagggggttt ctcagtagat aacccaaccc
+      481 taactcgatt cttcacacta catttccttc tcccttttat aatcgcaggc ctagcaataa
+      541 cacatctcct cttcctacac gaaaccggct caaacaaccc aacaggacta aattcaaaca
+      601 ccgacaaaat cccattccac ccatactttt catataaaga cttactaggc attatcctat
+      661 tacttaccac cctactaaca ctaacactgt tctcccccta cctattagga gacccagaca
+      721 atttcactcc agctaaccct ttaaccaccc ctccacacat caaaccagaa tgatacttcc
+      781 ttttcgccta cgcaattcta cgatcaatcc caaacaaatt aggaggcgta cttgccctac
+      841 tagcttccat cctcatcctc ttcttactac caataacaca cacatccaaa caacgaacag
+      901 ctatattccg accattaacc caaatcctat tctgaatcct gacagccaac ctactaatcc
+      961 taacatgaat cggaggacaa ccagttgaaa atccattcat cctaattgga caaacggcct
+     1021 ctattaacta cttcataacc ctactaatcc tcctgccaac agcaggccta attgaaaata
+     1081 aaata
+//
+
