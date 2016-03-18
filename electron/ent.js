@@ -1,5 +1,7 @@
 'use strict'
 
+const _ = require('lodash')
+
 
 let sample = {
   name: "F",
@@ -63,10 +65,6 @@ let sample2 = {
                 {
                   "name": "Emydura_vi",
                   "length": 0.00104,
-                  /*"branchset": [
-                  	{"name": "alkjdals", "length": 1},
-                    {"name": "alkjdals2", "length": 1}
-                  ]*/
                 }
               ],
               "length": 0.01137
@@ -106,6 +104,10 @@ function walk(node, path) {
 	return longest
 }
 
+function recordnm(species1, species2){
+  console.log("Nonmonophyly found: ",species1," and ",species2)
+}
+
 function marknm(node, species1, species2){
   if (node.branchset){
     marknm(node.branchset[0], species1, species2)
@@ -141,12 +143,14 @@ function mutatenm(node) {
         speciesB.forEach((species2) => {
           if (species2 !== species1){
             marknm(node, species1, species2)
+            recordnm(species1, species2)
             //console.log("markednm called on ",species1," and ",species2)
           }
         })
         speciesA.forEach((species3) => {
           if (species3 !== species1){
             marknm(node, species1, species3)
+            recordnm(species1, species3)
             //console.log("markednm called on ",species1," and ",species3)
           }
         })
@@ -160,5 +164,9 @@ function mutatenm(node) {
   }
 }
 
-mutatenm(sample2)
-console.log(JSON.stringify(sample2, null, 2))
+
+let ntree = _.cloneDeep(sample2)
+mutatenm(ntree)
+console.log(JSON.stringify(ntree, null, 2))
+/*mutatenm(sample2)
+console.log(JSON.stringify(sample2, null, 2))*/
