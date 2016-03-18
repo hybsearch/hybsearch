@@ -6,7 +6,7 @@ const Newick = require('./vendor/newick')
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
-const genbankToFasta = require('./bin/genbank-to-fasta')
+const genbankToFasta = require('./bin/genbank-fasta')
 const clustal = require('./bin/clustal-o')
 
 const fs = require('fs')
