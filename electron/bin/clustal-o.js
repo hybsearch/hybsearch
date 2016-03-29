@@ -22,12 +22,13 @@ module.exports = clustal
 
 function main() {
 	if (process.argv.length < 3) {
-		throw Error('usage: node clustal-o.js <input> [output]')
+		console.error('usage: node clustal-o.js <input> [output]')
+		process.exit(1)
 	}
 
 	let output = clustal(fs.readFileSync(process.argv[2], 'utf-8'))
 
-	if (process.argv.length == 4) {
+	if (process.argv.length === 4) {
 		fs.writeFileSync(process.argv[3], output, 'utf-8')
 	}
 	else {

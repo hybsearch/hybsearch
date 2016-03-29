@@ -53,7 +53,8 @@ module.exports = clustal
 
 function main() {
 	if (process.argv.length < 3) {
-		throw Error('usage: node clustal.js <input>')
+		console.error('usage: node clustal.js <input>')
+		process.exit(1)
 	}
 
 	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8')))

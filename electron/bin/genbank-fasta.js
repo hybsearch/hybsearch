@@ -44,7 +44,8 @@ module.exports = genbankToFasta
 
 function main() {
 	if (process.argv.length < 3) {
-		throw Error('usage: node genbank-to-fasta.js <input>')
+		console.error('usage: node genbank-to-fasta.js <input>')
+		process.exit(1)
 	}
 
 	console.log(genbankToFasta(fs.readFileSync(process.argv[2], 'utf-8')))
