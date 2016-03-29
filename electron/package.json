@@ -8,15 +8,15 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron-prebuilt": "0.36.7",
+    "electron-prebuilt": "0.37.2",
     "xo": "^0.13.0"
   },
   "dependencies": {
     "biojs-io-newick": "1.5.0",
     "d3": "3.5.16",
-    "dropzone": "^4.3.0",
-    "lodash": "4.5.0",
-    "normalize.css": "3.0.3",
+    "dropzone": "4.3.0",
+    "lodash": "4.6.1",
+    "normalize.css": "4.0.0",
     "tempfile": "1.1.1"
   },
   "xo": {
