@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 'use strict'
 
 const fs = require('fs')
-const uniq = require('lodash/uniq')
+const fromPairs = require('lodash/fromPairs')
 
 function removeWhitespace(str) {
 	return str
@@ -27,11 +28,12 @@ function extractInfoFromGenbank(gbFile) {
 
 function genbankToFasta(genbankFile) {
 	const data = extractInfoFromGenbank(genbankFile)
-	const organism_list = uniq(data.map(o => o.organism))
-	// console.log(organism_list)
+	const organism_list = fromPairs(data.map(o => [o.accession, o.organism]))
+	console.error(organism_list)
 
 	return data
-		.map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
+		// .map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
+		.map(e => `> ${e.accession}\n${e.origin}\n`)
 		.join('\n')
 }
 
