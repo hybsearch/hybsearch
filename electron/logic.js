@@ -1,7 +1,5 @@
 'use strict'
 
-var ntree
-
 const Newick = require('./vendor/newick')
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
@@ -39,7 +37,7 @@ function load(newickStr) {
 	const newick = Newick.parse(newickStr)
 
 	const newickNodes = []
-	function buildNewickNodes(node, callback) {
+	function buildNewickNodes(node) {
 		newickNodes.push(node)
 		if (node.branchset) {
 			for (let i = 0; i < node.branchset.length; i++) {
@@ -51,12 +49,11 @@ function load(newickStr) {
 	buildNewickNodes(newick)
 
 	console.log("Got nodes:", newickNodes)
-	ntree = newickNodes
 
 	// Find the min and max to calc width
 	const smallest = getSmallestLength(newickNodes, Infinity)
 	const largest = getLargestLength(newickNodes, 0)
-	const ratio = (largest/smallest)
+	const ratio = (largest / smallest)
 	console.log("Width ratio is", ratio)
 
 	d3.phylogram.build('#phylogram', newick, {
@@ -105,7 +102,7 @@ function getLargestLength(objs, largest) {
 // in this whitelist must be nonmono
 function findOutliers(objs, whitelist, found) {
 	for (let obj of objs) {
-		if (obj.name && obj.name != "" && whitelist.indexOf(obj.name) == -1) {
+		if (obj.name && obj.name !== "" && whitelist.indexOf(obj.name) === -1) {
 			found.push(obj.name + "_" + obj.length)
 		}
 
