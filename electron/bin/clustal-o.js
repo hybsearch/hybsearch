@@ -5,6 +5,7 @@ const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
 
+module.exports = clustal
 function clustal(data) {
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = tempfile().replace(' ', '\ ')
@@ -17,9 +18,6 @@ function clustal(data) {
 	return fs.readFileSync(outputFile, 'utf-8')
 }
 
-module.exports = clustal
-
-
 function main() {
 	if (process.argv.length < 3) {
 		console.error('usage: node clustal-o.js <input> [output]')
@@ -30,8 +28,7 @@ function main() {
 
 	if (process.argv.length === 4) {
 		fs.writeFileSync(process.argv[3], output, 'utf-8')
-	}
-	else {
+	} else {
 		console.log(output)
 	}
 }

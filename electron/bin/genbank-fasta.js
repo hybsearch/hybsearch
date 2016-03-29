@@ -4,10 +4,6 @@
 const fs = require('fs')
 const fromPairs = require('lodash/fromPairs')
 
-function removeWhitespace(str) {
-	return str
-}
-
 function extractInfoFromGenbank(gbFile) {
 	return gbFile.split('//\n')
 		.filter(entry => entry && entry.trim().length > 0)
@@ -21,26 +17,22 @@ function extractInfoFromGenbank(gbFile) {
 				accession,
 				organism,
 				definition,
-				origin,
+				origin
 			}
 		})
 }
 
+module.exports = genbankToFasta
 function genbankToFasta(genbankFile) {
 	const data = extractInfoFromGenbank(genbankFile)
-	const organism_list = fromPairs(data.map(o => [o.accession, o.organism]))
-	console.error(organism_list)
+	const organismList = fromPairs(data.map(o => [o.accession, o.organism]))
+	console.error(organismList)
 
 	return data
 		// .map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
 		.map(e => `> ${e.accession}\n${e.origin}\n`)
 		.join('\n')
 }
-
-module.exports = genbankToFasta
-
-
-
 
 function main() {
 	if (process.argv.length < 3) {
