@@ -1,0 +1,15 @@
+{
+  "name": "F",
+  "branchset": [
+    {"name": "A", "length": 0.1},
+    {"name": "B", "length": 0.2},
+    {
+      "name": "E",
+      "length": 0.5,
+      "branchset": [
+        {"name": "C", "length": 0.3},
+        {"name": "D", "length": 0.4}
+      ]
+    }
+  ]
+}
