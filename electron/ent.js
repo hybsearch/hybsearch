@@ -1,25 +1,7 @@
 #!/usr/bin/env node
-
 'use strict'
 
 const _ = require('lodash')
-
-let longest = []
-function walk(node, path) {
-  path = path || []
-
-  if (path.length > longest.length) {
-    longest = path
-  }
-
-  if (node.branchset) {
-    node.branchset.forEach((child, i) => {
-      walk(child, path.concat(i))
-    })
-  }
-
-  return longest
-}
 
 function recordnm(species1, species2){
   console.log("Nonmonophyly found: ",species1," and ",species2)
