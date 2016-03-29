@@ -5,14 +5,13 @@ const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
 
-function make_clustal_arguments(args) {
+function makeClustalArguments(args) {
 	let argString = ''
 	for (let arg in args) {
 		if (args.hasOwnProperty(arg)) {
 			if (args[arg] === true) {
 				argString += `-${arg}`
-			}
-			else {
+			} else {
 				argString += `-${arg}=${args[arg]}`
 			}
 			argString += ' '
@@ -21,6 +20,7 @@ function make_clustal_arguments(args) {
 	return argString
 }
 
+module.exports = clustal
 function clustal(data) {
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = tempfile().replace(' ', '\ ')
@@ -38,18 +38,15 @@ function clustal(data) {
 		output: 'NEXUS',
 
 		infile: inputFile.replace(' ', '\ '),
-		outfile: outputFile.replace(' ', '\ '),
+		outfile: outputFile.replace(' ', '\ ')
 	}
 
-	const argString = `clustalw2 ${make_clustal_arguments(args)}`
+	const argString = `clustalw2 ${makeClustalArguments(args)}`
 
 	child.execSync(argString)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
-
-module.exports = clustal
-
 
 function main() {
 	if (process.argv.length < 3) {
