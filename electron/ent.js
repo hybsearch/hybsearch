@@ -393,14 +393,21 @@ function mutatenm(node) {
     let species_list = []
     species_list = species_list.concat(speciesA, speciesB)
     //console.log(species_list)
-    
+
     return species_list
   }
 }
 
+function main() {
+  let ntree = _.cloneDeep(sample2)
 
-let ntree = _.cloneDeep(kino)
-mutatenm(ntree)
-console.log(JSON.stringify(ntree, null, 2))
-/*mutatenm(sample2)
-console.log(JSON.stringify(sample2, null, 2))*/
+  mutatenm(ntree)
+
+  console.log(JSON.stringify(ntree, null, 2))
+  // mutatenm(sample2)
+  // console.log(JSON.stringify(sample2, null, 2))
+}
+
+if (require.main === module) {
+  main()
+}

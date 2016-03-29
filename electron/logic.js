@@ -6,8 +6,8 @@ const Newick = require('./vendor/newick')
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
-const genbankToFasta = require('./genbank-to-fasta')
-const clustal = require('./clustal')
+const genbankToFasta = require('./bin/genbank-fasta')
+const clustal = require('./bin/clustal-o')
 
 const fs = require('fs')
 
@@ -20,8 +20,6 @@ fileLoader.onchange = e => {
 
 	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
 	const aligned = clustal(fasta)
-	const postDnadist = dnadist(aligned)
-	const tree = neighborJoining(postDnadist)
 
 	load(tree)
 	return false

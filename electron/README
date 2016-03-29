@@ -1,2 +1,3 @@
-node ./genbank-to-fasta.js data/emydura-short.gb > data/emydura-short.fasta
-node ./clustal.js data/emydura-short.fasta > data/emydura-short.nexus
+./bin/genbank-fasta.js data/emydura-short.gb > data/emydura-short.fasta
+./bin/clustal-o.js data/emydura-short.fasta > data/emydura-short.aln.phylip
+# ./bin/mcmc.js data/emydura-short.aln.fasta > data/emydura-short.trees
