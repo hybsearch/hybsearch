@@ -28,7 +28,7 @@ function mutatenm(node) {
 		let speciesB = mutatenm(node.branchset[1])
 		speciesA.forEach(species1 => {
 			console.log(speciesB.indexOf(species1), " ", speciesB.every(x => x === species1))
-			if ((speciesB.indexOf(species1) > -1) && !(speciesB.every(x => x === species1))) {
+			if ((speciesB.indexOf(species1) > -1) && (speciesB.every(x => x === species1))) {
 				speciesB.forEach(species2 => {
 					if (species2 !== species1) {
 						marknm(node, species1, species2)
