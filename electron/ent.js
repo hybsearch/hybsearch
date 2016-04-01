@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
+const getData = require('./bin/lib_get-data')
 const _ = require('lodash')
 
 function recordnm(species1, species2) {
@@ -27,7 +28,7 @@ function mutatenm(node) {
 		let speciesA = mutatenm(node.branchset[0])
 		let speciesB = mutatenm(node.branchset[1])
 		speciesA.forEach(species1 => {
-			console.log(speciesB.indexOf(species1), " ", speciesB.every(x => x === species1))
+			// console.log(speciesB.indexOf(species1), " ", speciesB.every(x => x === species1))
 			if ((speciesB.indexOf(species1) > -1) && (speciesB.every(x => x === species1))) {
 				speciesB.forEach(species2 => {
 					if (species2 !== species1) {
@@ -52,23 +53,37 @@ function mutatenm(node) {
 		return speciesList
 	}
 
-	console.log("no branchset, name: ", node.name)
+	// console.log("no branchset, name: ", node.name)
 	return [node.name]
 }
 
+// function main() {
+// 	if (process.argv.length < 3) {
+// 		console.error('usage: node ent.js <input>')
+// 		process.exit(1)
+// 	}
+
+// 	let data = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf-8'))
+
+// 	let ntree = _.cloneDeep(data)
+
+// 	mutatenm(ntree)
+
+// 	// console.log(JSON.stringify(ntree, null, 2))
+// }
+
 function main() {
-	if (process.argv.length < 3) {
-		console.error('usage: node ent.js <input>')
+	let file = process.argv[2]
+
+	if (!file && file !== '-') {
+		console.error('usage: node fasta-to-nexus.js (<input> | -)')
 		process.exit(1)
 	}
 
-	let data = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf-8'))
-
-	let ntree = _.cloneDeep(data)
-
-	mutatenm(ntree)
-
-	console.log(JSON.stringify(ntree, null, 2))
+	getData(file)
+		.then(d => JSON.parse(d))
+		.then(mutatenm)
+		.catch(console.error.bind(console))
 }
 
 if (require.main === module) {
