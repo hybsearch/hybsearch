@@ -5,12 +5,14 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./bin/genbank-fasta')
+const sanitizeFasta = require('./bin/sanitize-fasta')
 const clustal = require('./bin/clustal-o')
 const fastaToNexus = require('./bin/fasta-to-nexus')
 const mrBayes = require('./bin/mrbayes')
 const consensusTreeToNewick = require('./bin/consensus-newick')
 
 const fs = require('fs')
+const fileExt = require('file-extension')
 
 var fileLoader = document.getElementById('load-file')
 fileLoader.onchange = e => {
@@ -19,7 +21,14 @@ fileLoader.onchange = e => {
 
 	console.log('The file is', file.path)
 
-	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
+	let data = fs.readFileSync(file.path, 'utf-8')
+	var fasta = data;
+	if (fileExt(file.path) != 'fasta') {
+		fasta = genbankToFasta(data)
+	} else if (data.indexOf('>gi|') > -1) {
+		fasta = sanitizeFasta(data)
+	}
+	//console.log(fasta)
 	const aligned = clustal(fasta)
 	const nexus = fastaToNexus(aligned)
 	const muchTree = mrBayes(nexus)
@@ -56,15 +65,20 @@ function load(newickStr) {
 
 	console.log("Got nodes:", newickNodes)
 
-	// Find the min and max to calc width
+	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes, Infinity)
 	const largest = getLargestLength(newickNodes, 0)
-	const ratio = (largest / smallest) * 5
-	console.log("Width ratio is", ratio)
+	const ratio = (largest / smallest) * 15
+	const maxWidth = document.getElementById("phylogram").offsetWidth - 300 // Accounts for label widths
+	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
+	console.log("Final calcWidth: ", calcWidth, " max: ", maxWidth, " Ratio: ", ratio, " Largest: ", largest, " Smallest: ", smallest)
+
+
+	const calcHeight = 800 * Math.min(5, Math.max(0.35, newickNodes.length / 65))
 	d3.phylogram.build('#phylogram', newick, {
-		width: 3 * ratio,
-		height: 800
+		width: calcWidth,
+		height: calcHeight
 	})
 }
 
