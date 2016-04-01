@@ -59,7 +59,7 @@ function load(newickStr) {
 	// Find the min and max to calc width
 	const smallest = getSmallestLength(newickNodes, Infinity)
 	const largest = getLargestLength(newickNodes, 0)
-	const ratio = (largest / smallest)
+	const ratio = (largest / smallest) * 5
 	console.log("Width ratio is", ratio)
 
 	d3.phylogram.build('#phylogram', newick, {
