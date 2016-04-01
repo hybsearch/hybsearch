@@ -20,6 +20,10 @@ section {
 	border-radius: 2px;
 }
 
+#phylogram {
+	overflow: auto;
+}
+
 h1 {
     font-size: 2em;
     font-weight: normal;
