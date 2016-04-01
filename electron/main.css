@@ -3,6 +3,7 @@
 
 html {
     margin: 0;
+    min-width: 500px;
 }
 
 body {
@@ -18,6 +19,71 @@ section {
 	padding: 30px;
 	margin: 16px 16px;
 	border-radius: 2px;
+	border-bottom: 3px solid rgb(17, 148, 246);
+}
+
+section.loader {
+	transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
+	position: relative;
+	/*height: 64px;*/
+}
+section.loader.loading {
+	/*height: 45px;*/
+}
+
+
+section.loader wrapper.loading {
+	display: none;
+}
+section.loader.loading wrapper.loading {
+	display: flex;
+	justify-content: space-around;
+}
+section.loader.loading wrapper.content {
+	display: none;
+}
+
+.loader .checkmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader .checkmark .label {
+	color: rgb(17, 148, 246);
+}
+
+.loader .checkmark .icon {
+	color: #fff;
+	border: 2px solid rgb(17, 148, 246);
+	height: 30px;
+	width: 30px;
+	margin-bottom: 0.5em;
+	border-radius: 17px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.loader .checkmark .icon::before {
+	content: '';
+	background: rgb(17, 148, 246);
+	width: 0;
+	height: 0;
+	transition: all 0.35s ease-out;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.loader .checkmark.complete .icon::before {
+	border-radius: 15px;
+	width: 32px;
+	height: 32px;
+	left: -1px;
+	top: -1px;
 }
 
 #phylogram {
@@ -39,13 +105,13 @@ h2 {
 header {
 	color: #fff;
 	background: rgb(17, 148, 246);
-	margin-top: -25px;
-	padding: 150px 0 50px 42px;
+	padding: 80px 0 35px 42px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
 	margin: 0;
-	font-size: 3.5em;
+	font-size: 3em;
 }
 
 textarea {
@@ -98,4 +164,10 @@ section input[type=submit] {
 
 .clickable-node {
 	cursor: pointer;
+}
+
+::selection {
+    color: #fff;
+    fill: #fff;
+    background-color: rgb(17, 148, 246);
 }

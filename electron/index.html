@@ -10,9 +10,18 @@
 			<h1>Hybsearch</h1>
 		</header>
 
-		<section>
-			<h2>Genbank/Fasta</h2>
-			<input type='file' id='load-file' accept='.gb,.genbank,.fasta'>
+		<section class="loader">
+			<wrapper class="content">
+				<h2>Genbank/Fasta</h2>
+				<input type='file' id='load-file' accept='.gb,.genbank,.fasta'>
+			</wrapper>
+			<wrapper class="loading">
+				<div class="checkmark" data-loader-index="0"><div class="icon">✓</div><div class="label">Process Input</div></div>
+				<div class="checkmark" data-loader-index="1"><div class="icon">✓</div><div class="label">Align Sequences</div></div>
+				<div class="checkmark" data-loader-index="2"><div class="icon">✓</div><div class="label">Process Aligned</div></div>
+				<div class="checkmark" data-loader-index="3"><div class="icon">✓</div><div class="label">Generate Tree</div></div>
+				<div class="checkmark" data-loader-index="4"><div class="icon">✓</div><div class="label">Complete</div></div>
+			</wrapper>
 		</section>
 
 		<section>

@@ -293,7 +293,7 @@ phylogram.build = function(selector, nodes, options) {
 			.attr("dx", -6)
 			.attr("dy", -6)
 			.attr("text-anchor", 'end')
-			.attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
+			.attr('font-family', 'RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif')
 			.attr('font-size', '8px')
 			.attr('fill', '#ccc')
 			.text(function(d) {
@@ -313,7 +313,7 @@ phylogram.build = function(selector, nodes, options) {
 			.attr("dx", 8)
 			.attr("dy", 4)
 			.attr("text-anchor", "start")
-			.attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
+			.attr('font-family', 'RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif')
 			.attr('font-size', '12px')
 			.attr('fill', 'black')
 			.text(function(d) {

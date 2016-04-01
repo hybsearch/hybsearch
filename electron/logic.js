@@ -18,23 +18,46 @@ var fileLoader = document.getElementById('load-file')
 fileLoader.onchange = e => {
 	e.preventDefault()
 	const file = e.target.files[0]
-
 	console.log('The file is', file.path)
 
-	let data = fs.readFileSync(file.path, 'utf-8')
-	var fasta = data;
-	if (fileExt(file.path) != 'fasta') {
-		fasta = genbankToFasta(data)
-	} else if (data.indexOf('>gi|') > -1) {
-		fasta = sanitizeFasta(data)
-	}
-	//console.log(fasta)
-	const aligned = clustal(fasta)
-	const nexus = fastaToNexus(aligned)
-	const muchTree = mrBayes(nexus)
-	const newickTree = consensusTreeToNewick(muchTree)
+	document.querySelector("section.loader").classList.add("loading")
 
-	load(newickTree)
+	const delayTime = 500 // WARNING: DO NOT REMOVE; animations take time to execute
+
+	setTimeout(function() {
+		let data = fs.readFileSync(file.path, 'utf-8')
+		var fasta = data;
+		if (fileExt(file.path) != 'fasta') {
+			fasta = genbankToFasta(data)
+		} else if (data.indexOf('>gi|') > -1) {
+			fasta = sanitizeFasta(data)
+		}
+
+		updateLoadingStatus(0)
+
+		setTimeout(function() {
+			const aligned = clustal(fasta)
+			updateLoadingStatus(1)
+
+			setTimeout(function() {
+				const nexus = fastaToNexus(aligned)
+				updateLoadingStatus(2)
+
+				setTimeout(function() {
+					const muchTree = mrBayes(nexus)
+					updateLoadingStatus(3)
+
+					setTimeout(function() {
+						const newickTree = consensusTreeToNewick(muchTree)
+						load(newickTree)
+
+						updateLoadingStatus(4)
+					}, delayTime) // lol
+				}, delayTime)
+			}, delayTime)
+		}, delayTime)
+	}, delayTime)
+
 	return false
 }
 
@@ -47,6 +70,14 @@ treeTextButton.onclick = e => {
 	load(data.value)
 	return false
 }
+
+function updateLoadingStatus(index) {
+	document.querySelector(".checkmark[data-loader-index='" + index + "']").classList.add("complete")
+}
+
+// function removeAllLoaderLoadingLoadedStatus() {
+// 	document.querySelectorAll(".checkmark")
+// }
 
 function load(newickStr) {
 	const newick = Newick.parse(newickStr)
@@ -69,7 +100,7 @@ function load(newickStr) {
 	const smallest = getSmallestLength(newickNodes, Infinity)
 	const largest = getLargestLength(newickNodes, 0)
 	const ratio = (largest / smallest) * 15
-	const maxWidth = document.getElementById("phylogram").offsetWidth - 300 // Accounts for label widths
+	const maxWidth = document.getElementById("phylogram").offsetWidth - 320 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
 	console.log("Final calcWidth: ", calcWidth, " max: ", maxWidth, " Ratio: ", ratio, " Largest: ", largest, " Smallest: ", smallest)
