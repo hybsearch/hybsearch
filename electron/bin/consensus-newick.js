@@ -7,7 +7,7 @@ module.exports = consensusTreeNewick
 function consensusTreeNewick(input) {
 	let labelRegex = /taxlabels(\n\s*[^;]*)+\s;/
 	let labels = labelRegex.exec(input)[1]
-	labels = labels.split('\n').map(l => l.trim()).filter(x => x)
+	labels = labels.split('\n').map(l => l.trim()).filter(x => x).map(l => l.replace('_', ' '))
 
 	let treeRegex = /tree\s+\S+\s+=\s+\[[^\n\r\]]+\]\s+([^;\n\r]+;)/g
 	let conTree = treeRegex.exec(input)[1]
