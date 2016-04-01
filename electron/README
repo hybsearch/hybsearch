@@ -1,3 +1,7 @@
-./bin/genbank-fasta.js data/emydura-short.gb > data/emydura-short.fasta
-./bin/clustal-o.js data/emydura-short.fasta > data/emydura-short.aln.phylip
-# ./bin/mcmc.js data/emydura-short.aln.fasta > data/emydura-short.trees
+pipeline:
+
+	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js -
+
+to convert files:
+
+	seqmagick convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
