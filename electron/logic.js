@@ -5,12 +5,14 @@ const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./bin/genbank-fasta')
+const sanitizeFasta = require('./bin/sanitize-fasta')
 const clustal = require('./bin/clustal-o')
 const fastaToNexus = require('./bin/fasta-to-nexus')
 const mrBayes = require('./bin/mrbayes')
 const consensusTreeToNewick = require('./bin/consensus-newick')
 
 const fs = require('fs')
+const fileExt = require('file-extension')
 
 var fileLoader = document.getElementById('load-file')
 fileLoader.onchange = e => {
@@ -19,7 +21,14 @@ fileLoader.onchange = e => {
 
 	console.log('The file is', file.path)
 
-	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
+	let data = fs.readFileSync(file.path, 'utf-8')
+	var fasta = data;
+	if (fileExt(file.path) != 'fasta') {
+		fasta = genbankToFasta(data)
+	} else if (data.indexOf('>gi|') > -1) {
+		fasta = sanitizeFasta(data)
+	}
+	//console.log(fasta)
 	const aligned = clustal(fasta)
 	const nexus = fastaToNexus(aligned)
 	const muchTree = mrBayes(nexus)
