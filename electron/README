@@ -1,6 +1,15 @@
+to install:
+
+	npm install
+	brew tap homebrew/science
+	brew install clustal-omega
+	pip install -U pip
+	pip install seqmagick
+
+
 pipeline:
 
-	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js -
+	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js - | ./bin/newick-json.js - | ./ent -
 
 if you are using a fasta file from genbank, substitute `./bin/sanitize-fasta.js -` for the genbank-fasta script.
 
