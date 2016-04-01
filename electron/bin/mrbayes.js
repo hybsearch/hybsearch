@@ -42,6 +42,7 @@ function mrbayes(data) {
 	child.execSync('mb', {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
+		stdio: [undefined, 1, 2],
 	})
 
 	return fs.readFileSync(outputFile, 'utf-8')
