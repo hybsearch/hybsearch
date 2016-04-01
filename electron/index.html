@@ -2,19 +2,31 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Phylogram Visualizer</title>
+		<title>Hybsearch (v0.5)</title>
 		<link rel="stylesheet" type="text/css" href="./main.css">
 	</head>
 	<body>
-		<h2>Genbank Input</h2>
-		<input type='file' id='load-file' accept='.gb' />
+		<header>
+			<h1>Hybsearch</h1>
+		</header>
 
-		<h2>Phylogram</h2>
-		<div id="phylogram"></div>
+		<section>
+			<h2>Genbank/Fasta</h2>
+			<input type='file' id='load-file' accept='.gb,.genbank,.fasta'>
+		</section>
 
-		<h2>Tree Input</h2>
-		<textarea id='tree-box'></textarea>
-		<input type='submit' id='tree-box-submit' />
+		<section>
+			<h2>Phylogram</h2>
+			<div id="phylogram"></div>
+		</section>
+
+		<section>
+			<h2>Newick Tree</h2>
+			<textarea id='tree-box'></textarea>
+			<wrapper class="right-aligned">
+				<input type='submit' id='tree-box-submit'>
+			</wrapper>
+		</section>
 
 		<script src="./logic.js"></script>
 	</body>

@@ -1,41 +1,95 @@
 @import "./node_modules/normalize.css/normalize.css";
+@import "./vendor/robotodraft/robotodraft.css";
 
 html {
-    margin: 1em;
+    margin: 0;
 }
 
 body {
-	font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-family: RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif;
 	color: #1C1C1C;
+	background: #F7F7F7;
+	padding: 0;
+}
+
+section {
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	padding: 30px;
+	margin: 16px 16px;
+	border-radius: 2px;
 }
 
 h1 {
     font-size: 2em;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: normal;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.75em;
+    color: rgb(17, 148, 246);
+    margin: 0 0 10px;
     font-weight: normal;
-    color: steelblue;
-    margin: 20px 0 10px;
+}
+
+header {
+	color: #fff;
+	background: rgb(17, 148, 246);
+	margin-top: -25px;
+	padding: 150px 0 50px 42px;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 3.5em;
 }
 
 textarea {
 	width: 100%;
 	height: 100px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
+	border: none;
+	border-bottom: 2px solid #ccc;
 	outline: none;
+	padding-bottom: 8px;
+    margin-bottom: 8px;
+    transition: border-bottom 0.07s ease-out;
 }
 
-textarea:hover {
-	border: 1px solid #bbb;
+textarea:hover, textarea:active {
+	border-color: #bbb;
 }
 
 textarea:focus {
-	border: 1px solid steelblue;
+	border-color: rgb(17, 148, 246);
+}
+
+input[type=submit] {
+	border: none;
+	background: rgb(17, 148, 246);
+	border-radius: 2px;
+	outline: none;
+	color: #fff;
+	padding: 10px 15px;
+	transition: background 0.07s ease-out, box-shadow 0.07s ease-out;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit]:hover, input[type=submit]:active {
+	background: rgb(92, 185, 255);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section wrapper {
+	width: 100%;
+	display: inline-block;
+}
+
+.right-aligned {
+	text-align: right;
+}
+
+section input[type=submit] {
+	display: inline-block;
 }
 
 .clickable-node {

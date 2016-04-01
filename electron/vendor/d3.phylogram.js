@@ -165,14 +165,14 @@ phylogram.coordinateToAngle = function(coord, radius) {
 phylogram.styleTreeNodes = function(vis, clickFunc) {
 	vis.selectAll('g.leaf.node')
 		.append("svg:circle")
-		.attr("r", 7)
-		.attr('fill', 'blue')
+		.attr("r", 4)
+		.attr('fill', 'rgb(17, 148, 246)')
 		.attr("id", function(d, i) { return (d.name + "_" + d.length) });
 
 	vis.selectAll('g.root.node')
 		.append('svg:circle')
 		.attr("r", 4)
-		.attr('fill', 'black')
+		.attr('fill', '#1d1d1d')
 		.attr("class", "clickable-node")
 		.on("click", clickFunc);
 }
@@ -264,8 +264,8 @@ phylogram.build = function(selector, nodes, options) {
 		.attr("class", "link")
 		.attr("d", diagonal)
 		.attr("fill", "none")
-		.attr("stroke", "#aaa")
-		.attr("stroke-width", "2px");
+		.attr("stroke", "#1d1d1d")
+		.attr("stroke-width", "1px");
 
 	var node = vis.selectAll("g.node")
 		.data(nodes)
@@ -293,7 +293,8 @@ phylogram.build = function(selector, nodes, options) {
 			.attr("dx", -6)
 			.attr("dy", -6)
 			.attr("text-anchor", 'end')
-			.attr('font-size', '10px')
+			.attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
+			.attr('font-size', '8px')
 			.attr('fill', '#ccc')
 			.text(function(d) {
 				return d.length;
@@ -301,19 +302,19 @@ phylogram.build = function(selector, nodes, options) {
 
 
 
-		vis.selectAll('g.inner.node')
+		/*vis.selectAll('g.inner.node')
 			.append("svg:circle")
 			.attr("r", 4)
 			.attr('fill', 'red')
 			.attr("class", "clickable-node")
-			.on("click", onNodeClicked);
+			.on("click", onNodeClicked);*/
 
 		vis.selectAll('g.leaf.node').append("svg:text")
 			.attr("dx", 8)
-			.attr("dy", 3)
+			.attr("dy", 4)
 			.attr("text-anchor", "start")
 			.attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
-			.attr('font-size', '10px')
+			.attr('font-size', '12px')
 			.attr('fill', 'black')
 			.text(function(d) {
 				return d.name + ' (' + d.length + ')';
