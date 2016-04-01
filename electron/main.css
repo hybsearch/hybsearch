@@ -51,6 +51,7 @@ section.loader.loading wrapper.content {
 
 .loader .checkmark .label {
 	color: rgb(17, 148, 246);
+	text-align: center;
 }
 
 .loader .checkmark .icon {
