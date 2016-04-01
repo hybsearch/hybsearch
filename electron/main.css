@@ -55,8 +55,8 @@ textarea {
 	border-bottom: 2px solid #ccc;
 	outline: none;
 	padding-bottom: 8px;
-    margin-bottom: 8px;
-    transition: border-bottom 0.07s ease-out;
+	margin-bottom: 8px;
+	transition: border-bottom 0.07s ease-out;
 }
 
 textarea:hover, textarea:active {
