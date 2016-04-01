@@ -9,4 +9,6 @@
 /classes
 /checkouts
 .DS_Store
-node_modules/
+
+electron/node_modules/.bin
+electron/node_modules/electron*
