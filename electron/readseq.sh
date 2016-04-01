@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -cp vendor/readseq.jar run -v -format=phylip "$1"
+java -cp vendor/readseq.jar run -v -format=nexus "$1"
