@@ -8,8 +8,7 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron-prebuilt": "0.37.2",
-    "xo": "^0.13.0"
+    "electron-prebuilt": "0.37.2"
   },
   "dependencies": {
     "biojs-io-newick": "1.5.0",
@@ -19,8 +18,5 @@
     "lodash": "4.6.1",
     "normalize.css": "4.0.0",
     "tempfile": "1.1.1"
-  },
-  "xo": {
-    "semicolon": false
   }
 }
