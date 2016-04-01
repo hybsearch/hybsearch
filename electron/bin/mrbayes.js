@@ -38,7 +38,7 @@ function mrbayes(data) {
 		'quit',
 	]
 
-	child.execSync('./vendor/mb-mpi', {
+	child.execSync('./vendor/mb', {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
 		stdio: [undefined, 1, 2],
