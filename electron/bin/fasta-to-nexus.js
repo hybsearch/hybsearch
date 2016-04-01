@@ -4,6 +4,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const getData = require('./lib_get-data')
 
 function makeClustalArguments(args) {
 	let argString = ''
@@ -27,14 +28,6 @@ function clustal(data) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	const args = {
-		align: true,
-		pwgapopen: 15,
-		pwgapext: 6.66,
-		pwdnamatrix: 'IUB',
-		transweight: 0.5,
-		gapext: 6.66,
-		gapopen: 15,
-		numiter: 1,
 		output: 'NEXUS',
 
 		infile: inputFile.replace(' ', '\ '),
@@ -49,12 +42,16 @@ function clustal(data) {
 }
 
 function main() {
-	if (process.argv.length < 3) {
-		console.error('usage: node clustal.js <input>')
+	let file = process.argv[2]
+
+	if (!file && file !== '-') {
+		console.error('usage: node clustal.js (<input> | -)')
 		process.exit(1)
 	}
 
-	console.log(clustal(fs.readFileSync(process.argv[2], 'utf-8')))
+	getData(file)
+		.then(clustal)
+		.then(data => console.log(data))
 }
 
 if (require.main === module) {
