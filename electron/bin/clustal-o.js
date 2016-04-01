@@ -36,6 +36,7 @@ function main() {
 				console.log(output)
 			}
 		})
+		.catch(console.error.bind(console))
 }
 
 if (require.main === module) {
