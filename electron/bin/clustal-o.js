@@ -4,6 +4,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const getData = require('./lib_get-data')
 
 module.exports = clustal
 function clustal(data) {
@@ -19,18 +20,22 @@ function clustal(data) {
 }
 
 function main() {
-	if (process.argv.length < 3) {
-		console.error('usage: node clustal-o.js <input> [output]')
+	let file = process.argv[2]
+
+	if (!file && file !== '-') {
+		console.error('usage: node clustal-o.js (<input> | -) [output]')
 		process.exit(1)
 	}
 
-	let output = clustal(fs.readFileSync(process.argv[2], 'utf-8'))
-
-	if (process.argv.length === 4) {
-		fs.writeFileSync(process.argv[3], output, 'utf-8')
-	} else {
-		console.log(output)
-	}
+	getData(file)
+		.then(clustal)
+		.then(output => {
+			if (process.argv.length === 4) {
+				fs.writeFileSync(process.argv[3], output, 'utf-8')
+			} else {
+				console.log(output)
+			}
+		})
 }
 
 if (require.main === module) {

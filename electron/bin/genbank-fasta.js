@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const fs = require('fs')
-const fromPairs = require('lodash/fromPairs')
+const getData = require('./lib_get-data')
 
 function extractInfoFromGenbank(gbFile) {
 	return gbFile.split('//\n')
@@ -25,22 +24,23 @@ function extractInfoFromGenbank(gbFile) {
 module.exports = genbankToFasta
 function genbankToFasta(genbankFile) {
 	const data = extractInfoFromGenbank(genbankFile)
-	const organismList = fromPairs(data.map(o => [o.accession, o.organism]))
-	console.error(organismList)
 
 	return data
-		// .map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
-		.map(e => `> ${e.accession}\n${e.origin}\n`)
+		.map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
 		.join('\n')
 }
 
 function main() {
-	if (process.argv.length < 3) {
-		console.error('usage: node genbank-to-fasta.js <input>')
+	let file = process.argv[2]
+
+	if (!file && file !== '-') {
+		console.error('usage: node genbank-to-fasta.js (<input> | -)')
 		process.exit(1)
 	}
 
-	console.log(genbankToFasta(fs.readFileSync(process.argv[2], 'utf-8')))
+	getData(file)
+		.then(genbankToFasta)
+		.then(data => console.log(data))
 }
 
 if (require.main === module) {
