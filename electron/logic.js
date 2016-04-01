@@ -6,6 +6,9 @@ d3.phylogram = require('./vendor/d3.phylogram')
 
 const genbankToFasta = require('./bin/genbank-fasta')
 const clustal = require('./bin/clustal-o')
+const fastaToNexus = require('./bin/fasta-to-nexus')
+const mrBayes = require('./bin/mrbayes')
+const consensusTreeToNewick = require('./bin/consensus-newick')
 
 const fs = require('fs')
 
@@ -18,8 +21,11 @@ fileLoader.onchange = e => {
 
 	const fasta = genbankToFasta(fs.readFileSync(file.path, 'utf-8'))
 	const aligned = clustal(fasta)
+	const nexus = fastaToNexus(aligned)
+	const muchTree = mrBayes(nexus)
+	const newickTree = consensusTreeToNewick(muchTree)
 
-	load(tree)
+	load(newickTree)
 	return false
 }
 
