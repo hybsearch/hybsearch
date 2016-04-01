@@ -52,6 +52,7 @@ function main() {
 	getData(file)
 		.then(clustal)
 		.then(data => console.log(data))
+		.catch(console.error.bind(console))
 }
 
 if (require.main === module) {

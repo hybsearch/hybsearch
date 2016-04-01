@@ -58,6 +58,7 @@ function main() {
 	getData(file)
 		.then(mrbayes)
 		.then(data => console.log(data))
+		.catch(console.error.bind(console))
 }
 
 if (require.main === module) {
