@@ -34,12 +34,11 @@ function mrbayes(data) {
 		'prset brlenspr = clock:uniform',
 		'mcmc ngen=20000 samplefreq=100',
 		'no',
-		'sump',
 		'sumt',
 		'quit',
 	]
 
-	child.execSync('mb', {
+	child.execSync('./vendor/mb-mpi', {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
 		stdio: [undefined, 1, 2],
