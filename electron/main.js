@@ -1,9 +1,11 @@
-var app = require('app')  // Module to control application life.
-var BrowserWindow = require('browser-window')  // Module to create native browser window.
+'use strict'
+
+const app = require('app')  // Module to control application life.
+const BrowserWindow = require('browser-window')  // Module to create native browser window.
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-var mainWindow = null
+let mainWindow = null
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -21,7 +23,7 @@ app.on('ready', () => {
 	mainWindow = new BrowserWindow({width: 900, height: 700})
 
 	// and load the index.html of the app.
-	mainWindow.loadURL('file://' + __dirname + '/index.html')
+	mainWindow.loadURL(`file://${__dirname}/index.html`)
 
 	// Open the DevTools.
 	// mainWindow.openDevTools()
