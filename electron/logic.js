@@ -12,15 +12,18 @@ function loadAndProcessData(e) {
 	document.querySelector("section.loader").classList.add("loading")
 
 	let child = childProcess.fork('./worker.js')
+
+	// still doesn't work
+	// current problem: the execSync calls in the child's children
+	// don't get the signal.
 	let killChildProcess = () => child.kill()
 	process.on('exit', killChildProcess)
 	window.addEventListener('beforeunload', killChildProcess)
 
-	let currentLabel, finishedLabel
+	let currentLabel
 	child.on('message', packet => {
 		let [cmd, msg] = packet
 		if (cmd === 'complete') {
-			finishedLabel = msg
 			updateLoadingStatus(msg)
 		}
 		else if (cmd === 'begin') {
@@ -103,12 +106,12 @@ function load(newickStr) {
 	const maxWidth = document.getElementById("phylogram").offsetWidth - 320 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
-	console.log("Final calcWidth: ", calcWidth, " max: ", maxWidth, " Ratio: ", ratio, " Largest: ", largest, " Smallest: ", smallest)
+	console.log(`Final calcWidth: ${calcWidth}, maxWidth: ${maxWidth}, ratio: ${ratio}, largest: ${largest}, smallest: ${smallest}`)
 
 	const calcHeight = 800 * Math.min(5, Math.max(0.35, newickNodes.length / 65))
 	d3.phylogram.build('#phylogram', newick, {
 		width: calcWidth,
-		height: calcHeight
+		height: calcHeight,
 	})
 }
 
@@ -153,7 +156,7 @@ function getLargestLength(objs, largest) {
 function findOutliers(objs, whitelist, found) {
 	for (let obj of objs) {
 		if (obj.name && obj.name !== "" && whitelist.indexOf(obj.name) === -1) {
-			found.push(obj.name + "_" + obj.length)
+			found.push(`${obj.name}_${obj.length}`)
 		}
 
 		if (obj.branchset && obj.branchset.length > 0) {
