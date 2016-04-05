@@ -98,16 +98,3 @@ if (process.send) {
 else if (require.main === module) {
 	main()
 }
-
-
-
-// self.addEventListener('message', e => {
-// 	let [cmd, msg] = JSON.parse(e.data)
-
-// 	if (cmd === 'load') {
-// 		loadAndEvaluate(msg)
-// 	}
-// 	else {
-// 		throw new Error(`unknown cmd ${cmd}`)
-// 	}
-// })
