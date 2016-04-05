@@ -47,16 +47,15 @@ section.loader.loading wrapper.content {
     display: flex;
     flex-direction: column;
     align-items: center;
+	color: rgb(17, 148, 246);
 }
 
 .loader .checkmark .label {
-	color: rgb(17, 148, 246);
 	text-align: center;
 }
 
 .loader .checkmark .icon {
-	color: #fff;
-	border: 2px solid rgb(17, 148, 246);
+	border: 2px solid currentColor;
 	height: 30px;
 	width: 30px;
 	margin-bottom: 0.5em;
@@ -70,13 +69,25 @@ section.loader.loading wrapper.content {
 
 .loader .checkmark .icon::before {
 	content: '';
-	background: rgb(17, 148, 246);
+	background-color: currentColor;
 	width: 0;
 	height: 0;
 	transition: all 0.35s ease-out;
 	position: absolute;
     left: 50%;
     top: 50%;
+}
+
+.loader .checkmark.error {
+	color: rgb(148, 17, 17);
+}
+
+.loader .checkmark.active .icon::before {
+	border-radius: 15px;
+	width: 16px;
+	height: 16px;
+	left: 25%;
+	top: 24%;
 }
 
 .loader .checkmark.complete .icon::before {
