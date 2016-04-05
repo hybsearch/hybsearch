@@ -31,11 +31,11 @@ function loadAndProcessData(e) {
 		else if (cmd === 'finish') {
 			load(msg)
 		}
-		else if (cmd === 'error') {
-			console.error(msg)
-			setLoadingError(currentLabel)
-		}
-		else if (cmd == 'exit') {
+		else if (cmd === 'exit' || cmd === 'error') {
+			if (cmd === 'error') {
+				console.error(msg)
+				setLoadingError(currentLabel)
+			}
 			child.disconnect()
 		}
 		else {

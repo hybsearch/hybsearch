@@ -26,7 +26,7 @@ const send = (cmd, msg) => sendFunc([cmd, msg])
 
 const begin = msg => send('begin', msg)
 const complete = msg => send('complete', msg)
-const err = e => send('error', serializeError(e))
+const error = e => send('error', serializeError(e))
 const returnData = data => send('finish', data)
 const exit = () => send('exit')
 
@@ -73,6 +73,9 @@ function loadAndEvaluate(path) {
 			complete('condense')
 			returnData(newickTree)
 			exit()
+		}).catch(err => {
+			error(err)
+			console.error(err)
 		})
 }
 
@@ -86,11 +89,6 @@ function main(file) {
 	}
 
 	loadAndEvaluate(file)
-		.catch(err => {
-			error(err)
-			console.error(err)
-			process.exit(2)
-		})
 }
 
 

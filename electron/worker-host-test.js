@@ -18,11 +18,17 @@ let child = childProcess.fork(__dirname + '/worker.js')
 child.on('message', communique => {
 	let cmd = communique[0]
 	let msg = communique[1]
-	console.log(cmd, msg)
-	if (cmd == 'exit') {
+	if (cmd == 'error') {
+		console.error('error!', msg)
+	}
+	else {
+		console.log(cmd, msg)
+	}
+
+	if (cmd == 'exit' || cmd == 'error') {
 		child.disconnect()
 	}
 })
 
-child.send('data/trio171.fasta')
+child.send('data/ent.gb')
 // child.send('data/emydura-short.gb')
