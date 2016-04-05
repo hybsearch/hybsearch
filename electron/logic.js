@@ -79,14 +79,16 @@ function setLoadingError(label) {
 }
 
 function load(newickStr) {
+	console.info('beginning parse')
 	const newick = Newick.parse(newickStr)
+	console.info('finished parse')
 
 	const newickNodes = []
 	function buildNewickNodes(node) {
 		newickNodes.push(node)
 		if (node.branchset) {
-			for (let i = 0; i < node.branchset.length; i++) {
-				buildNewickNodes(node.branchset[i])
+			for (let branch of node.branchset) {
+				buildNewickNodes(branch)
 			}
 		}
 	}
@@ -103,7 +105,6 @@ function load(newickStr) {
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
 	console.log("Final calcWidth: ", calcWidth, " max: ", maxWidth, " Ratio: ", ratio, " Largest: ", largest, " Smallest: ", smallest)
-
 
 	const calcHeight = 800 * Math.min(5, Math.max(0.35, newickNodes.length / 65))
 	d3.phylogram.build('#phylogram', newick, {
@@ -165,10 +166,10 @@ function findOutliers(objs, whitelist, found) {
 }
 
 function onNodeClicked(data) {
-	console.log("##Clicked on node point with data: ", data)
+	console.log("Clicked on node point with data: ", data)
 
 	let outliers = findOutliers(data.branchset, getWhitelist(), [])
-	console.log("##Outliers found:", outliers)
+	console.log("Outliers found:", outliers)
 
 	for (let outlier of outliers) {
 		document.getElementById(outlier).setAttribute("fill", "green")
