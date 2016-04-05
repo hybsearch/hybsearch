@@ -12,10 +12,9 @@ function loadAndProcessData(e) {
 	document.querySelector("section.loader").classList.add("loading")
 
 	let child = childProcess.fork('./worker.js')
-	process.on('exit', () => {
-		// note: doesn't work yet
-		child.kill()
-	})
+	let killChildProcess = () => child.kill()
+	process.on('exit', killChildProcess)
+	window.addEventListener('beforeunload', killChildProcess)
 
 	let currentLabel, finishedLabel
 	child.on('message', packet => {
