@@ -3,63 +3,53 @@
 const Newick = require('./vendor/newick')
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
+const childProcess = require('child_process')
 
-const genbankToFasta = require('./bin/genbank-fasta')
-const sanitizeFasta = require('./bin/sanitize-fasta')
-const clustal = require('./bin/clustal-o')
-const fastaToNexus = require('./bin/fasta-to-nexus')
-const mrBayes = require('./bin/mrbayes')
-const consensusTreeToNewick = require('./bin/consensus-newick')
-
-const fs = require('fs')
-const fileExt = require('file-extension')
-
-var fileLoader = document.getElementById('load-file')
-fileLoader.onchange = e => {
-	e.preventDefault()
-	const file = e.target.files[0]
+function loadAndProcessData(e) {
+	let file = e.target.files[0]
 	console.log('The file is', file.path)
 
 	document.querySelector("section.loader").classList.add("loading")
 
-	const delayTime = 500 // WARNING: DO NOT REMOVE; animations take time to execute
+	let child = childProcess.fork('./worker.js')
+	process.on('exit', () => {
+		// note: doesn't work yet
+		child.kill()
+	})
 
-	setTimeout(function() {
-		let data = fs.readFileSync(file.path, 'utf-8')
-		var fasta = data;
-		if (fileExt(file.path) != 'fasta') {
-			fasta = genbankToFasta(data)
-		} else if (data.indexOf('>gi|') > -1) {
-			fasta = sanitizeFasta(data)
+	let currentLabel, finishedLabel
+	child.on('message', packet => {
+		let [cmd, msg] = packet
+		if (cmd === 'complete') {
+			finishedLabel = msg
+			updateLoadingStatus(msg)
 		}
+		else if (cmd === 'begin') {
+			currentLabel = msg
+			beginLoadingStatus(msg)
+		}
+		else if (cmd === 'finish') {
+			load(msg)
+		}
+		else if (cmd === 'error') {
+			console.error(msg)
+			setLoadingError(currentLabel)
+		}
+		else if (cmd == 'exit') {
+			child.disconnect()
+		}
+		else {
+			throw new Error(`unknown cmd "${cmd}"`)
+		}
+	})
 
-		updateLoadingStatus(0)
-
-		setTimeout(function() {
-			const aligned = clustal(fasta)
-			updateLoadingStatus(1)
-
-			setTimeout(function() {
-				const nexus = fastaToNexus(aligned)
-				updateLoadingStatus(2)
-
-				setTimeout(function() {
-					const muchTree = mrBayes(nexus)
-					updateLoadingStatus(3)
-
-					setTimeout(function() {
-						const newickTree = consensusTreeToNewick(muchTree)
-						load(newickTree)
-
-						updateLoadingStatus(4)
-					}, delayTime) // lol
-				}, delayTime)
-			}, delayTime)
-		}, delayTime)
-	}, delayTime)
+	child.send(file.path)
 
 	return false
 }
+
+var fileLoader = document.getElementById('load-file')
+fileLoader.addEventListener('change', loadAndProcessData)
 
 var treeTextButton = document.getElementById('tree-box-submit')
 treeTextButton.onclick = e => {
@@ -71,13 +61,22 @@ treeTextButton.onclick = e => {
 	return false
 }
 
-function updateLoadingStatus(index) {
-	document.querySelector(".checkmark[data-loader-index='" + index + "']").classList.add("complete")
+function updateLoadingStatus(label) {
+	console.info(`finished ${label}`)
+	let cl = document.querySelector(`.checkmark[data-loader-name='${label}']`).classList
+	cl.remove("active")
+	cl.add("complete")
 }
 
-// function removeAllLoaderLoadingLoadedStatus() {
-// 	document.querySelectorAll(".checkmark")
-// }
+function beginLoadingStatus(label) {
+	console.info(`beginning ${label}`)
+	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add("active")
+}
+
+function setLoadingError(label) {
+	console.info(`error in ${label}`)
+	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add("error")
+}
 
 function load(newickStr) {
 	const newick = Newick.parse(newickStr)
