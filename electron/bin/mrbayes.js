@@ -38,11 +38,13 @@ function mrbayes(data) {
 		'quit',
 	]
 
-	child.execSync('./vendor/mb', {
+	let output = child.execSync('./vendor/mb', {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
-		stdio: [undefined, 1, 2],
+		stdio: [undefined, 'pipe', 'pipe'],
 	})
+
+	process.stderr.write(output)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
