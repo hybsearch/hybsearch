@@ -98,8 +98,8 @@ function load(newickStr) {
 	console.log("Got nodes:", newickNodes)
 
 	// Scale the generated tree based on largest branch length
-	const smallest = getSmallestLength(newickNodes, Infinity)
-	const largest = getLargestLength(newickNodes, 0)
+	const smallest = getSmallestLength(newickNodes)
+	const largest = getLargestLength(newickNodes)
 	const ratio = (largest / smallest) * 15
 	const maxWidth = document.getElementById("phylogram").offsetWidth - 320 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
@@ -113,40 +113,32 @@ function load(newickStr) {
 	})
 }
 
-function getSmallestLength(objs, smallest) {
-	objs.forEach(obj => {
+function getExtremeLength(list, extreme, comp) {
+	list.forEach(obj => {
 		let length = obj.length
-		if (length && length < smallest) {
-			smallest = length
+		if (length && length < extreme) {
+			extreme = length
 		}
 
 		if (obj.branchset && obj.branchset.length > 0) {
-			let sub = getSmallestLength(obj.branchset, smallest)
-			if (sub < smallest) {
-				smallest = sub
+			let alt = getExtremeLength(obj.branchset, extreme, comp)
+			if (comp(alt, extreme)) {
+				extreme = alt
 			}
 		}
 	})
 
-	return smallest
+	return extreme
 }
 
-function getLargestLength(objs, largest) {
-	for (let obj of objs) {
-		let length = obj.length
-		if (length && length > largest) {
-			largest = length
-		}
+function getSmallestLength(objs) {
+	let lessthan = (a, b) => a < b
+	return getExtremeLength(objs, Infinity, lessthan)
+}
 
-		if (obj.branchset && obj.branchset.length > 0) {
-			let sub = getLargestLength(obj.branchset, largest)
-			if (sub > largest) {
-				largest = sub
-			}
-		}
-	}
-
-	return largest
+function getLargestLength(objs) {
+	let greaterthan = (a, b) => a > b
+	return getExtremeLength(objs, 0, greaterthan)
 }
 
 // Whitelist is an array of individuals for a single species. Anything not
