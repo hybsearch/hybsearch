@@ -1,13 +1,13 @@
-/.boot/
-/resources/public/
-/resources/uploads/
-/resources/bin/
-/.nrepl-port
-/.repl-history
-/.lein-*
-/target
-/classes
-/checkouts
+clojure/.boot/
+clojure/resources/public/
+clojure/resources/uploads/
+clojure/resources/bin/
+clojure/.nrepl-port
+clojure/.repl-history
+clojure/.lein-*
+clojure/target
+clojure/classes
+clojure/checkouts
 .DS_Store
 
 electron/node_modules/.bin
