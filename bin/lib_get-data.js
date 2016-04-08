@@ -1,3 +1,4 @@
+require('loud-rejection/register')
 const stdin = require('get-stdin')
 const fs = require('fs')
 

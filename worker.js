@@ -1,5 +1,6 @@
 'use strict'
 
+require('loud-rejection/register')
 const fs = require('fs')
 
 const serializeError = require('serialize-error')
