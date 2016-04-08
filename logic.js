@@ -4,6 +4,7 @@ const parseNewick = require('./vendor/newick').parse
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 const childProcess = require('child_process')
+require('./vendor/array.proto.includes')
 
 function loadAndProcessData(e) {
 	let file = e.target.files[0]
@@ -149,7 +150,7 @@ function getLargestLength(objs) {
 // in this whitelist must be nonmono
 function findOutliers(objs, whitelist, found) {
 	objs.forEach(obj => {
-		if (obj.name && obj.name !== "" && whitelist.indexOf(obj.name) === -1) {
+		if (obj.name && obj.name !== '' && !whitelist.includes(obj.name)) {
 			found.push(`${obj.name}_${obj.length}`)
 		}
 
