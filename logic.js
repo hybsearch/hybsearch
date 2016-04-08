@@ -10,12 +10,12 @@ function loadAndProcessData(e) {
 	let file = e.target.files[0]
 	console.log('The file is', file.path)
 
-	document.querySelector("section.loader").classList.add("loading")
+	document.querySelector('section.loader').classList.add('loading')
 
 	let child = childProcess.fork('./worker.js')
 
-	// still doesn't work
-	// current problem: the execSync calls in the child's children
+	// still doesn't work.
+	// current problem: the calls to execSync in `child`s children
 	// don't get the signal.
 	let killChildProcess = () => child.kill()
 	process.on('exit', killChildProcess)
@@ -71,25 +71,21 @@ jsontreeTextButton.addEventListener('click', e => {
 function updateLoadingStatus(label) {
 	console.info(`finished ${label}`)
 	let cl = document.querySelector(`.checkmark[data-loader-name='${label}']`).classList
-	cl.remove("active")
-	cl.add("complete")
+	cl.remove('active')
+	cl.add('complete')
 }
 
 function beginLoadingStatus(label) {
 	console.info(`beginning ${label}`)
-	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add("active")
+	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('active')
 }
 
 function setLoadingError(label) {
 	console.info(`error in ${label}`)
-	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add("error")
+	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('error')
 }
 
-function load(newickStr) {
-	console.info('beginning parse')
-	const newick = Newick.parse(newickStr)
-	console.info('finished parse')
-
+function load(newick) {
 	const newickNodes = []
 	function buildNewickNodes(node) {
 		newickNodes.push(node)
@@ -100,13 +96,13 @@ function load(newickStr) {
 
 	buildNewickNodes(newick)
 
-	console.log("Got nodes:", newickNodes)
+	console.log('Got nodes:', newickNodes)
 
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
 	const largest = getLargestLength(newickNodes)
 	const ratio = (largest / smallest) * 15
-	const maxWidth = document.getElementById("phylogram").offsetWidth - 320 // Accounts for label widths
+	const maxWidth = document.getElementById('phylogram').offsetWidth - 320 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
 	console.log(`Final calcWidth: ${calcWidth}, maxWidth: ${maxWidth}, ratio: ${ratio}, largest: ${largest}, smallest: ${smallest}`)
@@ -163,18 +159,18 @@ function findOutliers(objs, whitelist, found) {
 }
 
 function onNodeClicked(data) {
-	console.log("Clicked on node point with data: ", data)
+	console.log('Clicked on node point with data:', data)
 
 	let outliers = findOutliers(data.branchset, getWhitelist(), [])
-	console.log("Outliers found:", outliers)
+	console.log('Outliers found:', outliers)
 
 	outliers.forEach(outlier => {
-		document.getElementById(outlier).setAttribute("fill", "green")
+		document.getElementById(outlier).setAttribute('fill', 'green')
 	})
 
-	alert("Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.")
+	alert('Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.')
 }
 
 function getWhitelist() {
-	return document.getElementById("dominantSpeciesInput").value.trim().split(/,\s*/)
+	return document.getElementById('dominantSpeciesInput').value.trim().split(/,\s*/)
 }
