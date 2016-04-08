@@ -23,7 +23,7 @@ function seqmagick(data) {
 function main() {
 	let file = process.argv[2]
 
-	if (!file && file !== '-') {
+	if (!file && process.stdin.isTTY) {
 		console.error('usage: node fasta-to-nexus.js (<input> | -)')
 		process.exit(1)
 	}
