@@ -78,7 +78,7 @@ function mutatenm(node) {
 function main() {
 	let file = process.argv[2]
 
-	if (!file && file !== '-') {
+	if (!file && process.stdin.isTTY) {
 		console.error('usage: node ent.js (<input> | -)')
 		process.exit(1)
 	}
