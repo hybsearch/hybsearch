@@ -1,6 +1,6 @@
 'use strict'
 
-const Newick = require('./vendor/newick')
+const parseNewick = require('./vendor/newick').parse
 const d3 = require('d3')
 d3.phylogram = require('./vendor/d3.phylogram')
 const childProcess = require('child_process')
@@ -31,7 +31,7 @@ function loadAndProcessData(e) {
 			beginLoadingStatus(msg)
 		}
 		else if (cmd === 'finish') {
-			load(msg)
+			load(parseNewick(msg))
 		}
 		else if (cmd === 'exit' || cmd === 'error') {
 			if (cmd === 'error') {
@@ -54,14 +54,18 @@ var fileLoader = document.getElementById('load-file')
 fileLoader.addEventListener('change', loadAndProcessData)
 
 var treeTextButton = document.getElementById('tree-box-submit')
-treeTextButton.onclick = e => {
+treeTextButton.addEventListener('click', e => {
 	e.preventDefault()
+	var data = document.getElementById('tree-box').value
+	load(parseNewick(data))
+})
 
-	var data = document.getElementById('tree-box')
-
-	load(data.value)
-	return false
-}
+var jsontreeTextButton = document.getElementById('json-tree-box-submit')
+jsontreeTextButton.addEventListener('click', e => {
+	e.preventDefault()
+	let data = document.getElementById('tree-box').value
+	load(JSON.parse(data))
+})
 
 function updateLoadingStatus(label) {
 	console.info(`finished ${label}`)
