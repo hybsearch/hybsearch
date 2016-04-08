@@ -18,10 +18,12 @@ function marknm(node, species1, species2) {
 	if (node.branchset) {
 		marknm(node.branchset[0], species1, species2)
 		marknm(node.branchset[1], species1, species2)
-	} else if (node.name === species1.name) {
+	}
+	else if (node.name === species1.name) {
 		node.nm_inner = node.nm_inner || []
 		node.nm_inner.push(species2)
-	} else if (node.name === species2.name) {
+	}
+	else if (node.name === species2.name) {
 		node.nm_outer = node.nm_outer || []
 		node.nm_outer.push(species1)
 	}
