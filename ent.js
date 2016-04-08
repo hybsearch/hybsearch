@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('./bin/lib_get-data')
 require('./vendor/array.proto.includes')
+const getData = require('./bin/lib_get-data')
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 
