@@ -80,8 +80,6 @@ function loadAndEvaluate(path) {
 }
 
 function main(file) {
-	file = file || process.argv[2]
-
 	if (!file) {
 		error('no file given')
 		console.error('usage: node worker.js <inputfile>')
@@ -96,5 +94,5 @@ if (process.send) {
 	process.on('message', main)
 }
 else if (require.main === module) {
-	main()
+	main(process.argv[2])
 }
