@@ -33,7 +33,7 @@ function genbankToFasta(genbankFile) {
 function main() {
 	let file = process.argv[2]
 
-	if (!file && file !== '-') {
+	if (!file && process.stdin.isTTY) {
 		console.error('usage: node genbank-to-fasta.js (<input> | -)')
 		process.exit(1)
 	}
