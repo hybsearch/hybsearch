@@ -10,5 +10,5 @@ clojure/classes
 clojure/checkouts
 .DS_Store
 
-electron/node_modules/.bin
-electron/node_modules/electron*
+node_modules/.bin
+node_modules/electron*
