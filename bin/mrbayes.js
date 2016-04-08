@@ -5,6 +5,8 @@ const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
 const getData = require('./lib_get-data')
+const minimist = require('minimist')
+
 
 /*
 $ mb
@@ -22,7 +24,7 @@ $ mb
 */
 
 module.exports = mrbayes
-function mrbayes(data) {
+function mrbayes(data, argv) {
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = inputFile + '.con.tre'
 	fs.writeFileSync(inputFile, data, 'utf-8')
@@ -38,27 +40,31 @@ function mrbayes(data) {
 		'quit',
 	]
 
-	let output = child.execSync('./vendor/mb', {
+	let mb = argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
+	let output = child.execSync(mb, {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
 		stdio: [undefined, 'pipe', 'pipe'],
 	})
 
-	process.stderr.write(output)
+	if (!argv.quiet) {
+		process.stderr.write(output)
+	}
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
 
 function main() {
-	let file = process.argv[2]
+	let argv = minimist(process.argv.slice(2))
+	let file = argv._[0]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node mrbayes.js (<input> | -)')
+		console.error('usage: node mrbayes.js (<input> | -) [--quiet] [--mpi]')
 		process.exit(1)
 	}
 
 	getData(file)
-		.then(mrbayes)
+		.then(data => mrbayes(data, argv))
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))
 }
