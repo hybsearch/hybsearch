@@ -30,8 +30,9 @@ function marknm(node, species1, species2) {
 }
 
 function mutatenm(node) {
-	node.ident = node.name.split('-')[1]
-	node.name = node.name.split('-')[0]
+	let name = node.name
+	node.ident = name.split('-')[1]
+	node.name = name.split('-')[0]
 
 	if (node.branchset) {
 		debug('has branchset')
