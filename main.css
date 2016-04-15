@@ -71,10 +71,8 @@ section.loader.loading wrapper.content {
 	background-color: currentColor;
 	width: 0;
 	height: 0;
+	border-radius: 17px;
 	transition: all 0.35s ease-out;
-	position: absolute;
-    left: 50%;
-    top: 50%;
 }
 
 .loader .checkmark.error {
@@ -89,19 +87,13 @@ section.loader.loading wrapper.content {
 
 .loader .checkmark.active .icon::before {
 	animation: pulse 2s infinite;
-	border-radius: 15px;
 	width: 16px;
 	height: 16px;
-	left: 25%;
-	top: 24%;
 }
 
 .loader .checkmark.complete .icon::before {
-	border-radius: 15px;
 	width: 32px;
 	height: 32px;
-	left: -1px;
-	top: -1px;
 }
 
 #phylogram {
