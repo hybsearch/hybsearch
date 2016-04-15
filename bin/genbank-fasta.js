@@ -19,6 +19,7 @@ function extractInfoFromGenbank(gbFile) {
 				origin,
 			}
 		})
+		.filter(entry => !entry.organism.match(/sp\.$/))
 }
 
 module.exports = genbankToFasta
