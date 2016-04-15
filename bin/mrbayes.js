@@ -40,7 +40,7 @@ function mrbayes(data, argv) {
 		'quit',
 	]
 
-	let mb = argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
+	let mb = argv && argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
 	let output = child.execSync(mb, {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
