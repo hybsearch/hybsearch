@@ -16,7 +16,7 @@ function extractInfoFromGenbank(gbFile) {
 				accession,
 				organism,
 				definition,
-				origin
+				origin,
 			}
 		})
 }
