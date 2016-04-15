@@ -25,6 +25,7 @@ $ mb
 
 module.exports = mrbayes
 function mrbayes(data, argv) {
+	argv = argv || {}
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = inputFile + '.con.tre'
 	fs.writeFileSync(inputFile, data, 'utf-8')
@@ -40,7 +41,7 @@ function mrbayes(data, argv) {
 		'quit',
 	]
 
-	let mb = argv && argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
+	let mb = argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
 	let output = child.execSync(mb, {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
