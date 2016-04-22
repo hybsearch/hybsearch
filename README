@@ -1,17 +1,20 @@
 to install:
 
-	npm install
-	brew tap homebrew/science
-	brew install clustal-omega
-	pip install -U pip
-	pip install seqmagick
+- os x:
+	- install homebrew: <https://brew.sh>
+	- install node: brew install node
+
+- windows:
+	- install chocolaty: <https://chocolatey.org>
+	- install python: choco install python2
+	- install node: choco install nodejs.install
+
+- install local node modules: npm install
 
 
 pipeline:
 
 	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js - | ./bin/newick-json.js - | ./ent -
-
-if you are using a fasta file from genbank, substitute `./bin/sanitize-fasta.js -` for the genbank-fasta script.
 
 to convert files:
 
