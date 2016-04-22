@@ -51,6 +51,10 @@ function mrbayes(data, argv) {
 		? 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
 		: './vendor/MrBayes-osx/mb'
 
+	if (process.platform === 'win32') {
+		mb = './vendor/MrBayes-win/mrbayes_x64.exe'
+	}
+
 	let output = child.execSync(mb, {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
