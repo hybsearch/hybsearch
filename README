@@ -14,7 +14,7 @@ to install:
 
 pipeline:
 
-	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js - | ./bin/newick-json.js - | ./ent -
+	cat data/emydura-short.gb | ./bin/genbank-fasta.js - | ./bin/clustal-o.js - | ./bin/fasta-to-nexus.js - | ./bin/mrbayes.js - | ./bin/consensus-newick.js - | ./bin/newick-json.js - | ./ent.js -
 
 to convert files:
 
