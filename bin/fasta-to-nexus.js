@@ -12,9 +12,9 @@ function seqmagick(data) {
 	const outputFile = tempfile().replace(' ', '\ ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	child.execSync(`seqmagick convert --input-format fasta --output-format nexus --alphabet dna ${inputFile} ${outputFile}`)
+	child.execSync(`./vendor/seqmagick-cli convert --input-format fasta --output-format nexus --alphabet dna ${inputFile} ${outputFile}`)
 
-	// seqmagick is wrapping the identifiers in quotes
+	// seqmagick wraps the identifiers in quotes
 	// mrbayes does not like single quotes
 	// remove them
 	return fs.readFileSync(outputFile, 'utf-8').replace(/'/g, "")
