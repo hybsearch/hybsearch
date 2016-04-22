@@ -7,8 +7,7 @@ to install:
 
 - windows:
 	- install chocolaty: <https://chocolatey.org>
-	- install python: choco install python2
-	- install node: choco install nodejs.install
+	- install git, python, and node: choco install git python2 nodejs.install
 
 - install local node modules: npm install
 
