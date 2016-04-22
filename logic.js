@@ -13,7 +13,9 @@ function loadAndProcessData(e) {
 	document.querySelector('section.loader').classList.add('loading')
 
 	let start = performance.now()
-	let child = childProcess.fork('./worker.js')
+	let child = childProcess.fork(path.join('.', 'worker.js'), {
+		silent: true,
+	})
 
 	// still doesn't work.
 	// current problem: the calls to execSync in `child`s children
@@ -50,7 +52,9 @@ function loadAndProcessData(e) {
 		}
 	})
 
-	child.send(file.path)
+	child.send(file.path, err => {
+		console.error('child error', err)
+	})
 
 	return false
 }

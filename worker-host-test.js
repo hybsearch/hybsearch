@@ -1,8 +1,9 @@
 'use strict'
 
+const path = require('path')
 const childProcess = require('child_process')
 
-let child = childProcess.fork(__dirname + '/worker.js')
+let child = childProcess.fork(path.join(__dirname, 'worker.js'))
 
 child.on('message', communique => {
 	let cmd = communique[0]
@@ -20,4 +21,4 @@ child.on('message', communique => {
 	}
 })
 
-child.send('data/ent.gb')
+child.send(path.join('data', 'emydura-short.gb'))
