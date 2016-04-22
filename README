@@ -19,4 +19,4 @@ pipeline:
 
 to convert files:
 
-	./vendor/seqmagick-cli convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
+	./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
