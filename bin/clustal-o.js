@@ -13,7 +13,7 @@ function clustal(data) {
 	const outputFile = tempfile().replace(' ', '\ ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	const argString = `clustalo --in ${inputFile} --out ${outputFile} --outfmt=fasta`
+	const argString = `./vendor/clustalo-osx --in ${inputFile} --out ${outputFile} --outfmt=fasta`
 
 	child.execSync(argString)
 

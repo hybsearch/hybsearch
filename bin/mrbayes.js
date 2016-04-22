@@ -23,6 +23,10 @@ $ mb
 # Created consensus tree file: {ORIG_FILENAME}.con.tre
 */
 
+function isOpenMpiInstalled() {
+	return true
+}
+
 module.exports = mrbayes
 function mrbayes(data, argv) {
 	argv = argv || {}
@@ -41,7 +45,12 @@ function mrbayes(data, argv) {
 		'quit',
 	]
 
-	let mb = argv.mpi ? './vendor/mb-mpi' : './vendor/mb'
+	console.log(isOpenMpiInstalled())
+
+	let mb = isOpenMpiInstalled()
+		? 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
+		: './vendor/MrBayes-osx/mb'
+
 	let output = child.execSync(mb, {
 		input: stdin.join('\n'),
 		encoding: 'utf-8',
