@@ -96,6 +96,11 @@ section.loader.loading wrapper.content {
 	height: 32px;
 }
 
+.loader .checkmark[data-time]::after {
+	font-size: 0.85em;
+	content: attr(data-time) "ms";
+}
+
 #phylogram {
 	overflow: auto;
 }

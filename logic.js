@@ -26,20 +26,22 @@ function loadAndProcessData(e) {
 	child.on('message', packet => {
 		let [cmd, msg] = packet
 		if (cmd === 'complete') {
-			updateLoadingStatus(msg)
+			let taken = performance.now() - start
+			updateLoadingStatus(msg, taken.toFixed(2))
 		}
 		else if (cmd === 'begin') {
+			start = performance.now()
 			currentLabel = msg
 			beginLoadingStatus(msg)
 		}
 		else if (cmd === 'finish') {
 			load(parseNewick(msg))
-			showTime(performance.now() - start)
 		}
 		else if (cmd === 'exit' || cmd === 'error') {
 			if (cmd === 'error') {
 				console.error(msg)
-				setLoadingError(currentLabel)
+				let taken = performance.now() - start
+				setLoadingError(currentLabel, taken.toFixed(2))
 			}
 			child.disconnect()
 		}
@@ -70,11 +72,12 @@ jsontreeTextButton.addEventListener('click', e => {
 	load(JSON.parse(data))
 })
 
-function updateLoadingStatus(label) {
-	console.info(`finished ${label}`)
-	let cl = document.querySelector(`.checkmark[data-loader-name='${label}']`).classList
-	cl.remove('active')
-	cl.add('complete')
+function updateLoadingStatus(label, timeTaken) {
+	console.info(`finished ${label} in ${timeTaken}ms`)
+	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
+	el.classList.remove('active')
+	el.classList.add('complete')
+	el.dataset.time = timeTaken
 }
 
 function showTime(ms) {
@@ -87,9 +90,11 @@ function beginLoadingStatus(label) {
 	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('active')
 }
 
-function setLoadingError(label) {
-	console.info(`error in ${label}`)
-	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('error')
+function setLoadingError(label, timeTaken) {
+	console.info(`error in ${label} (after ${timeTaken}ms)`)
+	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
+	el.classList.add('error')
+	el.dataset.time = timeTaken
 }
 
 function load(newick) {
