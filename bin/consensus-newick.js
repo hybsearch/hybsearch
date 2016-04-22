@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 'use strict'
 
+const os = require('os')
 const getData = require('./lib_get-data')
 
 module.exports = consensusTreeNewick
 function consensusTreeNewick(input) {
+	input = input.replace(RegExp(os.EOL, 'g'), '\n')
 	let labelRegex = /taxlabels(\n\s*[^;]*)+\s;/
 	let labels = labelRegex.exec(input)[1]
 	labels = labels.split('\n').map(l => l.trim()).filter(x => x).map(l => l.replace('_', ' '))

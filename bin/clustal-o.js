@@ -4,7 +4,6 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
-const os = require('os')
 const getData = require('./lib_get-data')
 const minimist = require('minimist')
 
@@ -19,7 +18,7 @@ function clustal(data) {
 
 	child.execSync(argString)
 
-	return fs.readFileSync(outputFile, 'utf-8').replace(os.EOL, '\n')
+	return fs.readFileSync(outputFile, 'utf-8')
 }
 
 function main() {
