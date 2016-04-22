@@ -2,6 +2,7 @@
 
 const parseNewick = require('./vendor/newick').parse
 const d3 = require('d3')
+const path = require('path')
 d3.phylogram = require('./vendor/d3.phylogram')
 const childProcess = require('child_process')
 require('./vendor/array.proto.includes')
@@ -53,7 +54,9 @@ function loadAndProcessData(e) {
 	})
 
 	child.send(file.path, err => {
-		console.error('child error', err)
+		if (err) {
+			console.error('child error', err)
+		}
 	})
 
 	return false
