@@ -7,7 +7,7 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 
 const ENABLE_DEBUG = false
-let debug = ENABLE_DEBUG && console.log.bind(console) || () => {}
+let debug = console.log.bind(console)
 
 let pluck = (arr, key) => arr.map(x => x[key])
 let label = node => `${node.name}-${node.ident}`
