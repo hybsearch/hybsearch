@@ -3,11 +3,12 @@ to install:
 - os x:
 	- install homebrew: <https://brew.sh>
 	- install node: brew install node
-	- install openmpi: brew install openmpi --with-mpi-thread-multiple
+	- install things: brew install homebrew/science/beagle --with-opencl
+	- install openmpi: brew install openmpi
 
 - windows:
 	- install chocolaty: <https://chocolatey.org>
-	- install git, python, and node: choco install git python2 nodejs.install
+	- install git, python, and node: choco install -y git python2 nodejs.install
 
 - install local node modules: npm install
 
