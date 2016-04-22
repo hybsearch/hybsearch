@@ -8,7 +8,7 @@ function main() {
 	let file = process.argv[2]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node fasta-to-nexus.js (<input> | -)')
+		console.error('usage: node newick-json.js (<input> | -)')
 		process.exit(1)
 	}
 

@@ -23,16 +23,6 @@ $ mb
 # Created consensus tree file: {ORIG_FILENAME}.con.tre
 */
 
-function isOpenMpiInstalled() {
-	try {
-		child.execSync('brew')
-		return true
-	}
-	catch (err) {
-		return false
-	}
-}
-
 module.exports = mrbayes
 function mrbayes(data, argv) {
 	argv = argv || {}
@@ -51,14 +41,10 @@ function mrbayes(data, argv) {
 		'quit',
 	]
 
-	console.log(isOpenMpiInstalled())
-
 	let mb = 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
-		// ? 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
-		// : './vendor/MrBayes-osx/mb'
 
 	if (process.platform === 'win32') {
-		mb = './vendor/MrBayes-win/mrbayes_x64.exe'
+		mb = '.\\vendor\\MrBayes-win\\mrbayes_x64.exe'
 	}
 
 	let output = child.execSync(mb, {
@@ -79,7 +65,7 @@ function main() {
 	let file = argv._[0]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node mrbayes.js (<input> | -) [--quiet] [--mpi]')
+		console.error('usage: node mrbayes.js (<input> | -) [--quiet]')
 		process.exit(1)
 	}
 

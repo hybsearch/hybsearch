@@ -12,7 +12,8 @@ function seqmagick(data) {
 	const outputFile = tempfile().replace(' ', '\ ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	child.execSync(`./vendor/seqmagick-cli convert --input-format fasta --output-format nexus --alphabet dna ${inputFile} ${outputFile}`)
+	let executable = process.platform === 'win32' ? '.\\vendor\\seqmagick\\cli.py' : './vendor/seqmagick/cli.py'
+	child.execSync(`${executable} convert --input-format fasta --output-format nexus --alphabet dna ${inputFile} ${outputFile}`)
 
 	// seqmagick wraps the identifiers in quotes
 	// mrbayes does not like single quotes
