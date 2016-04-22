@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python2
 
 import argparse
 import logging
@@ -69,3 +69,7 @@ def parse_arguments(argv):
         return parse_arguments([str(arguments.action), '-h'])
 
     return actions[action], arguments
+
+
+if __name__ == '__main__':
+    main()
