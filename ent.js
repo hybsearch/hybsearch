@@ -27,6 +27,7 @@ function nmMark(node, species1, species2) {
 	}
 }
 
+module.exports.search = nmSearch
 function nmSearch(node) {
 	let name = node.name
 	if (name && !node.ident) {
@@ -35,22 +36,29 @@ function nmSearch(node) {
 		node.name = name.split('-')[0]
 	}
 
+	let nmInstances = []
+
 	if (node.branchset) {
-		debug('has branchset')
+		// debug('has branchset')
 		let combinations = combs(node.branchset, 2)
 
 		let speciesList = []
 		for (let speciesSet of combinations) {
-			let speciesListA = nmSearch(speciesSet[0])
-			let speciesListB = nmSearch(speciesSet[1])
+			let resultsA = nmSearch(speciesSet[0])
+			let speciesListA = resultsA.species
+			nmInstances = nmInstances.concat(resultsA.nm)
 
-			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
+			let resultsB = nmSearch(speciesSet[1])
+			let speciesListB = resultsB.species
+			nmInstances = nmInstances.concat(resultsB.nm)
+
+			// debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
 
 			let speciesBNames = pluck(speciesListB, 'name')
 			speciesListA.forEach(species1 => {
 				let hasName = speciesBNames.includes(species1.name)
 				let notAllEqual = !(speciesBNames.every(n => n === species1))
-				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+				// debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
 
 				// species1 is in speciesListB, and not everything in speciesListB is species1
 				if (hasName && notAllEqual) {
@@ -58,8 +66,9 @@ function nmSearch(node) {
 					speciesListB.forEach(species2 => {
 						if (species2.name !== species1.name) {
 							nmMark(node, species1, species2)
+							// debug(`nmMark called on ${species1} and ${species2}`)
 							console.log(`nonmonophyly: ${label(species1)} / ${label(species2)}`)
-							debug(`nmMark called on ${species1} and ${species2}`)
+							nmInstances.push([species1, species2])
 						}
 					})
 
@@ -67,8 +76,9 @@ function nmSearch(node) {
 					speciesListA.forEach(species3 => {
 						if (species3.name !== species1.name) {
 							nmMark(node, species1, species3)
+							// debug(`nmMark called on ${species1} and ${species3}`)
 							console.log(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
-							debug(`nmMark called on ${species1} and ${species3}`)
+							nmInstances.push([species1, species3])
 						}
 					})
 				}
@@ -78,14 +88,18 @@ function nmSearch(node) {
 		}
 
 		speciesList = uniqBy(speciesList, 'ident')
-		debug('speciesList', speciesList)
-		return speciesList
+		// debug('speciesList', speciesList)
+		return {species: speciesList, nm: nmInstances}
 	}
 
-	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
-	return [node]
+	// debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
+	return {species: [node], nm: nmInstances}
 }
 
+module.exports.formatData = formatData
+function formatData(results) {
+	return results.nm.map(pair => pair.map(label))
+}
 
 
 function main() {
@@ -99,6 +113,8 @@ function main() {
 	getData(file)
 		.then(d => JSON.parse(d))
 		.then(nmSearch)
+		.then(formatData)
+		.then(console.log.bind(console))
 		.catch(console.error.bind(console))
 }
 
