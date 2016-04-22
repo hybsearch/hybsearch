@@ -5,6 +5,7 @@ const d3 = require('d3')
 const path = require('path')
 d3.phylogram = require('./vendor/d3.phylogram')
 const childProcess = require('child_process')
+const ent = require('./ent')
 require('./vendor/array.proto.includes')
 
 function loadAndProcessData(e) {
@@ -114,6 +115,7 @@ function load(newick) {
 	}
 
 	buildNewickNodes(newick)
+	ent.search(newick)
 
 	console.log('Got nodes:', newickNodes)
 
