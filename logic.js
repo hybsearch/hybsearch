@@ -12,6 +12,7 @@ function loadAndProcessData(e) {
 
 	document.querySelector('section.loader').classList.add('loading')
 
+	let start = performance.now()
 	let child = childProcess.fork('./worker.js')
 
 	// still doesn't work.
@@ -33,6 +34,7 @@ function loadAndProcessData(e) {
 		}
 		else if (cmd === 'finish') {
 			load(parseNewick(msg))
+			showTime(performance.now() - start)
 		}
 		else if (cmd === 'exit' || cmd === 'error') {
 			if (cmd === 'error') {
@@ -73,6 +75,11 @@ function updateLoadingStatus(label) {
 	let cl = document.querySelector(`.checkmark[data-loader-name='${label}']`).classList
 	cl.remove('active')
 	cl.add('complete')
+}
+
+function showTime(ms) {
+	console.info(`completed in ${ms} ms`)
+	document.querySelector(`.time-taken`).textContent = `${ms}ms`
 }
 
 function beginLoadingStatus(label) {
