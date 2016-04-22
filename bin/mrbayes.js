@@ -4,6 +4,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const path = require('path')
 const getData = require('./lib_get-data')
 const minimist = require('minimist')
 
@@ -23,32 +24,37 @@ $ mb
 # Created consensus tree file: {ORIG_FILENAME}.con.tre
 */
 
+let cmdBlock = `begin mrbayes;
+	set autoclose=yes nowarn=yes;
+	lset nst=6 rates=invgamma;
+	prset topologypr = uniform;
+	prset brlenspr = clock:uniform;
+	mcmc ngen=20000 samplefreq=100;
+	sumt;
+end;`
+
+function insertCommandBlock(data, cmd) {
+	return data.replace('end;', `end;\n${cmd}\n`)
+}
+
 module.exports = mrbayes
 function mrbayes(data, argv) {
 	argv = argv || {}
 	const inputFile = tempfile().replace(' ', '\ ')
 	const outputFile = inputFile + '.con.tre'
+
+	// we can control mrbayes with a "command block"
+	data = insertCommandBlock(data, cmdBlock)
+
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let stdin = [
-		`execute ${inputFile}`, // the path to the aligned nexus sequences
-		'lset nst=6 rates=invgamma',
-		'prset topologypr = uniform',
-		'prset brlenspr = clock:uniform',
-		'mcmc ngen=20000 samplefreq=100',
-		'no',
-		'sumt',
-		'quit',
-	]
-
 	let mb = 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
-
+	// let mb = './vendor/MrBayes-osx/mb'
 	if (process.platform === 'win32') {
 		mb = '.\\vendor\\MrBayes-win\\mrbayes_x64.exe'
 	}
 
-	let output = child.execSync(mb, {
-		input: stdin.join('\n'),
+	let output = child.execSync(`${mb} ${inputFile}`, {
 		encoding: 'utf-8',
 		stdio: [undefined, 'pipe', 'pipe'],
 	})
