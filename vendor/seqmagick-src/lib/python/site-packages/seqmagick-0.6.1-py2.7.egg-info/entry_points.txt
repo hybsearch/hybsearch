@@ -1,0 +1,3 @@
+[console_scripts]
+seqmagick = seqmagick.scripts.cli:main
+

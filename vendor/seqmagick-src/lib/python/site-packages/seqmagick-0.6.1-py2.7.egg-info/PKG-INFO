@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: seqmagick
+Version: 0.6.1
+Summary: Tools for converting and modifying sequence files from the command-line
+Home-page: http://github.com/fhcrc/seqmagick
+Author: Matsen Group
+Author-email: http://matsen.fhcrc.org/
+License: GPL V3
+Download-URL: http://pypi.python.org/pypi/seqmagick
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
