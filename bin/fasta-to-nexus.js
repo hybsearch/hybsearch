@@ -4,6 +4,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const os = require('os')
 const path = require('path')
 const getData = require('./lib_get-data')
 
@@ -20,6 +21,7 @@ function seqmagick(data) {
 	// mrbayes does not like single quotes.
 	// remove them.
 	let output = fs.readFileSync(outputFile, 'utf-8')
+	output = output.replace(os.EOL, '\n')
 	output = output.replace(/'/g, "")
 
 	return output

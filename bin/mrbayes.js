@@ -4,6 +4,7 @@
 const child = require('child_process')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const os = require('os')
 const path = require('path')
 const getData = require('./lib_get-data')
 const minimist = require('minimist')
@@ -63,7 +64,7 @@ function mrbayes(data, argv) {
 		process.stderr.write(output)
 	}
 
-	return fs.readFileSync(outputFile, 'utf-8')
+	return fs.readFileSync(outputFile, 'utf-8').replace(os.EOL, '\n')
 }
 
 function main() {
