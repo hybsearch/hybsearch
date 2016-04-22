@@ -3,6 +3,7 @@ to install:
 - os x:
 	- install homebrew: <https://brew.sh>
 	- install node: brew install node
+	- install openmpi: brew install openmpi --with-mpi-thread-multiple
 
 - windows:
 	- install chocolaty: <https://chocolatey.org>

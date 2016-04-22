@@ -24,7 +24,13 @@ $ mb
 */
 
 function isOpenMpiInstalled() {
-	return true
+	try {
+		child.execSync('brew')
+		return true
+	}
+	catch (err) {
+		return false
+	}
 }
 
 module.exports = mrbayes
@@ -47,9 +53,9 @@ function mrbayes(data, argv) {
 
 	console.log(isOpenMpiInstalled())
 
-	let mb = isOpenMpiInstalled()
-		? 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
-		: './vendor/MrBayes-osx/mb'
+	let mb = 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
+		// ? 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
+		// : './vendor/MrBayes-osx/mb'
 
 	if (process.platform === 'win32') {
 		mb = './vendor/MrBayes-win/mrbayes_x64.exe'
