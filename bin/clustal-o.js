@@ -1,22 +1,28 @@
 #!/usr/bin/env node
 'use strict'
 
-const child = require('child_process')
+const execa = require('execa')
 const tempfile = require('tempfile')
 const fs = require('fs')
+const path = require('path')
 const getData = require('./lib_get-data')
 const minimist = require('minimist')
 
 module.exports = clustal
 function clustal(data) {
-	const inputFile = tempfile().replace(' ', '\ ')
-	const outputFile = tempfile().replace(' ', '\ ')
+	const inputFile = tempfile()
+	const outputFile = tempfile()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let executable = process.platform === 'win32' ? '.\\vendor\\clustalo-win64\\clustalo.exe' : './vendor/clustalo-osx'
-	let argString = `${executable} --in ${inputFile} --out ${outputFile} --outfmt=fasta`
-
-	child.execSync(argString)
+	let executable = process.platform === 'win32'
+		? path.join('vendor', 'clustalo-win64', 'clustalo.exe')
+		: path.join('vendor', 'clustalo-osx')
+	let args = [
+		'--in', inputFile,
+		'--out', outputFile,
+		'--outfmt=fasta',
+	]
+	execa.sync(executable, args)
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
