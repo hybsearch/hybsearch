@@ -30,10 +30,8 @@ function nmMark(node, species1, species2) {
 
 module.exports.search = nmSearch
 function nmSearch(node) {
-	let name = node.name
-	if (name && !node.ident) {
-		// console.log(name)
-		let splitted = name.split('__', 1)
+	if (node.name && !node.ident) {
+		let splitted = node.name.split('__')
 		node.name = splitted[0]
 		node.ident = splitted[1]
 	}
@@ -102,10 +100,8 @@ module.exports.strictSearch = strictSearch
 function strictSearch(node) {
 	// Remove individuals after being flagged for inner nm, to prevent
 	// unnecessary repeated nm findings
-	let name = node.name
-	if (name && !node.ident) {
-		// console.log(name)
-		let splitted = name.split('__', 1)
+	if (node.name && !node.ident) {
+		let splitted = node.name.split('__')
 		node.name = splitted[0]
 		node.ident = splitted[1]
 	}
