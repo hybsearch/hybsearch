@@ -1,4 +1,4 @@
->Sternotherus_carinatus-JN860673
+>Sternotherus_carinatus__JN860673
 ------------------------------------------------------------
 -----------------------------------accggtatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcagttacccatacaattcgagacgtacaat
@@ -18,7 +18,7 @@ ccatgttccgaccattcacccaaaccctattctgaatcctagtagccgacctactaatcc
 taacgtgaattgggggacaaccagttgaaaaccccttcatcttaatcggacaaatagcct
 ccatcacctatttcaccgtcctattagcacttataccagtagcaggcctaatagaaaata
 aaataat
->Kinosternon_subrubrum-KF301391
+>Kinosternon_subrubrum__KF301391
 ------------------------------------------cctgatgaaacttcggat
 cattacttggcacctgcttaatcctacaaattactaccggtatcttcctagcaatacact
 attcatccgacatatcattagcattctcatcaatcacccatacaattcgagacgtacaat
@@ -38,7 +38,7 @@ ctatattccgaccatttacccaaattctattctgaatactagtagctgatttactaatcc
 taacatgaattggaggccaaccagttgaaaaccctttcatcctaatcggacaaatagctt
 caattacctacttcaccatcctattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_subrubrum-KF301390
+>Kinosternon_subrubrum__KF301390
 atagctcattcattgacctgccaagtccttcaaacatttcaatctgatgaaactttggat
 cattactcggcacctgcttaattctacaaattactaccggcatcttcctagcaatacact
 actcatctgacatatcattagcattctcatcagtcacccacacaattcgagacgtacaat
@@ -58,7 +58,7 @@ ctatattccgaccattcacccaaactctattctgaatactagcggccgatctactaatcc
 taacatgaattggaggccaaccagttgaaaaccctttcatcctaatcggacaaatagcct
 caattatctactttatcatcctattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_sonoriense-KF301389
+>Kinosternon_sonoriense__KF301389
 acaactcattcattgacctaccaagtccatcaaacatttcagcctgatgaaacttcggat
 cattacttggcatctgcctaatcctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaattacccatacaattcgagatgtacaat
@@ -78,7 +78,7 @@ ctacattccgaccattcacccaaactctattctgaacactagtagctgacctactaatcc
 taacatgaattggaggacaaccagttgaagcccccttcatcctaatcggacaaatagcct
 c-----------------------------------------------------------
 -------
->Kinosternon_scorpioides-KF301387
+>Kinosternon_scorpioides__KF301387
 acaactcatttattgatctgccaagtccttcaaacatttcagcctgatgaaacttcggat
 cattacttggcacctgcctaaccctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcacccacacaattcgagatgtacatt
@@ -98,7 +98,7 @@ ccatattccgaccattcacccaaactctattctgagtactagtagctgacctactaatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcctaatcggacaaatagcct
 caatcacctacttc----------------------------------------------
 -------
->Kinosternon_scorpioides-KF301386
+>Kinosternon_scorpioides__KF301386
 acaactcattcattgacctgccaagtccctcaaacatttcagcctggtgaaacttcggat
 cattacttggcacctgcttagccctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcacccatacaattcgagatgtacatt
@@ -118,7 +118,7 @@ ccatattccgaccattcacccaaactctattctgaatactagtagctgacctactaatcc
 taacatgaattggaggacaaccagttgaaaacccctttatcctaatcggacaaatagcct
 caatcacctacttcaccatcctattagtacttataccaataacaggcctaatagaaaata
 aaata--
->Kinosternon_scorpioides-KF301385
+>Kinosternon_scorpioides__KF301385
 acaactcattcattgacctaccaagtccttcaaacatttcagcctgatgaaactttggat
 cattacttggcacctgcctaaccctacaaattattaccggtatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcactcatacaattcgagatgtacatt
@@ -138,7 +138,7 @@ ccatattccgaccattcacccaaactctattctgagtactagtagctaatctactaatcc
 taacatgaattggaggacaaccagttgaaaacccattcatcctaatcggacaaatagcct
 caatcacctacttcaccatcctattagtacttataccaatagcaggcctaatagaaaaca
 aaata--
->Kinosternon_oaxacae-KF301384
+>Kinosternon_oaxacae__KF301384
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -158,7 +158,7 @@ ccatattccgaccattcacccaaactctattctgagtactagcagctgacctgttaatcc
 taacatgaatcggaggacaaccagttgaaaaccccttcatcctaatcggacaaatagcct
 caatcacctacttcaccatcctattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_leucostomum-KF301383
+>Kinosternon_leucostomum__KF301383
 acaactcattcattgacctaccaagcccttcaaacatttcaatctgatgaaatttcgggt
 cattacttggtacctgcctaatcctacaaatcactaccggtatcttcctagcaatacact
 actcatctgatatatcattagcattctcatctatcacccacacaattcgagatgtacaat
@@ -178,7 +178,7 @@ ctatattccgaccatttacccaaactctattctgaatcctagtaaccgacctactaatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcttaattggacaaatagcct
 ccactatctacttcaccattttattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_integrum-KF301382
+>Kinosternon_integrum__KF301382
 acaactcattcattgacctgccaagtccctcaaacatttcagcctggtgaaacttcggat
 cattacttgggacctgcctaaccctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcacccatacaattcgagacgtacatt
@@ -198,7 +198,7 @@ ccatattccgaccattcacccaaactctattctgaatgttagtagctgacttactaatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcctaattggacaaatagcct
 caatcacctacttccccatcctattagtacttataccagtagcaggcctaatagaagata
 aaata--
->Kinosternon_integrum-KF301381
+>Kinosternon_integrum__KF301381
 acaactcattcattgacctgccaagtccctcaaacatttcagcctggtgaaacttcggat
 cattacttgggacctgcctaaccctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcactcatacaattcgagacgtacatt
@@ -218,7 +218,7 @@ ccatattccgaccattcacccaaactctattctgaatgttagtagctgacttactaatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcctaattggacaaatagcct
 caatcacctacttcacaatcctattagtacttataccagtagcaggcctaatagaagata
 a------
->Kinosternon_integrum-KF301380
+>Kinosternon_integrum__KF301380
 acaactcattcattgacctgccaagtccctcaaacatttcagcctggtgaaacttcggat
 cattacttgggacctgcctaaccctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcgcccatacaattcgagacgtacatt
@@ -238,7 +238,7 @@ ccatattccgaccattcacccaaactctattctgaatattagtagctgacttactaatcc
 taacatgagttggaggacaaccagttgaaaaccccttcatcctaattggacaaatagcct
 caatcacc----------------------------------------------------
 -------
->Kinosternon_hirtipes-KF301379
+>Kinosternon_hirtipes__KF301379
 ataactcattcattgacctaccaagtccctcaaacatttcagcctgatgaaacttcgggt
 cattacttggcacctgcctaatcctacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcacccatacaattcgagatgtacaat
@@ -258,7 +258,7 @@ ctacattccgaccatttacccaaactctattctgaatactagtagctgacctactaatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcctaatcggacaaacagcct
 caatcatctacttcaccatcctcttagtacttataccaacagccggcctaatagaaaata
 aaata--
->Kinosternon_herrerai-KF301378
+>Kinosternon_herrerai__KF301378
 acagctcattcattgacctaccaagcccctcaaacatttcaatctgatgaaattttggat
 cattacttggcacttgtttaatcctacaaattactaccggtatcttcctagcaatacact
 actcatctgatatatcattagcattctcatcagtcacccacataattcgagacgtacaat
@@ -278,7 +278,7 @@ ctatattccgaccattcactcaaactctattctgaatcctagtagccgacctattaatcc
 taacatgaattggaggacaaccagttgaaaatccattcatcttaatcggacaaacagcct
 ccattacctactttacaatcctattagtacttataccaatcgcaggtctaatagaaa---
 -------
->Kinosternon_herrerai-KF301377
+>Kinosternon_herrerai__KF301377
 acagctcattcattgacctaccaagcccctcaaacatttcaatctgatgaaattttggat
 cattacttggcacttgtttaatcctacaaattactaccggtatcttcctagcaatacact
 actcatctgatatatcattagcattctcatcagtcacccacataattcgagacgtacaat
@@ -298,7 +298,7 @@ ctatattccgaccattcactcaaactctattctgaatcctagtagccgacctattaatcc
 taacatgaattggaggacaaccagttgaaaatccattcatcttaatcggacaaacagcct
 ccattacctactttacaatcctattagtacttataccaatcgcaggtctaatagaaaata
 aaa----
->Kinosternon_flavescens-KF301376
+>Kinosternon_flavescens__KF301376
 atagctcattcattgacctgccaagtccttcaaacatttcaatctgatgaaactttggat
 cattactcggcacctgcctaattctacaaattactaccggcatcttcctagcaatacact
 actcatctgacatatcattagcattctcatcagtcacccatacaattcgagacgtacaat
@@ -318,7 +318,7 @@ ctatattccgaccattcacccaaattctattctgaacactagtggccgatctactaatcc
 taacatgaattggaggccaaccagttgaaaaccctttcatcctaatcggacaaatagcct
 caattatctactttaccatcctattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_durangoense-KF301375
+>Kinosternon_durangoense__KF301375
 ataactcattcattgacctggcaagtccatcaaacatttcagcctgatgaaacttcggat
 cattacttggcacctggctaatcctacaaattattaccggcatcttcctagcaatacatt
 attcatctgatatatcactagcattctcatcagtcacccatacaattcgagacgtacaat
@@ -338,7 +338,7 @@ ctatattccgaccattcacccaaactctattctgaatactagtagctgacctattaatcc
 taacatgaattggaggacaaccagttgaaaacccattcatcctaatcggacaaatagcct
 caatcatctacttcactattctattagtacttataccaatagcaggcctaatagagaata
 aaata--
->Kinosternon_dunni-KF301374
+>Kinosternon_dunni__KF301374
 ------------------------------------------------------------
 -----------------ctaatcctacaaatcactactgggaccttcctagcaatacact
 actcatctgatatatcattagcattctcatccatcactcatacaatccgagacgtacaat
@@ -358,7 +358,7 @@ ctatattccgaccattcacccaaaccctattttgaatcttagtagctgacctattaatcc
 taacatgaattggaggacaaccagttgaaaatccattcatctcaattggacaaacagcct
 ccattatctactttaccgtcctattagtacttataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_creaseri-KF301373
+>Kinosternon_creaseri__KF301373
 acaactcattcattgacctaccaagcccctcaaacatttcaatctgatgaaattttggat
 cattacttggcacttgtttaatcctacaaattactaccggtattttcctagcaatacact
 actcatcagatatatcattagcattctcatcagtaacccacacaactcgagacgtacaat
@@ -378,7 +378,7 @@ ccatattccgaccattcactcaaactctattctgagtcctagtagccgacttattaatcc
 taacatgaattggaggacaaccagttgaaaacccattcattttaatcggacaaacagcct
 ccattatctactttacaatcctattactatttataccaattgtcggcctaatagaaaaca
 aa-----
->Kinosternon_chimalhuaca-KF301372
+>Kinosternon_chimalhuaca__KF301372
 acaactcattcattgacctaccaagtccctcaaacatttcaacctgatgaaacttcggat
 cattacttggcacctgcctaatcctacaaattattactggcatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcaatcacccatacaattcgagatgtacaat
@@ -398,7 +398,7 @@ ctacattccgaccattcacccaaattctattctgaatactagtagctgacctactgatcc
 taacatgaattggatgacaaccagttgagaaccctttcatcctaatcggacaaatagcct
 caattatctacttcaccatcctattagtacttataccaacagccggtctaatagaaaata
 aaata--
->Kinosternon_baurii-KF301371
+>Kinosternon_baurii__KF301371
 ataactcatttattgacctaccaagtccatcaaacatttcagcctgatgaaactttggat
 cactacttggcacctgcttaatcctacaaattactaccggtatcttcctagcaatacact
 attcatctgatatatcattagcattctcatcaattactcatacaattcgagacgtacaat
@@ -418,7 +418,7 @@ ctatattccgaccatttacccaaaccttattctgaatgttagtggctgatttactaatcc
 taacatgaattgggggccaaccagttgaaaaccccttcatcctaatcggacaaatagcct
 caattacctacttcactatcctattagtactaataccaatagcaggcctaatagaaaata
 aaata--
->Kinosternon_arizonense-KF301370
+>Kinosternon_arizonense__KF301370
 ataactcattcattgacctgccaagtccatcaaacatttcagcctgatgaaacttcggat
 cattacttggcacatgcttaatcctacaaattattaccggcatcttcctagcaatacatt
 attcatctgatatatcactagcattctcatcaattacccatacaattcgagatgtacaat
@@ -438,7 +438,7 @@ ctatattccgaccatttacccaaactctattctgaatactagtagctgacctattaatcc
 taacatgaattggaggacaaccagttgaaaatccattcatcctaatcggacaaatagcct
 caatcatctacttcactattctattagtacttataccaatagcaggtctaatagaaaatg
 aaata--
->Kinosternon_angustipons-KF301369
+>Kinosternon_angustipons__KF301369
 ataactcattcattgacctaccaagcccctcaaacatttcaacctcatgaaatttcggat
 cattacttggcacctgtctaatcctacaaattactaccggtaccttcctagcaatacact
 actcatctgatatatcattagcattctcatccatcactcacataattcgagatgtacaat
@@ -458,7 +458,7 @@ ctatattccgaccattcacccaaaccctgttctgaatcctagtagccgacctgttaattc
 taacatgaattggaggacaaccagttgaaaatccattcatcttaattggacaaacagcct
 ccattatctacttcaccatcctattagtactaataccaatagcaggcctaatagaaaaca
 aaata--
->Kinosternon_alamosae-KF301368
+>Kinosternon_alamosae__KF301368
 acaactcattcattgacctgccaaccccatcaaacatttcatcctgatgaaacttcggat
 cattacttggcacctgcttaatactacaaattattaccggcatcttcctagcaatacact
 attcatctgacatatcactagcattccaatcaatcacccatacaattcgagacgtacaat
@@ -478,7 +478,7 @@ ctatatttcgaccattcacccaaactctattctgaatactagtagctgacctacttatcc
 taacatgaattggaggacaaccagttgaaaaccccttcatcctaattggacaaatagcct
 caattatcta--------------------------------------------------
 -------
->Kinosternon_acutum-KF301367
+>Kinosternon_acutum__KF301367
 acaactcattcattgacctaccaagcccctcaaacatttcaatctgatgaaattttgggt
 cattacttggcacttgtttaatcctacaaattactaccggtattttcctagcaatacact
 actcatcagatatatcattagcattctcatcagtaacccacacaactcgagacgtacaat
@@ -498,7 +498,7 @@ ccatattccgaccattcactcaaactctattctgaatcctagtagccgacttattaatcc
 taacatgaattggaggacaaccagttgaaaacccattcattttaatcggacaaacagcct
 ccattatctactttacaatcctattactatttataccaattgtcggcctaatagaaaaca
 aaata--
->Kinosternon_acutum-KF301366
+>Kinosternon_acutum__KF301366
 acaactcattcattgacctaccaagcccctcaaacatttcaatctgatgaaattttgggt
 cattacttggcacttgtttaatcctacaaattactaccggtattttcctagcaatacact
 actcatcagatatatcattagcattctcatcagtaacccacacaactcgagacgtacaat
@@ -518,7 +518,7 @@ ccatattccgaccattcactcaaactctattctgaatcctagtagccgacttattaatcc
 taacatgaattggaggacaaccagttgaaaacccattcattttaatcggacaaacagcct
 ccattatctactttacaatcctattactatttataccaattgtcggcctaatagaaaaca
 aa-----
->Sternotherus_odoratus-KF301365
+>Sternotherus_odoratus__KF301365
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -538,7 +538,7 @@ ccatattccgaccattcacccaaactctattatgggtcctaatagccgacctactaatcc
 taacatgaattggaggacaaccagttgaaacccccttcatcttaatcggacaaatagcct
 ctattacc----------------------------------------------------
 -------
->Sternotherus_minor-KF301364
+>Sternotherus_minor__KF301364
 acaattcattcattgacctaccaagcccctcaaacatttcagcctgatgaaacttcggat
 cattactcggcacctgcttaatcctacaaatcactactggcatcttcctagcaatacact
 attcatctgacatatcattagcattctcatcagtcacccatacaactcgagacgtacaat
@@ -558,7 +558,7 @@ ccatattccgaccatttacccaaactctattctgaatcctagtggccgacctactaatct
 taacatgaattggaggacaaccagttgaaaatccctttatcttaatcggacaaatagcct
 ctattacctacttcgccatcctattagcacttataccaatagcaggcctagcagaaaata
 aaata--
->Sternotherus_minor-KF301363
+>Sternotherus_minor__KF301363
 acaattcattcattgacctaccaagtccctcaaacatttcagcctgatgaaacttcggat
 cattactcggcacctgtttaatcctacaaatcattactggtatcttcctagcaatacact
 actcatctgacatatcattagcattctcatcagtcacccatacaattcgagacgtacaat
@@ -578,7 +578,7 @@ ccatattccgaccattcacccaaactctattttgaatcctagtggccgacctactaatcc
 taacatgaattggaggacaaccagttgaaaatccctttatcttaatcggacaaacagcct
 ccattacctacttcgccatcctattagtactcataccaatagcaggcctagcagaaaata
 atata--
->Sternotherus_depressus-KF301362
+>Sternotherus_depressus__KF301362
 acaattcattcattgacctaccaagcccctcaaacatttcagcctgatgaaacttcggat
 cattactcggcacctgcttaatcctacaaatcactactggcatcttcctagcaatacact
 attcatctgacatatcattagcattctcatcagtcacccatacaactcgagacgtacaat
@@ -598,7 +598,7 @@ ccatattccgaccatttacccaaactctattctgaatcctagtggccgacctactaatct
 taacatgaattggaggacaaccagttgaaaatccctttatcttaatcggacaaatagcct
 ctattacctacttcgccatcctattagcacttataccaatagcaggcctagca-------
 -------
->Sternotherus_carinatus-KF301361
+>Sternotherus_carinatus__KF301361
 acaattcattcattgacctaccaagcccctcaaacatttcagcctgatgaaacttcggat
 cattactcggcatctgcttaatcctgcaaatcactaccggtatcttcctagcaatacact
 attcatctgacatatcactagcattctcatcagttacccatacaattcgagacgtacaat
@@ -618,7 +618,7 @@ ccatgttccgaccattcacccaaaccctattctgaatcctagtagccgacctactaatcc
 taacgtgaattgggggacaaccagttgaaaaccccttcatcttaatcggacaaatagcct
 ccatcacctatttcaccgtcctattagcacttataccagtagcaggcctaatagaaaata
 aaata--
->Staurotypus_triporcatus-KF301360
+>Staurotypus_triporcatus__KF301360
 ataactcattcatcgatctaccaagcccctcaaacatctcagcctggtggaattttggat
 cacttcttggcatctgcttaatcctacaaattaccaccggcatcttcttagctatacact
 actcatccgacatatccctagcattctcaacagtagcccacattactcgagacgtacaat
@@ -638,7 +638,7 @@ ccatattccgaccacttacccaaatcctattctgaatactaacagccaacctactaatcc
 taacatgaatcggaggacaaccagttgaagatccattcatcctaatcggacaaacagcct
 ctatcaactacttcacaaccctgctaatcctccttccaacagcaggcctaattgaaaata
 aaata--
->Staurotypus_salvinii-KF301359
+>Staurotypus_salvinii__KF301359
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -658,7 +658,7 @@ ctatattccgaccacttacccaaatcctattctgaatactaacagccaacctactaatcc
 taacatgaatcggaggacaaccagttgaagatccattcatcctaattggacaaacagcct
 ctatcaactacttcacaaccctactaatcctccttccaacagcaggcctaattgaaaata
 aaata--
->Claudius_angustatus-KF301358
+>Claudius_angustatus__KF301358
 acagttcattcattgacctaccaagcccctcaaacatttcagcctgatgaaattttggat
 cacttattggcatttgcttaatcctacaaattactaccggtatcttcttagccatacact
 actcatctgatatatccttagcattctcaacagtagcccacatcacccgagacgtacaat

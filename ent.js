@@ -32,8 +32,8 @@ function nmSearch(node) {
 	let name = node.name
 	if (name && !node.ident) {
 		// console.log(name)
-		node.ident = name.split('-')[1]
-		node.name = name.split('-')[0]
+		node.name = name.split('__')[0]
+		node.ident = name.split('__')[1]
 	}
 
 	let nmInstances = []
