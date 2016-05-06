@@ -12,3 +12,4 @@ clojure/checkouts
 
 node_modules/.bin
 node_modules/electron*
+*.pyc
