@@ -316,9 +316,7 @@ phylogram.build = function(selector, nodes, options) {
 			.attr('font-family', 'RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif')
 			.attr('font-size', '12px')
 			.attr('fill', 'black')
-			.text(function(d) {
-				return d.name + ' (' + d.length + ')';
-			});
+			.text(d => `${d.name} ${d.ident} (${d.length})`);
 	}
 
 	return {
