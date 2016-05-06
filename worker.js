@@ -7,7 +7,6 @@ const serializeError = require('serialize-error')
 const fileExt = require('file-extension')
 
 const genbankToFasta = require('./bin/genbank-fasta')
-const sanitizeFasta = require('./bin/sanitize-fasta')
 const clustal = require('./bin/clustal-o')
 const fastaToNexus = require('./bin/fasta-to-nexus')
 const mrBayes = require('./bin/mrbayes')
@@ -49,9 +48,6 @@ function loadAndEvaluate(path) {
 			let fasta = data
 			if (fileExt(path) !== 'fasta') {
 				fasta = genbankToFasta(data)
-			}
-			else if (data.indexOf('>gi|') > -1) {
-				fasta = sanitizeFasta(data)
 			}
 			return fasta
 		}).then(fasta => {
