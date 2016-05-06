@@ -27,7 +27,7 @@ function genbankToFasta(genbankFile) {
 	const data = extractInfoFromGenbank(genbankFile)
 
 	return data
-		.map(e => `> ${e.organism.replace(' ', '_')}-${e.accession}\n${e.origin}\n`)
+		.map(e => `> ${e.organism.replace(' ', '_')}__${e.accession}\n${e.origin}\n`)
 		.join('\n')
 }
 
