@@ -1,28 +1,42 @@
 #!/usr/bin/env node
 'use strict'
 
-const child = require('child_process')
-const tempfile = require('tempfile')
 const fs = require('fs')
-const path = require('path')
+const startsWith = require('lodash/startsWith')
 const getData = require('./lib_get-data')
 
-module.exports = seqmagick
-function seqmagick(data) {
-	const inputFile = tempfile().replace(' ', '\ ')
-	const outputFile = tempfile().replace(' ', '\ ')
-	fs.writeFileSync(inputFile, data, 'utf-8')
+module.exports = convert
+function convert(data) {
+	let all_sets = []
+	let dataset = null
+	let in_matrix = false
 
-	let executable = `python ${path.join('vendor', 'seqmagick', 'cli.py')}`
-	child.execSync(`${executable} convert --input-format nexus --output-format fasta --alphabet dna ${inputFile} ${outputFile}`)
+	for (let line of data.split('\n')) {
+	    if (startsWith(line, '\tMatrix')) {
+	        dataset = []
+	        in_matrix = true
+	    }
+	    else if (startsWith(line, '\t;')) {
+	        in_matrix = false
+	        all_sets.push(dataset)
+	        dataset = null
+	    }
 
-	// seqmagick wraps the identifiers in quotes.
-	// mrbayes does not like single quotes.
-	// remove them.
-	let output = fs.readFileSync(outputFile, 'utf-8')
-	output = output.replace(/'/g, "")
+	    else if (in_matrix) {
+	        dataset.push(line)
+	    }
+	}
 
-	return output
+	let fasta = []
+	for (let dataset of all_sets) {
+	    for (let seq of dataset) {
+	        let [ident, sequence] = seq.split(/\s+/)
+	        fasta.push('>' + ident)
+	        fasta.push(sequence)
+	    }
+	}
+
+	return fasta.join('\n')
 }
 
 function main() {
@@ -34,7 +48,7 @@ function main() {
 	}
 
 	getData(file)
-		.then(seqmagick)
+		.then(convert)
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))
 }
