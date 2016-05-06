@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const child = require('child_process')
+const execa = require('execa')
 const tempfile = require('tempfile')
 const fs = require('fs')
 const path = require('path')
@@ -13,8 +13,16 @@ function seqmagick(data) {
 	const outputFile = tempfile().replace(' ', '\ ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let executable = `python ${path.join('vendor', 'seqmagick', 'cli.py')}`
-	child.execSync(`${executable} convert --input-format fasta --output-format nexus --alphabet dna ${inputFile} ${outputFile}`)
+	let args = [
+		path.join('vendor', 'seqmagick', 'cli.py'),
+		'convert',
+		'--input-format', 'fasta',
+		'--output-format', 'nexus',
+		'--alphabet', 'dna',
+		inputFile,
+		outputFile,
+	]
+	execa.sync('python', args)
 
 	// seqmagick wraps the identifiers in quotes.
 	// mrbayes does not like single quotes.

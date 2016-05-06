@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const child = require('child_process')
+const execa = require('execa')
 const tempfile = require('tempfile')
 const fs = require('fs')
 const os = require('os')
@@ -25,43 +25,43 @@ $ mb
 # Created consensus tree file: {ORIG_FILENAME}.con.tre
 */
 
-let cmdBlock = `begin mrbayes;
-	set autoclose=yes nowarn=yes;
-	lset nst=6 rates=invgamma;
-	prset topologypr = uniform;
-	prset brlenspr = clock:uniform;
-	mcmc ngen=20000 samplefreq=100;
-	sumt;
-end;`
-
-function insertCommandBlock(data, cmd) {
-	return data.replace('end;', `end;\n${cmd}\n`)
+function insertCommandBlock(data) {
+	let cmdBlock = `begin mrbayes;
+		set autoclose=yes nowarn=yes;
+		lset nst=6 rates=invgamma;
+		prset topologypr = uniform;
+		prset brlenspr = clock:uniform;
+		mcmc ngen=20000 samplefreq=100;
+		sumt;
+	end;`
+	return data.replace('end;', `end;\n${cmdBlock}\n`)
 }
 
 module.exports = mrbayes
 function mrbayes(data, argv) {
 	argv = argv || {}
-	const inputFile = tempfile().replace(' ', '\ ')
+	const inputFile = tempfile()
 	const outputFile = inputFile + '.con.tre'
 
 	// we can control mrbayes with a "command block"
-	data = insertCommandBlock(data, cmdBlock)
+	data = insertCommandBlock(data)
 
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let mb = 'mpirun -np 4 ./vendor/MrBayes-osx/mb-mpi'
-	// let mb = './vendor/MrBayes-osx/mb'
+	let mb = 'mpirun'
+	let args = [inputFile]
 	if (process.platform === 'win32') {
-		mb = '.\\vendor\\MrBayes-win\\mrbayes_x64.exe'
+		mb = path.join('vendor', 'MrBayes-win', 'mrbayes_x64.exe')
+	}
+	else {
+		args = ['-np', '4', path.join('vendor', 'MrBayes-osx', 'mb-mpi')].concat(args)
 	}
 
-	let output = child.execSync(`${mb} ${inputFile}`, {
-		encoding: 'utf-8',
-		stdio: [undefined, 'pipe', 'pipe'],
-	})
+	let result = execa.sync(mb, args)
 
 	if (!argv.quiet) {
-		process.stderr.write(output)
+		process.stderr.write(result.stdout)
+		process.stderr.write(result.stderr)
 	}
 
 	return fs.readFileSync(outputFile, 'utf-8').replace(os.EOL, '\n')

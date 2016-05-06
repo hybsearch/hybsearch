@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const child = require('child_process')
+const execa = require('execa')
 const tempfile = require('tempfile')
 const fs = require('fs')
 const getData = require('./lib_get-data')
@@ -9,21 +9,14 @@ const minimist = require('minimist')
 
 module.exports = seqgen
 function seqgen(data, seqLen=300, mutationRate='0.02') {
-	const inputFile = tempfile().replace(' ', '\ ')
-	const outputFile = tempfile().replace(' ', '\ ')
+	const inputFile = tempfile()
+	data = `[${seqLen}, ${mutationRate}]${data}`
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	data = `[${seqLen}, ${mutationRate}]${data}`
+	let args = ['-mHKY', '-n2', '-on', inputFile]
+	let output = execa.sync('seq-gen', args)
 
-	let executable = 'seq-gen'
-	let argString = `${executable} -mHKY -n2 -on ${inputFile}`
-
-	let output = child.execSync(argString, {
-		encoding: 'utf-8',
-		stdio: [undefined, undefined, 'pipe'],
-	})
-
-	return output
+	return output.stdout
 }
 
 function main() {
