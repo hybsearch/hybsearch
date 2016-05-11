@@ -11,7 +11,7 @@ const ENABLE_DEBUG = false
 let debug = console.log.bind(console)
 
 let pluck = (arr, key) => arr.map(x => x[key])
-let label = node => `${node.name}__${node.ident}`
+let label = node => `${node.name} (${node.ident})`
 
 function nmMark(node, species1, species2) {
 	if (node.branchset) {
@@ -171,7 +171,7 @@ function strictSearch(node) {
 
 module.exports.formatData = formatData
 function formatData(results) {
-	return results.nm.map(pair => pair.map(label))
+	return results.nm.map(pair => pair.map(label).join(' / ')).join('\n')
 }
 
 

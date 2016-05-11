@@ -115,10 +115,14 @@ function load(newick) {
 	}
 
 	buildNewickNodes(newick)
-	let nm = ent.strictSearch(newick)
+	let nmResults = ent.strictSearch(newick)
+	let results = ent.formatData(nmResults)
+	let resultsEl = document.querySelector('#nonmonophyly-results')
+	resultsEl.innerHTML = `<pre>${results}</pre>`
+	document.querySelector('#nm-container').hidden = false
 
 	console.log('Got nodes:', newickNodes)
-	console.log('nonmonophyly:', nm)
+	console.log('nonmonophyly:', nmResults)
 
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
