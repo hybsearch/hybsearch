@@ -11,7 +11,7 @@ const ENABLE_DEBUG = false
 let debug = console.log.bind(console)
 
 let pluck = (arr, key) => arr.map(x => x[key])
-let label = node => `${node.name}-${node.ident}`
+let label = node => `${node.name}__${node.ident}`
 
 function nmMark(node, species1, species2) {
 	if (node.branchset) {

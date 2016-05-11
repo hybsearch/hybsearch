@@ -115,9 +115,10 @@ function load(newick) {
 	}
 
 	buildNewickNodes(newick)
-	ent.search(newick)
+	let nm = ent.strictSearch(newick)
 
 	console.log('Got nodes:', newickNodes)
+	console.log('nonmonophyly:', nm)
 
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
@@ -165,7 +166,7 @@ function getLargestLength(objs) {
 
 // Whitelist is an array of individuals for a single species. Anything not
 // in this whitelist must be nonmono
-function findOutliers(objs, whitelist, found) {
+function findOutliers(objs, whitelist, found=[]) {
 	objs.forEach(obj => {
 		if (obj.name && obj.name !== '' && !whitelist.includes(obj.name)) {
 			found.push(`${obj.name}_${obj.length}`)
@@ -182,7 +183,7 @@ function findOutliers(objs, whitelist, found) {
 function onNodeClicked(data) {
 	console.log('Clicked on node point with data:', data)
 
-	let outliers = findOutliers(data.branchset, getWhitelist(), [])
+	let outliers = findOutliers(data.branchset, getWhitelist())
 	console.log('Outliers found:', outliers)
 
 	outliers.forEach(outlier => {
