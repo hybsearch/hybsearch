@@ -110,7 +110,7 @@ function load(newick) {
 	function buildNewickNodes(node) {
 		newickNodes.push(node)
 		if (node.branchset) {
-			node.branchset.forEach(n => buildNewickNodes(n))
+			node.branchset.forEach(buildNewickNodes)
 		}
 	}
 
