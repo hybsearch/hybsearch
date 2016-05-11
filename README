@@ -20,3 +20,13 @@ pipeline:
 to convert files:
 
 	./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
+
+
+
+## How to update Electron:
+
+- `npm install -g electron-download`
+- `electron-download --version=<version>`
+- Copy the zip from `~/.electron` and extract it into `hybsearch/vendor`
+- Update hybsearch/electron to point to the new path
+- Remove the old folder
