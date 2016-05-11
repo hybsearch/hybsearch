@@ -5,11 +5,7 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "postinstall": "bash clean-npm.sh"
-  },
-  "devDependencies": {
-    "electron-prebuilt": "1.0.1"
+    "start": "./electron ."
   },
   "dependencies": {
     "biojs-io-newick": "1.5.0",
