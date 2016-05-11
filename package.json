@@ -9,7 +9,7 @@
     "postinstall": "bash clean-npm.sh"
   },
   "devDependencies": {
-    "electron-prebuilt": "0.37.3"
+    "electron-prebuilt": "1.0.1"
   },
   "dependencies": {
     "biojs-io-newick": "1.5.0",
