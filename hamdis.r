@@ -2,7 +2,6 @@
 ### CIR Project
 ### Advisors: Steve Freedberg, Matthew Richey
 
-
 #######installing packages:
 if (!require('seqinr')) {
 	install.packages('seqinr', repos="http://cran.rstudio.com/")
@@ -15,9 +14,7 @@ if (!require('mosaic')) {
 }
 
 
-options(echo=FALSE) # if you want see commands in output file
-args <- commandArgs(trailingOnly = TRUE)
-print(args)
+printf <- function(...) cat(sprintf(...))
 
 
 ##################################################
@@ -42,10 +39,7 @@ Hamming <- function (x,y) {
 
 
 
-
-
 LoadDataFromFile <- function(fname) {
-  ##################################################
   ##################################################
   # Generalizing to Larger Files
   # The above code works for a file of only two individuals, but
@@ -57,39 +51,36 @@ LoadDataFromFile <- function(fname) {
 
   ### First Steps
   # read in the data:
-  # --infile ~/Desktop/test_seq.txt
-  # store to filename variable
   data <- read.fasta(file=fname, as.string=TRUE)
-  # head(data)     # look at the data
+
   # get the number of sequences included in the data
   len <- length(data)
+
   # create a vector of every other integer up to len for the loop
   list <- seq(1, len, 2)
+
   # store the original names of the sequences:
   orig_names <- names(data)
 
 
   ##################################################
   # We create a for loop to cycle through the pairs and compare
-  # each one. The loop will record it's findings in a list called
-  # out.
-  out <- seq(1:(len/2))    # out is initialized with fillers
+  # each one. The loop will record its findings in a list called `out`.
+
+  # out is initialized with fillers
+  out <- seq(1:(len/2))
 
   for (i in list) {
    names(data)[i] <- "indiv1"
    names(data)[i+1] <- "indiv2"
    length <- nchar(data$indiv1[1])
-   taxon1 <- substring(data$indiv1[1],
-                       seq(1,length,1), seq(1,length,1))
-   taxon2 <- substring(data$indiv2[1],
-                       seq(1,length,1), seq(1,length,1))
+   taxon1 <- substring(data$indiv1[1], seq(1,length,1), seq(1,length,1))
+   taxon2 <- substring(data$indiv2[1], seq(1,length,1), seq(1,length,1))
    index <- (i-1)/2 + 1
    out[index] <- Hamming(taxon1, taxon2)
   }
 
   # Now "out" is filled with Hamming distances of all pairs
-  print(out)    # desired output
-
 
 
   ##################################################
@@ -97,17 +88,17 @@ LoadDataFromFile <- function(fname) {
   avgOfRange <- mean(out)      # average
   minOfRange <- min(out)       # minimum of range
   maxOfRange <- max(out)       # maximum of range
-  percent <- avgOfRange / len
+  percent <- (avgOfRange / len)
 
-  print(avgOfRange)
-  print(minOfRange)
-  print(maxOfRange)
-  print(percent)
 
+  printf("avg=%d\n", avgOfRange)
+  printf("min=%d\n", minOfRange)
+  printf("max=%d\n", maxOfRange)
+  printf("percent=%f\n", percent)
+
+  printf("start data\n")
+  print(out)    # desired output
 }
-
-# LoadDataFromFile("~/Desktop/test_seq.txt")
-
 
 
 
@@ -118,10 +109,42 @@ EstimateGenerations <- function(genlength, percent) {
   # Assume 2% per million years (standard for cytochrome B)
   # mutation rate. This allows us to calculate a likely divergence
   # time, from which we can estimate generations:
+
+  # divergence time in million years
   divtime <- percent/0.02
-  print(divtime)   # divergence time in million years
+  printf("divtime=%d\n", divtime)
+
+  # number of generations (used for seq gen parameters)
   gen <- divtime*1000000/genlength
-  print(gen)       # number of generations (used for seq gen parameters)
+  printf("gen=%d\n", gen)
 }
 
-# EstimateGenerations(10, 0.2)#?
+
+
+
+PrintUsage <- function() {
+  write("usage: Rscript hamdis.r <command> <args>", stdout())
+  write("commands:", stdout())
+  write("  estimate <generation length> <percentage>", stdout())
+  write("  calculate <filename> <something else>", stdout())
+  quit()
+}
+
+
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) != 3) {
+  PrintUsage()
+}
+
+command <- args[1]
+if (command == "estimate") {
+  genlength <- as.numeric(args[2])
+  percent <- as.numeric(args[3])
+  EstimateGenerations(genlength, percent)
+} else if (command == "calculate") {
+  filename <- args[2]
+  other <- args[3]
+  LoadDataFromFile(filename)
+} else {
+  PrintUsage()
+}
