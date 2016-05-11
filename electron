@@ -1,2 +1,2 @@
 #!/bin/sh
-./node_modules/.bin/electron .
+vendor/electron-v1.0.1-darwin-x64/Electron.app/Contents/MacOS/Electron .
