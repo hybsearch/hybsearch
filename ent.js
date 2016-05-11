@@ -114,11 +114,11 @@ function strictSearch(node) {
 
 		let speciesList = []
 		for (let speciesSet of combinations) {
-			let resultsA = strictSearch(speciesSet[0])
+			let resultsA = strictSearch(speciesSet[1])
 			let speciesListA = resultsA.species
 			nmInstances = nmInstances.concat(resultsA.nm)
 
-			let resultsB = strictSearch(speciesSet[1])
+			let resultsB = strictSearch(speciesSet[0])
 			let speciesListB = resultsB.species
 			nmInstances = nmInstances.concat(resultsB.nm)
 
@@ -133,29 +133,47 @@ function strictSearch(node) {
 				// species1 is in speciesListB, and not everything in speciesListB is species1
 				if (hasName && notAllEqual) {
 					// species1 is outer
-					// search in speciesListB
-					speciesListB.forEach(species2 => {
-						if (species2.name !== species1.name) {
-							nmMark(node, species1, species2)
-							// debug(`nmMark called on ${species1} and ${species2}`)
-							console.log(`nonmonophyly: ${label(species1)} / ${label(species2)}`)
-							nmInstances.push([species1, species2])
-							remove(speciesListB, n => n.ident === species2.ident)
-						}
-					})
-
-					// and search in speciesListA
+					//search in speciesListA
+					let forRemoval = []
 					speciesListA.forEach(species3 => {
 						if (species3.name !== species1.name) {
 							nmMark(node, species1, species3)
 							// debug(`nmMark called on ${species1} and ${species3}`)
 							console.log(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
 							nmInstances.push([species1, species3])
-							remove(speciesListA, n => n.ident === species3.ident)
+							forRemoval.push(species3.ident)
+
 						}
 					})
+					remove(speciesListA, n => forRemoval.includes(n.ident))
 				}
 			})
+
+			let speciesANames = pluck(speciesListA, 'name')
+			speciesListB.forEach(species1 => {
+				let hasName = speciesANames.includes(species1.name)
+				let notAllEqual = !(speciesANames.every(n => n === species1))
+				// debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+
+				// species1 is in speciesListA, and not everything in speciesListA is species1
+				if (hasName && notAllEqual) {
+					// species1 is outer
+					//search in speciesListA
+					let forRemoval = []
+					speciesListB.forEach(species3 => {
+						if (species3.name !== species1.name) {
+							nmMark(node, species1, species3)
+							// debug(`nmMark called on ${species1} and ${species3}`)
+							console.log(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
+							nmInstances.push([species1, species3])
+							forRemoval.push(species3.ident)
+
+						}
+					})
+					remove(speciesListB, n => forRemoval.includes(n.ident))
+				}
+			})
+
 
 			speciesList = speciesList.concat(speciesListA, speciesListB)
 		}
