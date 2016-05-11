@@ -190,3 +190,32 @@ section input[type=submit] {
     fill: #fff;
     background-color: rgb(17, 148, 246);
 }
+
+
+
+.species-label {
+	text-anchor: start;
+	font-family: RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif;
+	font-size: 12px;
+	fill: black;
+}
+
+
+.divergence-label {
+	text-anchor: end;
+	font-family: RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif;
+	font-size: 8px;
+	fill: #ccc;
+}
+
+.leaf-dot {
+	fill: rgb(17, 148, 246);
+}
+
+.clickable-node {
+	fill: #1d1d1d;
+}
+
+.link {
+
+}
