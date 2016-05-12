@@ -2,7 +2,7 @@
 'use strict'
 
 const os = require('os')
-const getData = require('./lib_get-data')
+const getData = require('../lib/get-data')
 
 module.exports = consensusTreeNewick
 function consensusTreeNewick(input) {

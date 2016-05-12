@@ -6,7 +6,7 @@ const tempfile = require('tempfile')
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
-const getData = require('./lib_get-data')
+const getData = require('../lib/get-data')
 const minimist = require('minimist')
 
 

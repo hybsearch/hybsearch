@@ -3,7 +3,7 @@
 
 const fs = require('fs')
 const startsWith = require('lodash/startsWith')
-const getData = require('./lib_get-data')
+const getData = require('../lib/get-data')
 
 module.exports = convert
 function convert(data) {
