@@ -1,5 +1,5 @@
-@import "./node_modules/normalize.css/normalize.css";
-@import "./vendor/robotodraft/robotodraft.css";
+@import "../node_modules/normalize.css/normalize.css";
+@import "../vendor/robotodraft/robotodraft.css";
 
 html {
     margin: 0;

@@ -3,7 +3,7 @@
 const path = require('path')
 const childProcess = require('child_process')
 
-let child = childProcess.fork(path.join(__dirname, 'worker.js'))
+let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 child.on('message', communique => {
 	let cmd = communique[0]
