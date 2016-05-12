@@ -8,15 +8,41 @@ const childProcess = require('child_process')
 const ent = require('../lib/ent')
 require('../vendor/array.proto.includes')
 
+
+function onMessage(packet, args, child) {
+	let [cmd, msg] = packet
+	if (cmd === 'complete') {
+		let taken = performance.now() - args.start
+		updateLoadingStatus(msg, taken.toFixed(2))
+	}
+	else if (cmd === 'begin') {
+		args.start = performance.now()
+		args.label = msg
+		beginLoadingStatus(msg)
+	}
+	else if (cmd === 'finish') {
+		load(parseNewick(msg))
+	}
+	else if (cmd === 'exit' || cmd === 'error') {
+		if (cmd === 'error') {
+			console.error(msg)
+			let taken = performance.now() - args.start
+			setLoadingError(args.label, taken.toFixed(2))
+		}
+		child.disconnect()
+	}
+	else {
+		throw new Error(`unknown cmd "${cmd}"`)
+	}
+}
+
 function loadAndProcessData(e) {
 	let file = e.target.files[0]
 	console.log('The file is', file.path)
 
 	document.querySelector('section.loader').classList.add('loading')
 
-	let start = performance.now()
-		silent: true,
-	})
+	let mutableArgs = {start: performance.now(), label: ''}
 	let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 	// still doesn't work.
@@ -26,33 +52,7 @@ function loadAndProcessData(e) {
 	process.on('exit', killChildProcess)
 	window.addEventListener('beforeunload', killChildProcess)
 
-	let currentLabel
-	child.on('message', packet => {
-		let [cmd, msg] = packet
-		if (cmd === 'complete') {
-			let taken = performance.now() - start
-			updateLoadingStatus(msg, taken.toFixed(2))
-		}
-		else if (cmd === 'begin') {
-			start = performance.now()
-			currentLabel = msg
-			beginLoadingStatus(msg)
-		}
-		else if (cmd === 'finish') {
-			load(parseNewick(msg))
-		}
-		else if (cmd === 'exit' || cmd === 'error') {
-			if (cmd === 'error') {
-				console.error(msg)
-				let taken = performance.now() - start
-				setLoadingError(currentLabel, taken.toFixed(2))
-			}
-			child.disconnect()
-		}
-		else {
-			throw new Error(`unknown cmd "${cmd}"`)
-		}
-	})
+	child.on('message', packet => onMessage(packet, mutableArgs, child))
 
 	child.send(file.path, err => {
 		if (err) {
