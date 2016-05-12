@@ -15,9 +15,9 @@ function loadAndProcessData(e) {
 	document.querySelector('section.loader').classList.add('loading')
 
 	let start = performance.now()
-	let child = childProcess.fork(path.join('.', 'worker.js'), {
 		silent: true,
 	})
+	let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 	// still doesn't work.
 	// current problem: the calls to execSync in `child`s children
