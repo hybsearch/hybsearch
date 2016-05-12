@@ -140,6 +140,8 @@ function load(newick) {
 	d3.phylogram.build('#phylogram', newick, {
 		width: calcWidth,
 		height: calcHeight,
+		formatLeafNodeLabel: node => `${node.name} [${node.ident}] (${node.length})`,
+		nonmonophyly: nmResults.nm.map(pair => pair.map(node => node.ident)),
 	})
 }
 

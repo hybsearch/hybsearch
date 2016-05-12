@@ -152,6 +152,7 @@ phylogram.styleTreeNodes = (vis, onClickFunc) => {
 		.append('svg:circle')
 		.attr('r', 4)
 		.classed('leaf-dot', true)
+		// .attr('data-ident', node => node.ident)
 		.attr('id', d => `${d.name}_${d.length}`)
 
 	vis.selectAll('g.root.node')
@@ -192,6 +193,8 @@ phylogram.build = function(selector, nodes, options={}) {
 	let w = options.width || d3.select(selector).style('width')
 	h = parseInt(h)
 	w = parseInt(w)
+
+	let formatLeafNodeLabel = options.formatLeafNodeLabel || (node => node.name)
 
 	let tree = options.tree || d3.layout.cluster()
 		.size([h, w])
@@ -262,6 +265,7 @@ phylogram.build = function(selector, nodes, options={}) {
 			return 'leaf node'
 		})
 		.attr('transform', d => `translate(${d.y},${d.x})`)
+		.attr('data-ident', node => node.ident)
 
 	phylogram.styleTreeNodes(vis, onNodeClicked)
 
@@ -278,8 +282,23 @@ phylogram.build = function(selector, nodes, options={}) {
 			.attr('dx', 8)
 			.attr('dy', 4)
 			.classed('species-label', true)
-			.text(d => `${d.name} ${d.ident} (${d.length})`)
+			.text(formatLeafNodeLabel)
 	}
+
+	// let nm = options.nonmonophyly.map(([from, to]) => ({from, to}))
+
+	// let sourceNmIdents = nm.map(({from}) => from)
+	// let targetNmIdents = nm.map(({to}) => to)
+
+	// let nodes = vis.selectAll('g.leaf.node[data-ident]')
+
+	// let sourceNodes = nodes
+	// 	.filter(d => includes(sourceNmIdents, d.ident))
+	// 	.append('path')
+
+	// let targetNodes = nodes
+	// 	.filter(d => includes(sourceNmIdents, d.ident))
+
 
 	return {
 		tree: tree,
