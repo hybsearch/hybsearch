@@ -54,6 +54,10 @@ function loadAndProcessData(e) {
 
 	child.on('message', packet => onMessage(packet, mutableArgs, child))
 
+	child.on('disconnect', console.log.bind(console, 'disconnect'))
+	child.on('error', console.log.bind(console, 'error'))
+	child.on('exit', console.log.bind(console, 'exit'))
+
 	child.send(file.path, err => {
 		if (err) {
 			console.error('child error', err)
