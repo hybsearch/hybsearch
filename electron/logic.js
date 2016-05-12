@@ -67,18 +67,17 @@ function loadAndProcessData(e) {
 	return false
 }
 
-var fileLoader = document.getElementById('load-file')
-fileLoader.addEventListener('change', loadAndProcessData)
 
-var treeTextButton = document.getElementById('tree-box-submit')
-treeTextButton.addEventListener('click', e => {
+document.getElementById('load-file').addEventListener('change', loadAndProcessData)
+
+
+document.getElementById('tree-box-submit').addEventListener('click', e => {
 	e.preventDefault()
 	var data = document.getElementById('tree-box').value
 	load(parseNewick(data))
 })
 
-var jsontreeTextButton = document.getElementById('json-tree-box-submit')
-jsontreeTextButton.addEventListener('click', e => {
+document.getElementById('json-tree-box-submit').addEventListener('click', e => {
 	e.preventDefault()
 	let data = document.getElementById('tree-box').value
 	load(JSON.parse(data))
@@ -144,7 +143,7 @@ function load(newick) {
 	})
 }
 
-function getExtremeLength(list, extreme, comp) {
+function getExtremeLength(list, extreme, compare) {
 	list.forEach(obj => {
 		let length = obj.length
 		if (length && length < extreme) {
@@ -152,8 +151,8 @@ function getExtremeLength(list, extreme, comp) {
 		}
 
 		if (obj.branchset && obj.branchset.length > 0) {
-			let alt = getExtremeLength(obj.branchset, extreme, comp)
-			if (comp(alt, extreme)) {
+			let alt = getExtremeLength(obj.branchset, extreme, compare)
+			if (compare(alt, extreme)) {
 				extreme = alt
 			}
 		}
