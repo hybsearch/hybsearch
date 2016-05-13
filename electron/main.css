@@ -1,6 +1,25 @@
 @import "../node_modules/normalize.css/normalize.css";
 @import "../vendor/robotodraft/robotodraft.css";
 
+:root {
+	--navy: #001f3f;
+	--blue: #0074D9;
+	--aqua: #7FDBFF;
+	--teal: #39CCCC;
+	--olive: #3D9970;
+	--green: #2ECC40;
+	--lime: #01FF70;
+	--yellow: #FFDC00;
+	--orange: #FF851B;
+	--red: #FF4136;
+	--maroon: #85144b;
+	--fuchsia: #F012BE;
+	--purple: #B10DC9;
+	--black: #111111;
+	--gray: #AAAAAA;
+	--silver: #DDDDDD;
+}
+
 html {
     margin: 0;
     min-width: 500px;
@@ -8,7 +27,7 @@ html {
 
 body {
 	font-family: RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif;
-	color: #1C1C1C;
+	color: var(--black);
 	background: #F7F7F7;
 	padding: 0;
 }
@@ -23,16 +42,14 @@ section {
 	padding: 30px;
 	margin: 16px 16px;
 	border-radius: 2px;
-	border-bottom: 3px solid rgb(17, 148, 246);
+	border-bottom: 3px solid var(--blue);
 }
 
 section.loader {
-	transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
+	transition:
+		height 0.2s ease-in-out,
+		padding 0.2s ease-in-out;
 	position: relative;
-	/*height: 64px;*/
-}
-section.loader.loading {
-	/*height: 45px;*/
 }
 
 section.loader wrapper.loading {
@@ -50,7 +67,7 @@ section.loader.loading wrapper.content {
     display: flex;
     flex-direction: column;
     align-items: center;
-	color: rgb(17, 148, 246);
+	color: var(--blue);
 }
 
 .loader .checkmark .label {
@@ -80,7 +97,11 @@ section.loader.loading wrapper.content {
 }
 
 .loader .checkmark.error {
-	color: rgb(148, 17, 17);
+	color: var(--red);
+}
+
+.loader .checkmark.complete {
+	/* color: #2ECC40; */
 }
 
 @keyframes pulse {
@@ -116,14 +137,14 @@ h1 {
 
 h2 {
     font-size: 1.75em;
-    color: rgb(17, 148, 246);
+    color: var(--blue);
     margin: 0 0 10px;
     font-weight: normal;
 }
 
 header {
 	color: #fff;
-	background: rgb(17, 148, 246);
+	background: var(--blue);
 	padding: 80px 0 35px 42px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
@@ -144,17 +165,18 @@ textarea {
 	transition: border-bottom 0.07s ease-out;
 }
 
-textarea:hover, textarea:active {
+textarea:hover,
+textarea:active {
 	border-color: #bbb;
 }
 
 textarea:focus {
-	border-color: rgb(17, 148, 246);
+	border-color: var(--blue);
 }
 
 input[type=submit] {
 	border: none;
-	background: rgb(17, 148, 246);
+	background: var(--blue);
 	border-radius: 2px;
 	outline: none;
 	color: #fff;
@@ -163,8 +185,9 @@ input[type=submit] {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-input[type=submit]:hover, input[type=submit]:active {
-	background: rgb(92, 185, 255);
+input[type=submit]:hover,
+input[type=submit]:active {
+	background: var(--aqua);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -188,7 +211,7 @@ section input[type=submit] {
 ::selection {
     color: #fff;
     fill: #fff;
-    background-color: rgb(17, 148, 246);
+    background-color: var(--aqua);
 }
 
 
@@ -205,17 +228,18 @@ section input[type=submit] {
 	text-anchor: end;
 	font-family: RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif;
 	font-size: 8px;
-	fill: #ccc;
+	fill: var(--gray);
 }
 
 .leaf-dot {
-	fill: rgb(17, 148, 246);
+	fill: var(--blue);
 }
 
 .clickable-node {
-	fill: #1d1d1d;
+	fill: var(--black);
 }
 
-.link {
 
+.nonmonophyletic .leaf-dot {
+	fill: var(--red);
 }
