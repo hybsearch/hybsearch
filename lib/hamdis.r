@@ -1,6 +1,7 @@
 ### Seq-Gen output analysis
 ### CIR Project
 ### Advisors: Steve Freedberg, Matthew Richey
+### Code by: Suzie Hoops
 
 #######installing packages:
 if (!require('seqinr')) {
@@ -24,19 +25,32 @@ printf <- function(...) cat(sprintf(...))
 
 # To do this, we must compare each base pair, one at a time.
 # Let's make a function for comparing the pieces of the string:
-Hamming <- function (x,y) {
- # note that the parameters x and y should be
- counter <- 0   # to track the number of base pairs different
- index <- 1     # to keep track of indices in for loop
- for (i in x) {
-   if (i != y[index]) {
-     counter <- counter + 1
-   }
-   index <- index + 1
- }
- return(counter)    #returns number of base pairs that differ
+HammingDistance <- function (x, y) {
+  # note that the parameters x and y should be
+  counter <- 0   # to track the number of base pairs different
+  index <- 1     # to keep track of indices in for loop
+  xVector <- strsplit(x, "")[[1]]
+  yVector <- strsplit(y, "")[[1]]
+  for (i in xVector) {
+    if (i != yVector[index]) {
+      counter <- counter + 1
+    }
+    index <- index + 1
+  }
+  return(counter)    # returns number of base pairs that differ
 }
 
+
+HammingDistanceTwoSequences <- function (file1, file2) {
+  x <- LoadFileIntoString(file1)
+  y <- LoadFileIntoString(file2)
+  distance <- HammingDistance(x, y)
+  print(distance)
+}
+
+LoadFileIntoString <- function (fileName) {
+  return(readChar(fileName, file.info(fileName)$size))
+}
 
 
 LoadDataFromFile <- function(fname) {
@@ -70,14 +84,17 @@ LoadDataFromFile <- function(fname) {
   # out is initialized with fillers
   out <- seq(1:(len/2))
 
+  # print(data)
+  # printf("end\n")
+
   for (i in list) {
-   names(data)[i] <- "indiv1"
-   names(data)[i+1] <- "indiv2"
-   length <- nchar(data$indiv1[1])
-   taxon1 <- substring(data$indiv1[1], seq(1,length,1), seq(1,length,1))
-   taxon2 <- substring(data$indiv2[1], seq(1,length,1), seq(1,length,1))
-   index <- (i-1)/2 + 1
-   out[index] <- Hamming(taxon1, taxon2)
+    names(data)[i] <- "indiv1"
+    names(data)[i+1] <- "indiv2"
+    length <- nchar(data$indiv1[1])
+    taxon1 <- substring(data$indiv1[1], seq(1,length,1), seq(1,length,1))
+    taxon2 <- substring(data$indiv2[1], seq(1,length,1), seq(1,length,1))
+    index <- (i-1)/2 + 1
+    out[index] <- HammingDistance(taxon1, taxon2)
   }
 
   # Now "out" is filled with Hamming distances of all pairs
@@ -127,6 +144,7 @@ PrintUsage <- function() {
   write("commands:", stdout())
   write("  estimate <generation length> <percentage>", stdout())
   write("  calculate <filename> <something else>", stdout())
+  write("  distance-between <filename> <filename>", stdout())
   quit()
 }
 
@@ -145,6 +163,10 @@ if (command == "estimate") {
   filename <- args[2]
   other <- args[3]
   LoadDataFromFile(filename)
+} else if (command == "distance-between") {
+  xfilename <- args[2]
+  yfilename <- args[3]
+  HammingDistanceTwoSequences(xfilename, yfilename)
 } else {
   PrintUsage()
 }

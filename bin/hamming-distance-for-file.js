@@ -12,7 +12,7 @@ function hammingDistance(data) {
 	const inputFile = tempfile()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let args = ['hamdis.r', 'calculate', inputFile, 'something']
+	let args = ['lib/hamdis.r', 'calculate', inputFile, 'something']
 	let output = execa.sync('Rscript', args)
 
 	return output.stdout
@@ -23,7 +23,7 @@ function main() {
 	let file = argv['_'][0]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node calculate-hamming-distance.js (<input> | -)')
+		console.error('usage: node hamming-distance-for-file.js (<input> | -)')
 		process.exit(1)
 	}
 
