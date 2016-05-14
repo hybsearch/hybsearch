@@ -72,6 +72,8 @@
 */
 
 var d3 = require('d3')
+const flatten = require('lodash/flatten')
+const uniq = require('lodash/uniq')
 
 var phylogram = {}
 phylogram.rightAngleDiagonal = () => {
@@ -252,6 +254,12 @@ phylogram.build = function(selector, nodes, options={}) {
 		.attr('stroke', '#1d1d1d')
 		.attr('stroke-width', '1px')
 
+	let nm = options.nonmonophyly || []
+
+	let sourceNmIdents = nm.map(pair => pair[0])
+	let targetNmIdents = nm.map(pair => pair[1])
+	let allNmIdents = uniq(flatten(nm))
+
 	let node = vis.selectAll('g.node')
 		.data(nodes)
 		.enter().append('svg:g')
@@ -264,6 +272,7 @@ phylogram.build = function(selector, nodes, options={}) {
 			}
 			return 'leaf node'
 		})
+		.classed('nonmonophyletic', d => allNmIdents.includes(d.ident))
 		.attr('transform', d => `translate(${d.y},${d.x})`)
 		.attr('data-ident', node => node.ident)
 
@@ -284,11 +293,6 @@ phylogram.build = function(selector, nodes, options={}) {
 			.classed('species-label', true)
 			.text(formatLeafNodeLabel)
 	}
-
-	// let nm = options.nonmonophyly.map(([from, to]) => ({from, to}))
-
-	// let sourceNmIdents = nm.map(({from}) => from)
-	// let targetNmIdents = nm.map(({to}) => to)
 
 	// let nodes = vis.selectAll('g.leaf.node[data-ident]')
 

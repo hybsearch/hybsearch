@@ -49,7 +49,7 @@ function main() {
 
 	getData(file)
 		.then(convert)
-		.then(data => console.log(data))
+		.then(console.log.bind(console))
 		.catch(console.error.bind(console))
 }
 
