@@ -88,12 +88,6 @@ function doThings(file) {
 	// load the data
 	let data = parseFasta(file)
 
-	// create a vector of every other integer up to len for the loop
-	let listOfNumbers = range(1, data.length, 2)
-
-	// store the original names of the sequences
-	let originalNames = data.map(individual => individual.id)
-
 	// We create a for loop to cycle through the pairs and compare
 	// each one. The loop will record its findings in a list called `out`.
 	let out = []
@@ -133,4 +127,3 @@ function main() {
 if (require.main === module) {
 	main()
 }
-
