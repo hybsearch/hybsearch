@@ -11,28 +11,36 @@ require('../vendor/array.proto.includes')
 
 function onMessage(packet, args, child) {
 	let [cmd, msg] = packet
-	if (cmd === 'complete') {
-		let taken = performance.now() - args.start
-		updateLoadingStatus(msg, taken.toFixed(2))
-	}
-	else if (cmd === 'begin') {
-		args.start = performance.now()
-		args.label = msg
-		beginLoadingStatus(msg)
-	}
-	else if (cmd === 'finish') {
-		load(parseNewick(msg))
-	}
-	else if (cmd === 'exit' || cmd === 'error') {
-		if (cmd === 'error') {
+	switch (cmd) {
+		case 'begin': {
+			args.start = performance.now()
+			args.label = msg
+			beginLoadingStatus(msg)
+			break
+		}
+		case 'complete': {
+			let taken = performance.now() - args.start
+			updateLoadingStatus(msg, taken.toFixed(2))
+			break
+		}
+		case 'error': {
 			console.error(msg)
 			let taken = performance.now() - args.start
 			setLoadingError(args.label, taken.toFixed(2))
+			child.disconnect()
+			break
 		}
-		child.disconnect()
-	}
-	else {
-		throw new Error(`unknown cmd "${cmd}"`)
+		case 'exit': {
+			child.disconnect()
+			break
+		}
+		case 'finish': {
+			load(parseNewick(msg))
+			break
+		}
+		default: {
+			throw new Error(`unknown cmd "${cmd}"`)
+		}
 	}
 }
 
@@ -42,7 +50,10 @@ function loadAndProcessData(e) {
 
 	document.querySelector('section.loader').classList.add('loading')
 
-	let mutableArgs = {start: performance.now(), label: ''}
+	let mutableArgs = {
+		start: performance.now(),
+		label: 'process',
+	}
 	let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 	// still doesn't work.
@@ -53,7 +64,6 @@ function loadAndProcessData(e) {
 	window.addEventListener('beforeunload', killChildProcess)
 
 	child.on('message', packet => onMessage(packet, mutableArgs, child))
-
 	child.on('disconnect', console.log.bind(console, 'disconnect'))
 	child.on('error', console.log.bind(console, 'error'))
 	child.on('exit', console.log.bind(console, 'exit'))
