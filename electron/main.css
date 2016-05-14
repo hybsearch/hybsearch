@@ -2,22 +2,11 @@
 @import "../vendor/robotodraft/robotodraft.css";
 
 :root {
-	--navy: #001f3f;
-	--blue: #0074D9;
-	--aqua: #7FDBFF;
-	--teal: #39CCCC;
-	--olive: #3D9970;
-	--green: #2ECC40;
-	--lime: #01FF70;
-	--yellow: #FFDC00;
-	--orange: #FF851B;
-	--red: #FF4136;
-	--maroon: #85144b;
-	--fuchsia: #F012BE;
-	--purple: #B10DC9;
-	--black: #111111;
-	--gray: #AAAAAA;
-	--silver: #DDDDDD;
+	--blue: rgb(17, 148, 246);
+	--aqua: rgb(92, 185, 255);
+	--red: rgb(148, 17, 17);
+	--black: #1C1C1C;
+	--gray: #CCCCCC;
 }
 
 html {
