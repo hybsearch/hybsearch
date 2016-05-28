@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hybsearch (v0.5)</title>
+		<link rel="stylesheet" type="text/css" href="./main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Hybsearch</h1>
+			<span class='time-taken'></span>
+		</header>
+
+		<section class="loader">
+			<wrapper class="content">
+				<h2>Genbank/Fasta</h2>
+				<input type='file' id='load-file' accept='.gb,.genbank,.fasta'>
+			</wrapper>
+			<wrapper class="loading">
+				<div class="checkmark" data-loader-name="process">
+					<div class="icon"></div>
+					<div class="label">Process Input</div>
+				</div>
+				<div class="checkmark" data-loader-name="align">
+					<div class="icon"></div>
+					<div class="label">Align Sequences</div>
+				</div>
+				<div class="checkmark" data-loader-name="convert">
+					<div class="icon"></div>
+					<div class="label">Convert Alignment</div>
+				</div>
+				<div class="checkmark" data-loader-name="generate">
+					<div class="icon"></div>
+					<div class="label">Generate Tree</div>
+				</div>
+				<div class="checkmark" data-loader-name="condense">
+					<div class="icon"></div>
+					<div class="label">Render Tree</div>
+				</div>
+			</wrapper>
+		</section>
+
+		<section hidden id='nm-container'>
+			<h2>Nonmonophyly</h2>
+			<div id="nonmonophyly-results"></div>
+		</section>
+
+		<section>
+			<h2>Phylogram</h2>
+			<div id="phylogram"></div>
+		</section>
+
+		<section>
+			<h2>Newick Tree</h2>
+			<textarea id='tree-box'></textarea>
+			<wrapper class="right-aligned">
+				<input type='submit' value='newick' id='tree-box-submit'>
+				<input type='submit' value='json' id='json-tree-box-submit'>
+			</wrapper>
+		</section>
+
+		<script src="./logic.js"></script>
+	</body>
+</html>

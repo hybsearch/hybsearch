@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('./lib_get-data')
+const getData = require('../lib/get-data')
 
 function extractInfoFromGenbank(gbFile) {
 	return gbFile.split('//\n')

@@ -72,27 +72,22 @@
 */
 
 var d3 = require('d3')
+const flatten = require('lodash/flatten')
+const uniq = require('lodash/uniq')
 
 var phylogram = {}
-phylogram.rightAngleDiagonal = function() {
-	var projection = function(d) {
-		return [d.y, d.x];
-	}
-
-	var path = function(pathData) {
-		return "M" + pathData[0] + ' ' + pathData[1] + " " + pathData[2];
-	}
+phylogram.rightAngleDiagonal = () => {
+	let projection = d => [d.y, d.x]
+	let path = pathData => `M${pathData[0]} ${pathData[1]} ${pathData[2]}`
 
 	function diagonal(diagonalPath, i) {
-		var source = diagonalPath.source,
-			target = diagonalPath.target,
-			midpointX = (source.x + target.x) / 2,
-			midpointY = (source.y + target.y) / 2,
-			pathData = [source, {
-				x: target.x,
-				y: source.y
-			}, target];
-		pathData = pathData.map(projection);
+		let source = diagonalPath.source
+		let target = diagonalPath.target
+		let midpointX = (source.x + target.x) / 2
+		let midpointY = (source.y + target.y) / 2
+
+		let pathData = [source, {x: target.x, y: source.y}, target].map(projection)
+
 		return path(pathData)
 	}
 
@@ -111,126 +106,120 @@ phylogram.rightAngleDiagonal = function() {
 	return diagonal;
 }
 
-phylogram.radialRightAngleDiagonal = function() {
+phylogram.radialRightAngleDiagonal = () => {
 	return phylogram.rightAngleDiagonal()
-		.path(function(pathData) {
-			var src = pathData[0],
-				mid = pathData[1],
-				dst = pathData[2],
-				radius = Math.sqrt(src[0] * src[0] + src[1] * src[1]),
-				srcAngle = phylogram.coordinateToAngle(src, radius),
-				midAngle = phylogram.coordinateToAngle(mid, radius),
-				clockwise = Math.abs(midAngle - srcAngle) > Math.PI ? midAngle <= srcAngle : midAngle > srcAngle,
-				rotation = 0,
-				largeArc = 0,
-				sweep = clockwise ? 0 : 1;
-			return 'M' + src + ' ' +
-				"A" + [radius, radius] + ' ' + rotation + ' ' + largeArc + ',' + sweep + ' ' + mid +
-				'L' + dst;
+		.path(pathData => {
+			let src = pathData[0]
+			let mid = pathData[1]
+			let dst = pathData[2]
+			let radius = Math.sqrt(src[0] * src[0] + src[1] * src[1])
+			let srcAngle = phylogram.coordinateToAngle(src, radius)
+			let midAngle = phylogram.coordinateToAngle(mid, radius)
+			let clockwise = Math.abs(midAngle - srcAngle) > Math.PI ? midAngle <= srcAngle : midAngle > srcAngle
+			let rotation = 0
+			let largeArc = 0
+			let sweep = clockwise ? 0 : 1
+			return `M${src} A${[radius, radius]} ${rotation} ${largeArc},${sweep} ${mid}L${dst}`
 		})
-		.projection(function(d) {
-			var r = d.y,
-				a = (d.x - 90) / 180 * Math.PI;
-			return [r * Math.cos(a), r * Math.sin(a)];
+		.projection(d => {
+			let r = d.y
+			let a = (d.x - 90) / 180 * Math.PI
+			return [r * Math.cos(a), r * Math.sin(a)]
 		})
 }
 
 // Convert XY and radius to angle of a circle centered at 0,0
-phylogram.coordinateToAngle = function(coord, radius) {
-	var wholeAngle = 2 * Math.PI,
-		quarterAngle = wholeAngle / 4
+phylogram.coordinateToAngle = (coord, radius) => {
+	let wholeAngle = 2 * Math.PI
+	let quarterAngle = wholeAngle / 4
 
-	var coordQuad = coord[0] >= 0 ? (coord[1] >= 0 ? 1 : 2) : (coord[1] >= 0 ? 4 : 3),
-		coordBaseAngle = Math.abs(Math.asin(coord[1] / radius))
+	let coordQuad = coord[0] >= 0
+		? (coord[1] >= 0 ? 1 : 2)
+		: (coord[1] >= 0 ? 4 : 3)
 
-	// Since this is just based on the angle of the right triangle formed
-	// by the coordinate and the origin, each quad will have different
-	// offsets
+	let coordBaseAngle = Math.abs(Math.asin(coord[1] / radius))
+
+	// Since this is just based on the angle of the right triangle formed by
+	// the coordinate and the origin, each quad will have different offsets
 	switch (coordQuad) {
-		case 1:
-			coordAngle = quarterAngle - coordBaseAngle
-			break
-		case 2:
-			coordAngle = quarterAngle + coordBaseAngle
-			break
-		case 3:
-			coordAngle = 2 * quarterAngle + quarterAngle - coordBaseAngle
-			break
-		case 4:
-			coordAngle = 3 * quarterAngle + coordBaseAngle
+		case 1: return quarterAngle - coordBaseAngle
+		case 2: return quarterAngle + coordBaseAngle
+		case 3: return 2 * quarterAngle + quarterAngle - coordBaseAngle
+		case 4: return 3 * quarterAngle + coordBaseAngle
 	}
-	return coordAngle
 }
 
-phylogram.styleTreeNodes = function(vis, clickFunc) {
+phylogram.styleTreeNodes = (vis, onClickFunc) => {
 	vis.selectAll('g.leaf.node')
-		.append("svg:circle")
-		.attr("r", 4)
-		.attr('fill', 'rgb(17, 148, 246)')
-		.attr("id", function(d, i) { return (d.name + "_" + d.length) });
+		.append('svg:circle')
+		.attr('r', 4)
+		.classed('leaf-dot', true)
+		// .attr('data-ident', node => node.ident)
+		.attr('id', d => `${d.name}_${d.length}`)
 
 	vis.selectAll('g.root.node')
 		.append('svg:circle')
-		.attr("r", 4)
-		.attr('fill', '#1d1d1d')
-		.attr("class", "clickable-node")
-		.on("click", clickFunc);
+		.attr('r', 4)
+		.classed('clickable-node', true)
+		.on('click', onClickFunc)
+}
+
+function visitPreOrder(root, callback) {
+	callback(root)
+	if (root.children) {
+		root.children.forEach(child => visitPreOrder(child, callback))
+	}
 }
 
 function scaleBranchLengths(nodes, w) {
 	// Visit all nodes and adjust y pos width distance metric
-	var visitPreOrder = function(root, callback) {
-		callback(root)
-		if (root.children) {
-			for (var i = root.children.length - 1; i >= 0; i--) {
-				visitPreOrder(root.children[i], callback)
-			};
-		}
-	}
-	visitPreOrder(nodes[0], function(node) {
+	visitPreOrder(nodes[0], (node) => {
 		node.rootDist = (node.parent ? node.parent.rootDist : 0) + (node.length || 0)
 	})
-	var rootDists = nodes.map(function(n) {
-		return n.rootDist;
-	});
+
+	var rootDists = nodes.map(n => n.rootDist)
 	var yscale = d3.scale.linear()
 		.domain([0, d3.max(rootDists)])
-		.range([0, w]);
-	visitPreOrder(nodes[0], function(node) {
+		.range([0, w])
+
+	visitPreOrder(nodes[0], (node) => {
 		node.y = yscale(node.rootDist)
 	})
+
 	return yscale
 }
 
 
-phylogram.build = function(selector, nodes, options) {
-	options = options || {}
-	var w = options.width || d3.select(selector).style('width') || d3.select(selector).attr('width'),
-		h = options.height || d3.select(selector).style('height') || d3.select(selector).attr('height'),
-		w = parseInt(w),
-		h = parseInt(h);
-	var tree = options.tree || d3.layout.cluster()
-		.size([h, w])
-		.sort(function(node) {
-			return node.children ? node.children.length : -1;
-		})
-		.children(options.children || function(node) {
-			return node.branchset
-		});
-	var diagonal = options.diagonal || phylogram.rightAngleDiagonal();
-	var vis = options.vis || d3.select(selector).append("svg:svg")
-		.attr("width", w + 300)
-		.attr("height", h + 30)
-		.append("svg:g")
-		.attr("transform", "translate(20, 20)");
-	var nodes = tree(nodes);
+phylogram.build = function(selector, nodes, options={}) {
+	let h = options.height || d3.select(selector).style('height')
+	let w = options.width || d3.select(selector).style('width')
+	h = parseInt(h)
+	w = parseInt(w)
 
+	let formatLeafNodeLabel = options.formatLeafNodeLabel || (node => node.name)
+
+	let tree = options.tree || d3.layout.cluster()
+		.size([h, w])
+		.sort(node => node.children ? node.children.length : -1)
+		.children(options.children || ((node) => node.branchset))
+
+	let diagonal = options.diagonal || phylogram.rightAngleDiagonal()
+
+	let vis = options.vis || d3.select(selector).append('svg:svg')
+		.attr('width', w + 300)
+		.attr('height', h + 30)
+		.append('svg:g')
+		.attr('transform', 'translate(20, 20)')
+
+	nodes = tree(nodes)
+
+	let yscale
 	if (options.skipBranchLengthScaling) {
-		var yscale = d3.scale.linear()
+		yscale = d3.scale.linear()
 			.domain([0, w])
 			.range([0, w]);
 	} else {
-		var yscale = scaleBranchLengths(nodes, w)
+		yscale = scaleBranchLengths(nodes, w)
 	}
 
 	if (!options.skipTicks) {
@@ -241,83 +230,79 @@ phylogram.build = function(selector, nodes, options) {
 			.attr('y2', h)
 			.attr('x1', yscale)
 			.attr('x2', yscale)
-			.attr("stroke", "#ddd");
+			.attr('stroke', '#ddd');
 
-		vis.selectAll("text.rule")
+		vis.selectAll('text.rule')
 			.data(yscale.ticks(10))
-			.enter().append("svg:text")
-			.attr("class", "rule")
-			.attr("x", yscale)
-			.attr("y", 0)
-			.attr("dy", -3)
-			.attr("text-anchor", "middle")
+			.enter().append('svg:text')
+			.classed('rule', true)
+			.attr('x', yscale)
+			.attr('y', 0)
+			.attr('dy', -3)
+			.attr('text-anchor', 'middle')
 			.attr('font-size', '8px')
 			.attr('fill', '#ccc')
-			.text(function(d) {
-				return Math.round(d * 100) / 100;
-			});
+			.text(d => Math.round(d * 100) / 100)
 	}
 
-	var link = vis.selectAll("path.link")
+	let link = vis.selectAll('path.link')
 		.data(tree.links(nodes))
-		.enter().append("svg:path")
-		.attr("class", "link")
-		.attr("d", diagonal)
-		.attr("fill", "none")
-		.attr("stroke", "#1d1d1d")
-		.attr("stroke-width", "1px");
+		.enter().append('svg:path')
+		.classed('link', true)
+		.attr('d', diagonal)
+		.attr('fill', 'none')
+		.attr('stroke', '#1d1d1d')
+		.attr('stroke-width', '1px')
 
-	var node = vis.selectAll("g.node")
+	let nm = options.nonmonophyly || []
+
+	let sourceNmIdents = nm.map(pair => pair[0])
+	let targetNmIdents = nm.map(pair => pair[1])
+	let allNmIdents = uniq(flatten(nm))
+
+	let node = vis.selectAll('g.node')
 		.data(nodes)
-		.enter().append("svg:g")
-		.attr("class", function(n) {
-			if (n.children) {
-				if (n.depth == 0) {
-					return "root node"
-				} else {
-					return "inner node"
+		.enter().append('svg:g')
+		.attr('class', node => {
+			if (node.children) {
+				if (node.depth === 0) {
+					return 'root node'
 				}
-			} else {
-				return "leaf node"
+				return 'inner node'
 			}
+			return 'leaf node'
 		})
-		.attr("transform", function(d) {
-			return "translate(" + d.y + "," + d.x + ")";
-		})
+		.classed('nonmonophyletic', d => allNmIdents.includes(d.ident))
+		.attr('transform', d => `translate(${d.y},${d.x})`)
+		.attr('data-ident', node => node.ident)
 
 	phylogram.styleTreeNodes(vis, onNodeClicked)
 
 	if (!options.skipLabels) {
 		vis.selectAll('g.inner.node')
-			.append("svg:text")
-			.attr("dx", -6)
-			.attr("dy", -6)
-			.attr("text-anchor", 'end')
-			.attr('font-family', 'RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif')
-			.attr('font-size', '8px')
-			.attr('fill', '#ccc')
-			.text(function(d) {
-				return d.length;
-			});
+			.append('svg:text')
+			.attr('dx', -6)
+			.attr('dy', -6)
+			.classed('divergence-label', true)
+			.text(d => d.length)
 
-
-
-		/*vis.selectAll('g.inner.node')
-			.append("svg:circle")
-			.attr("r", 4)
-			.attr('fill', 'red')
-			.attr("class", "clickable-node")
-			.on("click", onNodeClicked);*/
-
-		vis.selectAll('g.leaf.node').append("svg:text")
-			.attr("dx", 8)
-			.attr("dy", 4)
-			.attr("text-anchor", "start")
-			.attr('font-family', 'RobotoDraft, -apple-system, Helvetica Neue, Helvetica, sans-serif')
-			.attr('font-size', '12px')
-			.attr('fill', 'black')
-			.text(d => `${d.name} ${d.ident} (${d.length})`);
+		vis.selectAll('g.leaf.node')
+			.append('svg:text')
+			.attr('dx', 8)
+			.attr('dy', 4)
+			.classed('species-label', true)
+			.text(formatLeafNodeLabel)
 	}
+
+	// let nodes = vis.selectAll('g.leaf.node[data-ident]')
+
+	// let sourceNodes = nodes
+	// 	.filter(d => includes(sourceNmIdents, d.ident))
+	// 	.append('path')
+
+	// let targetNodes = nodes
+	// 	.filter(d => includes(sourceNmIdents, d.ident))
+
 
 	return {
 		tree: tree,
