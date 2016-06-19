@@ -35,3 +35,14 @@ to convert files:
 - Copy the zip from `~/.electron` and extract it into `hybsearch/vendor`
 - Update hybsearch/electron to point to the new path
 - Remove the old folder
+
+
+
+    >>> hamming-distance speciesA speciesB
+    $minimumDistance
+    >>> estimate-generations $minimumDistance
+    {divergenceTime, generationCount}
+    >>> seq-gen $file --generations $generationCount
+    $sequences > sequences.fasta
+    >>> hamdis sequences.fasta
+    ???
