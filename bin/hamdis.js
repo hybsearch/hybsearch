@@ -37,45 +37,9 @@ function estimateGenerations(genLength, percentage) {
 	return {divtime, generationCount}
 }
 
-function parseFasta(data) {
-	let sequences = []
 
-	let id = ''
-	let seq = ''
-	for (let line of data.split('\n')) {
-		if (line.startsWith('>')) {
-			if (id) {
-				sequences.push({id, seq})
-			}
-			id = line.trim().replace(/^>/, '')
-		}
-		else if (line.length) {
-			seq += line.trim()
-		}
-		else {
-			continue
-		}
-	}
-
-	return sequences
-}
-
-
-function* paired(list) {
-	let prior
-	let firstItem = true
-	for (let item of list) {
-		// make sure to start with two items
-		if (firstItem) {
-			firstItem = false
-			prior = item
-			continue
-		}
-		yield [prior, item]
-		prior = item
-	}
-}
-
+const parseFasta = require('../lib/parse-fasta')
+const paired = require('../lib/pair-array')
 
 function doThings(file) {
 	// The earlier code works for a file of only two individuals, but we wish
