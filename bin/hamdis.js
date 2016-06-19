@@ -1,41 +1,23 @@
 #!/usr/bin/env node
 'use strict'
 
-
 const getData = require('../lib/get-data')
 const range = require('lodash/range')
 const max = require('lodash/max')
 const min = require('lodash/min')
 const mean = require('lodash/mean')
 
-function hammingDistance(seq1, seq2) {
-	// We want to compare the two individuals to find a Hamming distance
-	// between them. That is, how many base pairs differ between the two
-	// sequences. To do this, we must compare each base pair, one at a time.
 
-	// Track the number of base pairs that are different.
-	let counter = 0
 
-	for (let i = 0; i < seq1.length; i++) {
-		// console.log(seq1[i], seq2[i])
-		if (seq1[i] !== seq2[i]) {
-			counter += 1
-		}
-	}
+// [something something] estimate the number of generations for a species from
+// some pieces of information about the species
+const estimateGenerations = require('../lib/estimate-generations')
 
-	// console.log(counter)
 
-	// returns number of base pairs that differ
-	return counter
-}
 
-function estimateGenerations(genLength, percentage) {
-	let divtime = percentage / 0.02
+// Calculate the hamming distance between two sequences
+const hammingDistance = require('../lib/hamming-distance')
 
-	// number of generations (used for seqgen parameters)
-	let generationCount = divtime * 1000000 / genLength
-	return {divtime, generationCount}
-}
 
 
 const parseFasta = require('../lib/parse-fasta')
