@@ -26,6 +26,8 @@ const paired = require('../lib/pair-array')
 // In R, this was the "LoadDataFromFile" function.
 // It needs one more parameter, but I don't remember what that one is
 // used for.
+
+// TODO: we need a new run of the function for each nonmonophyletic pair
 function doThings(file) {
 	// The earlier code works for a file of only two individuals, but we wish
 	// to generalize this so that it can be used for multiple pairs of
@@ -40,6 +42,7 @@ function doThings(file) {
 	// Cycle through the pairs and compare them, recording results in `out`.
 	let out = []
 
+	// TODO: replace with combinatorics function
 	for (let [a, b] of paired(data)) {
 		let taxon1 = a.seq
 		let taxon2 = b.seq //.substr(0, taxon1.length)
