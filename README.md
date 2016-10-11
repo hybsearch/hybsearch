@@ -4,7 +4,7 @@
 	- install homebrew: `<https://brew.sh>`
 	- install node: `brew install node`
 	- install things: `brew install homebrew/science/beagle --with-opencl`
-	- install openmpi: `brew install openmpi`
+	- install openmpi: `brew install homebrew/versions/open-mpi16`
 
 - windows:
 	- install chocolaty: `<https://chocolatey.org>`
@@ -33,7 +33,7 @@ to convert files:
 - `npm install -g electron-download`
 - `electron-download --version=<version>`
 - Copy the zip from `~/.electron` and extract it into `hybsearch/vendor`
-- Update hybsearch/electron to point to the new path
+- Edit the `hybsearch` file to point to the new path
 - Remove the old folder
 
 
