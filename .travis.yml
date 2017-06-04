@@ -13,8 +13,8 @@ before_install:
 
 install:
   - brew list
+  - brew cask uninstall oclint # allows us to install gcc properly
   - brew install homebrew/science/beagle --with-opencl
-  - brew install gcc && CC=gcc-6 && CXX=g++-6 && HOMEBREW_CC=gcc-6 && HOMEBREW_CXX=g++-6
   - brew install open-mpi
 
 script:
