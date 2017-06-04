@@ -3,7 +3,10 @@
 const path = require('path')
 const childProcess = require('child_process')
 
-let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
+const filepath = process.argv[2] || path.join(__dirname, '..', 'data', 'emydura-short.gb')
+console.log(`processing ${filepath}`)
+
+const child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 child.on('message', communique => {
 	let cmd = communique[0]
@@ -11,8 +14,7 @@ child.on('message', communique => {
 
 	if (cmd === 'error') {
 		console.error('error!', msg)
-	}
-	else {
+	} else {
 		console.log(cmd, msg)
 	}
 
@@ -21,4 +23,4 @@ child.on('message', communique => {
 	}
 })
 
-child.send(path.join('data', 'emydura-short.gb'))
+child.send(filepath)
