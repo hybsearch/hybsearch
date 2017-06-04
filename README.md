@@ -1,31 +1,29 @@
 ## To install
 
-- os x:
-	- install homebrew: `<https://brew.sh>`
-	- install node: `brew install node`
-	- install things: `brew install homebrew/science/beagle --with-opencl`
-	- install openmpi: `brew install homebrew/versions/open-mpi16`
-
-- windows:
-	- install chocolaty: `<https://chocolatey.org>`
-	- install git, python, and node: `choco install -y git python2 nodejs.install vcredist2013`
+- install homebrew: `<https://brew.sh>`
+- install node: `brew install node`
+- install things: `brew install homebrew/science/beagle --with-opencl`
+- install openmpi: `brew install open-mpi`
 
 
 pipeline:
 
-	cat data/emydura-short.gb \
-		| ./bin/genbank-fasta.js - \
-		| ./bin/clustal-o.js - \
-		| ./bin/fasta-to-nexus.js - \
-		| ./bin/mrbayes.js - \
-		| ./bin/consensus-newick.js - \
-		| ./bin/newick-json.js - \
-		| ./ent.js -
+```shell
+cat data/emydura-short.gb \
+	| ./bin/genbank-fasta.js - \
+	| ./bin/clustal-o.js - \
+	| ./bin/fasta-to-nexus.js - \
+	| ./bin/mrbayes.js - \
+	| ./bin/consensus-newick.js - \
+	| ./bin/newick-json.js - \
+	| ./ent.js -
+```
 
 to convert files:
 
-	./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
-
+```shell
+./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
+```
 
 
 ## How to update Electron:
@@ -37,12 +35,13 @@ to convert files:
 - Remove the old folder
 
 
-
-    >>> hamming-distance speciesA speciesB
-    $minimumDistance
-    >>> estimate-generations $minimumDistance
-    {divergenceTime, generationCount}
-    >>> seq-gen $file --generations $generationCount
-    $sequences > sequences.fasta
-    >>> hamdis sequences.fasta
-    ???
+```
+>>> hamming-distance speciesA speciesB
+$minimumDistance
+>>> estimate-generations $minimumDistance
+{divergenceTime, generationCount}
+>>> seq-gen $file --generations $generationCount
+$sequences > sequences.fasta
+>>> hamdis sequences.fasta
+???
+```
