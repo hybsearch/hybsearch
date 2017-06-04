@@ -41,6 +41,7 @@ function load(newick) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => `${node.name} [${node.ident}] (${node.length})`,
 		nonmonophyly: nmResults.nm.map(pair => pair.map(node => node.ident)),
+		onNodeClicked: onNodeClicked,
 	})
 }
 

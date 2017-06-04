@@ -191,6 +191,7 @@ function scaleBranchLengths(nodes, w) {
 
 
 phylogram.build = function(selector, nodes, options={}) {
+	let onNodeClicked = options.onNodeClicked
 	let h = options.height || d3.select(selector).style('height')
 	let w = options.width || d3.select(selector).style('width')
 	h = parseInt(h)
