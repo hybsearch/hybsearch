@@ -1,3 +1,6 @@
+# hybsearch
+[![Build Status](https://travis-ci.org/hawkrives/hybsearch.svg?branch=master)](https://travis-ci.org/hawkrives/hybsearch)
+
 > A tool to find nonmonophyly in a phylogenetic tree.
 
 ## To Install
