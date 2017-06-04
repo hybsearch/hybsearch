@@ -1,2 +1,4 @@
-#!/bin/sh
+#!/bin/bash
+dir="$(dirname $0)"
+cd $dir
 ./vendor/electron-v1.6.10-darwin-x64/Electron.app/Contents/MacOS/Electron .
