@@ -12,7 +12,7 @@
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
     "execa": "0.6.3",
-    "file-extension": "2.0.1",
+    "file-extension": "3.1.2",
     "get-stdin": "5.0.1",
     "lodash": "4.17.4",
     "loud-rejection": "1.6.0",
