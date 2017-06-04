@@ -18,7 +18,10 @@ install:
   - brew install open-mpi
 
 script:
-  - python2 ./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna data/emydura.fasta output/emydura.nexus
+  - cat data/emydura.fasta
+  - python2 ./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna data/emydura.fasta /tmp/emydura.nexus
+  - cat /tmp/emydura.nexus
+
   - node ./scripts/worker-host-test.js
 
 cache:
