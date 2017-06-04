@@ -29,6 +29,7 @@
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
     "debug-menu": "0.6.0",
+    "dedent": "0.7.0",
     "electron-debug": "1.1.0",
     "electron-unhandled": "0.2.0",
     "execa": "0.6.3",
