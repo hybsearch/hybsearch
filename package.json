@@ -7,10 +7,30 @@
   "scripts": {
     "start": "./hybsearch ."
   },
+  "bundledDependencies": [
+    "biojs-io-newick",
+    "combinations-generator",
+    "d3",
+    "debug-menu",
+    "electron-debug",
+    "electron-unhandled",
+    "execa",
+    "file-extension",
+    "get-stdin",
+    "lodash",
+    "loud-rejection",
+    "minimist",
+    "normalize.css",
+    "serialize-error",
+    "tempfile"
+  ],
   "dependencies": {
     "biojs-io-newick": "1.5.0",
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
+    "debug-menu": "0.6.0",
+    "electron-debug": "1.1.0",
+    "electron-unhandled": "0.2.0",
     "execa": "0.6.3",
     "file-extension": "3.1.2",
     "get-stdin": "5.0.1",
@@ -20,10 +40,5 @@
     "normalize.css": "7.0.0",
     "serialize-error": "2.1.0",
     "tempfile": "2.0.0"
-  },
-  "devDependencies": {
-    "electron-debug": "1.1.0",
-    "electron-unhandled": "0.2.0",
-    "debug-menu": "0.6.0"
   }
 }
