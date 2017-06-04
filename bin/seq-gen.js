@@ -3,6 +3,7 @@
 
 const execa = require('execa')
 const tempfile = require('tempfile')
+const path = require('path')
 const fs = require('fs')
 const getData = require('../lib/get-data')
 const minimist = require('minimist')
@@ -13,8 +14,9 @@ function seqgen(data, seqLen=300, mutationRate=0.02, generations=2) {
 	data = `[${seqLen}, ${mutationRate}]${data}`
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
+	let seqGen = path.join(__dirname, '..', 'vendor', 'Seq-Gen', 'seq-gen-osx')
 	let args = ['-mHKY', `-n${generations}`, '-on', inputFile]
-	let output = execa.sync('seq-gen', args)
+	let output = execa.sync(seqGen, args)
 
 	return output.stdout
 }

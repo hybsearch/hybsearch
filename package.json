@@ -7,18 +7,39 @@
   "scripts": {
     "start": "./hybsearch ."
   },
+  "bundledDependencies": [
+    "biojs-io-newick",
+    "combinations-generator",
+    "d3",
+    "debug-menu",
+    "electron-debug",
+    "electron-unhandled",
+    "execa",
+    "file-extension",
+    "get-stdin",
+    "lodash",
+    "loud-rejection",
+    "minimist",
+    "normalize.css",
+    "serialize-error",
+    "tempfile"
+  ],
   "dependencies": {
     "biojs-io-newick": "1.5.0",
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
-    "execa": "0.4.0",
-    "file-extension": "2.0.1",
+    "debug-menu": "0.6.0",
+    "dedent": "0.7.0",
+    "electron-debug": "1.1.0",
+    "electron-unhandled": "0.2.0",
+    "execa": "0.6.3",
+    "file-extension": "3.1.2",
     "get-stdin": "5.0.1",
-    "lodash": "4.12.0",
-    "loud-rejection": "1.3.0",
+    "lodash": "4.17.4",
+    "loud-rejection": "1.6.0",
     "minimist": "1.2.0",
-    "normalize.css": "4.1.1",
-    "serialize-error": "2.0.0",
-    "tempfile": "1.1.1"
+    "normalize.css": "7.0.0",
+    "serialize-error": "2.1.0",
+    "tempfile": "2.0.0"
   }
 }

@@ -1,16 +1,5 @@
-clojure/.boot/
-clojure/resources/public/
-clojure/resources/uploads/
-clojure/resources/bin/
-clojure/.nrepl-port
-clojure/.repl-history
-clojure/.lein-*
-clojure/target
-clojure/classes
-clojure/checkouts
 .DS_Store
-
 node_modules/.bin
-node_modules/electron*
+node_modules/.staging
 *.pyc
 npm-debug.log

@@ -1,0 +1,25 @@
+os: osx
+osx_image: xcode8.3
+language: node_js
+node_js: '8'
+
+env:
+  global:
+    # prevent brew from updating itself automatically
+    - HOMEBREW_NO_AUTO_UPDATE=1
+
+before_install:
+  - brew update
+
+install:
+  - brew list
+  - brew cask uninstall oclint # allows us to install gcc properly
+  - brew install homebrew/science/beagle --with-opencl
+  - brew install open-mpi
+
+script:
+  - node ./scripts/worker-host-test.js
+
+cache:
+  directories:
+    - /usr/local/Homebrew
