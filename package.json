@@ -20,5 +20,10 @@
     "normalize.css": "4.1.1",
     "serialize-error": "2.0.0",
     "tempfile": "1.1.1"
+  },
+  "devDependencies": {
+    "electron-debug": "1.1.0",
+    "electron-unhandled": "0.2.0",
+    "debug-menu": "0.6.0"
   }
 }
