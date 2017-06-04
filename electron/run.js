@@ -62,8 +62,11 @@ function onMessage(packet, args, child) {
 		}
 		case 'error': {
 			console.error(msg)
+			console.error(msg.message)
 			let taken = performance.now() - args.start
 			setLoadingError(args.label, taken.toFixed(2))
+			document.querySelector('#error-container').hidden = false
+			document.querySelector('#error-message').innerText = msg.message
 			child.disconnect()
 			break
 		}
