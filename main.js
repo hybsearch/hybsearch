@@ -6,7 +6,7 @@ const {
 } = require('electron')
 
 // enable devtools and things
-require('electron-debug')({showDevTools: true})
+require('electron-debug')({showDevTools: false})
 
 // catch unhandled promise rejections
 require('electron-unhandled')()
