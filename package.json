@@ -18,7 +18,7 @@
     "loud-rejection": "1.6.0",
     "minimist": "1.2.0",
     "normalize.css": "4.1.1",
-    "serialize-error": "2.0.0",
+    "serialize-error": "2.1.0",
     "tempfile": "1.1.1"
   },
   "devDependencies": {
