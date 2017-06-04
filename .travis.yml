@@ -1,0 +1,13 @@
+os: osx
+osx_image: xcode8.3
+language: node_js
+node_js: '8'
+
+install:
+  - npm install
+  - brew install homebrew/science/beagle --with-opencl
+  - brew install open-mpi
+
+script:
+  - python2 ./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna data/emydura.fasta output/emydura.nexus
+  - node ./scripts/worker-host-test.js
