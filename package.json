@@ -11,7 +11,7 @@
     "biojs-io-newick": "1.5.0",
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
-    "execa": "0.4.0",
+    "execa": "0.6.3",
     "file-extension": "2.0.1",
     "get-stdin": "5.0.1",
     "lodash": "4.12.0",
