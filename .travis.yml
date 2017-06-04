@@ -12,6 +12,7 @@ before_install:
   - brew update
 
 install:
+  - brew list
   - brew install homebrew/science/beagle --with-opencl
   - brew install open-mpi
 
