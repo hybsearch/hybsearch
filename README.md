@@ -5,6 +5,16 @@
 - install things: `brew install homebrew/science/beagle --with-opencl`
 - install openmpi: `brew install open-mpi`
 
+Our current versions of our dependencies:
+
+- Node: 7.9.0
+- Beagle: 2.1.2
+- OpenMPI: 2.1.1
+- Clustal-Omega (included): 1.2.0
+- MrBayes (inlcuded): 3.2.6
+- Electron (included): 1.6.10
+- seq-gen (included): 1.3.3
+- seqmagick (included): 0.6.1
 
 pipeline:
 
