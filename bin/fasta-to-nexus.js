@@ -14,7 +14,7 @@ function seqmagick(data) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	let args = [
-		path.join('vendor', 'seqmagick', 'cli.py'),
+		path.join(__dirname, '..', 'vendor', 'seqmagick', 'cli.py'),
 		'convert',
 		'--input-format', 'fasta',
 		'--output-format', 'nexus',
