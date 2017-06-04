@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// @ts-check
 'use strict'
 
 const execa = require('execa')
@@ -8,6 +9,7 @@ const os = require('os')
 const path = require('path')
 const getData = require('../lib/get-data')
 const minimist = require('minimist')
+const dedent = require('dedent')
 
 
 /*
@@ -26,7 +28,8 @@ $ mb
 */
 
 function insertCommandBlock(data) {
-	let cmdBlock = `begin mrbayes;
+	let cmdBlock = dedent`
+	begin mrbayes;
 		set autoclose=yes nowarn=yes;
 		lset nst=6 rates=invgamma;
 		prset topologypr = uniform;
@@ -48,16 +51,19 @@ function mrbayes(data, argv) {
 
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let mb = 'mpirun'
-	let args = [inputFile]
-	if (process.platform === 'win32') {
-		mb = path.join('vendor', 'MrBayes-win', 'mrbayes_x64.exe')
-	}
-	else {
-		args = ['-np', '4', path.join('vendor', 'MrBayes-osx', 'mb-mpi')].concat(args)
-	}
+	let mb = '/usr/local/bin/mpirun'
+	let args = [
+		'-np', '4',
+		'-mca', 'plm', 'isolated',
+		path.join('vendor', 'MrBayes-osx', 'mb-mpi'),
+		inputFile,
+	]
 
-	let result = execa.sync(mb, args)
+	let result = execa.sync(mb, args, {
+		env: {
+			TMPDIR: '/tmp/',
+		},
+	})
 
 	if (!argv.quiet) {
 		process.stderr.write(result.stdout)
