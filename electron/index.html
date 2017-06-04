@@ -2,19 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Hybsearch (v0.5)</title>
-		<link rel="stylesheet" type="text/css" href="./index.css">
+		<title>Hybsearch</title>
+		<link rel="stylesheet" href="./index.css">
 	</head>
 	<body>
-		<header>
-			<h1>Hybsearch</h1>
-			<span class='time-taken'></span>
-		</header>
-
 		<section class="loader">
 			<wrapper class="content">
 				<h2>Genbank/Fasta</h2>
-				<input type='file' id='load-file' accept='.gb,.genbank,.fasta'>
+				<input type="file" id="load-file" accept=".gb,.genbank,.fasta">
+				<select id="pick-file">
+					<option>No file chosen</option>
+				</select>
+				<br/><br/>
+				<button id="start">Run Hybsearch</button>
 			</wrapper>
 			<wrapper class="loading">
 				<div class="checkmark" data-loader-name="process">
@@ -40,7 +40,7 @@
 			</wrapper>
 		</section>
 
-		<section hidden id='nm-container'>
+		<section hidden id="nm-container">
 			<h2>Nonmonophyly</h2>
 			<div id="nonmonophyly-results"></div>
 		</section>
@@ -51,12 +51,14 @@
 		</section>
 
 		<section>
-			<h2>Newick Tree</h2>
-			<textarea id='tree-box'></textarea>
-			<wrapper class="right-aligned">
-				<input type='submit' value='newick' id='tree-box-submit'>
-				<input type='submit' value='json' id='json-tree-box-submit'>
-			</wrapper>
+			<details>
+				<summary><h2 style="display: inline">Newick Tree</h2></summary>
+				<textarea id="tree-box"></textarea>
+				<wrapper class="right-aligned">
+					<input type="submit" value="newick" id="tree-box-submit">
+					<input type="submit" value="json" id="json-tree-box-submit">
+				</wrapper>
+			</details>
 		</section>
 
 		<script src="./index.js"></script>
