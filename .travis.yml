@@ -3,8 +3,15 @@ osx_image: xcode8.3
 language: node_js
 node_js: '8'
 
+env:
+  global:
+    # prevent brew from updating itself automatically
+    - HOMEBREW_NO_AUTO_UPDATE=1
+
+before_install:
+  - brew update
+
 install:
-  - npm install
   - brew install homebrew/science/beagle --with-opencl
   - brew install open-mpi
 
