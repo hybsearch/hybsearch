@@ -7,10 +7,15 @@ const {load} = require('./graph')
 const childProcess = require('child_process')
 const path = require('path')
 
+module.exports = run
+function run() {
+	let filepicker = document.querySelector('#load-file')
+	let filedropdown = document.querySelector('#pick-file')
+	let filepath = filepicker.files.length
+		? filepicker.files[0].path
+		: path.join(__dirname, '..', 'data', filedropdown.value)
 
-function run(ev) {
-	let file = ev.target.files[0]
-	console.log('The file is', file.path)
+	console.log('The file is', filepath)
 
 	document.querySelector('section.loader').classList.add('loading')
 
@@ -32,7 +37,7 @@ function run(ev) {
 	child.on('error', console.log.bind(console, 'error'))
 	child.on('exit', console.log.bind(console, 'exit'))
 
-	child.send(file.path, err => {
+	child.send(filepath, err => {
 		if (err) {
 			console.error('child error', err)
 		}
@@ -76,8 +81,6 @@ function onMessage(packet, args, child) {
 	}
 }
 
-document.getElementById('load-file').addEventListener('change', run)
-
 document.getElementById('tree-box-submit').addEventListener('click', e => {
 	e.preventDefault()
 	var data = document.getElementById('tree-box').value
@@ -98,11 +101,6 @@ function updateLoadingStatus(label, timeTaken) {
 	el.dataset.time = timeTaken
 }
 
-function showTime(ms) {
-	console.info(`completed in ${ms} ms`)
-	document.querySelector(`.time-taken`).textContent = `${ms}ms`
-}
-
 function beginLoadingStatus(label) {
 	console.info(`beginning ${label}`)
 	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('active')
@@ -114,5 +112,3 @@ function setLoadingError(label, timeTaken) {
 	el.classList.add('error')
 	el.dataset.time = timeTaken
 }
-
-module.exports = {}

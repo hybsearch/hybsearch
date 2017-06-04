@@ -8,4 +8,4 @@ require('electron-unhandled')()
 require('debug-menu').install()
 
 // start the code
-require('./run')
+require('./ui')
