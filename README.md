@@ -1,9 +1,18 @@
-## To install
+> A tool to find nonmonophyly in a phylogenetic tree.
+
+## To Install
 
 - install homebrew: `<https://brew.sh>`
 - install node: `brew install node`
 - install things: `brew install homebrew/science/beagle --with-opencl`
 - install openmpi: `brew install open-mpi`
+
+## To Run
+Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
+
+---
+
+## Miscallaneous Bits
 
 Our current versions of our dependencies:
 
