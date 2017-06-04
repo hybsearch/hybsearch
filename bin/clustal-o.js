@@ -14,9 +14,7 @@ function clustal(data) {
 	const outputFile = tempfile()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let executable = process.platform === 'win32'
-		? path.join('vendor', 'clustalo-win64', 'clustalo.exe')
-		: path.join('vendor', 'clustalo-osx')
+	let executable = path.join(__dirname, '..', 'vendor', 'clustalo-osx')
 	let args = [
 		'--in', inputFile,
 		'--out', outputFile,
