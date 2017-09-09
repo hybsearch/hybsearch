@@ -5,7 +5,8 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "./hybsearch ."
+    "start": "./hybsearch .",
+    "prettier": "prettier --write bin/*.js lib/*.js electron/*.{js,css} scripts/*.js vendor/*.js"
   },
   "prettier": {
     "useTabs": true,
