@@ -17,6 +17,7 @@
     "biojs-io-newick",
     "combinations-generator",
     "d3",
+    "dedent",
     "electron-unhandled",
     "execa",
     "file-extension",
