@@ -11,34 +11,34 @@ document.querySelector('#start').addEventListener('click', run)
 
 const files = getFiles()
 const groupedFiles = groupBy(files, f => {
-    if (/\.aln/.test(f)) {
-        return 'aligned'
-    }
+	if (/\.aln/.test(f)) {
+		return 'aligned'
+	}
 
-    if (f.endsWith('.fasta')) {
-        return 'fasta'
-    }
+	if (f.endsWith('.fasta')) {
+		return 'fasta'
+	}
 
-    if (f.endsWith('.gb')) {
-        return 'genbank'
-    }
+	if (f.endsWith('.gb')) {
+		return 'genbank'
+	}
 
-    return f.split('.')[f.split('.').length - 1]
+	return f.split('.')[f.split('.').length - 1]
 })
-const optgroups = mapValues(
-    groupedFiles,
-    (group, groupedBy) => group.map(filename => {
-        let opt = document.createElement('option')
-        opt.value = filename
-        opt.textContent = filename
-        return opt
-    }))
+const optgroups = mapValues(groupedFiles, (group, groupedBy) =>
+	group.map(filename => {
+		let opt = document.createElement('option')
+		opt.value = filename
+		opt.textContent = filename
+		return opt
+	})
+)
 
 const picker = document.querySelector('#pick-file')
 
 for (let [type, options] of toPairs(optgroups)) {
-    let group = document.createElement('optgroup')
-    group.label = type
-    options.forEach(opt => group.appendChild(opt))
-    picker.appendChild(group)
+	let group = document.createElement('optgroup')
+	group.label = type
+	options.forEach(opt => group.appendChild(opt))
+	picker.appendChild(group)
 }

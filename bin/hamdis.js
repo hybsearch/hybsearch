@@ -7,18 +7,12 @@ const max = require('lodash/max')
 const min = require('lodash/min')
 const mean = require('lodash/mean')
 
-
-
 // [something something] estimate the number of generations for a species from
 // some pieces of information about the species
 const estimateGenerations = require('../lib/estimate-generations')
 
-
-
 // Calculate the hamming distance between two sequences
 const hammingDistance = require('../lib/hamming-distance')
-
-
 
 const parseFasta = require('../lib/parse-fasta')
 const paired = require('../lib/pair-array')
@@ -59,8 +53,6 @@ function doThings(file) {
 		data: out,
 	}
 }
-
-
 
 function main() {
 	let seqfile1 = process.argv[2]

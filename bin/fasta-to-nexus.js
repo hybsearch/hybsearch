@@ -9,10 +9,11 @@ const getData = require('../lib/get-data')
 
 module.exports = seqmagick
 function seqmagick(data) {
-	const inputFile = tempfile().replace(' ', '\ ')
-	const outputFile = tempfile().replace(' ', '\ ')
+	const inputFile = tempfile().replace(' ', ' ')
+	const outputFile = tempfile().replace(' ', ' ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
+	// prettier-ignore
 	let args = [
 		path.join(__dirname, '..', 'vendor', 'seqmagick', 'cli.py'),
 		'convert',
@@ -22,13 +23,14 @@ function seqmagick(data) {
 		inputFile,
 		outputFile,
 	]
+
 	execa.sync('python', args)
 
 	// seqmagick wraps the identifiers in quotes.
 	// mrbayes does not like single quotes.
 	// remove them.
 	let output = fs.readFileSync(outputFile, 'utf-8')
-	output = output.replace(/'/g, "")
+	output = output.replace(/'/g, '')
 
 	return output
 }

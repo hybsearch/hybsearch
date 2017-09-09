@@ -11,7 +11,6 @@ const getData = require('../lib/get-data')
 const minimist = require('minimist')
 const dedent = require('dedent')
 
-
 /*
 $ mb
 > execute {PATH_TO_ALIGNED_NEXUS}
@@ -52,6 +51,7 @@ function mrbayes(data, argv) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	let mb = '/usr/local/bin/mpirun'
+	// prettier-ignore
 	let args = [
 		'-np', '4',
 		'-mca', 'plm', 'isolated',

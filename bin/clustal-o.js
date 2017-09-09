@@ -14,11 +14,13 @@ function clustal(data) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	let executable = path.join(__dirname, '..', 'vendor', 'clustalo-osx')
+	// prettier-ignore
 	let args = [
 		'--in', inputFile,
 		'--out', outputFile,
 		'--outfmt=fasta',
 	]
+
 	execa.sync(executable, args)
 
 	return fs.readFileSync(outputFile, 'utf-8')
