@@ -9,13 +9,23 @@ const _getStream = require('get-stream');
 const pFinally = require('p-finally');
 const onExit = require('signal-exit');
 const errname = require('./lib/errname');
+const stdio = require('./lib/stdio');
 
 const TEN_MEGABYTES = 1000 * 1000 * 10;
 
 function handleArgs(cmd, args, opts) {
 	let parsed;
 
-	if (opts && opts.__winShell === true) {
+	opts = Object.assign({
+		extendEnv: true,
+		env: {}
+	}, opts);
+
+	if (opts.extendEnv) {
+		opts.env = Object.assign({}, process.env, opts.env);
+	}
+
+	if (opts.__winShell === true) {
 		delete opts.__winShell;
 		parsed = {
 			command: cmd,
@@ -32,13 +42,16 @@ function handleArgs(cmd, args, opts) {
 		maxBuffer: TEN_MEGABYTES,
 		stripEof: true,
 		preferLocal: true,
+		localDir: parsed.options.cwd || process.cwd(),
 		encoding: 'utf8',
 		reject: true,
 		cleanup: true
 	}, parsed.options);
 
+	opts.stdio = stdio(opts);
+
 	if (opts.preferLocal) {
-		opts.env = npmRunPath.env(opts);
+		opts.env = npmRunPath.env(Object.assign({}, opts, {cwd: opts.localDir}));
 	}
 
 	return {
@@ -154,7 +167,7 @@ module.exports = (cmd, args, opts) => {
 		timeoutId = setTimeout(() => {
 			timeoutId = null;
 			timedOut = true;
-			spawned.kill(parsed.killSignal);
+			spawned.kill(parsed.opts.killSignal);
 		}, parsed.opts.timeout);
 	}
 
@@ -187,7 +200,7 @@ module.exports = (cmd, args, opts) => {
 		}
 	}
 
-	const promise = pFinally(Promise.all([
+	const handlePromise = () => pFinally(Promise.all([
 		processDone,
 		getStream(spawned, 'stdout', encoding, maxBuffer),
 		getStream(spawned, 'stderr', encoding, maxBuffer)
@@ -206,7 +219,20 @@ module.exports = (cmd, args, opts) => {
 
 		if (err || code !== 0 || signal !== null) {
 			if (!err) {
-				const output = parsed.opts.stdio === 'inherit' ? '' : `\n${stderr}${stdout}`;
+				let output = '';
+
+				if (Array.isArray(parsed.opts.stdio)) {
+					if (parsed.opts.stdio[2] !== 'inherit') {
+						output += output.length > 0 ? stderr : `\n${stderr}`;
+					}
+
+					if (parsed.opts.stdio[1] !== 'inherit') {
+						output += `\n${stdout}`;
+					}
+				} else if (parsed.opts.stdio !== 'inherit') {
+					output = `\n${stderr}${stdout}`;
+				}
+
 				err = new Error(`Command failed: ${joinedCmd}${output}`);
 				err.code = code < 0 ? errname(code) : code;
 			}
@@ -246,8 +272,8 @@ module.exports = (cmd, args, opts) => {
 
 	handleInput(spawned, parsed.opts);
 
-	spawned.then = promise.then.bind(promise);
-	spawned.catch = promise.catch.bind(promise);
+	spawned.then = (onfulfilled, onrejected) => handlePromise().then(onfulfilled, onrejected);
+	spawned.catch = onrejected => handlePromise().catch(onrejected);
 
 	return spawned;
 };
