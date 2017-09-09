@@ -1,8 +1,8 @@
 // @ts-check
 'use strict'
 
-const {parse: parseNewick} = require('../vendor/newick')
-const {load} = require('./graph')
+const { parse: parseNewick } = require('../vendor/newick')
+const { load } = require('./graph')
 
 const childProcess = require('child_process')
 const path = require('path')
@@ -106,7 +106,9 @@ function updateLoadingStatus(label, timeTaken) {
 
 function beginLoadingStatus(label) {
 	console.info(`beginning ${label}`)
-	document.querySelector(`.checkmark[data-loader-name='${label}']`).classList.add('active')
+	document
+		.querySelector(`.checkmark[data-loader-name='${label}']`)
+		.classList.add('active')
 }
 
 function setLoadingError(label, timeTaken) {

@@ -29,17 +29,20 @@ function load(newick) {
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
 	const largest = getLargestLength(newickNodes)
-	const ratio = (largest / smallest) * 15
+	const ratio = largest / smallest * 15
 	const maxWidth = document.getElementById('phylogram').offsetWidth - 320 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
-	console.log(`Final calcWidth: ${calcWidth}, maxWidth: ${maxWidth}, ratio: ${ratio}, largest: ${largest}, smallest: ${smallest}`)
+	console.log(
+		`Final calcWidth: ${calcWidth}, maxWidth: ${maxWidth}, ratio: ${ratio}, largest: ${largest}, smallest: ${smallest}`
+	)
 
 	const calcHeight = 800 * Math.min(5, Math.max(0.35, newickNodes.length / 65))
 	d3.phylogram.build('#phylogram', newick, {
 		width: calcWidth,
 		height: calcHeight,
-		formatLeafNodeLabel: node => `${node.name} [${node.ident}] (${node.length})`,
+		formatLeafNodeLabel: node =>
+			`${node.name} [${node.ident}] (${node.length})`,
 		nonmonophyly: nmResults.nm.map(pair => pair.map(node => node.ident)),
 		onNodeClicked: onNodeClicked,
 	})
@@ -75,7 +78,7 @@ function getLargestLength(objs) {
 
 // Whitelist is an array of individuals for a single species. Anything not
 // in this whitelist must be nonmono
-function findOutliers(objs, whitelist, found=[]) {
+function findOutliers(objs, whitelist, found = []) {
 	objs.forEach(obj => {
 		if (obj.name && obj.name !== '' && !whitelist.includes(obj.name)) {
 			found.push(`${obj.name}_${obj.length}`)
@@ -96,11 +99,17 @@ function onNodeClicked(data) {
 	console.log('Outliers found:', outliers)
 
 	outliers.forEach(outlier =>
-		document.getElementById(outlier).setAttribute('fill', 'green'))
+		document.getElementById(outlier).setAttribute('fill', 'green')
+	)
 
-	alert('Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.')
+	alert(
+		'Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.'
+	)
 }
 
 function getWhitelist() {
-	return document.getElementById('dominantSpeciesInput').value.trim().split(/,\s*/)
+	return document
+		.getElementById('dominantSpeciesInput')
+		.value.trim()
+		.split(/,\s*/)
 }

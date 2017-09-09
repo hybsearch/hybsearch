@@ -10,17 +10,19 @@ function main() {
 	let percentage = process.argv[3]
 
 	if (genLength === undefined) {
-		console.error('usage: node estimate-generations.js <genLength> [percentage]')
+		console.error(
+			'usage: node estimate-generations.js <genLength> [percentage]'
+		)
 		process.exit(1)
 	}
 
-	let {
-		divergenceTime,
-		generationCount,
-	} = estimateGenerations(genLength, percentage)
+	let { divergenceTime, generationCount } = estimateGenerations(
+		genLength,
+		percentage
+	)
 
-	console.log("divtime=%d", divergenceTime)
-	console.log("gen=%d", generationCount)
+	console.log('divtime=%d', divergenceTime)
+	console.log('gen=%d', generationCount)
 }
 
 if (require.main === module) {

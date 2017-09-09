@@ -86,28 +86,31 @@ phylogram.rightAngleDiagonal = () => {
 		let midpointX = (source.x + target.x) / 2
 		let midpointY = (source.y + target.y) / 2
 
-		let pathData = [source, {x: target.x, y: source.y}, target].map(projection)
+		let pathData = [source, { x: target.x, y: source.y }, target].map(
+			projection
+		)
 
 		return path(pathData)
 	}
 
 	diagonal.projection = function(x) {
-		if (!arguments.length) return projection;
-		projection = x;
-		return diagonal;
-	};
+		if (!arguments.length) return projection
+		projection = x
+		return diagonal
+	}
 
 	diagonal.path = function(x) {
-		if (!arguments.length) return path;
-		path = x;
-		return diagonal;
-	};
+		if (!arguments.length) return path
+		path = x
+		return diagonal
+	}
 
-	return diagonal;
+	return diagonal
 }
 
 phylogram.radialRightAngleDiagonal = () => {
-	return phylogram.rightAngleDiagonal()
+	return phylogram
+		.rightAngleDiagonal()
 		.path(pathData => {
 			let src = pathData[0]
 			let mid = pathData[1]
@@ -115,11 +118,17 @@ phylogram.radialRightAngleDiagonal = () => {
 			let radius = Math.sqrt(src[0] * src[0] + src[1] * src[1])
 			let srcAngle = phylogram.coordinateToAngle(src, radius)
 			let midAngle = phylogram.coordinateToAngle(mid, radius)
-			let clockwise = Math.abs(midAngle - srcAngle) > Math.PI ? midAngle <= srcAngle : midAngle > srcAngle
+			let clockwise =
+				Math.abs(midAngle - srcAngle) > Math.PI
+					? midAngle <= srcAngle
+					: midAngle > srcAngle
 			let rotation = 0
 			let largeArc = 0
 			let sweep = clockwise ? 0 : 1
-			return `M${src} A${[radius, radius]} ${rotation} ${largeArc},${sweep} ${mid}L${dst}`
+			return `M${src} A${[
+				radius,
+				radius,
+			]} ${rotation} ${largeArc},${sweep} ${mid}L${dst}`
 		})
 		.projection(d => {
 			let r = d.y
@@ -133,31 +142,36 @@ phylogram.coordinateToAngle = (coord, radius) => {
 	let wholeAngle = 2 * Math.PI
 	let quarterAngle = wholeAngle / 4
 
-	let coordQuad = coord[0] >= 0
-		? (coord[1] >= 0 ? 1 : 2)
-		: (coord[1] >= 0 ? 4 : 3)
+	let coordQuad =
+		coord[0] >= 0 ? (coord[1] >= 0 ? 1 : 2) : coord[1] >= 0 ? 4 : 3
 
 	let coordBaseAngle = Math.abs(Math.asin(coord[1] / radius))
 
 	// Since this is just based on the angle of the right triangle formed by
 	// the coordinate and the origin, each quad will have different offsets
 	switch (coordQuad) {
-		case 1: return quarterAngle - coordBaseAngle
-		case 2: return quarterAngle + coordBaseAngle
-		case 3: return 2 * quarterAngle + quarterAngle - coordBaseAngle
-		case 4: return 3 * quarterAngle + coordBaseAngle
+		case 1:
+			return quarterAngle - coordBaseAngle
+		case 2:
+			return quarterAngle + coordBaseAngle
+		case 3:
+			return 2 * quarterAngle + quarterAngle - coordBaseAngle
+		case 4:
+			return 3 * quarterAngle + coordBaseAngle
 	}
 }
 
 phylogram.styleTreeNodes = (vis, onClickFunc) => {
-	vis.selectAll('g.leaf.node')
+	vis
+		.selectAll('g.leaf.node')
 		.append('svg:circle')
 		.attr('r', 4)
 		.classed('leaf-dot', true)
 		// .attr('data-ident', node => node.ident)
 		.attr('id', d => `${d.name}_${d.length}`)
 
-	vis.selectAll('g.root.node')
+	vis
+		.selectAll('g.root.node')
 		.append('svg:circle')
 		.attr('r', 4)
 		.classed('clickable-node', true)
@@ -173,24 +187,25 @@ function visitPreOrder(root, callback) {
 
 function scaleBranchLengths(nodes, w) {
 	// Visit all nodes and adjust y pos width distance metric
-	visitPreOrder(nodes[0], (node) => {
-		node.rootDist = (node.parent ? node.parent.rootDist : 0) + (node.length || 0)
+	visitPreOrder(nodes[0], node => {
+		node.rootDist =
+			(node.parent ? node.parent.rootDist : 0) + (node.length || 0)
 	})
 
 	var rootDists = nodes.map(n => n.rootDist)
-	var yscale = d3.scale.linear()
+	var yscale = d3.scale
+		.linear()
 		.domain([0, d3.max(rootDists)])
 		.range([0, w])
 
-	visitPreOrder(nodes[0], (node) => {
+	visitPreOrder(nodes[0], node => {
 		node.y = yscale(node.rootDist)
 	})
 
 	return yscale
 }
 
-
-phylogram.build = function(selector, nodes, options={}) {
+phylogram.build = function(selector, nodes, options = {}) {
 	let onNodeClicked = options.onNodeClicked
 	let h = options.height || d3.select(selector).style('height')
 	let w = options.width || d3.select(selector).style('width')
@@ -199,43 +214,55 @@ phylogram.build = function(selector, nodes, options={}) {
 
 	let formatLeafNodeLabel = options.formatLeafNodeLabel || (node => node.name)
 
-	let tree = options.tree || d3.layout.cluster()
-		.size([h, w])
-		.sort(node => node.children ? node.children.length : -1)
-		.children(options.children || ((node) => node.branchset))
+	let tree =
+		options.tree ||
+		d3.layout
+			.cluster()
+			.size([h, w])
+			.sort(node => (node.children ? node.children.length : -1))
+			.children(options.children || (node => node.branchset))
 
 	let diagonal = options.diagonal || phylogram.rightAngleDiagonal()
 
-	let vis = options.vis || d3.select(selector).append('svg:svg')
-		.attr('width', w + 300)
-		.attr('height', h + 30)
-		.append('svg:g')
-		.attr('transform', 'translate(20, 20)')
+	let vis =
+		options.vis ||
+		d3
+			.select(selector)
+			.append('svg:svg')
+			.attr('width', w + 300)
+			.attr('height', h + 30)
+			.append('svg:g')
+			.attr('transform', 'translate(20, 20)')
 
 	nodes = tree(nodes)
 
 	let yscale
 	if (options.skipBranchLengthScaling) {
-		yscale = d3.scale.linear()
+		yscale = d3.scale
+			.linear()
 			.domain([0, w])
-			.range([0, w]);
+			.range([0, w])
 	} else {
 		yscale = scaleBranchLengths(nodes, w)
 	}
 
 	if (!options.skipTicks) {
-		vis.selectAll('line')
+		vis
+			.selectAll('line')
 			.data(yscale.ticks(10))
-			.enter().append('svg:line')
+			.enter()
+			.append('svg:line')
 			.attr('y1', 0)
 			.attr('y2', h)
 			.attr('x1', yscale)
 			.attr('x2', yscale)
-			.attr('stroke', '#ddd');
+			.attr('stroke', '#ddd')
 
-		vis.selectAll('text.rule')
+		vis
+			.selectAll('text.rule')
 			.data(yscale.ticks(10))
-			.enter().append('svg:text')
+			.enter()
+			.append('svg:text')
 			.classed('rule', true)
 			.attr('x', yscale)
 			.attr('y', 0)
@@ -246,9 +273,11 @@ phylogram.build = function(selector, nodes, options={}) {
 			.text(d => Math.round(d * 100) / 100)
 	}
 
-	let link = vis.selectAll('path.link')
+	let link = vis
+		.selectAll('path.link')
 		.data(tree.links(nodes))
-		.enter().append('svg:path')
+		.enter()
+		.append('svg:path')
 		.classed('link', true)
 		.attr('d', diagonal)
 		.attr('fill', 'none')
@@ -261,9 +290,11 @@ phylogram.build = function(selector, nodes, options={}) {
 	let targetNmIdents = nm.map(pair => pair[1])
 	let allNmIdents = uniq(flatten(nm))
 
-	let node = vis.selectAll('g.node')
+	let node = vis
+		.selectAll('g.node')
 		.data(nodes)
-		.enter().append('svg:g')
+		.enter()
+		.append('svg:g')
 		.attr('class', node => {
 			if (node.children) {
 				if (node.depth === 0) {
@@ -280,14 +311,16 @@ phylogram.build = function(selector, nodes, options={}) {
 	phylogram.styleTreeNodes(vis, onNodeClicked)
 
 	if (!options.skipLabels) {
-		vis.selectAll('g.inner.node')
+		vis
+			.selectAll('g.inner.node')
 			.append('svg:text')
 			.attr('dx', -6)
 			.attr('dy', -6)
 			.classed('divergence-label', true)
 			.text(d => d.length)
 
-		vis.selectAll('g.leaf.node')
+		vis
+			.selectAll('g.leaf.node')
 			.append('svg:text')
 			.attr('dx', 8)
 			.attr('dy', 4)
@@ -304,10 +337,9 @@ phylogram.build = function(selector, nodes, options={}) {
 	// let targetNodes = nodes
 	// 	.filter(d => includes(sourceNmIdents, d.ident))
 
-
 	return {
 		tree: tree,
-		vis: vis
+		vis: vis,
 	}
 }
 

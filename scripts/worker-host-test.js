@@ -3,7 +3,8 @@
 const path = require('path')
 const childProcess = require('child_process')
 
-const filepath = process.argv[2] || path.join(__dirname, '..', 'data', 'emydura-short.gb')
+const filepath =
+	process.argv[2] || path.join(__dirname, '..', 'data', 'emydura-short.gb')
 console.log(`processing ${filepath}`)
 
 const child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
