@@ -12,7 +12,7 @@ function main() {
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(newick)
 		.then(d => JSON.stringify(d))
 		.then(data => console.log(data))

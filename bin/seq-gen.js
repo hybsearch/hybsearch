@@ -24,7 +24,7 @@ function seqgen(data, seqLen=300, mutationRate=0.02, generations=2) {
 function main() {
 	let argv = minimist(process.argv.slice(2))
 
-	// TODO: I don't understand what the input files is supposed to be.
+	// TODO: I don't understand what the input files are supposed to be.
 	let file = argv['_'][0]
 	let seqLen = argv['sequence-length']
 	let mutationRate = argv['mutation-rate']
@@ -43,7 +43,7 @@ function main() {
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(data => seqgen(data, seqLen, mutationRate, generations))
 		.then(console.log.bind(console))
 		.catch(console.error.bind(console))
