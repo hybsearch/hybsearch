@@ -1,6 +1,8 @@
 #!/bin/bash
 TIME=/usr/bin/time
 
+set -e
+
 function pipeline() {
 	file=$1
 	echo "$file"
