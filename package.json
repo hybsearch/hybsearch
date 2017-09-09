@@ -7,6 +7,12 @@
   "scripts": {
     "start": "./hybsearch ."
   },
+  "prettier": {
+    "useTabs": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true
+  },
   "bundledDependencies": [
     "biojs-io-newick",
     "combinations-generator",
