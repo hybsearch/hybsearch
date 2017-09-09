@@ -41,7 +41,7 @@ function main() {
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(seqmagick)
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))

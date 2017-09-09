@@ -47,7 +47,7 @@ function main() {
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(convert)
 		.then(console.log.bind(console))
 		.catch(console.error.bind(console))

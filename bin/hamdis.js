@@ -67,7 +67,7 @@ function main() {
 	// I don't know what otherArg is supposed to be
 	let otherArg = process.argv[3]
 
-	getData(seqfile1)
+	return getData(seqfile1)
 		.then(data => doThings(data, otherArg))
 		.then(console.log.bind(console))
 		.catch(console.error.bind(console))

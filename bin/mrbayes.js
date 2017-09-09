@@ -74,15 +74,15 @@ function mrbayes(data, argv) {
 }
 
 function main() {
-	let argv = minimist(process.argv.slice(2))
-	let file = argv._[0]
+	let argv = process.argv.slice(2)
+	let file = argv[0]
 
 	if (!file && process.stdin.isTTY) {
 		console.error('usage: node mrbayes.js (<input> | -) [--quiet]')
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(data => mrbayes(data, argv))
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))

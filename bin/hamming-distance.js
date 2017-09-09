@@ -14,7 +14,7 @@ function main() {
 		process.exit(1)
 	}
 
-	Promise.all([readFile(seqfile1), readFile(seqfile2)])
+	return Promise.all([readFile(seqfile1), readFile(seqfile2)])
 		.then(([seq1, seq2]) => hammingDistance(seq1, seq2))
 		.then(console.log.bind(console))
 		.catch(console.error.bind(console))

@@ -39,7 +39,7 @@ function main() {
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(genbankToFasta)
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))

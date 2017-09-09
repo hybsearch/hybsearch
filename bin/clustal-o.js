@@ -6,7 +6,6 @@ const tempfile = require('tempfile')
 const fs = require('fs')
 const path = require('path')
 const getData = require('../lib/get-data')
-const minimist = require('minimist')
 
 module.exports = clustal
 function clustal(data) {
@@ -26,19 +25,19 @@ function clustal(data) {
 }
 
 function main() {
-	let argv = minimist(process.argv.slice(2))
-	let file = argv['_'][0]
+	let argv = process.argv.slice(2)
+	let file = argv[0]
 
 	if (!file && process.stdin.isTTY) {
 		console.error('usage: node clustal-o.js (<input> | -) [output]')
 		process.exit(1)
 	}
 
-	getData(file)
+	return getData(file)
 		.then(clustal)
 		.then(output => {
-			if (argv['_'][1] === 2) {
-				fs.writeFileSync(argv['_'][1], output, 'utf-8')
+			if (argv[1]) {
+				fs.writeFileSync(argv[1], output, 'utf-8')
 			} else {
 				console.log(output)
 			}
