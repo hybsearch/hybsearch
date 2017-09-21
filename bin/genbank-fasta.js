@@ -2,6 +2,7 @@
 'use strict'
 
 const getData = require('../lib/get-data')
+const wrap = require('wordwrap')
 const take = require('lodash/take')
 
 function* parseGenbankEntry(data) {
@@ -63,6 +64,7 @@ const genbankEntryToFasta = entry => {
 
 	let origin = entry.ORIGIN
 	origin = origin.replace(/ /g, '')
+	origin = wrap(80, {mode: 'hard'})(origin)
 
 	let divider = '__'
 	let name = `${species}${divider}${accession}`
