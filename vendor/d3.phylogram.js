@@ -229,7 +229,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 		d3
 			.select(selector)
 			.append('svg:svg')
-			.attr('width', w + 300)
+			.attr('width', w + 420)
 			.attr('height', h + 30)
 			.append('svg:g')
 			.attr('transform', 'translate(20, 20)')

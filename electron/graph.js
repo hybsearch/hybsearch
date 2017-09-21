@@ -26,11 +26,21 @@ function load(newick) {
 	console.log('Got nodes:', newickNodes)
 	console.log('nonmonophyly:', nmResults)
 
+	render(newick, newickNodes, nmResults)
+
+	window.addEventListener("optimizedResize", function() {
+		let el = document.querySelector('#phylogram')
+		if (el) el.innerHTML = ''
+		render(newick, newickNodes, nmResults)
+	});
+}
+
+function render(newickData, newickNodes, nmResults) {
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
 	const largest = getLargestLength(newickNodes)
 	const ratio = largest / smallest * 15
-	const maxWidth = document.getElementById('phylogram').offsetWidth - 320 // Accounts for label widths
+	const maxWidth = document.getElementById('phylogram').offsetWidth - 420 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 
 	console.log(
@@ -38,11 +48,13 @@ function load(newick) {
 	)
 
 	const calcHeight = 800 * Math.min(5, Math.max(0.35, newickNodes.length / 65))
-	d3.phylogram.build('#phylogram', newick, {
-		width: calcWidth,
+	d3.phylogram.build('#phylogram', newickData, {
+		width: maxWidth,
 		height: calcHeight,
-		formatLeafNodeLabel: node =>
-			`${node.name} [${node.ident}] (${node.length})`,
+		formatLeafNodeLabel: node => {
+			let name = node.name.replace(/_/g, ' ')
+			return `${name} [${node.ident}] (${node.length})`
+		},
 		nonmonophyly: nmResults.nm.map(pair => pair.map(node => node.ident)),
 		onNodeClicked: onNodeClicked,
 	})
@@ -113,3 +125,24 @@ function getWhitelist() {
 		.value.trim()
 		.split(/,\s*/)
 }
+
+
+// this next block taken from MDN
+(function() {
+    var throttle = function(type, name, obj) {
+        obj = obj || window;
+        var running = false;
+        var func = function() {
+            if (running) { return; }
+            running = true;
+             requestAnimationFrame(function() {
+                obj.dispatchEvent(new CustomEvent(name));
+                running = false;
+            });
+        };
+        obj.addEventListener(type, func);
+    };
+
+    /* init - you can init any event */
+    throttle("resize", "optimizedResize");
+})();
