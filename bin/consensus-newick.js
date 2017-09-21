@@ -13,7 +13,6 @@ function consensusTreeNewick(input) {
 		.split('\n')
 		.map(l => l.trim())
 		.filter(x => x)
-		.map(l => l.replace('_', ' '))
 
 	let treeRegex = /tree\s+\S+\s+=\s+\[[^\n\r\]]+\]\s+([^;\n\r]+;)/g
 	let conTree = treeRegex.exec(input)[1]
