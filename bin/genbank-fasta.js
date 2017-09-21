@@ -2,6 +2,7 @@
 'use strict'
 
 const getData = require('../lib/get-data')
+const take = require('lodash/take')
 
 function* parseGenbankEntry(data) {
 	let current = ''
@@ -53,11 +54,10 @@ function genbankEntryToObject(data) {
 }
 
 const genbankEntryToFasta = entry => {
-	let definition = entry.DEFINITION
-	// we've decided that we don't need any information after the first comma
-	definition = definition.split(',')[0]
-	// genbank (or some tool) doesn't like spaces in the names
-	definition = definition.replace(/[^a-z0-9]/gi, '_')
+	// We only want the first two words in the ORGANISM field
+	let species = take(entry.ORGANISM.split(' '), 2).join(' ')
+	// Genbank (or some tool) doesn't like spaces in the names
+	species = species.replace(/[^a-z0-9]/gi, '_')
 
 	let accession = entry.ACCESSION
 
@@ -65,7 +65,7 @@ const genbankEntryToFasta = entry => {
 	origin = origin.replace(/ /g, '')
 
 	let divider = '__'
-	let name = `${definition}${divider}${accession}`
+	let name = `${species}${divider}${accession}`
 
 	// mrbayes only accepts names of < 99 chars
 	if (name.length > 99) {
