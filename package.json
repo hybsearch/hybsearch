@@ -44,6 +44,7 @@
     "minimist": "1.2.0",
     "normalize.css": "7.0.0",
     "serialize-error": "2.1.0",
-    "tempfile": "2.0.0"
+    "tempfile": "2.0.0",
+    "wordwrap": "1.0.0"
   }
 }
