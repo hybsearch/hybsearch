@@ -73,7 +73,7 @@ const genbankEntryToFasta = entry => {
 		name = `${definition.substr(0, cutoff)}${divider}${accession}`
 	}
 
-	return `> ${name}\n${origin}\n`
+	return `> ${name}\n${origin}`
 }
 
 module.exports = genbankToFasta
