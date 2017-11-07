@@ -23,22 +23,34 @@ Our current versions of our dependencies:
 - Beagle: 2.1.2
 - OpenMPI: 2.1.1
 - Clustal-Omega (included): 1.2.0
-- MrBayes (inlcuded): 3.2.6
+- MrBayes (included): 3.2.6
 - Electron (included): 1.6.10
 - seq-gen (included): 1.3.3
 - seqmagick (included): 0.6.1
 
-pipeline:
+If you are running on Debian, you will need to enable non-free repositories (for seq-gen) and then install the following:
+
+```shell
+apt-get install --no-install-recommends clustalo mrbayes seq-gen python
+```
+
+sample pipeline:
 
 ```shell
 cat data/emydura-short.gb \
-	| ./bin/genbank-fasta.js - \
-	| ./bin/clustal-o.js - \
-	| ./bin/fasta-to-nexus.js - \
-	| ./bin/mrbayes.js - \
-	| ./bin/consensus-newick.js - \
-	| ./bin/newick-json.js - \
-	| ./ent.js -
+	| node ./bin/genbank-fasta.js - \
+	| node ./bin/clustal-o.js - \
+	| node ./bin/fasta-to-nexus.js - \
+	| node ./bin/mrbayes.js - \
+	| node ./bin/consensus-newick.js - \
+	| node ./bin/newick-json.js - \
+	| node ./lib/ent.js -
+```
+
+to use docker:
+
+```shell
+docker run -it hawkrives/hybsearch bash /hybsearch/scripts/compare-ent.sh /hybsearch/data/emydura-short.gb
 ```
 
 to convert files:

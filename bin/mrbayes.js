@@ -10,6 +10,7 @@ const path = require('path')
 const getData = require('../lib/get-data')
 const minimist = require('minimist')
 const dedent = require('dedent')
+const whichOs = require('../lib/which-os')
 
 /*
 $ mb
@@ -50,14 +51,18 @@ function mrbayes(data, argv) {
 
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let mb = '/usr/local/bin/mpirun'
-	// prettier-ignore
-	let args = [
-		'-np', '4',
-		'-mca', 'plm', 'isolated',
-		path.join('vendor', 'MrBayes-osx', 'mb-mpi'),
-		inputFile,
-	]
+	let mb = '/usr/bin/mb'
+	let args = [inputFile]
+	if (whichOs.isMac()) {
+		mb = '/usr/local/bin/mpirun'
+		// prettier-ignore
+		args = [
+			'-np', '4',
+			'-mca', 'plm', 'isolated',
+			path.join('vendor', 'MrBayes-osx', 'mb-mpi'),
+			inputFile,
+		]
+	}
 
 	let result = execa.sync(mb, args, {
 		env: {
