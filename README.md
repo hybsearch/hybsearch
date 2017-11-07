@@ -47,6 +47,12 @@ cat data/emydura-short.gb \
 	| node ./lib/ent.js -
 ```
 
+to use docker:
+
+```shell
+docker run -it hawkrives/hybsearch bash /hybsearch/scripts/compare-ent.sh /hybsearch/data/emydura-short.gb
+```
+
 to convert files:
 
 ```shell
