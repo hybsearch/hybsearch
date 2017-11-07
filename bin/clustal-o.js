@@ -6,6 +6,7 @@ const tempfile = require('tempfile')
 const fs = require('fs')
 const path = require('path')
 const getData = require('../lib/get-data')
+const whichOs = require('../lib/which-os')
 
 module.exports = clustal
 function clustal(data) {
@@ -13,8 +14,10 @@ function clustal(data) {
 	const outputFile = tempfile()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	let executable = path.join(__dirname, '..', 'vendor', 'clustalo-osx')
-	// prettier-ignore
+	let executable = whichOs.isMac()
+		? path.join(__dirname, '..', 'vendor', 'clustalo-osx')
+		: '/usr/bin/clustalo'
+
 	let args = [
 		'--in', inputFile,
 		'--out', outputFile,
