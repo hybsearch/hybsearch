@@ -28,17 +28,23 @@ Our current versions of our dependencies:
 - seq-gen (included): 1.3.3
 - seqmagick (included): 0.6.1
 
-pipeline:
+If you are running on Debian, you will need to enable non-free repositories (for seq-gen) and then install the following:
+
+```shell
+apt-get install --no-install-recommends clustalo mrbayes seq-gen python
+```
+
+sample pipeline:
 
 ```shell
 cat data/emydura-short.gb \
-	| ./bin/genbank-fasta.js - \
-	| ./bin/clustal-o.js - \
-	| ./bin/fasta-to-nexus.js - \
-	| ./bin/mrbayes.js - \
-	| ./bin/consensus-newick.js - \
-	| ./bin/newick-json.js - \
-	| ./ent.js -
+	| node ./bin/genbank-fasta.js - \
+	| node ./bin/clustal-o.js - \
+	| node ./bin/fasta-to-nexus.js - \
+	| node ./bin/mrbayes.js - \
+	| node ./bin/consensus-newick.js - \
+	| node ./bin/newick-json.js - \
+	| node ./lib/ent.js -
 ```
 
 to convert files:
