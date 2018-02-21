@@ -5,9 +5,7 @@
 
 ## To Install
 
-- install homebrew: `<https://brew.sh>`
-- install docker: `brew install docker-ce`
--
+- install docker: [docker.com](https://store.docker.com/search?type=edition&offering=community) or `brew install docker-ce` (with <https://brew.sh> installed)
 
 ## To Run
 Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
@@ -18,8 +16,8 @@ You will also need to run the following to start the server process that does th
 docker run --port 8080:8080 -it hybsearch/hybsearch
 ```
 
-- TODO: Allow pointing the local electron client app at a remote server container. 
-- TODO: Support automatically starting the server process if it's not running. 
+- TODO: Allow pointing the local electron client app at a remote server container.
+- TODO: Support automatically starting the server process if it's not running.
 
 ---
 
@@ -34,10 +32,11 @@ Or
 - Node: 9.5.x
 - Beagle: 2.1.2
 - OpenMPI: 2.1.1
-- Clustal-Omega (included): 1.2.0
-- MrBayes (included): 3.2.6
-- Electron (included): 1.6.10
-- seqmagick (included): 0.6.1
+- Clustal-Omega: 1.2.0
+- MrBayes: 3.2.6
+- Electron: 1.6.10
+- seq-gen: 1.3.3
+- seqmagick: 0.6.1
 
 If you have Docker installed, all you need to do is (in the project root)
 
@@ -48,7 +47,7 @@ $ ./hybsearch
 
 which will start the server that the electron app uses.
 
-If you don't have docker, TBD. If you're on Windows, TBA. 
+If you don't have docker, TBD. If you're on Windows, TBA.
 
 ## Misc Notes
 
