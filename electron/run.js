@@ -27,7 +27,7 @@ function run() {
 
 	const ws = new WebSocket('ws://localhost:8080/')
 
-	ws.addEventListener('message', packet => onMessage(packet, mutableArgs))
+	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
 	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
 	ws.addEventListener('error', console.log.bind(console, 'error'))
 	ws.addEventListener('exit', console.log.bind(console, 'exit'))
