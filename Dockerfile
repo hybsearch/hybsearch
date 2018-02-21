@@ -42,3 +42,5 @@ RUN ARCH='x64' && dpkgArch="$(dpkg --print-architecture)" \
 
 ADD . /hybsearch
 WORKDIR /hybsearch
+
+RUN "node ./scripts/server.js 8080"
