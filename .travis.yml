@@ -52,9 +52,9 @@ jobs:
         - |
           if [[ $TRAVIS_BRANCH = master ]]; then
             docker_tag="$DEST_NAME:HEAD"
-          else if [[ $TRAVIS_TAG ]]; then
+          elif [[ $TRAVIS_TAG ]]; then
             docker_tag="$DEST_NAME:$TRAVIS_TAG"
-          else if [[ $TRAVIS_BRANCH ]]; then
+          elif [[ $TRAVIS_BRANCH ]]; then
             docker_tag="$DEST_NAME:$TRAVIS_BRANCH"
           fi
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
