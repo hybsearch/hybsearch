@@ -10,11 +10,12 @@ addons:
   apt: {packages: [docker-ce]}
 
 env:
-  - LOCAL_NAME=hybsearch
-  - DEST_NAME=docker.io/hybsearch/hybsearch
-  - GIT_TAG="$TRAVIS_TAG"
-  - GIT_BRANCH="$TRAVIS_BRANCH"
-  - GIT_SHA="$TRAVIS_COMMIT"
+  global:
+    - LOCAL_NAME=hybsearch
+    - DEST_NAME=docker.io/hybsearch/hybsearch
+    - GIT_TAG="$TRAVIS_TAG"
+    - GIT_BRANCH="$TRAVIS_BRANCH"
+    - GIT_SHA="$TRAVIS_COMMIT"
 
 before_script:
   - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
