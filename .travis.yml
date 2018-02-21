@@ -50,7 +50,7 @@ jobs:
       script:
         - image_id="$(docker images -q "$LOCAL_NAME")"
         - |
-          if [[ $TRAVIS_BRANCH == master ]]; then
+          if [[ $TRAVIS_BRANCH = master ]]; then
             docker_tag="$DEST_NAME:HEAD"
           else if [[ $TRAVIS_TAG ]]; then
             docker_tag="$DEST_NAME:$TRAVIS_TAG"
