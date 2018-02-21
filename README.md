@@ -28,7 +28,7 @@ Any changes you make to the JS can be run by simply pressing <kbd>⌘R</kbd>. Th
 ### For the Docker container / data pipeline
 Whenever you change the data pipeline, you will need to rebuild the Docker image.
 
-We recommend using a local Docker tag to test with; anywhere you write `hybsearch/hybsearch`, you should just write `hybsearch` instead.
+We recommend using a local Docker tag to test with; anywhere you would write `hybsearch/hybsearch`, you should just write `hybsearch` instead.
 
 To rebuild the container:
 
