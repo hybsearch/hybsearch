@@ -21,12 +21,11 @@ if (Number.isNaN(numericPort)) {
 
 const wss = new WebSocket.Server({port: numericPort})
 const workerPath = path.join(__dirname, '..', 'lib', 'worker.js')
+const child = childProcess.fork(workerPath)
 
 // listen for new websocket connections
 wss.on('connection', ws => {
 	console.log('connection initiated')
-
-	const child = childProcess.fork(workerPath)
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
