@@ -11,7 +11,7 @@ addons:
       - docker-ce
 
 before_install:
-  - docker build -t docker.io/hybsearch/hybsearch .
+  - docker build -t hybsearch .
 
 script:
-  - docker run docker.io/hybsearch/hybsearch /bin/sh -c "node ./scripts/worker-host-test.js"
+  - docker run hybsearch /bin/sh -c "node ./scripts/worker-host-test.js"
