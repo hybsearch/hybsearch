@@ -4,7 +4,7 @@ x-config:
   - &name "hybsearch/hybsearch"
   - &defaults
     docker:
-      - image: debian:stretch
+      - image: node:8
     environment:
       LOCAL_NAME: *name
 
