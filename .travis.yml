@@ -61,7 +61,7 @@ jobs:
         - docker tag "$image_id" "$docker_tag"
         - docker push "$docker_tag"
         - |
-          if [[ $TRAVIS_TAG ]]; then
+          if [[ $TRAVIS_TAG ]] || [[ $TRAVIS_BRANCH = master ]]; then
             docker tag "$image_id" "$DEST_NAME:latest"
             docker push "$DEST_NAME:latest"
           fi
