@@ -31,18 +31,22 @@ jobs:
   include:
     # "prepare" just builds and caches the Docker image for us
     - stage: prepare
+      env: [TASK=prepare]
       script: skip
 
     # check that the whole pipeline runs at all
     - stage: test
+      env: [TASK=worker-runner]
       script: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME" - < data/emydura-short.gb
 
     # test ent.js against all our sample files
     - stage: test
+      env: [TASK=test-ent]
       script: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME"
 
     # deploy the docker images to Docker Hub
     - stage: deploy
+      env: [TASK=deploy]
       script: skip
       after_success:
         - image_id="$(docker images -q "$LOCAL_NAME")"
