@@ -6,12 +6,20 @@
 ## To Install
 
 - install homebrew: `<https://brew.sh>`
-- install node: `brew install node`
-- install things: `brew install homebrew/science/beagle --with-opencl`
-- install openmpi: `brew install open-mpi`
+- install docker: `brew install docker-ce`
+-
 
 ## To Run
 Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
+
+You will also need to run the following to start the server process that does the data manipulation:
+
+```
+docker run --port 8080:8080 -it hybsearch/hybsearch
+```
+
+- TODO: Allow pointing the local electron client app at a remote server container. 
+- TODO: Support automatically starting the server process if it's not running. 
 
 ---
 
@@ -19,7 +27,11 @@ Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd
 
 Our current versions of our dependencies:
 
-- Node: 7.9.0
+- Docker: 17.20.x
+
+Or
+
+- Node: 9.5.x
 - Beagle: 2.1.2
 - OpenMPI: 2.1.1
 - Clustal-Omega (included): 1.2.0
@@ -27,39 +39,26 @@ Our current versions of our dependencies:
 - Electron (included): 1.6.10
 - seqmagick (included): 0.6.1
 
-If you are running on Debian, you will need to install the following:
+If you have Docker installed, all you need to do is (in the project root)
 
-```shell
-apt-get install --no-install-recommends clustalo mrbayes python
+```
+$ docker run --port 8080:8080 -it hybsearch/hybsearch
+$ ./hybsearch
 ```
 
-sample pipeline:
+which will start the server that the electron app uses.
 
-```shell
-cat data/emydura-short.gb \
-	| node ./bin/genbank-fasta.js - \
-	| node ./bin/clustal-o.js - \
-	| node ./bin/fasta-to-nexus.js - \
-	| node ./bin/mrbayes.js - \
-	| node ./bin/consensus-newick.js - \
-	| node ./bin/newick-json.js - \
-	| node ./lib/ent.js -
-```
+If you don't have docker, TBD. If you're on Windows, TBA. 
 
-to use docker:
+## Misc Notes
 
-```shell
-docker run -it hawkrives/hybsearch bash /hybsearch/scripts/compare-ent.sh /hybsearch/data/emydura-short.gb
-```
-
-to convert files:
+### To convert files:
 
 ```shell
 ./vendor/seqmagick/cli.py convert --input-format fasta --output-format nexus --alphabet dna <input> <output>
 ```
 
-
-## How to update Electron:
+### How to update Electron:
 
 - `npm install -g electron-download`
 - `electron-download --version=<version>`
@@ -67,6 +66,8 @@ to convert files:
 - Edit the `hybsearch` file to point to the new path
 - Remove the old folder
 
+
+### Some HammingDistance Notes:
 
 ```
 >>> hamming-distance speciesA speciesB
