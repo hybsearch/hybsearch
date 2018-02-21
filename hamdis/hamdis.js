@@ -5,11 +5,10 @@ const max = require('lodash/max')
 const min = require('lodash/min')
 const mean = require('lodash/mean')
 
-const estimateGenerations = require('../lib/estimate-generations')
-const hammingDistance = require('../lib/hamming-distance')
+const estimateGenerations = require('./estimate-generations')
+const hammingDistance = require('./hamming-distance')
 
 const parseFasta = require('../lib/parse-fasta')
-const paired = require('../lib/pair-array')
 
 // TODO: we need a new run of the function for each nonmonophyletic pair
 function hamdis(file) {
@@ -26,7 +25,6 @@ function hamdis(file) {
 	// Cycle through the pairs and compare them, recording results in `out`.
 	let out = []
 
-	// TODO: replace with combinatorics function
 	let first = true
 	for (let [a, b] of combs(data, 2)) {
 		if (first) {
