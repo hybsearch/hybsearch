@@ -15,7 +15,7 @@ before_install:
 matrix:
   include:
     # check that the whole pipeline runs at all
-    - script: docker run hybsearch node /hybsearch/scripts/worker-runner.js
+    - script: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js hybsearch - < data/emydura-short.gb
 
     # test ent.js against all our sample files
     - script: docker run --entrypoint /hybsearch/scripts/test-ent.sh hybsearch
