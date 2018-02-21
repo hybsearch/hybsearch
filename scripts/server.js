@@ -4,39 +4,49 @@ const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
 
-if (process.argv.length < 3) {
-	console.error('usage: server.js [PORT]')
+const [port=8080] = process.argv.slice(2)
+const numericPort = parseInt(port)
+
+if (port === '-h' || port === '--help') {
+	console.error('usage: server.js [PORT=8080]')
 	process.exit(1)
 }
 
-const port = parseInt(process.argv[2]) || 8080
+if (Number.isNaN(numericPort)) {
+	console.error('usage: server.js [PORT=8080]')
+	console.error('error: given port was not a number')
+	process.exit(1)
+}
 
-const wss = new WebSocket.Server({port: port})
+const wss = new WebSocket.Server({port: numericPort})
+const workerPath = path.join(__dirname, '..', 'lib', 'worker.js')
 
-const child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
-
+// listen for new websocket connections
 wss.on('connection', ws => {
+	console.log('connection initiated')
+
+	const child = childProcess.fork(workerPath)
+
 	ws.on('message', communique => {
-		let [cmd, filepath, data] = JSON.parse(communique)
+		// when we get a message from the GUI
+		const [cmd, ...args] = JSON.parse(communique)
 
-		if (cmd === 'start') {
-			child.send(['start', filepath, data])
-		}
-
-		console.log('got', communique)
+		// forward the message to the pipeline
+		child.send([cmd, ...args])
 	})
-})
 
-child.on('message', communique => {
-	let [cmd, msg] = communique
+	child.on('message', communique => {
+		// when we get a message from the pipeline
+		const [cmd, ...args] = communique
 
-	child.send(JSON.stringify([cmd, msg]))
+		// forward the message to the GUI
+		ws.send(JSON.stringify([cmd, ...args]))
 
-	console.log('sent', communique)
-
-	if (cmd === 'exit' || cmd === 'error') {
-		child.disconnect()
-	}
+		// detach ourselves if the pipeline has finished
+		if (cmd === 'exit' || cmd === 'error') {
+			child.disconnect()
+		}
+	})
 })
 
 console.log(`listening on localhost:${port}`)
