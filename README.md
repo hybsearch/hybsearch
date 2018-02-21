@@ -3,9 +3,10 @@
 
 > A tool to find nonmonophyly in a phylogenetic tree.
 
-## To Install
 
+## To Install
 - install docker: [docker.com](https://store.docker.com/search?type=edition&offering=community) or `brew install docker-ce` (with <https://brew.sh> installed)
+
 
 ## To Run
 Two steps:
@@ -17,9 +18,34 @@ If you don't have docker, TODO.
 
 If you're on Windows, TODO.
 
----
+
+## To Develop
+You'll need Docker, still.
+
+### For the Electron app
+Any changes you make to the JS can be run by simply pressing <kbd>⌘R</kbd>. There is no build process.
+
+### For the Docker container / data pipeline
+Whenever you change the data pipeline, you will need to rebuild the Docker image.
+
+We recommend using a local Docker tag to test with; anywhere you write `hybsearch/hybsearch`, you should just write `hybsearch` instead.
+
+To rebuild the container:
+
+```
+docker build -t hybsearch .
+```
+
+To run your rebuilt container:
+
+```
+docker run -p 8080:8080 -t hybsearch
+```
+
 
 ## Miscallaneous Bits
+
+### Dependencies
 
 Our current versions of our dependencies:
 
@@ -45,7 +71,6 @@ $ ./hybsearch
 
 which will start the server that the electron app uses.
 
-## Misc Notes
 
 ### To convert files:
 
