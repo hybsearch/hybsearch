@@ -28,7 +28,8 @@
     "minimist",
     "normalize.css",
     "serialize-error",
-    "tempfile"
+    "tempfile",
+    "ws"
   ],
   "dependencies": {
     "biojs-io-newick": "1.5.0",
@@ -44,6 +45,7 @@
     "normalize.css": "7.0.0",
     "serialize-error": "2.1.0",
     "tempfile": "2.0.0",
-    "wordwrap": "1.0.0"
+    "wordwrap": "1.0.0",
+    "ws": "4.0.0"
   }
 }
