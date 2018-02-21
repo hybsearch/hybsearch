@@ -25,12 +25,13 @@ Our current versions of our dependencies:
 - Clustal-Omega (included): 1.2.0
 - MrBayes (included): 3.2.6
 - Electron (included): 1.6.10
+- seq-gen (included): 1.3.3
 - seqmagick (included): 0.6.1
 
-If you are running on Debian, you will need to install the following:
+If you are running on Debian, you will need to enable non-free repositories (for seq-gen) and then install the following:
 
 ```shell
-apt-get install --no-install-recommends clustalo mrbayes python
+apt-get install --no-install-recommends clustalo mrbayes seq-gen python
 ```
 
 sample pipeline:
