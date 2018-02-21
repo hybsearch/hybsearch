@@ -14,4 +14,4 @@ RUN apt-get update \
 ADD . /hybsearch
 WORKDIR /hybsearch
 
-RUN "node ./scripts/server.js 8080"
+ENTRYPOINT ./scripts/server.js 8080
