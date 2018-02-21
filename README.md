@@ -8,16 +8,14 @@
 - install docker: [docker.com](https://store.docker.com/search?type=edition&offering=community) or `brew install docker-ce` (with <https://brew.sh> installed)
 
 ## To Run
-Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
+Two steps:
 
-You will also need to run the following to start the server process that does the data manipulation:
+1. Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
+2. Run `docker run -p 8080:8080 -t hybsearch/hybsearch`
 
-```
-docker run --port 8080:8080 -it hybsearch/hybsearch
-```
+If you don't have docker, TODO.
 
-- TODO: Allow pointing the local electron client app at a remote server container.
-- TODO: Support automatically starting the server process if it's not running.
+If you're on Windows, TODO.
 
 ---
 
@@ -29,7 +27,7 @@ Our current versions of our dependencies:
 
 Or
 
-- Node: 9.5.x
+- Node: 8.x
 - Beagle: 2.1.2
 - OpenMPI: 2.1.1
 - Clustal-Omega: 1.2.0
@@ -41,13 +39,11 @@ Or
 If you have Docker installed, all you need to do is (in the project root)
 
 ```
-$ docker run --port 8080:8080 -it hybsearch/hybsearch
+$ docker run --port 8080:8080 -t hybsearch/hybsearch
 $ ./hybsearch
 ```
 
 which will start the server that the electron app uses.
-
-If you don't have docker, TBD. If you're on Windows, TBA.
 
 ## Misc Notes
 
@@ -64,7 +60,6 @@ If you don't have docker, TBD. If you're on Windows, TBA.
 - Copy the zip from `~/.electron` and extract it into `hybsearch/vendor`
 - Edit the `hybsearch` file to point to the new path
 - Remove the old folder
-
 
 ### Some HammingDistance Notes:
 
