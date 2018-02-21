@@ -1,13 +1,81 @@
 version: 2
-jobs:
-  build:
+
+x-config:
+  - &name "hybsearch/hybsearch"
+  - &defaults
     docker:
       - image: debian:stretch
+    environment:
+      LOCAL_NAME: *name
+
+workflows:
+  version: 2
+  on_commit:
+    jobs:
+      - build
+      - test-worker: {requires: [build]}
+      - test-ent: {requires: [build]}
+      # - deploy: {requires: [test-worker, test-ent]}
+  cron_weekly:
+    triggers:
+      - schedule:
+          # only run Monday morning at 12:00am
+          cron: 0 0 * * 1
+          filters:
+            branches:
+              only: [master]
+    jobs:
+      - build
+      - test-worker: {requires: [build]}
+      - test-ent: {requires: [build]}
+
+jobs:
+  # build the docker image
+  build:
+    <<: *defaults
     steps:
       - checkout
+      - setup_remote_docker: {docker_layer_caching: true}
+      - run: docker build -t "$LOCAL_NAME" .
+
+  # check that the whole pipeline runs at all
+  test-worker:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker: {docker_layer_caching: true}
+      - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME" - < data/emydura-short.gb
+
+  # test ent.js against all our sample files
+  test-ent:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker: {docker_layer_caching: true}
+      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME"
+
+  # deploy the docker images to Docker Hub
+  deploy:
+    <<: *defaults
+    environment:
+      - run: image_id="$(docker images -q "$LOCAL_NAME")"
       - run:
-          name: Greeting
-          command: echo "Hello, world."
+          name: Pick docker tag
+          command: |
+            if [[ $TRAVIS_BRANCH = master ]]; then
+              docker_tag="$DEST_NAME:HEAD"
+            elif [[ $TRAVIS_TAG ]]; then
+              docker_tag="$DEST_NAME:$TRAVIS_TAG"
+            elif [[ $TRAVIS_BRANCH ]]; then
+              docker_tag="$DEST_NAME:$TRAVIS_BRANCH"
+            fi
+      - run: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      - run: docker tag "$image_id" "$docker_tag"
+      - run: docker push "$docker_tag"
       - run:
-          name: Print the Current Time
-          command: date
+          name: tag and push "latest"
+          command: |
+            if [[ $TRAVIS_TAG ]]; then
+              docker tag "$image_id" "$DEST_NAME:latest"
+              docker push "$DEST_NAME:latest"
+            fi
