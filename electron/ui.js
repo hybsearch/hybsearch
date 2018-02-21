@@ -13,7 +13,7 @@ document.querySelector('#start').addEventListener('click', () => {
 })
 
 document.querySelector('#use-thing3').addEventListener('click', () => {
-	document.querySelector('#server-url').value = 'ws://thing3.cs.stolaf.edu:8080/'
+	document.querySelector('#server-url').value = document.querySelector('#use-thing3').dataset.url
 })
 
 const files = getFiles()
