@@ -57,7 +57,7 @@ jobs:
   # deploy the docker images to Docker Hub
   deploy:
     <<: *defaults
-    environment:
+    steps:
       - run: image_id="$(docker images -q "$LOCAL_NAME")"
       - run:
           name: Pick docker tag
