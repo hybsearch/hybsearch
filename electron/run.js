@@ -9,7 +9,7 @@ const childProcess = require('child_process')
 const path = require('path')
 
 module.exports = run
-function run() {
+function run(server='ws://localhost:8080/') {
 	let filepicker = document.querySelector('#load-file')
 	let filedropdown = document.querySelector('#pick-file')
 	let filepath = filepicker.files.length
@@ -25,7 +25,7 @@ function run() {
 		label: 'process',
 	}
 
-	const ws = new WebSocket('ws://localhost:8080/')
+	const ws = new WebSocket(server)
 
 	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
 	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))

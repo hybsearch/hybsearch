@@ -7,7 +7,14 @@ const toPairs = require('lodash/toPairs')
 const getFiles = require('./get-files')
 const run = require('./run')
 
-document.querySelector('#start').addEventListener('click', run)
+document.querySelector('#start').addEventListener('click', () => {
+	const server = document.querySelector('#server-url').value
+	run(server)
+})
+
+document.querySelector('#use-thing3').addEventListener('click', () => {
+	document.querySelector('#server-url').value = 'ws://thing3.cs.stolaf.edu:8080/'
+})
 
 const files = getFiles()
 const groupedFiles = groupBy(files, f => {
@@ -25,6 +32,7 @@ const groupedFiles = groupBy(files, f => {
 
 	return f.split('.')[f.split('.').length - 1]
 })
+
 const optgroups = mapValues(groupedFiles, (group, groupedBy) =>
 	group.map(filename => {
 		let opt = document.createElement('option')
