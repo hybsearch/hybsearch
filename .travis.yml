@@ -1,17 +1,21 @@
 os: linux
 distro: trusty
+
 sudo: required
 
 services:
   - docker
 
 addons:
-  apt:
-    packages:
-      - docker-ce
+  apt: {packages: [docker-ce]}
 
 before_install:
   - docker build -t hybsearch .
 
-script:
-  - docker run hybsearch node /hybsearch/scripts/worker-runner.js
+matrix:
+  include:
+    # check that the whole pipeline runs at all
+    - script: docker run hybsearch node /hybsearch/scripts/worker-runner.js
+
+    # test ent.js against all our sample files
+    - script: docker run --entrypoint /hybsearch/scripts/test-ent.sh hybsearch
