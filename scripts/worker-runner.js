@@ -18,22 +18,23 @@ const child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 child.on('message', communique => {
 	let [cmd, msg] = communique
 
-	if (cmd === 'error') {
-		console.error('error!', msg)
-	} else if (cmd === 'finish') {
-		console.log('finish')
-		console.log()
-		console.log('the newick tree is below:')
-		console.log()
-		console.log(msg)
-	} else if (cmd === 'exit') {
-		console.log()
-		console.log('exit')
-	} else {
-		console.log(cmd, msg)
+	switch (cmd) {
+		case 'error':
+			console.error('error!', msg)
+		case 'exit':
+			console.log()
+			console.log('exit')
+		case 'finish':
+			console.log('finish')
+			console.log()
+			console.log('the newick tree is below:')
+			console.log()
+			console.log(msg)
+		default:
+			console.log(cmd, msg)
 	}
 
-	if (cmd == 'exit' || cmd == 'error') {
+	if (cmd === 'exit' || cmd === 'error') {
 		child.disconnect()
 	}
 })
