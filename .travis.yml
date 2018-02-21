@@ -47,21 +47,24 @@ jobs:
     # deploy the docker images to Docker Hub
     - stage: deploy
       env: [TASK=deploy]
-      script: skip
-      after_success:
+      script:
         - image_id="$(docker images -q "$LOCAL_NAME")"
         - |
-          if [[ $TRAVIS_TAG == latest ]]; then
-            docker tag "$image_id" "$DEST_NAME:latest"
-          else if [[ $TRAVIS_BRANCH == master ]]; then
-            docker tag "$image_id" "$DEST_NAME:HEAD"
+          if [[ $TRAVIS_BRANCH == master ]]; then
+            docker_tag="$DEST_NAME:HEAD"
           else if [[ $TRAVIS_TAG ]]; then
-            docker tag "$image_id" "$DEST_NAME:$TRAVIS_TAG"
+            docker_tag="$DEST_NAME:$TRAVIS_TAG"
           else if [[ $TRAVIS_BRANCH ]]; then
-            docker tag "$image_id" "$DEST_NAME:$TRAVIS_BRANCH"
+            docker_tag="$DEST_NAME:$TRAVIS_BRANCH"
           fi
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-        - docker push hybsearch/hybsearch
+        - docker tag "$image_id" "$docker_tag"
+        - docker push "$docker_tag"
+        - |
+          if [[ $TRAVIS_TAG ]]; then
+            docker tag "$image_id" "$DEST_NAME:latest"
+            docker push "$DEST_NAME:latest"
+          fi
 
 cache:
   directories:
