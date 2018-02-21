@@ -4,6 +4,7 @@
 const { parse: parseNewick } = require('../vendor/newick')
 const { load } = require('./graph')
 
+const fs = require('fs')
 const childProcess = require('child_process')
 const path = require('path')
 
@@ -37,7 +38,8 @@ function run() {
 	child.on('error', console.log.bind(console, 'error'))
 	child.on('exit', console.log.bind(console, 'exit'))
 
-	child.send(filepath, err => {
+	const data = fs.readFileSync(filepath, 'utf-8')
+	child.send(['start', filepath, data], err => {
 		if (err) {
 			console.error('child error', err)
 		}
