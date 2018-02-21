@@ -18,12 +18,12 @@ env:
     - GIT_SHA="$TRAVIS_COMMIT"
 
 before_script:
-  - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+  # - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
   - docker build --rm=false -t "$LOCAL_NAME" .
-  - mkdir -p ~/docker; docker save "$LOCAL_NAME" > ~/docker/image.tar
+  # - mkdir -p ~/docker; docker save "$LOCAL_NAME" > ~/docker/image.tar
 
 stages:
-  - prepare
+  # - prepare
   - test
   - deploy
 
