@@ -4,8 +4,8 @@
 const getData = require('../lib/get-data')
 const range = require('lodash/range')
 
-const hamdis = require('../lib/hamdis')
-const estimateGenerations = require('../lib/estimate-generations')
+const hamdis = require('../hamdis/hamdis')
+const estimateGenerations = require('../hamdis/estimate-generations')
 
 function main() {
 	return getData(process.argv[2])

@@ -2,7 +2,7 @@
 'use strict'
 
 // Calculate the hamming distance between two sequences
-const hammingDistance = require('../lib/hamming-distance')
+const hammingDistance = require('../hamdis/hamming-distance')
 const readFile = require('../lib/get-data').readFile
 
 function main() {
