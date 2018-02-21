@@ -37,6 +37,12 @@ wss.on('connection', ws => {
 		child.send([cmd, ...args])
 	})
 
+  ws.on('close', () => {
+    console.log('connection was closed')
+
+    child.disconnect()
+  })
+
 	child.on('message', communique => {
 		// when we get a message from the pipeline
 		const [cmd, ...args] = communique
