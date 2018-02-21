@@ -30,9 +30,9 @@ stages:
 jobs:
   include:
     # "prepare" just builds and caches the Docker image for us
-    - stage: prepare
-      env: [TASK=prepare]
-      script: skip
+    # - stage: prepare
+    #   env: [TASK=prepare]
+    #   script: skip
 
     # check that the whole pipeline runs at all
     - stage: test
