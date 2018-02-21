@@ -24,20 +24,10 @@ function run() {
 		start: performance.now(),
 		label: 'process',
 	}
-	// let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
-
-	// still doesn't work.
-	// current problem: the calls to execSync in `child`s children
-	// don't get the signal.
-	// let killChildProcess = () => child.kill()
-	// process.on('exit', killChildProcess)
-	// window.addEventListener('beforeunload', killChildProcess)
 
 	const ws = new WebSocket('ws://localhost:8080/')
 
-	console.log(ws)
-
-	ws.addEventListener('message', packet => onMessage(packet, mutableArgs))//, child))
+	ws.addEventListener('message', packet => onMessage(packet, mutableArgs))
 	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
 	ws.addEventListener('error', console.log.bind(console, 'error'))
 	ws.addEventListener('exit', console.log.bind(console, 'exit'))
@@ -50,7 +40,6 @@ function run() {
 			}
 		})
 	})
-
 
 	return false
 }
@@ -76,11 +65,9 @@ function onMessage(packet, args, child) {
 			setLoadingError(args.label, taken.toFixed(2))
 			document.querySelector('#error-container').hidden = false
 			document.querySelector('#error-message').innerText = msg.message
-			// child.disconnect()
 			break
 		}
 		case 'exit': {
-			// child.disconnect()
 			break
 		}
 		case 'finish': {
