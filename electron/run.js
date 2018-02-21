@@ -24,32 +24,39 @@ function run() {
 		start: performance.now(),
 		label: 'process',
 	}
-	let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
+	// let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
 	// still doesn't work.
 	// current problem: the calls to execSync in `child`s children
 	// don't get the signal.
-	let killChildProcess = () => child.kill()
-	process.on('exit', killChildProcess)
-	window.addEventListener('beforeunload', killChildProcess)
+	// let killChildProcess = () => child.kill()
+	// process.on('exit', killChildProcess)
+	// window.addEventListener('beforeunload', killChildProcess)
 
-	child.on('message', packet => onMessage(packet, mutableArgs, child))
-	child.on('disconnect', console.log.bind(console, 'disconnect'))
-	child.on('error', console.log.bind(console, 'error'))
-	child.on('exit', console.log.bind(console, 'exit'))
+	const ws = new WebSocket('ws://localhost:8080/')
 
-	const data = fs.readFileSync(filepath, 'utf-8')
-	child.send(['start', filepath, data], err => {
-		if (err) {
-			console.error('child error', err)
-		}
+	console.log(ws)
+
+	ws.addEventListener('message', packet => onMessage(packet, mutableArgs))//, child))
+	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
+	ws.addEventListener('error', console.log.bind(console, 'error'))
+	ws.addEventListener('exit', console.log.bind(console, 'exit'))
+
+	ws.addEventListener('open', () => {
+		const data = fs.readFileSync(filepath, 'utf-8')
+		ws.send(JSON.stringify(['start', filepath, data]), err => {
+			if (err) {
+				console.error('child error', err)
+			}
+		})
 	})
+
 
 	return false
 }
 
 function onMessage(packet, args, child) {
-	let [cmd, msg] = packet
+	let [cmd, msg] = JSON.parse(packet)
 	switch (cmd) {
 		case 'begin': {
 			args.start = performance.now()
@@ -69,11 +76,11 @@ function onMessage(packet, args, child) {
 			setLoadingError(args.label, taken.toFixed(2))
 			document.querySelector('#error-container').hidden = false
 			document.querySelector('#error-message').innerText = msg.message
-			child.disconnect()
+			// child.disconnect()
 			break
 		}
 		case 'exit': {
-			child.disconnect()
+			// child.disconnect()
 			break
 		}
 		case 'finish': {
