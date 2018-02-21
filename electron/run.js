@@ -4,6 +4,7 @@
 const { parse: parseNewick } = require('../vendor/newick')
 const { load } = require('./graph')
 
+const fs = require('fs')
 const childProcess = require('child_process')
 const path = require('path')
 
@@ -23,31 +24,28 @@ function run() {
 		start: performance.now(),
 		label: 'process',
 	}
-	let child = childProcess.fork(path.join(__dirname, '..', 'lib', 'worker.js'))
 
-	// still doesn't work.
-	// current problem: the calls to execSync in `child`s children
-	// don't get the signal.
-	let killChildProcess = () => child.kill()
-	process.on('exit', killChildProcess)
-	window.addEventListener('beforeunload', killChildProcess)
+	const ws = new WebSocket('ws://localhost:8080/')
 
-	child.on('message', packet => onMessage(packet, mutableArgs, child))
-	child.on('disconnect', console.log.bind(console, 'disconnect'))
-	child.on('error', console.log.bind(console, 'error'))
-	child.on('exit', console.log.bind(console, 'exit'))
+	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
+	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
+	ws.addEventListener('error', console.log.bind(console, 'error'))
+	ws.addEventListener('exit', console.log.bind(console, 'exit'))
 
-	child.send(filepath, err => {
-		if (err) {
-			console.error('child error', err)
-		}
+	ws.addEventListener('open', () => {
+		const data = fs.readFileSync(filepath, 'utf-8')
+		ws.send(JSON.stringify(['start', filepath, data]), err => {
+			if (err) {
+				console.error('child error', err)
+			}
+		})
 	})
 
 	return false
 }
 
 function onMessage(packet, args, child) {
-	let [cmd, msg] = packet
+	let [cmd, msg] = JSON.parse(packet)
 	switch (cmd) {
 		case 'begin': {
 			args.start = performance.now()
@@ -67,11 +65,9 @@ function onMessage(packet, args, child) {
 			setLoadingError(args.label, taken.toFixed(2))
 			document.querySelector('#error-container').hidden = false
 			document.querySelector('#error-message').innerText = msg.message
-			child.disconnect()
 			break
 		}
 		case 'exit': {
-			child.disconnect()
 			break
 		}
 		case 'finish': {

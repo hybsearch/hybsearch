@@ -8,3 +8,4 @@ vendor/clustal*
 vendor/electron*
 vendor/MrBayes*
 vendor/Seq-Gen*
+data/*
