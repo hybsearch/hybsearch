@@ -71,6 +71,7 @@ function onMessage(packet, args, child) {
 			break
 		}
 		case 'finish': {
+			document.querySelector('#phylogram').hidden = false
 			load(parseNewick(msg))
 			break
 		}
