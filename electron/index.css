@@ -210,12 +210,6 @@ section input[type='submit'] {
 	cursor: pointer;
 }
 
-::selection {
-	color: #fff;
-	fill: #fff;
-	background-color: var(--teal);
-}
-
 .species-label {
 	text-anchor: start;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
