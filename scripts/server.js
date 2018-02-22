@@ -40,8 +40,9 @@ wss.on('connection', ws => {
 	ws.on('close', () => {
 		console.log('connection was closed')
 
-		if(child.connected)
+		if (child.connected) {
 			child.disconnect()
+		}
 	})
 
 	child.on('message', communique => {
@@ -55,8 +56,9 @@ wss.on('connection', ws => {
 
 		// detach ourselves if the pipeline has finished
 		if (cmd === 'exit' || cmd === 'error') {
-			if(child.connected)
+			if (child.connected) {
 				child.disconnect()
+			}
 		}
 	})
 })
