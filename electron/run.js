@@ -9,7 +9,7 @@ const childProcess = require('child_process')
 const path = require('path')
 
 module.exports = run
-function run() {
+function run(socket) {
 	let filepicker = document.querySelector('#load-file')
 	let filedropdown = document.querySelector('#pick-file')
 	let filepath = filepicker.files.length
@@ -25,20 +25,22 @@ function run() {
 		label: 'process',
 	}
 
-	const ws = new WebSocket('ws://localhost:8080/')
+	const ws = socket;
 
 	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
 	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
 	ws.addEventListener('error', console.log.bind(console, 'error'))
 	ws.addEventListener('exit', console.log.bind(console, 'exit'))
 
-	ws.addEventListener('open', () => {
-		const data = fs.readFileSync(filepath, 'utf-8')
-		ws.send(JSON.stringify(['start', filepath, data]), err => {
-			if (err) {
-				console.error('child error', err)
-			}
-		})
+	if (ws.readyState !== 1) {
+		throw new Error('socket not ready!')
+	}
+
+	const data = fs.readFileSync(filepath, 'utf-8')
+	ws.send(JSON.stringify(['start', filepath, data]), err => {
+		if (err) {
+			console.error('child error', err)
+		}
 	})
 
 	return false
@@ -71,6 +73,7 @@ function onMessage(packet, args, child) {
 			break
 		}
 		case 'finish': {
+			document.querySelector('#phylogram').hidden = false
 			load(parseNewick(msg))
 			break
 		}
