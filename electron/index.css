@@ -1,11 +1,20 @@
 @import '../node_modules/normalize.css/normalize.css';
 
 :root {
-	--blue: rgb(17, 148, 246);
-	--aqua: rgb(92, 185, 255);
-	--red: rgb(148, 17, 17);
-	--black: #1c1c1c;
-	--gray: #cccccc;
+	--blue: #00ADD9;
+	--green: #A3D65C;
+	--teal: #00827E;
+	--red: #E84A36;
+	--black: #242121;
+	--dark-gray: #53585A;
+	--medium-gray: #E0DAD6;
+	--light-gray: #F7F5F2;
+	--white: #fff;
+	--navy: #233746;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 html {
@@ -16,7 +25,7 @@ html {
 body {
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
 	color: var(--black);
-	background: #f7f7f7;
+	background: var(--light-gray);
 	padding: 0;
 }
 
@@ -25,7 +34,7 @@ pre {
 }
 
 section {
-	background: #fff;
+	background: var(--white);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	padding: 30px;
 	margin: 16px 16px;
@@ -71,6 +80,7 @@ section.loader.loading wrapper.content {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	box-sizing: content-box;
 }
 
 .loader .checkmark .icon::before {
@@ -87,7 +97,7 @@ section.loader.loading wrapper.content {
 }
 
 .loader .checkmark.complete {
-	/* color: #2ECC40; */
+	 color: var(--navy);
 }
 
 @keyframes pulse {
@@ -128,8 +138,8 @@ h1 {
 }
 
 h2 {
-	font-size: 1.75em;
-	color: var(--blue);
+	font-size: 1.5em;
+	color: var(--black);
 	margin: 0 0 10px;
 	font-weight: normal;
 }
@@ -203,7 +213,7 @@ section input[type='submit'] {
 ::selection {
 	color: #fff;
 	fill: #fff;
-	background-color: var(--aqua);
+	background-color: var(--teal);
 }
 
 .species-label {
@@ -217,7 +227,7 @@ section input[type='submit'] {
 	text-anchor: end;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
 	font-size: 8px;
-	fill: var(--gray);
+	fill: var(--light-gray);
 }
 
 .leaf-dot {
