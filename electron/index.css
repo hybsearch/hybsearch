@@ -240,3 +240,24 @@ section button {
 	margin-top: 1em;
 	-webkit-margin-end: 1em;
 }
+
+#server-url {
+	width: 250px;
+}
+
+#server-status {
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+
+	background-color: black;
+}
+
+#server-status.up {
+	background-color: var(--green);
+}
+
+#server-status.down {
+	background-color: var(--red);
+}
