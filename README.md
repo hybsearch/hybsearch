@@ -12,7 +12,7 @@
 Two steps:
 
 1. Either double-click the "hybsearch" file in the folder, or, with a terminal, `cd` into the hybsearch folder and run `./hybsearch`.
-2. Run `docker run -p 8080:8080 -t hybsearch/hybsearch`
+2. Run `docker run -p 8080:8080 -it hybsearch/hybsearch`
 
 If you don't have docker, TODO.
 
@@ -39,7 +39,7 @@ docker build -t hybsearch .
 To run your rebuilt container:
 
 ```
-docker run -p 8080:8080 -t hybsearch
+docker run -p 8080:8080 -it hybsearch
 ```
 
 
@@ -65,7 +65,7 @@ Or
 If you have Docker installed, all you need to do is (in the project root)
 
 ```
-$ docker run --port 8080:8080 -t hybsearch/hybsearch
+$ docker run --port 8080:8080 -it hybsearch/hybsearch
 $ ./hybsearch
 ```
 
