@@ -50,3 +50,7 @@ for (let [type, options] of toPairs(optgroups)) {
 	options.forEach(opt => group.appendChild(opt))
 	picker.appendChild(group)
 }
+
+document.querySelector('#reload').addEventListener('click', () => {
+	window.location.reload()
+})

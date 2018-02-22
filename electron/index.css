@@ -231,3 +231,10 @@ section input[type='submit'] {
 .nonmonophyletic .leaf-dot {
 	fill: var(--red);
 }
+
+#reload-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1em;
+	-webkit-margin-end: 1em;
+}
