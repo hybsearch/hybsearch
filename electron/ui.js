@@ -1,17 +1,26 @@
 // @ts-check
 'use strict'
 
+const settings = require('electron-settings');
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const getFiles = require('./get-files')
 const run = require('./run')
 
+// Load last used server if found
+let saved_url = settings.get('server-url');
+if(saved_url !== undefined){
+	document.querySelector('#server-url').value = saved_url;
+}
+
 let websocket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
 
 function updateWebSocket(newUri) {
 	console.log('new websocket', newUri)
+	// Save it to local settings 
+	settings.set('server-url',newUri);
 	document.querySelector('#server-url').value = newUri
 	destroyWebsocket()
 	websocket = new WebSocket(newUri)
