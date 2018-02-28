@@ -36,6 +36,7 @@
     "combinations-generator": "1.0.1",
     "d3": "3.5.17",
     "dedent": "0.7.0",
+    "electron-settings": "3.1.4",
     "electron-unhandled": "0.2.0",
     "execa": "0.8.0",
     "get-stdin": "5.0.1",
