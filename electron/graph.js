@@ -14,11 +14,17 @@ let newickNodes
 
 function setEntResults(results){
 	nmResults = results
+	console.log("Got ent!",results)
+	let non = (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null
+	console.log(non)
 	let formattedReslults = ent.formatData(nmResults)
 	let resultsEl = document.querySelector('#nonmonophyly-results')
 	resultsEl.innerHTML = `<pre>${formattedReslults}</pre>`
 	document.querySelector('#nm-container').hidden = false
 
+	// Re-render with the nmResults, assuming newick and newickNodes have already been processed
+	let el = document.querySelector('#phylogram')
+	if (el) el.innerHTML = ''
 	render(newick, newickNodes, nmResults)
 }
 
@@ -66,7 +72,7 @@ function render(newickData, newickNodes, nmResults) {
 			let name = node.name.replace(/_/g, ' ')
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly: nmResults ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
+		nonmonophyly: (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
 		onNodeClicked: onNodeClicked,
 	})
 }
