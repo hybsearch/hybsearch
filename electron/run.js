@@ -2,11 +2,12 @@
 'use strict'
 
 const { parse: parseNewick } = require('../vendor/newick')
-const { load } = require('./graph')
+const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
 const childProcess = require('child_process')
 const path = require('path')
+let receivedData = {};
 
 module.exports = run
 function run(socket) {
@@ -46,9 +47,35 @@ function run(socket) {
 	return false
 }
 
+function onData(phase,data){
+	// Save the data from each phase 
+	receivedData[phase] = data
+
+	switch (phase) {
+		case 'newick':{
+			// Once we get the parsed newick tree, we can render the tree
+			// while the pipeline continues
+			document.querySelector('#phylogram').hidden = false
+			load(data)
+			break;
+		}
+		case 'ent':{
+			setEntResults(data);
+			break;
+		}
+		default: {
+			throw new Error(`Client doesn't know wha to do with data from "${phase}"`)
+		}
+	}
+}
+
 function onMessage(packet, args, child) {
 	let [cmd, msg] = JSON.parse(packet)
 	switch (cmd) {
+		case 'data':{
+			onData(msg.phase,msg.data);
+			break;
+		}
 		case 'begin': {
 			args.start = performance.now()
 			args.label = msg
@@ -70,11 +97,6 @@ function onMessage(packet, args, child) {
 			break
 		}
 		case 'exit': {
-			break
-		}
-		case 'finish': {
-			document.querySelector('#phylogram').hidden = false
-			load(parseNewick(msg))
 			break
 		}
 		default: {
