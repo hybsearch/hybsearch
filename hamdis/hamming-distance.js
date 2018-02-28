@@ -11,7 +11,7 @@ function hammingDistance(seq1, seq2) {
 	let counter = 0
 
 	for (let i = 0; i < seq1.length; i++) {
-		if (seq1[i] !== seq2[i]) {
+		if (seq1[i] !== seq2[i] && seq1[i] !== '-' && seq2[i] !== '-') {
 			counter += 1
 		}
 	}
