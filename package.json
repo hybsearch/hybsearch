@@ -2,11 +2,18 @@
   "name": "hybsearch",
   "private": true,
   "version": "3.0.0",
+  "description": "Find nonmonophyly in genetic sequences",
+  "repository": "hybsearch/hybsearch",
+  "homepage": "https://hybsearch.github.io/",
   "main": "main.js",
   "license": "MIT",
   "scripts": {
     "start": "./hybsearch .",
     "prettier": "prettier --write bin/*.js lib/*.js electron/*.{js,css} scripts/*.js vendor/*.js"
+  },
+  "build": {
+    "appId": "edu.stolaf.bio.hybsearch",
+    "productName": "HybSearch"
   },
   "prettier": {
     "useTabs": true,
