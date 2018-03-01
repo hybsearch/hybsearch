@@ -46,7 +46,7 @@ jobs:
 
     # deploy the docker images to Docker Hub
     - stage: deploy
-      env: [TASK=deploy]
+      env: [TASK=deploy-docker]
       script:
         - image_id="$(docker images -q "$LOCAL_NAME")"
         - |
