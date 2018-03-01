@@ -68,13 +68,15 @@ jobs:
 
     # deploy the compiled electron binaries to GitHub Releases
     - stage: deploy
-      addons:
-        apt: {packages: [wine]}
       env: [TASK=deploy-github]
       before_script: 
-        - npm i -g electron-builder
+        - docker pull electronuserland/builder:wine
       script:
-        - npm run build
+        - docker run --rm \
+            --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
+            -v ${PWD}:/project \
+            electronuserland/builder:wine \
+            /bin/bash -c "npm run build"
 
 cache:
   directories:
