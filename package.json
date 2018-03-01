@@ -15,7 +15,18 @@
   },
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
-    "productName": "HybSearch"
+    "productName": "HybSearch",
+    "files": [
+      "electron/",
+      "data/",
+      "lib/",
+      "bin/",
+      "hamdis/",
+      "main.js",
+      "node_modules/",
+      "!node_modules/prettier/",
+      "vendor/*.js"
+    ]
   },
   "prettier": {
     "useTabs": true,
