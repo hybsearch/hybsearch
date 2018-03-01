@@ -66,6 +66,14 @@ jobs:
             docker push "$DEST_NAME:latest"
           fi
 
+    # deploy the compiled electron binaries to GitHub Releases
+    - stage: deploy
+      env: [TASK=deploy-github]
+      before_script: 
+        - npm i -g electron-builder
+      script:
+        - npm run build
+
 cache:
   directories:
    - ~/docker
