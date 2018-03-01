@@ -68,6 +68,8 @@ jobs:
 
     # deploy the compiled electron binaries to GitHub Releases
     - stage: deploy
+      addons:
+        apt: {packages: [wine]}
       env: [TASK=deploy-github]
       before_script: 
         - npm i -g electron-builder
