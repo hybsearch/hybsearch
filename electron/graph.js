@@ -5,10 +5,32 @@ const d3 = require('d3')
 d3.phylogram = require('../vendor/d3.phylogram')
 
 const ent = require('../lib/ent')
-
 module.exports.load = load
-function load(newick) {
-	const newickNodes = []
+module.exports.setEntResults = setEntResults
+
+let nmResults
+let newick
+let newickNodes
+
+function setEntResults(results){
+	nmResults = results
+	console.log("Got ent!",results)
+	let non = (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null
+	console.log(non)
+	let formattedReslults = ent.formatData(nmResults)
+	let resultsEl = document.querySelector('#nonmonophyly-results')
+	resultsEl.innerHTML = `<pre>${formattedReslults}</pre>`
+	document.querySelector('#nm-container').hidden = false
+
+	// Re-render with the nmResults, assuming newick and newickNodes have already been processed
+	let el = document.querySelector('#phylogram')
+	if (el) el.innerHTML = ''
+	render(newick, newickNodes, nmResults)
+}
+
+function load(newickData) {
+	newick = newickData
+	newickNodes = []
 	function buildNewickNodes(node) {
 		newickNodes.push(node)
 		if (node.branchset) {
@@ -17,14 +39,6 @@ function load(newick) {
 	}
 
 	buildNewickNodes(newick)
-	let nmResults = ent.strictSearch(newick)
-	let results = ent.formatData(nmResults)
-	let resultsEl = document.querySelector('#nonmonophyly-results')
-	resultsEl.innerHTML = `<pre>${results}</pre>`
-	document.querySelector('#nm-container').hidden = false
-
-	console.log('Got nodes:', newickNodes)
-	console.log('nonmonophyly:', nmResults)
 
 	render(newick, newickNodes, nmResults)
 
@@ -36,6 +50,9 @@ function load(newick) {
 }
 
 function render(newickData, newickNodes, nmResults) {
+	// nmResults is optional. If not passed, tree will be drawn with no marked nodes.
+	// This is to allow the tree to be drawn while the ent search goes on. 
+
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
 	const largest = getLargestLength(newickNodes)
@@ -53,9 +70,10 @@ function render(newickData, newickNodes, nmResults) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => {
 			let name = node.name.replace(/_/g, ' ')
+			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly: nmResults.nm.map(pair => pair.map(node => node.ident)),
+		nonmonophyly: (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
 		onNodeClicked: onNodeClicked,
 	})
 }
