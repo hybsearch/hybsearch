@@ -97,10 +97,15 @@ jobs:
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
       - run:
-          name: Pick docker tag
+          name: Find the source tag
           command: |
+            image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
+            echo "image_id: $image_id"
+      - run:
+          name: Pick the destination tag
+          command: |
+            echo "CIRCLE_BRANCH: $CIRCLE_BRANCH" "CIRCLE_TAG: $CIRCLE_TAG"
             if [[ $CIRCLE_BRANCH = master ]]; then
               docker_tag="$DEST_NAME:HEAD"
             elif [[ $CIRCLE_TAG ]]; then
@@ -108,6 +113,7 @@ jobs:
             elif [[ $CIRCLE_BRANCH ]]; then
               docker_tag="$DEST_NAME:$CIRCLE_BRANCH"
             fi
+            echo "docker_tag: $docker_tag"
       - run: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
       - run: docker tag "$image_id" "$docker_tag"
       - run: docker push "$docker_tag"
