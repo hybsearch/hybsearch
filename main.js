@@ -8,6 +8,10 @@ const {
 // catch unhandled promise rejections
 require('electron-unhandled')()
 
+// check for updates
+const {autoUpdater} = require('electron-updater')
+autoUpdater.checkForUpdatesAndNotify()
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow = null
