@@ -61,8 +61,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache: *cache-load-docker
-      - run: *cmd-docker-load
       - run: {name: 'List docker images', command: 'docker images -a'}
       - run:
           name: 'Build docker image'
