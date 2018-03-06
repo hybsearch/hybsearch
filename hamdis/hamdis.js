@@ -8,7 +8,7 @@ const mean = require('lodash/mean')
 const estimateGenerations = require('./estimate-generations')
 const hammingDistance = require('./hamming-distance')
 
-const parseFasta = require('../lib/parse-fasta')
+const {parseFasta} = require('../lib/fasta')
 
 // TODO: we need a new run of the function for each nonmonophyletic pair
 function hamdis(file) {
@@ -20,7 +20,7 @@ function hamdis(file) {
 	// have the same length.
 
 	// Load the data
-	let data = [...parseFasta(file)]
+	let data = parseFasta(file)
 
 	// Cycle through the pairs and compare them, recording results in `out`.
 	let out = []
@@ -28,23 +28,23 @@ function hamdis(file) {
 	let first = true
 	for (let [a, b] of combs(data, 2)) {
 		if (first) {
-			console.log(a.species, ':', a.seq)
+			console.log(a.species, ':', a.sequence)
 			first = false
 		}
-		console.log(b.species, ':', b.seq)
-		let distance = hammingDistance(a.seq, b.seq)
+		console.log(b.species, ':', b.sequence)
+		let distance = hammingDistance(a.sequence, b.sequence)
 		console.log('hamming distance:', distance)
 		out.push(distance)
 	}
 
 	// let seqLength = 527
-	let seqLength = data[0].seq.length
+	let seqLength = data[0].sequence.length
 
 	return {
 		avg: mean(out),
 		min: min(out),
 		max: max(out),
-		// 527 is estimated seq. length
+		// 527 is estimated sequence length
 		percentDifferent: out[0] / seqLength,
 		data: out,
 	}
