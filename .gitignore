@@ -5,3 +5,4 @@ node_modules/.staging
 npm-debug.log
 .vscode/
 .idea/
+dist/
