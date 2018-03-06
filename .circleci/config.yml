@@ -128,8 +128,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache: *cache-load-docker
-      - run: *cmd-docker-load
       - run: docker pull electronuserland/builder:wine
       - run:
           docker run --rm
