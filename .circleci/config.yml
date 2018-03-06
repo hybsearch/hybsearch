@@ -16,16 +16,19 @@ x-config:
     docker-save: &cache-save-docker
       key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
       paths:
-        - image.tar.gz
+        - *docker-image-cache-path
     docker-load-cmd: &cmd-docker-load
       name: 'Load from cache if possible'
       command: |
-        if test -r image.tar.gz; then
-          echo "Loading from image.tar.gz"
-          docker load -qi image.tar.gz
+        if test -r /tmp/image.tar.gz; then
+          echo "Loading from /tmp/image.tar.gz"
+          docker load -qi /tmp/image.tar.gz
         else
-          echo "missing image.tar.gz, continuing with build"
+          echo "missing /tmp/image.tar.gz; continuing with build"
         fi
+    docker-save-command: &cmd-docker-save
+      name: 'Dump image to cachable .tar.gz file'
+      command: docker save "$LOCAL_NAME:$CIRCLE_SHA1" | pigz -9c > /tmp/image.tar.gz
 
 workflows:
   version: 2
@@ -64,9 +67,7 @@ jobs:
           name: 'Build docker image'
           command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" .
       - run: sudo apt install -y pigz
-      - run:
-          name: 'Dump image to cachable .tar.gz file'
-          command: docker save "$LOCAL_NAME:$CIRCLE_SHA1" | pigz -9c > image.tar.gz
+      - run: *cmd-docker-save
       - save_cache: *cache-save-docker
 
   # check that the whole pipeline runs at all
