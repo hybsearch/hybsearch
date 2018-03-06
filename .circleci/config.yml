@@ -84,10 +84,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - setup_remote_docker
-      - restore_cache: *cache-load-docker
-      - run: *cmd-docker-load
-      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME:$CIRCLE_SHA1"
+      - run: ./scripts/test-ent.sh
 
   # deploy the docker images to Docker Hub
   deploy-docker:
