@@ -36,10 +36,11 @@ workflows:
   on_commit:
     jobs:
       - build
+      - test-fasta
       - test-worker: {requires: [build]}
       - test-ent: {requires: [build]}
-      - deploy-docker: {requires: [test-worker, test-ent]}
-      - deploy-github: {requires: [test-worker, test-ent]}
+      - deploy-docker: {requires: [test-worker, test-ent, test-fasta]}
+      - deploy-github: {requires: [test-worker, test-ent, test-fasta]}
 
   cron_weekly:
     triggers:
@@ -51,6 +52,7 @@ workflows:
               only: [master]
     jobs:
       - build
+      - test-fasta
       - test-worker: {requires: [build]}
       - test-ent: {requires: [build]}
 
@@ -85,6 +87,13 @@ jobs:
     steps:
       - checkout
       - run: ./scripts/test-ent.sh
+
+  # run tests against fasta module
+  test-fasta:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: ./scripts/test-fasta.sh
 
   # deploy the docker images to Docker Hub
   deploy-docker:
