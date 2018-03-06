@@ -1,14 +1,11 @@
 ---
 version: 2
-machine:
-  services:
-    - docker
 
 x-config:
   - &name "hybsearch/hybsearch"
   - &defaults
     docker:
-      - image: node:8
+      - image: circleci/node:8-stretch
     environment:
       LOCAL_NAME: *name
 
