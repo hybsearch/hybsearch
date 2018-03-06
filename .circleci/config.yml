@@ -36,9 +36,9 @@ workflows:
   on_commit:
     jobs:
       - build
+      - test-ent
       - test-fasta
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
       - deploy-docker: {requires: [test-worker, test-ent, test-fasta]}
       - deploy-github: {requires: [test-worker, test-ent, test-fasta]}
 
@@ -52,9 +52,9 @@ workflows:
               only: [master]
     jobs:
       - build
+      - test-ent
       - test-fasta
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
 
 jobs:
   # build the docker image
