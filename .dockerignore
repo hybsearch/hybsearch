@@ -4,8 +4,9 @@ electron/
 node_modules/electron*
 node_modules/d3/
 node_modules/debug-menu/
-vendor/clustal*
 vendor/electron*
 vendor/MrBayes*
 vendor/Seq-Gen*
 data/*
+*.tar.gz
+*.tar

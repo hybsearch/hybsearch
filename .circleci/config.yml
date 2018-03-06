@@ -1,0 +1,134 @@
+---
+version: 2
+
+x-config:
+  - &name "hybsearch/hybsearch"
+  - &defaults
+    docker:
+      - image: circleci/node:8-stretch
+    environment: &default-environment
+      LOCAL_NAME: *name
+      DEST_NAME: docker.io/hybsearch/hybsearch
+  - &caches
+    docker-load: &cache-load-docker
+      keys:
+        - docker--{{ arch }}-{{ .Branch }}
+        - docker--{{ arch }}
+    docker-save: &cache-save-docker
+      key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
+      paths:
+        - /tmp/image.tar.gz
+    docker-load-cmd: &cmd-docker-load
+      name: 'Load from cache if possible'
+      command: |
+        if test -r /tmp/image.tar.gz; then
+          echo "Loading from /tmp/image.tar.gz"
+          docker load -qi /tmp/image.tar.gz
+        else
+          echo "missing /tmp/image.tar.gz; continuing with build"
+        fi
+    docker-save-command: &cmd-docker-save
+      name: 'Dump image to cachable .tar.gz file'
+      command: docker save "$LOCAL_NAME:$CIRCLE_SHA1" | pigz -9c > /tmp/image.tar.gz
+
+workflows:
+  version: 2
+  on_commit:
+    jobs:
+      - build
+      - test-worker: {requires: [build]}
+      - test-ent: {requires: [build]}
+      - deploy-docker: {requires: [test-worker, test-ent]}
+      - deploy-github: {requires: [test-worker, test-ent]}
+
+  cron_weekly:
+    triggers:
+      - schedule:
+          # only run Monday morning at 12:00am
+          cron: 0 0 * * 1
+          filters:
+            branches:
+              only: [master]
+    jobs:
+      - build
+      - test-worker: {requires: [build]}
+      - test-ent: {requires: [build]}
+
+jobs:
+  # build the docker image
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: {name: 'List docker images', command: 'docker images -a'}
+      - run:
+          name: 'Build docker image'
+          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" .
+      - run: sudo apt install -y pigz
+      - run: *cmd-docker-save
+      - save_cache: *cache-save-docker
+
+  # check that the whole pipeline runs at all
+  test-worker:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
+
+  # test ent.js against all our sample files
+  test-ent:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME:$CIRCLE_SHA1"
+
+  # deploy the docker images to Docker Hub
+  deploy-docker:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      - run:
+          name: Push to Docker Hub
+          command: |
+            image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
+            echo "image_id: $image_id"
+
+            echo "CIRCLE_BRANCH: $CIRCLE_BRANCH" "CIRCLE_TAG: $CIRCLE_TAG"
+            if [[ $CIRCLE_BRANCH = master ]]; then
+              docker_tag="$DEST_NAME:HEAD"
+            elif [[ $CIRCLE_TAG ]]; then
+              docker_tag="$DEST_NAME:$CIRCLE_TAG"
+            elif [[ $CIRCLE_BRANCH ]]; then
+              docker_tag="$DEST_NAME:$CIRCLE_BRANCH"
+            fi
+            echo "docker_tag: $docker_tag"
+
+            docker tag "$image_id" "$docker_tag"
+            docker push "$docker_tag"
+
+            if [[ $CIRCLE_TAG ]]; then
+              docker tag "$image_id" "$DEST_NAME:latest"
+              docker push "$DEST_NAME:latest"
+            fi
+
+  # deploy the compiled electron binaries to GitHub Releases
+  deploy-github:
+    <<: *defaults
+    docker:
+      - image: electronuserland/builder:wine
+    steps:
+      - checkout:
+          path: /root/project
+      - run: npm i -g electron-builder
+      - run: npm run build
