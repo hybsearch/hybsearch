@@ -6,8 +6,26 @@ x-config:
   - &defaults
     docker:
       - image: circleci/node:8-stretch
-    environment:
+    environment: &default-environment
       LOCAL_NAME: *name
+  - &caches
+    docker-load: &cache-load-docker
+      keys:
+        - docker--{{ arch }}-{{ .Branch }}
+        - docker--{{ arch }}
+    docker-save: &cache-save-docker
+      key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
+      paths:
+        - image.tar.gz
+    docker-load-cmd: &cmd-docker-load
+      name: 'Load from cache if possible'
+      command: |
+        if test -r image.tar.gz; then
+          echo "Loading from image.tar.gz"
+          docker load -qi image.tar.gz
+        else
+          echo "missing image.tar.gz, continuing with build"
+        fi
 
 workflows:
   version: 2
@@ -16,7 +34,9 @@ workflows:
       - build
       - test-worker: {requires: [build]}
       - test-ent: {requires: [build]}
-      # - deploy: {requires: [test-worker, test-ent]}
+      - deploy-docker: {requires: [test-worker, test-ent]}
+      - deploy-github: {requires: [test-worker, test-ent]}
+
   cron_weekly:
     triggers:
       - schedule:
@@ -37,7 +57,17 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker build -t "$LOCAL_NAME" .
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: {name: 'List docker images', command: 'docker images -a'}
+      - run:
+          name: 'Build docker image'
+          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" .
+      - run: apk add --no-cache pigz
+      - run:
+          name: 'Dump image to cachable .tar.gz file'
+          command: docker save "$LOCAL_NAME:$CIRCLE_SHA1" | pigz -9c > image.tar.gz
+      - save_cache: *cache-save-docker
 
   # check that the whole pipeline runs at all
   test-worker:
@@ -45,7 +75,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME" - < data/emydura-short.gb
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
 
   # test ent.js against all our sample files
   test-ent:
@@ -53,22 +85,28 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME"
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME:$CIRCLE_SHA1"
 
   # deploy the docker images to Docker Hub
-  deploy:
+  deploy-docker:
     <<: *defaults
     steps:
-      - run: image_id="$(docker images -q "$LOCAL_NAME")"
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
       - run:
           name: Pick docker tag
           command: |
-            if [[ $TRAVIS_BRANCH = master ]]; then
+            if [[ $CIRCLE_BRANCH = master ]]; then
               docker_tag="$DEST_NAME:HEAD"
-            elif [[ $TRAVIS_TAG ]]; then
-              docker_tag="$DEST_NAME:$TRAVIS_TAG"
-            elif [[ $TRAVIS_BRANCH ]]; then
-              docker_tag="$DEST_NAME:$TRAVIS_BRANCH"
+            elif [[ $CIRCLE_TAG ]]; then
+              docker_tag="$DEST_NAME:$CIRCLE_TAG"
+            elif [[ $CIRCLE_BRANCH ]]; then
+              docker_tag="$DEST_NAME:$CIRCLE_BRANCH"
             fi
       - run: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
       - run: docker tag "$image_id" "$docker_tag"
@@ -76,7 +114,26 @@ jobs:
       - run:
           name: tag and push "latest"
           command: |
-            if [[ $TRAVIS_TAG ]]; then
+            if [[ $CIRCLE_TAG ]]; then
               docker tag "$image_id" "$DEST_NAME:latest"
               docker push "$DEST_NAME:latest"
             fi
+
+  # deploy the compiled electron binaries to GitHub Releases
+  deploy-github:
+    <<: *defaults
+    environment:
+      <<: *default-environment
+      WHITELIST: 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_'
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker pull electronuserland/builder:wine
+      - run:
+          docker run --rm
+            --env-file <(env | grep -iE $WHITELIST)
+            -v ${PWD}:/project
+            electronuserland/builder:wine
+            /bin/bash -c "npm i -g electron-builder && npm run build"
