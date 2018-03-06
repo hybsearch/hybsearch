@@ -8,6 +8,7 @@ x-config:
       - image: circleci/node:8-stretch
     environment: &default-environment
       LOCAL_NAME: *name
+      DEST_NAME: docker.io/hybsearch/hybsearch
   - &caches
     docker-load: &cache-load-docker
       keys:
