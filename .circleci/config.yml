@@ -1,5 +1,8 @@
 ---
 version: 2
+machine:
+  services:
+    - docker
 
 x-config:
   - &name "hybsearch/hybsearch"
