@@ -219,7 +219,7 @@ section button {
 	text-anchor: end;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
 	font-size: 8px;
-	fill: var(--light-gray);
+	fill: var(--black);
 }
 
 .leaf-dot {
