@@ -16,7 +16,7 @@ x-config:
     docker-save: &cache-save-docker
       key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
       paths:
-        - *docker-image-cache-path
+        - /tmp/image.tar.gz
     docker-load-cmd: &cmd-docker-load
       name: 'Load from cache if possible'
       command: |
