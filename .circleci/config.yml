@@ -131,6 +131,6 @@ jobs:
       - image: electronuserland/builder:wine
     steps:
       - checkout:
-          path: /project
+          path: /root/project
       - run: npm i -g electron-builder
       - run: npm run build
