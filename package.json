@@ -68,5 +68,8 @@
     "tempfile": "2.0.0",
     "wordwrap": "1.0.0",
     "ws": "4.0.0"
+  },
+  "devDependencies": {
+    "expect": "22.4.0"
   }
 }
