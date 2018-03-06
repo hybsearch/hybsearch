@@ -29,6 +29,12 @@ stages:
   - deploy
 
 jobs:
+  fast_finish: true
+  allow_failures:
+    - stage: deploy
+      env: [TASK=deploy-docker]
+    - stage: deploy
+      env: [TASK=deploy-github]
   include:
     # "prepare" just builds and caches the Docker image for us
     # - stage: prepare
