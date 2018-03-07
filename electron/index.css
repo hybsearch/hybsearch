@@ -226,12 +226,12 @@ section button {
 	fill: var(--blue);
 }
 
-.clickable-node {
-	fill: var(--black);
-}
-
 .nonmonophyletic .leaf-dot {
 	fill: var(--red);
+}
+
+.muted .leaf-dot {
+	opacity: 0.2;
 }
 
 #reload-container {
