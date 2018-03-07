@@ -12,6 +12,8 @@ let nmResults
 let newick
 let newickNodes
 
+let nodesMuted = false;
+
 function setEntResults(results){
 	nmResults = results
 	console.log("Got ent!",results)
@@ -122,19 +124,61 @@ function findOutliers(objs, whitelist, found = []) {
 	return found
 }
 
+function ToggleMuteLeaves(doMute){
+	var nodes = document.querySelectorAll(".node.leaf")
+	nodesMuted = doMute
+	for(var i=0;i<nodes.length;i++){
+		var node = nodes[i];
+		var isMuted = node.className.baseVal.indexOf("muted") != -1;
+		if(doMute && !isMuted){
+			node.className.baseVal += " muted"
+		}
+		if(!doMute && isMuted){
+			node.className.baseVal = node.className.baseVal.replace("muted","")
+		}
+		
+	}
+}
+
 function onNodeClicked(data) {
-	console.log('Clicked on node point with data:', data)
+	if(data.name == "" || nmResults == undefined)
+		return; // We don't care about anything that's not a leaf node
+	// Find the other individual that is nonmonophyletic with this one
+	var nonmono_pair;
+	for(var i=0;i<nmResults.nm.length;i++){
+		var pair = nmResults.nm[i];
+		if(pair[0].ident == data.ident){
+			nonmono_pair = pair[1];
+			break;
+		}
+		if(pair[1].ident == data.ident){
+			nonmono_pair = pair[0];
+			break;
+		}
+	}
+	// Now let's toggle the non-mono pair green if one was found
 
-	let outliers = findOutliers(data.branchset, getWhitelist())
-	console.log('Outliers found:', outliers)
+	if(nonmono_pair){
+		// If it's already muted, toggle all off 
+		var nodeSVG = document.querySelector("[data-ident='"+data.ident+"']")
+		var pairSVG = document.querySelector("[data-ident='"+nonmono_pair.ident+"']")
+		if(nodesMuted){
+			ToggleMuteLeaves(false)
+		} else {
+			// First we set all nodes to muted
+			ToggleMuteLeaves(true);
+			// Except for the one and its pair 
+			nodeSVG.className.baseVal = nodeSVG.className.baseVal.replace("muted","")
+			pairSVG.className.baseVal = pairSVG.className.baseVal.replace("muted","")
 
-	outliers.forEach(outlier =>
-		document.getElementById(outlier).setAttribute('fill', 'green')
-	)
+			alert(data.name + data.ident + " is nonmono with " + nonmono_pair.name + nonmono_pair.ident)
+		}
+	} else {
+		ToggleMuteLeaves(false);
+		alert("This node is not monophyletic!")
+	}
+	
 
-	alert(
-		'Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.'
-	)
 }
 
 function getWhitelist() {
