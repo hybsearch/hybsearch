@@ -167,6 +167,8 @@ phylogram.styleTreeNodes = (vis, onClickFunc) => {
 		.append('svg:circle')
 		.attr('r', 4)
 		.classed('leaf-dot', true)
+		.classed('clickable-node', true)
+		.on('click', onClickFunc)
 		// .attr('data-ident', node => node.ident)
 		.attr('id', d => `${d.name}_${d.length}`)
 
@@ -174,8 +176,9 @@ phylogram.styleTreeNodes = (vis, onClickFunc) => {
 		.selectAll('g.root.node')
 		.append('svg:circle')
 		.attr('r', 4)
-		.classed('clickable-node', true)
-		.on('click', onClickFunc)
+		//.classed('clickable-node', true)
+		//.on('click', onClickFunc)
+
 }
 
 function visitPreOrder(root, callback) {

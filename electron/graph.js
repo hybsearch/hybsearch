@@ -122,19 +122,55 @@ function findOutliers(objs, whitelist, found = []) {
 	return found
 }
 
+function toggleMuteLeaves({doMute}){
+	const nodes = document.querySelectorAll(".node.leaf")
+	for (let node of nodes) {
+		if (doMute) {
+			node.classList.add('muted')
+		} else {
+			node.classList.remove('muted')
+		}
+	}
+}
+
 function onNodeClicked(data) {
-	console.log('Clicked on node point with data:', data)
+	if(data.name == "" || nmResults == undefined)
+		return; // We don't care about anything that's not a leaf node
+	// Find the other individual that is nonmonophyletic with this one
+	var nonMonoPair;
+	for(let pair of nmResults.nm) {
+		if(pair[0].ident == data.ident){
+			nonMonoPair = pair[1];
+			break;
+		}
+		if(pair[1].ident == data.ident){
+			nonMonoPair = pair[0];
+			break;
+		}
+	}
+	// Now let's toggle the non-mono pair green if one was found
 
-	let outliers = findOutliers(data.branchset, getWhitelist())
-	console.log('Outliers found:', outliers)
+	if(nonMonoPair){
+		// If it's already muted, toggle all off 
+		var nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
+		var pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
+		if(document.querySelector('.node.leaf.muted')){
+			toggleMuteLeaves({doMute:false})
+		} else {
+			// First we set all nodes to muted
+			toggleMuteLeaves({doMute:true});
+			// Except for the one and its pair 
+			nodeSVG.classList.remove('muted')
+			pairSVG.classList.remove('muted')
 
-	outliers.forEach(outlier =>
-		document.getElementById(outlier).setAttribute('fill', 'green')
-	)
+			alert(data.name + data.ident + " is nonmono with " + nonMonoPair.name + nonMonoPair.ident)
+		}
+	} else {
+		toggleMuteLeaves({doMute:false});
+		alert("This node is not monophyletic!")
+	}
+	
 
-	alert(
-		'Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.'
-	)
 }
 
 function getWhitelist() {
