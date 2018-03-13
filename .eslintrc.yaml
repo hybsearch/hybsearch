@@ -8,9 +8,8 @@ parserOptions:
 
 extends:
   - eslint:recommended
-
-plugins:
-  - eslint-plugin-import
+  - plugin:import/errors
+  - plugin:import/warnings
 
 rules:
   no-console: off
