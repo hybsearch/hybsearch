@@ -5,7 +5,7 @@ const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
 const path = require('path')
-let receivedData = {};
+let receivedData = {}
 
 module.exports = run
 function run(socket) {
@@ -24,7 +24,7 @@ function run(socket) {
 		label: 'process',
 	}
 
-	const ws = socket;
+	const ws = socket
 
 	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
 	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
@@ -45,21 +45,21 @@ function run(socket) {
 	return false
 }
 
-function onData(phase,data){
+function onData(phase, data) {
 	// Save the data from each phase
 	receivedData[phase] = data
 
 	switch (phase) {
-		case 'newick':{
+		case 'newick': {
 			// Once we get the parsed newick tree, we can render the tree
 			// while the pipeline continues
 			document.querySelector('#phylogram').hidden = false
 			load(data)
-			break;
+			break
 		}
-		case 'ent':{
-			setEntResults(data);
-			break;
+		case 'ent': {
+			setEntResults(data)
+			break
 		}
 		default: {
 			throw new Error(`Client doesn't know wha to do with data from "${phase}"`)
@@ -71,9 +71,9 @@ function onData(phase,data){
 function onMessage(packet, args, child) {
 	let [cmd, msg] = JSON.parse(packet)
 	switch (cmd) {
-		case 'data':{
-			onData(msg.phase,msg.data);
-			break;
+		case 'data': {
+			onData(msg.phase, msg.data)
+			break
 		}
 		case 'begin': {
 			args.start = performance.now()
