@@ -5,5 +5,5 @@ for file in tests/ent/input/*; do
     filename="$(basename "$file")"
     echo "testing $filename"
     expectation="tests/ent/expected/$filename"
-    ./bin/newick-json.js < "$file" | ./lib/ent.js - | diff "$expectation" -
+    scripts/convert-newick-tree-to-json.js < "$file" | scripts/ent.js - | diff "$expectation" -
 done
