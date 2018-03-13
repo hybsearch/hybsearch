@@ -69,11 +69,11 @@ jobs:
   # cache node_modules
   cache:
     <<: *defaults
-  steps:
-    - checkout
-    - restore_cache: *cache-load-npm
-    - run: npm ci
-    - save_cache: *cache-save-npm
+    steps:
+      - checkout
+      - restore_cache: *cache-load-npm
+      - run: npm ci
+      - save_cache: *cache-save-npm
 
   # build the docker image
   build:
