@@ -46,10 +46,10 @@ workflows:
       - cache
       - build: {requires: [cache]}
       - lint: {requires: [cache]}
-      - test-ent: {requires: [cache]}
+      - test-js: {requires: [cache]}
       - test-worker: {requires: [build]}
-      - deploy-docker: {requires: [test-worker, test-ent]}
-      - deploy-github: {requires: [test-worker, test-ent]}
+      - deploy-docker: {requires: [test-worker, test-js]}
+      - deploy-github: {requires: [test-worker, test-js]}
 
   cron_weekly:
     triggers:
@@ -62,7 +62,7 @@ workflows:
     jobs:
       - cache
       - build: {requires: [cache]}
-      - test-ent: {requires: [cache]}
+      - test-js: {requires: [cache]}
       - test-worker: {requires: [build]}
 
 jobs:
@@ -110,12 +110,12 @@ jobs:
       - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
 
   # test ent.js against all our sample files
-  test-ent:
+  test-js:
     <<: *defaults
     steps:
       - checkout
       - restore_cache: *cache-load-npm
-      - run: ./tests/ent.sh
+      - run: npm test
 
   # deploy the docker images to Docker Hub
   deploy-docker:
