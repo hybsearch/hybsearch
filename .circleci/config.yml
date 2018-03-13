@@ -115,7 +115,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: *cache-load-npm
-      - run: ./scripts/test-ent.sh
+      - run: ./tests/ent.sh
 
   # deploy the docker images to Docker Hub
   deploy-docker:
