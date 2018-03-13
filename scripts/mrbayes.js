@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// @ts-check
 'use strict'
 
 const getData = require('../lib/get-data')
