@@ -5,7 +5,7 @@ const path = require('path')
 
 function getFiles() {
 	return fs
-		.readdirSync(path.join(__dirname, '..', 'data'))
+		.readdirSync(path.join(__dirname, '..', '..', 'data'))
 		.filter(file => /\.(fasta|gb)$/.test(file))
 }
 
