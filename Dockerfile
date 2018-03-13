@@ -14,7 +14,7 @@ RUN apt-get update \
 ADD . /hybsearch
 WORKDIR /hybsearch
 
-RUN npm ci
+RUN npm i -g npm && npm ci && npm un -g npm
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ./server/server.js 8080
