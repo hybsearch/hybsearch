@@ -10,7 +10,7 @@ const fastaToNexus = require('../bin/fasta-to-nexus')
 const mrBayes = require('../bin/mrbayes')
 const consensusTreeToNewick = require('../bin/consensus-newick')
 const { parse: parseNewick } = require('../lib/newick')
-const ent = require('../lib/ent')
+const ent = require('./lib/ent')
 
 process.on('disconnect', () => {
 	console.error('disconnected')
