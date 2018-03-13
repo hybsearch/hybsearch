@@ -2,9 +2,8 @@
 'use strict'
 
 const getData = require('./lib/get-data')
-
-const hamdis = require('../lib/hamdis/hamdis')
-const estimateGenerations = require('../lib/hamdis/estimate-generations')
+const hamdis = require('../server/lib/hamdis')
+const estimateGenerations = require('../server/lib/estimate-generations')
 
 function main() {
 	return getData(process.argv[2])

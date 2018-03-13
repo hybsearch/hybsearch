@@ -2,7 +2,7 @@
 'use strict'
 
 const fs = require('fs')
-const getData = require('../lib/get-data')
+const getData = require('./lib/get-data')
 
 const clustal = require('../bin/clustal')
 
