@@ -1,6 +1,6 @@
 'use strict'
 
-const { parse: parseNewick } = require('../server/lib/newick')
+const { parse: parseNewick } = require('../lib/newick')
 const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
