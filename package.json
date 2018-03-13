@@ -48,7 +48,7 @@
     "electron-updater": "^2.21.1",
     "eslint-plugin-import": "^2.9.0",
     "execa": "^0.8.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
     "normalize.css": "^7.0.0",
     "serialize-error": "^2.1.0",
