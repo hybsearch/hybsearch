@@ -9,6 +9,7 @@ RUN apt-get update \
         mrbayes \
         seq-gen \
         python \
+        python-pip \
     && rm -rf /var/lib/apt/lists/*
 
 ADD . /hybsearch
