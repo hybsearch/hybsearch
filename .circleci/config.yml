@@ -46,8 +46,8 @@ workflows:
       - cache
       - build: {requires: [cache]}
       - lint: {requires: [cache]}
+      - test-ent: {requires: [cache]}
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
       - deploy-docker: {requires: [test-worker, test-ent]}
       - deploy-github: {requires: [test-worker, test-ent]}
 
@@ -60,9 +60,10 @@ workflows:
             branches:
               only: [master]
     jobs:
-      - build
+      - cache
+      - build: {requires: [cache]}
+      - test-ent: {requires: [cache]}
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
 
 jobs:
   # cache node_modules
@@ -113,10 +114,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - setup_remote_docker
-      - restore_cache: *cache-load-docker
-      - run: *cmd-docker-load
-      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME:$CIRCLE_SHA1"
+      - restore_cache: *cache-load-npm
+      - run: ./scripts/test-ent.sh
 
   # deploy the docker images to Docker Hub
   deploy-docker:
