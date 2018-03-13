@@ -1,7 +1,3 @@
-#!/usr/bin/env node
-'use strict'
-
-const getData = require('./get-data')
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
@@ -179,24 +175,4 @@ function formatData(results) {
 	return nmlist
 		.map(pair => pair.map(label).join(' / '))
 		.join('\n')
-}
-
-function main() {
-	let file = process.argv[2]
-
-	if (!file && process.stdin.isTTY) {
-		console.error('usage: node ent.js (<input> | -)')
-		process.exit(1)
-	}
-
-	return getData(file)
-		.then(d => JSON.parse(d))
-		.then(strictSearch)
-		.then(formatData)
-		.then(console.log.bind(console))
-		.catch(console.error.bind(console))
-}
-
-if (require.main === module) {
-	main()
 }
