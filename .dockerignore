@@ -8,3 +8,4 @@ vendor/Seq-Gen*
 data/*
 *.tar.gz
 *.tar
+.eslintcache
