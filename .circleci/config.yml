@@ -23,7 +23,7 @@ x-config:
         - docker--{{ arch }}-{{ .Branch }}
         - docker--{{ arch }}
     docker-save: &cache-save-docker
-      key: docker--{{ arch }}-{{ .Branch }}
+      key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
       paths:
         - /tmp/image.tar.gz
     docker-load-cmd: &cmd-docker-load
