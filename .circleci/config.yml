@@ -99,6 +99,7 @@ jobs:
       - checkout
       - restore_cache: *cache-load-npm
       - run: npm run eslint
+      - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
   test-worker:

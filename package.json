@@ -13,6 +13,7 @@
     "start": "electron ./main.js",
     "test": "jest",
     "eslint": "eslint --cache 'bin/**.js' 'lib/**.js' 'electron/**.js' scripts/**.js 'server/**.js' 'vendor/**.js'",
+    "pretty-check": "npm run prettier -- --list-different",
     "prettier": "prettier --write 'bin/**.js' 'lib/**.js' 'electron/**.{js,css}' scripts/**.js 'server/**.js' 'vendor/**.js'"
   },
   "build": {
