@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('../lib/get-data')
-const range = require('lodash/range')
+const getData = require('./lib/get-data')
 
-const hamdis = require('../hamdis/hamdis')
-const estimateGenerations = require('../hamdis/estimate-generations')
+const hamdis = require('../lib/hamdis/hamdis')
+const estimateGenerations = require('../lib/hamdis/estimate-generations')
 
 function main() {
 	return getData(process.argv[2])
