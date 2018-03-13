@@ -2,7 +2,7 @@
 'use strict'
 
 const getData = require('./lib/get-data')
-const {strictSearch, formatData} = require('../server/lib/ent')
+const { strictSearch, formatData } = require('../server/lib/ent')
 
 function main() {
 	let file = process.argv[2]

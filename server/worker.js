@@ -25,15 +25,17 @@ const send = (cmd, msg) => sendFunc([cmd, msg])
 const begin = msg => send('begin', msg)
 const complete = msg => send('complete', msg)
 const error = e => send('error', serializeError(e))
-const returnData = (phase, data) => send('data', {phase:phase,data:data})
+const returnData = (phase, data) => send('data', { phase: phase, data: data })
 const exit = () => send('exit')
 
-function removeCircularLinks(obj){
-	return JSON.parse(JSON.stringify(obj,function(key,val){
-		if(key == 'parent' || key == 'nm_inner' || key == 'nm_outer')
-			return undefined
-		return val
-	}))
+function removeCircularLinks(obj) {
+	return JSON.parse(
+		JSON.stringify(obj, function(key, val) {
+			if (key == 'parent' || key == 'nm_inner' || key == 'nm_outer')
+				return undefined
+			return val
+		})
+	)
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -80,7 +82,6 @@ async function main([command, filepath, data]) {
 
 		// begin('seqgen')
 		// end('seqgen')
-
 	} catch (err) {
 		error(err)
 		console.error(err)

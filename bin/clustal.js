@@ -12,11 +12,8 @@ function clustal(data) {
 
 	const executable = '/usr/bin/clustalo'
 
-	const args = [
-		'--in', inputFile,
-		'--out', outputFile,
-		'--outfmt=fasta',
-	]
+	// @prettier-ignore
+	const args = ['--in', inputFile, '--out', outputFile, '--outfmt=fasta']
 
 	execa.sync(executable, args)
 

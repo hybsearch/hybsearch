@@ -11,10 +11,13 @@ let nmResults
 let newick
 let newickNodes
 
-function setEntResults(results){
+function setEntResults(results) {
 	nmResults = results
-	console.log("Got ent!",results)
-	let non = (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null
+	console.log('Got ent!', results)
+	let non =
+		nmResults !== undefined
+			? nmResults.nm.map(pair => pair.map(node => node.ident))
+			: null
 	console.log(non)
 	let formattedReslults = ent.formatData(nmResults)
 	let resultsEl = document.querySelector('#nonmonophyly-results')
@@ -41,11 +44,11 @@ function load(newickData) {
 
 	render(newick, newickNodes, nmResults)
 
-	window.addEventListener("optimizedResize", function() {
+	window.addEventListener('optimizedResize', function() {
 		let el = document.querySelector('#phylogram')
 		if (el) el.innerHTML = ''
 		render(newick, newickNodes, nmResults)
-	});
+	})
 }
 
 function render(newickData, newickNodes, nmResults) {
@@ -72,7 +75,10 @@ function render(newickData, newickNodes, nmResults) {
 			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly: (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
+		nonmonophyly:
+			nmResults !== undefined
+				? nmResults.nm.map(pair => pair.map(node => node.ident))
+				: null,
 		onNodeClicked: onNodeClicked,
 	})
 }
@@ -105,8 +111,8 @@ function getLargestLength(objs) {
 	return getExtremeLength(objs, 0, greaterthan)
 }
 
-function toggleMuteLeaves({doMute}){
-	const nodes = document.querySelectorAll(".node.leaf")
+function toggleMuteLeaves({ doMute }) {
+	const nodes = document.querySelectorAll('.node.leaf')
 	for (let node of nodes) {
 		if (doMute) {
 			node.classList.add('muted')
@@ -117,59 +123,62 @@ function toggleMuteLeaves({doMute}){
 }
 
 function onNodeClicked(data) {
-	if(data.name == "" || nmResults == undefined)
-		return; // We don't care about anything that's not a leaf node
+	if (data.name == '' || nmResults == undefined) return // We don't care about anything that's not a leaf node
 	// Find the other individual that is nonmonophyletic with this one
-	var nonMonoPair;
-	for(let pair of nmResults.nm) {
-		if(pair[0].ident == data.ident){
-			nonMonoPair = pair[1];
-			break;
+	var nonMonoPair
+	for (let pair of nmResults.nm) {
+		if (pair[0].ident == data.ident) {
+			nonMonoPair = pair[1]
+			break
 		}
-		if(pair[1].ident == data.ident){
-			nonMonoPair = pair[0];
-			break;
+		if (pair[1].ident == data.ident) {
+			nonMonoPair = pair[0]
+			break
 		}
 	}
 	// Now let's toggle the non-mono pair green if one was found
 
-	if(nonMonoPair){
+	if (nonMonoPair) {
 		// If it's already muted, toggle all off
 		var nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
 		var pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
-		if(document.querySelector('.node.leaf.muted')){
-			toggleMuteLeaves({doMute:false})
+		if (document.querySelector('.node.leaf.muted')) {
+			toggleMuteLeaves({ doMute: false })
 		} else {
 			// First we set all nodes to muted
-			toggleMuteLeaves({doMute:true});
+			toggleMuteLeaves({ doMute: true })
 			// Except for the one and its pair
 			nodeSVG.classList.remove('muted')
 			pairSVG.classList.remove('muted')
 
-			alert(data.name + data.ident + " is nonmono with " + nonMonoPair.name + nonMonoPair.ident)
+			const p1 = `${data.name}${data.ident}`
+			const p2 = `${nonMonoPair.name}${nonMonoPair.ident}`
+			alert(`${p1} is nonmono with ${p2}`)
 		}
 	} else {
-		toggleMuteLeaves({doMute:false});
-		alert("This node is not monophyletic!")
+		toggleMuteLeaves({ doMute: false })
+		alert('This node is not monophyletic!')
 	}
 }
 
 // this next block taken from MDN
-(function() {
-    var throttle = function(type, name, obj) {
-        obj = obj || window;
-        var running = false;
-        var func = function() {
-            if (running) { return; }
-            running = true;
-             requestAnimationFrame(function() {
-                obj.dispatchEvent(new CustomEvent(name));
-                running = false;
-            });
-        };
-        obj.addEventListener(type, func);
-    };
+;(function() {
+	var throttle = function(type, name, obj) {
+		obj = obj || window
+		var running = false
+		var func = function() {
+			if (running) {
+				return
+			}
+			running = true
+			requestAnimationFrame(function() {
+				obj.dispatchEvent(new CustomEvent(name))
+				running = false
+			})
+		}
+		obj.addEventListener(type, func)
+	}
 
-    /* init - you can init any event */
-    throttle("resize", "optimizedResize");
-})();
+	/* init - you can init any event */
+	throttle('resize', 'optimizedResize')
+})()

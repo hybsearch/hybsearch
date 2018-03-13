@@ -40,7 +40,7 @@ document.querySelector('#use-localhost').addEventListener('click', () => {
 	updateWebSocket(newUri)
 })
 
-document.querySelector('#server-url').addEventListener('change', (ev) => {
+document.querySelector('#server-url').addEventListener('change', ev => {
 	console.log('uri changed')
 	updateWebSocket(ev.currentTarget.value)
 })
@@ -72,7 +72,7 @@ const groupedFiles = groupBy(files, f => {
 	return f.split('.')[f.split('.').length - 1]
 })
 
-const optgroups = mapValues(groupedFiles, (group) =>
+const optgroups = mapValues(groupedFiles, group =>
 	group.map(filename => {
 		let opt = document.createElement('option')
 		opt.value = filename

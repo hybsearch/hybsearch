@@ -62,7 +62,7 @@ const genbankEntryToFasta = entry => {
 
 	let origin = entry.ORIGIN
 	origin = origin.replace(/ /g, '')
-	origin = wrap(80, {mode: 'hard'})(origin)
+	origin = wrap(80, { mode: 'hard' })(origin)
 
 	let divider = '__'
 	let name = `${species}${divider}${accession}`

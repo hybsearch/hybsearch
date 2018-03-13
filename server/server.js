@@ -5,7 +5,7 @@ const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
 
-const [port=8080] = process.argv.slice(2)
+const [port = 8080] = process.argv.slice(2)
 const numericPort = parseInt(port)
 
 if (port === '-h' || port === '--help') {
@@ -19,7 +19,7 @@ if (Number.isNaN(numericPort)) {
 	process.exit(1)
 }
 
-const wss = new WebSocket.Server({port: numericPort})
+const wss = new WebSocket.Server({ port: numericPort })
 const workerPath = path.join(__dirname, 'worker.js')
 
 // listen for new websocket connections
