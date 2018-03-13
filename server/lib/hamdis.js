@@ -5,10 +5,8 @@ const max = require('lodash/max')
 const min = require('lodash/min')
 const mean = require('lodash/mean')
 
-const estimateGenerations = require('./estimate-generations')
 const hammingDistance = require('./hamming-distance')
-
-const parseFasta = require('../lib/parse-fasta')
+const parseFasta = require('./fasta/parse')
 
 // TODO: we need a new run of the function for each nonmonophyletic pair
 function hamdis(file) {

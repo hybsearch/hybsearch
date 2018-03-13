@@ -1,4 +1,3 @@
-// @ts-check
 'use strict'
 
 require('loud-rejection/register')
@@ -6,11 +5,11 @@ require('loud-rejection/register')
 const serializeError = require('serialize-error')
 
 const genbankToFasta = require('../bin/genbank-fasta')
-const clustal = require('../bin/clustal-o')
+const clustal = require('../bin/clustal')
 const fastaToNexus = require('../bin/fasta-to-nexus')
 const mrBayes = require('../bin/mrbayes')
 const consensusTreeToNewick = require('../bin/consensus-newick')
-const { parse: parseNewick } = require('../vendor/newick')
+const { parse: parseNewick } = require('../lib/newick')
 const ent = require('../lib/ent')
 
 process.on('disconnect', () => {
@@ -37,6 +36,7 @@ function removeCircularLinks(obj){
 	}))
 }
 
+// eslint-disable-next-line no-unused-vars
 async function main([command, filepath, data]) {
 	try {
 		begin('process')

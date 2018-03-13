@@ -1,4 +1,3 @@
-// @ts-check
 'use strict'
 
 // helper function: parse fasta file
