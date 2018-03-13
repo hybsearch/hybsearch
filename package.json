@@ -42,6 +42,7 @@
     "electron": "1.8.3",
     "electron-unhandled": "^0.2.0",
     "electron-updater": "^2.21.0",
+    "eslint-plugin-import": "^2.9.0",
     "execa": "^0.8.0",
     "lodash": "^4.17.4",
     "loud-rejection": "^1.6.0",
