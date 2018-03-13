@@ -10,12 +10,21 @@ x-config:
       LOCAL_NAME: *name
       DEST_NAME: docker.io/hybsearch/hybsearch
   - &caches
+    npm-load: &cache-load-npm
+      keys:
+        - npm--{{ arch }}-{{ checksum "package-lock.json" }}
+        - npm--{{ arch }}
+    npm-save: &cache-save-npm
+      key:
+        - docker--{{ arch }}-{{ checksum "package-lock.json" }}
+      paths:
+        - ./node_modules
     docker-load: &cache-load-docker
       keys:
         - docker--{{ arch }}-{{ .Branch }}
         - docker--{{ arch }}
     docker-save: &cache-save-docker
-      key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
+      key: docker--{{ arch }}-{{ .Branch }}
       paths:
         - /tmp/image.tar.gz
     docker-load-cmd: &cmd-docker-load
@@ -35,7 +44,9 @@ workflows:
   version: 2
   on_commit:
     jobs:
-      - build
+      - cache
+      - build: {requires: [cache]}
+      - lint: {requires: [cache]}
       - test-worker: {requires: [build]}
       - test-ent: {requires: [build]}
       - deploy-docker: {requires: [test-worker, test-ent]}
@@ -55,12 +66,22 @@ workflows:
       - test-ent: {requires: [build]}
 
 jobs:
+  # cache node_modules
+  cache:
+    <<: *defaults
+  steps:
+    - checkout
+    - restore_cache: *cache-load-npm
+    - run: npm ci
+    - save_cache: *cache-save-npm
+
   # build the docker image
   build:
     <<: *defaults
     steps:
       - checkout
       - setup_remote_docker
+      - restore_cache: *cache-load-npm
       - run: {name: 'List docker images', command: 'docker images -a'}
       - run:
           name: 'Build docker image'
@@ -68,6 +89,15 @@ jobs:
       - run: sudo apt install -y pigz
       - run: *cmd-docker-save
       - save_cache: *cache-save-docker
+
+  # run sanity checks
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *cache-load-npm
+      - run: npm ci
+      - run: npm run eslint
 
   # check that the whole pipeline runs at all
   test-worker:
@@ -131,4 +161,5 @@ jobs:
       - checkout:
           path: /root/project
       - run: npm i -g electron-builder
+      - run: npm ci
       - run: npm run build
