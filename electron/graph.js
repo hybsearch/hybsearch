@@ -105,22 +105,6 @@ function getLargestLength(objs) {
 	return getExtremeLength(objs, 0, greaterthan)
 }
 
-// Whitelist is an array of individuals for a single species. Anything not
-// in this whitelist must be nonmono
-function findOutliers(objs, whitelist, found = []) {
-	objs.forEach(obj => {
-		if (obj.name && obj.name !== '' && !whitelist.includes(obj.name)) {
-			found.push(`${obj.name}_${obj.length}`)
-		}
-
-		if (obj.branchset && obj.branchset.length > 0) {
-			found = findOutliers(obj.branchset, whitelist, found)
-		}
-	})
-
-	return found
-}
-
 function toggleMuteLeaves({doMute}){
 	const nodes = document.querySelectorAll(".node.leaf")
 	for (let node of nodes) {
@@ -168,17 +152,7 @@ function onNodeClicked(data) {
 		toggleMuteLeaves({doMute:false});
 		alert("This node is not monophyletic!")
 	}
-
-
 }
-
-function getWhitelist() {
-	return document
-		.getElementById('dominantSpeciesInput')
-		.value.trim()
-		.split(/,\s*/)
-}
-
 
 // this next block taken from MDN
 (function() {
