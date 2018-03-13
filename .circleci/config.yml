@@ -72,9 +72,10 @@ jobs:
     steps:
       - checkout
       - restore_cache: *cache-load-npm
-      - run: '[ ! -f ./node-modules-was-cached ] && sudo npm i -g npm'
-      - run: '[ ! -f ./node-modules-was-cached ] && npm ci'
-      - run: '[ ! -f ./node-modules-was-cached ] && touch ./node-modules-was-cached'
+      - run: ls
+      - run: '[ -f ./node-modules-was-cached ] || sudo npm i -g npm'
+      - run: '[ -f ./node-modules-was-cached ] || npm ci'
+      - run: '[ -f ./node-modules-was-cached ] || touch ./node-modules-was-cached'
       - save_cache: *cache-save-npm
 
   # build the docker image
