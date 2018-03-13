@@ -13,11 +13,11 @@ x-config:
     npm-load: &cache-load-npm
       keys:
         - npm--{{ arch }}-{{ checksum "package-lock.json" }}
-        - npm--{{ arch }}
     npm-save: &cache-save-npm
       key: npm--{{ arch }}-{{ checksum "package-lock.json" }}
       paths:
         - ./node_modules
+        - ./node-modules-was-cached
     docker-load: &cache-load-docker
       keys:
         - docker--{{ arch }}-{{ .Branch }}
@@ -71,8 +71,14 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: sudo npm i -g npm
-      - run: npm ci
+      - restore_cache: *cache-load-npm
+      - run:
+          name: cache node_modules if not cached already
+          command: |
+            if [ ! -f ./node-modules-was-cached ]; then
+              sudo npm i -g npm
+              npm ci
+            fi
       - save_cache: *cache-save-npm
 
   # build the docker image
