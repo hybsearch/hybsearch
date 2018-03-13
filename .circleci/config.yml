@@ -78,6 +78,7 @@ jobs:
             if [ ! -f ./node-modules-was-cached ]; then
               sudo npm i -g npm
               npm ci
+              touch ./node-modules-was-cached
             fi
       - save_cache: *cache-save-npm
 
