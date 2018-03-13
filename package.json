@@ -54,7 +54,7 @@
     "serialize-error": "^2.1.0",
     "tempfile": "^2.0.0",
     "wordwrap": "^1.0.0",
-    "ws": "^4.0.0"
+    "ws": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^4.18.2",
