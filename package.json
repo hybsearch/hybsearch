@@ -11,6 +11,7 @@
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
     "start": "electron ./main.js",
+    "test": "jest",
     "eslint": "eslint --cache 'bin/**.js' 'lib/**.js' 'electron/**.js' scripts/**.js 'server/**.js' 'vendor/**.js'",
     "prettier": "prettier --write 'bin/**.js' 'lib/**.js' 'electron/**.{js,css}' scripts/**.js 'server/**.js' 'vendor/**.js'"
   },
@@ -34,6 +35,9 @@
     "semi": false,
     "trailingComma": "es5",
     "singleQuote": true
+  },
+  "jest": {
+    "verbose": true
   },
   "dependencies": {
     "combinations-generator": "^1.0.1",
