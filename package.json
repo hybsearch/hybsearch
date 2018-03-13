@@ -39,7 +39,7 @@
     "combinations-generator": "^1.0.1",
     "d3": "^3.5.17",
     "dedent": "^0.7.0",
-    "electron": "1.8.3",
+    "electron": "^1.6.17",
     "electron-unhandled": "^0.2.0",
     "electron-updater": "^2.21.0",
     "eslint-plugin-import": "^2.9.0",
