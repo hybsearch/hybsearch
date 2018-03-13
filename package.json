@@ -11,7 +11,7 @@
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
     "start": "./hybsearch .",
-    "prettier": "prettier --write bin/*.js lib/*.js electron/*.{js,css} scripts/*.js vendor/*.js"
+    "prettier": "prettier --write 'bin/**.js' 'lib/**.js' 'electron/**.{js,css}' scripts/**.js 'server/**.js' 'vendor/**.js'"
   },
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
