@@ -71,7 +71,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *cache-load-npm
       - run: sudo npm i -g npm
       - run: npm ci
       - save_cache: *cache-save-npm
