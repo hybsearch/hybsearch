@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
+const getData = require('./lib/get-data')
 const seqmagick = require('../bin/fasta-to-nexus')
-const getData = require('../lib/get-data')
 
 function main() {
 	let file = process.argv[2]

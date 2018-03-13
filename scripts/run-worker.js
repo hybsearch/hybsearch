@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('../lib/get-data')
+const getData = require('./lib/get-data')
 const path = require('path')
 const childProcess = require('child_process')
 

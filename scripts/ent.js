@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('./get-data')
+const getData = require('./lib/get-data')
 const {strictSearch, formatData} = require('../server/lib/ent')
 
 function main() {

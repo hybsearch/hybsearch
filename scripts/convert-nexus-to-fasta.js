@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
+const getData = require('./lib/get-data')
 const convert = require('../bin/nexus-to-fasta')
-const getData = require('../lib/get-data')
 
 function main() {
 	let file = process.argv[2]

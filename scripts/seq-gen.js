@@ -10,7 +10,7 @@ optional arguments:
   --generations 2
 `
 
-const getData = require('../lib/get-data')
+const getData = require('./lib/get-data')
 const minimist = require('minimist')
 
 const seqgen = require('../bin/seq-gen')
