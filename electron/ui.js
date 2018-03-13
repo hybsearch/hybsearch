@@ -3,7 +3,7 @@
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
-const getFiles = require('./get-files')
+const getFiles = require('./lib/get-files')
 const run = require('./run')
 
 let websocket = new WebSocket(document.querySelector('#server-url').value)
