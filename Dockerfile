@@ -10,6 +10,7 @@ RUN apt-get update \
         seq-gen \
         python \
         python-pip \
+        python-setuptools \
     && rm -rf /var/lib/apt/lists/*
 
 ADD . /hybsearch
