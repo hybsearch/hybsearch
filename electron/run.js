@@ -1,11 +1,9 @@
-// @ts-check
 'use strict'
 
 const { parse: parseNewick } = require('../vendor/newick')
 const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
-const childProcess = require('child_process')
 const path = require('path')
 let receivedData = {};
 
@@ -48,7 +46,7 @@ function run(socket) {
 }
 
 function onData(phase,data){
-	// Save the data from each phase 
+	// Save the data from each phase
 	receivedData[phase] = data
 
 	switch (phase) {

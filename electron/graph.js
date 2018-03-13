@@ -1,4 +1,3 @@
-// @ts-check
 'use strict'
 
 const d3 = require('d3')
@@ -51,7 +50,7 @@ function load(newickData) {
 
 function render(newickData, newickNodes, nmResults) {
 	// nmResults is optional. If not passed, tree will be drawn with no marked nodes.
-	// This is to allow the tree to be drawn while the ent search goes on. 
+	// This is to allow the tree to be drawn while the ent search goes on.
 
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
@@ -151,7 +150,7 @@ function onNodeClicked(data) {
 	// Now let's toggle the non-mono pair green if one was found
 
 	if(nonMonoPair){
-		// If it's already muted, toggle all off 
+		// If it's already muted, toggle all off
 		var nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
 		var pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
 		if(document.querySelector('.node.leaf.muted')){
@@ -159,7 +158,7 @@ function onNodeClicked(data) {
 		} else {
 			// First we set all nodes to muted
 			toggleMuteLeaves({doMute:true});
-			// Except for the one and its pair 
+			// Except for the one and its pair
 			nodeSVG.classList.remove('muted')
 			pairSVG.classList.remove('muted')
 
@@ -169,7 +168,7 @@ function onNodeClicked(data) {
 		toggleMuteLeaves({doMute:false});
 		alert("This node is not monophyletic!")
 	}
-	
+
 
 }
 
