@@ -12,11 +12,54 @@ let nmResults
 let newick
 let newickNodes
 
+function RemoveNodes(node,identArray) {
+	if (node.branchset) {
+		let new_branchset = []
+		for(let child of node.branchset) {
+			let include = true;
+
+			if(!child.branchset){
+				if((child.ident && identArray.indexOf(child.ident) != -1) || (identArray.indexOf(child.name) != -1)){
+					include = false;
+				}
+			}
+			if(include){
+				new_branchset.push(child)
+			}
+
+			RemoveNodes(child,identArray)
+		}
+
+		node.branchset = new_branchset
+	}
+}
+
+function RemoveRedundant(node){
+	// If a node points to just one branch, go down until you hit 
+	// something that's either a leaf or just more than one branch, and set that to be 
+	// the thing it points to 
+	if(node.branchset && node.branchset.length == 1 && node.branchset[0].branchset){
+		return RemoveRedundant(node.branchset[0])
+	} else {
+		let new_branchset = []
+		for(let child of node.branchset) {
+			if(child.branchset && child.branchset.length == 1 && child.branchset[0].branchset){
+				child = RemoveRedundant(child)
+			}
+
+			new_branchset.push(child)
+		}
+		node.branchset = new_branchset
+
+		return node
+	}
+}
+
+
+
 function setEntResults(results){
 	nmResults = results
-	console.log("Got ent!",results)
 	let non = (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null
-	console.log(non)
 	let formattedReslults = ent.formatData(nmResults)
 	let resultsEl = document.querySelector('#nonmonophyly-results')
 	resultsEl.innerHTML = `<pre>${formattedReslults}</pre>`
@@ -39,6 +82,70 @@ function load(newickData) {
 	}
 
 	buildNewickNodes(newick)
+	/////////////////
+	let leafNodes = []
+	function GetLeaves(node) {
+		if (node.branchset) {
+			node.branchset.forEach(GetLeaves)
+		} else {
+			leafNodes.push(node)
+		}
+	}
+	// Compute average lengths of the nodes
+	GetLeaves(newick)
+	let average = 0;
+	for(let leaf of leafNodes) {
+		average += leaf.length
+	}
+	average /= leafNodes.length
+	// Compute standard deviation 
+	let std = 0;
+	for(let leaf of leafNodes) {
+		std += Math.pow((leaf.length - average),2)
+	}
+	std /= leafNodes.length
+	std = Math.sqrt(std)
+	// If a value's diff from the mean is larger than 2 * std, then chuck it
+	let toRemoveNames = []
+	let toRemoveNodes = []
+	for(let leaf of leafNodes) {
+		let min = average - std * 2; 
+		let max = average + std * 2; 
+		if(leaf.length < min || leaf.length > max){
+			if(leaf.ident){
+				toRemoveNames.push(leaf.ident)
+			} else {
+				toRemoveNames.push(leaf.name)
+			}
+
+			toRemoveNodes.push(leaf)
+		}
+
+	}
+	// Now remove the nodes 
+	if(toRemoveNodes.length != 0){
+		document.querySelector('#omitted-container').hidden = false
+		document.querySelector('#standard-deviation').innerHTML = (std * 2).toFixed(2)
+		let resultsEl = document.querySelector('#omitted-results')
+		resultsEl.innerHTML = '<pre>'
+		for(let node of toRemoveNodes){
+			let name = node.name; 
+			if(node.ident){
+				name += `[${node.ident}]`;
+			}
+			resultsEl.innerHTML += String(name) + " (" + String(node.length) + ")"
+			resultsEl.innerHTML += '\n'
+		}
+		resultsEl.innerHTML += '</pre>'
+		RemoveNodes(newick,toRemoveNames)
+		newick = RemoveRedundant(newick)
+		delete newick.length;
+		newickNodes = []
+		buildNewickNodes(newick)
+	}
+	
+	///////////////////
+	
 
 	render(newick, newickNodes, nmResults)
 
@@ -70,7 +177,6 @@ function render(newickData, newickNodes, nmResults) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => {
 			let name = node.name.replace(/_/g, ' ')
-			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
 		nonmonophyly: (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
