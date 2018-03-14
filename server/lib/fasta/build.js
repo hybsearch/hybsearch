@@ -1,6 +1,6 @@
 'use strict'
 
-function buildFastaSequence({species, sequence}) {
+function buildFastaSequence({ species, sequence }) {
 	// `entry` is {species: string, sequence: string}
 	return `> ${species}\n${sequence}`
 }

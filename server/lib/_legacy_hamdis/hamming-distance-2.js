@@ -15,13 +15,13 @@ const _mean = require('lodash/mean')
 // Find Hamming distance between two sequences
 // Takes input of a two locations for sequences to compare
 function hamming(dna1 /*: string */, dna2 /*: string */) /*: number */ {
-    // console.log(dna1)
-    // console.log(dna2)
+	// console.log(dna1)
+	// console.log(dna2)
 
 	let count = 0
 
 	for (let [a, b] of zip([...dna1], [...dna2])) {
-        // console.log(a, b)
+		// console.log(a, b)
 		if (a !== b) {
 			count += 1
 		}
@@ -89,7 +89,7 @@ function run(input) {
 				// add in the below line to print out sequences
 				console.log(id, ':', DNA_sequence)
 				if (counter == -1) continue
-				if ((counter == 0) || (counter % 2 == 0)) {
+				if (counter == 0 || counter % 2 == 0) {
 					ham1 = DNA_sequence
 					// below output is to test for this step occurring properly.
 					// cout << "hi! it's me!" << endl;
@@ -113,7 +113,7 @@ function run(input) {
 	// but ONLY if id actually contains something
 	if (id !== '') {
 		// add in line below if you want to print out line
-		console.log(id, ":", DNA_sequence);
+		console.log(id, ':', DNA_sequence)
 		if (counter % 2 === 1) {
 			ham2 = DNA_sequence
 			let out = hamming(ham1, ham2)
@@ -122,7 +122,7 @@ function run(input) {
 		}
 	}
 
-    console.log('distances', distances)
+	console.log('distances', distances)
 
 	// Find minimum
 	let small = _min(distances)
