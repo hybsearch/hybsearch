@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fasta/parse should handle basic files 1`] = `
+exports[`handles basic files 1`] = `
 Array [
   Object {
     "sequence": "ggaacaataaattatcacctcaaaagacac",
@@ -17,7 +17,7 @@ Array [
 ]
 `;
 
-exports[`fasta/parse should handle multi-line sequences 1`] = `
+exports[`handles multi-line sequences 1`] = `
 Array [
   Object {
     "sequence": "ggaacaataaattatcacctcaaaagacacggaacaataaattatcacctcaaaagacacggaacaataaattatcacctcaaaagacac",

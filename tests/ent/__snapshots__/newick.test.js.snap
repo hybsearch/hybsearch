@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`newick coyote-test.tree 1`] = `
+exports[`coyote-test.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -384,7 +384,7 @@ Object {
 }
 `;
 
-exports[`newick emydura.tree 1`] = `
+exports[`emydura.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -480,7 +480,7 @@ Object {
 }
 `;
 
-exports[`newick emydura-short.tree 1`] = `
+exports[`emydura-short.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -556,7 +556,7 @@ Object {
 }
 `;
 
-exports[`newick kino.tree 1`] = `
+exports[`kino.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -886,7 +886,7 @@ Object {
 }
 `;
 
-exports[`newick plaamyd.tree 1`] = `
+exports[`plaamyd.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -1088,7 +1088,7 @@ Object {
 }
 `;
 
-exports[`newick smallerlepus.tree 1`] = `
+exports[`smallerlepus.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -1326,7 +1326,7 @@ Object {
 }
 `;
 
-exports[`newick trio171sequence.tree 1`] = `
+exports[`trio171sequence.tree 1`] = `
 Object {
   "branchset": Array [
     Object {
@@ -2446,7 +2446,7 @@ Object {
 }
 `;
 
-exports[`newick trionychcytb.tree 1`] = `
+exports[`trionychcytb.tree 1`] = `
 Object {
   "branchset": Array [
     Object {

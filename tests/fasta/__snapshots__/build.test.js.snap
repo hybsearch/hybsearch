@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fasta/build should generate a fasta file from a fasta object 1`] = `
+exports[`generates a fasta file from a fasta object 1`] = `
 "> Emydura_subglobosa__KC755190
 ggaacaataaattatcacctcaaaagacac
 > Emydura_victoriae__KC755189
