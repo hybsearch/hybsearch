@@ -1,16 +1,10 @@
-#!/usr/bin/env node
-// @ts-check
 'use strict'
 
 const execa = require('execa')
 const tempfile = require('tempfile')
 const fs = require('fs')
 const os = require('os')
-const path = require('path')
-const getData = require('../lib/get-data')
-const minimist = require('minimist')
 const dedent = require('dedent')
-const whichOs = require('../lib/which-os')
 
 /*
 $ mb
@@ -53,13 +47,14 @@ function mrbayes(data, argv) {
 
 	let mb = '/usr/bin/mb'
 	let args = [inputFile]
-	if (whichOs.isMac()) {
+	let hasMpiRun = false // until we get it working
+	if (hasMpiRun) {
 		mb = '/usr/local/bin/mpirun'
 		// prettier-ignore
 		args = [
 			'-np', '4',
 			'-mca', 'plm', 'isolated',
-			path.join('vendor', 'MrBayes-osx', 'mb-mpi'),
+			'/usr/bin/mb',
 			inputFile,
 		]
 	}
@@ -76,23 +71,4 @@ function mrbayes(data, argv) {
 	}
 
 	return fs.readFileSync(outputFile, 'utf-8').replace(os.EOL, '\n')
-}
-
-function main() {
-	let argv = process.argv.slice(2)
-	let file = argv[0]
-
-	if (!file && process.stdin.isTTY) {
-		console.error('usage: node mrbayes.js (<input> | -) [--quiet]')
-		process.exit(1)
-	}
-
-	return getData(file)
-		.then(data => mrbayes(data, argv))
-		.then(data => console.log(data))
-		.catch(console.error.bind(console))
-}
-
-if (require.main === module) {
-	main()
 }

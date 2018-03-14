@@ -2,7 +2,7 @@
 'use strict'
 
 const expect = require('expect')
-const {buildFasta} = require('../../lib/fasta')
+const {buildFasta} = require('../../server/lib/fasta/build')
 
 const actual = buildFasta([
   { species: 'Emydura_subglobosa__KC755190', sequence: 'ggaacaataaattatcacctcaaaagacac' },

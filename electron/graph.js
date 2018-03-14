@@ -1,10 +1,9 @@
-// @ts-check
 'use strict'
 
 const d3 = require('d3')
-d3.phylogram = require('../vendor/d3.phylogram')
+d3.phylogram = require('./lib/d3.phylogram')
 
-const ent = require('../lib/ent')
+const ent = require('../server/lib/ent')
 module.exports.load = load
 module.exports.setEntResults = setEntResults
 
@@ -12,10 +11,13 @@ let nmResults
 let newick
 let newickNodes
 
-function setEntResults(results){
+function setEntResults(results) {
 	nmResults = results
-	console.log("Got ent!",results)
-	let non = (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null
+	console.log('Got ent!', results)
+	let non =
+		nmResults !== undefined
+			? nmResults.nm.map(pair => pair.map(node => node.ident))
+			: null
 	console.log(non)
 	let formattedReslults = ent.formatData(nmResults)
 	let resultsEl = document.querySelector('#nonmonophyly-results')
@@ -42,16 +44,16 @@ function load(newickData) {
 
 	render(newick, newickNodes, nmResults)
 
-	window.addEventListener("optimizedResize", function() {
+	window.addEventListener('optimizedResize', function() {
 		let el = document.querySelector('#phylogram')
 		if (el) el.innerHTML = ''
 		render(newick, newickNodes, nmResults)
-	});
+	})
 }
 
 function render(newickData, newickNodes, nmResults) {
 	// nmResults is optional. If not passed, tree will be drawn with no marked nodes.
-	// This is to allow the tree to be drawn while the ent search goes on. 
+	// This is to allow the tree to be drawn while the ent search goes on.
 
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
@@ -73,7 +75,10 @@ function render(newickData, newickNodes, nmResults) {
 			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly: (nmResults !== undefined) ? nmResults.nm.map(pair => pair.map(node => node.ident)) : null,
+		nonmonophyly:
+			nmResults !== undefined
+				? nmResults.nm.map(pair => pair.map(node => node.ident))
+				: null,
 		onNodeClicked: onNodeClicked,
 	})
 }
@@ -106,61 +111,74 @@ function getLargestLength(objs) {
 	return getExtremeLength(objs, 0, greaterthan)
 }
 
-// Whitelist is an array of individuals for a single species. Anything not
-// in this whitelist must be nonmono
-function findOutliers(objs, whitelist, found = []) {
-	objs.forEach(obj => {
-		if (obj.name && obj.name !== '' && !whitelist.includes(obj.name)) {
-			found.push(`${obj.name}_${obj.length}`)
+function toggleMuteLeaves({ doMute }) {
+	const nodes = document.querySelectorAll('.node.leaf')
+	for (let node of nodes) {
+		if (doMute) {
+			node.classList.add('muted')
+		} else {
+			node.classList.remove('muted')
 		}
-
-		if (obj.branchset && obj.branchset.length > 0) {
-			found = findOutliers(obj.branchset, whitelist, found)
-		}
-	})
-
-	return found
+	}
 }
 
 function onNodeClicked(data) {
-	console.log('Clicked on node point with data:', data)
+	if (data.name == '' || nmResults == undefined) return // We don't care about anything that's not a leaf node
+	// Find the other individual that is nonmonophyletic with this one
+	var nonMonoPair
+	for (let pair of nmResults.nm) {
+		if (pair[0].ident == data.ident) {
+			nonMonoPair = pair[1]
+			break
+		}
+		if (pair[1].ident == data.ident) {
+			nonMonoPair = pair[0]
+			break
+		}
+	}
+	// Now let's toggle the non-mono pair green if one was found
 
-	let outliers = findOutliers(data.branchset, getWhitelist())
-	console.log('Outliers found:', outliers)
+	if (nonMonoPair) {
+		// If it's already muted, toggle all off
+		var nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
+		var pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
+		if (document.querySelector('.node.leaf.muted')) {
+			toggleMuteLeaves({ doMute: false })
+		} else {
+			// First we set all nodes to muted
+			toggleMuteLeaves({ doMute: true })
+			// Except for the one and its pair
+			nodeSVG.classList.remove('muted')
+			pairSVG.classList.remove('muted')
 
-	outliers.forEach(outlier =>
-		document.getElementById(outlier).setAttribute('fill', 'green')
-	)
-
-	alert(
-		'Node analysis complete! Non-dominant species for the specified subtree are marked green. For a comprehensive list, please view the browser console logs.'
-	)
+			const p1 = `${data.name}${data.ident}`
+			const p2 = `${nonMonoPair.name}${nonMonoPair.ident}`
+			alert(`${p1} is nonmono with ${p2}`)
+		}
+	} else {
+		toggleMuteLeaves({ doMute: false })
+		alert('This node is not monophyletic!')
+	}
 }
-
-function getWhitelist() {
-	return document
-		.getElementById('dominantSpeciesInput')
-		.value.trim()
-		.split(/,\s*/)
-}
-
 
 // this next block taken from MDN
-(function() {
-    var throttle = function(type, name, obj) {
-        obj = obj || window;
-        var running = false;
-        var func = function() {
-            if (running) { return; }
-            running = true;
-             requestAnimationFrame(function() {
-                obj.dispatchEvent(new CustomEvent(name));
-                running = false;
-            });
-        };
-        obj.addEventListener(type, func);
-    };
+;(function() {
+	var throttle = function(type, name, obj) {
+		obj = obj || window
+		var running = false
+		var func = function() {
+			if (running) {
+				return
+			}
+			running = true
+			requestAnimationFrame(function() {
+				obj.dispatchEvent(new CustomEvent(name))
+				running = false
+			})
+		}
+		obj.addEventListener(type, func)
+	}
 
-    /* init - you can init any event */
-    throttle("resize", "optimizedResize");
-})();
+	/* init - you can init any event */
+	throttle('resize', 'optimizedResize')
+})()

@@ -2,7 +2,7 @@
 'use strict'
 
 const expect = require('expect')
-const {parseFasta} = require('../../lib/fasta')
+const {parseFasta} = require('../../server/lib/fasta/parse')
 
 function shouldHandleBasicFiles() {
   const actual = parseFasta(`
