@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ent coyote-test.tree 1`] = `
+exports[`coyote-test.tree 1`] = `
 "Canis lupus (AF115702) / Canis latrans (EU400577)
 Canis lupus (AF115702) / Canis latrans (EU400578)
 Canis lupus (AF115703) / Canis latrans (EU400577)
@@ -31,19 +31,19 @@ Canis lupus (AF115693) / Canis latrans (EU400577)
 Canis lupus (AF115693) / Canis latrans (EU400578)"
 `;
 
-exports[`ent emydura.tree 1`] = `
+exports[`emydura.tree 1`] = `
 "Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755186)
 Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755187)"
 `;
 
-exports[`ent emydura-short.tree 1`] = `
+exports[`emydura-short.tree 1`] = `
 "Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755186)
 Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755187)
 Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755186)
 Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755187)"
 `;
 
-exports[`ent kino.tree 1`] = `
+exports[`kino.tree 1`] = `
 "Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301380)
 Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301381)
 Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301382)
@@ -57,7 +57,7 @@ Kinosternon subrubrum (KF301391) / Kinosternon flavescens (KF301376)
 Sternotherus minor (KF301363) / Sternotherus depressus (KF301362)"
 `;
 
-exports[`ent plaamyd.tree 1`] = `
+exports[`plaamyd.tree 1`] = `
 "Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)
@@ -109,7 +109,7 @@ Palea steindachneri (AY259552) / Amyda cartilaginea (LM537464)
 Palea steindachneri (AY259552) / Amyda cartilaginea (LM537463)"
 `;
 
-exports[`ent smallerlepus.tree 1`] = `
+exports[`smallerlepus.tree 1`] = `
 "Lepus mandshuricus (HM233014) / Lepus timidus (AB687528)
 Lepus mandshuricus (HM233014) / Lepus timidus (AB687529)
 Lepus mandshuricus (HM233014) / Lepus timidus (AB687530)
@@ -174,7 +174,7 @@ Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058615)
 Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058616)"
 `;
 
-exports[`ent trio171sequence.tree 1`] = `
+exports[`trio171sequence.tree 1`] = `
 "Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)
@@ -350,7 +350,7 @@ Palea steindachneri (AY259552) / Amyda cartilaginea (LM537484)
 Palea steindachneri (AY259552) / Amyda cartilaginea (LM537483)"
 `;
 
-exports[`ent trionychcytb.tree 1`] = `
+exports[`trionychcytb.tree 1`] = `
 "Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
 Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)
