@@ -9,9 +9,14 @@ RUN apt-get update \
         mrbayes \
         seq-gen \
         python \
+        python-pip \
+        python-setuptools \
     && rm -rf /var/lib/apt/lists/*
 
 ADD . /hybsearch
 WORKDIR /hybsearch
 
-ENTRYPOINT ./scripts/server.js 8080
+RUN npm i -g npm && npm ci && npm un -g npm
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ./server/server.js 8080

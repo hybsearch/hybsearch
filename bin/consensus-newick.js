@@ -1,8 +1,6 @@
-#!/usr/bin/env node
 'use strict'
 
 const os = require('os')
-const getData = require('../lib/get-data')
 
 module.exports = consensusTreeNewick
 function consensusTreeNewick(input) {
@@ -25,22 +23,4 @@ function consensusTreeNewick(input) {
 	}
 
 	return conTree
-}
-
-function main() {
-	let file = process.argv[2]
-
-	if (!file && process.stdin.isTTY) {
-		console.error('usage: node consensus-newick.js (<input> | -)')
-		process.exit(1)
-	}
-
-	return getData(file)
-		.then(consensusTreeNewick)
-		.then(data => console.log(data))
-		.catch(console.error.bind(console))
-}
-
-if (require.main === module) {
-	main()
 }
