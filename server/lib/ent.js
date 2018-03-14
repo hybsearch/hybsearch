@@ -170,7 +170,7 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 
 module.exports.formatData = formatData
 function formatData(results) {
-	const {nm: nmlist} = results
+	const { nm: nmlist } = results
 	// prettier-ignore
 	return nmlist
 		.map(pair => pair.map(label).join(' / '))

@@ -1,6 +1,6 @@
 'use strict'
 
-const {buildFasta} = require('../server/lib/fasta/build')
+const { buildFasta } = require('../server/lib/fasta/build')
 const wrap = require('wordwrap')
 const take = require('lodash/take')
 
@@ -74,7 +74,7 @@ const genbankEntryToFasta = entry => {
 		name = `${name.substr(0, cutoff)}${divider}${accession}`
 	}
 
-	return {species: name, sequence: origin}
+	return { species: name, sequence: origin }
 }
 
 module.exports = genbankToFasta
@@ -85,7 +85,9 @@ function genbankToFasta(genbankFile) {
 	const entryObjects = entries.map(genbankEntryToObject)
 
 	// prevent empty objects ("entries") from making it to the final file
-	const actualEntries = entryObjects.filter(entry => Object.keys(entry).length > 0)
+	const actualEntries = entryObjects.filter(
+		entry => Object.keys(entry).length > 0
+	)
 
 	// convert entries into the expected format for building a fasta file
 	const fastaEntries = actualEntries.map(genbankEntryToFasta)

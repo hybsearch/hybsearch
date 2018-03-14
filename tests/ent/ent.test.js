@@ -1,6 +1,6 @@
 /* eslint-env jest */
-const {strictSearch, formatData} = require('../../server/lib/ent')
-const {parse: newickToJson} = require('../../lib/newick')
+const { strictSearch, formatData } = require('../../server/lib/ent')
+const { parse: newickToJson } = require('../../lib/newick')
 const fs = require('fs')
 const path = require('path')
 
