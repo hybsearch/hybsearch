@@ -10,6 +10,14 @@ x-config:
       LOCAL_NAME: *name
       DEST_NAME: docker.io/hybsearch/hybsearch
   - &caches
+    npm-load: &cache-load-npm
+      keys:
+        - npm--{{ arch }}-{{ checksum "package-lock.json" }}
+    npm-save: &cache-save-npm
+      key: npm--{{ arch }}-{{ checksum "package-lock.json" }}
+      paths:
+        - ./node_modules
+        - ./node-modules-was-cached
     docker-load: &cache-load-docker
       keys:
         - docker--{{ arch }}-{{ .Branch }}
@@ -35,11 +43,13 @@ workflows:
   version: 2
   on_commit:
     jobs:
-      - build
+      - cache
+      - build: {requires: [cache]}
+      - lint: {requires: [cache]}
+      - test-js: {requires: [cache]}
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
-      - deploy-docker: {requires: [test-worker, test-ent]}
-      - deploy-github: {requires: [test-worker, test-ent]}
+      - deploy-docker: {requires: [test-worker, test-js]}
+      - deploy-github: {requires: [test-worker, test-js]}
 
   cron_weekly:
     triggers:
@@ -50,17 +60,30 @@ workflows:
             branches:
               only: [master]
     jobs:
-      - build
+      - cache
+      - build: {requires: [cache]}
+      - test-js: {requires: [cache]}
       - test-worker: {requires: [build]}
-      - test-ent: {requires: [build]}
 
 jobs:
+  # cache node_modules
+  cache:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *cache-load-npm
+      - run: '[ -f ./node-modules-was-cached ] || sudo npm i -g npm'
+      - run: '[ -f ./node-modules-was-cached ] || npm ci'
+      - run: '[ -f ./node-modules-was-cached ] || touch ./node-modules-was-cached'
+      - save_cache: *cache-save-npm
+
   # build the docker image
   build:
     <<: *defaults
     steps:
       - checkout
       - setup_remote_docker
+      - restore_cache: *cache-load-npm
       - run: {name: 'List docker images', command: 'docker images -a'}
       - run:
           name: 'Build docker image'
@@ -68,6 +91,15 @@ jobs:
       - run: sudo apt install -y pigz
       - run: *cmd-docker-save
       - save_cache: *cache-save-docker
+
+  # run sanity checks
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *cache-load-npm
+      - run: npm run eslint
+      - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
   test-worker:
@@ -77,17 +109,15 @@ jobs:
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: docker run -i --entrypoint /hybsearch/scripts/worker-runner.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
+      - run: docker run -i --entrypoint /hybsearch/scripts/run-worker.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
 
   # test ent.js against all our sample files
-  test-ent:
+  test-js:
     <<: *defaults
     steps:
       - checkout
-      - setup_remote_docker
-      - restore_cache: *cache-load-docker
-      - run: *cmd-docker-load
-      - run: docker run --entrypoint /hybsearch/scripts/test-ent.sh "$LOCAL_NAME:$CIRCLE_SHA1"
+      - restore_cache: *cache-load-npm
+      - run: npm test
 
   # deploy the docker images to Docker Hub
   deploy-docker:
@@ -130,5 +160,7 @@ jobs:
     steps:
       - checkout:
           path: /root/project
+      - run: npm i -g npm
       - run: npm i -g electron-builder
+      - run: npm ci
       - run: npm run build

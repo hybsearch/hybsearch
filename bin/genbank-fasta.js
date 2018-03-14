@@ -1,7 +1,5 @@
-#!/usr/bin/env node
 'use strict'
 
-const getData = require('../lib/get-data')
 const wrap = require('wordwrap')
 const take = require('lodash/take')
 
@@ -64,7 +62,7 @@ const genbankEntryToFasta = entry => {
 
 	let origin = entry.ORIGIN
 	origin = origin.replace(/ /g, '')
-	origin = wrap(80, {mode: 'hard'})(origin)
+	origin = wrap(80, { mode: 'hard' })(origin)
 
 	let divider = '__'
 	let name = `${species}${divider}${accession}`
@@ -72,7 +70,7 @@ const genbankEntryToFasta = entry => {
 	// mrbayes only accepts names of < 99 chars
 	if (name.length > 99) {
 		let cutoff = name.length + accession.length + divider.length - 99
-		name = `${definition.substr(0, cutoff)}${divider}${accession}`
+		name = `${name.substr(0, cutoff)}${divider}${accession}`
 	}
 
 	return `> ${name}\n${origin}`
@@ -90,22 +88,4 @@ function genbankToFasta(genbankFile) {
 			.map(genbankEntryToFasta)
 			.join('\n')
 	)
-}
-
-function main() {
-	let file = process.argv[2]
-
-	if (!file && process.stdin.isTTY) {
-		console.error('usage: node genbank-to-fasta.js (<input> | -)')
-		process.exit(1)
-	}
-
-	return getData(file)
-		.then(genbankToFasta)
-		.then(data => console.log(data))
-		.catch(console.error.bind(console))
-}
-
-if (require.main === module) {
-	main()
 }
