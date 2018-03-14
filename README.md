@@ -1,5 +1,4 @@
 # hybsearch
-[![Build Status](https://travis-ci.org/hybsearch/hybsearch.svg?branch=master)](https://travis-ci.org/hybsearch/hybsearch)
 
 > A tool to find nonmonophyly in a phylogenetic tree.
 
