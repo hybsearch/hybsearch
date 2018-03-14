@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @flow
 // Hamming distances script
 //
