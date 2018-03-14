@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles basic files 1`] = `
+Array [
+  Object {
+    "sequence": "ggaacaataaattatcacctcaaaagacac",
+    "species": "Emydura_subglobosa__KC755190",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaagac",
+    "species": "Emydura_victoriae__KC755189",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaggaa",
+    "species": "Emydura_victoriae__KC755188",
+  },
+]
+`;
+
+exports[`handles multi-line sequences 1`] = `
+Array [
+  Object {
+    "sequence": "ggaacaataaattatcacctcaaaagacacggaacaataaattatcacctcaaaagacacggaacaataaattatcacctcaaaagacac",
+    "species": "Emydura_subglobosa__KC755190",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagac",
+    "species": "Emydura_victoriae__KC755189",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaggaaggaacaatcaattattaccccacaaagacggaacaatcaattattaccccacaaagac",
+    "species": "Emydura_victoriae__KC755188",
+  },
+]
+`;
