@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
   d3.phylogram.js
   Wrapper around a d3-based phylogram (tree where branch lengths are scaled)
@@ -176,9 +177,8 @@ phylogram.styleTreeNodes = (vis, onClickFunc) => {
 		.selectAll('g.root.node')
 		.append('svg:circle')
 		.attr('r', 4)
-		//.classed('clickable-node', true)
-		//.on('click', onClickFunc)
-
+	//.classed('clickable-node', true)
+	//.on('click', onClickFunc)
 }
 
 function visitPreOrder(root, callback) {
