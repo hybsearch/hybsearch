@@ -1,7 +1,7 @@
 {
   "name": "hybsearch",
   "private": true,
-  "version": "4.0.0-beta.2",
+  "version": "4.0.0-beta.3",
   "description": "Find nonmonophyly in genetic sequences",
   "repository": "hybsearch/hybsearch",
   "homepage": "https://hybsearch.github.io/",
@@ -10,9 +10,11 @@
   "scripts": {
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
-    "start": "./hybsearch .",
-    "test": "./scripts/test-ent.sh && ./scripts/test-fasta.sh",
-    "prettier": "prettier --write bin/*.js lib/*.js electron/*.{js,css} scripts/*.js vendor/*.js"
+    "start": "electron ./main.js",
+    "test": "jest",
+    "eslint": "eslint --cache 'bin/**.js' 'lib/**.js' 'electron/**.js' scripts/**.js 'server/**.js' 'vendor/**.js'",
+    "pretty-check": "npm run prettier -- --list-different",
+    "prettier": "prettier --write 'bin/**.js' 'lib/**.js' 'electron/**.{js,css}' scripts/**.js 'server/**.js' 'vendor/**.js'"
   },
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
@@ -35,42 +37,32 @@
     "trailingComma": "es5",
     "singleQuote": true
   },
-  "bundledDependencies": [
-    "biojs-io-newick",
-    "combinations-generator",
-    "d3",
-    "dedent",
-    "electron-unhandled",
-    "execa",
-    "file-extension",
-    "get-stdin",
-    "lodash",
-    "loud-rejection",
-    "minimist",
-    "normalize.css",
-    "serialize-error",
-    "tempfile",
-    "ws"
-  ],
+  "jest": {
+    "verbose": true
+  },
   "dependencies": {
-    "biojs-io-newick": "1.5.0",
-    "combinations-generator": "1.0.1",
-    "d3": "3.5.17",
-    "dedent": "0.7.0",
-    "electron-unhandled": "0.2.0",
-    "electron-updater": "2.21.0",
-    "execa": "0.8.0",
-    "get-stdin": "5.0.1",
-    "lodash": "4.17.4",
-    "loud-rejection": "1.6.0",
-    "minimist": "1.2.0",
-    "normalize.css": "7.0.0",
-    "serialize-error": "2.1.0",
-    "tempfile": "2.0.0",
-    "wordwrap": "1.0.0",
-    "ws": "4.0.0"
+    "combinations-generator": "^1.0.1",
+    "d3": "^3.5.17",
+    "dedent": "^0.7.0",
+    "electron-unhandled": "^0.2.0",
+    "electron-updater": "^2.21.1",
+    "eslint-plugin-import": "^2.9.0",
+    "execa": "^0.8.0",
+    "lodash": "^4.17.5",
+    "loud-rejection": "^1.6.0",
+    "normalize.css": "^7.0.0",
+    "serialize-error": "^2.1.0",
+    "tempfile": "^2.0.0",
+    "wordwrap": "^1.0.0",
+    "ws": "^4.1.0"
   },
   "devDependencies": {
-    "expect": "22.4.0"
+    "electron": "^1.8.3",
+    "eslint": "^4.18.2",
+    "expect": "^22.4.0",
+    "get-stdin": "^6.0.0",
+    "jest": "^22.4.2",
+    "minimist": "^1.2.0",
+    "prettier": "1.11.1"
   }
 }

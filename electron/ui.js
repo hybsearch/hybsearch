@@ -1,10 +1,9 @@
-// @ts-check
 'use strict'
 
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
-const getFiles = require('./get-files')
+const getFiles = require('./lib/get-files')
 const run = require('./run')
 
 let websocket = new WebSocket(document.querySelector('#server-url').value)
@@ -41,7 +40,7 @@ document.querySelector('#use-localhost').addEventListener('click', () => {
 	updateWebSocket(newUri)
 })
 
-document.querySelector('#server-url').addEventListener('change', (ev) => {
+document.querySelector('#server-url').addEventListener('change', ev => {
 	console.log('uri changed')
 	updateWebSocket(ev.currentTarget.value)
 })
@@ -73,7 +72,7 @@ const groupedFiles = groupBy(files, f => {
 	return f.split('.')[f.split('.').length - 1]
 })
 
-const optgroups = mapValues(groupedFiles, (group, groupedBy) =>
+const optgroups = mapValues(groupedFiles, group =>
 	group.map(filename => {
 		let opt = document.createElement('option')
 		opt.value = filename

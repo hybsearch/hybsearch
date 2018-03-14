@@ -1,9 +1,6 @@
-#!/usr/bin/env node
 'use strict'
 
-const fs = require('fs')
 const startsWith = require('lodash/startsWith')
-const getData = require('../lib/get-data')
 
 module.exports = convert
 function convert(data) {
@@ -34,22 +31,4 @@ function convert(data) {
 	}
 
 	return fasta.join('\n')
-}
-
-function main() {
-	let file = process.argv[2]
-
-	if (!file && process.stdin.isTTY) {
-		console.error('usage: node nexus-to-fasta.js (<input> | -)')
-		process.exit(1)
-	}
-
-	return getData(file)
-		.then(convert)
-		.then(console.log.bind(console))
-		.catch(console.error.bind(console))
-}
-
-if (require.main === module) {
-	main()
 }
