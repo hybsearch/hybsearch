@@ -4,7 +4,7 @@ const remove = require('lodash/remove')
 const isEqual = require('lodash/isEqual')
 
 const ENABLE_DEBUG = false
-let debug = console.log.bind(console)
+let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
@@ -33,7 +33,7 @@ function nmSearch(node) {
 	let nmInstances = []
 
 	if (node.branchset) {
-		// debug('has branchset')
+		debug('has branchset')
 		let combinations = combs(node.branchset, 2)
 
 		let speciesList = []
@@ -46,20 +46,20 @@ function nmSearch(node) {
 			let speciesListB = resultsB.species
 			nmInstances = nmInstances.concat(resultsB.nm)
 
-			// debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
+			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
 
 			let speciesBNames = speciesListB.map(s => s.name)
 			speciesListA.forEach(species1 => {
 				let hasName = speciesBNames.includes(species1.name)
 				let notAllEqual = !speciesBNames.every(n => n === species1)
-				// debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
 
 				// species1 is in speciesListB, and not everything in speciesListB is species1
 				if (hasName && notAllEqual) {
 					const checkAndMark = otherSpecies => {
 						if (otherSpecies.name !== species1.name) {
 							nmMark(node, species1, otherSpecies)
-							// debug(`nmMark called on ${species1} and ${otherSpecies}`)
+							debug(`nmMark called on ${species1} and ${otherSpecies}`)
 							console.log(
 								`nonmonophyly: ${label(species1)} / ${label(otherSpecies)}`
 							)
@@ -79,11 +79,11 @@ function nmSearch(node) {
 		}
 
 		speciesList = uniqBy(speciesList, 'ident')
-		// debug('speciesList', speciesList)
+		debug('speciesList', speciesList)
 		return { species: speciesList, nm: nmInstances }
 	}
 
-	// debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
+	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
 	return { species: [node], nm: nmInstances }
 }
 
@@ -98,7 +98,7 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 	}
 
 	if (node.branchset) {
-		// debug('has branchset')
+		debug('has branchset')
 		let combinations = combs(node.branchset, 2)
 
 		let speciesList = []
@@ -111,14 +111,14 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 			let resultsB = strictSearch(speciesSet[0], nmInstances, globalNmList)
 			let speciesListB = resultsB.species
 
-			// debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
+			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
 
 			const speciesChecker = otherSpeciesList => species1 => {
 				const otherSpeciesNames = otherSpeciesList.map(s => s.name)
 
 				let hasName = otherSpeciesNames.includes(species1.name)
 				let notAllEqual = !otherSpeciesNames.every(n => n === species1)
-				// debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
 
 				// species1 is in speciesList{B,A}, and not everything in speciesList{B,A} is species1
 				if (hasName && notAllEqual) {
@@ -132,8 +132,8 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 							if (!count) {
 								nmMark(node, species1, species3)
 
-								// debug(`nmMark called on ${species1} and ${species3}`)
-								// console.log(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
+								debug(`nmMark called on ${species1} and ${species3}`)
+								debug(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
 
 								nmInstances.push([species1, species3])
 
@@ -142,7 +142,7 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 								}
 
 								forRemoval.push(species3.ident)
-								// console.log(`removing from A ${label(species3)}`)
+								debug(`removing from A ${label(species3)}`)
 							}
 						}
 					})
@@ -160,17 +160,17 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 
 		speciesList = uniqBy(speciesList, 'ident')
 
-		// debug('speciesList', speciesList)
+		debug('speciesList', speciesList)
 		return { species: speciesList, nm: nmInstances }
 	}
 
-	// debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
+	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
 	return { species: [node], nm: nmInstances }
 }
 
 module.exports.formatData = formatData
 function formatData(results) {
-	const {nm: nmlist} = results
+	const { nm: nmlist } = results
 	// prettier-ignore
 	return nmlist
 		.map(pair => pair.map(label).join(' / '))

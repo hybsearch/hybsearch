@@ -1,7 +1,8 @@
 'use strict'
 
 // helper function: parse fasta file
-function* parseFasta(data) {
+module.exports.parseFastaIteratively = parseFastaIteratively
+function* parseFastaIteratively(data) {
 	// encode species name into the id somewhere
 	let species = ''
 	let seq = ''
@@ -16,18 +17,21 @@ function* parseFasta(data) {
 
 		if (line.startsWith('>')) {
 			if (species) {
-				yield { species, seq }
+				yield { species, sequence: seq }
 			}
 
 			// reset variables
-			species = line.replace(/^>/, '')
+			species = line.replace(/^> */, '')
 			seq = ''
 		} else {
 			seq += line
 		}
 	}
 
-	yield { species, seq }
+	yield { species, sequence: seq }
 }
 
-module.exports = parseFasta
+module.exports.parseFasta = parseFasta
+function parseFasta(data) {
+	return Array.from(parseFastaIteratively(data))
+}

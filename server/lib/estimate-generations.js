@@ -6,7 +6,11 @@
 // Estimate number of generations based on 2% mutation rate, generation length
 // of 10 years, and population size 100.
 // This is used in the SeqGen input
-function estimateGenerations(percentDifferent, genLength = 10, mutationRate = 0.02) {
+function estimateGenerations(
+	percentDifferent,
+	genLength = 10,
+	mutationRate = 0.02
+) {
 	// Assume 2% per million years (standard for cytochrome B) mutation rate.
 	// This allows us to calculate a likely divergence time, from which we can
 	// estimate generations.
