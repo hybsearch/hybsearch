@@ -24,11 +24,8 @@
       "data/",
       "lib/",
       "bin/",
-      "hamdis/",
       "main.js",
-      "node_modules/",
-      "!node_modules/prettier/",
-      "vendor/*.js"
+      "node_modules/"
     ]
   },
   "prettier": {
