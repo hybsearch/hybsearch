@@ -52,7 +52,7 @@ function mrbayes(data, argv) {
 	let args = [inputFile]
 	let hasMpiRun = false // until we get it working
 	if (hasMpiRun) {
-		mb = execa.sync('which', ['mpirun'])
+		executable = execa.sync('which', ['mpirun'])
 		// prettier-ignore
 		args = [
 			'-np', '4',
@@ -62,7 +62,7 @@ function mrbayes(data, argv) {
 		]
 	}
 
-	let result = execa.sync(mb, args, {
+	let result = execa.sync(executable, args, {
 		env: {
 			TMPDIR: '/tmp/',
 		},
