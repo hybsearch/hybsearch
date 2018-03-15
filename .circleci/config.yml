@@ -142,6 +142,11 @@ jobs:
             image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
             echo "image_id: $image_id"
 
+            if [ -z $image_id ]; then
+              echo "could not find docker image to load; exiting"
+              exit 1
+            fi
+
             echo "CIRCLE_BRANCH: $CIRCLE_BRANCH" "CIRCLE_TAG: $CIRCLE_TAG"
             if [[ $CIRCLE_BRANCH = master ]]; then
               docker_tag="$DEST_NAME:HEAD"
