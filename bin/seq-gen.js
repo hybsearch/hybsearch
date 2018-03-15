@@ -2,7 +2,6 @@
 
 const execa = require('execa')
 const tempfile = require('tempfile')
-const path = require('path')
 const fs = require('fs')
 
 module.exports = seqgen
