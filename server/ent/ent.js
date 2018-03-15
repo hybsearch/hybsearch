@@ -1,3 +1,5 @@
+'use strict'
+
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')

@@ -12,9 +12,12 @@
     "start": "electron ./main.js",
     "test": "jest",
     "pretty-check": "npm run prettier -- --list-different",
-    "prettier": "prettier --write 'server/**/*.js' 'electorn/**/*.{js,css}'"
+    "prettier": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electorn/**/*.{js,css}'"
   },
   "prettier": {
+    "overrides": [
+      { "files": "server/**/hyb-*", "options": {"parser": "babel"}}
+    ],
     "useTabs": true,
     "semi": false,
     "trailingComma": "es5",
@@ -28,7 +31,6 @@
     "eslint-plugin-import": "^2.9.0",
     "expect": "^22.4.0",
     "jest": "^22.4.2",
-    "lerna": "^2.9.0",
     "prettier": "1.11.1"
   }
 }

@@ -2,9 +2,8 @@
 'use strict'
 
 const fs = require('fs')
-const getData = require('./lib/get-data')
-
-const clustal = require('../bin/clustal')
+const getData = require('../../lib/get-data')
+const clustal = require('./clustal')
 
 function main() {
 	let argv = process.argv.slice(2)

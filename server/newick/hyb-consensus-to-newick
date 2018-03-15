@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('@hybsearch/get-data')
-const genbankToFasta = require('../genbank-to-fasta')
+const getData = require('../lib/get-data')
+const consensusTreeNewick = require('./consensus-newick')
 
 function main() {
 	let file = process.argv[2]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node genbank-to-fasta.js (<input> | -)')
+		console.error('usage: hyb-consensus-to-newick (<input> | -)')
 		process.exit(1)
 	}
 
 	return getData(file)
-		.then(genbankToFasta)
+		.then(consensusTreeNewick)
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))
 }

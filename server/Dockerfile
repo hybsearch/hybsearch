@@ -11,13 +11,14 @@ RUN apt-get update \
         python \
         python-pip \
         python-setuptools \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /usr/local/share /usr/share
 
 ADD . /hybsearch
 WORKDIR /hybsearch
 
 RUN pip install -r requirements.txt
-
-RUN npm i --production
+RUN npm ci
 
 ENTRYPOINT npm run server -- 8080
+CMD npm run server -- 8080

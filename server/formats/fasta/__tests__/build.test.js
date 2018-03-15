@@ -2,7 +2,7 @@
 'use strict'
 
 const expect = require('expect')
-const { buildFasta } = require('../../server/lib/fasta/build')
+const { buildFasta } = require('../build')
 
 test('generates a fasta file from a fasta object', () => {
 	const actual = buildFasta([
