@@ -46,13 +46,13 @@ function mrbayes(data, argv) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`
-	let mb = execa.sync('which', ['mb'])
+	let mb = execa.sync('which', ['mb']).stdout
 
 	let executable = mb
 	let args = [inputFile]
 	let hasMpiRun = false // until we get it working
 	if (hasMpiRun) {
-		executable = execa.sync('which', ['mpirun'])
+		executable = execa.sync('which', ['mpirun']).stdout
 		// prettier-ignore
 		args = [
 			'-np', '4',

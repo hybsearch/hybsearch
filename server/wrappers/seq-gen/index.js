@@ -11,7 +11,7 @@ function seqgen(data, seqLen = 300, mutationRate = 0.02, generations = 2) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`
-	const executable = execa.sync('which', ['seq-gen'])
+	const executable = execa.sync('which', ['seq-gen']).stdout
 
 	let args = ['-mHKY', `-n${generations}`, '-on', inputFile]
 	let output = execa.sync(executable, args)
