@@ -75,10 +75,11 @@ function render(newickData, newickNodes, nmResults) {
 			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly:
-			nmResults
-				? nmResults.nm.filter(pair => pair).map(pair => pair.map(node => node.ident))
-				: null,
+		nonmonophyly: nmResults
+			? nmResults.nm
+					.filter(pair => pair)
+					.map(pair => pair.map(node => node.ident))
+			: null,
 		onNodeClicked: onNodeClicked,
 	})
 }
