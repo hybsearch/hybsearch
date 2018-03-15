@@ -1,0 +1,13 @@
+*.log
+*.pyc
+*.tar
+*.tar.gz
+.DS_Store
+.eslintcache
+.git/
+.idea/
+.vscode/
+data/*
+dist/
+electron/
+node_modules/
