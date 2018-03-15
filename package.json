@@ -11,6 +11,10 @@
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
     "start": "electron ./main.js",
+    "minimize-dependencies:server": "cp package.json package.json.bak && npm run __rewrite_server && mv package2.json package.json",
+    "minimize-dependencies:electron": "cp package.json package.json.bak && npm run __rewrite_electron && mv package2.json package.json",
+    "__rewrite_server": "node -e 'pkg=require(\"./package.json\");pkg.dependencies=pkg.__serverDependencies;delete pkg.devDependencies;fs.writeFileSync(\"./package2.json\", JSON.stringify(pkg), \"utf-8\")'",
+    "__rewrite_electron": "node -e 'pkg=require(\"./package.json\");pkg.dependencies=pkg.__electronDependencies;delete pkg.devDependencies;fs.writeFileSync(\"./package2.json\", JSON.stringify(pkg), \"utf-8\")'",
     "test": "jest",
     "eslint": "eslint --cache 'bin/**/*.js' 'lib/**/*.js' 'electron/**/*.js' scripts/**/*.js 'server/**/*.js' 'tests/**/*.js'",
     "pretty-check": "npm run prettier -- --list-different",
@@ -41,6 +45,7 @@
     "combinations-generator": "^1.0.1",
     "d3": "^3.5.17",
     "dedent": "^0.7.0",
+    "electron": "^1.8.3",
     "electron-unhandled": "^0.2.0",
     "electron-updater": "^2.21.1",
     "execa": "^0.8.0",
@@ -52,8 +57,32 @@
     "wordwrap": "^1.0.0",
     "ws": "^4.1.0"
   },
-  "devDependencies": {
+  "__electronDependencies": {
+    "combinations-generator": "^1.0.1",
+    "d3": "^3.5.17",
+    "dedent": "^0.7.0",
     "electron": "^1.8.3",
+    "electron-unhandled": "^0.2.0",
+    "electron-updater": "^2.21.1",
+    "lodash": "^4.17.5",
+    "loud-rejection": "^1.6.0",
+    "normalize.css": "^7.0.0",
+    "serialize-error": "^2.1.0",
+    "tempfile": "^2.0.0",
+    "wordwrap": "^1.0.0"
+  },
+  "__serverDependencies": {
+    "combinations-generator": "^1.0.1",
+    "dedent": "^0.7.0",
+    "execa": "^0.8.0",
+    "lodash": "^4.17.5",
+    "loud-rejection": "^1.6.0",
+    "serialize-error": "^2.1.0",
+    "tempfile": "^2.0.0",
+    "wordwrap": "^1.0.0",
+    "ws": "^4.1.0"
+  },
+  "devDependencies": {
     "eslint": "^4.18.2",
     "eslint-plugin-import": "^2.9.0",
     "expect": "^22.4.0",
