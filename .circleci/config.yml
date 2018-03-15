@@ -89,10 +89,12 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: {name: 'List docker images', command: 'docker images -a'}
       - run:
-          name: 'Build docker image'
-          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" .
+          name: List docker images
+          command: docker images -a
+      - run:
+          name: Build docker image
+          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" ./server
       - run: sudo apt install -y pigz
       - run: *cmd-docker-save
       - save_cache: *cache-save-docker
@@ -102,8 +104,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm i
-      - run: npm run eslint
+      - run: npm install
+      - run: npm run lint
       - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
@@ -114,15 +116,15 @@ jobs:
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: docker run -i --entrypoint /hybsearch/scripts/run-worker.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline - < data/emydura-short.gb
 
   # test ent.js against all our sample files
   test-js:
     <<: *defaults
     steps:
       - checkout
-      - run: npm run deps:docker
       - run: npm install
+      - run: cd server && npm install
       - run: npm test
 
   # deploy the docker images to Docker Hub
@@ -167,6 +169,5 @@ jobs:
       - checkout:
           path: /root/project
       - run: npm i -g electron-builder
-      - run: npm run deps:electron
-      - run: npm install --production
-      - run: npm run build
+      - run: cd electron && npm install --production
+      - run: cd electron && npm run build
