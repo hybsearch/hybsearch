@@ -11,7 +11,7 @@ function clustal(data) {
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`
-	const executable = execa.sync('which', ['clustalo'])
+	const executable = execa.sync('which', ['clustalo']).stdout
 
 	// prettier-ignore
 	const args = [

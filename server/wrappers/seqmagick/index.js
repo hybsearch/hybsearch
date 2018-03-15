@@ -18,7 +18,7 @@ function seqmagick({
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`
-	const executable = execa.sync('which', ['seqmagick'])
+	const executable = execa.sync('which', ['seqmagick']).stdout
 
 	// prettier-ignore
 	const args = [
