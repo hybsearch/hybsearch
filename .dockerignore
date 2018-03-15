@@ -1,8 +1,1 @@
-.git/
-.vscode/
-electron/
-node_modules/
-data/*
-*.tar.gz
-*.tar
-.eslintcache
+.ignore
