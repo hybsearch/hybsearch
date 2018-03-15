@@ -1,6 +1,6 @@
 'use strict'
 
-const { buildFasta } = require('../server/lib/fasta/build')
+const { buildFasta } = require('./fasta/build')
 const wrap = require('wordwrap')
 const take = require('lodash/take')
 
