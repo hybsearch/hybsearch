@@ -12,7 +12,7 @@ function seqmagick(data) {
 
 	// prettier-ignore
 	let args = [
-		'/usr/bin/seqmagick',
+		'/usr/local/bin/seqmagick',
 		'convert',
 		'--input-format', 'fasta',
 		'--output-format', 'nexus',
