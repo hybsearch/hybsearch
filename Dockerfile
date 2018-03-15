@@ -17,6 +17,6 @@ ADD . /hybsearch
 WORKDIR /hybsearch
 
 RUN pip install -r requirements.txt
-RUN npm run minimize-dependencies:server && npm i
+RUN npm run deps:docker && npm i --production
 
 ENTRYPOINT ./server/server.js 8080
