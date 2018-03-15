@@ -76,8 +76,8 @@ function render(newickData, newickNodes, nmResults) {
 			return `${name} [${node.ident}] (${node.length})`
 		},
 		nonmonophyly:
-			nmResults !== undefined
-				? nmResults.nm.map(pair => pair.map(node => node.ident))
+			nmResults
+				? nmResults.nm.filter(pair => pair).map(pair => pair.map(node => node.ident))
 				: null,
 		onNodeClicked: onNodeClicked,
 	})
