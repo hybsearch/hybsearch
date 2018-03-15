@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-const { parse: newickToJson } = require('../newick')
+const newickToJson = require('../parser')
 const fs = require('fs')
 const path = require('path')
 
