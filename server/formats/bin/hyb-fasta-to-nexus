@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 'use strict'
 
-const getData = require('./lib/get-data')
-const genbankToFasta = require('../bin/genbank-to-fasta')
+const getData = require('@hybsearch/get-data')
+const fastaToNexus = require('../fasta-to-nexus')
 
 function main() {
 	let file = process.argv[2]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: node genbank-to-fasta.js (<input> | -)')
+		console.error('usage: node fasta-to-nexus.js (<input> | -)')
 		process.exit(1)
 	}
 
 	return getData(file)
-		.then(genbankToFasta)
+		.then(fastaToNexus)
 		.then(data => console.log(data))
 		.catch(console.error.bind(console))
 }

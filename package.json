@@ -1,5 +1,5 @@
 {
-  "name": "hybsearch",
+  "name": "@hybsearch/hybsearch",
   "private": true,
   "version": "4.0.0-beta.3",
   "description": "Find nonmonophyly in genetic sequences",
@@ -7,30 +7,12 @@
   "homepage": "https://hybsearch.github.io/",
   "main": "main.js",
   "license": "MIT",
+  "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "scripts": {
-    "build": "electron-builder --mac --windows --linux",
-    "pack": "electron-builder --dir",
     "start": "electron ./main.js",
-    "deps:docker": "cp package.json package.json.bak && npm run __rewrite_deps:docker && mv package2.json package.json",
-    "deps:electron": "cp package.json package.json.bak && npm run __rewrite_deps:docker && mv package2.json package.json",
-    "__rewrite_deps:docker": "node -e 'pkg=require(\"./package.json\");pkg.dependencies=pkg.__serverDependencies;fs.writeFileSync(\"./package2.json\", JSON.stringify(pkg), \"utf-8\")'",
-    "__rewrite_deps:electron": "node -e 'pkg=require(\"./package.json\");pkg.devDependencies.electron=pkg.dependencies.electron;delete pkg.dependencies.electron;fs.writeFileSync(\"./package2.json\", JSON.stringify(pkg), \"utf-8\")'",
     "test": "jest",
-    "eslint": "eslint --cache 'bin/**/*.js' 'lib/**/*.js' 'electron/**/*.js' scripts/**/*.js 'server/**/*.js' 'tests/**/*.js'",
     "pretty-check": "npm run prettier -- --list-different",
-    "prettier": "prettier --write 'bin/**/*.js' 'lib/**/*.js' 'electron/**/*.{js,css}' scripts/**/*.js 'server/**/*.js' 'tests/**/*.js'"
-  },
-  "build": {
-    "appId": "edu.stolaf.bio.hybsearch",
-    "productName": "HybSearch",
-    "files": [
-      "electron/",
-      "data/",
-      "lib/",
-      "bin/",
-      "main.js",
-      "node_modules/"
-    ]
+    "prettier": "prettier --write 'server/**/*.js' 'electorn/**/*.{js,css}'"
   },
   "prettier": {
     "useTabs": true,
@@ -41,33 +23,12 @@
   "jest": {
     "verbose": true
   },
-  "dependencies": {
-    "d3": "^3.5.17",
-    "electron": "^1.8.3",
-    "electron-unhandled": "^0.2.0",
-    "electron-updater": "^2.21.1",
-    "lodash": "^4.17.5",
-    "loud-rejection": "^1.6.0",
-    "normalize.css": "^7.0.0"
-  },
-  "__serverDependencies": {
-    "combinations-generator": "^1.0.1",
-    "dedent": "^0.7.0",
-    "execa": "^0.8.0",
-    "get-stdin": "^6.0.0",
-    "lodash": "^4.17.5",
-    "loud-rejection": "^1.6.0",
-    "minimist": "^1.2.0",
-    "serialize-error": "^2.1.0",
-    "tempfile": "^2.0.0",
-    "wordwrap": "^1.0.0",
-    "ws": "^4.1.0"
-  },
   "devDependencies": {
     "eslint": "^4.18.2",
     "eslint-plugin-import": "^2.9.0",
     "expect": "^22.4.0",
     "jest": "^22.4.2",
+    "lerna": "^2.9.0",
     "prettier": "1.11.1"
   }
 }

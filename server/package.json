@@ -1,0 +1,18 @@
+{
+  "name": "@hybsearch/server",
+  "private": true,
+  "version": "4.0.0-beta.3",
+  "description": "Find nonmonophyly in genetic sequences",
+  "repository": "hybsearch/hybsearch",
+  "homepage": "https://hybsearch.github.io/",
+  "main": "cli.js",
+  "license": "MIT",
+  "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "ws": "^4.1.0"
+  }
+}

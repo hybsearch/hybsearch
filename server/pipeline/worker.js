@@ -4,13 +4,11 @@ require('loud-rejection/register')
 
 const serializeError = require('serialize-error')
 
-const genbankToFasta = require('../bin/genbank-fasta')
-const clustal = require('../bin/clustal')
-const fastaToNexus = require('../bin/fasta-to-nexus')
-const mrBayes = require('../bin/mrbayes')
-const consensusTreeToNewick = require('../bin/consensus-newick')
-const { parse: parseNewick } = require('../lib/newick')
-const ent = require('./lib/ent')
+const clustal = require('@hybsearch/clustal')
+const mrBayes = require('@hybsearch/mrbayes')
+const {consensusTreeToNewick, parse: parseNewick} = require('@hybsearch/newick')
+const {genbankToFasta, fastaToNexus} = require('@hybsearch/formats')
+const ent = require('@hybsearch/ent')
 
 process.on('disconnect', () => {
 	console.error('disconnected')
