@@ -10,9 +10,11 @@ function seqmagick(data) {
 	const outputFile = tempfile().replace(' ', ' ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
+	// find binary via `which`
+	const executable = execa.sync('which', ['seqmagick'])
+
 	// prettier-ignore
 	let args = [
-		'/usr/local/bin/seqmagick',
 		'convert',
 		'--input-format', 'fasta',
 		'--output-format', 'nexus',
@@ -21,7 +23,7 @@ function seqmagick(data) {
 		outputFile,
 	]
 
-	execa.sync('python', args)
+	execa.sync(executable, args)
 
 	// seqmagick wraps the identifiers in quotes.
 	// mrbayes does not like single quotes.
