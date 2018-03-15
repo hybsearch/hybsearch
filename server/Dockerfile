@@ -9,6 +9,7 @@ RUN apt-get update \
         mrbayes \
         seq-gen \
         python \
+        python-dev \
         python-pip \
         python-setuptools \
     && rm -rf /var/lib/apt/lists/* \
