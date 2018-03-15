@@ -1,19 +1,16 @@
 'use strict'
 
-require('loud-rejection/register')
-
 const serializeError = require('serialize-error')
 
-const clustal = require('@hybsearch/clustal')
-const mrBayes = require('@hybsearch/mrbayes')
-const {consensusTreeToNewick, parse: parseNewick} = require('@hybsearch/newick')
-const {genbankToFasta, fastaToNexus} = require('@hybsearch/formats')
-const ent = require('@hybsearch/ent')
+const ent = require('../ent')
+const { consensusTreeToNewick, parse: parseNewick } = require('../newick')
+const { genbankToFasta, fastaToNexus } = require('../formats')
+const clustal = require('../wrappers/clustal')
+const mrBayes = require('../wrappers/mrbayes')
 
-process.on('disconnect', () => {
-	console.error('disconnected')
-	process.exit(0)
-})
+/////
+///// helpers
+/////
 
 const logData = arr => console.log(JSON.stringify(arr))
 const sendData = arr => process.send(arr)
@@ -35,6 +32,28 @@ function removeCircularLinks(obj) {
 		})
 	)
 }
+
+/////
+///// init
+/////
+
+require('loud-rejection/register')
+
+if (process.send) {
+	process.on('message', main)
+} else {
+	console.error('please use `hyb-pipeline` instead')
+	process.exit(1)
+}
+
+process.on('disconnect', () => {
+	console.error('disconnected')
+	process.exit(0)
+})
+
+/////
+///// pipeline
+/////
 
 // eslint-disable-next-line no-unused-vars
 async function main([command, filepath, data]) {
@@ -85,11 +104,4 @@ async function main([command, filepath, data]) {
 		console.error(err)
 	}
 	exit()
-}
-
-if (process.send) {
-	process.on('message', main)
-} else {
-	console.error('please use scripts/run-worker.js instead')
-	process.exit(1)
 }

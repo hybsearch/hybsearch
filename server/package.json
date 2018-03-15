@@ -5,14 +5,34 @@
   "description": "Find nonmonophyly in genetic sequences",
   "repository": "hybsearch/hybsearch",
   "homepage": "https://hybsearch.github.io/",
-  "main": "cli.js",
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
+  "bin": {
+    "hyb-ent": "./ent/hyb-ent",
+    "hyb-fasta-to-nexus": "./formats/hyb-fasta-to-nexus",
+    "hyb-genbank-to-fasta": "./formats/hyb-genbank-to-fasta",
+    "hyb-nexus-to-fasta": "./formats/hyb-nexus-to-fasta",
+    "hyb-consensus-to-newick": "./newick/hyb-consensus-to-newick",
+    "hyb-newick-to-json": "./newick/hyb-newick-to-json",
+    "hyb-pipeline": "./pipeline/hyb-pipeline",
+    "hyb-clustal": "./wrappers/clustal/hyb-clustal",
+    "hyb-mrbayes": "./wrappers/mrbayes/hyb-mrbayes",
+    "hyb-seq-gen": "./wrappers/seq-gen/hyb-seq-gen"
+  },
   "scripts": {
+    "start": "./server.js",
     "test": "jest"
   },
   "dependencies": {
+    "combinations-generator": "^1.0.1",
+    "dedent": "^0.7.0",
+    "execa": "^0.10.0",
     "lodash": "^4.17.5",
+    "loud-rejection": "^1.6.0",
+    "minimist": "^1.2.0",
+    "serialize-error": "^2.1.0",
+    "tempfile": "^2.0.0",
+    "wordwrap": "^1.0.0",
     "ws": "^4.1.0"
   }
 }

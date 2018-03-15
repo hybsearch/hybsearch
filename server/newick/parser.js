@@ -58,7 +58,7 @@
  * }
  */
 
-module.exports.parse = function parse(s) {
+module.exports = function parse(s) {
 	let ancestors = []
 	let tree = {}
 	let tokens = s.split(/\s*(;|\(|\)|,|:)\s*/)

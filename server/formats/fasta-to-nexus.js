@@ -1,6 +1,6 @@
 'use strict'
 
-const seqmagick = require('@hybsearch/seqmagick')
+const seqmagick = require('../wrappers/seqmagick')
 
 module.exports = fastaToNexus
 function fastaToNexus(data) {

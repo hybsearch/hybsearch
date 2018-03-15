@@ -5,7 +5,13 @@ const tempfile = require('tempfile')
 const fs = require('fs')
 
 module.exports = seqmagick
-function seqmagick({data, inputFormat, outputFormat, alphabet='dna', removeQuotes=true}) {
+function seqmagick({
+	data,
+	inputFormat,
+	outputFormat,
+	alphabet = 'dna',
+	removeQuotes = true,
+}) {
 	// TODO: why does this replace spaces with spaces?
 	const inputFile = tempfile().replace(' ', ' ')
 	const outputFile = tempfile().replace(' ', ' ')
