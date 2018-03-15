@@ -10,7 +10,8 @@ function clustal(data) {
 	const outputFile = tempfile()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
-	const executable = '/usr/bin/clustalo'
+	// find binary via `which`
+	const executable = execa.sync('which', ['clustalo'])
 
 	// prettier-ignore
 	const args = [
