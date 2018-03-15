@@ -39,7 +39,12 @@ async function main() {
 				console.log(cmd, msg)
 		}
 
-		if (cmd === 'exit' || cmd === 'error') {
+		if (cmd === 'error') {
+			child.disconnect()
+			process.exit(1)
+		}
+
+		if (cmd === 'exit') {
 			child.disconnect()
 		}
 	})
