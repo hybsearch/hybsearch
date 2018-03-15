@@ -16,7 +16,18 @@
   },
   "prettier": {
     "overrides": [
-      { "files": "server/**/hyb-*", "options": {"parser": "babel"}}
+      {
+        "files": "server/**/hyb-*",
+        "options": {
+          "parser": "babylon"
+        }
+      },
+      {
+        "files": "{package,package-lock}.json",
+        "options": {
+          "requirePragma": true
+        }
+      }
     ],
     "useTabs": true,
     "semi": false,
