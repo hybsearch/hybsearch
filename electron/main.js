@@ -9,7 +9,7 @@ const {
 require('electron-unhandled')()
 
 // check for updates
-const {autoUpdater} = require('electron-updater')
+const { autoUpdater } = require('electron-updater')
 autoUpdater.checkForUpdatesAndNotify()
 
 // Keep a global reference of the window object, if you don't, the window will
