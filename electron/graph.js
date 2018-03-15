@@ -3,7 +3,7 @@
 const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
 
-const ent = require('../server/lib/ent')
+const ent = require('../server/ent')
 module.exports.load = load
 module.exports.setEntResults = setEntResults
 
