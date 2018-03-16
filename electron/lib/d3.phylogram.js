@@ -311,9 +311,6 @@ phylogram.build = function(selector, nodes, options = {}) {
 		.attr('stroke', '#242121')
 		.attr('stroke-width', '1px')
 
-	let sourceNmIdents = nm.map(pair => pair[0])
-	let targetNmIdents = nm.map(pair => pair[1])
-
 	let node = vis
 		.selectAll('g.node')
 		.data(nodes)
@@ -351,15 +348,6 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.classed('species-label', true)
 			.text(formatLeafNodeLabel)
 	}
-
-	// let nodes = vis.selectAll('g.leaf.node[data-ident]')
-
-	// let sourceNodes = nodes
-	// 	.filter(d => includes(sourceNmIdents, d.ident))
-	// 	.append('path')
-
-	// let targetNodes = nodes
-	// 	.filter(d => includes(sourceNmIdents, d.ident))
 
 	return {
 		tree: tree,
