@@ -3,7 +3,7 @@
 const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
 
-const ent = require('../server/lib/ent')
+const ent = require('../server/ent')
 module.exports.load = load
 module.exports.setEntResults = setEntResults
 
@@ -75,10 +75,11 @@ function render(newickData, newickNodes, nmResults) {
 			console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly:
-			nmResults !== undefined
-				? nmResults.nm.map(pair => pair.map(node => node.ident))
-				: null,
+		nonmonophyly: nmResults
+			? nmResults.nm
+					.filter(pair => pair)
+					.map(pair => pair.map(node => node.ident))
+			: null,
 		onNodeClicked: onNodeClicked,
 	})
 }
