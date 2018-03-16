@@ -224,7 +224,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.size([h, w])
 			.sort(node => (node.children ? node.children.length : -1))
 			.children(options.children || (node => node.branchset))
-
+			console.log(tree)
 	let diagonal = options.diagonal || phylogram.rightAngleDiagonal()
 
 	let vis =
@@ -276,22 +276,55 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.text(d => Math.round(d * 100) / 100)
 	}
 
+	let nm = options.nonmonophyly || []
+	let allNmIdents = uniq(flatten(nm))
+
+	let allpathdata = tree.links(nodes)
+	console.log(allpathdata)
+	let nonmono_nodes = []
+	let normal_nodes = []
+	for(let path of allpathdata){
+		if(!path.target.branchset) {
+			if(allNmIdents.includes(path.target.ident) == true){
+				nonmono_nodes.push(path)
+			
+			}
+			else{
+				normal_nodes.push(path)
+			}
+		} else {
+			normal_nodes.push(path)
+		}
+
+	}
+
 	let link = vis
 		.selectAll('path.link')
-		.data(tree.links(nodes))
+		.data(nonmono_nodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)
 		.attr('d', diagonal)
 		.attr('fill', 'none')
-		.attr('stroke', '#1d1d1d')
+		.attr('stroke', '#e84a36')
 		.attr('stroke-width', '1px')
 
-	let nm = options.nonmonophyly || []
+	let link2 = vis
+		.selectAll('path.link2')
+		.data(normal_nodes)
+		.enter()
+		.append('svg:path')
+		.classed('link', true)
+		.attr('d', diagonal)
+		.attr('fill', 'none')
+		.attr('stroke', '#242121')
+		.attr('stroke-width', '1px')
+
+	
 
 	let sourceNmIdents = nm.map(pair => pair[0])
 	let targetNmIdents = nm.map(pair => pair[1])
-	let allNmIdents = uniq(flatten(nm))
+	
 
 	let node = vis
 		.selectAll('g.node')
