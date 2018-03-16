@@ -1,0 +1,9 @@
+#server-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 1fr;
+}
+
+.server-card--title {
+	display: flex; align-items: center
+}

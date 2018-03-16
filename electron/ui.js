@@ -3,8 +3,10 @@
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
+const sortBy = require('lodash/sortBy')
 const getFiles = require('./lib/get-files')
 const run = require('./run')
+
 
 let websocket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
@@ -55,12 +57,8 @@ function connectionRefused() {
 	document.querySelector('#server-status').classList.add('down')
 }
 
-const files = getFiles()
+const files = sortBy(getFiles(), f => f.endsWith('.gb') ? `1-${f}` : `2-${f}`)
 const groupedFiles = groupBy(files, f => {
-	if (/\.aln/.test(f)) {
-		return 'aligned'
-	}
-
 	if (f.endsWith('.fasta')) {
 		return 'fasta'
 	}

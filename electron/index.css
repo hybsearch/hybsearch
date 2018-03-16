@@ -1,47 +1,16 @@
 @import './node_modules/normalize.css/normalize.css';
+@import './node_modules/material-components-web/dist/material-components-web.css';
+@import './node_modules/typeface-roboto/index.css';
 
-:root {
-	--blue: #00add9;
-	--green: #a3d65c;
-	--teal: #00827e;
-	--red: #e84a36;
-	--black: #242121;
-	--dark-gray: #53585a;
-	--medium-gray: #e0dad6;
-	--light-gray: #f7f5f2;
-	--white: #fff;
-	--navy: #233746;
-}
+@import './styles/variables.css';
+@import './styles/base.css';
+@import './styles/app.css';
 
-* {
-	box-sizing: border-box;
-}
+@import './sections/setup.css';
+@import './sections/processing.css';
+@import './sections/display.css';
 
-html {
-	margin: 0;
-	min-width: 500px;
-}
-
-body {
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
-	color: var(--black);
-	background: var(--light-gray);
-	padding: 0;
-}
-
-pre {
-	font-family: Consolas, monospace;
-}
-
-section {
-	background: var(--white);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-	padding: 30px;
-	margin: 16px 16px;
-	border-radius: 2px;
-	border-bottom: 3px solid var(--blue);
-}
-
+/*
 section.loader {
 	transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
 	position: relative;
@@ -261,3 +230,4 @@ section button {
 #server-status.down {
 	background-color: var(--red);
 }
+*/

@@ -7,6 +7,7 @@ const fs = require('fs')
 const path = require('path')
 let receivedData = {}
 
+
 module.exports = run
 function run(socket) {
 	let filepicker = document.querySelector('#load-file')
@@ -137,3 +138,4 @@ function setLoadingError(label, timeTaken) {
 	el.classList.add('error')
 	el.dataset.time = timeTaken
 }
+

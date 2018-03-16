@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+}
+
+body {
+	padding: 0;
+}
+
+pre, code {
+	font-family: Menlo, Monaco, Consolas, monospace;
+}

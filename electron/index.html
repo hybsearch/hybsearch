@@ -1,91 +1,216 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Hybsearch</title>
-		<link rel="stylesheet" href="./index.css">
-	</head>
-	<body>
-		<div id="reload-container">
-			<button id="reload">Restart ⟳</button>
-		</div>
+<html lang="en-US">
 
-		<section class="loader">
-			<wrapper class="content">
-				<h2>Genbank/Fasta</h2>
+<head>
+	<meta charset="UTF-8" />
+	<title>Hybsearch</title>
+	<link rel="stylesheet" href="./index.css" />
+</head>
+
+<body class="mdc-typography">
+	<div class="mdc-toolbar mdc-elevation--z4 app--toolbar">
+		<div class="mdc-toolbar__row">
+			<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+				<span class="mdc-toolbar__title">HybSearch</span>
+			</section>
+
+			<section class="mdc-toolbar__section  mdc-toolbar__section--align-end">
+				<button id="reload" class="mdc-button">Restart</button>
+
+				<button id="next" class="mdc-button mdc-button--raised">Submit</button>
+			</section>
+		</div>
+	</div>
+
+	<div class="mdc-card app--card">
+		<div class="app--card__primary">
+			<header class="server-card--title">
+				<h2 class="app--card__title mdc-typography--title">Server</h2>
+
+				<div class="mdc-chip-set">
+					<div class="mdc-chip" tabindex="0">
+						<div class="mdc-chip__text">Server Status: Up</div>
+					</div>
+				</div>
+			</header>
+
+			<form name="server-form" id="server-form">
+				<div class="mdc-form-field">
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="server-thing3" name="server" checked value="ws://thing3.cs.stolaf.edu:80/">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+					</div>
+					<label for="server-thing3">thing3.CS</label>
+				</div>
+
+				<div class="mdc-form-field">
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="server-gpu" name="server" value="ws://gpu.cs.stolaf.edu:80/">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+					</div>
+					<label for="server-gpu">gpu.CS</label>
+				</div>
+
+				<div class="mdc-form-field">
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="server-localhost" name="server" value="ws://localhost:8080/">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+					</div>
+					<label for="server-localhost"><code>localhost</code> (development)</label>
+				</div>
+
+				<div class="mdc-form-field">
+					<div class="mdc-radio">
+						<input class="mdc-radio__native-control" type="radio" id="server-other" name="server" value="other">
+						<div class="mdc-radio__background">
+							<div class="mdc-radio__outer-circle"></div>
+							<div class="mdc-radio__inner-circle"></div>
+						</div>
+					</div>
+					<label style="margin-right: 0.45em" for="server-other">other: </label>
+
+					<div class="mdc-text-field mdc-text-field--fullwidth">
+						<input
+							class="mdc-text-field__input"
+							type="url"
+							id="server-url"
+							placeholder="ws://server:port/"
+							value="ws://localhost:8080/"
+						/>
+						<div class="mdc-line-ripple"></div>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<div class="mdc-card app--card app--card__no-padding">
+		<nav class="mdc-tab-bar" role="tablist" data-panel-selector="#pipeline-source-tabs">
+			<a role="tab" aria-controls="source-local-file"  class="mdc-tab mdc-tab--active" href="#source-local-file">
+				Local File
+			</a>
+			<a role="tab" aria-controls="source-newick-tree" class="mdc-tab" href="#source-newick-tree">
+				Newick Tree
+			</a>
+			<a role="tab" aria-controls="source-newick-json" class="mdc-tab" href="#source-newick-json">
+				Newick (JSON)
+			</a>
+			<span class="mdc-tab-bar__indicator"></span>
+		</nav>
+
+		<div id="pipeline-source-tabs" class="app--card__primary">
+			<article class="panel active" id="source-local-file" role="tabpanel" aria-hidden="false">
+				<p>
+					You may either upload a file from your local computer, or use one of our
+					preloaded sample files.
+				</p>
+
 				<input type="file" id="load-file" accept=".gb,.genbank,.fasta">
+
 				<select id="pick-file">
 					<option>No file chosen</option>
 				</select>
-				<br/><br/>
-				<span id="server-status" class="down"></span>
-				<label>
-					Server:
-					<input type="url" id="server-url" value="ws://localhost:8080/" placeholder="ws://server:port/">
-				</label>
-				<button id="use-thing3" data-url="ws://thing3.cs.stolaf.edu:80/">Use Thing3</button>
-				<button id="use-localhost" data-url="ws://localhost:8080/">Use localhost</button>
-				<br/><br/>
-				<button id="start">Run Hybsearch</button>
-			</wrapper>
-			<wrapper class="loading">
-				<div class="checkmark" data-loader-name="process">
-					<div class="icon"></div>
-					<div class="label">Process Input</div>
-				</div>
-				<div class="checkmark" data-loader-name="align">
-					<div class="icon"></div>
-					<div class="label">Align Sequences</div>
-				</div>
-				<div class="checkmark" data-loader-name="convert">
-					<div class="icon"></div>
-					<div class="label">Convert Alignment</div>
-				</div>
-				<div class="checkmark" data-loader-name="generate">
-					<div class="icon"></div>
-					<div class="label">Generate Tree</div>
-				</div>
-				<div class="checkmark" data-loader-name="condense">
-					<div class="icon"></div>
-					<div class="label">Render Tree</div>
-				</div>
-				<div class="checkmark" data-loader-name="newick">
-					<div class="icon"></div>
-					<div class="label">Parsing Newick</div>
-				</div>
-				<div class="checkmark" data-loader-name="ent">
-					<div class="icon"></div>
-					<div class="label">Running Ent</div>
-				</div>
-			</wrapper>
-		</section>
+			</article>
 
-		<section hidden id="nm-container">
-			<h2>Nonmonophyly</h2>
-			<div id="nonmonophyly-results"></div>
-		</section>
+			<article class="panel" id="source-newick-tree" role="tabpanel" aria-hidden="true">
+				<p>
+					You can submit just the Newick tree for graphing:
+				</p>
 
-		<section hidden id="error-container">
-			<h2>Errors</h2>
-			<pre id="error-message"></pre>
-		</section>
+				<div class="mdc-text-field app--textarea-wrapper mdc-text-field--outlined">
+					<textarea class="mdc-text-field__input app--textarea" id="newick-tree" rows="8" cols="60"></textarea>
+					<div class="mdc-text-field__outline">
+						<svg>
+							<path class="mdc-text-field__outline-path"/>
+						</svg>
+					</div>
+					<div class="mdc-text-field__idle-outline"></div>
+				</div>
+			</article>
 
-		<section hidden id="phylogram">
-			<h2>Phylogram</h2>
-			<div id="phylogram"></div>
-		</section>
+			<article class="panel" id="source-newick-json" role="tabpanel" aria-hidden="true">
+				<p>
+					You can submit just the Newick tree (encoded as a JSON string) for graphing:
+				</p>
 
-		<section>
-			<details>
-				<summary><h2 style="display: inline">Use a Newick Tree</h2></summary>
-				<textarea id="tree-box"></textarea>
-				<wrapper class="right-aligned">
-					<input type="submit" value="newick" id="tree-box-submit">
-					<input type="submit" value="json" id="json-tree-box-submit">
-				</wrapper>
-			</details>
-		</section>
+				<div class="mdc-text-field app--textarea-wrapper mdc-text-field--outlined">
+					<textarea class="mdc-text-field__input app--textarea" id="newick-json" rows="8" cols="60"></textarea>
+					<div class="mdc-text-field__outline">
+						<svg>
+							<path class="mdc-text-field__outline-path"/>
+						</svg>
+					</div>
+					<div class="mdc-text-field__idle-outline"></div>
+				</div>
+			</article>
+		</div>
+	</div>
 
-		<script src="./index.js"></script>
-	</body>
+	<section class="loader">
+		<wrapper class="loading">
+			<div class="checkmark" data-loader-name="process">
+				<div class="icon"></div>
+				<div class="label">Process Input</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="align">
+				<div class="icon"></div>
+				<div class="label">Align Sequences</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="convert">
+				<div class="icon"></div>
+				<div class="label">Convert Alignment</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="generate">
+				<div class="icon"></div>
+				<div class="label">Generate Tree</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="condense">
+				<div class="icon"></div>
+				<div class="label">Render Tree</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="newick">
+				<div class="icon"></div>
+				<div class="label">Parsing Newick</div>
+			</div>
+
+			<div class="checkmark" data-loader-name="ent">
+				<div class="icon"></div>
+				<div class="label">Running Ent</div>
+			</div>
+		</wrapper>
+	</section>
+
+	<section hidden id="nm-container">
+		<h2>Nonmonophyly</h2>
+		<div id="nonmonophyly-results"></div>
+	</section>
+
+	<section hidden id="error-container">
+		<h2>Errors</h2>
+		<pre id="error-message"></pre>
+	</section>
+
+	<section hidden id="phylogram">
+		<h2>Phylogram</h2>
+		<div id="phylogram"></div>
+	</section>
+
+	<script src="./index.js"></script>
+</body>
+
 </html>

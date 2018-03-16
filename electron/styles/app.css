@@ -1,0 +1,103 @@
+/* stick the toolbar to the top of the screen */
+.app--toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	padding-right: calc(1rem - 4px);
+}
+
+/* make the buttons visible on the toolbar */
+.app--toolbar .mdc-button {
+	--mdc-theme-primary: #fff;
+	--mdc-theme-text-primary-on-primary: var(--mdc-theme-text-primary-on-light);
+}
+
+.app--toolbar .mdc-chip {
+	background-color: var(--mdc-theme-primary-light);
+	color: var(--mdc-theme-text-secondary-on-light);
+}
+
+.app--toolbar .mdc-button + .mdc-button {
+	margin-left: 4px;
+}
+
+.app--card {
+	margin: 1rem;
+}
+
+.app--card .mdc-card__action-buttons {
+	width: 100%;
+}
+
+.app--card__primary {
+	padding: 1rem;
+}
+
+.app--card__title {
+	margin: 0;
+}
+
+.app--card__one-half {
+	max-width: 45%;
+}
+
+.panel {
+	display: none;
+}
+.panel.active {
+	display: block;
+}
+
+.app--textarea-wrapper {
+	height: auto;
+}
+
+.app--textarea-wrapper .app--textarea {
+	height: auto;
+}
+/*
+.app--chip-dot {
+	--size: 14px;
+	--color: var(--mdc-theme-primary);
+	width: var(--size);
+	height: var(--size);
+	border: solid 2px black;
+	border-color: var(--color);
+	border-radius: var(--size);
+
+	margin-right: calc(var(--size) / 2);
+	position: relative;
+}
+
+.app--chip-dot__full::after {
+	position: absolute;
+	top: calc(50% - var(--size) / 2);
+	right: calc(50% - var(--size) / 2);
+	content: "";
+	width: var(--size);
+	height: var(--size);
+	border-radius: var(--size);
+	background-color: var(--color);
+}
+*/
+
+.server-status-chip--up {
+	--mdc-theme-primary: var(--mdc-theme-secondary);
+}
+
+/* for the Server card */
+
+.server-card--title {
+	display: flex;
+	align-items: center;
+}
+
+.server-card--title .mdc-chip-set {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.server-card--title .mdc-chip {
+	margin-top: 0;
+	margin-bottom: 0;
+}

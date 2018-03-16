@@ -30,7 +30,9 @@
     "electron-updater": "^2.21.1",
     "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
-    "normalize.css": "^7.0.0"
+    "material-components-web": "^0.32.0",
+    "normalize.css": "^7.0.0",
+    "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
     "electron": "^1.8.3"
