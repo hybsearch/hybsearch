@@ -224,7 +224,6 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.size([h, w])
 			.sort(node => (node.children ? node.children.length : -1))
 			.children(options.children || (node => node.branchset))
-			console.log(tree)
 	let diagonal = options.diagonal || phylogram.rightAngleDiagonal()
 
 	let vis =
