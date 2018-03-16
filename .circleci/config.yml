@@ -10,32 +10,25 @@ x-config:
       LOCAL_NAME: *name
       DEST_NAME: docker.io/hybsearch/hybsearch
   - &caches
-    npm-load: &cache-load-npm
-      keys:
-        - npm--{{ arch }}-{{ checksum "package-lock.json" }}
-    npm-save: &cache-save-npm
-      key: npm--{{ arch }}-{{ checksum "package-lock.json" }}
-      paths:
-        - ./node_modules
-        - ./node-modules-was-cached
-    docker-load: &cache-load-docker
+    - &cache-load-docker
       keys:
         - docker--{{ arch }}-{{ .Branch }}
         - docker--{{ arch }}
-    docker-save: &cache-save-docker
+    - &cache-save-docker
       key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
       paths:
         - /tmp/image.tar.gz
-    docker-load-cmd: &cmd-docker-load
+    - &cmd-docker-load
       name: 'Load from cache if possible'
       command: |
         if test -r /tmp/image.tar.gz; then
           echo "Loading from /tmp/image.tar.gz"
           docker load -qi /tmp/image.tar.gz
         else
-          echo "missing /tmp/image.tar.gz; continuing with build"
+          echo "missing /tmp/image.tar.gz; failing the build"
+          exit 1
         fi
-    docker-save-command: &cmd-docker-save
+    - &cmd-docker-save
       name: 'Dump image to cachable .tar.gz file'
       command: docker save "$LOCAL_NAME:$CIRCLE_SHA1" | pigz -9c > /tmp/image.tar.gz
 
@@ -43,15 +36,45 @@ workflows:
   version: 2
   on_commit:
     jobs:
-      - cache
-      - build: {requires: [cache]}
-      - lint: {requires: [cache]}
-      - test-js: {requires: [cache]}
-      - test-worker: {requires: [build]}
-      - deploy-docker: {requires: [test-worker, test-js]}
-      - deploy-github: {requires: [test-worker, test-js]}
+      - build
+      - lint
+      - test-js
+      - test-worker:
+          requires: [build]
+      - deploy-docker:
+          requires: [test-worker, test-js]
+          context: docker-hub
+      - deploy-github:
+          requires: [test-worker, test-js]
+
+  on_tag:
+    jobs:
+      - build:
+          filters: &filters
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - lint:
+          filters: *filters
+      - test-js:
+          filters: *filters
+      - test-worker:
+          requires: [build]
+          filters: *filters
+      - deploy-docker:
+          requires: [test-worker, test-js]
+          filters: *filters
+          context: docker-hub
+      - deploy-github:
+          requires: [test-worker, test-js]
 
   cron_weekly:
+    jobs:
+      - build
+      - test-js
+      - test-worker:
+          requires: [build]
     triggers:
       - schedule:
           # only run Monday morning at 12:00am
@@ -59,35 +82,20 @@ workflows:
           filters:
             branches:
               only: [master]
-    jobs:
-      - cache
-      - build: {requires: [cache]}
-      - test-js: {requires: [cache]}
-      - test-worker: {requires: [build]}
 
 jobs:
-  # cache node_modules
-  cache:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache: *cache-load-npm
-      - run: '[ -f ./node-modules-was-cached ] || sudo npm i -g npm'
-      - run: '[ -f ./node-modules-was-cached ] || npm ci'
-      - run: '[ -f ./node-modules-was-cached ] || touch ./node-modules-was-cached'
-      - save_cache: *cache-save-npm
-
   # build the docker image
   build:
     <<: *defaults
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache: *cache-load-npm
-      - run: {name: 'List docker images', command: 'docker images -a'}
       - run:
-          name: 'Build docker image'
-          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" .
+          name: List docker images
+          command: docker images -a
+      - run:
+          name: Build docker image
+          command: docker build --cache-from="$(docker images -a -q)" -t "$LOCAL_NAME:$CIRCLE_SHA1" ./server
       - run: sudo apt install -y pigz
       - run: *cmd-docker-save
       - save_cache: *cache-save-docker
@@ -97,8 +105,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *cache-load-npm
-      - run: npm run eslint
+      - run: npm install
+      - run: npm run lint
       - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
@@ -109,14 +117,15 @@ jobs:
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: docker run -i --entrypoint /hybsearch/scripts/run-worker.js "$LOCAL_NAME:$CIRCLE_SHA1" - < data/emydura-short.gb
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline - < data/emydura-short.gb
 
   # test ent.js against all our sample files
   test-js:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *cache-load-npm
+      - run: npm install
+      - run: cd server && npm install
       - run: npm test
 
   # deploy the docker images to Docker Hub
@@ -133,6 +142,11 @@ jobs:
           command: |
             image_id="$(docker images -q "$LOCAL_NAME:$CIRCLE_SHA1")"
             echo "image_id: $image_id"
+
+            if [ -z $image_id ]; then
+              echo "could not find docker image to load; exiting"
+              exit 1
+            fi
 
             echo "CIRCLE_BRANCH: $CIRCLE_BRANCH" "CIRCLE_TAG: $CIRCLE_TAG"
             if [[ $CIRCLE_BRANCH = master ]]; then
@@ -160,7 +174,6 @@ jobs:
     steps:
       - checkout:
           path: /root/project
-      - run: npm i -g npm
       - run: npm i -g electron-builder
-      - run: npm ci
-      - run: npm run build
+      - run: cd electron && npm install --production
+      - run: cd electron && npm run build

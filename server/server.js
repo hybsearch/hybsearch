@@ -20,7 +20,7 @@ if (Number.isNaN(numericPort)) {
 }
 
 const wss = new WebSocket.Server({ port: numericPort })
-const workerPath = path.join(__dirname, 'worker.js')
+const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
 // listen for new websocket connections
 wss.on('connection', ws => {

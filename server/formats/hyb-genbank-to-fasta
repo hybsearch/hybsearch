@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+'use strict'
+
+const getData = require('../get-data')
+const genbankToFasta = require('./genbank-to-fasta')
+
+function main() {
+	let file = process.argv[2]
+
+	if (!file && process.stdin.isTTY) {
+		console.error('usage: hyb-genbank-to-fasta (<input> | -)')
+		process.exit(1)
+	}
+
+	return getData(file)
+		.then(genbankToFasta)
+		.then(data => console.log(data))
+		.catch(console.error.bind(console))
+}
+
+if (require.main === module) {
+	main()
+}

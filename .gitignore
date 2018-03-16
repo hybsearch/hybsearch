@@ -1,10 +1,11 @@
-.DS_Store
-node_modules/.bin
-node_modules/.staging
+*.log
 *.pyc
-npm-debug.log
-.vscode/
+*.tar
+*.tar.gz
+.DS_Store
+.eslintcache
+.git/
 .idea/
+.vscode/
 dist/
 node_modules/
-.eslintcache
