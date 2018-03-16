@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 /*
   d3.phylogram.js
   Wrapper around a d3-based phylogram (tree where branch lengths are scaled)
@@ -280,19 +280,19 @@ phylogram.build = function(selector, nodes, options = {}) {
 	let allNmIdents = uniq(flatten(nm))
 
 	let allpathdata = tree.links(nodes)
-	let nonmono_nodes = []
-	let normal_nodes = []
+	let nonmonoNodes = []
+	let normalNodes = []
 	for (let path of allpathdata) {
 		if (!path.target.branchset && allNmIdents.includes(path.target.ident)) {
-			nonmono_nodes.push(path)
+			nonmonoNodes.push(path)
 		} else {
-			normal_nodes.push(path)
+			normalNodes.push(path)
 		}
 	}
 
 	let nonmonoLinks = vis
 		.selectAll('path.link')
-		.data(nonmono_nodes)
+		.data(nonmonoNodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)
@@ -303,7 +303,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 
 	let normalLinks = vis
 		.selectAll('path.link2')
-		.data(normal_nodes)
+		.data(normalNodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)
