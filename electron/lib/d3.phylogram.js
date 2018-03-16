@@ -276,22 +276,41 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.text(d => Math.round(d * 100) / 100)
 	}
 
-	let link = vis
+	let nm = options.nonmonophyly || []
+	let allNmIdents = uniq(flatten(nm))
+
+	let allpathdata = tree.links(nodes)
+	let nonmono_nodes = []
+	let normal_nodes = []
+	for (let path of allpathdata) {
+		if (!path.target.branchset && allNmIdents.includes(path.target.ident)) {
+			nonmono_nodes.push(path)
+		} else {
+			normal_nodes.push(path)
+		}
+	}
+
+	let nonmonoLinks = vis
 		.selectAll('path.link')
-		.data(tree.links(nodes))
+		.data(nonmono_nodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)
 		.attr('d', diagonal)
 		.attr('fill', 'none')
-		.attr('stroke', '#1d1d1d')
+		.attr('stroke', '#e84a36')
 		.attr('stroke-width', '1px')
 
-	let nm = options.nonmonophyly || []
-
-	let sourceNmIdents = nm.map(pair => pair[0])
-	let targetNmIdents = nm.map(pair => pair[1])
-	let allNmIdents = uniq(flatten(nm))
+	let normalLinks = vis
+		.selectAll('path.link2')
+		.data(normal_nodes)
+		.enter()
+		.append('svg:path')
+		.classed('link', true)
+		.attr('d', diagonal)
+		.attr('fill', 'none')
+		.attr('stroke', '#242121')
+		.attr('stroke-width', '1px')
 
 	let node = vis
 		.selectAll('g.node')
@@ -330,15 +349,6 @@ phylogram.build = function(selector, nodes, options = {}) {
 			.classed('species-label', true)
 			.text(formatLeafNodeLabel)
 	}
-
-	// let nodes = vis.selectAll('g.leaf.node[data-ident]')
-
-	// let sourceNodes = nodes
-	// 	.filter(d => includes(sourceNmIdents, d.ident))
-	// 	.append('path')
-
-	// let targetNodes = nodes
-	// 	.filter(d => includes(sourceNmIdents, d.ident))
 
 	return {
 		tree: tree,
