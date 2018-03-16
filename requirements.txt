@@ -1,3 +1,0 @@
-biopython==1.70
-numpy==1.14.2
-seqmagick==0.6.2
