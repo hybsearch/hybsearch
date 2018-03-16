@@ -280,22 +280,14 @@ phylogram.build = function(selector, nodes, options = {}) {
 	let allNmIdents = uniq(flatten(nm))
 
 	let allpathdata = tree.links(nodes)
-	console.log(allpathdata)
 	let nonmono_nodes = []
 	let normal_nodes = []
-	for(let path of allpathdata){
-		if(!path.target.branchset) {
-			if(allNmIdents.includes(path.target.ident) == true){
-				nonmono_nodes.push(path)
-			
-			}
-			else{
-				normal_nodes.push(path)
-			}
+	for (let path of allpathdata) {
+		if (!path.target.branchset && allNmIdents.includes(path.target.ident)) {
+			nonmono_nodes.push(path)
 		} else {
 			normal_nodes.push(path)
 		}
-
 	}
 
 	let link = vis
@@ -320,11 +312,8 @@ phylogram.build = function(selector, nodes, options = {}) {
 		.attr('stroke', '#242121')
 		.attr('stroke-width', '1px')
 
-	
-
 	let sourceNmIdents = nm.map(pair => pair[0])
 	let targetNmIdents = nm.map(pair => pair[1])
-	
 
 	let node = vis
 		.selectAll('g.node')
