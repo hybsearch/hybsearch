@@ -289,7 +289,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 		}
 	}
 
-	let link = vis
+	let nonmonoLinks = vis
 		.selectAll('path.link')
 		.data(nonmono_nodes)
 		.enter()
@@ -300,7 +300,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 		.attr('stroke', '#e84a36')
 		.attr('stroke-width', '1px')
 
-	let link2 = vis
+	let normalLinks = vis
 		.selectAll('path.link2')
 		.data(normal_nodes)
 		.enter()
