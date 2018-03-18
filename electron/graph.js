@@ -4,6 +4,7 @@ const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
 
 const ent = require('../server/ent')
+const { pruneOutliers } = require('../server/lib/prune-newick')
 module.exports.load = load
 module.exports.setEntResults = setEntResults
 
@@ -39,6 +40,15 @@ function load(newickData) {
 			node.branchset.forEach(buildNewickNodes)
 		}
 	}
+
+	let { removedData, newick:prunedNewick } = pruneOutliers(newick)
+	// Add the removed names to the DOM 
+	if(removedData.total != 0){
+		document.querySelector('#omitted-container').hidden = false
+		document.querySelector('#standard-deviation').innerHTML = (removedData.standardDeviation * 2).toFixed(2)
+		document.querySelector('#omitted-results').innerHTML = removedData.formattedNames
+	}
+	
 
 	buildNewickNodes(newick)
 

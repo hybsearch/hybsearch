@@ -261,3 +261,7 @@ section button {
 #server-status.down {
 	background-color: var(--red);
 }
+
+#standard-deviation {
+	color: var(--red);
+} 
