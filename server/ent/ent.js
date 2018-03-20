@@ -4,6 +4,8 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
 const isEqual = require('lodash/isEqual')
+const {parseFasta} = require('../formats/fasta/parse')
+const hammingDistance = require('../hamdis/hamming-distance')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
@@ -90,7 +92,52 @@ function nmSearch(node) {
 }
 
 module.exports.strictSearch = strictSearch
-function strictSearch(node, nmInstances = [], globalNmList = []) {
+function strictSearch(node, fasta) {
+	let entResults = strictSearchHelper(node)
+	// Filter out nonmono pairs before returning 
+	let finalResults = {species:entResults.species,nm:[]}
+
+	const fastaData = parseFasta(fasta)
+	// Build a dict map of species -> sequence 
+	let sequenceMap = {}
+	for(let obj of fastaData){
+		sequenceMap[obj.species] = obj.sequence
+	}
+
+	// For each nm pair, we only want to include the smallest one 
+	let distMap = {}
+
+	for (let result of entResults.nm) {
+		let sp1 = result.pair[0]
+		let sp2 = result.pair[1]
+		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
+		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+
+		let sequence1 = sequenceMap[id1]
+		let sequence2 = sequenceMap[id2]
+
+		let dist = hammingDistance(sequence1,sequence2)
+		// If it's the first one we've found, include it
+		if(distMap[id1] == undefined){
+			distMap[id1] = {dist:dist, result: result}
+		}
+		// If it's smaller than the smallest one so far, replace it 
+		if(distMap[id1].dist > dist){
+			distMap[id1] = {dist:dist, result: result}
+		}
+	}
+
+	// Now these are the ones that are okay to include 
+	for(let key in distMap){
+		let result = distMap[key].result
+		nmMark(result.node,result.pair[0],result.pair[1])
+		finalResults.nm.push(result.pair)
+	}
+
+	return finalResults
+}
+
+function strictSearchHelper(node, nmInstances = []) {
 	// Remove individuals after being flagged for inner nm, to prevent
 	// unnecessary repeated nm findings
 	if (node.name && !node.ident) {
@@ -107,10 +154,10 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 		let forRemoval = []
 		for (let speciesSet of combinations) {
 			// if species is in speciesList: continue
-			let resultsA = strictSearch(speciesSet[1], nmInstances, globalNmList)
+			let resultsA = strictSearchHelper(speciesSet[1], nmInstances)
 			let speciesListA = resultsA.species
 
-			let resultsB = strictSearch(speciesSet[0], nmInstances, globalNmList)
+			let resultsB = strictSearchHelper(speciesSet[0], nmInstances)
 			let speciesListB = resultsB.species
 
 			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
@@ -128,20 +175,15 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 					// search in otherSpeciesList
 					otherSpeciesList.forEach(species3 => {
 						if (species3.name !== species1.name) {
-							const pairCheck = pair => isEqual(pair, [species1, species3])
+							const pairCheck = pair => isEqual(pair.pair, [species1, species3])
 							const count = nmInstances.filter(pairCheck).length
+							
 
 							if (!count) {
-								nmMark(node, species1, species3)
-
 								debug(`nmMark called on ${species1} and ${species3}`)
 								debug(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
 
-								nmInstances.push([species1, species3])
-
-								if (!globalNmList.some(pairCheck)) {
-									globalNmList.push([species1, species3])
-								}
+								nmInstances.push({pair:[species1, species3],node:node})
 
 								forRemoval.push(species3.ident)
 								debug(`removing from A ${label(species3)}`)
