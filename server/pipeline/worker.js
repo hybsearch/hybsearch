@@ -55,6 +55,7 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
+
 // eslint-disable-next-line no-unused-vars
 async function main([command, filepath, data]) {
 	try {
@@ -87,7 +88,7 @@ async function main([command, filepath, data]) {
 		complete('newick')
 
 		begin('ent')
-		let nmResults = removeCircularLinks(ent.strictSearch(jsonNewickTree))
+		let nmResults = removeCircularLinks(ent.strictSearch(jsonNewickTree, fasta))
 		// Have to return newick again because apparently `strictSearch`
 		// actually modifies the data
 		returnData('newick', removeCircularLinks(jsonNewickTree))
