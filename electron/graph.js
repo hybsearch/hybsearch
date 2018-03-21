@@ -26,7 +26,9 @@ function setEntResults(results) {
 
 	// Re-render with the nmResults, assuming newick and newickNodes have already been processed
 	let el = document.querySelector('#phylogram')
-	if (el) el.innerHTML = ''
+	if (el) {
+		el.innerHTML = ''
+	}
 	render(newick, newickNodes, nmResults)
 }
 
@@ -46,7 +48,9 @@ function load(newickData) {
 
 	window.addEventListener('optimizedResize', function() {
 		let el = document.querySelector('#phylogram')
-		if (el) el.innerHTML = ''
+		if (el) {
+			el.innerHTML = ''
+		}
 		render(newick, newickNodes, nmResults)
 	})
 }
@@ -124,7 +128,11 @@ function toggleMuteLeaves({ doMute }) {
 }
 
 function onNodeClicked(data) {
-	if (data.name == '' || nmResults == undefined) return // We don't care about anything that's not a leaf node
+	if (data.name == '' || nmResults == undefined) {
+		// We don't care about anything that's not a leaf node
+		return
+	}
+
 	// Find the other individual that is nonmonophyletic with this one
 	let nonMonoPair
 	for (let pair of nmResults.nm) {
@@ -137,8 +145,8 @@ function onNodeClicked(data) {
 			break
 		}
 	}
-	// Now let's toggle the non-mono pair green if one was found
 
+	// Now let's toggle the non-mono pair green if one was found
 	if (nonMonoPair) {
 		// If it's already muted, toggle all off
 		let nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)

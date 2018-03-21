@@ -27,8 +27,9 @@ const exit = () => send('exit')
 function removeCircularLinks(obj) {
 	return JSON.parse(
 		JSON.stringify(obj, function(key, val) {
-			if (key == 'parent' || key == 'nm_inner' || key == 'nm_outer')
+			if (key == 'parent' || key == 'nm_inner' || key == 'nm_outer') {
 				return undefined
+			}
 			return val
 		})
 	)
