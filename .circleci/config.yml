@@ -38,14 +38,15 @@ workflows:
     jobs:
       - build
       - lint
-      - test-js
+      - test-app
+      - test-server
       - test-worker:
           requires: [build]
       - deploy-docker:
-          requires: [test-worker, test-js]
+          requires: [test-worker, test-server, test-app]
           context: docker-hub
       - deploy-github:
-          requires: [test-worker, test-js]
+          requires: [test-worker, test-server, test-app]
 
   on_tag:
     jobs:
@@ -57,23 +58,26 @@ workflows:
               only: /^v.*/
       - lint:
           filters: *filters
-      - test-js:
+      - test-app:
+          filters: *filters
+      - test-server:
           filters: *filters
       - test-worker:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [test-worker, test-js]
+          requires: [test-worker, test-server, test-app]
           filters: *filters
           context: docker-hub
       - deploy-github:
-          requires: [test-worker, test-js]
+          requires: [test-worker, test-server, test-app]
           filters: *filters
 
   cron_weekly:
     jobs:
       - build
-      - test-js
+      - test-app
+      - test-server
       - test-worker:
           requires: [build]
     triggers:
@@ -120,14 +124,23 @@ jobs:
       - run: *cmd-docker-load
       - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline - < data/emydura-short.gb
 
-  # test ent.js against all our sample files
-  test-js:
+  # test the server-side js code
+  test-server:
     <<: *defaults
     steps:
       - checkout
       - run: npm install
       - run: cd server && npm install
-      - run: npm test
+      - run: cd server && npm test
+
+  # test ent.js against all our sample files
+  test-app:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: npm install
+      - run: cd electron && npm install
+      - run: cd electron && npm test
 
   # deploy the docker images to Docker Hub
   deploy-docker:
