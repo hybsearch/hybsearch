@@ -20,11 +20,11 @@ function nmMark(node, species1, species2) {
 		nmMark(node.branchset[0], species1, species2)
 		nmMark(node.branchset[1], species1, species2)
 	} else if (node.name === species1.name) {
-		node.nm_inner = node.nm_inner || []
-		node.nm_inner.push(species2)
+		node.nmInner = node.nmInner || []
+		node.nmInner.push(species2)
 	} else if (node.name === species2.name) {
-		node.nm_outer = node.nm_outer || []
-		node.nm_outer.push(species1)
+		node.nmOuter = node.nmOuter || []
+		node.nmOuter.push(species1)
 	}
 }
 
