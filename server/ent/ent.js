@@ -104,32 +104,113 @@ function strictSearch(node, fasta) {
 		sequenceMap[obj.species] = obj.sequence
 	}
 
-	// For each nm pair, we only want to include the smallest one 
-	let distMap = {}
+	// For each species S marked in an nm pair, 
+		// Go through all other pairs with S in them
+		// Find the shortest pair 
+	// If that pair is shorter than the current pair including either of them 
+	// That is the new shortest pair 
+	let allSpecies = []
+	let speciesCheck = {}
 
 	for (let result of entResults.nm) {
 		let sp1 = result.pair[0]
 		let sp2 = result.pair[1]
-		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
-		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
-
-		let sequence1 = sequenceMap[id1]
-		let sequence2 = sequenceMap[id2]
-
-		let dist = hammingDistance(sequence1,sequence2)
-		// If it's the first one we've found, include it
-		if(distMap[id1] == undefined){
-			distMap[id1] = {dist:dist, result: result}
+		
+		if(!speciesCheck[sp1.ident]){
+			allSpecies.push(sp1.ident)
+			speciesCheck[sp1.ident] = true
 		}
-		// If it's smaller than the smallest one so far, replace it 
-		if(distMap[id1].dist > dist){
-			distMap[id1] = {dist:dist, result: result}
+		if(!speciesCheck[sp2.ident]){
+			allSpecies.push(sp2.ident)
+			speciesCheck[sp2.ident] = true
 		}
 	}
 
-	// Now these are the ones that are okay to include 
-	for(let key in distMap){
-		let result = distMap[key].result
+	let shortestPairs = {}
+
+	for(let speciesIdent of allSpecies){
+		let smallestResult = undefined 
+		let smallestDist = -1
+
+		for (let result of entResults.nm) {
+			let sp1 = result.pair[0]
+			let sp2 = result.pair[1]
+			let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
+			let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+
+			let sequence1 = sequenceMap[id1]
+			let sequence2 = sequenceMap[id2]
+
+			let dist = hammingDistance(sequence1,sequence2)
+			
+			if(sp1.ident == speciesIdent || sp2.ident == speciesIdent){
+				if(smallestDist == -1){
+					smallestDist = dist 
+				}
+
+				if(dist <= smallestDist){
+					smallestDist = dist 
+					smallestResult = result
+				}
+			}
+
+		}
+
+		let sp1 = smallestResult.pair[0]
+		let sp2 = smallestResult.pair[1]
+		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
+		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+
+		if(    (shortestPairs[id1] == undefined || smallestDist < shortestPairs[id1].dist) 
+			&& (shortestPairs[id2] == undefined || smallestDist < shortestPairs[id2].dist)  
+		   ){
+			
+			shortestPairs[id1] = {dist:smallestDist,result:smallestResult}
+			shortestPairs[id2] = {dist:smallestDist,result:smallestResult}
+		} 
+		
+		
+	}
+
+	let uniqueHash = {}
+	let foundSpecies = {}
+
+	for(let key in shortestPairs){
+		let result = shortestPairs[key].result 
+		let sp1 = result.pair[0]
+		let sp2 = result.pair[1]
+		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
+		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+		let hash = (id1 > id2) ? id1 + id2 : id2 + id1 
+
+		let allowed = true;
+
+		if(!foundSpecies[id1]  && !foundSpecies[id2] ){
+			foundSpecies[id1] = {dist:shortestPairs[key].dist,hash:hash}
+			foundSpecies[id2] = {dist:shortestPairs[key].dist,hash:hash}
+		} else {
+			let dist = shortestPairs[key].dist 
+			if((!foundSpecies[id1] || dist < foundSpecies[id1].dist) && (!foundSpecies[id2] || dist < foundSpecies[id2].dist)){
+				// We must have added one that shouldn't have been added! Remove anything with either id1 or id2 
+				if(foundSpecies[id1])
+					delete uniqueHash[foundSpecies[id1].hash]
+				if(foundSpecies[id2])
+					delete uniqueHash[foundSpecies[id2].hash]
+
+				foundSpecies[id1] = {dist:shortestPairs[key].dist,hash:hash}
+				foundSpecies[id2] = {dist:shortestPairs[key].dist,hash:hash}
+			} else {
+				allowed = false
+			}
+		}
+
+		if(uniqueHash[hash] == undefined && allowed){
+			uniqueHash[hash] = result
+		}
+	}
+
+	for(let hash in uniqueHash){
+		let result = uniqueHash[hash]
 		nmMark(result.node,result.pair[0],result.pair[1])
 		finalResults.nm.push(result.pair)
 	}
