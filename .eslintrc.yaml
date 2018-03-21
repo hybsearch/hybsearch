@@ -40,3 +40,6 @@ rules:
   # also forbids calling functions with a capital letter without `new`
   # (which forbids `GetNodes()` and whatnot)
   new-cap: error
+
+  # Forbid single-line blocks - eg `if (foo) return 'bar'`
+  curly: [error, all]
