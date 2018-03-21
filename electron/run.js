@@ -57,6 +57,11 @@ function onData(phase, data) {
 			load(data)
 			break
 		}
+		case 'prune': {
+			document.querySelector('#omitted-container').hidden = false
+			document.querySelector('#omitted-results').innerHTML = data.formattedNames
+			break
+		}
 		case 'ent': {
 			setEntResults(data)
 			break
