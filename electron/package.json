@@ -10,6 +10,7 @@
   "scripts": {
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
+    "test": "PATH=$PATH:../node_modules/.bin; jest",
     "start": "electron ./main.js"
   },
   "build": {
