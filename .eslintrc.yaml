@@ -43,3 +43,6 @@ rules:
 
   # Forbid single-line blocks - eg `if (foo) return 'bar'`
   curly: [error, all]
+
+  # Forbid use of `==` operator (use `===` instead)
+  eqeqeq: error
