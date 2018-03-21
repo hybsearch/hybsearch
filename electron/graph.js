@@ -126,7 +126,7 @@ function toggleMuteLeaves({ doMute }) {
 function onNodeClicked(data) {
 	if (data.name == '' || nmResults == undefined) return // We don't care about anything that's not a leaf node
 	// Find the other individual that is nonmonophyletic with this one
-	var nonMonoPair
+	let nonMonoPair
 	for (let pair of nmResults.nm) {
 		if (pair[0].ident == data.ident) {
 			nonMonoPair = pair[1]
@@ -141,8 +141,8 @@ function onNodeClicked(data) {
 
 	if (nonMonoPair) {
 		// If it's already muted, toggle all off
-		var nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
-		var pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
+		let nodeSVG = document.querySelector(`[data-ident='${data.ident}']`)
+		let pairSVG = document.querySelector(`[data-ident='${nonMonoPair.ident}']`)
 		if (document.querySelector('.node.leaf.muted')) {
 			toggleMuteLeaves({ doMute: false })
 		} else {
@@ -164,10 +164,10 @@ function onNodeClicked(data) {
 
 // this next block taken from MDN
 ;(function() {
-	var throttle = function(type, name, obj) {
+	let throttle = function(type, name, obj) {
 		obj = obj || window
-		var running = false
-		var func = function() {
+		let running = false
+		let func = function() {
 			if (running) {
 				return
 			}
