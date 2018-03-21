@@ -78,6 +78,12 @@ function strictSearch(node, fasta) {
 			let sequence1 = sequenceMap[id1]
 			let sequence2 = sequenceMap[id2]
 
+			if (!sequence1) {
+				throw new Error(`ent: sequenceMap does not have an entry for ${id1}`)
+			} else if (!sequence2) {
+				throw new Error(`ent: sequenceMap does not have an entry for ${id2}`)
+			}
+
 			let dist = hammingDistance(sequence1, sequence2)
 
 			if (sp1.ident == speciesIdent || sp2.ident == speciesIdent) {
