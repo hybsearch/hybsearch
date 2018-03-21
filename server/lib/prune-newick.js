@@ -112,7 +112,7 @@ function pruneOutliers(newick, alignedFasta) {
 
 function removeNodes(node, identArray) {
 	if (node.branchset) {
-		let new_branchset = []
+		let newBranchset = []
 		for (let child of node.branchset) {
 			let include = true
 
@@ -125,13 +125,13 @@ function removeNodes(node, identArray) {
 				}
 			}
 			if (include) {
-				new_branchset.push(child)
+				newBranchset.push(child)
 			}
 
 			removeNodes(child, identArray)
 		}
 
-		node.branchset = new_branchset
+		node.branchset = newBranchset
 	}
 }
 
@@ -146,7 +146,7 @@ function removeRedundant(node) {
 	) {
 		return removeRedundant(node.branchset[0])
 	} else {
-		let new_branchset = []
+		let newBranchset = []
 		for (let child of node.branchset) {
 			if (
 				child.branchset &&
@@ -159,13 +159,13 @@ function removeRedundant(node) {
 			if (child.branchset && child.branchset.length === 0) {
 				// This should not be included!
 			} else {
-				new_branchset.push(child)
+				newBranchset.push(child)
 			}
 		}
-		if (new_branchset.length === 1) {
-			return removeRedundant(new_branchset[0])
+		if (newBranchset.length === 1) {
+			return removeRedundant(newBranchset[0])
 		} else {
-			node.branchset = new_branchset
+			node.branchset = newBranchset
 		}
 
 		return node
