@@ -128,7 +128,7 @@ function toggleMuteLeaves({ doMute }) {
 }
 
 function onNodeClicked(data) {
-	if (data.name == '' || nmResults == undefined) {
+	if (data.name === '' || !nmResults) {
 		// We don't care about anything that's not a leaf node
 		return
 	}
@@ -136,11 +136,11 @@ function onNodeClicked(data) {
 	// Find the other individual that is nonmonophyletic with this one
 	let nonMonoPair
 	for (let pair of nmResults.nm) {
-		if (pair[0].ident == data.ident) {
+		if (pair[0].ident === data.ident) {
 			nonMonoPair = pair[1]
 			break
 		}
-		if (pair[1].ident == data.ident) {
+		if (pair[1].ident === data.ident) {
 			nonMonoPair = pair[0]
 			break
 		}
