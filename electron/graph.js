@@ -3,14 +3,18 @@
 const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
 
-const ent = require('../server/ent')
-module.exports.load = load
-module.exports.setEntResults = setEntResults
-
 let nmResults
 let newick
 let newickNodes
 
+function formatEnt(results) {
+	const { nm: nmlist } = results
+	return nmlist
+		.map(pair => pair.map(node => `${node.name} (${node.ident})`).join(' / '))
+		.join('\n')
+}
+
+module.exports.setEntResults = setEntResults
 function setEntResults(results) {
 	nmResults = results
 	console.log('Got ent!', results)
@@ -19,19 +23,17 @@ function setEntResults(results) {
 			? nmResults.nm.map(pair => pair.map(node => node.ident))
 			: null
 	console.log(non)
-	let formattedReslults = ent.formatData(nmResults)
+
+	let formattedReslults = formatEnt(nmResults)
 	let resultsEl = document.querySelector('#nonmonophyly-results')
 	resultsEl.innerHTML = `<pre>${formattedReslults}</pre>`
 	document.querySelector('#nm-container').hidden = false
 
 	// Re-render with the nmResults, assuming newick and newickNodes have already been processed
-	let el = document.querySelector('#phylogram')
-	if (el) {
-		el.innerHTML = ''
-	}
 	render(newick, newickNodes, nmResults)
 }
 
+module.exports.load = load
 function load(newickData) {
 	newick = newickData
 	newickNodes = []
