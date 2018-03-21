@@ -9,7 +9,7 @@
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "scripts": {
-    "start": "electron ./main.js",
+    "start": "cd electron && npm start",
     "test": "jest",
     "lint": "eslint --cache 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
     "pretty-check": "npm run prettier -- --list-different",
