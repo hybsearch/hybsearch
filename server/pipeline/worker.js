@@ -87,10 +87,8 @@ async function main([command, filepath, data]) {
 		complete('newick')
 
 		begin('ent')
-		let nmResults = removeCircularLinks(
-			ent.strictSearch(jsonNewickTree, aligned)
-		)
-		// Have to return newick again because apparently `strictSearch`
+		let nmResults = removeCircularLinks(ent.search(jsonNewickTree, aligned))
+		// Have to return newick again because apparently `search`
 		// actually modifies the data
 		returnData('newick', removeCircularLinks(jsonNewickTree))
 		returnData('ent', nmResults)

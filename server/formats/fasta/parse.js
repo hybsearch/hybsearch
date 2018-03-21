@@ -35,3 +35,15 @@ module.exports.parseFasta = parseFasta
 function parseFasta(data) {
 	return Array.from(parseFastaIteratively(data))
 }
+
+module.exports.parseFastaToMap = parseFastaToMap
+function parseFastaToMap(data) {
+	let fastaData = parseFasta(data)
+
+	let sequenceMap = new Map()
+	for (let obj of fastaData) {
+		sequenceMap.set(obj.species, obj.sequence)
+	}
+
+	return sequenceMap
+}
