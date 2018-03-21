@@ -1,5 +1,5 @@
 /*
-This file will prune a newick tree to remove genes that are too dissimilar. 
+This file will prune a newick tree to remove genes that are too dissimilar.
 */
 
 const hammingDistance = require('../hamdis/hamming-distance')
@@ -16,15 +16,16 @@ function pruneOutliers(newick, alignedFasta) {
 	}
 
 	let leafNodes = []
-	function GetLeaves(node) {
+	function getLeaves(node) {
 		if (node.branchset) {
-			node.branchset.forEach(GetLeaves)
+			node.branchset.forEach(getLeaves)
 		} else {
 			leafNodes.push(node)
 		}
 	}
+
 	// Compute average and standard deviation of all the pairs of distances
-	GetLeaves(newick)
+	getLeaves(newick)
 	let average = 0
 	let totalDistances = []
 	let distCache = {}
