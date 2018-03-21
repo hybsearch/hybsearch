@@ -10,6 +10,10 @@
   "scripts": {
     "build": "electron-builder --mac --windows --linux",
     "pack": "electron-builder --dir",
+    "test": "PATH=$PATH:../node_modules/.bin; jest",
+    "lint": "cd .. && npm run lint",
+    "prettier": "cd .. && npm run prettier",
+    "pretty-check": "cd .. && npm run pretty-check",
     "start": "electron ./main.js"
   },
   "build": {
@@ -33,6 +37,7 @@
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
-    "electron": "^1.8.3"
+    "electron": "^1.8.3",
+    "spectron": "^3.8.0"
   }
 }
