@@ -21,7 +21,10 @@
   },
   "scripts": {
     "start": "./server.js",
-    "test": "jest"
+    "lint": "cd .. && npm run lint",
+    "prettier": "cd .. && npm run prettier",
+    "pretty-check": "cd .. && npm run pretty-check",
+    "test": "PATH=$PATH:../node_modules/.bin; jest"
   },
   "dependencies": {
     "combinations-generator": "^1.0.1",
