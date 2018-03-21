@@ -43,10 +43,10 @@ workflows:
       - test-worker:
           requires: [build]
       - deploy-docker:
-          requires: [test-worker, test-server, test-app]
+          requires: [lint, test-worker, test-server, test-app]
           context: docker-hub
       - deploy-github:
-          requires: [test-worker, test-server, test-app]
+          requires: [lint, test-worker, test-server, test-app]
 
   on_tag:
     jobs:
@@ -66,11 +66,11 @@ workflows:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [test-worker, test-server, test-app]
+          requires: [lint, test-worker, test-server, test-app]
           filters: *filters
           context: docker-hub
       - deploy-github:
-          requires: [test-worker, test-server, test-app]
+          requires: [lint, test-worker, test-server, test-app]
           filters: *filters
 
   cron_weekly:
