@@ -136,6 +136,8 @@ jobs:
   # test ent.js against all our sample files
   test-app:
     <<: *defaults
+    docker:
+      - image: circleci/node:8-stretch-browsers
     steps:
       - checkout
       - run: npm install
