@@ -5,6 +5,7 @@ const serializeError = require('serialize-error')
 const ent = require('../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../newick')
 const { genbankToFasta, fastaToNexus } = require('../formats')
+const { pruneOutliers } = require('../lib/prune-newick')
 const clustal = require('../wrappers/clustal')
 const mrBayes = require('../wrappers/mrbayes')
 
@@ -83,14 +84,18 @@ async function main([command, filepath, data]) {
 
 		begin('newick')
 		let jsonNewickTree = parseNewick(newickTree)
-		returnData('newick', jsonNewickTree)
+		let { removedData, prunedNewick } = pruneOutliers(jsonNewickTree, aligned)
+		returnData('newick', prunedNewick)
+		if (removedData.total > 0) {
+			returnData('prune', removedData)
+		}
 		complete('newick')
 
 		begin('ent')
-		let nmResults = removeCircularLinks(ent.strictSearch(jsonNewickTree))
+		let nmResults = removeCircularLinks(ent.strictSearch(prunedNewick, aligned))
 		// Have to return newick again because apparently `strictSearch`
 		// actually modifies the data
-		returnData('newick', removeCircularLinks(jsonNewickTree))
+		returnData('newick', removeCircularLinks(prunedNewick))
 		returnData('ent', nmResults)
 		complete('ent')
 
