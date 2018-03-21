@@ -1,573 +1,589 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`coyote-test.tree 1`] = `
-"Canis lupus (AF115702) / Canis latrans (EU400577)
-Canis lupus (AF115702) / Canis latrans (EU400578)
-Canis lupus (AF115703) / Canis latrans (EU400577)
-Canis lupus (AF115703) / Canis latrans (EU400578)
-Canis lupus (AF115698) / Canis latrans (EU400577)
-Canis lupus (AF115698) / Canis latrans (EU400578)
-Canis lupus (AF115697) / Canis latrans (EU400577)
-Canis lupus (AF115697) / Canis latrans (EU400578)
-Canis lupus (AF115694) / Canis latrans (EU400577)
-Canis lupus (AF115694) / Canis latrans (EU400578)
-Canis lupus (AF115695) / Canis latrans (EU400577)
-Canis lupus (AF115695) / Canis latrans (EU400578)
-Canis lupus (AF115696) / Canis latrans (EU400577)
-Canis lupus (AF115696) / Canis latrans (EU400578)
-Canis lupus (AF115687) / Canis latrans (EU400577)
-Canis lupus (AF115687) / Canis latrans (EU400578)
-Canis lupus (AF115688) / Canis latrans (EU400577)
-Canis lupus (AF115688) / Canis latrans (EU400578)
-Canis lupus (AF115689) / Canis latrans (EU400577)
-Canis lupus (AF115689) / Canis latrans (EU400578)
-Canis lupus (AF115690) / Canis latrans (EU400577)
-Canis lupus (AF115690) / Canis latrans (EU400578)
-Canis lupus (AF115691) / Canis latrans (EU400577)
-Canis lupus (AF115691) / Canis latrans (EU400578)
-Canis lupus (AF115692) / Canis latrans (EU400577)
-Canis lupus (AF115692) / Canis latrans (EU400578)
-Canis lupus (AF115693) / Canis latrans (EU400577)
-Canis lupus (AF115693) / Canis latrans (EU400578)"
+Array [
+  "Canis lupus (AF115702) / Canis latrans (EU400577)",
+  "Canis lupus (AF115702) / Canis latrans (EU400578)",
+  "Canis lupus (AF115703) / Canis latrans (EU400577)",
+  "Canis lupus (AF115703) / Canis latrans (EU400578)",
+  "Canis lupus (AF115698) / Canis latrans (EU400577)",
+  "Canis lupus (AF115698) / Canis latrans (EU400578)",
+  "Canis lupus (AF115697) / Canis latrans (EU400577)",
+  "Canis lupus (AF115697) / Canis latrans (EU400578)",
+  "Canis lupus (AF115694) / Canis latrans (EU400577)",
+  "Canis lupus (AF115694) / Canis latrans (EU400578)",
+  "Canis lupus (AF115695) / Canis latrans (EU400577)",
+  "Canis lupus (AF115695) / Canis latrans (EU400578)",
+  "Canis lupus (AF115696) / Canis latrans (EU400577)",
+  "Canis lupus (AF115696) / Canis latrans (EU400578)",
+  "Canis lupus (AF115687) / Canis latrans (EU400577)",
+  "Canis lupus (AF115687) / Canis latrans (EU400578)",
+  "Canis lupus (AF115688) / Canis latrans (EU400577)",
+  "Canis lupus (AF115688) / Canis latrans (EU400578)",
+  "Canis lupus (AF115689) / Canis latrans (EU400577)",
+  "Canis lupus (AF115689) / Canis latrans (EU400578)",
+  "Canis lupus (AF115690) / Canis latrans (EU400577)",
+  "Canis lupus (AF115690) / Canis latrans (EU400578)",
+  "Canis lupus (AF115691) / Canis latrans (EU400577)",
+  "Canis lupus (AF115691) / Canis latrans (EU400578)",
+  "Canis lupus (AF115692) / Canis latrans (EU400577)",
+  "Canis lupus (AF115692) / Canis latrans (EU400578)",
+  "Canis lupus (AF115693) / Canis latrans (EU400577)",
+  "Canis lupus (AF115693) / Canis latrans (EU400578)",
+]
 `;
 
 exports[`emydura.tree 1`] = `
-"Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755186)
-Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755187)"
+Array [
+  "Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755186)",
+  "Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755187)",
+]
 `;
 
 exports[`emydura-short.tree 1`] = `
-"Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755186)
-Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755187)
-Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755186)
-Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755187)"
+Array [
+  "Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755186)",
+  "Emydura subglobosa (KC755185) / Emydura tanybaraga (KC755187)",
+  "Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755186)",
+  "Emydura subglobosa (KC755190) / Emydura tanybaraga (KC755187)",
+]
 `;
 
 exports[`kino.tree 1`] = `
-"Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301380)
-Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301381)
-Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301382)
-Kinosternon scorpioides (KF301386) / Kinosternon oaxacae (KF301384)
-Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301380)
-Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301381)
-Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301382)
-Kinosternon scorpioides (KF301387) / Kinosternon oaxacae (KF301384)
-Kinosternon subrubrum (KF301390) / Kinosternon baurii (KF301371)
-Kinosternon subrubrum (KF301391) / Kinosternon flavescens (KF301376)
-Sternotherus minor (KF301363) / Sternotherus depressus (KF301362)"
+Array [
+  "Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301380)",
+  "Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301381)",
+  "Kinosternon scorpioides (KF301386) / Kinosternon integrum (KF301382)",
+  "Kinosternon scorpioides (KF301386) / Kinosternon oaxacae (KF301384)",
+  "Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301380)",
+  "Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301381)",
+  "Kinosternon scorpioides (KF301387) / Kinosternon integrum (KF301382)",
+  "Kinosternon scorpioides (KF301387) / Kinosternon oaxacae (KF301384)",
+  "Kinosternon subrubrum (KF301390) / Kinosternon baurii (KF301371)",
+  "Kinosternon subrubrum (KF301391) / Kinosternon flavescens (KF301376)",
+  "Sternotherus minor (KF301363) / Sternotherus depressus (KF301362)",
+]
 `;
 
 exports[`plaamyd.tree 1`] = `
-"Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537478)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)
-Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)
-Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)
-Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537464) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537463) / Palea steindachneri (AY743417)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)
-Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)
-Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537464)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537463)"
+Array [
+  "Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)",
+  "Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537464) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537463) / Palea steindachneri (AY743417)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537464)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537463)",
+]
 `;
 
 exports[`smallerlepus.tree 1`] = `
-"Lepus mandshuricus (HM233014) / Lepus timidus (AB687528)
-Lepus mandshuricus (HM233014) / Lepus timidus (AB687529)
-Lepus mandshuricus (HM233014) / Lepus timidus (AB687530)
-Lepus mandshuricus (HM233014) / Lepus timidus (AB687527)
-Lepus mandshuricus (HM233014) / Lepus timidus (AB687526)
-Lepus mandshuricus (HM233014) / Lepus timidus (AB687525)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM233010)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM233011)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM233014)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232991)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232995)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232996)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232994)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232993)
-Lepus timidus (AB687524) / Lepus mandshuricus (HM232992)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM233010)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM233011)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM233014)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232991)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232995)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232996)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232994)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232993)
-Lepus timidus (AB058607) / Lepus mandshuricus (HM232992)
-Lepus timidus (AB687528) / Lepus coreanus (AB687531)
-Lepus timidus (AB687528) / Lepus coreanus (AB687532)
-Lepus timidus (AB687528) / Lepus coreanus (AB687533)
-Lepus timidus (AB687528) / Lepus coreanus (AB687534)
-Lepus timidus (AB687529) / Lepus coreanus (AB687531)
-Lepus timidus (AB687529) / Lepus coreanus (AB687532)
-Lepus timidus (AB687529) / Lepus coreanus (AB687533)
-Lepus timidus (AB687529) / Lepus coreanus (AB687534)
-Lepus timidus (AB687530) / Lepus coreanus (AB687531)
-Lepus timidus (AB687530) / Lepus coreanus (AB687532)
-Lepus timidus (AB687530) / Lepus coreanus (AB687533)
-Lepus timidus (AB687530) / Lepus coreanus (AB687534)
-Lepus timidus (AB687527) / Lepus coreanus (AB687531)
-Lepus timidus (AB687527) / Lepus coreanus (AB687532)
-Lepus timidus (AB687527) / Lepus coreanus (AB687533)
-Lepus timidus (AB687527) / Lepus coreanus (AB687534)
-Lepus timidus (AB687526) / Lepus coreanus (AB687531)
-Lepus timidus (AB687526) / Lepus coreanus (AB687532)
-Lepus timidus (AB687526) / Lepus coreanus (AB687533)
-Lepus timidus (AB687526) / Lepus coreanus (AB687534)
-Lepus timidus (AB687525) / Lepus coreanus (AB687531)
-Lepus timidus (AB687525) / Lepus coreanus (AB687532)
-Lepus timidus (AB687525) / Lepus coreanus (AB687533)
-Lepus timidus (AB687525) / Lepus coreanus (AB687534)
-Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687531)
-Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687532)
-Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687533)
-Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687534)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687524)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB058607)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687528)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687529)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687530)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687527)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687526)
-Lepus mandshuricus (DQ793161) / Lepus timidus (AB687525)
-Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058615)
-Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058616)"
+Array [
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687528)",
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687529)",
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687530)",
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687527)",
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687526)",
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687525)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM233010)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM233011)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM233014)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232991)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232995)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232996)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232994)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232993)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232992)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM233010)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM233011)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM233014)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232991)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232995)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232996)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232994)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232993)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM232992)",
+  "Lepus timidus (AB687528) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687528) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687528) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687528) / Lepus coreanus (AB687534)",
+  "Lepus timidus (AB687529) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687529) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687529) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687529) / Lepus coreanus (AB687534)",
+  "Lepus timidus (AB687530) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687530) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687530) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687530) / Lepus coreanus (AB687534)",
+  "Lepus timidus (AB687527) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687527) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687527) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687527) / Lepus coreanus (AB687534)",
+  "Lepus timidus (AB687526) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687526) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687526) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687526) / Lepus coreanus (AB687534)",
+  "Lepus timidus (AB687525) / Lepus coreanus (AB687531)",
+  "Lepus timidus (AB687525) / Lepus coreanus (AB687532)",
+  "Lepus timidus (AB687525) / Lepus coreanus (AB687533)",
+  "Lepus timidus (AB687525) / Lepus coreanus (AB687534)",
+  "Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687531)",
+  "Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687532)",
+  "Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687533)",
+  "Lepus mandshuricus (DQ793161) / Lepus coreanus (AB687534)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687524)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB058607)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687528)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687529)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687530)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687527)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687526)",
+  "Lepus mandshuricus (DQ793161) / Lepus timidus (AB687525)",
+  "Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058615)",
+  "Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058616)",
+]
 `;
 
 exports[`trio171sequence.tree 1`] = `
-"Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)
-Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537463)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537478)
-Amyda ornata (LM537462) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537462) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537466)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537478)
-Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)
-Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537482)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537490)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537482)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537490)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537485)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537484)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537483)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537490)
-Amyda ornata (LM537482) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537482) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537466)
-Amyda ornata (LM537490) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537490) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537466)
-Amyda cartilaginea (LM537485) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537484) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537483) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537464) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537463) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537485) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537484) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537483) / Palea steindachneri (AY743417)
-Palea steindachneri (AY259552) / Nilssonia leithii (AM495225)
-Palea steindachneri (AY259552) / Nilssonia leithii (AM495226)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801747)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801748)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801746)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801745)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801744)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801749)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801750)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801751)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801742)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AY259549)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495217)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495216)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495215)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495214)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495213)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495212)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495211)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801743)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495210)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495209)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495208)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801754)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801755)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801752)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495221)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495220)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801756)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801753)
-Palea steindachneri (AY259552) / Nilssonia hurum (JN232528)
-Palea steindachneri (AY259552) / Nilssonia hurum (AY259548)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495224)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495223)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495222)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495219)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495218)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801759)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801760)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801757)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801758)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495233)
-Palea steindachneri (AY259552) / Nilssonia nigricans (JN232527)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495236)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495235)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495234)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495232)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495231)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495230)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495229)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495228)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495227)
-Palea steindachneri (AY259552) / Nilssonia formosa (HE801740)
-Palea steindachneri (AY259552) / Nilssonia formosa (AY259547)
-Palea steindachneri (AY259552) / Nilssonia formosa (HE801741)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)
-Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)
-Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)
-Palea steindachneri (AY259552) / Amyda ornata (LM537478)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537464)
-Palea steindachneri (AY259552) / Amyda ornata (LM537462)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537463)
-Palea steindachneri (AY259552) / Amyda ornata (LM537482)
-Palea steindachneri (AY259552) / Amyda ornata (LM537490)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537485)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537484)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537483)"
+Array [
+  "Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)",
+  "Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537463)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537478)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537466)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537485)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537484)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537483)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537490)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537466)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537466)",
+  "Amyda cartilaginea (LM537485) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537484) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537464) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537463) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537485) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537484) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537483) / Palea steindachneri (AY743417)",
+  "Palea steindachneri (AY259552) / Nilssonia leithii (AM495225)",
+  "Palea steindachneri (AY259552) / Nilssonia leithii (AM495226)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801747)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801748)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801746)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801745)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801744)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801749)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801750)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801751)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801742)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AY259549)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495217)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495216)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495215)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495214)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495213)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495212)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495211)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801743)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495210)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495209)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495208)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801754)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801755)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801752)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495221)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495220)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801756)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801753)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (JN232528)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AY259548)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495224)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495223)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495222)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495219)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495218)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801759)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801760)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801757)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801758)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495233)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (JN232527)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495236)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495235)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495234)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495232)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495231)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495230)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495229)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495228)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495227)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (HE801740)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (AY259547)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (HE801741)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)",
+  "Palea steindachneri (AY259552) / Amyda ornata (LM537478)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537464)",
+  "Palea steindachneri (AY259552) / Amyda ornata (LM537462)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537463)",
+  "Palea steindachneri (AY259552) / Amyda ornata (LM537482)",
+  "Palea steindachneri (AY259552) / Amyda ornata (LM537490)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537485)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537484)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537483)",
+]
 `;
 
 exports[`trionychcytb.tree 1`] = `
-"Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)
-Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537482)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537490)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537482)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537490)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537482)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537483)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537484)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537485)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537482)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537490) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537490) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537490) / Amyda cartilaginea (LM537466)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537482) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537482) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537482) / Amyda cartilaginea (LM537466)
-Amyda cartilaginea (LM537483) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537484) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537485) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)
-Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)
-Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (FR851459) / Pelodiscus maackii (FM999011)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (AB904729) / Pelodiscus maackii (FM999011)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (AB904726) / Pelodiscus maackii (FM999011)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (AB904728) / Pelodiscus maackii (FM999011)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (AB904727) / Pelodiscus maackii (FM999011)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904722)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904723)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904720)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904724)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904725)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904721)
-Pelodiscus sinensis (JN860674) / Pelodiscus maackii (FM999011)
-Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)
-Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)
-Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537463)
-Amyda ornata (LM537478) / Amyda cartilaginea (LM537464)
-Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)
-Amyda cartilaginea (LM537463) / Amyda ornata (LM537478)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537467)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537465)
-Amyda ornata (LM537462) / Amyda cartilaginea (JN232534)
-Amyda ornata (LM537462) / Amyda cartilaginea (AY259550)
-Amyda ornata (LM537462) / Amyda cartilaginea (LM537466)
-Amyda cartilaginea (LM537464) / Amyda ornata (LM537478)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537481) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537480) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537492) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537491) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537494) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537493) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537490)
-Amyda cartilaginea (LM537476) / Amyda ornata (LM537482)
-Amyda cartilaginea (LM537483) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537484) / Palea steindachneri (AY743417)
-Amyda cartilaginea (LM537485) / Palea steindachneri (AY743417)
-Palea steindachneri (AY259552) / Dogania subplana (AY259551)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495232)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495228)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495227)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495229)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495230)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495231)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495233)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495235)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495234)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495236)
-Palea steindachneri (AY259552) / Nilssonia nigricans (AM495237)
-Palea steindachneri (AY259552) / Nilssonia nigricans (JN232527)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801758)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801757)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801759)
-Palea steindachneri (AY259552) / Nilssonia nigricans (HE801760)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495218)
-Palea steindachneri (AY259552) / Nilssonia hurum (AY259548)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495219)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495221)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495220)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801752)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801754)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801755)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495222)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495223)
-Palea steindachneri (AY259552) / Nilssonia hurum (AM495224)
-Palea steindachneri (AY259552) / Nilssonia hurum (JN232528)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801753)
-Palea steindachneri (AY259552) / Nilssonia hurum (HE801756)
-Palea steindachneri (AY259552) / Nilssonia leithii (AM495226)
-Palea steindachneri (AY259552) / Nilssonia leithii (AM495225)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495209)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495208)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495210)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495211)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801743)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495212)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AY259549)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495213)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495214)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495215)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495216)
-Palea steindachneri (AY259552) / Nilssonia gangetica (AM495217)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801742)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801749)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801750)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801751)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801745)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801744)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801746)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801747)
-Palea steindachneri (AY259552) / Nilssonia gangetica (HE801748)
-Palea steindachneri (AY259552) / Nilssonia formosa (HE801740)
-Palea steindachneri (AY259552) / Nilssonia formosa (HE801741)
-Palea steindachneri (AY259552) / Nilssonia formosa (AY259547)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)
-Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)
-Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)
-Palea steindachneri (AY259552) / Amyda ornata (LM537478)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537483)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537484)
-Palea steindachneri (AY259552) / Amyda cartilaginea (LM537485)
-Palea steindachneri (AY743417) / Pelodiscus axenaria (AY583693)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (FR851459)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904729)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904726)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904728)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904727)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (JN860674)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904722)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904723)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904720)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904724)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904725)
-Palea steindachneri (AY743417) / Pelodiscus maackii (AB904721)
-Palea steindachneri (AY743417) / Pelodiscus maackii (FM999011)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AY583692)
-Palea steindachneri (AY743417) / Pelodiscus sinensis (AY259553)"
+Array [
+  "Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537491) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537494) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537493) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537463)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537484) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537485) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537484)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537485)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537482)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537483)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537484)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537485)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537482)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537466)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537466)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537484) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537485) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537467) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537465) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (JN232534) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (AY259550) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537466) / Palea steindachneri (AY743417)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (FR851459) / Pelodiscus maackii (FM999011)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (FM999011)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (AB904726) / Pelodiscus maackii (FM999011)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (AB904728) / Pelodiscus maackii (FM999011)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (AB904727) / Pelodiscus maackii (FM999011)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904722)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904723)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904720)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904724)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904725)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904721)",
+  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (FM999011)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537465) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (JN232534) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (AY259550) / Amyda ornata (LM537462)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537463)",
+  "Amyda ornata (LM537478) / Amyda cartilaginea (LM537464)",
+  "Amyda cartilaginea (LM537466) / Amyda ornata (LM537462)",
+  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537478)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537467)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537465)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (JN232534)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (AY259550)",
+  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537466)",
+  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537478)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537481) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537480) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537492) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537491) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537494) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537493) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537490)",
+  "Amyda cartilaginea (LM537476) / Amyda ornata (LM537482)",
+  "Amyda cartilaginea (LM537483) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537484) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537485) / Palea steindachneri (AY743417)",
+  "Palea steindachneri (AY259552) / Dogania subplana (AY259551)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495232)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495228)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495227)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495229)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495230)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495231)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495233)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495235)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495234)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495236)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495237)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (JN232527)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801758)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801757)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801759)",
+  "Palea steindachneri (AY259552) / Nilssonia nigricans (HE801760)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495218)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AY259548)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495219)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495221)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495220)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801752)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801754)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801755)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495222)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495223)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (AM495224)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (JN232528)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801753)",
+  "Palea steindachneri (AY259552) / Nilssonia hurum (HE801756)",
+  "Palea steindachneri (AY259552) / Nilssonia leithii (AM495226)",
+  "Palea steindachneri (AY259552) / Nilssonia leithii (AM495225)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495209)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495208)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495210)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495211)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801743)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495212)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AY259549)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495213)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495214)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495215)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495216)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (AM495217)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801742)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801749)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801750)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801751)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801745)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801744)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801746)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801747)",
+  "Palea steindachneri (AY259552) / Nilssonia gangetica (HE801748)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (HE801740)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (HE801741)",
+  "Palea steindachneri (AY259552) / Nilssonia formosa (AY259547)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537481)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537480)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537492)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537491)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537493)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537476)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537467)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537465)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (JN232534)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (AY259550)",
+  "Palea steindachneri (AY259552) / Amyda ornata (LM537478)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537466)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537483)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537484)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537485)",
+  "Palea steindachneri (AY743417) / Pelodiscus axenaria (AY583693)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (FR851459)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904729)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904726)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904728)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AB904727)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (JN860674)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904722)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904723)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904720)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904724)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904725)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (AB904721)",
+  "Palea steindachneri (AY743417) / Pelodiscus maackii (FM999011)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AY583692)",
+  "Palea steindachneri (AY743417) / Pelodiscus sinensis (AY259553)",
+]
 `;

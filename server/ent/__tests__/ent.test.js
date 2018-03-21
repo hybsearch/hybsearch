@@ -13,9 +13,11 @@ const files = fs
 for (const file of files) {
 	test(file, () => {
 		const content = fs.readFileSync(path.join(base, file) + '.tree', 'utf-8')
-		const fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 		const tree = newickToJson(content)
+
+		const fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
+
 		const actual = formatData(search(tree, fasta))
-		expect(actual).toMatchSnapshot()
+		expect(actual.split('\n')).toMatchSnapshot()
 	})
 }
