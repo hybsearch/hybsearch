@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 /*
   d3.phylogram.js
   Wrapper around a d3-based phylogram (tree where branch lengths are scaled)
@@ -72,11 +72,11 @@
     d3.phylogram.rightAngleDiagonal for radial layouts.
 */
 
-var d3 = require('d3')
+let d3 = require('d3')
 const flatten = require('lodash/flatten')
 const uniq = require('lodash/uniq')
 
-var phylogram = {}
+let phylogram = {}
 phylogram.rightAngleDiagonal = () => {
 	let projection = d => [d.y, d.x]
 	let path = pathData => `M${pathData[0]} ${pathData[1]} ${pathData[2]}`
@@ -95,13 +95,17 @@ phylogram.rightAngleDiagonal = () => {
 	}
 
 	diagonal.projection = function(x) {
-		if (!arguments.length) return projection
+		if (!arguments.length) {
+			return projection
+		}
 		projection = x
 		return diagonal
 	}
 
 	diagonal.path = function(x) {
-		if (!arguments.length) return path
+		if (!arguments.length) {
+			return path
+		}
 		path = x
 		return diagonal
 	}
@@ -195,8 +199,8 @@ function scaleBranchLengths(nodes, w) {
 			(node.parent ? node.parent.rootDist : 0) + (node.length || 0)
 	})
 
-	var rootDists = nodes.map(n => n.rootDist)
-	var yscale = d3.scale
+	let rootDists = nodes.map(n => n.rootDist)
+	let yscale = d3.scale
 		.linear()
 		.domain([0, d3.max(rootDists)])
 		.range([0, w])
@@ -280,19 +284,19 @@ phylogram.build = function(selector, nodes, options = {}) {
 	let allNmIdents = uniq(flatten(nm))
 
 	let allpathdata = tree.links(nodes)
-	let nonmono_nodes = []
-	let normal_nodes = []
+	let nonmonoNodes = []
+	let normalNodes = []
 	for (let path of allpathdata) {
 		if (!path.target.branchset && allNmIdents.includes(path.target.ident)) {
-			nonmono_nodes.push(path)
+			nonmonoNodes.push(path)
 		} else {
-			normal_nodes.push(path)
+			normalNodes.push(path)
 		}
 	}
 
 	let nonmonoLinks = vis
 		.selectAll('path.link')
-		.data(nonmono_nodes)
+		.data(nonmonoNodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)
@@ -303,7 +307,7 @@ phylogram.build = function(selector, nodes, options = {}) {
 
 	let normalLinks = vis
 		.selectAll('path.link2')
-		.data(normal_nodes)
+		.data(normalNodes)
 		.enter()
 		.append('svg:path')
 		.classed('link', true)

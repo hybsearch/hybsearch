@@ -11,7 +11,7 @@
   "scripts": {
     "start": "electron ./main.js",
     "test": "jest",
-    "lint": "eslint 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
+    "lint": "eslint --cache 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
     "pretty-check": "npm run prettier -- --list-different",
     "prettier": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
   },

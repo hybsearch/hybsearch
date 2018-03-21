@@ -20,11 +20,11 @@ function nmMark(node, species1, species2) {
 		nmMark(node.branchset[0], species1, species2)
 		nmMark(node.branchset[1], species1, species2)
 	} else if (node.name === species1.name) {
-		node.nm_inner = node.nm_inner || []
-		node.nm_inner.push(species2)
+		node.nmInner = node.nmInner || []
+		node.nmInner.push(species2)
 	} else if (node.name === species2.name) {
-		node.nm_outer = node.nm_outer || []
-		node.nm_outer.push(species1)
+		node.nmOuter = node.nmOuter || []
+		node.nmOuter.push(species1)
 	}
 }
 
@@ -86,8 +86,8 @@ function strictSearch(node, fasta) {
 
 			let dist = hammingDistance(sequence1, sequence2)
 
-			if (sp1.ident == speciesIdent || sp2.ident == speciesIdent) {
-				if (smallestDist == -1) {
+			if (sp1.ident === speciesIdent || sp2.ident === speciesIdent) {
+				if (smallestDist === -1) {
 					smallestDist = dist
 				}
 
@@ -104,9 +104,9 @@ function strictSearch(node, fasta) {
 		let id2 = makeIdent(sp2)
 
 		if (
-			(shortestPairs[id1] == undefined ||
+			(!shortestPairs.hasOwnProperty(id1) ||
 				smallestDist < shortestPairs[id1].dist) &&
-			(shortestPairs[id2] == undefined ||
+			(!shortestPairs.hasOwnProperty(id2) ||
 				smallestDist < shortestPairs[id2].dist)
 		) {
 			shortestPairs[id1] = { dist: smallestDist, result: smallestResult }
@@ -137,8 +137,12 @@ function strictSearch(node, fasta) {
 				(!foundSpecies[id2] || dist < foundSpecies[id2].dist)
 			) {
 				// We must have added one that shouldn't have been added! Remove anything with either id1 or id2
-				if (foundSpecies[id1]) delete uniqueHash[foundSpecies[id1].hash]
-				if (foundSpecies[id2]) delete uniqueHash[foundSpecies[id2].hash]
+				if (foundSpecies[id1]) {
+					delete uniqueHash[foundSpecies[id1].hash]
+				}
+				if (foundSpecies[id2]) {
+					delete uniqueHash[foundSpecies[id2].hash]
+				}
 
 				foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
 				foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }
@@ -147,7 +151,7 @@ function strictSearch(node, fasta) {
 			}
 		}
 
-		if (uniqueHash[hash] == undefined && allowed) {
+		if (!uniqueHash.hasOwnProperty(hash) && allowed) {
 			uniqueHash[hash] = result
 		}
 	}

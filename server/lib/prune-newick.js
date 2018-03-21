@@ -35,7 +35,7 @@ function pruneOutliers(newick, alignedFasta) {
 		let species1 = node.ident ? node.name + '__' + node.ident : node.name
 		distCache[i] = {}
 		for (let j = 0; j < leafNodes.length; j++) {
-			if (i == j) {
+			if (i === j) {
 				continue
 			}
 
@@ -66,7 +66,7 @@ function pruneOutliers(newick, alignedFasta) {
 		let diffCount = 0
 
 		for (let j = 0; j < leafNodes.length; j++) {
-			if (i == j) {
+			if (i === j) {
 				continue
 			}
 			let diff = distCache[i][j]
@@ -89,7 +89,7 @@ function pruneOutliers(newick, alignedFasta) {
 	// Now remove the nodes
 	let removedData = { total: 0, standardDeviation: std }
 
-	if (toRemoveNodes.length != 0) {
+	if (toRemoveNodes.length !== 0) {
 		removedData.total = toRemoveNodes.length
 		removedData.formattedNames = '<pre>'
 		for (let node of toRemoveNodes) {
@@ -112,26 +112,26 @@ function pruneOutliers(newick, alignedFasta) {
 
 function removeNodes(node, identArray) {
 	if (node.branchset) {
-		let new_branchset = []
+		let newBranchset = []
 		for (let child of node.branchset) {
 			let include = true
 
 			if (!child.branchset) {
 				if (
-					(child.ident && identArray.indexOf(child.ident) != -1) ||
-					identArray.indexOf(child.name) != -1
+					(child.ident && identArray.indexOf(child.ident) !== -1) ||
+					identArray.indexOf(child.name) !== -1
 				) {
 					include = false
 				}
 			}
 			if (include) {
-				new_branchset.push(child)
+				newBranchset.push(child)
 			}
 
 			removeNodes(child, identArray)
 		}
 
-		node.branchset = new_branchset
+		node.branchset = newBranchset
 	}
 }
 
@@ -141,31 +141,31 @@ function removeRedundant(node) {
 	// the thing it points to
 	if (
 		node.branchset &&
-		node.branchset.length == 1 &&
+		node.branchset.length === 1 &&
 		node.branchset[0].branchset
 	) {
 		return removeRedundant(node.branchset[0])
 	} else {
-		let new_branchset = []
+		let newBranchset = []
 		for (let child of node.branchset) {
 			if (
 				child.branchset &&
-				child.branchset.length == 1 &&
+				child.branchset.length === 1 &&
 				child.branchset[0].branchset
 			) {
 				child = removeRedundant(child)
 			}
 
-			if (child.branchset && child.branchset.length == 0) {
+			if (child.branchset && child.branchset.length === 0) {
 				// This should not be included!
 			} else {
-				new_branchset.push(child)
+				newBranchset.push(child)
 			}
 		}
-		if (new_branchset.length == 1) {
-			return removeRedundant(new_branchset[0])
+		if (newBranchset.length === 1) {
+			return removeRedundant(newBranchset[0])
 		} else {
-			node.branchset = new_branchset
+			node.branchset = newBranchset
 		}
 
 		return node
