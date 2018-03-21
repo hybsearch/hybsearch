@@ -4,12 +4,16 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
 const isEqual = require('lodash/isEqual')
+const { parseFasta } = require('../formats/fasta/parse')
+const hammingDistance = require('../hamdis/hamming-distance')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
+const makeIdent = speciesEntry =>
+	speciesEntry.name + LABEL_DIVIDER + speciesEntry.ident
 
 function nmMark(node, species1, species2) {
 	if (node.branchset) {
@@ -24,73 +28,140 @@ function nmMark(node, species1, species2) {
 	}
 }
 
-module.exports.search = nmSearch
-function nmSearch(node) {
-	if (node.name && !node.ident) {
-		let splitted = node.name.split(LABEL_DIVIDER)
-		node.name = splitted[0]
-		node.ident = splitted[1]
+module.exports.strictSearch = strictSearch
+function strictSearch(node, fasta) {
+	let entResults = strictSearchHelper(node)
+	// Filter out nonmono pairs before returning
+	let finalResults = { species: entResults.species, nm: [] }
+
+	const fastaData = parseFasta(fasta)
+	// Build a dict map of species -> sequence
+	let sequenceMap = {}
+	for (let obj of fastaData) {
+		sequenceMap[obj.species] = obj.sequence
 	}
 
-	let nmInstances = []
+	// For each species S marked in an nm pair,
+	// Go through all other pairs with S in them
+	// Find the shortest pair
+	// If that pair is shorter than the current pair including either of them
+	// That is the new shortest pair
+	let allSpecies = []
+	let speciesCheck = {}
 
-	if (node.branchset) {
-		debug('has branchset')
-		let combinations = combs(node.branchset, 2)
+	for (let result of entResults.nm) {
+		let sp1 = result.pair[0]
+		let sp2 = result.pair[1]
 
-		let speciesList = []
-		for (let speciesSet of combinations) {
-			let resultsA = nmSearch(speciesSet[0])
-			let speciesListA = resultsA.species
-			nmInstances = nmInstances.concat(resultsA.nm)
+		if (!speciesCheck[sp1.ident]) {
+			allSpecies.push(sp1.ident)
+			speciesCheck[sp1.ident] = true
+		}
+		if (!speciesCheck[sp2.ident]) {
+			allSpecies.push(sp2.ident)
+			speciesCheck[sp2.ident] = true
+		}
+	}
 
-			let resultsB = nmSearch(speciesSet[1])
-			let speciesListB = resultsB.species
-			nmInstances = nmInstances.concat(resultsB.nm)
+	let shortestPairs = {}
 
-			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
+	for (let speciesIdent of allSpecies) {
+		let smallestResult = undefined
+		let smallestDist = -1
 
-			let speciesBNames = speciesListB.map(s => s.name)
-			speciesListA.forEach(species1 => {
-				let hasName = speciesBNames.includes(species1.name)
-				let notAllEqual = !speciesBNames.every(n => n === species1)
-				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+		for (let result of entResults.nm) {
+			let sp1 = result.pair[0]
+			let sp2 = result.pair[1]
+			let id1 = makeIdent(sp1)
+			let id2 = makeIdent(sp2)
 
-				// species1 is in speciesListB, and not everything in speciesListB is species1
-				if (hasName && notAllEqual) {
-					const checkAndMark = otherSpecies => {
-						if (otherSpecies.name !== species1.name) {
-							nmMark(node, species1, otherSpecies)
-							debug(`nmMark called on ${species1} and ${otherSpecies}`)
-							console.log(
-								`nonmonophyly: ${label(species1)} / ${label(otherSpecies)}`
-							)
-							nmInstances.push([species1, otherSpecies])
-						}
-					}
+			let sequence1 = sequenceMap[id1]
+			let sequence2 = sequenceMap[id2]
 
-					// search in speciesListB
-					speciesListB.forEach(checkAndMark)
+			if (!sequence1) {
+				throw new Error(`ent: sequenceMap does not have an entry for ${id1}`)
+			} else if (!sequence2) {
+				throw new Error(`ent: sequenceMap does not have an entry for ${id2}`)
+			}
 
-					// and search in speciesListA
-					speciesListA.forEach(checkAndMark)
+			let dist = hammingDistance(sequence1, sequence2)
+
+			if (sp1.ident == speciesIdent || sp2.ident == speciesIdent) {
+				if (smallestDist == -1) {
+					smallestDist = dist
 				}
-			})
 
-			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
+				if (dist <= smallestDist) {
+					smallestDist = dist
+					smallestResult = result
+				}
+			}
 		}
 
-		speciesList = uniqBy(speciesList, 'ident')
-		debug('speciesList', speciesList)
-		return { species: speciesList, nm: nmInstances }
+		let sp1 = smallestResult.pair[0]
+		let sp2 = smallestResult.pair[1]
+		let id1 = makeIdent(sp1)
+		let id2 = makeIdent(sp2)
+
+		if (
+			(shortestPairs[id1] == undefined ||
+				smallestDist < shortestPairs[id1].dist) &&
+			(shortestPairs[id2] == undefined ||
+				smallestDist < shortestPairs[id2].dist)
+		) {
+			shortestPairs[id1] = { dist: smallestDist, result: smallestResult }
+			shortestPairs[id2] = { dist: smallestDist, result: smallestResult }
+		}
 	}
 
-	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
-	return { species: [node], nm: nmInstances }
+	let uniqueHash = {}
+	let foundSpecies = {}
+
+	for (let key in shortestPairs) {
+		let result = shortestPairs[key].result
+		let sp1 = result.pair[0]
+		let sp2 = result.pair[1]
+		let id1 = makeIdent(sp1)
+		let id2 = makeIdent(sp2)
+		let hash = id1 > id2 ? id1 + id2 : id2 + id1
+
+		let allowed = true
+
+		if (!foundSpecies[id1] && !foundSpecies[id2]) {
+			foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
+			foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }
+		} else {
+			let dist = shortestPairs[key].dist
+			if (
+				(!foundSpecies[id1] || dist < foundSpecies[id1].dist) &&
+				(!foundSpecies[id2] || dist < foundSpecies[id2].dist)
+			) {
+				// We must have added one that shouldn't have been added! Remove anything with either id1 or id2
+				if (foundSpecies[id1]) delete uniqueHash[foundSpecies[id1].hash]
+				if (foundSpecies[id2]) delete uniqueHash[foundSpecies[id2].hash]
+
+				foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
+				foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }
+			} else {
+				allowed = false
+			}
+		}
+
+		if (uniqueHash[hash] == undefined && allowed) {
+			uniqueHash[hash] = result
+		}
+	}
+
+	for (let hash in uniqueHash) {
+		let result = uniqueHash[hash]
+		nmMark(result.node, result.pair[0], result.pair[1])
+		finalResults.nm.push(result.pair)
+	}
+
+	return finalResults
 }
 
-module.exports.strictSearch = strictSearch
-function strictSearch(node, nmInstances = [], globalNmList = []) {
+function strictSearchHelper(node, nmInstances = []) {
 	// Remove individuals after being flagged for inner nm, to prevent
 	// unnecessary repeated nm findings
 	if (node.name && !node.ident) {
@@ -107,10 +178,10 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 		let forRemoval = []
 		for (let speciesSet of combinations) {
 			// if species is in speciesList: continue
-			let resultsA = strictSearch(speciesSet[1], nmInstances, globalNmList)
+			let resultsA = strictSearchHelper(speciesSet[1], nmInstances)
 			let speciesListA = resultsA.species
 
-			let resultsB = strictSearch(speciesSet[0], nmInstances, globalNmList)
+			let resultsB = strictSearchHelper(speciesSet[0], nmInstances)
 			let speciesListB = resultsB.species
 
 			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
@@ -128,20 +199,14 @@ function strictSearch(node, nmInstances = [], globalNmList = []) {
 					// search in otherSpeciesList
 					otherSpeciesList.forEach(species3 => {
 						if (species3.name !== species1.name) {
-							const pairCheck = pair => isEqual(pair, [species1, species3])
+							const pairCheck = pair => isEqual(pair.pair, [species1, species3])
 							const count = nmInstances.filter(pairCheck).length
 
 							if (!count) {
-								nmMark(node, species1, species3)
-
 								debug(`nmMark called on ${species1} and ${species3}`)
 								debug(`nonmonophyly: ${label(species1)} / ${label(species3)}`)
 
-								nmInstances.push([species1, species3])
-
-								if (!globalNmList.some(pairCheck)) {
-									globalNmList.push([species1, species3])
-								}
+								nmInstances.push({ pair: [species1, species3], node: node })
 
 								forRemoval.push(species3.ident)
 								debug(`removing from A ${label(species3)}`)
