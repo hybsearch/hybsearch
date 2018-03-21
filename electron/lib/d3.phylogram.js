@@ -72,11 +72,11 @@
     d3.phylogram.rightAngleDiagonal for radial layouts.
 */
 
-var d3 = require('d3')
+let d3 = require('d3')
 const flatten = require('lodash/flatten')
 const uniq = require('lodash/uniq')
 
-var phylogram = {}
+let phylogram = {}
 phylogram.rightAngleDiagonal = () => {
 	let projection = d => [d.y, d.x]
 	let path = pathData => `M${pathData[0]} ${pathData[1]} ${pathData[2]}`
@@ -195,8 +195,8 @@ function scaleBranchLengths(nodes, w) {
 			(node.parent ? node.parent.rootDist : 0) + (node.length || 0)
 	})
 
-	var rootDists = nodes.map(n => n.rootDist)
-	var yscale = d3.scale
+	let rootDists = nodes.map(n => n.rootDist)
+	let yscale = d3.scale
 		.linear()
 		.domain([0, d3.max(rootDists)])
 		.range([0, w])

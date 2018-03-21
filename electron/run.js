@@ -111,7 +111,7 @@ function onMessage(packet, args, child) {
 
 document.getElementById('tree-box-submit').addEventListener('click', e => {
 	e.preventDefault()
-	var data = document.getElementById('tree-box').value
+	let data = document.getElementById('tree-box').value
 	load(parseNewick(data))
 })
 
