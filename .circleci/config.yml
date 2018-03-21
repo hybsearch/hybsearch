@@ -68,6 +68,7 @@ workflows:
           context: docker-hub
       - deploy-github:
           requires: [test-worker, test-js]
+          filters: *filters
 
   cron_weekly:
     jobs:
