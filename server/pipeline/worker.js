@@ -88,7 +88,7 @@ async function main([command, filepath, data]) {
 		complete('newick')
 
 		begin('ent')
-		let nmResults = removeCircularLinks(ent.strictSearch(jsonNewickTree, fasta))
+		let nmResults = removeCircularLinks(ent.strictSearch(jsonNewickTree, aligned))
 		// Have to return newick again because apparently `strictSearch`
 		// actually modifies the data
 		returnData('newick', removeCircularLinks(jsonNewickTree))
