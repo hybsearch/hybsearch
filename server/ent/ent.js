@@ -137,8 +137,12 @@ function strictSearch(node, fasta) {
 				(!foundSpecies[id2] || dist < foundSpecies[id2].dist)
 			) {
 				// We must have added one that shouldn't have been added! Remove anything with either id1 or id2
-				if (foundSpecies[id1]) delete uniqueHash[foundSpecies[id1].hash]
-				if (foundSpecies[id2]) delete uniqueHash[foundSpecies[id2].hash]
+				if (foundSpecies[id1]) {
+					delete uniqueHash[foundSpecies[id1].hash]
+				}
+				if (foundSpecies[id2]) {
+					delete uniqueHash[foundSpecies[id2].hash]
+				}
 
 				foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
 				foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }

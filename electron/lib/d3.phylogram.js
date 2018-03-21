@@ -95,13 +95,17 @@ phylogram.rightAngleDiagonal = () => {
 	}
 
 	diagonal.projection = function(x) {
-		if (!arguments.length) return projection
+		if (!arguments.length) {
+			return projection
+		}
 		projection = x
 		return diagonal
 	}
 
 	diagonal.path = function(x) {
-		if (!arguments.length) return path
+		if (!arguments.length) {
+			return path
+		}
 		path = x
 		return diagonal
 	}
