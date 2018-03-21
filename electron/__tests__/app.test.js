@@ -11,7 +11,7 @@ beforeEach(async () => {
 })
 
 afterEach(async () => {
-  await app.stop()
+  await app.isRunning() && await app.stop()
 })
 
 test('verify a visible window is opened with a title', async () => {
