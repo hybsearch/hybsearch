@@ -2,9 +2,20 @@
 This file will prune a newick tree to remove genes that are too dissimilar. 
 */
 
+const hammingDistance = require('../hamdis/hamming-distance')
+const {parseFasta} = require('../formats/fasta/parse')
+
 module.exports.pruneOutliers = pruneOutliers
 
-function pruneOutliers(newick){
+function pruneOutliers(newick, alignedFasta){
+
+	const fastaData = parseFasta(alignedFasta)
+	// Build a dict map of species -> sequence 
+	let sequenceMap = {}
+	for(let obj of fastaData){
+		sequenceMap[obj.species] = obj.sequence
+	}
+
 	let leafNodes = []
 	function GetLeaves(node) {
 		if (node.branchset) {
@@ -13,37 +24,67 @@ function pruneOutliers(newick){
 			leafNodes.push(node)
 		}
 	}
-	// Compute average lengths of the nodes
+	// Compute average and standard deviation of all the pairs of distances 
 	GetLeaves(newick)
-	let average = 0;
-	for(let leaf of leafNodes) {
-		average += leaf.length
-	}
-	average /= leafNodes.length
-	// Compute standard deviation 
-	let std = 0;
-	for(let leaf of leafNodes) {
-		std += Math.pow((leaf.length - average),2)
-	}
-	std /= leafNodes.length
-	std = Math.sqrt(std)
-	// If a value's diff from the mean is larger than 2 * std, then chuck it
-	let toRemoveNames = []
-	let toRemoveNodes = []
-	for(let leaf of leafNodes) {
-		let min = average - std * 2; 
-		let max = average + std * 2; 
-		if(leaf.length < min || leaf.length > max){
-			if(leaf.ident){
-				toRemoveNames.push(leaf.ident)
-			} else {
-				toRemoveNames.push(leaf.name)
+	let average = 0
+	let totalDistances = []
+	let distCache = {}
+	
+	for(let i=0;i < leafNodes.length; i++){
+		let node = leafNodes[i]
+		let species1 = node.ident ? (node.name + '__' + node.ident) : node.name
+		distCache[i] = {}
+		for(let j=0;j < leafNodes.length;j++){
+			if(i == j){
+				continue
 			}
 
-			toRemoveNodes.push(leaf)
+			let species2 = leafNodes[j].ident ? (leafNodes[j].name + '__' + leafNodes[j].ident) : leafNodes[j].name
+			let dist = hammingDistance(sequenceMap[species1],sequenceMap[species2])
+			average += dist 
+			totalDistances.push(dist)
+			distCache[i][j] = dist
 		}
-
 	}
+	average /= totalDistances.length 
+
+	let std = 0;
+	for(let dist of totalDistances) {
+		std += Math.pow((dist - average),2)
+	}
+	std /= totalDistances.length
+	std = Math.sqrt(std)
+
+	let toRemoveNames = []
+	let toRemoveNodes = []
+
+	// Remove things if a majority of their pair checks are above average  
+	for(let i=0;i < leafNodes.length; i++){
+		let node = leafNodes[i]
+		let diffCount = 0
+
+		for(let j=0;j < leafNodes.length;j++){
+			if(i == j){
+				continue
+			}
+			let diff = distCache[i][j]
+			if(diff > average){
+				diffCount ++
+			}
+		}
+		let diffPercent = diffCount / (leafNodes.length-1)
+		if(diffPercent >= 0.75){
+			if(node.ident){
+				toRemoveNames.push(node.ident)
+			} else {
+				toRemoveNames.push(node.name)
+			}
+
+			toRemoveNodes.push(node)
+		}
+	}
+
+	
 	// Now remove the nodes 
 	let removedData = {total:0,standardDeviation:std}
 
@@ -103,9 +144,19 @@ function removeRedundant(node){
 				child = removeRedundant(child)
 			}
 
-			new_branchset.push(child)
+			if(child.branchset && child.branchset.length == 0){
+				// This should not be included!
+			} else {
+				new_branchset.push(child)
+			}
+			
 		}
-		node.branchset = new_branchset
+		if(new_branchset.length == 1){
+			return removeRedundant(new_branchset[0])
+		}else {
+			node.branchset = new_branchset
+		}
+		
 
 		return node
 	}

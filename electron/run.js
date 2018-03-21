@@ -59,7 +59,6 @@ function onData(phase, data) {
 		}
 		case 'prune': {
 			document.querySelector('#omitted-container').hidden = false
-			document.querySelector('#standard-deviation').innerHTML = (data.standardDeviation * 2).toFixed(2)
 			document.querySelector('#omitted-results').innerHTML = data.formattedNames
 			break
 		}

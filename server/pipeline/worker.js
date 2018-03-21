@@ -84,7 +84,7 @@ async function main([command, filepath, data]) {
 
 		begin('newick')
 		let jsonNewickTree = parseNewick(newickTree)
-		let { removedData, prunedNewick } = pruneOutliers(jsonNewickTree)
+		let { removedData, prunedNewick } = pruneOutliers(jsonNewickTree,aligned)
 		returnData('newick', prunedNewick)
 		if(removedData.total != 0){
 			returnData('prune', removedData)
