@@ -12,6 +12,8 @@ let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
+const makeIdent = speciesEntry =>
+	speciesEntry.name + LABEL_DIVIDER + speciesEntry.ident
 
 function nmMark(node, species1, species2) {
 	if (node.branchset) {
@@ -70,8 +72,8 @@ function strictSearch(node, fasta) {
 		for (let result of entResults.nm) {
 			let sp1 = result.pair[0]
 			let sp2 = result.pair[1]
-			let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
-			let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+			let id1 = makeIdent(sp1)
+			let id2 = makeIdent(sp2)
 
 			let sequence1 = sequenceMap[id1]
 			let sequence2 = sequenceMap[id2]
@@ -92,8 +94,8 @@ function strictSearch(node, fasta) {
 
 		let sp1 = smallestResult.pair[0]
 		let sp2 = smallestResult.pair[1]
-		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
-		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+		let id1 = makeIdent(sp1)
+		let id2 = makeIdent(sp2)
 
 		if (
 			(shortestPairs[id1] == undefined ||
@@ -113,8 +115,8 @@ function strictSearch(node, fasta) {
 		let result = shortestPairs[key].result
 		let sp1 = result.pair[0]
 		let sp2 = result.pair[1]
-		let id1 = sp1.name + LABEL_DIVIDER + sp1.ident
-		let id2 = sp2.name + LABEL_DIVIDER + sp2.ident
+		let id1 = makeIdent(sp1)
+		let id2 = makeIdent(sp2)
 		let hash = id1 > id2 ? id1 + id2 : id2 + id1
 
 		let allowed = true
