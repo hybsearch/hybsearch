@@ -1,0 +1,14 @@
+---
+version: '3'
+services:
+  hs:
+    image: docker.io/hybsearch/hybsearch:latest
+    restart: unless-stopped
+    ports:
+      - 0.0.0.0:80:8080
+
+  hs-head:
+    image: docker.io/hybsearch/hybsearch:HEAD
+    restart: unless-stopped
+    ports:
+      - 0.0.0.0:81:8080
