@@ -86,13 +86,15 @@ async function main([command, filepath, data]) {
 		let jsonNewickTree = parseNewick(newickTree)
 		let { removedData, prunedNewick } = pruneOutliers(jsonNewickTree, aligned)
 		returnData('newick', prunedNewick)
-		if (removedData.total != 0) {
+		if (removedData.total > 0) {
 			returnData('prune', removedData)
 		}
 		complete('newick')
 
 		begin('ent')
-		let nmResults = removeCircularLinks(ent.strictSearch(prunedNewick))
+		let nmResults = removeCircularLinks(
+			ent.strictSearch(prunedNewick, aligned)
+		)
 		// Have to return newick again because apparently `strictSearch`
 		// actually modifies the data
 		returnData('newick', removeCircularLinks(prunedNewick))
