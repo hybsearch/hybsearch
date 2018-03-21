@@ -13,5 +13,36 @@ extends:
   - plugin:import/warnings
 
 rules:
+  # eslint:recommended forbids console.log; we like it
   no-console: off
+
+  # prettier will sometimes insert a semicolon at the start of the line,
+  # which this rule dislikes. So we disable it.
   no-extra-semi: off
+
+  # Requires variable names to be camelCase, not snake_case
+  camelcase: error
+
+  # Require all `new Thing()` functions to use parentheses when invoked
+  # (forbids `new Thing` without parens)
+  new-parens: error
+
+  # Prevents `foo = bar = 5`
+  no-multi-assign: error
+
+  # Forbid trailing whitespace
+  no-trailing-spaces: error
+
+  # Forbid `var` – use `let` or `const` instead
+  no-var: error
+
+  # Force all constructor functions to start with a capital letter;
+  # also forbids calling functions with a capital letter without `new`
+  # (which forbids `GetNodes()` and whatnot)
+  new-cap: error
+
+  # Forbid single-line blocks - eg `if (foo) return 'bar'`
+  curly: [error, all]
+
+  # Forbid use of `==` operator (use `===` instead)
+  eqeqeq: error
