@@ -86,8 +86,8 @@ function strictSearch(node, fasta) {
 
 			let dist = hammingDistance(sequence1, sequence2)
 
-			if (sp1.ident == speciesIdent || sp2.ident == speciesIdent) {
-				if (smallestDist == -1) {
+			if (sp1.ident === speciesIdent || sp2.ident === speciesIdent) {
+				if (smallestDist === -1) {
 					smallestDist = dist
 				}
 
@@ -104,9 +104,9 @@ function strictSearch(node, fasta) {
 		let id2 = makeIdent(sp2)
 
 		if (
-			(shortestPairs[id1] == undefined ||
+			(!shortestPairs.hasOwnProperty(id1) ||
 				smallestDist < shortestPairs[id1].dist) &&
-			(shortestPairs[id2] == undefined ||
+			(!shortestPairs.hasOwnProperty(id2) ||
 				smallestDist < shortestPairs[id2].dist)
 		) {
 			shortestPairs[id1] = { dist: smallestDist, result: smallestResult }
@@ -151,7 +151,7 @@ function strictSearch(node, fasta) {
 			}
 		}
 
-		if (uniqueHash[hash] == undefined && allowed) {
+		if (!uniqueHash.hasOwnProperty(hash) && allowed) {
 			uniqueHash[hash] = result
 		}
 	}
