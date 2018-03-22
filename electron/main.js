@@ -1,9 +1,6 @@
 'use strict'
 
-const {
-	app, // Module to control application life.
-	BrowserWindow, // Module to create native browser window.
-} = require('electron')
+const { app, BrowserWindow } = require('electron')
 
 // catch unhandled promise rejections
 require('electron-unhandled')()
