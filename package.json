@@ -22,12 +22,6 @@
         "options": {
           "parser": "babylon"
         }
-      },
-      {
-        "files": "{package,package-lock}.json",
-        "options": {
-          "requirePragma": true
-        }
       }
     ],
     "useTabs": true,
