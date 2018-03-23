@@ -11,3 +11,9 @@ node_modules/
 
 # the electron compilation folder
 dist/
+
+# the parcel cache
+.cache
+
+# the parcel output folder
+out/
