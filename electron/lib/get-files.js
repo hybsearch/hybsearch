@@ -2,9 +2,12 @@
 
 const fs = require('fs')
 const path = require('path')
+const isDev = require('electron-is-dev')
 
 function getFiles() {
-	let dataDir = path.join(__dirname, '..', 'out', 'data')
+	let dataDir = isDev
+		? path.join(__dirname, '..', '..', 'data')
+		: path.join(__dirname, '..', 'out', 'data')
 
 	return fs
 		.readdirSync(dataDir)
