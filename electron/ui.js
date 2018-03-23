@@ -56,26 +56,26 @@ function connectionRefused() {
 }
 
 const files = getFiles()
-const groupedFiles = groupBy(files, f => {
-	if (/\.aln/.test(f)) {
+const groupedFiles = groupBy(files, ({ filename }) => {
+	if (/\.aln/.test(filename)) {
 		return 'aligned'
 	}
 
-	if (f.endsWith('.fasta')) {
+	if (filename.endsWith('.fasta')) {
 		return 'fasta'
 	}
 
-	if (f.endsWith('.gb')) {
+	if (filename.endsWith('.gb')) {
 		return 'genbank'
 	}
 
-	return f.split('.')[f.split('.').length - 1]
+	return filename.split('.')[filename.split('.').length - 1]
 })
 
 const optgroups = mapValues(groupedFiles, group =>
-	group.map(filename => {
+	group.map(({ filename, filepath }) => {
 		let opt = document.createElement('option')
-		opt.value = filename
+		opt.value = filepath
 		opt.textContent = filename
 		return opt
 	})
