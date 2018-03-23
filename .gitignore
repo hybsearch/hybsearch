@@ -9,3 +9,9 @@
 .vscode/
 dist/
 node_modules/
+
+# the parcel cache
+.cache
+
+# the parcel output folder
+out/
