@@ -12,8 +12,8 @@
     "start": "cd electron && npm start",
     "test": "jest",
     "lint": "eslint --cache 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
-    "pretty-check": "npm run prettier -- --list-different",
-    "prettier": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
+    "pretty-check": "npm run prettify -- --list-different",
+    "prettify": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
   },
   "prettier": {
     "overrides": [
