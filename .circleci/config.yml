@@ -41,12 +41,17 @@ workflows:
       - test-app
       - test-server
       - test-worker:
-          requires: [build]
+          requires:
+            - build
       - deploy-docker:
-          requires: [lint, test-worker, test-server, test-app]
           context: docker-hub
+          requires: &deploy-requirements
+            - lint
+            - test-worker
+            - test-server
+            - test-app
       - deploy-github:
-          requires: [lint, test-worker, test-server, test-app]
+          requires: *deploy-requirements
 
   on_tag:
     jobs:
@@ -63,15 +68,16 @@ workflows:
       - test-server:
           filters: *filters
       - test-worker:
-          requires: [build]
           filters: *filters
+          requires:
+            - build
       - deploy-docker:
-          requires: [lint, test-worker, test-server, test-app]
-          filters: *filters
           context: docker-hub
-      - deploy-github:
-          requires: [lint, test-worker, test-server, test-app]
           filters: *filters
+          requires: *deploy-requirements
+      - deploy-github:
+          filters: *filters
+          requires: *deploy-requirements
 
   cron_weekly:
     jobs:
@@ -79,14 +85,16 @@ workflows:
       - test-app
       - test-server
       - test-worker:
-          requires: [build]
+          requires:
+            - build
     triggers:
       - schedule:
           # only run Monday morning at 12:00am
           cron: 0 0 * * 1
           filters:
             branches:
-              only: [master]
+              only:
+                - master
 
 jobs:
   # build the docker image

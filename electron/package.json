@@ -1,5 +1,5 @@
 {
-  "name": "@hybsearch/electron",
+  "name": "hybsearch-electron",
   "private": true,
   "version": "4.0.0-beta.3",
   "description": "an electron gui for hybsearch",
@@ -7,29 +7,44 @@
   "homepage": "https://hybsearch.github.io/",
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
+  "main": "main.js",
   "scripts": {
-    "build": "electron-builder --mac --windows --linux",
+    "build": "npm run clean && npm run build:copy && npm run build:js && npm run build:css && npm run build:app",
+    "build:app": "electron-builder --macos --windows --linux",
+    "build:copy": "mkdir -p out/data && cp -v index.html index.css out/ && cp -rv ../data/*.gb out/data/",
+    "build:css": "parcel build -t electron --no-minify --detailed-report --out-dir out index.css",
+    "build:js": "parcel build -t electron --no-minify --detailed-report --out-dir out index.js",
+    "clean": "rm -rf dist/ out/",
     "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
-    "prettier": "cd .. && npm run prettier",
+    "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
     "start": "electron ./main.js"
   },
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
     "productName": "HybSearch",
+    "mac": {
+      "target": [{"target": "zip", "arch": "x64"}]
+    },
+    "win": {
+      "target": [{"target": "portable", "arch": "x64"}]
+    },
+    "linux": {
+      "target": [{"target": "tar.gz", "arch": "x64"}],
+      "category": "Education"
+    },
     "files": [
-      "lib/",
-      "*.css",
-      "*.html",
-      "*.json",
-      "*.js",
+      "out/",
+      "main.js",
+      "package.json",
       "node_modules/"
     ]
   },
   "dependencies": {
     "d3": "^3.5.17",
+    "electron-is-dev": "^0.3.0",
     "electron-unhandled": "^0.2.0",
     "electron-updater": "^2.21.1",
     "lodash": "^4.17.5",

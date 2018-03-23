@@ -12,8 +12,8 @@
     "start": "cd electron && npm start",
     "test": "jest",
     "lint": "eslint --cache 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
-    "pretty-check": "npm run prettier -- --list-different",
-    "prettier": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
+    "pretty-check": "npm run prettify -- --list-different",
+    "prettify": "prettier --write 'scripts/**/*.js' 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
   },
   "prettier": {
     "overrides": [
@@ -21,12 +21,6 @@
         "files": "server/**/hyb-*",
         "options": {
           "parser": "babylon"
-        }
-      },
-      {
-        "files": "{package,package-lock}.json",
-        "options": {
-          "requirePragma": true
         }
       }
     ],
@@ -43,6 +37,7 @@
     "eslint-plugin-import": "^2.9.0",
     "expect": "^22.4.0",
     "jest": "^22.4.2",
-    "prettier": "1.11.1"
+    "parcel-bundler": "^1.6.2",
+    "prettier": "^1.11.1"
   }
 }

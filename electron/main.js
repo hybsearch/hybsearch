@@ -1,12 +1,11 @@
 'use strict'
 
-const {
-	app, // Module to control application life.
-	BrowserWindow, // Module to create native browser window.
-} = require('electron')
+const { app, BrowserWindow } = require('electron')
 
 // catch unhandled promise rejections
 require('electron-unhandled')()
+
+const isDev = require('electron-is-dev')
 
 // check for updates
 const { autoUpdater } = require('electron-updater')
@@ -25,6 +24,10 @@ app.on('window-all-closed', () => {
 	}
 })
 
+const HTML_PATH = isDev
+	? `file://${__dirname}/index.html`
+	: `file://${__dirname}/out/index.html`
+
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
@@ -34,7 +37,7 @@ function createWindow() {
 	})
 
 	// and load the index.html of the app.
-	mainWindow.loadURL(`file://${__dirname}/index.html`)
+	mainWindow.loadURL(HTML_PATH)
 
 	// Open the DevTools.
 	// mainWindow.openDevTools()

@@ -1,5 +1,5 @@
 {
-  "name": "@hybsearch/server",
+  "name": "hybsearch-server",
   "private": true,
   "version": "4.0.0-beta.3",
   "description": "Find nonmonophyly in genetic sequences",
@@ -22,7 +22,7 @@
   "scripts": {
     "start": "./server.js",
     "lint": "cd .. && npm run lint",
-    "prettier": "cd .. && npm run prettier",
+    "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
     "test": "PATH=$PATH:../node_modules/.bin; jest"
   },
