@@ -49,15 +49,16 @@ function load(newickData) {
 	render(newick, newickNodes, nmResults)
 
 	window.addEventListener('optimizedResize', function() {
-		let el = document.querySelector('#phylogram')
-		if (el) {
-			el.innerHTML = ''
-		}
 		render(newick, newickNodes, nmResults)
 	})
 }
 
 function render(newickData, newickNodes, nmResults) {
+	let el = document.querySelector('#phylogram')
+	if (el) {
+		el.innerHTML = ''
+	}
+
 	// nmResults is optional. If not passed, tree will be drawn with no marked nodes.
 	// This is to allow the tree to be drawn while the ent search goes on.
 
