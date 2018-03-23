@@ -1,5 +1,5 @@
 {
-  "name": "@hybsearch/electron",
+  "name": "hybsearch-electron",
   "private": true,
   "version": "4.0.0-beta.3",
   "description": "an electron gui for hybsearch",
@@ -25,6 +25,16 @@
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
     "productName": "HybSearch",
+    "mac": {
+      "target": [{"target": "zip", "arch": "x64"}]
+    },
+    "win": {
+      "target": [{"target": "portable", "arch": "x64"}]
+    },
+    "linux": {
+      "target": [{"target": "tar.gz", "arch": "x64"}],
+      "category": "Education"
+    },
     "files": [
       "out/",
       "main.js",

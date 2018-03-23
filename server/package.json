@@ -1,5 +1,5 @@
 {
-  "name": "@hybsearch/server",
+  "name": "hybsearch-server",
   "private": true,
   "version": "4.0.0-beta.3",
   "description": "Find nonmonophyly in genetic sequences",
