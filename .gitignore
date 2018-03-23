@@ -7,5 +7,7 @@
 .git/
 .idea/
 .vscode/
-dist/
 node_modules/
+
+# the electron compilation folder
+dist/
