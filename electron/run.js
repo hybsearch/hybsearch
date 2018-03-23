@@ -4,7 +4,6 @@ const { parse: parseNewick } = require('../server/newick')
 const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
-const path = require('path')
 let receivedData = {}
 
 module.exports = run
@@ -13,7 +12,7 @@ function run(socket) {
 	let filedropdown = document.querySelector('#pick-file')
 	let filepath = filepicker.files.length
 		? filepicker.files[0].path
-		: path.join(__dirname, '..', 'data', filedropdown.value)
+		: filedropdown.value
 
 	console.log('The file is', filepath)
 
