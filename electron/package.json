@@ -7,8 +7,14 @@
   "homepage": "https://hybsearch.github.io/",
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
+  "main": "main.js",
   "scripts": {
-    "build": "electron-builder --mac --windows --linux",
+    "build": "npm run clean && npm run build:copy && npm run build:js && npm run build:css && npm run build:app",
+    "build:app": "electron-builder --macos --windows --linux",
+    "build:copy": "mkdir -p out/data && cp -v index.html index.css out/ && cp -rv ../data/*.gb out/data/",
+    "build:css": "parcel build -t electron --no-minify --detailed-report --out-dir out index.css",
+    "build:js": "parcel build -t electron --no-minify --detailed-report --out-dir out index.js",
+    "clean": "rm -rf dist/ out/",
     "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
@@ -20,11 +26,9 @@
     "appId": "edu.stolaf.bio.hybsearch",
     "productName": "HybSearch",
     "files": [
-      "lib/",
-      "*.css",
-      "*.html",
-      "*.json",
-      "*.js",
+      "out/",
+      "main.js",
+      "package.json",
       "node_modules/"
     ]
   },
