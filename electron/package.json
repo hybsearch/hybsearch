@@ -25,6 +25,16 @@
   "build": {
     "appId": "edu.stolaf.bio.hybsearch",
     "productName": "HybSearch",
+    "mac": {
+      "target": [{"target": "zip", "arch": "x64"}]
+    },
+    "win": {
+      "target": [{"target": "portable", "arch": "x64"}]
+    },
+    "linux": {
+      "target": [{"target": "tar.gz", "arch": "x64"}],
+      "category": "Education"
+    },
     "files": [
       "out/",
       "main.js",
