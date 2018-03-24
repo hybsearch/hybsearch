@@ -18,38 +18,43 @@ async function main() {
 	const child = childProcess.fork(path.join(__dirname, 'worker.js'))
 
 	child.on('message', communique => {
-		let [cmd, msg] = communique
+		let { type, payload } = communique
 
-		switch (cmd) {
+		switch (type) {
 			case 'error':
-				console.error('error!', msg)
+				console.error('error!', payload.error)
 				break
 			case 'exit':
 				console.log()
 				console.log('exit')
 				break
-			case 'finish':
-				console.log('finish')
-				console.log()
-				console.log('the newick tree is below:')
-				console.log()
-				console.log(msg)
+			case 'stage-start': {
+				let { stage } = payload
+				console.log(`beginning stage: ${stage}`)
 				break
+			}
+			case 'stage-complete': {
+				let { stage, result, timeTaken } = payload
+				console.log(`completed stage: ${stage} (in ${timeTaken.toFixed(2)}ms)`)
+				console.log()
+				console.log(result)
+				break
+			}
 			default:
-				console.log(cmd, msg)
+				console.log('unknown message type', type)
 		}
 
-		if (cmd === 'error') {
+		if (type === 'error') {
 			child.disconnect()
 			process.exit(1)
 		}
 
-		if (cmd === 'exit') {
+		if (type === 'exit') {
 			child.disconnect()
 		}
 	})
 
-	child.send(['start', filepath, data])
+	child.send({ pipeline: 'search', filepath, data })
 }
 
 main()
