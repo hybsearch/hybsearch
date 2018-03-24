@@ -152,6 +152,19 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 			step.output.forEach(key => stageStart({ stage: key }))
 
 			let inputs = step.input.map(key => cache.get(key))
+			let outputs = step.output.map(key => [key, cache.get(key)])
+
+			// eslint-disable-next-line no-unused-vars
+			if (outputs.filter(([k, v]) => v).length > 0) {
+				// If we have cached results, let's just load them into memory and use them
+				// instead of re-computing the results
+				outputs.forEach(([key, value]) => {
+					cache.set(key, value)
+					stageComplete({ stage: key, result: value, timeTaken: now() - start })
+				})
+				start = now()
+				continue
+			}
 
 			let results = await step.transform(inputs)
 
