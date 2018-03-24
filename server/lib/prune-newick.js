@@ -100,7 +100,11 @@ function pruneOutliers(newick, alignedFasta) {
 		delete newick.length
 	}
 
-	return { prunedNewick: newick, removedData: removedData, standardDeviationOfRemoved: std }
+	return {
+		prunedNewick: newick,
+		removedData: removedData,
+		standardDeviationOfRemoved: std,
+	}
 }
 
 function removeNodes(node, identArray) {

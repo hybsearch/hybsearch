@@ -77,7 +77,11 @@ function onMessage(packet) {
 		beginLoadingStatus(stage.split(':')[0])
 	} else if (type === 'stage-complete') {
 		const { stage, timeTaken, result, cached } = payload
-		updateLoadingStatus({label: stage.split(':')[0], duration: timeTaken.toFixed(2), usedCache: cached})
+		updateLoadingStatus({
+			label: stage.split(':')[0],
+			duration: timeTaken.toFixed(2),
+			usedCache: cached,
+		})
 		onData(stage, result)
 	} else if (type === 'error') {
 		let { error, timeTaken } = payload
@@ -122,7 +126,7 @@ function attachListeners() {
 	})
 }
 
-function updateLoadingStatus({label, duration, usedCache}) {
+function updateLoadingStatus({ label, duration, usedCache }) {
 	console.info(`finished ${label} in ${duration}ms`)
 	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
 	if (!el) {
