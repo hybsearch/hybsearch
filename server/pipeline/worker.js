@@ -21,8 +21,8 @@ const send = process.send ? sendData : logData
 
 const error = e =>
 	send({ type: 'error', payload: { error: serializeError(e) } })
-const stageComplete = ({ stage, result, timeTaken }) =>
-	send({ type: 'stage-complete', payload: { stage, result, timeTaken } })
+const stageComplete = ({ stage, result, timeTaken, cached }) =>
+	send({ type: 'stage-complete', payload: { stage, result, timeTaken, cached } })
 const stageStart = ({ stage }) =>
 	send({ type: 'stage-start', payload: { stage } })
 const exit = () => send({ type: 'exit' })
@@ -160,7 +160,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 				// instead of re-computing the results
 				outputs.forEach(([key, value]) => {
 					cache.set(key, value)
-					stageComplete({ stage: key, result: value, timeTaken: now() - start })
+					stageComplete({ stage: key, result: value, timeTaken: now() - start, cached: true })
 				})
 				start = now()
 				continue
@@ -174,7 +174,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 				cache.set(key, result)
 
 				// send the results over the bridge
-				stageComplete({ stage: key, result, timeTaken: now() - start })
+				stageComplete({ stage: key, result, timeTaken: now() - start, cached: false })
 			})
 
 			start = now()
