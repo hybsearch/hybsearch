@@ -29,12 +29,12 @@ wss.on('connection', ws => {
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
-		const [cmd, ...args] = JSON.parse(communique)
+		const message = JSON.parse(communique)
 
-		console.log(cmd, ...args)
+		console.log(message)
 
 		// forward the message to the pipeline
-		child.send([cmd, ...args])
+		child.send(message)
 	})
 
 	ws.on('close', () => {
@@ -47,15 +47,15 @@ wss.on('connection', ws => {
 
 	child.on('message', communique => {
 		// when we get a message from the pipeline
-		const [cmd, ...args] = communique
+		const message = communique
 
-		console.log(cmd, ...args)
+		console.log(message)
 
 		// forward the message to the GUI
-		ws.send(JSON.stringify([cmd, ...args]))
+		ws.send(JSON.stringify(message))
 
 		// detach ourselves if the pipeline has finished
-		if (cmd === 'exit' || cmd === 'error') {
+		if (message.type === 'exit' || message.type === 'error') {
 			if (child.connected) {
 				child.disconnect()
 			}
