@@ -1,136 +1,134 @@
 'use strict'
 
-const { parse: parseNewick } = require('../server/newick')
 const { load, setEntResults } = require('./graph')
 
 const fs = require('fs')
-let receivedData = {}
 
-module.exports = run
-function run(socket) {
+function run() {
+	// get the file
 	let filepicker = document.querySelector('#load-file')
 	let filedropdown = document.querySelector('#pick-file')
 	let filepath = filepicker.files.length
 		? filepicker.files[0].path
 		: filedropdown.value
 
-	console.log('The file is', filepath)
+	console.log(`The file is ${filepath}`)
+	const data = fs.readFileSync(filepath, 'utf-8')
 
+	// start the loading bar
 	document.querySelector('section.loader').classList.add('loading')
 
-	let mutableArgs = {
-		start: performance.now(),
-		label: 'process',
-	}
+	// start the pipeline
+	submitJob({ pipeline: 'search', filepath, data })
 
+	return false
+}
+
+function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 	const ws = socket
 
-	ws.addEventListener('message', packet => onMessage(packet.data, mutableArgs))
-	ws.addEventListener('disconnect', console.log.bind(console, 'disconnect'))
-	ws.addEventListener('error', console.log.bind(console, 'error'))
-	ws.addEventListener('exit', console.log.bind(console, 'exit'))
+	ws.addEventListener('message', packet => onMessage(packet.data))
+	ws.addEventListener('disconnect', (...args) =>
+		console.log('disconnect', ...args)
+	)
+	ws.addEventListener('error', (...args) => console.log('error', ...args))
+	ws.addEventListener('exit', (...args) => console.log('exit', ...args))
 
 	if (ws.readyState !== 1) {
 		throw new Error('socket not ready!')
 	}
 
-	const data = fs.readFileSync(filepath, 'utf-8')
-	ws.send(JSON.stringify(['start', filepath, data]), err => {
+	ws.send(JSON.stringify({ pipeline, filepath, data }), err => {
 		if (err) {
-			console.error('child error', err)
+			console.error('server error', err)
+			window.alert('server error:', err.message)
 		}
 	})
-
-	return false
 }
 
 function onData(phase, data) {
-	// Save the data from each phase
-	receivedData[phase] = data
+	if (phase.startsWith('newick-json:')) {
+		// Once we get the parsed newick tree, we can render the tree while
+		// the pipeline continues
+		document.querySelector('#phylogram').hidden = false
+		load(data)
+	} else if (phase === 'pruned-identifiers') {
+		let container = document.querySelector('#omitted-results')
 
-	switch (phase) {
-		case 'newick': {
-			// Once we get the parsed newick tree, we can render the tree
-			// while the pipeline continues
-			document.querySelector('#phylogram').hidden = false
-			load(data)
-			break
-		}
-		case 'prune': {
-			let container = document.querySelector('#omitted-results')
+		let formattedNames = data.map(node => {
+			let ident = node.ident ? ` [${node.ident}]` : ''
+			return `${node.name}${ident} (${node.length})`
+		})
 
-			let formattedNames = data.map(node => {
-				let ident = node.ident ? ` [${node.ident}]` : ''
-				return `${node.name}${ident} (${node.length})`
-			})
-
-			container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
-			container.hidden = false
-
-			break
-		}
-		case 'ent': {
-			setEntResults(data)
-			break
-		}
-		default: {
-			throw new Error(`Client doesn't know wha to do with data from "${phase}"`)
-		}
+		container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
+		container.hidden = false
+	} else if (phase === 'nonmonophyletic-sequences') {
+		setEntResults(data)
+	} else {
+		console.warn(`Client doesn't understand data for "${phase}"`)
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
-function onMessage(packet, args, child) {
-	let [cmd, msg] = JSON.parse(packet)
-	switch (cmd) {
-		case 'data': {
-			onData(msg.phase, msg.data)
-			break
-		}
-		case 'begin': {
-			args.start = performance.now()
-			args.label = msg
-			beginLoadingStatus(msg)
-			break
-		}
-		case 'complete': {
-			let taken = performance.now() - args.start
-			updateLoadingStatus(msg, taken.toFixed(2))
-			break
-		}
-		case 'error': {
-			console.error(msg)
-			console.error(msg.message)
-			let taken = performance.now() - args.start
-			setLoadingError(args.label, taken.toFixed(2))
-			document.querySelector('#error-container').hidden = false
-			document.querySelector('#error-message').innerText = msg.message
-			break
-		}
-		case 'exit': {
-			break
-		}
-		default: {
-			throw new Error(`unknown cmd "${cmd}"`)
-		}
+function onMessage(packet) {
+	let { type, payload } = JSON.parse(packet)
+
+	if (type === 'stage-start') {
+		const { stage } = payload
+		beginLoadingStatus(stage.split(':')[0])
+	} else if (type === 'stage-complete') {
+		const { stage, timeTaken, result } = payload
+		updateLoadingStatus(stage.split(':')[0], timeTaken.toFixed(2))
+		onData(stage, result)
+	} else if (type === 'error') {
+		let { error, timeTaken } = payload
+		console.error(error)
+		setLoadingErrors({ after: timeTaken })
+		document.querySelector('#error-container').hidden = false
+		document.querySelector('#error-message').innerText = error.message
+	} else if (type === 'exit') {
+		console.info('server exited')
+	} else {
+		console.warn(`unknown cmd "${type}"`)
 	}
 }
 
-document.getElementById('tree-box-submit').addEventListener('click', e => {
-	e.preventDefault()
-	let data = document.getElementById('tree-box').value
-	load(parseNewick(data))
-})
+function attachListeners() {
+	document.getElementById('tree-box-submit').addEventListener('click', e => {
+		e.preventDefault()
 
-document.getElementById('json-tree-box-submit').addEventListener('click', e => {
-	e.preventDefault()
-	let data = document.getElementById('tree-box').value
-	load(JSON.parse(data))
-})
+		let data = document.getElementById('tree-box').value
+		submitJob({ pipeline: 'parse-newick', filepath: 'input.newick', data })
+	})
+
+	document
+		.getElementById('json-tree-box-submit')
+		.addEventListener('click', e => {
+			e.preventDefault()
+
+			let data = document.getElementById('tree-box').value
+			load(JSON.parse(data))
+		})
+
+	document.getElementById('start').addEventListener('click', e => {
+		e.preventDefault()
+
+		run()
+	})
+
+	document.getElementById('reload').addEventListener('click', e => {
+		e.preventDefault()
+
+		window.location.reload()
+	})
+}
 
 function updateLoadingStatus(label, timeTaken) {
 	console.info(`finished ${label} in ${timeTaken}ms`)
 	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
+	if (!el) {
+		console.error(`could not find .checkmark[data-loader-name='${label}']`)
+		return
+	}
 	el.classList.remove('active')
 	el.classList.add('complete')
 	el.dataset.time = timeTaken
@@ -138,14 +136,22 @@ function updateLoadingStatus(label, timeTaken) {
 
 function beginLoadingStatus(label) {
 	console.info(`beginning ${label}`)
-	document
-		.querySelector(`.checkmark[data-loader-name='${label}']`)
-		.classList.add('active')
+	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
+	if (!el) {
+		console.error(`could not find .checkmark[data-loader-name='${label}']`)
+		return
+	}
+	el.classList.add('active')
 }
 
-function setLoadingError(label, timeTaken) {
-	console.info(`error in ${label} (after ${timeTaken}ms)`)
-	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
-	el.classList.add('error')
-	el.dataset.time = timeTaken
+function setLoadingErrors({ after: timeTaken }) {
+	let els = document.querySelectorAll(`.checkmark.active`)
+	for (let el of els) {
+		console.info(`error in ${el.dataset.loaderName}`)
+		el.classList.add('error')
+		el.dataset.time = timeTaken
+	}
 }
+
+module.exports = run
+module.exports.attachListeners = attachListeners
