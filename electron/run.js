@@ -57,8 +57,16 @@ function onData(phase, data) {
 			break
 		}
 		case 'prune': {
-			document.querySelector('#omitted-container').hidden = false
-			document.querySelector('#omitted-results').innerHTML = data.formattedNames
+			let container = document.querySelector('#omitted-results')
+
+			let formattedNames = data.map(node => {
+				let ident = node.ident ? ` [${node.ident}]` : ''
+				return `${node.name}${ident} (${node.length})`
+			})
+
+			container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
+			container.hidden = false
+
 			break
 		}
 		case 'ent': {
