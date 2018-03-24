@@ -4,31 +4,31 @@ const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const getFiles = require('./lib/get-files')
-const run = require('./run')
+const { attachListeners } = require('./run')
 
-let websocket = new WebSocket(document.querySelector('#server-url').value)
+attachListeners()
+
+global.socket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
 
 function updateWebSocket(newUri) {
 	console.log('new websocket', newUri)
 	document.querySelector('#server-url').value = newUri
 	destroyWebsocket()
-	websocket = new WebSocket(newUri)
+	global.socket = new WebSocket(newUri)
 	initWebsocket()
 }
 
 function initWebsocket() {
-	websocket.addEventListener('open', connectionIsUp)
-	websocket.addEventListener('error', connectionRefused)
+	global.socket.addEventListener('open', connectionIsUp)
+	global.socket.addEventListener('error', connectionRefused)
 }
 
 function destroyWebsocket() {
-	websocket.removeEventListener('open', connectionIsUp)
-	websocket.removeEventListener('error', connectionRefused)
-	websocket.close()
+	global.socket.removeEventListener('open', connectionIsUp)
+	global.socket.removeEventListener('error', connectionRefused)
+	global.socket.close()
 }
-
-document.querySelector('#start').addEventListener('click', () => run(websocket))
 
 document.querySelector('#use-thing3').addEventListener('click', () => {
 	const newUri = document.querySelector('#use-thing3').dataset.url
@@ -89,7 +89,3 @@ for (let [type, options] of toPairs(optgroups)) {
 	options.forEach(opt => group.appendChild(opt))
 	picker.appendChild(group)
 }
-
-document.querySelector('#reload').addEventListener('click', () => {
-	window.location.reload()
-})

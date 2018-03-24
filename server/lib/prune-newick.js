@@ -87,27 +87,24 @@ function pruneOutliers(newick, alignedFasta) {
 	}
 
 	// Now remove the nodes
-	let removedData = { total: 0, standardDeviation: std }
+	let removedData = []
+	if (toRemoveNodes.length > 0) {
+		removedData = toRemoveNodes.map(node => ({
+			name: node.name,
+			ident: node.ident,
+			length: node.length,
+		}))
 
-	if (toRemoveNodes.length !== 0) {
-		removedData.total = toRemoveNodes.length
-		removedData.formattedNames = '<pre>'
-		for (let node of toRemoveNodes) {
-			let name = node.name
-			if (node.ident) {
-				name += `[${node.ident}]`
-			}
-			removedData.formattedNames +=
-				String(name) + ' (' + String(node.length) + ')'
-			removedData.formattedNames += '\n'
-		}
-		removedData.formattedNames += '</pre>'
 		removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
 		delete newick.length
 	}
 
-	return { prunedNewick: newick, removedData: removedData }
+	return {
+		prunedNewick: newick,
+		removedData: removedData,
+		standardDeviationOfRemoved: std,
+	}
 }
 
 function removeNodes(node, identArray) {
