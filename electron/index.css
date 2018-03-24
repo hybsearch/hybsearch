@@ -100,6 +100,10 @@ section.loader.loading wrapper.content {
 	color: var(--navy);
 }
 
+.loader .checkmark.used-cache {
+	color: var(--green);
+}
+
 @keyframes pulse {
 	0% {
 		transform: scale3d(0.9, 0.9, 0.9);

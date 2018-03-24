@@ -76,8 +76,8 @@ function onMessage(packet) {
 		const { stage } = payload
 		beginLoadingStatus(stage.split(':')[0])
 	} else if (type === 'stage-complete') {
-		const { stage, timeTaken, result } = payload
-		updateLoadingStatus(stage.split(':')[0], timeTaken.toFixed(2))
+		const { stage, timeTaken, result, cached } = payload
+		updateLoadingStatus({label: stage.split(':')[0], duration: timeTaken.toFixed(2), usedCache: cached})
 		onData(stage, result)
 	} else if (type === 'error') {
 		let { error, timeTaken } = payload
@@ -122,8 +122,8 @@ function attachListeners() {
 	})
 }
 
-function updateLoadingStatus(label, timeTaken) {
-	console.info(`finished ${label} in ${timeTaken}ms`)
+function updateLoadingStatus({label, duration, usedCache}) {
+	console.info(`finished ${label} in ${duration}ms`)
 	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
 	if (!el) {
 		console.error(`could not find .checkmark[data-loader-name='${label}']`)
@@ -131,7 +131,8 @@ function updateLoadingStatus(label, timeTaken) {
 	}
 	el.classList.remove('active')
 	el.classList.add('complete')
-	el.dataset.time = timeTaken
+	usedCache && el.classList.add('used-cache')
+	el.dataset.time = duration
 }
 
 function beginLoadingStatus(label) {
