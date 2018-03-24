@@ -2,6 +2,8 @@
 
 const serializeError = require('serialize-error')
 
+const Cache = require('./cache')
+const zip = require('lodash/zip')
 const ent = require('../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../newick')
 const { genbankToFasta, fastaToNexus } = require('../formats')
@@ -13,16 +15,17 @@ const mrBayes = require('../wrappers/mrbayes')
 ///// helpers
 /////
 
-const logData = arr => console.log(JSON.stringify(arr))
-const sendData = arr => process.send(arr)
-const sendFunc = process.send ? sendData : logData
-const send = (cmd, msg) => sendFunc([cmd, msg])
+const logData = msg => console.log(JSON.stringify(msg))
+const sendData = msg => process.send(msg)
+const send = process.send ? sendData : logData
 
-const begin = msg => send('begin', msg)
-const complete = msg => send('complete', msg)
-const error = e => send('error', serializeError(e))
-const returnData = (phase, data) => send('data', { phase: phase, data: data })
-const exit = () => send('exit')
+const error = e =>
+	send({ type: 'error', payload: { error: serializeError(e) } })
+const stageComplete = ({ stage, result, timeTaken }) =>
+	send({ type: 'stage-complete', payload: { stage, result, timeTaken } })
+const stageStart = ({ stage }) =>
+	send({ type: 'stage-start', payload: { stage } })
+const exit = () => send({ type: 'exit' })
 
 function removeCircularLinks(obj) {
 	return JSON.parse(
@@ -33,6 +36,11 @@ function removeCircularLinks(obj) {
 			return val
 		})
 	)
+}
+
+const now = () => {
+	let time = process.hrtime()
+	return time[0] * 1e3 + time[1] / 1e6
 }
 
 /////
@@ -57,57 +65,111 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
+const hybridizationSearch = [
+	{
+		// the first step: ensures that the input is converted to FASTA
+		input: ['source'],
+		transform: ([{ filepath, contents }]) =>
+			filepath.endsWith('.fasta') ? [contents] : [genbankToFasta(contents)],
+		output: ['initial-fasta'],
+	},
+	{
+		// aligns the FASTA sequences
+		input: ['initial-fasta'],
+		transform: ([data]) => [clustal(data)],
+		output: ['aligned-fasta'],
+	},
+	{
+		// converts the aligned FASTA into Nexus
+		input: ['aligned-fasta'],
+		transform: ([data]) => [fastaToNexus(data)],
+		output: ['aligned-nexus'],
+	},
+	{
+		// does whatever mrbayes does
+		input: ['aligned-nexus'],
+		transform: ([data]) => [mrBayes(data)],
+		output: ['consensus-tree'],
+	},
+	{
+		// turns MrBayes' consensus tree into a Newick tree
+		input: ['consensus-tree'],
+		transform: ([data]) => [consensusTreeToNewick(data)],
+		output: ['newick-tree'],
+	},
+	{
+		// turns the Newick tree into a JSON object
+		input: ['newick-tree'],
+		transform: ([data]) => [parseNewick(data)],
+		output: ['newick-json:1'],
+	},
+	{
+		input: ['newick-json:1', 'aligned-fasta'],
+		transform: ([newickJson, alignedFasta]) => {
+			let { removedData, prunedNewick } = pruneOutliers(
+				newickJson,
+				alignedFasta
+			)
+			return [prunedNewick, removedData]
+		},
+		output: ['newick-json:2', 'pruned-identifiers'],
+	},
+	{
+		// identifies the non-monophyletic sequences
+		input: ['newick-json:2', 'aligned-fasta'],
+		transform: ([newickJson, alignedFasta]) => [
+			removeCircularLinks(ent.strictSearch(newickJson, alignedFasta)),
+			removeCircularLinks(newickJson),
+		],
+		output: ['nonmonophyletic-sequences', 'newick-json:3'],
+	},
+]
+
+const parseNewickFile = [
+	{
+		// turns the Newick tree into a JSON object
+		input: ['source'],
+		transform: ([data]) => [parseNewick(data)],
+		output: ['newick-json:1'],
+	},
+]
+
+const PIPELINES = {
+	search: hybridizationSearch,
+	'parse-newick': parseNewickFile,
+}
+
 // eslint-disable-next-line no-unused-vars
-async function main([command, filepath, data]) {
+async function main({ pipeline: pipelineName, filepath, data }) {
+	let start = now()
+
 	try {
-		begin('process')
-		let fasta = data
-		if (!/\.fasta$/.test(filepath)) {
-			fasta = await genbankToFasta(data)
+		let cache = new Cache({ filepath, contents: data })
+
+		let pipeline = PIPELINES[pipelineName]
+
+		for (let step of pipeline) {
+			step.output.forEach(key => stageStart({ stage: key }))
+
+			let inputs = step.input.map(key => cache.get(key))
+
+			let results = await step.transform(inputs)
+
+			// assert(results.length === step.output.length)
+			zip(step.output, results).forEach(([key, result]) => {
+				// store the results in the cache
+				cache.set(key, result)
+
+				// send the results over the bridge
+				stageComplete({ stage: key, result, timeTaken: now() - start })
+			})
+
+			start = now()
 		}
-		complete('process')
-
-		begin('align')
-		let aligned = await clustal(fasta)
-		complete('align')
-
-		begin('convert')
-		let nexus = await fastaToNexus(aligned)
-		complete('convert')
-
-		begin('generate')
-		let tree = await mrBayes(nexus)
-		complete('generate')
-
-		begin('condense')
-		let newickTree = consensusTreeToNewick(tree)
-		complete('condense')
-
-		begin('newick')
-		let jsonNewickTree = parseNewick(newickTree)
-		let { removedData, prunedNewick } = pruneOutliers(jsonNewickTree, aligned)
-		returnData('newick', prunedNewick)
-		if (removedData.total > 0) {
-			returnData('prune', removedData)
-		}
-		complete('newick')
-
-		begin('ent')
-		let nmResults = removeCircularLinks(ent.strictSearch(prunedNewick, aligned))
-		// Have to return newick again because apparently `strictSearch`
-		// actually modifies the data
-		returnData('newick', removeCircularLinks(prunedNewick))
-		returnData('ent', nmResults)
-		complete('ent')
-
-		// begin('hamdis')
-		// end('hamdis')
-
-		// begin('seqgen')
-		// end('seqgen')
 	} catch (err) {
-		error(err)
 		console.error(err)
+		error({ error: err, timeTaken: now() - start })
+	} finally {
+		exit()
 	}
-	exit()
 }
