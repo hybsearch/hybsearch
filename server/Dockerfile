@@ -20,4 +20,6 @@ WORKDIR /hybsearch
 RUN pip install -r requirements.txt
 RUN npm install
 
+ENV DOCKER=1
+
 CMD npm start -- 8080
