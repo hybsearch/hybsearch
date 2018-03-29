@@ -1,4 +1,4 @@
-FROM docker.io/node:8-stretch
+FROM docker.io/amd64/node:8-stretch
 
 # enable non-free repos, needed for seq-gen
 RUN sed -i 's|deb http://deb.debian.org/debian stretch main|deb http://http.us.debian.org/debian stretch main non-free|' /etc/apt/sources.list
