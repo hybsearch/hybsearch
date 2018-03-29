@@ -31,9 +31,6 @@ RUN apt-get update \
         python-dev \
         python-pip \
         python-setuptools \
-    && rm -rf /var/lib/apt/lists/*
-    && apt-get install -qy --no-install-recommends \
-       seq-gen \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/{apt,dpkg,cache,log}/
 
