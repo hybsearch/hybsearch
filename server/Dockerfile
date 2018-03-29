@@ -66,7 +66,8 @@ COPY --from=mrbayes /usr/share/doc/* /usr/share/doc/
 
 # Copy the relevant stuff from Clustalo
 COPY --from=clustalo /usr/bin/clustalo /usr/bin/clustalo
-
+COPY --from=clustalo ["/usr/lib/x86_64-linux-gnu/libargtable2*", "/usr/lib/x86_64-linux-gnu/libgomp*", "/usr/lib/x86_64-linux-gnu/"]
+COPY --from=clustalo /usr/share/doc/* /usr/share/doc/
 
 ENV DOCKER=1
 
