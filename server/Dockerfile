@@ -52,7 +52,7 @@ RUN pip install -r requirements.txt
 
 
 # Build the main app
-FROM docker.io/amd64/node:8-slim
+FROM docker.io/amd64/node:8-stretch
 
 COPY --from=seq-gen /etc/apt/sources.list /etc/apt/sources.list
 COPY --from=docker.io/hybsearch/docker-base:v1.2 /etc/dpkg/dpkg.cfg.d/docker /etc/dpkg/dpkg.cfg.d/docker
