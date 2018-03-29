@@ -17,7 +17,7 @@ RUN apt-get update \
 ADD . /hybsearch
 WORKDIR /hybsearch
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 RUN npm install
 
 ENV DOCKER=1
