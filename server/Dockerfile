@@ -30,8 +30,8 @@ RUN apt-get update \
     && rm -rfv /var/lib/{apt,dpkg,cache,log}/
 
 
-# Install python shit
-FROM docker.io/hybsearch/docker-base:v1.2 AS python
+# Install python stuff
+FROM docker.io/hybsearch/docker-base:v1.2 AS hyb-python
 
 RUN apt-get update \
     && apt-get install -qy --no-install-recommends \
@@ -68,6 +68,10 @@ COPY --from=mrbayes /usr/share/doc/* /usr/share/doc/
 COPY --from=clustalo /usr/bin/clustalo /usr/bin/clustalo
 COPY --from=clustalo ["/usr/lib/x86_64-linux-gnu/libargtable2*", "/usr/lib/x86_64-linux-gnu/libgomp*", "/usr/lib/x86_64-linux-gnu/"]
 COPY --from=clustalo /usr/share/doc/* /usr/share/doc/
+
+# Copy the relevant stuff from seq-gen
+COPY --from=seq-gen /usr/bin/seq-gen /usr/bin/seq-gen
+COPY --from=seq-gen /usr/share/doc/seq-gen /usr/share/doc/
 
 ENV DOCKER=1
 
