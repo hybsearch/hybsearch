@@ -25,13 +25,7 @@ RUN sed -i 's|deb http://deb.debian.org/debian stretch main|deb http://http.us.d
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        clustalo \
-        mrbayes \
         seq-gen \
-        python \
-        python-dev \
-        python-pip \
-        python-setuptools \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/{apt,dpkg,cache,log}/
 
