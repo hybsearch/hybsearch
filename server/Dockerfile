@@ -49,8 +49,13 @@ RUN pip install -r requirements.txt
 # Build the main app
 FROM docker.io/amd64/node:8-stretch
 
+# Enable non-free sources
 COPY --from=seq-gen /etc/apt/sources.list /etc/apt/sources.list
+
+# Slimify the build
 COPY --from=docker.io/hybsearch/docker-base:v1.2 /etc/dpkg/dpkg.cfg.d/docker /etc/dpkg/dpkg.cfg.d/docker
+
+# Copy the relevant stuff from Mr. Bayes
 COPY --from=mrbayes /etc/OpenCL/vendors/* /etc/OpenCL/vendors/
 COPY --from=mrbayes /usr/bin/mb /usr/bin/mb
 COPY --from=mrbayes /etc/inputrc /etc/
@@ -58,6 +63,10 @@ COPY --from=mrbayes ["/lib/x86_64-linux-gnu/libbsd*","/lib/x86_64-linux-gnu/libh
 COPY --from=mrbayes ["/usr/lib/x86_64-linux-gnu/beignet", "/usr/lib/x86_64-linux-gnu/jni", "/usr/lib/x86_64-linux-gnu/libOpenCL*", "/usr/lib/x86_64-linux-gnu/libX11*", "/usr/lib/x86_64-linux-gnu/libXau*", "/usr/lib/x86_64-linux-gnu/libXdmcp*", "/usr/lib/x86_64-linux-gnu/libXext*", "/usr/lib/x86_64-linux-gnu/libXfixes*", "/usr/lib/x86_64-linux-gnu/libdrm*", "/usr/lib/x86_64-linux-gnu/libhmsbeagle*", "/usr/lib/x86_64-linux-gnu/libpciaccess*", "/usr/lib/x86_64-linux-gnu/libxcb*", "/usr/lib/x86_64-linux-gnu/"]
 COPY --from=mrbayes /usr/share/X11/* /usr/share/X11/
 COPY --from=mrbayes /usr/share/doc/* /usr/share/doc/
+
+# Copy the relevant stuff from Clustalo
+COPY --from=clustalo /usr/bin/clustalo /usr/bin/clustalo
+
 
 ENV DOCKER=1
 
