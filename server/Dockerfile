@@ -1,94 +1,36 @@
-# Install Mr. Bayes
-FROM docker.io/debian:stretch-slim AS mrbayes
+FROM docker.io/amd64/node:8-stretch AS hyb-node
 
-RUN apt-get update \
-    && apt-get install -qy --no-install-recommends \
-       mrbayes \
-    && apt-get clean autoclean \
-    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
+FROM docker.io/hybsearch/docker-base:v1.2
 
-
-# Install Clustal-Omega
-FROM docker.io/debian:stretch-slim AS clustalo
-
-RUN apt-get update \
-    && apt-get install -qy --no-install-recommends \
-       clustalo \
-    && apt-get clean autoclean \
-    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
-
-
-# Install seq-gen
-FROM docker.io/debian:stretch-slim AS seq-gen
+# The lovely docker community is smart enough to put everything in
+# /usr/local.  We just need to copy (the entire dir) over.
+#
+# NOTE This could probably get tuned up to be more dynamic...
+COPY --from=hyb-node ["/usr/local/", "/usr/local/"]
 
 RUN sed -i 's|deb http://deb.debian.org/debian stretch main|deb http://http.us.debian.org/debian stretch main non-free|' /etc/apt/sources.list
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        seq-gen \
-    && apt-get clean autoclean \
-    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
-
-
-# Install python stuff
-FROM docker.io/hybsearch/docker-base:v1.2 AS hyb-python
-
-RUN apt-get update \
     && apt-get install -qy --no-install-recommends \
+       clustalo \
+       mrbayes \
        python \
        python-dev \
        python-pip \
        python-setuptools \
+       seq-gen \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/{apt,dpkg,cache,log}/
-
-ADD requirements.txt /requirements.txt
-RUN pip install -r requirements.txt
-
-
-# Build the main app
-FROM docker.io/amd64/node:8-stretch
-
-# Enable non-free sources
-COPY --from=seq-gen /etc/apt/sources.list /etc/apt/sources.list
-
-# Slimify the build
-COPY --from=docker.io/hybsearch/docker-base:v1.2 /etc/dpkg/dpkg.cfg.d/docker /etc/dpkg/dpkg.cfg.d/docker
-
-# Copy the relevant stuff from Mr. Bayes
-COPY --from=mrbayes /etc/OpenCL/vendors/* /etc/OpenCL/vendors/
-COPY --from=mrbayes /usr/bin/mb /usr/bin/mb
-COPY --from=mrbayes /etc/inputrc /etc/
-COPY --from=mrbayes ["/lib/x86_64-linux-gnu/libbsd*","/lib/x86_64-linux-gnu/libhistory*", "/lib/x86_64-linux-gnu/libreadline*", "/lib/x86_64-linux-gnu/"]
-COPY --from=mrbayes ["/usr/lib/x86_64-linux-gnu/beignet", "/usr/lib/x86_64-linux-gnu/jni", "/usr/lib/x86_64-linux-gnu/libOpenCL*", "/usr/lib/x86_64-linux-gnu/libX11*", "/usr/lib/x86_64-linux-gnu/libXau*", "/usr/lib/x86_64-linux-gnu/libXdmcp*", "/usr/lib/x86_64-linux-gnu/libXext*", "/usr/lib/x86_64-linux-gnu/libXfixes*", "/usr/lib/x86_64-linux-gnu/libdrm*", "/usr/lib/x86_64-linux-gnu/libhmsbeagle*", "/usr/lib/x86_64-linux-gnu/libpciaccess*", "/usr/lib/x86_64-linux-gnu/libxcb*", "/usr/lib/x86_64-linux-gnu/"]
-COPY --from=mrbayes /usr/share/X11/* /usr/share/X11/
-COPY --from=mrbayes /usr/share/doc/* /usr/share/doc/
-
-# Copy the relevant stuff from Clustalo
-COPY --from=clustalo /usr/bin/clustalo /usr/bin/clustalo
-COPY --from=clustalo ["/usr/lib/x86_64-linux-gnu/libargtable2*", "/usr/lib/x86_64-linux-gnu/libgomp*", "/usr/lib/x86_64-linux-gnu/"]
-COPY --from=clustalo /usr/share/doc/* /usr/share/doc/
-
-# Copy the relevant stuff from seq-gen
-COPY --from=seq-gen /usr/bin/seq-gen /usr/bin/seq-gen
-COPY --from=seq-gen /usr/share/doc/seq-gen /usr/share/doc/
-
-# Copy the relevant bits from hyb-python
-COPY --from=hyb-python ["/etc/mime.types", "/etc/python", "/etc/python2.7", "/etc/"]
-COPY --from=hyb-python ["/usr/bin/2to3","/usr/bin/2to3-2.7","/usr/bin/compose","/usr/bin/dh_python2","/usr/bin/easy_install","/usr/bin/edit","/usr/bin/pdb","/usr/bin/pdb2.7","/usr/bin/pip","/usr/bin/pip2","/usr/bin/print","/usr/bin/py*","/usr/bin/run-mailcap","/usr/bin/see","/usr/bin/x86_64-linux-gnu-python-config","/usr/bin/x86_64-linux-gnu-python2.7-config", "/usr/bin/"]
-COPY --from=hyb-python ["/usr/lib/python*", "/usr/lib/"]
-COPY --from=hyb-python ["/usr/include/python*", "/usr/include/"]
-COPY --from=hyb-python ["/usr/share/python*", "/usr/share/"]
-COPY --from=hyb-python ["/usr/local/bin/f2py", "/usr/local/bin/seqmagick", "/usr/local/bin/"]
-COPY --from=hyb-python ["/usr/local/lib/*", "/usr/local/lib/"]
 
 ENV DOCKER=1
 
 RUN mkdir /hybsearch
-
-ADD ["package.json", "package-lock.json", "/hybsearch/"]
 WORKDIR /hybsearch
 
+ADD ["requirements.txt", "/hybsearch/"]
+RUN pip install -r requirements.txt
+
+ADD ["package.json", "package-lock.json", "/hybsearch/"]
 RUN npm install
 
 ADD . /hybsearch
