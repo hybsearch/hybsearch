@@ -73,6 +73,15 @@ COPY --from=clustalo /usr/share/doc/* /usr/share/doc/
 COPY --from=seq-gen /usr/bin/seq-gen /usr/bin/seq-gen
 COPY --from=seq-gen /usr/share/doc/seq-gen /usr/share/doc/
 
+# Copy the relevant bits from hyb-python
+COPY --from=hyb-python ["/etc/mime.types", "/etc/python", "/etc/python2.7", "/etc/"]
+COPY --from=hyb-python ["/usr/bin/2to3","/usr/bin/2to3-2.7","/usr/bin/compose","/usr/bin/dh_python2","/usr/bin/easy_install","/usr/bin/edit","/usr/bin/pdb","/usr/bin/pdb2.7","/usr/bin/pip","/usr/bin/pip2","/usr/bin/print","/usr/bin/py*","/usr/bin/run-mailcap","/usr/bin/see","/usr/bin/x86_64-linux-gnu-python-config","/usr/bin/x86_64-linux-gnu-python2.7-config", "/usr/bin/"]
+COPY --from=hyb-python ["/usr/lib/python*", "/usr/lib/"]
+COPY --from=hyb-python ["/usr/include/python*", "/usr/include/"]
+COPY --from=hyb-python ["/usr/share/python*", "/usr/share/"]
+COPY --from=hyb-python ["/usr/local/bin/f2py", "/usr/local/bin/seqmagick", "/usr/local/bin/"]
+COPY --from=hyb-python ["/usr/local/lib/*", "/usr/local/lib/"]
+
 ENV DOCKER=1
 
 RUN mkdir /hybsearch
