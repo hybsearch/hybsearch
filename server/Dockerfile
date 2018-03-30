@@ -12,13 +12,12 @@ RUN apt-get update \
         python-dev \
         python-pip \
         python-setuptools \
-        python-wheel \
     && rm -rf /var/lib/apt/lists/*
 
 ADD . /hybsearch
 WORKDIR /hybsearch
 
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 RUN npm install
 
 ENV DOCKER=1
