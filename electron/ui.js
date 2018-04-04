@@ -48,11 +48,41 @@ document.querySelector('#server-url').addEventListener('change', ev => {
 function connectionIsUp() {
 	document.querySelector('#server-status').classList.remove('down')
 	document.querySelector('#server-status').classList.add('up')
+
+	global.socket.send(JSON.stringify({ type: 'pipeline-list' }), err => {
+		if (err) {
+			console.error('server error', err)
+			window.alert('server error:', err.message)
+		}
+	})
+
+	global.socket.addEventListener('message', ({ data }) => {
+		data = JSON.parse(data)
+		if (data.type === 'pipeline-list') {
+			let pipelines = JSON.parse(data.payload)
+
+			let el = document.querySelector('#pick-pipeline')
+			el.innerHTML = pipelines
+				.map(name => `<option value="${name}">${name}</option>`)
+				.join('')
+		}
+	})
+
+	global.socket.addEventListener('disconnect', (...args) =>
+		console.log('disconnect', ...args)
+	)
+
+	global.socket.addEventListener('error', (...args) =>
+		console.log('error', ...args)
+	)
 }
 
 function connectionRefused() {
 	document.querySelector('#server-status').classList.remove('up')
 	document.querySelector('#server-status').classList.add('down')
+
+	// TODO: rework connectionIsUp/connectionRefused to remove the
+	// event listeners when the socket changes
 }
 
 const files = getFiles()
