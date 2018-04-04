@@ -76,9 +76,7 @@ function connectionIsUp() {
 				.join('')
 
 			getSteps(pipelines[0])
-			el.addEventListener('change', ev =>
-				getSteps(ev.currentTarget.value)
-			)
+			el.addEventListener('change', ev => getSteps(ev.currentTarget.value))
 		} else if (data.type === 'pipeline-steps') {
 			let payload = JSON.parse(data.payload)
 

@@ -13,9 +13,7 @@ module.exports = [
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
 		transform: ([{ filepath, contents }]) =>
-			filepath.endsWith('.fasta')
-				? [contents]
-				: [genbankToFasta(contents)],
+			filepath.endsWith('.fasta') ? [contents] : [genbankToFasta(contents)],
 		output: ['initial-fasta'],
 	},
 	{
