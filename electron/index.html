@@ -26,37 +26,14 @@
 				<button id="use-thing3" data-url="ws://thing3.cs.stolaf.edu:80/">Use Thing3</button>
 				<button id="use-localhost" data-url="ws://localhost:8080/">Use localhost</button>
 				<br/><br/>
+				<label for="pick-pipeline">Pipeline:</label>
+				<select id="pick-pipeline">
+					<option>No pipelines present</option>
+				</select>
+				<br/><br/>
 				<button id="start">Run Hybsearch</button>
 			</wrapper>
 			<wrapper class="loading">
-				<div class="checkmark" data-loader-name="initial-fasta">
-					<div class="icon"></div>
-					<div class="label">Process Input</div>
-				</div>
-				<div class="checkmark" data-loader-name="aligned-fasta">
-					<div class="icon"></div>
-					<div class="label">Align Sequences</div>
-				</div>
-				<div class="checkmark" data-loader-name="aligned-nexus">
-					<div class="icon"></div>
-					<div class="label">Convert Alignment</div>
-				</div>
-				<div class="checkmark" data-loader-name="consensus-tree">
-					<div class="icon"></div>
-					<div class="label">Generate Tree</div>
-				</div>
-				<div class="checkmark" data-loader-name="newick-tree">
-					<div class="icon"></div>
-					<div class="label">Render Tree</div>
-				</div>
-				<div class="checkmark" data-loader-name="newick-json">
-					<div class="icon"></div>
-					<div class="label">Parsing Newick</div>
-				</div>
-				<div class="checkmark" data-loader-name="nonmonophyletic-sequences">
-					<div class="icon"></div>
-					<div class="label">Running Ent</div>
-				</div>
 			</wrapper>
 		</section>
 
