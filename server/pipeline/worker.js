@@ -52,10 +52,22 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-
-// eslint-disable-next-line no-unused-vars
-async function main({ pipeline: pipelineName, filepath, data }) {
+async function main({ pipeline: pipelineName, filepath, data, type }) {
 	let start = now()
+
+	if (type === 'pipeline-list') {
+		send({
+			type: 'pipeline-list',
+			payload: JSON.stringify(Object.keys(PIPELINES)),
+		})
+		return
+	} else if (type === 'pipeline-steps') {
+		send({
+			type: 'pipeline-steps',
+			payload: JSON.stringify(PIPELINES[pipelineName]),
+		})
+		return
+	}
 
 	try {
 		let cache = new Cache({ filepath, contents: data })
