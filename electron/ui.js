@@ -3,6 +3,7 @@
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
+const uniq = require('lodash/uniq')
 const getFiles = require('./lib/get-files')
 const { attachListeners } = require('./run')
 
@@ -45,6 +46,14 @@ document.querySelector('#server-url').addEventListener('change', ev => {
 	updateWebSocket(ev.currentTarget.value)
 })
 
+const getSteps = pipeline =>
+	global.socket.send(
+		JSON.stringify({
+			type: 'pipeline-steps',
+			pipeline: pipeline,
+		})
+	)
+
 function connectionIsUp() {
 	document.querySelector('#server-status').classList.remove('down')
 	document.querySelector('#server-status').classList.add('up')
@@ -64,6 +73,30 @@ function connectionIsUp() {
 			let el = document.querySelector('#pick-pipeline')
 			el.innerHTML = pipelines
 				.map(name => `<option value="${name}">${name}</option>`)
+				.join('')
+
+			getSteps(pipelines[0])
+			el.addEventListener('change', ev =>
+				getSteps(ev.currentTarget.value)
+			)
+		} else if (data.type === 'pipeline-steps') {
+			let payload = JSON.parse(data.payload)
+
+			let steps = uniq(
+				payload
+					.map(segment => [...segment.input, ...segment.output])
+					.reduce((acc, item) => [...acc, ...item], [])
+			)
+
+			let el = document.querySelector('wrapper.loading')
+			el.innerHTML = steps
+				.map(
+					stage =>
+						`<div class="checkmark" data-loader-name="${stage}">
+							<div class="icon"></div>
+							<div class="label">${stage}</div>
+						</div>`
+				)
 				.join('')
 		}
 	})

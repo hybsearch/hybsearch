@@ -38,7 +38,8 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 		throw new Error('socket not ready!')
 	}
 
-	ws.send(JSON.stringify({ pipeline, filepath, data }), err => {
+	let payload = { type: 'start', pipeline, filepath, data }
+	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)
 			window.alert('server error:', err.message)
@@ -74,11 +75,11 @@ function onMessage(packet) {
 
 	if (type === 'stage-start') {
 		const { stage } = payload
-		beginLoadingStatus(stage.split(':')[0])
+		beginLoadingStatus(stage)
 	} else if (type === 'stage-complete') {
 		const { stage, timeTaken, result, cached } = payload
 		updateLoadingStatus({
-			label: stage.split(':')[0],
+			label: stage,
 			duration: timeTaken.toFixed(2),
 			usedCache: cached,
 		})
