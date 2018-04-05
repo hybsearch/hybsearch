@@ -9,7 +9,6 @@ RUN apt-get update \
        curl \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/apt/ \
-               /var/lib/dpkg/ \
                /var/lib/cache/ \
                /var/lib/log/
 
@@ -46,7 +45,6 @@ RUN apt-get update \
        libhmsbeagle-java \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/apt/ \
-               /var/lib/dpkg/ \
                /var/lib/cache/ \
                /var/lib/log/
 
