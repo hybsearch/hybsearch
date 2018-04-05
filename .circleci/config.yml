@@ -46,10 +46,10 @@ workflows:
       - test-pipeline-beast:
           requires: [build]
       - deploy-docker:
-          requires: [lint, test-worker, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           context: docker-hub
       - deploy-github:
-          requires: [lint, test-worker, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
 
   on_tag:
     jobs:
@@ -72,11 +72,11 @@ workflows:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, test-worker, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
           context: docker-hub
       - deploy-github:
-          requires: [lint, test-worker, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
 
   cron_weekly:
