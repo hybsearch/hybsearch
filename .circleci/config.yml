@@ -41,13 +41,15 @@ workflows:
       - lint
       - test-app
       - test-server
-      - test-worker:
+      - test-pipeline-mrbayes:
+          requires: [build]
+      - test-pipeline-beast:
           requires: [build]
       - deploy-docker:
-          requires: [lint, test-worker, test-server, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           context: docker-hub
       - deploy-github:
-          requires: [lint, test-worker, test-server, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
 
   on_tag:
     jobs:
@@ -63,15 +65,18 @@ workflows:
           filters: *filters
       - test-server:
           filters: *filters
-      - test-worker:
+      - test-pipeline-mrbayes:
+          requires: [build]
+          filters: *filters
+      - test-pipeline-beast:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, test-worker, test-server, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
           context: docker-hub
       - deploy-github:
-          requires: [lint, test-worker, test-server, test-app]
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
 
   cron_weekly:
@@ -79,7 +84,9 @@ workflows:
       - build
       - test-app
       - test-server
-      - test-worker:
+      - test-pipeline-mrbayes:
+          requires: [build]
+      - test-pipeline-beast:
           requires: [build]
     triggers:
       - schedule:
@@ -116,14 +123,23 @@ jobs:
       - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
-  test-worker:
+  test-pipeline-mrbayes:
     <<: *defaults
     steps:
       - checkout
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline - < data/emydura-short.gb
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline search - < data/emydura-short.gb
+
+  test-pipeline-beast:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache: *cache-load-docker
+      - run: *cmd-docker-load
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline beast - < data/emydura-short.gb
 
   # test the server-side js code
   test-server:
