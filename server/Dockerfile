@@ -5,10 +5,13 @@ FROM hybsearch/docker-base:v1.2 AS hyb-beast
 RUN mkdir -p /usr/share/man/man1/
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -qy --no-install-recommends \
        curl \
     && apt-get clean autoclean \
-    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
+    && rm -rfv /var/lib/apt/ \
+               /var/lib/dpkg/ \
+               /var/lib/cache/ \
+               /var/lib/log/
 
 WORKDIR /beast
 RUN curl -L 'https://github.com/CompEvol/beast2/releases/download/v2.4.8/BEAST.v2.4.8.Linux.tgz' | gunzip - | tar -x
@@ -42,7 +45,10 @@ RUN apt-get update \
        mesa-opencl-icd \
        libhmsbeagle-java \
     && apt-get clean autoclean \
-    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
+    && rm -rfv /var/lib/apt/ \
+               /var/lib/dpkg/ \
+               /var/lib/cache/ \
+               /var/lib/log/
 
 # RUN apt-get remove -y ocl-icd-libopencl1
 
