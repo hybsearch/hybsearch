@@ -31,6 +31,7 @@ RUN sed -i 's|deb http://deb.debian.org/debian stretch main|deb http://http.us.d
 
 # fixes issue with installing openjdk-8-jdk-headless
 RUN mkdir -p /usr/share/man/man1/
+
 RUN apt-get update \
     && apt-get install -qy --no-install-recommends \
        clustalo \
@@ -41,14 +42,10 @@ RUN apt-get update \
        python-setuptools \
        seq-gen \
        openjdk-8-jdk-headless \
-       mesa-opencl-icd \
-       libhmsbeagle-java \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/apt/ \
                /var/lib/cache/ \
                /var/lib/log/
-
-# RUN apt-get remove -y ocl-icd-libopencl1
 
 ENV DOCKER=1
 
