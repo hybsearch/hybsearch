@@ -50,7 +50,7 @@ function fastaToBeast(fastaData) {
 		let taxon = species
 		let count = 4 // TODO: setting to 4 until we how to compute it
 		let value = sequence
-		return `<sequence id="${id}" taxon="${taxon}" totalcount="${count}" value="${value}"/>`
+		return `\t<sequence id="${id}" taxon="${taxon}" totalcount="${count}" value="${value}"/>`
 	})
 
 	let groupedForTaxon = groupBy(items, ({ species }) =>
