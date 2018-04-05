@@ -4,6 +4,7 @@ const { parseFasta } = require('./fasta/parse')
 const groupBy = require('lodash/groupBy')
 const toPairs = require('lodash/toPairs')
 const difference = require('lodash/difference')
+const sortBy = require('lodash/sortBy')
 const fs = require('fs')
 const path = require('path')
 
@@ -44,6 +45,7 @@ function inflateTemplate(vars) {
 module.exports = fastaToBeast
 function fastaToBeast(fastaData) {
 	let items = parseFasta(fastaData)
+	items = sortBy(items, ({ species }) => species)
 
 	let seqs = items.map(({ species, sequence }) => {
 		let id = `seq_${species}1`
