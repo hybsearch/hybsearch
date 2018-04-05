@@ -1,6 +1,6 @@
 FROM docker.io/amd64/node:8-stretch AS hyb-node
 
-FROM hybsearch/docker-base:v1.2 AS hyb-beast
+FROM hybsearch/docker-base:v1.4 AS hyb-beast
 
 RUN mkdir -p /usr/share/man/man1/
 
@@ -15,7 +15,7 @@ RUN apt-get update \
 WORKDIR /beast
 RUN curl -L 'https://github.com/CompEvol/beast2/releases/download/v2.4.8/BEAST.v2.4.8.Linux.tgz' | gunzip - | tar -x
 
-FROM docker.io/hybsearch/docker-base:v1.2
+FROM docker.io/hybsearch/docker-base:v1.4
 
 # The lovely docker community is smart enough to put everything in
 # /usr/local.  We just need to copy (the entire dir) over.
