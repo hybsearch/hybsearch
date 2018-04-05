@@ -25,7 +25,7 @@ module.exports = [
 	{
 		// converts the aligned FASTA into Nexus
 		input: ['aligned-fasta'],
-		transform: ([data]) => [fastaToBeast(data, 'data')],
+		transform: ([data]) => [fastaToBeast(data)],
 		output: ['beast-config'],
 	},
 	{
