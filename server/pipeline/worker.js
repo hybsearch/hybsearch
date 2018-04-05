@@ -15,7 +15,7 @@ const sendData = msg => process.send(msg)
 const send = process.send ? sendData : logData
 
 const error = e =>
-	send({ type: 'error', payload: { error: serializeError(e) } })
+	send({ type: 'error', payload: e })
 const stageComplete = ({ stage, result, timeTaken, cached }) =>
 	send({
 		type: 'stage-complete',
@@ -117,7 +117,7 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 		}
 	} catch (err) {
 		console.error(err)
-		error({ error: err, timeTaken: now() - start })
+		error({ error: serializeError(err), timeTaken: now() - start })
 	} finally {
 		exit()
 	}
