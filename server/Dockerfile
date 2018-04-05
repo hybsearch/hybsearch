@@ -27,10 +27,10 @@ ENV DOCKER=1
 RUN mkdir /hybsearch
 WORKDIR /hybsearch
 
-ADD ["requirements.txt", "/hybsearch/"]
+ADD ["requirements.txt", "./"]
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-ADD ["package.json", "package-lock.json", "/hybsearch/"]
+ADD ["package.json", "package-lock.json", "./"]
 RUN npm install
 
 ADD . /hybsearch
