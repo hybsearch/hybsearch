@@ -9,10 +9,7 @@ const fs = require('fs')
 const path = require('path')
 
 function inflateTemplate(vars) {
-	let template = fs.readFileSync(
-		path.join(__dirname, 'template.xml'),
-		'utf-8'
-	)
+	let template = fs.readFileSync(path.join(__dirname, 'template.xml'), 'utf-8')
 
 	let availableMatches = template.match(/\{\{.*?\}\}/g)
 	if (!availableMatches) {
@@ -33,10 +30,7 @@ function inflateTemplate(vars) {
 	}
 
 	for (let [key, value] of toPairs(vars)) {
-		template = template.replace(
-			new RegExp(`\\{\\{${key}\\}\\}`, 'g'),
-			value
-		)
+		template = template.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), value)
 	}
 
 	return template
