@@ -19,11 +19,11 @@ function beast(data, argv={}) {
 	// prettier-ignore
 	const args = [
 		// use as many threads as possible
-		'-threads', -1,
+		// '-threads', -1,
 		// change to the working directory of the input file
 		'-working',
 		// something something
-		'-instances', 10,
+		// '-instances', 10,
 		// use beagle if possible
 		// '-beagle',
 		// provide the input file path
