@@ -18,8 +18,11 @@ function run() {
 	// start the loading bar
 	document.querySelector('section.loader').classList.add('loading')
 
+	// get the chosen pipeline name
+	let pipeline = document.querySelector('#pick-pipeline').value
+
 	// start the pipeline
-	submitJob({ pipeline: 'search', filepath, data })
+	submitJob({ pipeline, filepath, data })
 
 	return false
 }
