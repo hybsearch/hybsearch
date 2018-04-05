@@ -96,7 +96,7 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 				continue
 			}
 
-			let results = await step.transform(inputs)
+			let results = await Promise.all(await step.transform(inputs))
 
 			// assert(results.length === step.output.length)
 			zip(step.output, results).forEach(([key, result]) => {
