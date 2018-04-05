@@ -12,10 +12,11 @@ x-config:
   - &caches
     - &cache-load-docker
       keys:
+        - docker--{{ arch }}-{{ .Branch }}-{{ .Revision }}
         - docker--{{ arch }}-{{ .Branch }}
         - docker--{{ arch }}
     - &cache-save-docker
-      key: docker--{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
+      key: docker--{{ arch }}-{{ .Branch }}-{{ .Revision }}
       paths:
         - /tmp/image.tar.gz
     - &cmd-docker-load
