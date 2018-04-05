@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beast beautitemplate='StarBeast' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.4">
+
+<data id="{{filename}}" name="alignment">
+	{{sequences}}
+</data>
+
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+
+<run id="mcmc" spec="MCMC" chainLength="10000000" storeEvery="5000">
+	<state id="state" storeEvery="5000">
+		<parameter id="popSize" name="stateNode">1.0</parameter>
+		<tree id="Tree.t:Species" name="stateNode">
+			<taxonset id="taxonsuperset" spec="TaxonSet">
+{{taxon}}
+			</taxonset>
+		</tree>
+		<parameter id="birthRate.t:Species" lower="0.0" name="stateNode">1.0</parameter>
+		<parameter id="popMean" name="stateNode">1.0</parameter>
+		<tree id="Tree.t:{{filename}}" name="stateNode">
+			<taxonset id="TaxonSet.{{filename}}" spec="TaxonSet">
+				<alignment idref="{{filename}}"/>
+			</taxonset>
+		</tree>
+		<parameter id="kappa.s:{{filename}}" lower="0.0" name="stateNode">2.0</parameter>
+		<parameter id="freqParameter.s:{{filename}}" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+	</state>
+
+	<init id="SBI" spec="beast.evolution.speciation.StarBeastStartState" birthRate="@birthRate.t:Species" popMean="@popMean" speciesTree="@Tree.t:Species">
+		<gene idref="Tree.t:{{filename}}"/>
+		<speciesTreePrior id="SpeciesTreePopSize.Species" spec="beast.evolution.speciation.SpeciesTreePrior" bottomPopSize="@popSize" gammaParameter="@popMean" taxonset="@taxonsuperset" tree="@Tree.t:Species"/>
+	</init>
+
+	<distribution id="posterior" spec="util.CompoundDistribution">
+		<distribution id="speciescoalescent" spec="util.CompoundDistribution">
+			<distribution idref="SpeciesTreePopSize.Species"/>
+			<distribution id="treePrior.t:{{filename}}" spec="beast.evolution.speciation.GeneTreeForSpeciesTreeDistribution" speciesTree="@Tree.t:Species" speciesTreePrior="@SpeciesTreePopSize.Species" tree="@Tree.t:{{filename}}"/>
+		</distribution>
+		<distribution id="prior" spec="util.CompoundDistribution">
+			<distribution id="YuleModel.t:Species" spec="beast.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:Species" tree="@Tree.t:Species"/>
+			<prior id="YuleBirthRatePrior.t:Species" name="distribution" x="@birthRate.t:Species">
+				<OneOnX id="OneOnX.0" name="distr"/>
+			</prior>
+			<prior id="popMean.prior" name="distribution" x="@popMean">
+				<OneOnX id="OneOnX.1" name="distr"/>
+			</prior>
+			<prior id="KappaPrior.s:{{filename}}" name="distribution" x="@kappa.s:{{filename}}">
+				<LogNormal id="LogNormalDistributionModel.0" name="distr">
+					<parameter id="RealParameter.1" estimate="false" name="M">1.0</parameter>
+					<parameter id="RealParameter.2" estimate="false" name="S">1.25</parameter>
+				</LogNormal>
+			</prior>
+		</distribution>
+		<distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+			<distribution id="treeLikelihood.{{filename}}" spec="TreeLikelihood" data="@{{filename}}" tree="@Tree.t:{{filename}}">
+				<siteModel id="SiteModel.s:{{filename}}" spec="SiteModel">
+					<parameter id="mutationRate.s:{{filename}}" estimate="false" name="mutationRate">1.0</parameter>
+					<parameter id="gammaShape.s:{{filename}}" estimate="false" name="shape">1.0</parameter>
+					<parameter id="proportionInvariant.s:{{filename}}" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+					<substModel id="hky.s:{{filename}}" spec="HKY" kappa="@kappa.s:{{filename}}">
+						<frequencies id="estimatedFreqs.s:{{filename}}" spec="Frequencies" frequencies="@freqParameter.s:{{filename}}"/>
+					</substModel>
+				</siteModel>
+				<branchRateModel id="StrictClock.c:{{filename}}" spec="beast.evolution.branchratemodel.StrictClockModel">
+					<parameter id="clockRate.c:{{filename}}" estimate="false" name="clock.rate">1.0</parameter>
+				</branchRateModel>
+			</distribution>
+		</distribution>
+	</distribution>
+
+	<operator id="Reheight.t:Species" spec="NodeReheight" taxonset="@taxonsuperset" tree="@Tree.t:Species" weight="94.0">
+		<genetree idref="Tree.t:{{filename}}"/>
+	</operator>
+
+	<operator id="popSizeBottomScaler.t:Species" spec="ScaleOperator" degreesOfFreedom="1" parameter="@popSize" scaleFactor="0.5" weight="5.0"/>
+
+	<operator id="popMeanScale.t:Species" spec="ScaleOperator" parameter="@popMean" scaleFactor="0.75" weight="3.0"/>
+
+	<operator id="updown.all.Species" spec="UpDownOperator" scaleFactor="0.75" weight="20.0">
+		<up idref="birthRate.t:Species"/>
+		<down idref="popMean"/>
+		<down idref="popSize"/>
+		<down idref="Tree.t:Species"/>
+		<down idref="Tree.t:{{filename}}"/>
+	</operator>
+
+	<operator id="YuleBirthRateScaler.t:Species" spec="ScaleOperator" parameter="@birthRate.t:Species" scaleFactor="0.75" weight="3.0"/>
+
+	<operator id="treeScaler.t:{{filename}}" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:{{filename}}" weight="3.0"/>
+
+	<operator id="treeRootScaler.t:{{filename}}" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:{{filename}}" weight="3.0"/>
+
+	<operator id="UniformOperator.t:{{filename}}" spec="Uniform" tree="@Tree.t:{{filename}}" weight="30.0"/>
+
+	<operator id="SubtreeSlide.t:{{filename}}" spec="SubtreeSlide" tree="@Tree.t:{{filename}}" weight="15.0"/>
+
+	<operator id="narrow.t:{{filename}}" spec="Exchange" tree="@Tree.t:{{filename}}" weight="15.0"/>
+
+	<operator id="wide.t:{{filename}}" spec="Exchange" isNarrow="false" tree="@Tree.t:{{filename}}" weight="3.0"/>
+
+	<operator id="WilsonBalding.t:{{filename}}" spec="WilsonBalding" tree="@Tree.t:{{filename}}" weight="3.0"/>
+
+	<operator id="KappaScaler.s:{{filename}}" spec="ScaleOperator" parameter="@kappa.s:{{filename}}" scaleFactor="0.5" weight="0.1"/>
+
+	<operator id="FrequenciesExchanger.s:{{filename}}" spec="DeltaExchangeOperator" delta="0.01" weight="0.1">
+		<parameter idref="freqParameter.s:{{filename}}"/>
+	</operator>
+
+	<logger id="tracelog" fileName="{{filename}}.log" logEvery="5000" model="@posterior" sort="smart">
+		<log idref="posterior"/>
+		<log idref="likelihood"/>
+		<log idref="prior"/>
+		<log idref="speciescoalescent"/>
+		<log idref="birthRate.t:Species"/>
+		<log idref="YuleModel.t:Species"/>
+		<log idref="popMean"/>
+		<log id="TreeHeight.Species" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:Species"/>
+		<log idref="treeLikelihood.{{filename}}"/>
+		<log idref="treePrior.t:{{filename}}"/>
+		<log id="TreeHeight.t:{{filename}}" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:{{filename}}"/>
+		<log idref="kappa.s:{{filename}}"/>
+		<log idref="freqParameter.s:{{filename}}"/>
+	</logger>
+
+	<logger id="speciesTreeLogger" fileName="species.trees" logEvery="5000" mode="tree">
+		<log id="SpeciesTreeLoggerX" spec="beast.evolution.speciation.SpeciesTreeLogger" popSize="@popSize" speciesTreePrior="@SpeciesTreePopSize.Species" tree="@Tree.t:Species">
+			<treetop id="treeTopFinder" spec="beast.evolution.speciation.TreeTopFinder">
+				<tree idref="Tree.t:{{filename}}"/>
+			</treetop>
+		</log>
+	</logger>
+
+	<logger id="screenlog" logEvery="5000" model="@posterior">
+		<log idref="posterior"/>
+		<log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+		<log idref="likelihood"/>
+		<log idref="prior"/>
+	</logger>
+
+	<logger id="treelog.t:{{filename}}" fileName="$(tree).trees" logEvery="5000" mode="tree">
+		<log id="TreeWithMetaDataLogger.t:{{filename}}" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:{{filename}}"/>
+	</logger>
+
+	<operatorschedule id="operatorSchedule" spec="OperatorSchedule">
+		<subschedule id="operatorSubschedule" spec="OperatorSchedule" operatorPattern="^.*Species$" weight="20.0" weightIsPercentage="true"/>
+	</operatorschedule>
+
+</run>
+
+</beast>
