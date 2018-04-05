@@ -14,8 +14,7 @@ const logData = msg => console.log(JSON.stringify(msg))
 const sendData = msg => process.send(msg)
 const send = process.send ? sendData : logData
 
-const error = e =>
-	send({ type: 'error', payload: e })
+const error = e => send({ type: 'error', payload: e })
 const stageComplete = ({ stage, result, timeTaken, cached }) =>
 	send({
 		type: 'stage-complete',

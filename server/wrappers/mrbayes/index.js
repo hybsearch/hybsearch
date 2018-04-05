@@ -35,7 +35,7 @@ function insertCommandBlock(data) {
 }
 
 module.exports = mrbayes
-function mrbayes(data, argv={}) {
+function mrbayes(data, argv = {}) {
 	const inputFile = tempy.file()
 	const outputFile = inputFile + '.con.tre'
 
