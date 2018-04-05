@@ -11,7 +11,9 @@ if (process.argv.length < 3) {
 }
 
 async function main() {
-	const filepath = process.argv[2]
+	const pipeline = process.argv[2]
+	const filepath = process.argv[3]
+
 	console.log(`processing ${filepath}`)
 	const data = await getData(filepath)
 
@@ -54,7 +56,7 @@ async function main() {
 		}
 	})
 
-	child.send({ pipeline: 'search', filepath, data })
+	child.send({ pipeline, filepath, data })
 }
 
 main()

@@ -1,12 +1,12 @@
 'use strict'
 
 const execa = require('execa')
-const tempfile = require('tempfile')
+const tempy = require('tempy')
 const fs = require('fs')
 
 module.exports = seqgen
 function seqgen(data, seqLen = 300, mutationRate = 0.02, generations = 2) {
-	const inputFile = tempfile()
+	const inputFile = tempy.file()
 	data = `[${seqLen}, ${mutationRate}]${data}`
 	fs.writeFileSync(inputFile, data, 'utf-8')
 

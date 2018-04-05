@@ -18,8 +18,11 @@ function run() {
 	// start the loading bar
 	document.querySelector('section.loader').classList.add('loading')
 
+	// get the chosen pipeline name
+	let pipeline = document.querySelector('#pick-pipeline').value
+
 	// start the pipeline
-	submitJob({ pipeline: 'search', filepath, data })
+	submitJob({ pipeline, filepath, data })
 
 	return false
 }
@@ -48,6 +51,7 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 }
 
 function onData(phase, data) {
+	console.info([phase, data])
 	if (phase.startsWith('newick-json:')) {
 		// Once we get the parsed newick tree, we can render the tree while
 		// the pipeline continues
