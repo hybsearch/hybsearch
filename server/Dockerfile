@@ -43,7 +43,7 @@ RUN apt-get update \
     && apt-get clean autoclean \
     && rm -rfv /var/lib/{apt,dpkg,cache,log}/
 
-RUN apt-get remove -y ocl-icd-libopencl1
+# RUN apt-get remove -y ocl-icd-libopencl1
 
 ENV DOCKER=1
 
