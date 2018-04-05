@@ -5,15 +5,15 @@ const getData = require('../lib/get-data')
 const fastaToBeast = require('./fasta-to-beast')
 
 function main() {
-	let file = process.argv[4]
+	let file = process.argv[2]
 
 	if (!file && process.stdin.isTTY) {
-		console.error('usage: hyb-fasta-to-beast --name (<input> | -)')
+		console.error('usage: hyb-fasta-to-beast (<input> | -)')
 		process.exit(1)
 	}
 
 	return getData(file)
-		.then(data => fastaToBeast(data, process.argv[3]))
+		.then(fastaToBeast)
 		.then(console.log)
 		.catch(console.error)
 }
