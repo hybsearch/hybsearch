@@ -9,7 +9,8 @@
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "main": "main.js",
   "scripts": {
-    "build": "npm run clean && npm run build:copy && npm run build:js && npm run build:css && npm run build:app",
+    "build": "npm run build:setup && npm run build:app",
+    "build:setup": "npm run clean && npm run build:copy && npm run build:js && npm run build:css",
     "build:app": "electron-builder --macos --windows --linux",
     "build:copy": "mkdir -p out/data && cp -v index.html index.css out/ && cp -rv ../data/*.gb out/data/",
     "build:css": "parcel build -t electron --no-minify --detailed-report --out-dir out index.css",
