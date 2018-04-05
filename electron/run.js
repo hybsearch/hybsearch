@@ -51,6 +51,7 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 }
 
 function onData(phase, data) {
+	console.info([phase, data])
 	if (phase.startsWith('newick-json:')) {
 		// Once we get the parsed newick tree, we can render the tree while
 		// the pipeline continues
