@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 module.exports = beast
-function beast(data, argv = {}) {
+async function beast(data, argv = {}) {
 	const dir = tempy.directory()
 
 	const inputName = 'input'
@@ -33,16 +33,18 @@ function beast(data, argv = {}) {
 	// NOTE: if beast finds beagle, it expects opencl to exist as well,
 	// and our docker image currently doesn't support that. So, we'll set
 	// the beagle search path to a nonexistant folder.
-	let result = execa.sync(executable, args, {
+	let result = execa(executable, args, {
 		env: {
 			BEAGLE_LIB: '/dev/null',
 		},
 	})
 
 	if (!argv.quiet) {
-		process.stderr.write(result.stdout)
-		process.stderr.write(result.stderr)
+		result.stdout.pipe(process.stderr)
+		result.stderr.pipe(process.stderr)
 	}
+
+	await result
 
 	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
 
