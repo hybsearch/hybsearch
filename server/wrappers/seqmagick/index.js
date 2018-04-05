@@ -1,7 +1,7 @@
 'use strict'
 
 const execa = require('execa')
-const tempfile = require('tempfile')
+const tempy = require('tempy')
 const fs = require('fs')
 
 module.exports = seqmagick
@@ -13,8 +13,8 @@ function seqmagick({
 	removeQuotes = true,
 }) {
 	// TODO: why does this replace spaces with spaces?
-	const inputFile = tempfile().replace(' ', ' ')
-	const outputFile = tempfile().replace(' ', ' ')
+	const inputFile = tempy.file().replace(' ', ' ')
+	const outputFile = tempy.file().replace(' ', ' ')
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`

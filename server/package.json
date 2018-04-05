@@ -36,7 +36,6 @@
     "make-dir": "^1.2.0",
     "minimist": "^1.2.0",
     "serialize-error": "^2.1.0",
-    "tempfile": "^2.0.0",
     "tempy": "^0.2.1",
     "wordwrap": "^1.0.0",
     "ws": "^4.1.0"
