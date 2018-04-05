@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 module.exports = beast
-function beast(data, argv={}) {
+function beast(data, argv = {}) {
 	const dir = tempy.directory()
 
 	const inputName = 'input'
@@ -43,5 +43,5 @@ function beast(data, argv={}) {
 	const trees = fs.readFileSync(path.join(dir, 'data.trees'), 'utf-8')
 	const species = fs.readFileSync(path.join(dir, 'species.trees'), 'utf-8')
 
-	return {log, trees, species}
+	return { log, trees, species }
 }
