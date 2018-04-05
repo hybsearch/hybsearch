@@ -123,7 +123,8 @@ jobs:
       - setup_remote_docker
       - restore_cache: *cache-load-docker
       - run: *cmd-docker-load
-      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline - < data/emydura-short.gb
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline search - < data/emydura-short.gb
+      - run: docker run -i "$LOCAL_NAME:$CIRCLE_SHA1" /hybsearch/pipeline/hyb-pipeline beast - < data/emydura-short.gb
 
   # test the server-side js code
   test-server:
