@@ -43,7 +43,11 @@ function inflateTemplate(vars) {
 }
 
 module.exports = fastaToBeast
-function fastaToBeast(fastaData) {
+function fastaToBeast(fastaData, name) {
+	if (!name) {
+		throw new Error('"name" parameter is required for fastaToBeast!')
+	}
+
 	let items = parseFasta(fastaData)
 	items = sortBy(items, ({ species }) => species)
 
@@ -71,7 +75,7 @@ function fastaToBeast(fastaData) {
 	})
 
 	return inflateTemplate({
-		filename: 'kino',
+		filename: name,
 		sequences: seqs.join('\n'),
 		taxon: taxon.join('\n'),
 	})
