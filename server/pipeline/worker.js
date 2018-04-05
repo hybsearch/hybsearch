@@ -14,8 +14,7 @@ const logData = msg => console.log(JSON.stringify(msg))
 const sendData = msg => process.send(msg)
 const send = process.send ? sendData : logData
 
-const error = e =>
-	send({ type: 'error', payload: { error: serializeError(e) } })
+const error = e => send({ type: 'error', payload: e })
 const stageComplete = ({ stage, result, timeTaken, cached }) =>
 	send({
 		type: 'stage-complete',
@@ -97,7 +96,7 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 				continue
 			}
 
-			let results = await step.transform(inputs)
+			let results = await Promise.all(await step.transform(inputs))
 
 			// assert(results.length === step.output.length)
 			zip(step.output, results).forEach(([key, result]) => {
@@ -117,7 +116,7 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 		}
 	} catch (err) {
 		console.error(err)
-		error({ error: err, timeTaken: now() - start })
+		error({ error: serializeError(err), timeTaken: now() - start })
 	} finally {
 		exit()
 	}
