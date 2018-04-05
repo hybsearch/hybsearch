@@ -65,7 +65,7 @@ function fastaToBeast(fastaData) {
 		let taxon = values.map(
 			({ species }) => `<taxon id="${species}" spec="Taxon"/>`
 		)
-		return `\t\t\t\t<taxon id="${key}" spec="TaxonSet>
+		return `\t\t\t\t<taxon id="${key}" spec="TaxonSet">
 \t\t\t\t\t${taxon.join('\n\t\t\t\t\t')}
 \t\t\t\t</taxon>`
 	})
