@@ -7,7 +7,8 @@ RUN mkdir -p /usr/share/man/man1/
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        curl \
-    && rm -rfv /var/lib/apt/lists/*
+    && apt-get clean autoclean \
+    && rm -rfv /var/lib/{apt,dpkg,cache,log}/
 
 WORKDIR /beast
 RUN curl -L 'https://github.com/CompEvol/beast2/releases/download/v2.4.8/BEAST.v2.4.8.Linux.tgz' | gunzip - | tar -x
