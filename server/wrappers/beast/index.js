@@ -30,7 +30,12 @@ function beast(data, argv = {}) {
 		inputFile,
 	]
 
-	let result = execa.sync(executable, args)
+	// NOTE: if beast finds beagle, it expects opencl to exist as well,
+	// and our docker image currently doesn't support that. So, we'll set
+	// the beagle search path to a nonexistant folder.
+	let result = execa.sync(executable, args, {
+		BEAGLE_LIB: '/dev/null'
+	})
 
 	if (!argv.quiet) {
 		process.stderr.write(result.stdout)
