@@ -1,13 +1,13 @@
 'use strict'
 
 const execa = require('execa')
-const tempfile = require('tempfile')
+const tempy = require('tempy')
 const fs = require('fs')
 
 module.exports = clustal
 function clustal(data) {
-	const inputFile = tempfile()
-	const outputFile = tempfile()
+	const inputFile = tempy.file()
+	const outputFile = tempy.file()
 	fs.writeFileSync(inputFile, data, 'utf-8')
 
 	// find binary via `which`

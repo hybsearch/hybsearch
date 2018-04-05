@@ -1,7 +1,7 @@
 'use strict'
 
 const execa = require('execa')
-const tempfile = require('tempfile')
+const tempy = require('tempy')
 const fs = require('fs')
 const os = require('os')
 const dedent = require('dedent')
@@ -35,9 +35,8 @@ function insertCommandBlock(data) {
 }
 
 module.exports = mrbayes
-function mrbayes(data, argv) {
-	argv = argv || {}
-	const inputFile = tempfile()
+function mrbayes(data, argv={}) {
+	const inputFile = tempy.file()
 	const outputFile = inputFile + '.con.tre'
 
 	// we can control mrbayes with a "command block"
