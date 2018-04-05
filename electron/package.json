@@ -1,7 +1,7 @@
 {
   "name": "hybsearch-electron",
   "private": true,
-  "version": "4.0.0-beta.3",
+  "version": "0.0.0",
   "description": "an electron gui for hybsearch",
   "repository": "hybsearch/hybsearch",
   "homepage": "https://hybsearch.github.io/",

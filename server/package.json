@@ -1,7 +1,7 @@
 {
   "name": "hybsearch-server",
   "private": true,
-  "version": "4.0.0-beta.3",
+  "version": "0.0.0",
   "description": "Find nonmonophyly in genetic sequences",
   "repository": "hybsearch/hybsearch",
   "homepage": "https://hybsearch.github.io/",
