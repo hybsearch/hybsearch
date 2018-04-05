@@ -37,8 +37,10 @@ function beast(data, argv={}) {
 		process.stderr.write(result.stderr)
 	}
 
-	const log = fs.readFileSync(path.join(dir, `${inputName}.log`), 'utf-8')
-	const trees = fs.readFileSync(path.join(dir, `${inputName}.trees`), 'utf-8')
+	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
+
+	const log = fs.readFileSync(path.join(dir, 'data.log'), 'utf-8')
+	const trees = fs.readFileSync(path.join(dir, 'data.trees'), 'utf-8')
 	const species = fs.readFileSync(path.join(dir, 'species.trees'), 'utf-8')
 
 	return {log, trees, species}
