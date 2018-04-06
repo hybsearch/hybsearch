@@ -7,7 +7,7 @@
 // infile must be FASTA format and is expected to contain pairs of sequences to be compared
 // all sequences must also have been previously aligned so the Hamming distance calculations are correct
 
-const getData = require('./get-data')
+const getData = require('../../lib/get-data')
 const zip = require('lodash/zip')
 const _min = require('lodash/min')
 const _max = require('lodash/max')
