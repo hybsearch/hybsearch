@@ -129,7 +129,7 @@ section.loader.loading wrapper.content {
 
 .loader .checkmark[data-time]::after {
 	font-size: 0.85em;
-	content: attr(data-time) 'ms';
+	content: attr(data-time);
 }
 
 #phylogram {

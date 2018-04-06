@@ -1,7 +1,7 @@
 'use strict'
 
 const { load, setEntResults } = require('./graph')
-
+const prettyMs = require('pretty-ms')
 const fs = require('fs')
 
 function run() {
@@ -84,7 +84,7 @@ function onMessage(packet) {
 		const { stage, timeTaken, result, cached } = payload
 		updateLoadingStatus({
 			label: stage,
-			duration: timeTaken.toFixed(2),
+			duration: timeTaken,
 			usedCache: cached,
 		})
 		onData(stage, result)
@@ -141,7 +141,7 @@ function updateLoadingStatus({ label, duration, usedCache }) {
 	el.classList.remove('active')
 	el.classList.add('complete')
 	usedCache && el.classList.add('used-cache')
-	el.dataset.time = duration
+	el.dataset.time = prettyMs(duration)
 }
 
 function beginLoadingStatus(label) {
