@@ -88,16 +88,17 @@
     "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
     "material-components-web": "^0.34.1",
+    "material-icons": "^0.2.1",
     "normalize.css": "^7.0.0",
     "pretty-ms": "^3.1.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "rmwc": "^1.5.1",
-    "styled-components": "^3.2.5"
+    "styled-components": "^3.2.5",
+    "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
-    "eslint-plugin-react": "^7.7.0",
     "electron": "^1.8.3",
     "spectron": "^3.8.0"
   }
