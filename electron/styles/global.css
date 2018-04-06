@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: rgb(242, 242, 246);
+}
+
+body {
+	margin: 0;
+}
+
+pre {
+	font-family: Consolas, monospace;
+}

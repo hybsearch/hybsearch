@@ -1,0 +1,38 @@
+#phylogram {
+	overflow: auto;
+}
+
+/* todo: why is this an ID selector? */
+#standard-deviation {
+	color: var(--red);
+}
+
+.clickable-node {
+	cursor: pointer;
+}
+
+.species-label {
+	text-anchor: start;
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+	font-size: 12px;
+	fill: black;
+}
+
+.divergence-label {
+	text-anchor: end;
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+	font-size: 8px;
+	fill: var(--black);
+}
+
+.leaf-dot {
+	fill: var(--blue);
+}
+
+.nonmonophyletic .leaf-dot {
+	fill: var(--red);
+}
+
+.muted .leaf-dot {
+	opacity: 0.2;
+}
