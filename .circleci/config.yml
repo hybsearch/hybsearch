@@ -48,8 +48,12 @@ workflows:
       - deploy-docker:
           requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           context: docker-hub
-      - deploy-github:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+      - build-app-windows:
+          requires: [lint, test-app]
+      - build-app-mac:
+          requires: [lint, test-app]
+      - build-app-linux:
+          requires: [lint, test-app]
 
   on_tag:
     jobs:
@@ -75,7 +79,13 @@ workflows:
           requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
           context: docker-hub
-      - deploy-github:
+      - build-app-windows:
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          filters: *filters
+      - build-app-mac:
+          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          filters: *filters
+      - build-app-linux:
           requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
           filters: *filters
 
@@ -200,16 +210,39 @@ jobs:
             fi
 
   # deploy the compiled electron binaries to GitHub Releases
-  deploy-github:
+  build-app-windows: &electron-builder-base
     <<: *defaults
     docker:
       - image: electronuserland/builder:wine
     steps:
       - checkout:
           path: /root/project
-      - run: npm i -g electron-builder parcel-bundler
-      - run:
+      - run: &install-electron-builder npm i -g electron-builder parcel-bundler
+      - run: &electron-pkg-version
           name: Update the electron package version number
           command: node -e 'let ver=require("./package.json").version;let ePth="./electron/package.json";let electronPkg=require(ePth);electronPkg.version=ver;fs.writeFileSync(ePth, JSON.stringify(electronPkg), "utf-8")'
       - run: cd electron && npm install --production
-      - run: cd electron && npm run build
+      - run: cd electron && npm run build:setup
+      - run: cd electron && electron-builder --windows
+
+  build-app-mac:
+    <<: *electron-builder-base
+    steps:
+      - checkout:
+          path: /root/project
+      - run: *install-electron-builder
+      - run: *electron-pkg-version
+      - run: cd electron && npm install --production
+      - run: cd electron && npm run build:setup
+      - run: cd electron && electron-builder --macos
+
+  build-app-linux:
+    <<: *electron-builder-base
+    steps:
+      - checkout:
+          path: /root/project
+      - run: *install-electron-builder
+      - run: *electron-pkg-version
+      - run: cd electron && npm install --production
+      - run: cd electron && npm run build:setup
+      - run: cd electron && electron-builder --linux
