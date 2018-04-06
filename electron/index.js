@@ -1,7 +1,12 @@
-'use strict'
+// @flow
 
-// catch unhandled promise rejections
-require('electron-unhandled')()
+import * as React from 'react'
+import ReactDOM from 'react-dom'
 
-// start the code
-require('./ui')
+import { App } from './app'
+
+let container = document.querySelector('#container')
+
+if (container) {
+	ReactDOM.render(<App />, container)
+}
