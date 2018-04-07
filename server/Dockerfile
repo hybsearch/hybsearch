@@ -29,6 +29,8 @@ COPY --from=hyb-beast ["/beast/beast/bin/beast", "/usr/local/bin/"]
 COPY --from=hyb-beast ["/beast/beast/lib/beast.jar", "/usr/local/lib/"]
 COPY --from=hyb-beast ["/beast/beast/lib/launcher.jar", "/usr/local/lib/"]
 
+COPY --from=hyb-jml ["/usr/local/bin/jml", "/usr/local/bin/"]
+
 RUN sed -i 's|deb http://deb.debian.org/debian stretch main|deb http://http.us.debian.org/debian stretch main non-free|' /etc/apt/sources.list
 
 # fixes issue with installing openjdk-8-jdk-headless
