@@ -1,5 +1,7 @@
 FROM docker.io/amd64/node:8-stretch AS hyb-node
 
+FROM docker.io/hybsearch/jml:v1.3.1-hyb.1 AS hyb-jml
+
 FROM hybsearch/docker-base:v1.4 AS hyb-beast
 
 RUN mkdir -p /usr/share/man/man1/
