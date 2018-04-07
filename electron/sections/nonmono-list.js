@@ -20,5 +20,12 @@ export const NonmonophylyListSection = ({ nonmonophyly = SAMPLE }: Props) => {
 		.map(pairToString)
 		.map(pair => <ListItem key={pair} meta="arrow_forward" text={pair} />)
 
-	return <AppSection title="Nonmonophyly" content={<List>{listItems}</List>} />
+	return (
+		<AppSection
+			contentPaddingTop={false}
+			contentPaddingBottom={false}
+			title="Nonmonophyly"
+			content={<List>{listItems}</List>}
+		/>
+	)
 }

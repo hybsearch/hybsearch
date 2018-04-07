@@ -31,7 +31,7 @@ wss.on('connection', ws => {
 		// when we get a message from the GUI
 		const message = JSON.parse(communique)
 
-		console.log(message)
+		console.log('>', message)
 
 		// forward the message to the pipeline
 		child.send(message)
@@ -49,7 +49,7 @@ wss.on('connection', ws => {
 		// when we get a message from the pipeline
 		const message = communique
 
-		console.log(message)
+		console.log('<', message)
 
 		// forward the message to the GUI
 		ws.send(JSON.stringify(message))

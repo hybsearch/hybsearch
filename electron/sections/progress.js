@@ -6,7 +6,7 @@ import { ChipSet, Chip, ChipIcon, ChipText } from 'rmwc/Chip'
 import { Typography } from 'rmwc/Typography'
 import { AppSection } from './components/app-section'
 
-export const ProgressSection = () => (
+export const ProgressSection = ({ stages }: { stages: Array<any> }) => (
 	<AppSection
 		title={
 			<React.Fragment>
@@ -21,6 +21,6 @@ export const ProgressSection = () => (
 				</ChipSet>
 			</React.Fragment>
 		}
-		content={<React.Fragment>foo</React.Fragment>}
+		content={<React.Fragment>{JSON.stringify(stages)}</React.Fragment>}
 	/>
 )

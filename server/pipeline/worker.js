@@ -51,22 +51,8 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-async function main({ pipeline: pipelineName, filepath, data, type }) {
+async function startPipeline({ pipeline: pipelineName, filepath, data }) {
 	let start = now()
-
-	if (type === 'pipeline-list') {
-		send({
-			type: 'pipeline-list',
-			payload: JSON.stringify(Object.keys(PIPELINES)),
-		})
-		return
-	} else if (type === 'pipeline-steps') {
-		send({
-			type: 'pipeline-steps',
-			payload: JSON.stringify(PIPELINES[pipelineName]),
-		})
-		return
-	}
 
 	try {
 		let cache = new Cache({ filepath, contents: data })
@@ -120,4 +106,67 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 	} finally {
 		exit()
 	}
+}
+
+function listPipelines(payload, responseId) {
+	send({
+		type: responseId ? `response-to-${responseId}` : 'list-pipelines',
+		payload: Object.keys(PIPELINES),
+	})
+}
+
+function listStepsForPipeline({ pipeline }, responseId) {
+	send({
+		type: responseId ? `response-to-${responseId}` : 'list-steps-for-pipeline',
+		payload: JSON.stringify(PIPELINES[pipeline]),
+	})
+}
+
+function uptime(payload, responseId) {
+	// TODO: get server uptime
+	send({
+		type: responseId ? `response-to-${responseId}` : 'uptime',
+		payload: 0,
+	})
+}
+
+function activeJobs(payload, responseId) {
+	send({
+		type: responseId ? `response-to-${responseId}` : 'active-jobs',
+		payload: 0,
+	})
+}
+
+function completedJobs(payload, responseId) {
+	send({
+		type: responseId ? `response-to-${responseId}` : 'completed-jobs',
+		payload: [],
+	})
+}
+
+function watchPipeline(payload, responseId) {
+	send({
+		type: responseId ? `response-to-${responseId}` : 'completed-jobs',
+		payload: {},
+	})
+}
+
+const RUNNABLES = {
+	uptime: uptime,
+	'pipeline-list': listPipelines,
+	'pipeline-steps': listStepsForPipeline,
+	'start-pipeline': startPipeline,
+	'watch-pipeline': watchPipeline,
+	'active-jobs': activeJobs,
+	'completed-jobs': completedJobs,
+}
+
+async function main({ type, payload, responseId }) {
+	if (!(type in RUNNABLES)) {
+		let allowed = Object.keys(RUNNABLES).join(',')
+		let message = `${type} is not in the list of allowed commands: ${allowed}`
+		error({ message })
+	}
+
+	return await RUNNABLES[type](payload, responseId)
 }

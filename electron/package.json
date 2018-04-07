@@ -85,6 +85,7 @@
     "electron-is-dev": "^0.3.0",
     "electron-unhandled": "^0.2.0",
     "electron-updater": "^2.21.1",
+    "emittery": "^0.3.0",
     "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
     "material-components-web": "^0.34.1",
@@ -95,7 +96,8 @@
     "react-dom": "^16.3.1",
     "rmwc": "^1.5.1",
     "styled-components": "^3.2.5",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.54",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "electron": "^1.8.3",
