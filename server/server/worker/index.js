@@ -56,9 +56,13 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 	try {
 		let cache = new Cache({ filepath, contents: data })
 
-		let pipeline = PIPELINES[pipelineName]
+		let pipeline = PIPELINES.get(pipelineName)
 
-		for (let step of pipeline) {
+		if (!pipeline) {
+			throw new Error(`${pipelineName} is not a known pipeline!`)
+		}
+
+		for (let step of pipeline.pipeline) {
 			step.output.forEach(key => stageStart({ key }))
 
 			let inputs = step.input.map(key => cache.get(key))
