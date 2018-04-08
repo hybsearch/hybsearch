@@ -6,7 +6,7 @@ const path = require('path')
 const childProcess = require('child_process')
 
 if (process.argv.length < 3) {
-	console.error('usage: hyb-pipeline <file.gb>')
+	console.error('usage: hyb-pipeline <stage> <file.gb>')
 	process.exit(1)
 }
 
@@ -17,7 +17,7 @@ async function main() {
 	console.log(`processing ${filepath}`)
 	const data = await getData(filepath)
 
-	const child = childProcess.fork(path.join(__dirname, 'worker.js'))
+	const child = childProcess.fork(path.join(__dirname, 'worker', 'index.js'))
 
 	child.on('message', communique => {
 		let { type, payload } = communique
@@ -25,10 +25,6 @@ async function main() {
 		switch (type) {
 			case 'error':
 				console.error('error!', payload.error)
-				break
-			case 'exit':
-				console.log()
-				console.log('exit')
 				break
 			case 'stage-start': {
 				let { stage } = payload
@@ -54,6 +50,11 @@ async function main() {
 		if (type === 'exit') {
 			child.disconnect()
 		}
+	})
+
+	child.on('exit', () => {
+		console.log()
+		console.log('exit')
 	})
 
 	child.send({ pipeline, filepath, data })
