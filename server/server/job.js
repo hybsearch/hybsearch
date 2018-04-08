@@ -5,10 +5,12 @@ const childProcess = require('child_process')
 const path = require('path')
 const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
+const pipelines = require('./pipelines')
 
 const WORKER_PATH = path.join(__dirname, 'pipeline', 'worker.js')
 
 import { typeof WebSocket } from 'ws'
+import type { SerializedPipelineRecord } from './pipelines/types'
 
 type Args = {
 	pipeline: string,
@@ -21,20 +23,26 @@ module.exports = class Job {
 	connectedClients: Array<{ socket: WebSocket, id: string }>
 	status: 'inactive' | 'active' | 'completed' | 'error'
 	process: childProcess.ChildProcess
-	// pipeline
+	pipeline: SerializedPipelineRecord
 
 	constructor(messagePayload: Args) {
 		this.id = hashString(messagePayload.data)
 		this.connectedClients = []
 		this.status = 'inactive'
 
-		let worker = childProcess.fork(WORKER_PATH)
-		this.process = worker
+		// record the pipeline that we'll be using
+		let destinationPipeline = pipelines.get(messagePayload.pipeline)
+		this.pipeline = JSON.parse(JSON.stringify(destinationPipeline))
 
-		this.process.on('message', this.handleWorkerMessage)
-		this.process.on('error', this.handleWorkerError)
-		this.process.on('exit', this.handleWorkerExit)
+		// set up the worker process
+		this.process = childProcess.fork(WORKER_PATH)
 
+		// listen to the worker
+		this.process.on('message', this.handleMessage)
+		this.process.on('error', this.handleError)
+		this.process.on('exit', this.handleExit)
+
+		// kick it off
 		this.process.send(messagePayload)
 	}
 
@@ -42,6 +50,7 @@ module.exports = class Job {
 		return JSON.stringify({
 			id: this.id,
 			status: this.status,
+			pipeline: this.pipeline,
 		})
 	}
 
@@ -59,14 +68,12 @@ module.exports = class Job {
 		)
 	}
 
-	sendClientMessage = (message: any) => {
+	messageClients = (message: mixed) => {
 		let stringified = JSON.stringify(message)
-		this.connectedClients.forEach(client => {
-			client.socket.send(stringified)
-		})
+		this.connectedClients.forEach(client => client.socket.send(stringified))
 	}
 
-	handleWorkerMessage = (message: any) => {
+	handleMessage = (message: { [key: string]: any, type: string }) => {
 		// The 'message' event is triggered when a child process uses
 		// process.send() to send messages.
 
@@ -74,7 +81,7 @@ module.exports = class Job {
 		console.log('<', message)
 
 		// forward the message to the GUI
-		this.sendClientMessage(message)
+		this.messageClients(message)
 
 		// if the pipeline has finished, detach ourselves so the child_process
 		// can exit
@@ -83,27 +90,30 @@ module.exports = class Job {
 		}
 	}
 
-	handleWorkerError = (error: Error) => {
+	handleError = (error: Error) => {
 		// The 'error' event is emitted whenever:
 		// 1. The process could not be spawned, or
 		// 2. The process could not be killed, or
 		// 3. Sending a message to the child process failed.
 		this.status = 'error'
-		this.sendClientMessage({
+		this.messageClients({
 			type: 'error',
 			payload: { error: serializeError(error) },
 		})
 		this.terminate()
 	}
 
-	handleWorkerExit = (code: number, signal: string) => {
+	handleExit = (code: number, signal: string) => {
 		// The 'exit' event is emitted after the child process ends. If the
 		// process exited, code is the final exit code of the process,
 		// otherwise null. If the process terminated due to receipt of a
 		// signal, signal is the string name of the signal, otherwise null.
 		// One of the two will always be non-null.
 		this.status = 'completed'
-		this.sendClientMessage({ type: 'exit', payload: { code, signal } })
+		this.messageClients({
+			type: 'exit',
+			payload: { code, signal },
+		})
 	}
 
 	terminate = () => {
