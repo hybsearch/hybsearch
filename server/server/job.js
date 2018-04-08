@@ -7,7 +7,7 @@ const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
 const pipelines = require('./pipelines')
 
-const WORKER_PATH = path.join(__dirname, 'pipeline', 'worker.js')
+const WORKER_PATH = path.join(__dirname, 'worker', 'index.wrapper.js')
 
 import { typeof WebSocket } from 'ws'
 import type { SerializedPipelineRecord } from './pipelines/types'

@@ -17,7 +17,7 @@ async function main() {
 	console.log(`processing ${filepath}`)
 	const data = await getData(filepath)
 
-	const child = childProcess.fork(path.join(__dirname, 'worker', 'index.js'))
+	const child = childProcess.fork(path.join(__dirname, 'worker', 'index.wrapper.js'))
 
 	child.on('message', communique => {
 		let { type, payload } = communique
