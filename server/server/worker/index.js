@@ -1,17 +1,18 @@
+// @flow
 'use strict'
 
 const serializeError = require('serialize-error')
 
-const Cache = require('./cache')
+const Cache = require('../cache')
 const zip = require('lodash/zip')
-const PIPELINES = require('./pipelines')
+const PIPELINES = require('../pipelines')
 
 /////
 ///// helpers
 /////
 
 const logData = msg => console.log(JSON.stringify(msg))
-const sendData = msg => process.send(msg)
+const sendData = msg => (process: any).send(msg)
 const send = process.send ? sendData : logData
 
 const error = e => send({ type: 'error', payload: e })
@@ -49,20 +50,6 @@ process.on('disconnect', () => {
 /////
 ///// pipeline
 /////
-
-function listPipelines(payload, responseId) {
-	send({
-		type: responseId ? `response-to-${responseId}` : 'list-pipelines',
-		payload: Object.keys(PIPELINES),
-	})
-}
-
-function listStepsForPipeline({ pipeline }, responseId) {
-	send({
-		type: responseId ? `response-to-${responseId}` : 'list-steps-for-pipeline',
-		payload: JSON.stringify(PIPELINES[pipeline]),
-	})
-}
 
 async function main({ pipeline: pipelineName, filepath, data }) {
 	let start = now()
@@ -117,6 +104,6 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 		console.error(err)
 		error({ error: serializeError(err), timeTaken: now() - start })
 	} finally {
-		process.exit()
+		process.exit(0)
 	}
 }
