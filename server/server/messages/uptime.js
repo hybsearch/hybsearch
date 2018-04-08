@@ -8,7 +8,6 @@ import type { HandlerArgs } from './types'
 export type Message = {|
 	type: 'get-uptime',
 	requestId: string,
-	payload: typeof undefined,
 |}
 
 function uptime({ respond }: HandlerArgs<Message>) {

@@ -5,7 +5,6 @@ import type { HandlerArgs } from './types'
 export type Message = {|
 	type: 'get-completed-jobs',
 	requestId: string,
-	payload: typeof undefined,
 |}
 
 function getCompletedJobs({ respond, allJobs }: HandlerArgs<Message>) {

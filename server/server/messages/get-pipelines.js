@@ -7,7 +7,6 @@ import type { HandlerArgs } from './types'
 export type Message = {|
 	type: 'get-pipelines',
 	requestId: string,
-	payload: typeof undefined,
 |}
 
 function getPipelines({ respond }: HandlerArgs<Message>) {
