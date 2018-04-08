@@ -2,6 +2,10 @@
 // @flow
 'use strict'
 
+//
+// prepare for command-line use
+//
+
 const [port = 8080] = process.argv.slice(2)
 const numericPort = parseInt(port)
 
@@ -16,6 +20,10 @@ if (Number.isNaN(numericPort)) {
 	process.exit(1)
 }
 
+//
+// import everything we need
+//
+
 const WebSocket = require('ws')
 const {
 	startPipeline,
@@ -29,10 +37,17 @@ const {
 const Job = require('./server/job')
 import type { Message } from './server/messages'
 
+//
+// set up the server
+//
+
 const server = new WebSocket.Server({ port: numericPort })
 const allJobs: Map<string, Job> = new Map()
 
+//
 // listen for new websocket connections
+//
+
 server.on('connection', (client, req) => {
 	// start it up
 	let clientId = req.connection.remoteAddress
@@ -49,11 +64,14 @@ server.on('connection', (client, req) => {
 	}
 
 	// handy function for easily replying to requests
-	let sendResponse = (requestId: string) => (payload: Object) =>
+	let sendResponse = (requestId: string) => (payload: Object) => {
 		send({ type: `resp-${requestId}`, payload })
+	}
 
 	// send error messages back to the client
-	let sendError = msg => send({ type: 'error', payload: { message: msg } })
+	let sendError = msg => {
+		send({ type: 'error', payload: { message: msg } })
+	}
 
 	// handle messages from the client
 	client.on('message', communique => {
