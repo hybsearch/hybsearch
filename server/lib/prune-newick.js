@@ -1,6 +1,4 @@
-/*
-This file will prune a newick tree to remove genes that are too dissimilar.
-*/
+// Prune a newick tree to remove genes that are too dissimilar
 
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
