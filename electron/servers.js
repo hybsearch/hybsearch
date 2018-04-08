@@ -107,19 +107,19 @@ export class Server {
 	}
 
 	getPipelines = (): Promise<Array<Pipeline>> => {
-		return this.send({ type: 'pipeline-list' })
+		return this.send({ type: 'get-pipelines' })
 	}
 
 	getUptime = (): Promise<number> => {
-		return this.send({ type: 'uptime' })
+		return this.send({ type: 'get-uptime' })
 	}
 
 	getActiveJobs = (): Promise<Array<Job>> => {
-		return this.send({ type: 'active-jobs' })
+		return this.send({ type: 'get-active-jobs' })
 	}
 
 	getCompletedJobs = (): Promise<Array<Job>> => {
-		return this.send({ type: 'completed-jobs' })
+		return this.send({ type: 'get-completed-jobs' })
 	}
 
 	submitJob = (args: {
