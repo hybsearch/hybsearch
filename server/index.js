@@ -43,8 +43,10 @@ server.on('connection', (client, req) => {
 
 	// gives us a single place to send data to the client, which
 	// lets us automatically stringify it
-	let send = (msg: { type: string, payload?: Object }) =>
+	let send = (msg: { type: string, payload?: Object }) => {
+		console.log('<', msg)
 		client.send(JSON.stringify(msg))
+	}
 
 	// handy function for easily replying to requests
 	let sendResponse = (requestId: string) => (payload: Object) =>
