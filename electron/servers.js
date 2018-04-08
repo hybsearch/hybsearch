@@ -99,10 +99,7 @@ export class Server {
 	send = (packet: { type: string }) => {
 		let id = uuid()
 
-		// $FlowExpectedError Missing type annotation for R.
-		let promise = new Promise(resolve =>
-			this.emitter.once(`resp-${id}`, resolve)
-		)
+		let promise = this.emitter.once(`resp-${id}`)
 
 		// send the request
 		this._send(Object.assign({}, packet, { requestId: id }))
