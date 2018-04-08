@@ -57,7 +57,7 @@ export class Server {
 
 		let parsed = JSON.parse(data)
 		try {
-			let payload = JSON.parse(parsed.payload)
+			let payload = parsed.payload
 			this.emitter.emit(parsed.type, payload)
 		} catch (err) {
 			this.emitter.emit('error', { error: err.message })
