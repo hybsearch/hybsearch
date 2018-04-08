@@ -2,7 +2,7 @@
 'use strict'
 
 const WebSocket = require('ws')
-const Job = require('../pipeline/job')
+const Job = require('../job')
 
 import type { Message as StartPipelineMessage } from './start-pipeline'
 import type { Message as WatchPipelineMessage } from './watch-pipeline'

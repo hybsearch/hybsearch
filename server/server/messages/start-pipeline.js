@@ -1,7 +1,7 @@
 // @flow
 'use strict'
 
-const Job = require('../pipeline/job')
+const Job = require('../job')
 
 import type { HandlerArgs } from './types'
 export type Message = {|
@@ -15,7 +15,7 @@ export type Message = {|
 |}
 
 function startPipeline({ message, respond, allJobs }: HandlerArgs<Message>) {
-	let job = new Job(message)
+	let job = new Job(message.payload)
 	allJobs.set(job.id, job)
 	respond({ jobId: job.id })
 }

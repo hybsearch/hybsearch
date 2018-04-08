@@ -1,7 +1,7 @@
 // @flow
 'use strict'
 
-const PIPELINES = require('../pipeline/pipelines')
+const PIPELINES = require('../pipelines')
 
 import type { HandlerArgs } from './types'
 export type Message = {|

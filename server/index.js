@@ -25,9 +25,9 @@ const {
 	getCompletedJobs,
 	getPipelines,
 	uptime,
-} = require('./messages')
-const Job = require('./pipeline/job')
-import type { Message } from './messages'
+} = require('./server/messages')
+const Job = require('./server/job')
+import type { Message } from './server/messages'
 
 const server = new WebSocket.Server({ port: numericPort })
 const allJobs: Map<string, Job> = new Map()

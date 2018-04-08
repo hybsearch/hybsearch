@@ -9,7 +9,12 @@ const hashString = require('../lib/hash-string')
 const WORKER_PATH = path.join(__dirname, 'pipeline', 'worker.js')
 
 import { typeof WebSocket } from 'ws'
-import type { Message as StartPipelineMessage } from '../messages/start-pipeline'
+
+type Args = {
+	pipeline: string,
+	filepath: ?string,
+	data: string,
+}
 
 module.exports = class Job {
 	id: string
@@ -18,8 +23,8 @@ module.exports = class Job {
 	process: childProcess.ChildProcess
 	// pipeline
 
-	constructor(message: StartPipelineMessage) {
-		this.id = hashString(message.payload.data)
+	constructor(messagePayload: Args) {
+		this.id = hashString(messagePayload.data)
 		this.connectedClients = []
 		this.status = 'inactive'
 
@@ -30,7 +35,7 @@ module.exports = class Job {
 		this.process.on('error', this.handleWorkerError)
 		this.process.on('exit', this.handleWorkerExit)
 
-		this.process.send(message.payload)
+		this.process.send(messagePayload)
 	}
 
 	serialize = () => {
