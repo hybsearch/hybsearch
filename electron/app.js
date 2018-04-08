@@ -172,7 +172,7 @@ export class App extends React.Component<Props, State> {
 					{this.state.serverError ? (
 						<ErrorSection error={this.state.serverError} />
 					) : null}
-					{this.state.nonmonophyly ? (
+					{this.state.nonmonophyly.length ? (
 						<NonmonophylyListSection
 							nonmonophyly={this.state.nonmonophyly}
 						/>
