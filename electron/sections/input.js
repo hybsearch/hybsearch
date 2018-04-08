@@ -1,7 +1,11 @@
 // @flow
+/* globals SyntheticEvent, HTMLInputEvent */
 
+import fs from 'fs'
+import path from 'path'
 import * as React from 'react'
 import uniqueId from 'lodash/uniqueId'
+import getFiles from '../lib/get-files'
 
 import { List, ListItem } from './components/material'
 import { AppSection } from './components/app-section'
@@ -13,44 +17,225 @@ import { Select } from 'rmwc/Select'
 
 import { TabBar, Tab } from 'rmwc/Tabs'
 import { Typography } from 'rmwc/Typography'
-import { TabPanel } from './components/tab-panel'
 
-export const InputSection = () => (
-	<AppSection
-		title="Input"
-		expanded={true}
-		contentTopPadding={false}
-		content={
-			<React.Fragment>
-				<TabPanel
-					render={({ activeTabIndex, onTabChange }) => (
-						<React.Fragment>
-							<TabBar activeTabIndex={activeTabIndex} onChange={onTabChange}>
-								<Tab>Recent</Tab>
-								<Tab>GenBank</Tab>
-								<Tab>FASTA</Tab>
-								<Tab>Newick Tree</Tab>
-								<Tab>Newick (JSON)</Tab>
-							</TabBar>
+import type { Pipeline, Job } from '../servers'
 
-							{activeTabIndex === 0 ? <InputPanelRecent /> : null}
-							{activeTabIndex === 1 ? <InputPanelFileGenbank /> : null}
-							{activeTabIndex === 2 ? <InputPanelFileFasta /> : null}
-							{activeTabIndex === 3 ? <InputPanelStringNewickTree /> : null}
-							{activeTabIndex === 4 ? <InputPanelStringNewickJson /> : null}
-						</React.Fragment>
-					)}
-				/>
-			</React.Fragment>
+type Props = {
+	activeJobs: Array<Job>,
+	completedJobs: Array<Job>,
+	pipelines: Array<Pipeline>,
+	onSubmit: ({
+		pipeline: string,
+		fileName: string,
+		fileContents: string,
+	}) => any,
+	onChoose: ({ jobId: string }) => any,
+	shouldClose: boolean,
+}
+
+type TabName =
+	| 'Recent'
+	| 'GenBank'
+	| /* 'FASTA' | */ 'Newick Tree'
+	| 'Newick (JSON)'
+
+type State = {
+	activeTabIndex: number,
+	activeTabName: TabName,
+	newickJson: string,
+	newickTree: string,
+	selectedPipeline: string,
+	selectedFastaFile: string,
+	selectedGenbankFile: string,
+	selectedLocalFile: string,
+}
+
+export class InputSection extends React.Component<Props, State> {
+	tabs: Array<TabName> = [
+		'Recent',
+		'GenBank',
+		// 'FASTA',
+		'Newick Tree',
+		'Newick (JSON)',
+	]
+
+	state = {
+		activeTabIndex: 0,
+		activeTabName: this.tabs[0],
+		selectedPipeline:
+			this.props.pipelines && this.props.pipelines.length
+				? this.props.pipelines[0].name
+				: '',
+		selectedGenbankFile: '--local--',
+		selectedFastaFile: '--local--',
+		selectedLocalFile: '',
+		newickJson: '',
+		newickTree: '',
+	}
+
+	static getDerivedStateFromProps = (props: Props, prevState: State) => {
+		// this handles the changeover from the initial render, when
+		// there aren't any pipelines, so selectedPipeline is empty
+		if (
+			prevState.selectedPipeline === '' &&
+			props.pipelines &&
+			props.pipelines.length
+		) {
+			return { selectedPipeline: props.pipelines[0].name }
 		}
-		actions={[<CardAction key="start">Start</CardAction>]}
-	/>
-)
 
-const InputPanelRecent = () => {
+		return null
+	}
+
+	onTabChange = (ev: any) =>
+		this.setState(() => ({
+			activeTabIndex: ev.detail.activeTabIndex,
+			activeTabName: this.tabs[ev.detail.activeTabIndex],
+		}))
+
+	renderTabPanel = () => {
+		let { activeTabIndex, activeTabName } = this.state
+		let { onChoose, activeJobs, completedJobs, pipelines } = this.props
+
+		return (
+			<React.Fragment>
+				<TabBar
+					activeTabIndex={activeTabIndex}
+					onChange={this.onTabChange}
+				>
+					{this.tabs.map(name => <Tab key={name}>{name}</Tab>)}
+				</TabBar>
+
+				{activeTabName === 'Recent' ? (
+					<InputPanelRecent
+						onChoose={onChoose}
+						recent={activeJobs}
+						completed={completedJobs}
+					/>
+				) : activeTabName === 'GenBank' ? (
+					<InputPanelFile
+						pipelines={pipelines}
+						selectedPipeline={this.state.selectedPipeline}
+						onPipelineChange={this.storeSelectedPipeline}
+						fileFilter={({ filename }) => filename.endsWith('.gb')}
+						selectedFile={this.state.selectedGenbankFile}
+						onFileChange={this.storeSelectedGenbankFile}
+						onLocalFile={this.storeSelectedLocalFile}
+					/>
+				) : activeTabName === 'FASTA' ? (
+					<InputPanelFile
+						pipelines={pipelines}
+						selectedPipeline={this.state.selectedPipeline}
+						onPipelineChange={this.storeSelectedPipeline}
+						fileFilter={({ filename }) =>
+							filename.endsWith('.fasta')
+						}
+						selectedFile={this.state.selectedFastaFile}
+						onFileChange={this.storeSelectedFastaFile}
+						onLocalFile={this.storeSelectedLocalFile}
+					/>
+				) : activeTabName === 'Newick Tree' ? (
+					<InputPanelStringNewickTree
+						text={this.state.newickTree}
+						onChange={this.storeNewickTree}
+					/>
+				) : activeTabName === 'Newick (JSON)' ? (
+					<InputPanelStringNewickJson
+						text={this.state.newickJson}
+						onChange={this.storeNewickJson}
+					/>
+				) : (
+					((activeTabName: empty), null)
+				)}
+			</React.Fragment>
+		)
+	}
+
+	storeSelectedGenbankFile = (filePath: string) =>
+		this.setState(() => ({ selectedGenbankFile: filePath }))
+
+	storeSelectedFastaFile = (filePath: string) =>
+		this.setState(() => ({ selectedFastaFile: filePath }))
+
+	storeSelectedLocalFile = (filePath: string) =>
+		this.setState(() => ({ selectedLocalFile: filePath }))
+
+	storeSelectedPipeline = (pipelineName: string) =>
+		this.setState(() => ({ selectedPipeline: pipelineName }))
+
+	storeNewickTree = (text: string) =>
+		this.setState(() => ({ newickTree: text }))
+
+	storeNewickJson = (text: string) =>
+		this.setState(() => ({ newickJson: text }))
+
+	onSubmit = () => {
+		let {
+			selectedPipeline,
+			selectedFastaFile,
+			selectedGenbankFile,
+			selectedLocalFile,
+		} = this.state
+
+		let filePath =
+			selectedLocalFile || selectedGenbankFile || selectedFastaFile
+		let fileContents = fs.readFileSync(filePath, 'utf-8')
+
+		this.props.onSubmit({
+			pipeline: selectedPipeline,
+			fileName: path.basename(filePath),
+			fileContents: fileContents,
+		})
+	}
+
+	render() {
+		console.log(this.state)
+		let { shouldClose } = this.props
+		let { activeTabName } = this.state
+
+		let startAction = (
+			<CardAction onClick={this.onSubmit} key="start">
+				Start
+			</CardAction>
+		)
+
+		// we don't need the Start button on the recents list
+		let actions = activeTabName === 'Recent' ? [] : [startAction]
+
+		return (
+			<AppSection
+				title="Input"
+				expanded={!shouldClose}
+				contentTopPadding={false}
+				content={this.renderTabPanel()}
+				actions={actions}
+			/>
+		)
+	}
+}
+
+const InputPanelRecent = (props: {
+	recent: Array<Job>,
+	completed: Array<Job>,
+	onChoose: ({ jobId: string }) => any,
+}) => {
+	let { recent, completed, onChoose } = props
+
 	return (
 		<React.Fragment>
 			{/* <TextField box={true} withLeadingIcon="search" label="Search…" /> */}
+
+			<InputPanelRecentsList
+				title="Running"
+				jobs={recent}
+				onChoose={onChoose}
+			/>
+
+			<InputPanelRecentsList
+				title="Completed"
+				jobs={completed}
+				onChoose={onChoose}
+			/>
 
 			<React.Fragment>
 				<Typography use="subheading1" tag="h3">
@@ -64,82 +249,121 @@ const InputPanelRecent = () => {
 					/>
 				</List>
 			</React.Fragment>
-
-			<React.Fragment>
-				<Typography use="subheading1" tag="h3">
-					Completed
-				</Typography>
-				<List twoLine={true}>
-					<ListItem
-						text="kino.gb (314ab53)"
-						secondaryText="Yesterday – 7:00pm (23m)"
-						meta="info"
-					/>
-					<ListItem
-						text="kino.gb (5acd4fa)"
-						secondaryText="2018/04/02 – 6:59pm (5m)"
-						meta="info"
-					/>
-					<ListItem
-						text="trio.gb (76fbcda)"
-						secondaryText="2018/04/01 – 3:44am (16m)"
-						meta="info"
-					/>
-				</List>
-			</React.Fragment>
 		</React.Fragment>
 	)
 }
 
-class InputPanelFileGenbank extends React.Component<
-	{},
-	{
-		inputId: string,
-		selectedFile: string,
-		selectedPipeline: string,
+const InputPanelRecentsList = (props: {
+	jobs: Array<Job>,
+	onChoose: ({ jobId: string }) => any,
+	title: string,
+}) => {
+	let { jobs, onChoose, title } = props
+
+	if (!jobs || !jobs.length) {
+		return null
 	}
+
+	return (
+		<React.Fragment>
+			<Typography use="subheading1" tag="h3">
+				{title}
+			</Typography>
+			<List twoLine={true}>
+				{jobs
+					.filter(job => !job.hidden)
+					.map(job => (
+						<InputPanelItem
+							key={job.id}
+							job={job}
+							onChoose={onChoose}
+						/>
+					))}
+			</List>
+		</React.Fragment>
+	)
+}
+
+const InputPanelItem = (props: {
+	job: Job,
+	onChoose: ({ jobId: string }) => any,
+}) => {
+	let { job, onChoose } = props
+	return (
+		<ListItem
+			key={job.id}
+			text={job.name ? `${job.name} (${job.id})` : job.id}
+			secondaryText={new Date() - new Date(job.started)}
+			meta="info"
+			onClick={() => onChoose({ jobId: job.id })}
+		/>
+	)
+}
+
+type FileInputPanelProps = {
+	pipelines: Array<Pipeline>,
+	selectedFile: string,
+	selectedPipeline: string,
+	onPipelineChange: string => any,
+	onFileChange: string => any,
+	onLocalFile: string => any,
+	fileFilter: ({ filename: string, filepath: string }) => boolean,
+}
+
+type FileInputPanelState = {
+	inputId: string,
+	localFiles: Array<{ filename: string, filepath: string }>,
+}
+
+class InputPanelFile extends React.Component<
+	FileInputPanelProps,
+	FileInputPanelState
 > {
 	state = {
 		inputId: `file-input-${uniqueId()}`,
-		selectedFile: '',
-		selectedPipeline: '',
+		localFiles: getFiles().filter(this.props.fileFilter),
 	}
 
 	render() {
 		const { inputId } = this.state
+
 		return (
 			<React.Fragment>
 				<Select
-					box={true}
-					options={['BEAST', 'MrBayes', 'Newick']}
+					options={this.props.pipelines.map(p => p.name)}
 					label="Pipeline"
-					placeholder="— Select One —"
-					value={this.state.selectedPipeline}
+					value={this.props.selectedPipeline}
 					onChange={ev =>
-						this.setState(() => ({ selectedPipeline: ev.currentTarget.value }))
+						this.props.onPipelineChange(ev.currentTarget.value)
 					}
 				/>
 
 				<Select
-					box={true}
 					label="Data File"
-					placeholder="— Select One —"
-					value={this.state.selectedFile}
+					value={this.props.selectedFile}
 					onChange={ev =>
-						this.setState(() => ({ selectedFile: ev.currentTarget.value }))
+						this.props.onFileChange(ev.currentTarget.value)
 					}
 					options={[
-						'Local File',
-						'emydura-short.gb',
-						'emydura.gb',
-						'kino.gb',
-						'trio.gb',
+						{ value: '--local--', label: 'Local File' },
+						...this.state.localFiles.map(entry => ({
+							value: entry.filepath,
+							label: entry.filename,
+						})),
 					]}
 				/>
 
-				{this.state.selectedFile === 'Local File' ? (
+				{this.props.selectedFile === '--local--' ? (
 					<FormField>
-						<input type="file" id={inputId} />
+						<input
+							type="file"
+							id={inputId}
+							onChange={ev =>
+								this.props.onLocalFile(
+									ev.currentTarget.files[0].path
+								)
+							}
+						/>
 						<label htmlFor={inputId}>Select a File</label>
 					</FormField>
 				) : null}
@@ -148,15 +372,27 @@ class InputPanelFileGenbank extends React.Component<
 	}
 }
 
-const InputPanelFileFasta = InputPanelFileGenbank
+type TextInputPanelProps = {
+	text: string,
+	onChange: string => any,
+}
 
-class InputPanelStringNewickTree extends React.Component<{}, {}> {
+class InputPanelStringNewickTree extends React.Component<TextInputPanelProps> {
 	render() {
-		return <TextField textarea fullwidth label="Newick Tree" rows="8" />
+		return (
+			<TextField
+				textarea
+				fullwidth
+				label="Newick Tree (non-JSON)"
+				rows="8"
+				value={this.props.text}
+				onChange={ev => this.props.onChange(ev.currentTarget.value)}
+			/>
+		)
 	}
 }
 
-class InputPanelStringNewickJson extends React.Component<{}, {}> {
+class InputPanelStringNewickJson extends React.Component<TextInputPanelProps> {
 	render() {
 		return (
 			<TextField
@@ -164,6 +400,8 @@ class InputPanelStringNewickJson extends React.Component<{}, {}> {
 				fullwidth
 				label="Newick Tree (JSON format)"
 				rows="8"
+				value={this.props.text}
+				onChange={ev => this.props.onChange(ev.currentTarget.value)}
 			/>
 		)
 	}
