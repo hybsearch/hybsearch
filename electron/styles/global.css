@@ -14,3 +14,9 @@ body {
 pre {
 	font-family: Consolas, monospace;
 }
+
+.mdc-tab,
+.mdc-chip,
+.mdc-button {
+	-webkit-user-select: none;
+}

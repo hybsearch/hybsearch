@@ -172,6 +172,7 @@ export class App extends React.Component<Props, State> {
 					onReload={this.handleAppReload}
 					onServerChange={this.handleServerChange}
 					serverState={this.state.serverState}
+					serverUptime={this.state.uptime}
 					servers={SERVER_LIST}
 				/>
 

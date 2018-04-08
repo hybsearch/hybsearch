@@ -3,6 +3,10 @@
 	border-radius: 4px !important;
 }
 
+.server-selector .mdc-select__bottom-line {
+	display: none;
+}
+
 .server-status {
 	background-color: var(--mdc-theme-background) !important;
 }
