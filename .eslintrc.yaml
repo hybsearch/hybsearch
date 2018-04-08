@@ -48,3 +48,9 @@ rules:
 
   # Forbid use of `==` operator (use `===` instead)
   eqeqeq: error
+
+  # prettier handles this
+  no-mixed-spaces-and-tabs: off
+
+  # this annoys me when it's an error
+  no-unused-vars: warn
