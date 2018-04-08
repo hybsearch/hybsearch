@@ -95,7 +95,18 @@ export class App extends React.Component<Props, State> {
 	}
 
 	handleServerChange = async (newServerAddress: string) => {
-		this.state.server && this.state.server.destroy()
+		if (this.state.server) {
+			this.state.server.destroy()
+
+			this.setState(() => ({
+				serverState: 'down',
+				pipelines: [],
+				uptime: null,
+				activeJobs: [],
+				completedJobs: [],
+				server: null,
+			}))
+		}
 
 		let server = new Server(newServerAddress)
 
@@ -111,7 +122,12 @@ export class App extends React.Component<Props, State> {
 		server.onJobUpdate(this.handleStage)
 
 		// now fetch a bunch of stuff in parallel
-		let [pipelines, uptime, activeJobs, completedJobs] = await Promise.all([
+		let [
+			{ pipelines },
+			{ uptime },
+			{ jobs: activeJobs },
+			{ jobs: completedJobs },
+		] = await Promise.all([
 			server.getPipelines(),
 			server.getUptime(),
 			server.getActiveJobs(),
@@ -120,6 +136,7 @@ export class App extends React.Component<Props, State> {
 
 		// stick everything into state
 		this.setState(() => ({
+			serverState: 'up',
 			pipelines,
 			uptime,
 			activeJobs,
