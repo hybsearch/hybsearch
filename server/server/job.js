@@ -6,6 +6,8 @@ const path = require('path')
 const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
 const pipelines = require('./pipelines')
+const flatten = require('lodash/flatten')
+const uniq = require('lodash/uniq')
 
 const WORKER_PATH = path.join(__dirname, 'worker', 'index.wrapper.js')
 
@@ -18,12 +20,15 @@ type Args = {
 	data: string,
 }
 
+type WorkerMessage = { payload: any, type: string }
+
 module.exports = class Job {
 	id: string
 	connectedClients: Array<{ socket: WebSocket, id: string }>
 	status: 'inactive' | 'active' | 'completed' | 'error'
 	process: childProcess.ChildProcess
 	pipeline: SerializedPipelineRecord
+	messages: Array<WorkerMessage>
 
 	constructor(messagePayload: Args) {
 		this.id = hashString(messagePayload.data)
@@ -46,6 +51,10 @@ module.exports = class Job {
 		this.process.send(messagePayload)
 	}
 
+	stages = () => {
+		return uniq(flatten(this.pipeline.pipeline.map(stage => stage.output)))
+	}
+
 	serialize = () => {
 		return JSON.stringify({
 			id: this.id,
@@ -55,7 +64,13 @@ module.exports = class Job {
 	}
 
 	addClient = (client: WebSocket, clientId: string) => {
-		return [...this.connectedClients, { socket: client, id: clientId }]
+		this.connectedClients = [
+			...this.connectedClients,
+			{ socket: client, id: clientId },
+		]
+
+		// catch the new client up with the old messages
+		this.messages.forEach(msg => client.send(JSON.stringify(msg)))
 	}
 
 	hasClient = (clientId: string): boolean => {
@@ -68,14 +83,17 @@ module.exports = class Job {
 		)
 	}
 
-	messageClients = (message: mixed) => {
+	messageClients = (message: WorkerMessage) => {
 		let stringified = JSON.stringify(message)
 		this.connectedClients.forEach(client => client.socket.send(stringified))
 	}
 
-	handleMessage = (message: { [key: string]: any, type: string }) => {
+	handleMessage = (message: WorkerMessage) => {
 		// The 'message' event is triggered when a child process uses
 		// process.send() to send messages.
+
+		// store the message locally so we can replay to new clients
+		this.messages.push(message)
 
 		// log it
 		console.log('<', message)

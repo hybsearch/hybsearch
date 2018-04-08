@@ -25,7 +25,7 @@ function watchPipeline({
 	}
 
 	job.addClient(client, client.ipAddr)
-	respond({ exists: true, jobId: job.id })
+	respond({ exists: true, jobId: job.id, stages: job.stages })
 }
 
 module.exports = watchPipeline

@@ -12,8 +12,18 @@ export const SERVER_LIST = [
 	{ label: 'localhost (dev)', value: 'ws://localhost:8080' },
 ]
 
-export type Pipeline = {}
-export type Stage = {}
+export type Pipeline = {
+	name: string,
+	pipeline: Array<Stage>,
+}
+
+export type Stage = {
+	key: string,
+	value?: string,
+	cached?: boolean,
+	timeTaken?: number,
+}
+
 export type Job = {}
 
 export class Server {
@@ -21,31 +31,26 @@ export class Server {
 	socket: ?WebSocket = null
 	emitter: Emittery = new Emittery()
 
-	activePipeline: ?Pipeline = null
-	stages: Array<Stage> = []
+	pipeline: ?Pipeline = null
 
 	constructor(url: string) {
 		this.url = url
 		this.socket = new WebSocket(this.url)
 
-		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('message', this.socketMessage)
-		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('disconnect', this.socketDisconnect)
-		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('error', this.socketError)
-		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('exit', this.socketExit)
+		let socket = (this.socket: any)
+		socket.addEventListener('message', this.handleMessage)
+		socket.addEventListener('disconnect', this.handleDisconnect)
+		socket.addEventListener('error', this.handleError)
+		socket.addEventListener('exit', this.handleExit)
 
 		this.emitter.onAny(console.info.bind(console, `server: ${url}`))
 	}
 
 	onReady = (listener: Server => any) => {
-		// $FlowExpectedError Cannot call this.socket.addEventListener
-		return this.socket.addEventListener('open', () => listener(this))
+		return (this.socket: any).addEventListener('open', () => listener(this))
 	}
 
-	socketMessage = ({ data }: MessageEvent) => {
+	handleMessage = ({ data }: MessageEvent) => {
 		if (typeof data !== 'string') {
 			return
 		}
@@ -59,11 +64,11 @@ export class Server {
 		}
 	}
 
-	socketDisconnect = () => {
+	handleDisconnect = () => {
 		this.emitter.emit('exit')
 	}
 
-	socketError = (err: Error) => {
+	handleError = (err: Error) => {
 		if (!err) {
 			return
 		}
@@ -71,11 +76,11 @@ export class Server {
 		this.emitter.emit('error', err)
 	}
 
-	socketExit = () => {
+	handleExit = () => {
 		this.emitter.emit('exit')
 	}
 
-	socketSend = (packet: { type: string }) => {
+	_send = (packet: { type: string }) => {
 		if (!this.socket) {
 			return
 		}
@@ -87,44 +92,44 @@ export class Server {
 		this.socket.send(JSON.stringify(packet))
 	}
 
-	socketSendPromise = (packet: { type: string }) => {
+	send = (packet: { type: string }) => {
 		let id = uuid()
 
 		// $FlowExpectedError Missing type annotation for R.
 		let promise = new Promise(resolve =>
-			this.emitter.once(`response-to-${id}`, resolve)
+			this.emitter.once(`resp-${id}`, resolve)
 		)
 
 		// send the request
-		this.socketSend(Object.assign({}, packet, { requestId: id }))
+		this._send(Object.assign({}, packet, { requestId: id }))
 
 		return promise
 	}
 
 	getPipelines = (): Promise<Array<Pipeline>> => {
-		return this.socketSendPromise({ type: 'pipeline-list' })
+		return this.send({ type: 'pipeline-list' })
 	}
 
 	getUptime = (): Promise<number> => {
-		return this.socketSendPromise({ type: 'uptime' })
+		return this.send({ type: 'uptime' })
 	}
 
 	getActiveJobs = (): Promise<Array<Job>> => {
-		return this.socketSendPromise({ type: 'active-jobs' })
+		return this.send({ type: 'active-jobs' })
 	}
 
 	getCompletedJobs = (): Promise<Array<Job>> => {
-		return this.socketSendPromise({ type: 'completed-jobs' })
+		return this.send({ type: 'completed-jobs' })
 	}
 
 	submitJob = (args: {
 		pipeline: string,
 		fileName: string,
 		fileContents: string,
-	}): Promise<{ stages: Array<Stage>, jobId: string }> => {
+	}): Promise<{ stages: Array<string>, jobId: string }> => {
 		const { pipeline, fileName, fileContents } = args
 
-		return this.socketSendPromise({
+		return this.send({
 			type: 'start-pipeline',
 			payload: {
 				pipeline: pipeline,
@@ -136,10 +141,10 @@ export class Server {
 
 	watchJob = (args: {
 		jobId: string,
-	}): Promise<{ stages: Array<Stage>, jobId: string }> => {
+	}): Promise<{ stages: Array<string>, jobId: string }> => {
 		const { jobId } = args
 
-		return this.socketSendPromise({
+		return this.send({
 			type: 'watch-pipeline',
 			payload: { jobId: jobId },
 		})
@@ -148,16 +153,13 @@ export class Server {
 	destroy = () => {
 		this.emitter.clearListeners()
 
-		let s = this.socket
-
-		// $FlowExpectedError Cannot call this.socket.removeEventListener
-		s && s.removeEventListener('message', this.socketMessage)
-		// $FlowExpectedError Cannot call this.socket.removeEventListener
-		s && s.removeEventListener('disconnect', this.socketDisconnect)
-		// $FlowExpectedError Cannot call this.socket.removeEventListener
-		s && s.removeEventListener('error', this.socketError)
-		// $FlowExpectedError Cannot call this.socket.removeEventListener
-		s && s.removeEventListener('exit', this.socketExit)
+		if (this.socket) {
+			let s = (this.socket: any)
+			s.removeEventListener('message', this.handleMessage)
+			s.removeEventListener('disconnect', this.handleDisconnect)
+			s.removeEventListener('error', this.handleError)
+			s.removeEventListener('exit', this.handleExit)
+		}
 
 		this.socket = null
 	}
@@ -173,13 +175,7 @@ export class Server {
 		this.emitter.on('exit', () => listener('down'))
 	}
 
-	onJobUpdate = (
-		listener: ({
-			jobId: string,
-			changedStage: Stage,
-			changedStageIndex: number,
-		}) => any
-	) => {
+	onJobUpdate = (listener: Stage => any) => {
 		this.emitter.on('stage-start', listener)
 		this.emitter.on('stage-complete', listener)
 		this.emitter.on('stage-error', listener)

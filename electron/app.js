@@ -30,7 +30,7 @@ type State = {
 	nonmonophyly: Array<NonMonoPair>,
 	newick: any,
 	pipelines: Array<Pipeline>,
-	stages: ?Array<Stage>,
+	stages: ?Map<string, Stage>,
 	pipeline: ?Pipeline,
 	uptime: ?number,
 	activeJobs: Array<Job>,
@@ -75,26 +75,22 @@ export class App extends React.Component<Props, State> {
 		this.setState(() => ({ serverError: error }))
 	}
 
-	handleJob = ({
-		stages,
-		jobId,
-	}: {
-		stages: Array<Stage>,
-		jobId: string,
-	}) => {
-		this.setState(() => ({ jobId, stages, running: true }))
+	handleJob = (args: { stages: Array<string>, jobId: string }) => {
+		let { stages: stageNames, jobId } = args
+
+		let stages = new Map()
+		stageNames.forEach(name => stages.set(name, { key: name }))
+
+		this.setState(() => ({ jobId, running: true, stages: stages }))
 	}
 
-	handleStage = (args: {
-		changedStage: Stage,
-		changedStageIndex: number,
-	}) => {
-		let { changedStage, changedStageIndex } = args
+	handleStage = (stage: Stage) => {
+		let { key, value, timeTaken, cached } = stage
 
 		this.setState(state => {
-			let editedStages = [...(state.stages || [])]
-			editedStages[changedStageIndex] = changedStage
-			return { stages: editedStages }
+			let stages = new Map(state.stages)
+			stages.set(key, { key, value, timeTaken, cached })
+			return { stages: stages }
 		})
 	}
 
@@ -107,6 +103,11 @@ export class App extends React.Component<Props, State> {
 	}
 
 	setupNewServer = async (server: Server) => {
+		// hook up the listeners
+		server.onError(this.handleServerError)
+		server.onUpOrDown(this.receiveServerOnUpOrDown)
+		server.onJobUpdate(this.handleStage)
+
 		// now fetch a bunch of stuff in parallel
 		let [pipelines, uptime, activeJobs, completedJobs] = await Promise.all([
 			server.getPipelines(),
@@ -115,24 +116,7 @@ export class App extends React.Component<Props, State> {
 			server.getCompletedJobs(),
 		])
 
-		/////
-
-		server.onError(this.handleServerError)
-		server.onUpOrDown(this.receiveServerOnUpOrDown)
-		server.onJobUpdate(this.handleStage)
-
-		// server
-		// 	.submitJob({ pipeline: 'beast', fileName: '', fileContents: '' })
-		// 	.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
-		//
-		// server
-		// 	.watchJob({ jobId: 'f45d3a1' })
-		// 	.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
-
-		// server.onJobUpdate(({ jobId, changedStage, changedStageIndex }) =>
-		// 	this.handleStage({ jobId, changedStage, changedStageIndex })
-		// )
-
+		// stick everything into state
 		this.setState(() => ({
 			pipelines,
 			uptime,

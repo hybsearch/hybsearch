@@ -38,16 +38,17 @@ export const AppToolbar = (props: Props) => {
 					options={servers}
 					onChange={ev => onServerChange(ev.currentTarget.value)}
 					label="Server"
+					className="server-selector"
 				/>
 
 				<ChipSet>
 					{serverState === 'up' ? (
-						<Chip>
+						<Chip className="server-status">
 							<ChipIcon leading use="cloud" />
 							<ChipText>Up{/* (3 days)*/}</ChipText>
 						</Chip>
 					) : (
-						<Chip>
+						<Chip className="server-status">
 							<ChipIcon leading use="cloud_off" />
 							<ChipText>Down</ChipText>
 						</Chip>

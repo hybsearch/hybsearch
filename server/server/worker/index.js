@@ -16,13 +16,12 @@ const sendData = msg => (process: any).send(msg)
 const send = process.send ? sendData : logData
 
 const error = e => send({ type: 'error', payload: e })
-const stageComplete = ({ stage, result, timeTaken, cached }) =>
+const stageComplete = ({ key, value, timeTaken, cached }) =>
 	send({
 		type: 'stage-complete',
-		payload: { stage, result, timeTaken, cached },
+		payload: { key, value, timeTaken, cached },
 	})
-const stageStart = ({ stage }) =>
-	send({ type: 'stage-start', payload: { stage } })
+const stageStart = ({ key }) => send({ type: 'stage-start', payload: { key } })
 
 const now = () => {
 	let time = process.hrtime()
@@ -60,7 +59,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 		let pipeline = PIPELINES[pipelineName]
 
 		for (let step of pipeline) {
-			step.output.forEach(key => stageStart({ stage: key }))
+			step.output.forEach(key => stageStart({ key }))
 
 			let inputs = step.input.map(key => cache.get(key))
 			let outputs = step.output.map(key => [key, cache.get(key)])
@@ -72,8 +71,8 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 				outputs.forEach(([key, value]) => {
 					cache.set(key, value)
 					stageComplete({
-						stage: key,
-						result: value,
+						key,
+						value,
 						timeTaken: now() - start,
 						cached: true,
 					})
@@ -91,8 +90,8 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 
 				// send the results over the bridge
 				stageComplete({
-					stage: key,
-					result,
+					key,
+					value: result,
 					timeTaken: now() - start,
 					cached: false,
 				})

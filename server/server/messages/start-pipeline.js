@@ -17,7 +17,8 @@ export type Message = {|
 function startPipeline({ message, respond, allJobs }: HandlerArgs<Message>) {
 	let job = new Job(message.payload)
 	allJobs.set(job.id, job)
-	respond({ jobId: job.id })
+
+	respond({ jobId: job.id, stages: job.stages() })
 }
 
 module.exports = startPipeline

@@ -5,8 +5,9 @@ import * as React from 'react'
 import { ChipSet, Chip, ChipIcon, ChipText } from 'rmwc/Chip'
 import { Typography } from 'rmwc/Typography'
 import { AppSection } from './components/app-section'
+import { type Stage } from '../servers'
 
-export const ProgressSection = ({ stages }: { stages: Array<any> }) => (
+export const ProgressSection = ({ stages }: { stages: Map<string, Stage> }) => (
 	<AppSection
 		title={
 			<React.Fragment>
