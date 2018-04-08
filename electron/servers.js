@@ -145,7 +145,7 @@ export class Server {
 
 	watchJob = (args: {
 		jobId: string,
-	}): Promise<{ stages: Array<string>, jobId: string }> => {
+	}): Promise<{ exists: boolean, stages: Array<string>, jobId: string }> => {
 		const { jobId } = args
 
 		return this.send({
