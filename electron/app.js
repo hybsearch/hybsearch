@@ -103,6 +103,8 @@ export class App extends React.Component<Props, State> {
 	}
 
 	setupNewServer = async (server: Server) => {
+		this.setState(() => ({ serverState: 'up' }))
+
 		// hook up the listeners
 		server.onError(this.handleServerError)
 		server.onUpOrDown(this.receiveServerOnUpOrDown)
