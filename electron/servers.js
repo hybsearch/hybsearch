@@ -150,6 +150,17 @@ export class Server {
 		})
 	}
 
+	cancelJob = (args: {
+		jobId: string,
+	}): Promise<{ exists: boolean, cancelled: boolean, jobId: string }> => {
+		const { jobId } = args
+
+		return this.send({
+			type: 'cancel-pipeline',
+			payload: { jobId: jobId },
+		})
+	}
+
 	destroy = () => {
 		this.emitter.clearListeners()
 
