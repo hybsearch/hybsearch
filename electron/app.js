@@ -178,9 +178,12 @@ export class App extends React.Component<Props, State> {
 
 				<Content>
 					<InputSection
+						activeJobs={this.state.activeJobs}
+						completedJobs={this.state.completedJobs}
 						onSubmit={this.handleAppPipelineStart}
 						onChoose={this.handleAppPipelineWatch}
 						shouldClose={this.state.running}
+						pipelines={this.state.pipelines}
 					/>
 
 					{this.state.stages ? (
