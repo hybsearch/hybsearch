@@ -2,6 +2,7 @@
 
 import Emittery from 'emittery'
 import uuid from 'uuid/v4'
+import isDev from 'electron-is-dev'
 
 export type ServerStateEnum = 'up' | 'down'
 
@@ -11,6 +12,9 @@ export const SERVER_LIST = [
 	{ label: 'gpu.CS', value: 'ws://gpu.cs.stolaf.edu:8080' },
 	{ label: 'localhost (dev)', value: 'ws://localhost:8080' },
 ]
+if (isDev) {
+	SERVER_LIST.reverse()
+}
 
 export type Pipeline = {
 	name: string,
