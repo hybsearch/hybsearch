@@ -1,3 +1,4 @@
+// @flow
 'use strict'
 
 const hashString = require('../lib/hash-string')
@@ -6,8 +7,19 @@ const fs = require('fs')
 const path = require('path')
 const mkdir = require('make-dir')
 
+type Args = {
+	filepath: string,
+	contents: string,
+}
+
 class Cache {
-	constructor({ filepath, contents }) {
+	filepath: string
+	data: string
+	memcache: Map<string, string>
+	cacheDir: string
+	_dataHash: string
+
+	constructor({ filepath, contents }: Args) {
 		this.filepath = filepath
 		this.data = contents
 
@@ -19,27 +31,29 @@ class Cache {
 			this.cacheDir = mkdir.sync('/tmp/hybsearch')
 		}
 
-		this.hashKey = this.hashKey.bind(this)
-		this.get = this.get.bind(this)
-		this.set = this.set.bind(this)
-		this._dataHash = hashString(this.data)
+		// attach instance methods
+		let self = (this: any)
+		self.hashKey = this.hashKey.bind(this)
+		self.get = this.get.bind(this)
+		self.set = this.set.bind(this)
+		self._dataHash = hashString(this.data)
 
 		this.set('source', { filepath: this.filepath, contents: this.data })
 	}
 
-	hashKey(key) {
+	hashKey(key: string) {
 		return hashString(`${key}:${this._dataHash}`)
 	}
 
-	diskFilename(hashedKey) {
+	diskFilename(hashedKey: string) {
 		return path.join(this.cacheDir, hashedKey)
 	}
 
 	get(key) {
 		key = this.hashKey(key)
 
-		if (this.memcache.has(key)) {
-			let value = this.memcache.get(key)
+		let value = this.memcache.get(key)
+		if (value !== undefined) {
 			return JSON.parse(value)
 		}
 
@@ -55,7 +69,7 @@ class Cache {
 		}
 	}
 
-	set(key, value) {
+	set(key: string, value: mixed) {
 		key = this.hashKey(key)
 		let serialized = JSON.stringify(value)
 		this.memcache.set(key, serialized)
