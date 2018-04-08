@@ -1,3 +1,5 @@
+// @flow
+
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -26,13 +28,16 @@ type State = {
 	server: ?Server,
 	serverState: ServerStateEnum,
 	nonmonophyly: Array<NonMonoPair>,
-	serverPipelines: Array<Pipeline>,
+	newick: any,
+	pipelines: Array<Pipeline>,
 	stages: ?Array<Stage>,
 	pipeline: ?Pipeline,
-	serverUptime: ?number,
+	uptime: ?number,
 	activeJobs: Array<Job>,
 	completedJobs: Array<Job>,
 	serverError: ?string,
+	jobId: ?string,
+	running: boolean,
 }
 
 export class App extends React.Component<Props, State> {
@@ -40,110 +45,101 @@ export class App extends React.Component<Props, State> {
 		server: null,
 		serverState: 'down',
 		nonmonophyly: [],
-		serverPipelines: [],
+		pipelines: [],
 		serverError: null,
 		stages: null,
 		pipeline: null,
-		serverUptime: null,
+		uptime: null,
 		activeJobs: [],
 		completedJobs: [],
+		jobId: null,
+		newick: null,
+		running: false,
 	}
+
+	componentDidMount() {
+		this.handleServerChange(SERVER_LIST[0].value)
+	}
+
+	// TODO: how to extract nonmonophyly / newick data into named keys
 
 	handleAppReload = () => {
 		window.location.reload()
 	}
 
-	receiveServerOnUpOrDown = (isUp: boolean) => {
-		this.setState(() => ({ serverState: isUp ? 'up' : 'down' }))
+	receiveServerOnUpOrDown = (status: 'up' | 'down') => {
+		this.setState(() => ({ serverState: status }))
 	}
 
-	receiveServerPipelines = (pipelines: Array<Pipeline>) => {
-		this.setState(() => ({ serverPipelines: pipelines }))
-	}
-
-	receiveServerStages = (pipeline: Pipeline, stages: Array<Stage>) => {
-		this.setState(() => ({ stages: stages, pipeline: pipeline }))
-	}
-
-	receiveServerStageStateChange = (
-		stages: Array<Stage>,
-		changedStage: string
-	) => {
-		this.setState(() => ({ stages: stages }))
-
-		if (changedStage === 'nonmonophyletic-sequences') {
-		}
-	}
-
-	receiveServerUptime = (uptime: number) => {
-		this.setState(() => ({ serverUptime: uptime }))
-	}
-
-	receiveServerOngoingJobs = (ongoing: Array<Job>) => {
-		this.setState(() => ({ activeJobs: ongoing }))
-	}
-
-	receiveServerCompletedJobs = (completed: Array<Job>) => {
-		this.setState(() => ({ completedJobs: completed }))
-	}
-
-	receiveServerError = ({ error }: { error: string }) => {
+	handleServerError = ({ error }: { error: string }) => {
 		this.setState(() => ({ serverError: error }))
 	}
 
-	receiveNonmonophyleticSequences = ({
-		nonmonophyly,
+	handleJob = ({
+		stages,
+		jobId,
 	}: {
-		nonmonophyly: Array<NonMonoPair>,
+		stages: Array<Stage>,
+		jobId: string,
 	}) => {
-		this.setState(() => ({ nonmonophyly: nonmonophyly }))
+		this.setState(() => ({ jobId, stages, running: true }))
 	}
 
-	handleServerChange = (newServerAddress: string) => {
+	handleStage = (args: {
+		changedStage: Stage,
+		changedStageIndex: number,
+	}) => {
+		let { changedStage, changedStageIndex } = args
+
+		this.setState(state => {
+			let editedStages = [...(state.stages || [])]
+			editedStages[changedStageIndex] = changedStage
+			return { stages: editedStages }
+		})
+	}
+
+	handleServerChange = async (newServerAddress: string) => {
 		this.state.server && this.state.server.destroy()
 
 		let server = new Server(newServerAddress)
-		;async () => {
-			let pipes = await server.getPipelines()
-			let uptime = await server.getUptime()
 
-			let activeJobs = await server.getActiveJobs()
-			let completedJobs = await server.getCompletedJobs()
+		server.onReady(this.setupNewServer)
+	}
 
-			server.listen('error', this.handleServerError)
+	setupNewServer = async (server: Server) => {
+		// now fetch a bunch of stuff in parallel
+		let [pipelines, uptime, activeJobs, completedJobs] = await Promise.all([
+			server.getPipelines(),
+			server.getUptime(),
+			server.getActiveJobs(),
+			server.getCompletedJobs(),
+		])
 
-			// server.listen('stage-start', this.handleStageStart)
-			// server.listen('stage-end', this.handleStageEnd)
-			// server.listen('stage-error', this.handleStageError)
+		/////
 
-			// server.listen('job-start', ({stages}) => this.handleJobStart())
+		server.onError(this.handleServerError)
+		server.onUpOrDown(this.receiveServerOnUpOrDown)
+		server.onJobUpdate(this.handleStage)
 
-			/////
+		// server
+		// 	.submitJob({ pipeline: 'beast', fileName: '', fileContents: '' })
+		// 	.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
+		//
+		// server
+		// 	.watchJob({ jobId: 'f45d3a1' })
+		// 	.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
 
-			server
-				.submitJob({ pipeline: 'beast' })
-				.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
+		// server.onJobUpdate(({ jobId, changedStage, changedStageIndex }) =>
+		// 	this.handleStage({ jobId, changedStage, changedStageIndex })
+		// )
 
-			server
-				.watchJob({ jobId: 'f45d3a1' })
-				.then(({ stages, jobId }) => this.handleJob({ stages, jobId }))
-
-			server.onJobUpdate(({ jobId, changedStage, changedStageIndex }) =>
-				this.handleStage({ jobId, changedStage, changedStageIndex })
-			)
-		}
-
-		server.onError(this.receiveServerError)
-		// server.onUpOrDown(this.receiveServerOnUpOrDown)
-		// server.onListPipelines(this.receiveServerPipelines)
-		// server.onListStages(this.receiveServerStages)
-		server.onStageStateChange(this.receiveServerStageStateChange)
-		// server.onUptime(this.receiveServerUptime)
-		// server.onOngoingJobs(this.receiveServerOngoingJobs)
-		// server.onCompletedJobs(this.receiveServerCompletedJobs)
-		// server.onNonmonophyleticSequences(this.receiveNonmonophyleticSequences)
-
-		this.setState(() => ({ server: server }))
+		this.setState(() => ({
+			pipelines,
+			uptime,
+			activeJobs,
+			completedJobs,
+			server,
+		}))
 	}
 
 	handleAppPipelineStart = (args: {
@@ -155,7 +151,15 @@ export class App extends React.Component<Props, State> {
 			return
 		}
 
-		this.state.server.submitJob(args)
+		this.state.server.submitJob(args).then(this.handleJob)
+	}
+
+	handleAppPipelineWatch = (args: { jobId: string }) => {
+		if (!this.state.server) {
+			return
+		}
+
+		this.state.server.watchJob(args).then(this.handleJob)
 	}
 
 	render() {
@@ -169,15 +173,27 @@ export class App extends React.Component<Props, State> {
 				/>
 
 				<Content>
-					<InputSection onStart={this.handleAppPipelineStart} />
-					<ProgressSection stages={this.state.stages} />
-					<React.Fragment>
-						{this.state.serverError ? (
-							<ErrorSection error={this.state.serverError} />
-						) : null}
-						<NonmonophylyListSection nonmonophyly={this.state.nonmonophyly} />
-						<PhylogramSection />
-					</React.Fragment>
+					<InputSection
+						onSubmit={this.handleAppPipelineStart}
+						onChoose={this.handleAppPipelineWatch}
+						shouldClose={this.state.running}
+					/>
+
+					{this.state.stages ? (
+						<ProgressSection stages={this.state.stages} />
+					) : null}
+
+					{this.state.serverError ? (
+						<ErrorSection error={this.state.serverError} />
+					) : null}
+					{this.state.nonmonophyly ? (
+						<NonmonophylyListSection
+							nonmonophyly={this.state.nonmonophyly}
+						/>
+					) : null}
+					{this.state.newick ? (
+						<PhylogramSection newickData={this.state.newick} />
+					) : null}
 				</Content>
 			</React.Fragment>
 		)

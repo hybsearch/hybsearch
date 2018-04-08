@@ -1,6 +1,7 @@
 // @flow
 
 import Emittery from 'emittery'
+import uuid from 'uuid/v4'
 
 export type ServerStateEnum = 'up' | 'down'
 
@@ -28,18 +29,23 @@ export class Server {
 		this.socket = new WebSocket(this.url)
 
 		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('message', this._socketMessage)
+		this.socket.addEventListener('message', this.socketMessage)
 		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('disconnect', this._socketDisconnect)
+		this.socket.addEventListener('disconnect', this.socketDisconnect)
 		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('error', this._socketError)
+		this.socket.addEventListener('error', this.socketError)
 		// $FlowExpectedError Cannot call this.socket.addEventListener
-		this.socket.addEventListener('exit', this._socketExit)
+		this.socket.addEventListener('exit', this.socketExit)
 
 		this.emitter.onAny(console.info.bind(console, `server: ${url}`))
 	}
 
-	_socketMessage = ({ data }: MessageEvent) => {
+	onReady = (listener: Server => any) => {
+		// $FlowExpectedError Cannot call this.socket.addEventListener
+		return this.socket.addEventListener('open', () => listener(this))
+	}
+
+	socketMessage = ({ data }: MessageEvent) => {
 		if (typeof data !== 'string') {
 			return
 		}
@@ -47,31 +53,17 @@ export class Server {
 		let parsed = JSON.parse(data)
 		try {
 			let payload = JSON.parse(parsed.payload)
-			switch (parsed.type) {
-				case 'stage-start':
-				case 'stage-end':
-				case 'stage-error': {
-					this._updateStages(parsed.type, payload)
-					break
-				}
-				case 'ready': {
-					this._requestPipelineList()
-					break
-				}
-				default: {
-					this.emitter.emit(parsed.type, payload)
-				}
-			}
+			this.emitter.emit(parsed.type, payload)
 		} catch (err) {
 			this.emitter.emit('error', { error: err.message })
 		}
 	}
 
-	_socketDisconnect = () => {
+	socketDisconnect = () => {
 		this.emitter.emit('exit')
 	}
 
-	_socketError = (err: Error) => {
+	socketError = (err: Error) => {
 		if (!err) {
 			return
 		}
@@ -79,11 +71,11 @@ export class Server {
 		this.emitter.emit('error', err)
 	}
 
-	_socketExit = () => {
+	socketExit = () => {
 		this.emitter.emit('exit')
 	}
 
-	_socketSend = (packet: { type: string }) => {
+	socketSend = (packet: { type: string }) => {
 		if (!this.socket) {
 			return
 		}
@@ -95,37 +87,78 @@ export class Server {
 		this.socket.send(JSON.stringify(packet))
 	}
 
-	_requestPipelineList = () => {
-		this._socketSend({ type: 'pipeline-list' })
+	socketSendPromise = (packet: { type: string }) => {
+		let id = uuid()
+
+		// $FlowExpectedError Missing type annotation for R.
+		let promise = new Promise(resolve =>
+			this.emitter.once(`response-to-${id}`, resolve)
+		)
+
+		// send the request
+		this.socketSend(Object.assign({}, packet, { requestId: id }))
+
+		return promise
 	}
 
-	_requestStepsForPipeline = (pipeline: string) => {
-		this._socketSend({ type: 'pipeline-steps', pipeline: pipeline })
+	getPipelines = (): Promise<Array<Pipeline>> => {
+		return this.socketSendPromise({ type: 'pipeline-list' })
 	}
 
-	_updateStages = (event: string, updatedStage: Stage) => {
-		this.stages[0] = updatedStage
-		this.emitter.emit(event, this.stages)
+	getUptime = (): Promise<number> => {
+		return this.socketSendPromise({ type: 'uptime' })
+	}
+
+	getActiveJobs = (): Promise<Array<Job>> => {
+		return this.socketSendPromise({ type: 'active-jobs' })
+	}
+
+	getCompletedJobs = (): Promise<Array<Job>> => {
+		return this.socketSendPromise({ type: 'completed-jobs' })
 	}
 
 	submitJob = (args: {
 		pipeline: string,
 		fileName: string,
 		fileContents: string,
-	}) => {
+	}): Promise<{ stages: Array<Stage>, jobId: string }> => {
 		const { pipeline, fileName, fileContents } = args
-		this._socketSend({
-			type: 'start',
-			pipeline,
-			filepath: fileName,
-			data: fileContents,
+
+		return this.socketSendPromise({
+			type: 'start-pipeline',
+			payload: {
+				pipeline: pipeline,
+				filepath: fileName,
+				data: fileContents,
+			},
+		})
+	}
+
+	watchJob = (args: {
+		jobId: string,
+	}): Promise<{ stages: Array<Stage>, jobId: string }> => {
+		const { jobId } = args
+
+		return this.socketSendPromise({
+			type: 'watch-pipeline',
+			payload: { jobId: jobId },
 		})
 	}
 
 	destroy = () => {
 		this.emitter.clearListeners()
+
+		let s = this.socket
+
 		// $FlowExpectedError Cannot call this.socket.removeEventListener
-		this.socket && this.socket.removeEventListener('message', this._dispatch)
+		s && s.removeEventListener('message', this.socketMessage)
+		// $FlowExpectedError Cannot call this.socket.removeEventListener
+		s && s.removeEventListener('disconnect', this.socketDisconnect)
+		// $FlowExpectedError Cannot call this.socket.removeEventListener
+		s && s.removeEventListener('error', this.socketError)
+		// $FlowExpectedError Cannot call this.socket.removeEventListener
+		s && s.removeEventListener('exit', this.socketExit)
+
 		this.socket = null
 	}
 
@@ -133,34 +166,22 @@ export class Server {
 		this.emitter.on('error', listener)
 	}
 
-	onUpOrDown = (listener: boolean => any) => {
-		this.emitter.on('up', listener)
-		this.emitter.on('down', listener)
+	onUpOrDown = (listener: ('up' | 'down') => any) => {
+		this.emitter.on('up', () => listener('up'))
+		this.emitter.on('ready', () => listener('up'))
+		this.emitter.on('down', () => listener('down'))
+		this.emitter.on('exit', () => listener('down'))
 	}
 
-	onListPipelines = (listener: (Array<Pipeline>) => any) => {
-		this.emitter.on('list-pipelines', listener)
-	}
-
-	onListStages = (listener: (Pipeline, Array<Stage>) => any) => {
-		this.emitter.on('list-stages', listener)
-	}
-
-	onStageStateChange = (listener: (Array<Stage>) => any) => {
+	onJobUpdate = (
+		listener: ({
+			jobId: string,
+			changedStage: Stage,
+			changedStageIndex: number,
+		}) => any
+	) => {
 		this.emitter.on('stage-start', listener)
 		this.emitter.on('stage-complete', listener)
 		this.emitter.on('stage-error', listener)
-	}
-
-	onUptime = (listener: number => any) => {
-		this.emitter.on('uptime', listener)
-	}
-
-	onOngoingJobs = (listener: (Array<Job>) => any) => {
-		this.emitter.on('ongoing-jobs', listener)
-	}
-
-	onCompletedJobs = (listener: (Array<Job>) => any) => {
-		this.emitter.on('completed-jobs', listener)
 	}
 }

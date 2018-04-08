@@ -3,7 +3,7 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 
-import { App } from './app2'
+import { App } from './app'
 
 let container = document.querySelector('#container')
 
