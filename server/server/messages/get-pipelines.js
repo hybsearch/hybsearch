@@ -10,7 +10,9 @@ export type Message = {|
 |}
 
 function getPipelines({ respond }: HandlerArgs<Message>) {
-	let pipelines = [...PIPELINES.values()].map(pipe => JSON.stringify(pipe))
+	let pipelines = [...PIPELINES.values()].map(pipe =>
+		JSON.parse(JSON.stringify(pipe))
+	)
 	respond({ pipelines })
 }
 
