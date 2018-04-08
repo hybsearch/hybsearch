@@ -28,7 +28,15 @@ export type Stage = {
 	timeTaken?: number,
 }
 
-export type Job = {}
+export type Job = {
+	id: string,
+	name: ?string,
+	hidden: boolean,
+	status: string,
+	pipeline: Pipeline,
+	started: string,
+	duration: number | null,
+}
 
 export class Server {
 	url: ?string = null
@@ -107,19 +115,19 @@ export class Server {
 		return promise
 	}
 
-	getPipelines = (): Promise<Array<Pipeline>> => {
+	getPipelines = (): Promise<{ pipelines: Array<Pipeline> }> => {
 		return this.send({ type: 'get-pipelines' })
 	}
 
-	getUptime = (): Promise<number> => {
+	getUptime = (): Promise<{ uptime: number }> => {
 		return this.send({ type: 'get-uptime' })
 	}
 
-	getActiveJobs = (): Promise<Array<Job>> => {
+	getActiveJobs = (): Promise<{ jobs: Array<Job> }> => {
 		return this.send({ type: 'get-active-jobs' })
 	}
 
-	getCompletedJobs = (): Promise<Array<Job>> => {
+	getCompletedJobs = (): Promise<{ jobs: Array<Job> }> => {
 		return this.send({ type: 'get-completed-jobs' })
 	}
 
