@@ -20,16 +20,33 @@
     "hyb-seq-gen": "./wrappers/seq-gen/hyb-seq-gen"
   },
   "scripts": {
-    "start": "flow-node ./index.js",
+    "start": "node ./index.wrapper.js",
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
     "test": "PATH=$PATH:../node_modules/.bin; jest"
   },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "flow"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
     "combinations-generator": "^1.0.1",
     "dedent": "^0.7.0",
     "execa": "^0.10.0",
