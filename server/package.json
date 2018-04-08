@@ -20,13 +20,16 @@
     "hyb-seq-gen": "./wrappers/seq-gen/hyb-seq-gen"
   },
   "scripts": {
-    "start": "./server.js",
+    "start": "flow-node ./index.js",
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
     "test": "PATH=$PATH:../node_modules/.bin; jest"
   },
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "combinations-generator": "^1.0.1",
     "dedent": "^0.7.0",
     "execa": "^0.10.0",
@@ -35,6 +38,7 @@
     "loud-rejection": "^1.6.0",
     "make-dir": "^1.2.0",
     "minimist": "^1.2.0",
+    "present": "^1.0.0",
     "serialize-error": "^2.1.0",
     "tempy": "^0.2.1",
     "wordwrap": "^1.0.0",

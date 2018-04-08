@@ -1,4 +1,7 @@
+// @flow
 'use strict'
+
+import type { PipelineRecord, Pipeline } from './types'
 
 const ent = require('../../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
@@ -8,12 +11,14 @@ const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const { removeCircularLinks } = require('../lib')
 
-module.exports = [
+let beastPipe: Pipeline = [
 	{
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
 		transform: ([{ filepath, contents }]) =>
-			filepath.endsWith('.fasta') ? [contents] : [genbankToFasta(contents)],
+			filepath.endsWith('.fasta')
+				? [contents]
+				: [genbankToFasta(contents)],
 		output: ['initial-fasta'],
 	},
 	{
@@ -67,3 +72,10 @@ module.exports = [
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],
 	},
 ]
+
+let record: PipelineRecord = {
+	name: 'BEAST',
+	pipeline: beastPipe,
+}
+
+module.exports = record

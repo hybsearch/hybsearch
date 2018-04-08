@@ -1,9 +1,6 @@
 #!/usr/bin/env node
+// @flow
 'use strict'
-
-const WebSocket = require('ws')
-const childProcess = require('child_process')
-const path = require('path')
 
 const [port = 8080] = process.argv.slice(2)
 const numericPort = parseInt(port)
@@ -19,47 +16,93 @@ if (Number.isNaN(numericPort)) {
 	process.exit(1)
 }
 
-const wss = new WebSocket.Server({ port: numericPort })
-const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
+const WebSocket = require('ws')
+const {
+	startPipeline,
+	watchPipeline,
+	cancelPipeline,
+	getActiveJobs,
+	getCompletedJobs,
+	getPipelines,
+	uptime,
+} = require('./messages')
+const Job = require('./pipeline/job')
+import type { Message } from './messages'
+
+const server = new WebSocket.Server({ port: numericPort })
+const allJobs: Map<string, Job> = new Map()
 
 // listen for new websocket connections
-wss.on('connection', ws => {
-	console.log('connection initiated')
-	const child = childProcess.fork(workerPath)
+server.on('connection', (client, req) => {
+	// start it up
+	let clientId = req.connection.remoteAddress
+	console.log(`connection initiated with ${clientId}`)
 
-	ws.on('message', communique => {
+	// gives us a single place to send data to the client, which
+	// lets us automatically stringify it
+	let send = (msg: { type: string, payload?: Object }) =>
+		client.send(JSON.stringify(msg))
+
+	// handy function for easily replying to requests
+	let sendResponse = (requestId: string) => (payload: Object) =>
+		send({ type: `resp-${requestId}`, payload })
+
+	// send error messages back to the client
+	let sendError = msg => send({ type: 'error', payload: { message: msg } })
+
+	// handle messages from the client
+	client.on('message', communique => {
 		// when we get a message from the GUI
-		const message = JSON.parse(communique)
+		const message: Message = JSON.parse(communique)
 
+		// log it
 		console.log('>', message)
 
-		// forward the message to the pipeline
-		child.send(message)
-	})
+		// bind the first half of the responder function
+		let respond = sendResponse(message.requestId)
 
-	ws.on('close', () => {
-		console.log('connection was closed')
-
-		if (child.connected) {
-			child.disconnect()
-		}
-	})
-
-	child.on('message', communique => {
-		// when we get a message from the pipeline
-		const message = communique
-
-		console.log('<', message)
-
-		// forward the message to the GUI
-		ws.send(JSON.stringify(message))
-
-		// detach ourselves if the pipeline has finished
-		if (message.type === 'exit' || message.type === 'error') {
-			if (child.connected) {
-				child.disconnect()
+		switch (message.type) {
+			case 'start-pipeline': {
+				startPipeline({ message, respond, client, allJobs })
+				break
+			}
+			case 'watch-pipeline': {
+				watchPipeline({ message, respond, client, allJobs })
+				break
+			}
+			case 'cancel-pipeline': {
+				cancelPipeline({ message, respond, client, allJobs })
+				break
+			}
+			case 'get-active-jobs': {
+				getActiveJobs({ message, respond, client, allJobs })
+				break
+			}
+			case 'get-completed-jobs': {
+				getCompletedJobs({ message, respond, client, allJobs })
+				break
+			}
+			case 'get-pipelines': {
+				getPipelines({ message, respond, client, allJobs })
+				break
+			}
+			case 'get-uptime': {
+				uptime({ message, respond, client, allJobs })
+				break
+			}
+			default: {
+				sendError(`${message.type} is not an allowed type`)
+				break
 			}
 		}
+	})
+
+	client.on('close', () => {
+		console.log('connection was closed')
+
+		Array.from(allJobs.values())
+			.filter(job => job.hasClient(clientId))
+			.forEach(job => job.removeClient(clientId))
 	})
 })
 

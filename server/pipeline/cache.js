@@ -1,6 +1,6 @@
 'use strict'
 
-const crypto = require('crypto')
+const hashString = require('../lib/hash-string')
 const tempy = require('tempy')
 const fs = require('fs')
 const path = require('path')
@@ -22,19 +22,13 @@ class Cache {
 		this.hashKey = this.hashKey.bind(this)
 		this.get = this.get.bind(this)
 		this.set = this.set.bind(this)
-		this._dataHash = this._hash(this.data)
+		this._dataHash = hashString(this.data)
 
 		this.set('source', { filepath: this.filepath, contents: this.data })
 	}
 
-	_hash(data) {
-		let hash = crypto.createHash('sha256')
-		hash.update(data)
-		return hash.digest('hex')
-	}
-
 	hashKey(key) {
-		return this._hash(`${key}:${this._dataHash}`)
+		return hashString(`${key}:${this._dataHash}`)
 	}
 
 	diskFilename(hashedKey) {
