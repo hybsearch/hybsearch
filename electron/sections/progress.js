@@ -22,6 +22,10 @@ export const ProgressSection = ({ stages }: { stages: Map<string, Stage> }) => (
 				</ChipSet>
 			</React.Fragment>
 		}
-		content={<React.Fragment>{JSON.stringify(stages)}</React.Fragment>}
+		content={
+			<React.Fragment>
+				{JSON.stringify([...stages.entries()])}
+			</React.Fragment>
+		}
 	/>
 )
