@@ -24,7 +24,7 @@ function watchPipeline({
 		return
 	}
 
-	job.addClient(client)
+	job.addClient(client, client.ipAddr)
 	respond({ exists: true, jobId: job.id })
 }
 

@@ -38,6 +38,9 @@ server.on('connection', (client, req) => {
 	let clientId = req.connection.remoteAddress
 	console.log(`connection initiated with ${clientId}`)
 
+	// attach the client IP to the object
+	client.ipAddr = req.connection.remoteAddress
+
 	// gives us a single place to send data to the client, which
 	// lets us automatically stringify it
 	let send = (msg: { type: string, payload?: Object }) =>
