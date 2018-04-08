@@ -47,7 +47,7 @@ export class Server {
 		socket.addEventListener('error', this.handleError)
 		socket.addEventListener('exit', this.handleExit)
 
-		this.emitter.onAny(console.info.bind(console, `server: ${url}`))
+		this.emitter.onAny(console.info.bind(console, `${url} <`))
 	}
 
 	onReady = (listener: Server => any) => {
