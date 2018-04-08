@@ -3,6 +3,7 @@
 
 const childProcess = require('child_process')
 const path = require('path')
+const present = require('present')
 const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
 const pipelines = require('./pipelines')
@@ -24,6 +25,10 @@ type WorkerMessage = { payload: any, type: string }
 
 module.exports = class Job {
 	id: string
+	name: ?string
+	started: number
+	duration: number | null
+	hidden: boolean
 	connectedClients: Array<{ socket: WebSocket, id: string }>
 	status: 'inactive' | 'active' | 'completed' | 'error'
 	process: childProcess.ChildProcess
@@ -32,6 +37,11 @@ module.exports = class Job {
 
 	constructor(messagePayload: Args) {
 		this.id = hashString(messagePayload.data)
+		this.name = messagePayload.filepath
+		this.started = new Date()
+		this.duration = null
+		this.hidden = false
+		this.messages = []
 		this.connectedClients = []
 		this.status = 'inactive'
 
@@ -58,8 +68,12 @@ module.exports = class Job {
 	serialize = () => {
 		return JSON.stringify({
 			id: this.id,
+			name: this.name,
+			hidden: this.hidden,
 			status: this.status,
 			pipeline: this.pipeline,
+			started: this.started,
+			duration: this.duration,
 		})
 	}
 
@@ -132,6 +146,7 @@ module.exports = class Job {
 			type: 'exit',
 			payload: { code, signal },
 		})
+		this.duration = Date.now() - this.started
 	}
 
 	terminate = () => {
@@ -139,5 +154,6 @@ module.exports = class Job {
 			this.process.kill()
 			this.process.disconnect()
 		}
+		this.duration = Date.now() - this.started
 	}
 }
