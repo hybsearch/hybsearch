@@ -11,7 +11,7 @@ export type Message = {|
 |}
 
 function uptime({ respond }: HandlerArgs<Message>) {
-	respond({ uptime: present() - START_TIME })
+	respond({ uptime: parseInt((present() - START_TIME).toFixed(0), 10) })
 }
 
 module.exports = uptime
