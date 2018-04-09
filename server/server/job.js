@@ -106,7 +106,7 @@ module.exports = class Job {
 		this.messages.push(message)
 
 		// log it
-		console.log('<', message)
+		console.log('<job<', message)
 
 		// forward the message to the GUI
 		this.messageClients(message)

@@ -59,7 +59,7 @@ server.on('connection', (client, req) => {
 	// gives us a single place to send data to the client, which
 	// lets us automatically stringify it
 	let send = (msg: { type: string, payload?: Object }) => {
-		console.log('<', msg)
+		console.log('<resp<', msg)
 		client.send(JSON.stringify(msg))
 	}
 
