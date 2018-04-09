@@ -39,7 +39,6 @@ export const ProgressSection = ({ stages }: Props) => {
 			}
 			content={
 				<ProgressContainer>
-					{/* {JSON.stringify(stageArray)} */}
 					{stageArray.map(([key, stage]) => (
 						<ProgressDot key={key} label={key} stage={stage} />
 					))}
@@ -78,19 +77,18 @@ const LoadingSegment = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: var(--blue);
-
-	${({ status }) =>
-		status === 'errored'
-			? `color: var(--red);`
-			: status === 'completed' ? `color: var(--navy);` : ''};
-	${props => props.cached && `color: var(--green);`};
+	color: ${({ status, cached }) =>
+		cached
+			? 'var(--green)'
+			: status === 'errored'
+				? 'var(--red)'
+				: status === 'completed' ? 'var(--navy)' : 'var(--blue)'};
 `
 
 const LoadingIcon = styled.div`
-	border: 2px solid currentColor;
 	height: 30px;
 	width: 30px;
+	border: 2px solid currentColor;
 	margin-bottom: 0.5em;
 	border-radius: 17px;
 	text-align: center;
@@ -99,29 +97,19 @@ const LoadingIcon = styled.div`
 	justify-content: center;
 	position: relative;
 	box-sizing: content-box;
+	animation: ${({ status }) =>
+		status === 'active' ? `${pulse} 2s infinite` : ''};
 
 	&::before {
 		content: '';
 		background-color: currentColor;
-		width: 0;
-		height: 0;
 		border-radius: 17px;
 		transition: all 0.35s ease-out;
+		height: ${({ status }) =>
+			status === 'active' ? '16px' : status === 'completed' ? '32px' : '0px'};
+		width: ${({ status }) =>
+			status === 'active' ? '16px' : status === 'completed' ? '32px' : '0px'};
 	}
-
-	${({ status }) =>
-		status === 'active' &&
-		`
-		animation: ${pulse} 2s infinite;
-		width: 16px;
-		height: 16px;
-	`};
-	${({ status }) =>
-		status === 'completed' &&
-		`
-		width: 32px;
-		height: 32px;
-	`};
 `
 
 const LoadingLabel = styled.div`
