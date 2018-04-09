@@ -5,6 +5,16 @@ const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
 
+const readFileOr = (filepath, orValue) => {
+	try {
+		return fs.readFileSync(filepath, 'utf-8')
+	} catch (err) {
+		if (err.code === 'ENOENT') {
+			return orValue
+		}
+	}
+}
+
 module.exports = jml
 async function jml(data, argv = {}) {
 	const dir = tempy.directory()
@@ -31,9 +41,9 @@ async function jml(data, argv = {}) {
 
 	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
 
-	const distributions = fs.readFileSync(path.join(dir, 'Distributions.txt'), 'utf-8')
-	const probabilities = fs.readFileSync(path.join(dir, 'Probabilities.txt'), 'utf-8')
-	const results = fs.readFileSync(path.join(dir, 'Results.txt'), 'utf-8')
+	const distributions = readFileOr(path.join(dir, 'Distributions.txt'), '')
+	const probabilities = readFileOr(path.join(dir, 'Probabilities.txt'), '')
+	const results = readFileOr(path.join(dir, 'Results.txt'), '')
 
 	return { distributions, probabilities, results }
 }
