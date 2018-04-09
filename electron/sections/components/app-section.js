@@ -15,53 +15,63 @@ type Props = {
 	actions?: Array<React.Node>,
 	expanded?: boolean,
 	contentTopPadding?: boolean,
-	stroked?: boolean,
+	expandable?: boolean,
 }
 
 type State = { expanded: boolean }
 
 export class AppSection extends React.Component<Props, State> {
-	static deriveStateFromProps(nextProps: Props, prevState: State) {
-		if (prevState.expanded === nextProps.expanded) {
-			return
-		}
-
-		return { expanded: nextProps.expanded }
+	state = {
+		expanded:
+			this.props.expandable === false
+				? true
+				: typeof this.props.expanded === 'boolean' ? this.props.expanded : true,
 	}
-
-	state = { expanded: Boolean(this.props.expanded) }
 
 	handleToggle = (ev: any) =>
 		this.setState(() => ({ expanded: ev.detail.isOn }))
-	toggleExpansion = () =>
+	toggleExpansion = () => {
+		if (!this.props.expandable) {
+			return
+		}
 		this.setState(state => ({ expanded: !state.expanded }))
+	}
 
 	render() {
-		const { title, content, actions, contentTopPadding, stroked } = this.props
+		const { title, content, actions, contentTopPadding } = this.props
+
+		const titleEl = title ? (
+			typeof title === 'string' ? (
+				<Typography use="title" tag="h2">
+					{title}
+				</Typography>
+			) : (
+				title
+			)
+		) : null
+
 		return (
-			<AppCard stroked={stroked}>
-				<Ripple onClick={this.toggleExpansion}>
-					<CardHeader>
-						{title ? (
-							typeof title === 'string' ? (
-								<Typography use="title" tag="h2">
-									{title}
-								</Typography>
-							) : (
-								title
-							)
-						) : null}
+			<AppCard>
+				{this.props.expandable ? (
+					<Ripple onClick={this.toggleExpansion}>
+						<CardHeader>
+							{titleEl}
 
-						<FlexSpacer />
+							<FlexSpacer />
 
-						<IconToggle
-							checked={this.state.expanded}
-							disabled={true}
-							on={{ label: 'Collapse Card', content: 'arrow_drop_up' }}
-							off={{ label: 'Expand Card', content: 'arrow_drop_down' }}
-						/>
-					</CardHeader>
-				</Ripple>
+							{this.props.expandable ? (
+								<IconToggle
+									checked={this.state.expanded}
+									disabled={true}
+									on={{ label: 'Collapse Card', content: 'arrow_drop_up' }}
+									off={{ label: 'Expand Card', content: 'arrow_drop_down' }}
+								/>
+							) : null}
+						</CardHeader>
+					</Ripple>
+				) : (
+					<CardHeader>{titleEl}</CardHeader>
+				)}
 
 				{this.state.expanded ? (
 					<React.Fragment>
