@@ -3,7 +3,6 @@
 
 const childProcess = require('child_process')
 const path = require('path')
-const present = require('present')
 const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
 const pipelines = require('./pipelines')
@@ -57,6 +56,10 @@ module.exports = class Job {
 		this.process.send(messagePayload)
 	}
 
+	//
+	//
+	//
+
 	stages = () => {
 		return uniq(flatten(this.pipeline.pipeline.map(stage => stage.output)))
 	}
@@ -72,6 +75,10 @@ module.exports = class Job {
 			duration: this.duration,
 		})
 	}
+
+	//
+	//
+	//
 
 	addClient = (client: WebSocket, clientId: string) => {
 		this.connectedClients = [
@@ -97,6 +104,10 @@ module.exports = class Job {
 		let stringified = JSON.stringify(message)
 		this.connectedClients.forEach(client => client.socket.send(stringified))
 	}
+
+	//
+	//
+	//
 
 	handleMessage = (message: WorkerMessage) => {
 		// The 'message' event is triggered when a child process uses
@@ -144,6 +155,10 @@ module.exports = class Job {
 		})
 		this.duration = Date.now() - this.started
 	}
+
+	//
+	//
+	//
 
 	terminate = () => {
 		if (this.process.connected) {
