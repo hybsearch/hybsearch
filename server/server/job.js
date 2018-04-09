@@ -119,6 +119,14 @@ module.exports = class Job {
 				status: 'inactive',
 			})
 		)
+
+		if (stageNames.length) {
+			let stage = stages.get(stageNames[0])
+			if (stage) {
+				stage.status = 'active'
+			}
+		}
+
 		return stages
 	}
 
