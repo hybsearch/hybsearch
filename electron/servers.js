@@ -58,12 +58,13 @@ export class Server {
 		this.emitter.onAny(console.info.bind(console, `${url} <`))
 	}
 
-	onReady = (listener: Server => any) => {
-		return (this.socket: any).addEventListener('open', () => listener(this))
-	}
+	//
+	//
+	//
 
 	handleMessage = ({ data }: MessageEvent) => {
 		if (typeof data !== 'string') {
+			console.warn("dropping message because it wasn't a string", data)
 			return
 		}
 
@@ -92,7 +93,11 @@ export class Server {
 		this.emitter.emit('exit')
 	}
 
-	_send = (packet: { type: string }) => {
+	//
+	//
+	//
+
+	sendMessage = (packet: { type: string }) => {
 		if (!this.socket) {
 			return
 		}
@@ -104,71 +109,21 @@ export class Server {
 		this.socket.send(JSON.stringify(packet))
 	}
 
-	send = (packet: { type: string }) => {
+	waitForResponse = (packet: { type: string }) => {
 		let id = uuid()
 
 		let promise = this.emitter.once(`resp-${id}`)
 
 		// send the request
-		this._send(Object.assign({}, packet, { requestId: id }))
+		let requestWithId = Object.assign({}, packet, { requestId: id })
+		this.sendMessage(requestWithId)
 
 		return promise
 	}
 
-	getPipelines = (): Promise<{ pipelines: Array<Pipeline> }> => {
-		return this.send({ type: 'get-pipelines' })
-	}
-
-	getUptime = (): Promise<{ uptime: number }> => {
-		return this.send({ type: 'get-uptime' })
-	}
-
-	getActiveJobs = (): Promise<{ jobs: Array<Job> }> => {
-		return this.send({ type: 'get-active-jobs' })
-	}
-
-	getCompletedJobs = (): Promise<{ jobs: Array<Job> }> => {
-		return this.send({ type: 'get-completed-jobs' })
-	}
-
-	submitJob = (args: {
-		pipeline: string,
-		fileName: string,
-		fileContents: string,
-	}): Promise<{ stages: Array<string>, jobId: string }> => {
-		const { pipeline, fileName, fileContents } = args
-
-		return this.send({
-			type: 'start-pipeline',
-			payload: {
-				pipeline: pipeline,
-				filepath: fileName,
-				data: fileContents,
-			},
-		})
-	}
-
-	watchJob = (args: {
-		jobId: string,
-	}): Promise<{ exists: boolean, stages: Array<string>, jobId: string }> => {
-		const { jobId } = args
-
-		return this.send({
-			type: 'watch-pipeline',
-			payload: { jobId: jobId },
-		})
-	}
-
-	cancelJob = (args: {
-		jobId: string,
-	}): Promise<{ exists: boolean, cancelled: boolean, jobId: string }> => {
-		const { jobId } = args
-
-		return this.send({
-			type: 'cancel-pipeline',
-			payload: { jobId: jobId },
-		})
-	}
+	//
+	//
+	//
 
 	destroy = () => {
 		this.emitter.clearListeners()
@@ -182,6 +137,11 @@ export class Server {
 		}
 
 		this.socket = null
+		this.emitter = null
+	}
+
+	onReady = (listener: Server => any) => {
+		this.emitter.on('open', () => listener(this))
 	}
 
 	onError = (listener: ({ error: string }) => any) => {
@@ -199,5 +159,64 @@ export class Server {
 		this.emitter.on('stage-start', listener)
 		this.emitter.on('stage-complete', listener)
 		this.emitter.on('stage-error', listener)
+	}
+
+	//
+	//
+	//
+
+	getPipelines = (): Promise<{ pipelines: Array<Pipeline> }> => {
+		return this.waitForResponse({ type: 'get-pipelines' })
+	}
+
+	getUptime = (): Promise<{ uptime: number }> => {
+		return this.waitForResponse({ type: 'get-uptime' })
+	}
+
+	getActiveJobs = (): Promise<{ jobs: Array<Job> }> => {
+		return this.waitForResponse({ type: 'get-active-jobs' })
+	}
+
+	getCompletedJobs = (): Promise<{ jobs: Array<Job> }> => {
+		return this.waitForResponse({ type: 'get-completed-jobs' })
+	}
+
+	submitJob = (args: {
+		pipeline: string,
+		fileName: string,
+		fileContents: string,
+	}): Promise<{ stages: Array<string>, jobId: string }> => {
+		const { pipeline, fileName, fileContents } = args
+
+		return this.waitForResponse({
+			type: 'start-pipeline',
+			payload: {
+				pipeline: pipeline,
+				filepath: fileName,
+				data: fileContents,
+			},
+		})
+	}
+
+	watchJob = (args: {
+		jobId: string,
+	}): Promise<{ exists: boolean, stages: Array<string>, jobId: string }> => {
+		const { jobId } = args
+
+		return this.waitForResponse({
+			type: 'watch-pipeline',
+			payload: { jobId: jobId },
+		})
+	}
+
+	cancelJob = (args: {
+		jobId: string,
+	}): Promise<{ exists: boolean, cancelled: boolean, jobId: string }> => {
+		const { jobId } = args
+
+		return this.waitForResponse({
+			type: 'cancel-pipeline',
+			payload: { jobId: jobId },
+		})
 	}
 }
