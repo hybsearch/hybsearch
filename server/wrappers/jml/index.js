@@ -5,6 +5,25 @@ const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
 
+const crypto = require('crypto')
+let makeHash = (str) => {
+	let hash = crypto.createHash('sha256')
+	hash.update(str)
+	return hash.digest('base64')
+}
+
+// TODO:
+// - take aligned fasta filepath
+// - hash sequence identifiers with sha256.substr(0, 10) for phylip
+// 		- keep the (a) sequence identifier in the phylip hashed ident
+// - fasta-to-phylip
+// - modify species names in nexus species.trees file to match hashed files
+// - fill out ctl file with hashed names
+// - run jml
+// - read output files
+// - reverse hashed names in output files
+// - return useful data from files
+
 const readFileOr = (filepath, orValue) => {
 	try {
 		return fs.readFileSync(filepath, 'utf-8')
@@ -39,7 +58,7 @@ function computeSpecies({phylip, trees}) {
 }
 
 module.exports = jml
-async function jml({phylipData, trees}) {
+async function jml({phylipData, trees, phylipMapping}) {
 	let workDir = tempy.directory()
 
 	let phylipFile = path.join(workDir, 'input.phy')
@@ -78,4 +97,13 @@ async function jml({phylipData, trees}) {
 	let results = readFileOr(path.join(workDir, 'Results.txt'), '')
 
 	return { distributions, probabilities, results }
+
+	// yield [
+	// 	{
+	// 		species: ['lup', 'lap'],
+	// 		sequences: ['lup1', 'lap1'],
+	// 		distance: 0.0162455,
+	// 		probability: 0.0434783,
+	// 	}
+	// ]
 }
