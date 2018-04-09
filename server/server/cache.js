@@ -15,41 +15,29 @@ type Args = {
 class Cache {
 	filepath: string
 	data: string
-	memcache: Map<string, string>
-	cacheDir: string
-	_dataHash: string
+	dataHash: string
+	memcache: Map<string, string> = new Map()
+	cacheDir: string = process.env.DOCKER
+		? mkdir.sync('/tmp/hybsearch')
+		: tempy.directory()
 
 	constructor({ filepath, contents }: Args) {
 		this.filepath = filepath
 		this.data = contents
-
-		this.memcache = new Map()
-
-		if (!process.env.DOCKER) {
-			this.cacheDir = tempy.directory()
-		} else {
-			this.cacheDir = mkdir.sync('/tmp/hybsearch')
-		}
-
-		// attach instance methods
-		let self = (this: any)
-		self.hashKey = this.hashKey.bind(this)
-		self.get = this.get.bind(this)
-		self.set = this.set.bind(this)
-		self._dataHash = hashString(this.data)
+		this.dataHash = hashString(this.data)
 
 		this.set('source', { filepath: this.filepath, contents: this.data })
 	}
 
-	hashKey(key: string) {
-		return hashString(`${key}:${this._dataHash}`)
+	hashKey = (key: string) => {
+		return hashString(`${key}:${this.dataHash}`)
 	}
 
-	diskFilename(hashedKey: string) {
+	diskFilename = (hashedKey: string) => {
 		return path.join(this.cacheDir, hashedKey)
 	}
 
-	get(key) {
+	get = (key: string) => {
 		key = this.hashKey(key)
 
 		let value = this.memcache.get(key)
@@ -69,7 +57,7 @@ class Cache {
 		}
 	}
 
-	set(key: string, value: mixed) {
+	set = (key: string, value: mixed) => {
 		key = this.hashKey(key)
 		let serialized = JSON.stringify(value)
 		this.memcache.set(key, serialized)
