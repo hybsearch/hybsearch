@@ -129,6 +129,8 @@ export class Server {
 		this.emitter.clearListeners()
 
 		if (this.socket) {
+			this.socket.close()
+
 			let s = (this.socket: any)
 			s.removeEventListener('message', this.handleMessage)
 			s.removeEventListener('disconnect', this.handleDisconnect)
