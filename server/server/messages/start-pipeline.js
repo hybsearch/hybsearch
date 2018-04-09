@@ -14,8 +14,15 @@ export type Message = {|
 	|},
 |}
 
-function startPipeline({ message, respond, allJobs }: HandlerArgs<Message>) {
+function startPipeline({
+	message,
+	respond,
+	client,
+	allJobs,
+}: HandlerArgs<Message>) {
 	let job = new Job(message.payload)
+	job.addClient(client, client.ipAddr)
+
 	allJobs.set(job.id, job)
 
 	respond({ jobId: job.id, stages: job.stages() })
