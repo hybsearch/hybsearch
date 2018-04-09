@@ -79,7 +79,17 @@ server.on('connection', (client, req) => {
 		const message: Message = JSON.parse(communique)
 
 		// log it
-		console.log('>', message)
+		console.log(
+			'>',
+			JSON.parse(
+				JSON.stringify(message, (key, val) => {
+					if (typeof val === 'string' && val.length > 100) {
+						return val.substr(0, 99) + '…'
+					}
+					return val
+				})
+			)
+		)
 
 		// bind the first half of the responder function
 		let respond = sendResponse(message.requestId)
