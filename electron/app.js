@@ -67,7 +67,11 @@ export class App extends React.Component<Props, State> {
 		window.location.reload()
 	}
 
-	receiveServerOnUpOrDown = (status: 'up' | 'down') => {
+	//
+	//
+	//
+
+	handleServerOnUpOrDown = (status: 'up' | 'down') => {
 		this.setState(() => ({ serverState: status }))
 	}
 
@@ -94,31 +98,16 @@ export class App extends React.Component<Props, State> {
 		})
 	}
 
-	handleServerChange = async (newServerAddress: string) => {
-		if (this.state.server) {
-			this.state.server.destroy()
-
-			this.setState(() => ({
-				serverState: 'down',
-				pipelines: [],
-				uptime: null,
-				activeJobs: [],
-				completedJobs: [],
-				server: null,
-			}))
-		}
-
-		let server = new Server(newServerAddress)
-
-		server.onReady(this.setupNewServer)
-	}
+	//
+	//
+	//
 
 	setupNewServer = async (server: Server) => {
 		this.setState(() => ({ serverState: 'up' }))
 
 		// hook up the listeners
 		server.onError(this.handleServerError)
-		server.onUpOrDown(this.receiveServerOnUpOrDown)
+		server.onUpOrDown(this.handleServerOnUpOrDown)
 		server.onJobUpdate(this.handleStage)
 
 		// now fetch a bunch of stuff in parallel
@@ -141,9 +130,38 @@ export class App extends React.Component<Props, State> {
 			uptime,
 			activeJobs,
 			completedJobs,
-			server,
 		}))
 	}
+
+	//
+	//
+	//
+
+	handleServerChange = async (newServerAddress: string) => {
+		if (this.state.server) {
+			this.state.server.destroy()
+
+			this.setState(() => ({
+				serverState: 'down',
+				pipelines: [],
+				uptime: null,
+				activeJobs: [],
+				completedJobs: [],
+				server: null,
+			}))
+		}
+
+		let server = new Server(newServerAddress)
+		global.__server = server
+
+		this.setState(() => ({ server: server }))
+
+		server.onReady(this.setupNewServer)
+	}
+
+	//
+	//
+	//
 
 	handleAppPipelineStart = (args: {
 		pipeline: string,
@@ -164,6 +182,10 @@ export class App extends React.Component<Props, State> {
 
 		this.state.server.watchJob(args).then(this.handleJob)
 	}
+
+	//
+	//
+	//
 
 	render() {
 		return (
@@ -193,11 +215,13 @@ export class App extends React.Component<Props, State> {
 					{this.state.serverError ? (
 						<ErrorSection error={this.state.serverError} />
 					) : null}
+
 					{this.state.nonmonophyly.length ? (
 						<NonmonophylyListSection
 							nonmonophyly={this.state.nonmonophyly}
 						/>
 					) : null}
+
 					{this.state.newick ? (
 						<PhylogramSection newickData={this.state.newick} />
 					) : null}
