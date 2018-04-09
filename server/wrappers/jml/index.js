@@ -17,7 +17,7 @@ const readFileOr = (filepath, orValue) => {
 
 // species: ['bla', 'nit', 'fol', 'pal', 'pis', 'gym', 'set', 'mul']
 // seqPerSpecies: [44, 8, 6, 12, 8, 10, 2, 2]
-const CONTROL = ({species, seqPerSpecies}) => {
+function makeControlData({species, seqPerSpecies}) {
 	if (species.length !== seqPerSpecies.length) {
 		throw new Error('species and seqPerSpecies do not have the same length')
 	}
@@ -33,35 +33,49 @@ thinning = 1
 seed = -1`
 }
 
-module.exports = jml
-async function jml(data, argv = {}) {
-	const dir = tempy.directory()
+function computeSpecies({phylip, trees}) {
+	// compute species and seqPerSpecies to pass to `makeControlData`
+	return makeControlData({species, seqPerSpecies})
+}
 
-	const inputFile = tempy.file()
-	fs.writeFileSync(inputFile, data, 'utf-8')
+module.exports = jml
+async function jml({phylipData, trees}) {
+	let workDir = tempy.directory()
+
+	let phylipFile = path.join(workDir, 'input.phy')
+	fs.writeFileSync(phylipFile, phylipData, 'utf-8')
+
+	let treesFile = path.join(workDir, 'input.species.trees')
+	fs.writeFileSync(treesFile, trees, 'utf-8')
+
+	let controlFile = path.join(workDir, 'jml.input.ctl')
+	let controlData = computeSpecies({phylip: phylipData, trees: trees})
+	fs.writeFileSync(controlFile, controlData, 'utf-8')
 
 	// find binary via `which`
-	const executable = execa.sync('which', ['jml']).stdout
+	let executable = execa.sync('which', ['jml']).stdout
 
 	// prettier-ignore
-	const args = [
-		inputFile,
+	let args = [
+		'-c', controlFile,
+		'-t', treesFile,
+		'-d', phylipFile,
 	]
 
-	let result = execa(executable, args)
+	let result = execa(executable, args, {
+		cwd: workDir,
+	})
 
-	if (!argv.quiet) {
-		result.stdout.pipe(process.stderr)
-		result.stderr.pipe(process.stderr)
-	}
+	result.stdout.pipe(process.stderr)
+	result.stderr.pipe(process.stderr)
 
 	await result
 
-	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
+	process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
 
-	const distributions = readFileOr(path.join(dir, 'Distributions.txt'), '')
-	const probabilities = readFileOr(path.join(dir, 'Probabilities.txt'), '')
-	const results = readFileOr(path.join(dir, 'Results.txt'), '')
+	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '')
+	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '')
+	let results = readFileOr(path.join(workDir, 'Results.txt'), '')
 
 	return { distributions, probabilities, results }
 }
