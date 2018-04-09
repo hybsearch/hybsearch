@@ -72,7 +72,7 @@ export class AppSection extends React.Component<Props, State> {
 							{content}
 						</CardContent>
 
-						{actions ? (
+						{actions && actions.length ? (
 							<CardActions>
 								<CardActionButtons>{actions}</CardActionButtons>
 							</CardActions>
