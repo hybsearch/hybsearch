@@ -34,48 +34,61 @@ export const AppToolbar = (props: Props) => {
 		.join(' ')
 
 	return (
-		<RaisedToolbar>
-			<ToolbarSection alignStart shrinkToFit>
-				<ToolbarTitle>HybSearch</ToolbarTitle>
-			</ToolbarSection>
+		<Toolbar>
+			<ToolbarRow>
+				<ToolbarSection alignStart shrinkToFit>
+					<ToolbarTitle>HybSearch</ToolbarTitle>
+				</ToolbarSection>
 
-			<ToolbarSection alignStart>
-				<Select
-					box={true}
-					options={servers}
-					onChange={ev => onServerChange(ev.currentTarget.value)}
-					label="Server"
-					className="server-selector"
-				/>
+				<ServerSection alignStart>
+					<ServerSelect
+						box={true}
+						options={servers}
+						onChange={ev => onServerChange(ev.currentTarget.value)}
+						label="Server"
+					/>
 
-				<ChipSet>
-					{serverState === 'up' ? (
-						<Chip className="server-status">
-							<ChipIcon leading use="cloud" />
-							<ChipText>Up ({uptime})</ChipText>
-						</Chip>
-					) : (
-						<Chip className="server-status">
-							<ChipIcon leading use="cloud_off" />
-							<ChipText>Down</ChipText>
-						</Chip>
-					)}
-				</ChipSet>
-			</ToolbarSection>
+					<ChipSet>
+						{serverState === 'up' ? (
+							<ServerStatusChip>
+								<ChipIcon leading use="cloud" />
+								<ChipText>Up ({uptime})</ChipText>
+							</ServerStatusChip>
+						) : (
+							<ServerStatusChip>
+								<ChipIcon leading use="cloud_off" />
+								<ChipText>Down</ChipText>
+							</ServerStatusChip>
+						)}
+					</ChipSet>
+				</ServerSection>
 
-			<ToolbarSection alignEnd shrinkToFit>
-				<ToolbarIcon use="refresh" onClick={onReload} />
-			</ToolbarSection>
-		</RaisedToolbar>
+				<ToolbarSection alignEnd shrinkToFit>
+					<ToolbarIcon use="refresh" onClick={onReload} />
+				</ToolbarSection>
+			</ToolbarRow>
+		</Toolbar>
 	)
 }
 
-const FixedToolbar = (props: any) => (
-	<Toolbar fixed={true} {...props}>
-		<ToolbarRow>{props.children}</ToolbarRow>
-	</Toolbar>
-)
+const ServerSection = styled(ToolbarSection)`
+	align-items: center;
+	padding-left: 12px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+`
 
-const RaisedToolbar = styled(FixedToolbar)`
-	position: relative;
+const ServerSelect = styled(Select)`
+	& select {
+		background-color: var(--mdc-theme-background);
+		border-radius: 4px !important;
+	}
+
+	& .mdc-select__bottom-line {
+		display: none;
+	}
+`
+
+const ServerStatusChip = styled(Chip)`
+	background-color: var(--mdc-theme-background) !important;
 `
