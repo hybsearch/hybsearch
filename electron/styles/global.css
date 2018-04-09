@@ -11,8 +11,9 @@ body {
 	margin: 0;
 }
 
-pre {
-	font-family: Consolas, monospace;
+pre,
+code {
+	font-family: Consolas, Monaco, monospace;
 }
 
 .mdc-tab,
