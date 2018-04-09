@@ -6,6 +6,7 @@ import * as React from 'react'
 import uniqueId from 'lodash/uniqueId'
 import getFiles from '../lib/get-files'
 import prettyMs from 'pretty-ms'
+import styled from 'styled-components'
 
 import { List, ListItem } from './components/material'
 import { AppSection } from './components/app-section'
@@ -14,7 +15,7 @@ import { FormField } from 'rmwc/FormField'
 import { CardAction } from 'rmwc/Card'
 import { TextField } from 'rmwc/TextField'
 import { Select } from 'rmwc/Select'
-
+import {Elevation} from 'rmwc/Elevation'
 import { TabBar, Tab } from 'rmwc/Tabs'
 import { Typography } from 'rmwc/Typography'
 
@@ -31,7 +32,6 @@ type Props = {
 		fileContents: string,
 	}) => any,
 	onChoose: ({ jobId: string }) => any,
-	shouldClose: boolean,
 }
 
 type TabName =
@@ -94,23 +94,21 @@ export class InputSection extends React.Component<Props, State> {
 			activeTabName: this.tabs[ev.detail.activeTabIndex],
 		}))
 
-	renderTabPanel = () => {
-		let { activeTabIndex, activeTabName } = this.state
+	renderTab = (activeTabName: TabName) => {
 		let { onChoose, activeJobs, completedJobs, pipelines } = this.props
 
-		return (
-			<React.Fragment>
-				<TabBar activeTabIndex={activeTabIndex} onChange={this.onTabChange}>
-					{this.tabs.map(name => <Tab key={name}>{name}</Tab>)}
-				</TabBar>
-
-				{activeTabName === 'Recent' ? (
+		switch (activeTabName) {
+			case 'Recent': {
+				return (
 					<InputPanelRecent
 						onChoose={onChoose}
 						recent={activeJobs}
 						completed={completedJobs}
 					/>
-				) : activeTabName === 'GenBank' ? (
+				)
+			}
+			case 'GenBank': {
+				return (
 					<InputPanelFile
 						pipelines={pipelines}
 						selectedPipeline={this.state.selectedPipeline}
@@ -120,31 +118,38 @@ export class InputSection extends React.Component<Props, State> {
 						onFileChange={this.storeSelectedGenbankFile}
 						onLocalFile={this.storeSelectedLocalFile}
 					/>
-				) : activeTabName === 'FASTA' ? (
-					<InputPanelFile
-						pipelines={pipelines}
-						selectedPipeline={this.state.selectedPipeline}
-						onPipelineChange={this.storeSelectedPipeline}
-						fileFilter={({ filename }) => filename.endsWith('.fasta')}
-						selectedFile={this.state.selectedFastaFile}
-						onFileChange={this.storeSelectedFastaFile}
-						onLocalFile={this.storeSelectedLocalFile}
-					/>
-				) : activeTabName === 'Newick Tree' ? (
+				)
+			}
+			// case 'FASTA' : {
+			// 	return <InputPanelFile
+			// 		pipelines={pipelines}
+			// 		selectedPipeline={this.state.selectedPipeline}
+			// 		onPipelineChange={this.storeSelectedPipeline}
+			// 		fileFilter={({ filename }) => filename.endsWith('.fasta')}
+			// 		selectedFile={this.state.selectedFastaFile}
+			// 		onFileChange={this.storeSelectedFastaFile}
+			// 		onLocalFile={this.storeSelectedLocalFile}
+			// 	/>
+			// }
+			case 'Newick Tree': {
+				return (
 					<InputPanelStringNewickTree
 						text={this.state.newickTree}
 						onChange={this.storeNewickTree}
 					/>
-				) : activeTabName === 'Newick (JSON)' ? (
+				)
+			}
+			case 'Newick (JSON)': {
+				return (
 					<InputPanelStringNewickJson
 						text={this.state.newickJson}
 						onChange={this.storeNewickJson}
 					/>
-				) : (
-					((activeTabName: empty), null)
-				)}
-			</React.Fragment>
-		)
+				)
+			}
+			default:
+				;(activeTabName: empty)
+		}
 	}
 
 	storeSelectedGenbankFile = (filePath: string) =>
@@ -184,9 +189,7 @@ export class InputSection extends React.Component<Props, State> {
 	}
 
 	render() {
-		// console.log(this.state)
-		let { shouldClose } = this.props
-		let { activeTabName } = this.state
+		let { activeTabIndex, activeTabName } = this.state
 
 		let startAction = (
 			<CardAction onClick={this.onSubmit} key="start">
@@ -199,10 +202,17 @@ export class InputSection extends React.Component<Props, State> {
 
 		return (
 			<AppSection
-				title="Input"
-				expanded={!shouldClose}
+				expandable={false}
 				contentTopPadding={false}
-				content={this.renderTabPanel()}
+				content={
+					<React.Fragment>
+						<TabBar activeTabIndex={activeTabIndex} onChange={this.onTabChange}>
+							{this.tabs.map(name => <Tab key={name}>{name}</Tab>)}
+						</TabBar>
+
+						{this.renderTab(activeTabName)}
+					</React.Fragment>
+				}
 				actions={actions}
 			/>
 		)
@@ -217,33 +227,27 @@ const InputPanelRecent = (props: {
 	let { recent, completed, onChoose } = props
 
 	return (
-		<React.Fragment>
-			{/* <TextField box={true} withLeadingIcon="search" label="Search…" /> */}
+		<TwoColumnGrid>
+			<InputPanelRecentsList
+				title="Running"
+				jobs={recent}
+				onChoose={onChoose}
+			/>
 
-			{recent.length ? (
-				<InputPanelRecentsList
-					title="Running"
-					jobs={recent}
-					onChoose={onChoose}
-				/>
-			) : null}
-
-			{completed.length ? (
-				<InputPanelRecentsList
-					title="Completed"
-					jobs={completed}
-					onChoose={onChoose}
-				/>
-			) : null}
-
-			{!recent.length && !completed.length ? (
-				<Typography use="subheading1" tag="h3">
-					No completed jobs
-				</Typography>
-			) : null}
-		</React.Fragment>
+			<InputPanelRecentsList
+				title="Completed"
+				jobs={completed}
+				onChoose={onChoose}
+			/>
+		</TwoColumnGrid>
 	)
 }
+
+const TwoColumnGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1.5rem;
+`
 
 const InputPanelRecentsList = (props: {
 	jobs: Array<SerializedJob>,
@@ -253,18 +257,24 @@ const InputPanelRecentsList = (props: {
 	let { jobs, onChoose, title } = props
 
 	return (
-		<React.Fragment>
+		<div>
 			<Typography use="subheading1" tag="h3">
 				{title}
 			</Typography>
-			<List twoLine={true}>
-				{jobs
-					.filter(job => !job.hidden)
-					.map(job => (
-						<InputPanelItem key={job.id} job={job} onChoose={onChoose} />
-					))}
-			</List>
-		</React.Fragment>
+			{jobs.length ? (
+				<List twoLine={true}>
+					{jobs
+						.filter(job => !job.hidden)
+						.map(job => (
+							<InputPanelItem key={job.id} job={job} onChoose={onChoose} />
+						))}
+				</List>
+			) : (
+				<Typography use="body2" tag="h3">
+					No jobs
+				</Typography>
+			)}
+		</div>
 	)
 }
 
@@ -324,43 +334,56 @@ class InputPanelFile extends React.Component<
 		const { inputId } = this.state
 
 		return (
-			<React.Fragment>
-				<Select
-					options={this.props.pipelines.map(p => p.name)}
-					label="Pipeline"
-					value={this.props.selectedPipeline}
-					onChange={ev => this.props.onPipelineChange(ev.currentTarget.value)}
-				/>
+			<InputFileContainer>
+				<TwoColumnGrid>
+					<Select
+						options={this.props.pipelines.map(p => p.name)}
+						label="Pipeline"
+						value={this.props.selectedPipeline}
+						onChange={ev => this.props.onPipelineChange(ev.currentTarget.value)}
+					/>
 
-				<Select
-					label="Data File"
-					value={this.props.selectedFile}
-					onChange={ev => this.props.onFileChange(ev.currentTarget.value)}
-					options={[
-						{ value: '--local--', label: 'Local File' },
-						...this.state.localFiles.map(entry => ({
-							value: entry.filepath,
-							label: entry.filename,
-						})),
-					]}
-				/>
+					<Select
+						label="Data File"
+						value={this.props.selectedFile}
+						onChange={ev => this.props.onFileChange(ev.currentTarget.value)}
+						options={[
+							{ value: '--local--', label: 'Local File' },
+							...this.state.localFiles.map(entry => ({
+								value: entry.filepath,
+								label: entry.filename,
+							})),
+						]}
+					/>
+				</TwoColumnGrid>
 
 				{this.props.selectedFile === '--local--' ? (
-					<FormField>
-						<input
-							type="file"
-							id={inputId}
-							onChange={ev =>
-								this.props.onLocalFile(ev.currentTarget.files[0].path)
-							}
-						/>
-						<label htmlFor={inputId}>Select a File</label>
-					</FormField>
+					<PaddedFileUploadField z={2}>
+						<FormField>
+							<input
+								type="file"
+								id={inputId}
+								onChange={ev =>
+									this.props.onLocalFile(ev.currentTarget.files[0].path)
+								}
+							/>
+							<label htmlFor={inputId}>Select a File</label>
+						</FormField>
+					</PaddedFileUploadField>
 				) : null}
-			</React.Fragment>
+			</InputFileContainer>
 		)
 	}
 }
+
+const InputFileContainer = styled.div`
+	padding-top: 1.5rem;
+`
+
+const PaddedFileUploadField = styled(Elevation)`
+	margin: 1.5rem 0;
+	padding: 0.5rem;
+`
 
 type TextInputPanelProps = {
 	text: string,
