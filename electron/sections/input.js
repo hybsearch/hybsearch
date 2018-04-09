@@ -15,7 +15,7 @@ import { FormField } from 'rmwc/FormField'
 import { CardAction } from 'rmwc/Card'
 import { TextField } from 'rmwc/TextField'
 import { Select } from 'rmwc/Select'
-import {Elevation} from 'rmwc/Elevation'
+import { Elevation } from 'rmwc/Elevation'
 import { TabBar, Tab } from 'rmwc/Tabs'
 import { Typography } from 'rmwc/Typography'
 
