@@ -100,10 +100,7 @@ export class InputSection extends React.Component<Props, State> {
 
 		return (
 			<React.Fragment>
-				<TabBar
-					activeTabIndex={activeTabIndex}
-					onChange={this.onTabChange}
-				>
+				<TabBar activeTabIndex={activeTabIndex} onChange={this.onTabChange}>
 					{this.tabs.map(name => <Tab key={name}>{name}</Tab>)}
 				</TabBar>
 
@@ -128,9 +125,7 @@ export class InputSection extends React.Component<Props, State> {
 						pipelines={pipelines}
 						selectedPipeline={this.state.selectedPipeline}
 						onPipelineChange={this.storeSelectedPipeline}
-						fileFilter={({ filename }) =>
-							filename.endsWith('.fasta')
-						}
+						fileFilter={({ filename }) => filename.endsWith('.fasta')}
 						selectedFile={this.state.selectedFastaFile}
 						onFileChange={this.storeSelectedFastaFile}
 						onLocalFile={this.storeSelectedLocalFile}
@@ -178,8 +173,7 @@ export class InputSection extends React.Component<Props, State> {
 			selectedLocalFile,
 		} = this.state
 
-		let filePath =
-			selectedLocalFile || selectedGenbankFile || selectedFastaFile
+		let filePath = selectedLocalFile || selectedGenbankFile || selectedFastaFile
 		let fileContents = fs.readFileSync(filePath, 'utf-8')
 
 		this.props.onSubmit({
@@ -267,11 +261,7 @@ const InputPanelRecentsList = (props: {
 				{jobs
 					.filter(job => !job.hidden)
 					.map(job => (
-						<InputPanelItem
-							key={job.id}
-							job={job}
-							onChoose={onChoose}
-						/>
+						<InputPanelItem key={job.id} job={job} onChoose={onChoose} />
 					))}
 			</List>
 		</React.Fragment>
@@ -339,17 +329,13 @@ class InputPanelFile extends React.Component<
 					options={this.props.pipelines.map(p => p.name)}
 					label="Pipeline"
 					value={this.props.selectedPipeline}
-					onChange={ev =>
-						this.props.onPipelineChange(ev.currentTarget.value)
-					}
+					onChange={ev => this.props.onPipelineChange(ev.currentTarget.value)}
 				/>
 
 				<Select
 					label="Data File"
 					value={this.props.selectedFile}
-					onChange={ev =>
-						this.props.onFileChange(ev.currentTarget.value)
-					}
+					onChange={ev => this.props.onFileChange(ev.currentTarget.value)}
 					options={[
 						{ value: '--local--', label: 'Local File' },
 						...this.state.localFiles.map(entry => ({
@@ -365,9 +351,7 @@ class InputPanelFile extends React.Component<
 							type="file"
 							id={inputId}
 							onChange={ev =>
-								this.props.onLocalFile(
-									ev.currentTarget.files[0].path
-								)
+								this.props.onLocalFile(ev.currentTarget.files[0].path)
 							}
 						/>
 						<label htmlFor={inputId}>Select a File</label>

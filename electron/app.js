@@ -214,9 +214,7 @@ export class App extends React.Component<Props, State> {
 					) : null}
 
 					{this.state.nonmonophyly.length ? (
-						<NonmonophylyListSection
-							nonmonophyly={this.state.nonmonophyly}
-						/>
+						<NonmonophylyListSection nonmonophyly={this.state.nonmonophyly} />
 					) : null}
 
 					{this.state.newick ? (

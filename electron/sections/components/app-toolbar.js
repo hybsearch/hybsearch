@@ -26,13 +26,7 @@ type Props = {
 }
 
 export const AppToolbar = (props: Props) => {
-	const {
-		servers,
-		onServerChange,
-		serverState,
-		onReload,
-		serverUptime,
-	} = props
+	const { servers, onServerChange, serverState, onReload, serverUptime } = props
 
 	let uptime = prettyMs(serverUptime || 0, { verbose: true })
 		.split(' ')

@@ -108,9 +108,7 @@ module.exports = class Job {
 
 	initStageMap = () => {
 		let stages: Map<string, SerializedStage> = new Map()
-		let stageNames = uniq(
-			flatten(this.pipeline.pipeline.map(s => s.output))
-		)
+		let stageNames = uniq(flatten(this.pipeline.pipeline.map(s => s.output)))
 		stageNames.forEach(name =>
 			stages.set(name, {
 				key: name,

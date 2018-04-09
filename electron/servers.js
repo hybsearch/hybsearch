@@ -187,9 +187,7 @@ export class Server {
 				filepath: fileName,
 				data: fileContents,
 			},
-		}).then(resp =>
-			Object.assign({}, resp, { stages: new Map(resp.stages) })
-		)
+		}).then(resp => Object.assign({}, resp, { stages: new Map(resp.stages) }))
 	}
 
 	watchJob = (args: {
@@ -204,9 +202,7 @@ export class Server {
 		return this.waitForResponse({
 			type: 'watch-pipeline',
 			payload: { jobId: jobId },
-		}).then(resp =>
-			Object.assign({}, resp, { stages: new Map(resp.stages) })
-		)
+		}).then(resp => Object.assign({}, resp, { stages: new Map(resp.stages) }))
 	}
 
 	cancelJob = (args: {
