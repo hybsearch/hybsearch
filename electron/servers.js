@@ -54,6 +54,7 @@ export class Server {
 		socket.addEventListener('disconnect', this.handleDisconnect)
 		socket.addEventListener('error', this.handleError)
 		socket.addEventListener('exit', this.handleExit)
+		socket.addEventListener('open', this.handleOpen)
 
 		this.emitter.onAny(console.info.bind(console, `${url} <`))
 	}
@@ -91,6 +92,10 @@ export class Server {
 
 	handleExit = () => {
 		this.emitter.emit('exit')
+	}
+
+	handleOpen = () => {
+		this.emitter.emit('open')
 	}
 
 	//
