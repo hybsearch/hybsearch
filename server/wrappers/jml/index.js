@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const crypto = require('crypto')
-let makeHash = (str) => {
+let makeHash = str => {
 	let hash = crypto.createHash('sha256')
 	hash.update(str)
 	return hash.digest('base64')
@@ -36,7 +36,7 @@ const readFileOr = (filepath, orValue) => {
 
 // species: ['bla', 'nit', 'fol', 'pal', 'pis', 'gym', 'set', 'mul']
 // seqPerSpecies: [44, 8, 6, 12, 8, 10, 2, 2]
-function makeControlData({species, seqPerSpecies}) {
+function makeControlData({ species, seqPerSpecies }) {
 	if (species.length !== seqPerSpecies.length) {
 		throw new Error('species and seqPerSpecies do not have the same length')
 	}
@@ -52,13 +52,13 @@ thinning = 1
 seed = -1`
 }
 
-function computeSpecies({phylip, trees}) {
+function computeSpecies({ phylip, trees }) {
 	// compute species and seqPerSpecies to pass to `makeControlData`
-	return makeControlData({species, seqPerSpecies})
+	return makeControlData({ species, seqPerSpecies })
 }
 
 module.exports = jml
-async function jml({phylipData, trees, phylipMapping}) {
+async function jml({ phylipData, trees, phylipMapping }) {
 	let workDir = tempy.directory()
 
 	let phylipFile = path.join(workDir, 'input.phy')
@@ -68,7 +68,7 @@ async function jml({phylipData, trees, phylipMapping}) {
 	fs.writeFileSync(treesFile, trees, 'utf-8')
 
 	let controlFile = path.join(workDir, 'jml.input.ctl')
-	let controlData = computeSpecies({phylip: phylipData, trees: trees})
+	let controlData = computeSpecies({ phylip: phylipData, trees: trees })
 	fs.writeFileSync(controlFile, controlData, 'utf-8')
 
 	// find binary via `which`
