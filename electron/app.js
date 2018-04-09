@@ -18,9 +18,8 @@ import {
 	SERVER_LIST,
 	type ServerStateEnum,
 	type Pipeline,
-	type Stage,
-	type Job,
 } from './servers'
+import type { SerializedStage, SerializedJob } from '../server/server/job'
 
 type Props = {}
 
@@ -30,11 +29,11 @@ type State = {
 	nonmonophyly: Array<NonMonoPair>,
 	newick: any,
 	pipelines: Array<Pipeline>,
-	stages: ?Map<string, Stage>,
+	stages: ?Map<string, SerializedStage>,
 	pipeline: ?Pipeline,
 	uptime: ?number,
-	activeJobs: Array<Job>,
-	completedJobs: Array<Job>,
+	activeJobs: Array<SerializedJob>,
+	completedJobs: Array<SerializedJob>,
 	serverError: ?string,
 	jobId: ?string,
 	running: boolean,
@@ -79,21 +78,19 @@ export class App extends React.Component<Props, State> {
 		this.setState(() => ({ serverError: error }))
 	}
 
-	handleJob = (args: { stages: Array<string>, jobId: string }) => {
-		let { stages: stageNames, jobId } = args
-
-		let stages = new Map()
-		stageNames.forEach(name => stages.set(name, { key: name }))
+	handleJob = (args: {
+		stages: Map<string, SerializedStage>,
+		jobId: string,
+	}) => {
+		let { stages, jobId } = args
 
 		this.setState(() => ({ jobId, running: true, stages: stages }))
 	}
 
-	handleStage = (stage: Stage) => {
-		let { key, value, timeTaken, cached } = stage
-
+	handleStage = (stage: SerializedStage) => {
 		this.setState(state => {
 			let stages = new Map(state.stages)
-			stages.set(key, { key, value, timeTaken, cached })
+			stages.set(stage.key, stage)
 			return { stages: stages }
 		})
 	}

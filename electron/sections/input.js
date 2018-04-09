@@ -1,11 +1,11 @@
 // @flow
-/* globals SyntheticEvent, HTMLInputEvent */
 
 import fs from 'fs'
 import path from 'path'
 import * as React from 'react'
 import uniqueId from 'lodash/uniqueId'
 import getFiles from '../lib/get-files'
+import prettyMs from 'pretty-ms'
 
 import { List, ListItem } from './components/material'
 import { AppSection } from './components/app-section'
@@ -18,11 +18,12 @@ import { Select } from 'rmwc/Select'
 import { TabBar, Tab } from 'rmwc/Tabs'
 import { Typography } from 'rmwc/Typography'
 
-import type { Pipeline, Job } from '../servers'
+import type { Pipeline } from '../servers'
+import type { SerializedJob } from '../../server/server/job'
 
 type Props = {
-	activeJobs: Array<Job>,
-	completedJobs: Array<Job>,
+	activeJobs: Array<SerializedJob>,
+	completedJobs: Array<SerializedJob>,
 	pipelines: Array<Pipeline>,
 	onSubmit: ({
 		pipeline: string,
@@ -189,7 +190,7 @@ export class InputSection extends React.Component<Props, State> {
 	}
 
 	render() {
-		console.log(this.state)
+		// console.log(this.state)
 		let { shouldClose } = this.props
 		let { activeTabName } = this.state
 
@@ -215,8 +216,8 @@ export class InputSection extends React.Component<Props, State> {
 }
 
 const InputPanelRecent = (props: {
-	recent: Array<Job>,
-	completed: Array<Job>,
+	recent: Array<SerializedJob>,
+	completed: Array<SerializedJob>,
 	onChoose: ({ jobId: string }) => any,
 }) => {
 	let { recent, completed, onChoose } = props
@@ -225,44 +226,37 @@ const InputPanelRecent = (props: {
 		<React.Fragment>
 			{/* <TextField box={true} withLeadingIcon="search" label="Search…" /> */}
 
-			<InputPanelRecentsList
-				title="Running"
-				jobs={recent}
-				onChoose={onChoose}
-			/>
+			{recent.length ? (
+				<InputPanelRecentsList
+					title="Running"
+					jobs={recent}
+					onChoose={onChoose}
+				/>
+			) : null}
 
-			<InputPanelRecentsList
-				title="Completed"
-				jobs={completed}
-				onChoose={onChoose}
-			/>
+			{completed.length ? (
+				<InputPanelRecentsList
+					title="Completed"
+					jobs={completed}
+					onChoose={onChoose}
+				/>
+			) : null}
 
-			<React.Fragment>
+			{!recent.length && !completed.length ? (
 				<Typography use="subheading1" tag="h3">
-					Running
+					No completed jobs
 				</Typography>
-				<List twoLine={true}>
-					<ListItem
-						text="emydura.gb (8fa76ba)"
-						secondaryText="3 minutes ago"
-						meta="info"
-					/>
-				</List>
-			</React.Fragment>
+			) : null}
 		</React.Fragment>
 	)
 }
 
 const InputPanelRecentsList = (props: {
-	jobs: Array<Job>,
+	jobs: Array<SerializedJob>,
 	onChoose: ({ jobId: string }) => any,
 	title: string,
 }) => {
 	let { jobs, onChoose, title } = props
-
-	if (!jobs || !jobs.length) {
-		return null
-	}
 
 	return (
 		<React.Fragment>
@@ -285,15 +279,27 @@ const InputPanelRecentsList = (props: {
 }
 
 const InputPanelItem = (props: {
-	job: Job,
+	job: SerializedJob,
 	onChoose: ({ jobId: string }) => any,
 }) => {
 	let { job, onChoose } = props
+
+	let title = job.name ? (
+		<span>
+			{job.name} (<code>{job.id.substr(0, 7)}</code>)
+		</span>
+	) : (
+		job.id
+	)
+	let duration = job.duration
+		? prettyMs(job.duration)
+		: 'problem with the duration'
+
 	return (
 		<ListItem
 			key={job.id}
-			text={job.name ? `${job.name} (${job.id})` : job.id}
-			secondaryText={new Date() - new Date(job.started)}
+			text={title}
+			secondaryText={duration}
 			meta="info"
 			onClick={() => onChoose({ jobId: job.id })}
 		/>

@@ -25,7 +25,7 @@ function startPipeline({
 
 	allJobs.set(job.id, job)
 
-	respond({ jobId: job.id, stages: job.stages() })
+	respond({ jobId: job.id, stages: [...job.stages.entries()] })
 }
 
 module.exports = startPipeline

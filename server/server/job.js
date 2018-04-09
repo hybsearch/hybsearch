@@ -3,7 +3,6 @@
 
 const childProcess = require('child_process')
 const path = require('path')
-const serializeError = require('serialize-error')
 const hashString = require('../lib/hash-string')
 const pipelines = require('./pipelines')
 const flatten = require('lodash/flatten')
@@ -13,6 +12,12 @@ const WORKER_PATH = path.join(__dirname, 'worker', 'index.wrapper.js')
 
 import { typeof WebSocket } from 'ws'
 import type { SerializedPipelineRecord } from './pipelines/types'
+import type {
+	WorkerMessage,
+	StageStarted,
+	StageCompleted,
+	ErrorMessage as WorkerErrorMessage,
+} from './worker'
 
 type Args = {
 	pipeline: string,
@@ -20,9 +25,43 @@ type Args = {
 	data: string,
 }
 
-type WorkerMessage = { payload: any, type: string }
-
 type JobStatusEnum = 'inactive' | 'active' | 'completed' | 'error'
+
+export type SerializedJob = {|
+	id: string,
+	name: ?string,
+	hidden: boolean,
+	status: string,
+	pipeline: SerializedPipelineRecord,
+	started: string,
+	duration: number | null,
+|}
+
+export type SerializedStage = {
+	key: string,
+	value: mixed,
+	error: ?string,
+	wasCached: null | boolean,
+	duration: null | number,
+	status: 'active' | 'completed' | 'error' | 'inactive',
+}
+
+type ErrorMessage = {
+	type: 'error',
+	payload: { message: string },
+}
+
+type ExitMessage = {
+	type: 'exit',
+	payload: { code: number, signal: string },
+}
+
+export type MessageForClient =
+	| StageCompleted
+	| StageStarted
+	| ErrorMessage
+	| WorkerErrorMessage
+	| ExitMessage
 
 module.exports = class Job {
 	id: string
@@ -34,7 +73,8 @@ module.exports = class Job {
 	hidden: boolean = false
 	connectedClients: Array<{ socket: WebSocket, id: string }> = []
 	status: JobStatusEnum = 'inactive'
-	messages: Array<WorkerMessage> = []
+	messages: Array<MessageForClient> = []
+	stages: Map<string, SerializedStage> = new Map()
 
 	constructor(messagePayload: Args) {
 		this.id = hashString(messagePayload.data)
@@ -43,6 +83,7 @@ module.exports = class Job {
 		// record the pipeline that we'll be using
 		let destinationPipeline = pipelines.get(messagePayload.pipeline)
 		this.pipeline = JSON.parse(JSON.stringify(destinationPipeline))
+		this.stages = this.initStageMap()
 
 		// set up the worker process
 		this.process = childProcess.fork(WORKER_PATH)
@@ -53,6 +94,7 @@ module.exports = class Job {
 		this.process.on('exit', this.handleExit)
 
 		// kick it off
+		this.status = 'active'
 		this.process.send(messagePayload)
 	}
 
@@ -60,20 +102,40 @@ module.exports = class Job {
 	//
 	//
 
-	stages = () => {
-		return uniq(flatten(this.pipeline.pipeline.map(stage => stage.output)))
+	// stages = () => {
+	// 	return uniq(flatten(this.pipeline.pipeline.map(stage => stage.output)))
+	// }
+
+	initStageMap = () => {
+		let stages: Map<string, SerializedStage> = new Map()
+		let stageNames = uniq(
+			flatten(this.pipeline.pipeline.map(s => s.output))
+		)
+		stageNames.forEach(name =>
+			stages.set(name, {
+				key: name,
+				value: null,
+				wasCached: null,
+				duration: null,
+				error: null,
+				status: 'inactive',
+			})
+		)
+		return stages
 	}
 
-	serialize = () => {
-		return JSON.stringify({
-			id: this.id,
-			name: this.name,
-			hidden: this.hidden,
-			status: this.status,
-			pipeline: this.pipeline,
-			started: this.started,
-			duration: this.duration,
-		})
+	serialize = (): SerializedJob => {
+		return JSON.parse(
+			JSON.stringify({
+				id: this.id,
+				name: this.name,
+				hidden: this.hidden,
+				status: this.status,
+				pipeline: this.pipeline,
+				started: this.started,
+				duration: this.duration,
+			})
+		)
 	}
 
 	//
@@ -100,7 +162,7 @@ module.exports = class Job {
 		)
 	}
 
-	messageClients = (message: WorkerMessage) => {
+	messageClients = (message: MessageForClient) => {
 		let stringified = JSON.stringify(message)
 		this.connectedClients.forEach(client => client.socket.send(stringified))
 	}
@@ -113,18 +175,87 @@ module.exports = class Job {
 		// The 'message' event is triggered when a child process uses
 		// process.send() to send messages.
 
-		// store the message locally so we can replay to new clients
-		this.messages.push(message)
+		let affectedStages =
+			message.type === 'stage-errored' ? [] : [message.payload.key]
 
-		// log it
-		console.log('<job<', message)
+		switch (message.type) {
+			case 'stage-started': {
+				let { key } = message.payload
+				this.stages.set(message.payload.key, {
+					key,
+					value: null,
+					wasCached: null,
+					duration: null,
+					error: null,
+					status: 'active',
+				})
+				break
+			}
+			case 'stage-completed': {
+				let { key, value, wasCached, duration } = message.payload
+				this.stages.set(message.payload.key, {
+					key,
+					value,
+					wasCached,
+					duration,
+					error: null,
+					status: 'completed',
+				})
+				break
+			}
+			case 'stage-errored': {
+				let activeStages = [...this.stages.values()].filter(
+					v => v.status === 'active'
+				)
 
-		// forward the message to the GUI
-		this.messageClients(message)
+				affectedStages = activeStages.map(s => s.key)
 
-		// if the pipeline has finished, detach ourselves so the child_process
-		// can exit
-		if (message.type === 'error') {
+				for (let stage of activeStages) {
+					this.stages.set(
+						stage.key,
+						Object.assign({}, stage, {
+							status: 'error',
+							error: message.payload.message,
+							duration: message.payload.duration,
+						})
+					)
+				}
+
+				break
+			}
+			default:
+				;(message.type: empty)
+		}
+
+		for (let key of affectedStages) {
+			let messageToSend: any = {
+				type: message.type,
+				payload: this.stages.get(key),
+			}
+
+			// store the message locally so we can replay to new clients
+			this.messages.push(messageToSend)
+
+			// log it
+			console.log(
+				'<job<',
+				JSON.parse(
+					JSON.stringify(messageToSend, (key, val) => {
+						if (typeof val === 'string' && val.length > 100) {
+							return val.substr(0, 99) + '…'
+						}
+						return val
+					})
+				)
+			)
+
+			// forward the message to the GUI
+			this.messageClients(messageToSend)
+		}
+
+		// if the pipeline has finished, detach ourselves so the
+		// child_process can exit
+		if (message.type === 'stage-errored') {
 			this.terminate()
 		}
 	}
@@ -137,7 +268,7 @@ module.exports = class Job {
 		this.status = 'error'
 		this.messageClients({
 			type: 'error',
-			payload: { error: serializeError(error) },
+			payload: { message: error.message },
 		})
 		this.terminate()
 	}

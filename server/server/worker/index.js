@@ -1,8 +1,6 @@
 // @flow
 'use strict'
 
-const serializeError = require('serialize-error')
-
 const Cache = require('../cache')
 const zip = require('lodash/zip')
 const PIPELINES = require('../pipelines')
@@ -11,17 +9,44 @@ const PIPELINES = require('../pipelines')
 ///// helpers
 /////
 
-const logData = msg => console.log(JSON.stringify(msg))
-const sendData = msg => (process: any).send(msg)
+export type ErrorMessage = {
+	type: 'stage-errored',
+	payload: { message: string, duration: number },
+}
+
+export type StageCompleted = {
+	type: 'stage-completed',
+	payload: {
+		key: string,
+		value: mixed,
+		duration: number,
+		wasCached: boolean,
+	},
+}
+
+export type StageStarted = {
+	type: 'stage-started',
+	payload: {
+		key: string,
+	},
+}
+
+export type WorkerMessage = StageStarted | StageCompleted | ErrorMessage
+
+const logData = (msg: WorkerMessage) => console.log(JSON.stringify(msg))
+const sendData = (msg: WorkerMessage) => (process: any).send(msg)
 const send = process.send ? sendData : logData
 
-const error = e => send({ type: 'error', payload: e })
-const stageComplete = ({ key, value, timeTaken, cached }) =>
+const error = e => send({ type: 'stage-errored', payload: e })
+
+const stageComplete = ({ key, value, duration, wasCached }) =>
 	send({
-		type: 'stage-complete',
-		payload: { key, value, timeTaken, cached },
+		type: 'stage-completed',
+		payload: { key, value, duration, wasCached },
 	})
-const stageStart = ({ key }) => send({ type: 'stage-start', payload: { key } })
+
+const stageStart = ({ key }) =>
+	send({ type: 'stage-started', payload: { key } })
 
 const now = () => {
 	let time = process.hrtime()
@@ -42,7 +67,7 @@ if (process.send) {
 }
 
 process.on('disconnect', () => {
-	console.error('disconnected')
+	console.error('<worker> disconnected')
 	process.exit(0)
 })
 
@@ -77,8 +102,8 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 					stageComplete({
 						key,
 						value,
-						timeTaken: now() - start,
-						cached: true,
+						duration: now() - start,
+						wasCached: true,
 					})
 				})
 				start = now()
@@ -96,8 +121,8 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 				stageComplete({
 					key,
 					value: result,
-					timeTaken: now() - start,
-					cached: false,
+					duration: now() - start,
+					wasCached: false,
 				})
 			})
 
@@ -105,7 +130,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 		}
 	} catch (err) {
 		console.error(err)
-		error({ error: serializeError(err), timeTaken: now() - start })
+		error({ message: err.message, duration: now() - start })
 	} finally {
 		process.exit(0)
 	}

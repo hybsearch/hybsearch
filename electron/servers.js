@@ -18,25 +18,11 @@ if (isDev) {
 
 export type Pipeline = {
 	name: string,
-	pipeline: Array<Stage>,
+	pipeline: Array<SerializedPipelineStage>,
 }
 
-export type Stage = {
-	key: string,
-	value?: string,
-	cached?: boolean,
-	timeTaken?: number,
-}
-
-export type Job = {
-	id: string,
-	name: ?string,
-	hidden: boolean,
-	status: string,
-	pipeline: Pipeline,
-	started: string,
-	duration: number | null,
-}
+import type { SerializedJob, SerializedStage } from '../server/server/job'
+import type { SerializedPipelineStage } from '../server/server/pipelines/types'
 
 export class Server {
 	url: ?string = null
@@ -161,10 +147,10 @@ export class Server {
 		this.emitter.on('exit', () => listener('down'))
 	}
 
-	onJobUpdate = (listener: Stage => any) => {
-		this.emitter.on('stage-start', listener)
-		this.emitter.on('stage-complete', listener)
-		this.emitter.on('stage-error', listener)
+	onJobUpdate = (listener: SerializedStage => any) => {
+		this.emitter.on('stage-started', listener)
+		this.emitter.on('stage-completed', listener)
+		this.emitter.on('stage-errored', listener)
 	}
 
 	//
@@ -179,11 +165,11 @@ export class Server {
 		return this.waitForResponse({ type: 'get-uptime' })
 	}
 
-	getActiveJobs = (): Promise<{ jobs: Array<Job> }> => {
+	getActiveJobs = (): Promise<{ jobs: Array<SerializedJob> }> => {
 		return this.waitForResponse({ type: 'get-active-jobs' })
 	}
 
-	getCompletedJobs = (): Promise<{ jobs: Array<Job> }> => {
+	getCompletedJobs = (): Promise<{ jobs: Array<SerializedJob> }> => {
 		return this.waitForResponse({ type: 'get-completed-jobs' })
 	}
 
@@ -191,7 +177,7 @@ export class Server {
 		pipeline: string,
 		fileName: string,
 		fileContents: string,
-	}): Promise<{ stages: Array<string>, jobId: string }> => {
+	}): Promise<{ stages: Map<string, SerializedStage>, jobId: string }> => {
 		const { pipeline, fileName, fileContents } = args
 
 		return this.waitForResponse({
@@ -201,18 +187,26 @@ export class Server {
 				filepath: fileName,
 				data: fileContents,
 			},
-		})
+		}).then(resp =>
+			Object.assign({}, resp, { stages: new Map(resp.stages) })
+		)
 	}
 
 	watchJob = (args: {
 		jobId: string,
-	}): Promise<{ exists: boolean, stages: Array<string>, jobId: string }> => {
+	}): Promise<{
+		exists: boolean,
+		stages: Map<string, SerializedStage>,
+		jobId: string,
+	}> => {
 		const { jobId } = args
 
 		return this.waitForResponse({
 			type: 'watch-pipeline',
 			payload: { jobId: jobId },
-		})
+		}).then(resp =>
+			Object.assign({}, resp, { stages: new Map(resp.stages) })
+		)
 	}
 
 	cancelJob = (args: {
