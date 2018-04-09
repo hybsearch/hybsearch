@@ -204,7 +204,6 @@ export class App extends React.Component<Props, State> {
 							completedJobs={this.state.completedJobs}
 							onSubmit={this.handleAppPipelineStart}
 							onChoose={this.handleAppPipelineWatch}
-							shouldClose={this.state.running}
 							pipelines={this.state.pipelines}
 						/>
 					)}
