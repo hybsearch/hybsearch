@@ -227,6 +227,10 @@ module.exports = class Job {
 					)
 				}
 
+				// if the pipeline has finished, detach ourselves so the
+				// child_process can exit
+				this.terminate()
+
 				break
 			}
 			default:
@@ -257,12 +261,6 @@ module.exports = class Job {
 
 			// forward the message to the GUI
 			this.messageClients(messageToSend)
-		}
-
-		// if the pipeline has finished, detach ourselves so the
-		// child_process can exit
-		if (message.type === 'stage-errored') {
-			this.terminate()
 		}
 	}
 
