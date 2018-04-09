@@ -97,10 +97,10 @@ const LoadingIcon = styled.div`
 	justify-content: center;
 	position: relative;
 	box-sizing: content-box;
-	animation: ${({ status }) =>
-		status === 'active' ? `${pulse} 2s infinite` : ''};
 
 	&::before {
+		animation: ${({ status }) =>
+			status === 'active' ? `${pulse} 2s infinite` : ''};
 		content: '';
 		background-color: currentColor;
 		border-radius: 17px;
