@@ -23,27 +23,23 @@ type Args = {
 
 type WorkerMessage = { payload: any, type: string }
 
+type JobStatusEnum = 'inactive' | 'active' | 'completed' | 'error'
+
 module.exports = class Job {
 	id: string
 	name: ?string
-	started: number
-	duration: number | null
-	hidden: boolean
-	connectedClients: Array<{ socket: WebSocket, id: string }>
-	status: 'inactive' | 'active' | 'completed' | 'error'
 	process: childProcess.ChildProcess
 	pipeline: SerializedPipelineRecord
-	messages: Array<WorkerMessage>
+	started: number = new Date()
+	duration: number | null = null
+	hidden: boolean = false
+	connectedClients: Array<{ socket: WebSocket, id: string }> = []
+	status: JobStatusEnum = 'inactive'
+	messages: Array<WorkerMessage> = []
 
 	constructor(messagePayload: Args) {
 		this.id = hashString(messagePayload.data)
 		this.name = messagePayload.filepath
-		this.started = new Date()
-		this.duration = null
-		this.hidden = false
-		this.messages = []
-		this.connectedClients = []
-		this.status = 'inactive'
 
 		// record the pipeline that we'll be using
 		let destinationPipeline = pipelines.get(messagePayload.pipeline)
