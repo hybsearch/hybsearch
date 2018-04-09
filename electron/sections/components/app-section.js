@@ -30,15 +30,18 @@ export class AppSection extends React.Component<Props, State> {
 
 	handleToggle = (ev: any) =>
 		this.setState(() => ({ expanded: ev.detail.isOn }))
-	toggleExpansion = () => {
-		if (!this.props.expandable) {
-			return
-		}
+
+	toggleExpansion = () =>
 		this.setState(state => ({ expanded: !state.expanded }))
-	}
 
 	render() {
-		const { title, content, actions, contentTopPadding } = this.props
+		const {
+			title,
+			content,
+			actions,
+			contentTopPadding,
+			expandable = true,
+		} = this.props
 
 		const titleEl = title ? (
 			typeof title === 'string' ? (
@@ -52,21 +55,19 @@ export class AppSection extends React.Component<Props, State> {
 
 		return (
 			<AppCard>
-				{this.props.expandable ? (
+				{expandable ? (
 					<Ripple onClick={this.toggleExpansion}>
 						<CardHeader>
 							{titleEl}
 
 							<FlexSpacer />
 
-							{this.props.expandable ? (
-								<IconToggle
-									checked={this.state.expanded}
-									disabled={true}
-									on={{ label: 'Collapse Card', content: 'arrow_drop_up' }}
-									off={{ label: 'Expand Card', content: 'arrow_drop_down' }}
-								/>
-							) : null}
+							<IconToggle
+								checked={this.state.expanded}
+								disabled={true}
+								on={{ label: 'Collapse Card', content: 'arrow_drop_up' }}
+								off={{ label: 'Expand Card', content: 'arrow_drop_down' }}
+							/>
 						</CardHeader>
 					</Ripple>
 				) : (
