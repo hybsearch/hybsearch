@@ -41,9 +41,8 @@ export type Job = {
 export class Server {
 	url: ?string = null
 	socket: ?WebSocket = null
-	emitter: Emittery = new Emittery()
-
 	pipeline: ?Pipeline = null
+	emitter: Emittery = new Emittery()
 
 	constructor(url: string) {
 		this.url = url
