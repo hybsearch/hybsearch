@@ -60,7 +60,7 @@ function hashFastaSequenceNames(fastaData /* : string */) {
 
 		let currentCount = speciesIncrementerCounter.get(hashedSpeciesName) || 0
 
-		currentCount = currentCount.toString().padStart(digitLen, '0')
+		currentCount = currentCount.toString()
 		output[`${trimmedName}x${currentCount}`] = speciesIdentifier
 	}
 
