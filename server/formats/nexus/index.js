@@ -15,13 +15,19 @@ module.exports.hashNexusTreeNames = function hashNexusTreeNames(
 		.filter(x => Boolean(x))
 
 	let sequenceToHashedIdentMap = invert(phylipIdentMap)
-	sequenceToHashedIdentMap = mapKeys(sequenceToHashedIdentMap, (v, k) => k.split('__')[0])
+	sequenceToHashedIdentMap = mapKeys(
+		sequenceToHashedIdentMap,
+		(v, k) => k.split('__')[0]
+	)
 
 	for (let label of labels) {
 		let hashedLabel = sequenceToHashedIdentMap[label]
 		let speciesLabel = hashedLabel.split('x')[0]
 		// console.log(label, hashedLabel, escape(hashedLabel))
-		beastTrees = beastTrees.replace(new RegExp(escape(label), 'g'), speciesLabel)
+		beastTrees = beastTrees.replace(
+			new RegExp(escape(label), 'g'),
+			speciesLabel
+		)
 	}
 
 	return beastTrees

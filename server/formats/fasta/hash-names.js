@@ -5,7 +5,8 @@ const crypto = require('crypto')
 let makeHash = str => {
 	let hash = crypto.createHash('sha256')
 	hash.update(str)
-	return hash.digest('hex')
+	return hash
+		.digest('hex')
 		.replace(/0/g, 'g')
 		.replace(/1/g, 'h')
 		.replace(/2/g, 'i')
