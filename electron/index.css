@@ -275,6 +275,10 @@ section button {
 	color: var(--red);
 }
 
-#jml-container {
-	font-size: 8px;
+#jml-container .container {
+	overflow-x: scroll;
+}
+
+#jml-container table {
+	width: 100%;
 }
