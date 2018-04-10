@@ -19,15 +19,11 @@ const readFileOr = (filepath, orValue) => {
 	}
 }
 
-const trimEveryLine = string => {
-	return string
+const readJmlOutputFile = filepath => {
+	return readFileOr(filepath, '')
 		.split('\n')
 		.map(l => l.trim())
 		.join('\n')
-}
-
-const readJmlOutputFile = filepath => {
-	return trimEveryLine(readFileOr(filepath, ''))
 }
 
 module.exports = jml
