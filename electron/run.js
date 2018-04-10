@@ -67,6 +67,12 @@ function onData(phase, data) {
 
 		container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
 		container.hidden = false
+	} else if (phase === 'jml-output') {
+		let container = document.querySelector('#jml-container')
+		document.querySelector('#distributions').innerHTML = `<pre>${JSON.stringify(data.distributions, null, 2)}</pre>`
+		document.querySelector('#probabilities').innerHTML = `<pre>${JSON.stringify(data.probabilities, null, 2)}</pre>`
+		document.querySelector('#results').innerHTML = `<pre>${JSON.stringify(data.results, null, 2)}</pre>`
+		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
 	} else {
