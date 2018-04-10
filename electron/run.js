@@ -52,6 +52,22 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 
 function makeDistributionsTable(distributions) {
 	let table = document.createElement('table')
+
+	{
+		let thead = document.createElement('thead')
+		let tr = document.createElement('tr')
+
+		let firstDistribution = distributions[0]
+
+		for (let comparison of Object.keys(firstDistribution)) {
+			let td = document.createElement('td')
+			td.innerHTML = comparison
+			tr.appendChild(td)
+		}
+
+		thead.appendChild(tr)
+		table.appendChild(thead)
+	}
 	return table
 }
 
