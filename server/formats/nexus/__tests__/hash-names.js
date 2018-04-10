@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-const { hashNexusTreeNames } = require('../hash-names')
+const hashNexusTreeNames = require('../hash-names')
 
 test('emydura.nexus', () => {
 	let content = `#NEXUS
