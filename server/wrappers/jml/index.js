@@ -5,6 +5,7 @@ const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
 const generateControlFile = require('./ctl')
+const csv = require('comma-separated-values')
 
 // TODO:
 // - take aligned fasta filepath
@@ -64,18 +65,13 @@ async function jml({ phylipData, trees, phylipMapping }) {
 
 	process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
 
-	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '')
-	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '')
-	let results = readFileOr(path.join(workDir, 'Results.txt'), '')
+	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '').split('\n').map(l => l.trim()).join('\n')
+	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '').split('\n').map(l => l.trim()).join('\n')
+	let results = readFileOr(path.join(workDir, 'Results.txt'), '').split('\n').map(l => l.trim()).join('\n')
 
-	return { distributions, probabilities, results }
+	let distObj = csv.parse(distributions, {header: true, cellDelimiter: '\t'})
+	let probObj = csv.parse(probabilities, {header: true, cellDelimiter: '\t'})
+	let resObj = csv.parse(results, {header: true, cellDelimiter: '\t'})
 
-	// yield [
-	// 	{
-	// 		species: ['lup', 'lap'],
-	// 		sequences: ['lup1', 'lap1'],
-	// 		distance: 0.0162455,
-	// 		probability: 0.0434783,
-	// 	}
-	// ]
+	return { distributions: distObj, probabilities: probObj, results: resObj }
 }
