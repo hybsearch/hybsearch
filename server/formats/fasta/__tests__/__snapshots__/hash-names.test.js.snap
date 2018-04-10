@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pads accession numbers to the left with 0s when they grow past one digit 1`] = `
+Object {
+  "oTYw41LH_01": "Emydura_victoriae__KC755189",
+  "oTYw41LH_02": "Emydura_victoriae__KC755189",
+  "oTYw41LH_03": "Emydura_victoriae__KC755188",
+  "oTYw41LH_04": "Emydura_victoriae__KC755188",
+  "oTYw41LH_05": "Emydura_victoriae__KC755188",
+  "oTYw41LH_06": "Emydura_victoriae__KC755188",
+  "oTYw41LH_07": "Emydura_victoriae__KC755188",
+  "oTYw41LH_08": "Emydura_victoriae__KC755188",
+  "oTYw41LH_09": "Emydura_victoriae__KC755188",
+  "oTYw41LH_10": "Emydura_victoriae__KC755188",
+  "oTYw41LH_11": "Emydura_victoriae__KC755188",
+  "oTYw41LH_12": "Emydura_victoriae__KC755188",
+  "oTYw41LH_13": "Emydura_victoriae__KC755188",
+  "oTYw41LH_14": "Emydura_victoriae__KC755188",
+  "oTYw41LH_15": "Emydura_victoriae__KC755188",
+}
+`;
+
+exports[`shortens the accession identifiers 1`] = `
+Object {
+  "oTYw41LH9_1": "Emydura_victoriae__KC755189",
+  "oTYw41LH9_2": "Emydura_victoriae__KC755188",
+  "tQwNDL7i6_1": "Emydura_subglobosa__KC755190",
+}
+`;
