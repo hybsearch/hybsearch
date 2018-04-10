@@ -50,15 +50,15 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 	})
 }
 
-function makeDistributionsTable(distributions) {
+function makeTableFromObject(data) {
 	let table = document.createElement('table')
 
 	let thead = document.createElement('thead')
 	let tr = document.createElement('tr')
 
-	let firstDistribution = distributions[0]
+	let first = data[0]
 
-	for (let comparison of Object.keys(firstDistribution)) {
+	for (let comparison of Object.keys(first)) {
 		let th = document.createElement('th')
 		th.innerHTML = comparison
 		tr.appendChild(th)
@@ -68,45 +68,10 @@ function makeDistributionsTable(distributions) {
 	table.appendChild(thead)
 
 	let tbody = document.createElement('tbody')
-	for (let distribution of distributions) {
+	for (let distribution of data) {
 		let tr = document.createElement('tr')
 
 		for (let value of Object.values(distribution)) {
-			let td = document.createElement('td')
-			td.innerHTML = value
-			tr.appendChild(td)
-		}
-
-		tbody.appendChild(tr)
-	}
-
-	table.appendChild(tbody)
-
-	return table
-}
-
-function makeProbabilitiesTable(probabilities) {
-	let table = document.createElement('table')
-
-	let thead = document.createElement('thead')
-	let tr = document.createElement('tr')
-
-	let first = probabilities[0]
-
-	for (let key of Object.keys(first)) {
-		let th = document.createElement('th')
-		th.innerHTML = key
-		tr.appendChild(th)
-	}
-
-	thead.appendChild(tr)
-	table.appendChild(thead)
-
-	let tbody = document.createElement('tbody')
-	for (let prob of probabilities) {
-		let tr = document.createElement('tr')
-
-		for (let value of Object.values(prob)) {
 			let td = document.createElement('td')
 			td.innerHTML = value
 			tr.appendChild(td)
@@ -143,10 +108,10 @@ function onData(phase, data) {
 		let ress = serialize(data.results)
 		document
 			.querySelector('#distributions')
-			.appendChild(makeDistributionsTable(data.distributions))
+			.appendChild(makeTableFromObject(data.distributions))
 		document
 			.querySelector('#probabilities')
-			.appendChild(makeProbabilitiesTable(data.probabilities))
+			.appendChild(makeTableFromObject(data.probabilities))
 		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
 		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
