@@ -68,6 +68,27 @@ function makeDistributionsTable(distributions) {
 		thead.appendChild(tr)
 		table.appendChild(thead)
 	}
+
+	{
+		let tbody = document.createElement('tbody')
+
+		for (let distribution of distributions) {
+			let tr = document.createElement('tr')
+
+			for (let value of Object.values(distribution)) {
+				let td = document.createElement('td')
+
+				td.innerHTML = value
+
+				tr.appendChild(td)
+			}
+
+			tbody.appendChild(tr)
+		}
+
+		table.appendChild(tbody)
+	}
+
 	return table
 }
 
