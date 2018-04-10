@@ -106,13 +106,14 @@ function onData(phase, data) {
 		load(data)
 	} else if (phase === 'pruned-identifiers') {
 		let container = document.querySelector('#omitted-container')
+		let results = document.querySelector("#omitted-results")
 
 		let formattedNames = data.map(node => {
 			let ident = node.ident ? ` [${node.ident}]` : ''
 			return `${node.name}${ident} (${node.length})`
 		})
 
-		container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
+		results.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
 		container.hidden = false
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
