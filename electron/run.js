@@ -112,10 +112,11 @@ function onData(phase, data) {
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
 		let serialize = data => JSON.stringify(data, null, 2)
-		let dists = serialize(data.distributions)
 		let probs = serialize(data.probabilities)
 		let ress = serialize(data.results)
-		document.querySelector('#distributions').innerHTML = `<pre>${dists}</pre>`
+		document
+			.querySelector('#distributions')
+			.appendChild(makeDistributionsTable(data.distributions))
 		document.querySelector('#probabilities').innerHTML = `<pre>${probs}</pre>`
 		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
 		container.hidden = false
