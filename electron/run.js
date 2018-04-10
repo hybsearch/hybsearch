@@ -50,6 +50,11 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 	})
 }
 
+function makeDistributionsTable(distributions) {
+	let table = document.createElement('table')
+	return table
+}
+
 function onData(phase, data) {
 	console.info([phase, data])
 	if (phase.startsWith('newick-json:')) {
