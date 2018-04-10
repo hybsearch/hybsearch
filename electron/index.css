@@ -274,3 +274,7 @@ section button {
 #standard-deviation {
 	color: var(--red);
 }
+
+#jml-container {
+	font-size: 8px;
+}
