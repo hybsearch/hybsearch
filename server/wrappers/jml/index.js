@@ -9,18 +9,6 @@ const escape = require('lodash/escapeRegExp')
 const generateControlFile = require('./ctl')
 const csv = require('comma-separated-values')
 
-// TODO:
-// - take aligned fasta filepath
-// - hash sequence identifiers with sha256.substr(0, 10) for phylip
-// 		- keep the (a) sequence identifier in the phylip hashed ident
-// - fasta-to-phylip
-// - modify species names in nexus species.trees file to match hashed files
-// - fill out ctl file with hashed names
-// - run jml
-// - read output files
-// - reverse hashed names in output files
-// - return useful data from files
-
 const readFileOr = (filepath, orValue) => {
 	try {
 		return fs.readFileSync(filepath, 'utf-8')
