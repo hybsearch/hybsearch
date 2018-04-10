@@ -59,7 +59,7 @@ async function jml({ phylipData, trees, phylipMapping }) {
 
 	await result
 
-	process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
+	// process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
 
 	let distributions = readJmlOutputFile(path.join(workDir, 'Distributions.txt'))
 	let probabilities = readJmlOutputFile(path.join(workDir, 'Probabilities.txt'))
