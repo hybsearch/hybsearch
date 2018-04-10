@@ -50,6 +50,41 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 	})
 }
 
+function makeTableFromObject(data) {
+	let table = document.createElement('table')
+
+	let thead = document.createElement('thead')
+	let tr = document.createElement('tr')
+
+	let first = data[0]
+
+	for (let comparison of Object.keys(first)) {
+		let th = document.createElement('th')
+		th.innerHTML = comparison
+		tr.appendChild(th)
+	}
+
+	thead.appendChild(tr)
+	table.appendChild(thead)
+
+	let tbody = document.createElement('tbody')
+	for (let distribution of data) {
+		let tr = document.createElement('tr')
+
+		for (let value of Object.values(distribution)) {
+			let td = document.createElement('td')
+			td.innerHTML = value
+			tr.appendChild(td)
+		}
+
+		tbody.appendChild(tr)
+	}
+
+	table.appendChild(tbody)
+
+	return table
+}
+
 function onData(phase, data) {
 	console.info([phase, data])
 	if (phase.startsWith('newick-json:')) {
@@ -66,6 +101,18 @@ function onData(phase, data) {
 		})
 
 		container.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
+		container.hidden = false
+	} else if (phase === 'jml-output') {
+		let container = document.querySelector('#jml-container')
+		let serialize = data => JSON.stringify(data, null, 2)
+		let ress = serialize(data.results)
+		document
+			.querySelector('#distributions')
+			.appendChild(makeTableFromObject(data.distributions))
+		document
+			.querySelector('#probabilities')
+			.appendChild(makeTableFromObject(data.probabilities))
+		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
 		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
@@ -159,7 +206,7 @@ function setLoadingErrors({ after: timeTaken }) {
 	for (let el of els) {
 		console.info(`error in ${el.dataset.loaderName}`)
 		el.classList.add('error')
-		el.dataset.time = timeTaken
+		el.dataset.time = prettyMs(timeTaken)
 	}
 }
 

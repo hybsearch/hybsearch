@@ -2,10 +2,17 @@
 
 const ent = require('../../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
-const { genbankToFasta, fastaToBeast } = require('../../formats')
+const {
+	genbankToFasta,
+	fastaToBeast,
+	hashFastaSequenceNames,
+	fastaToPhylip,
+	hashNexusTreeNames,
+} = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
 const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
+const jml = require('../../wrappers/jml')
 const { removeCircularLinks } = require('../lib')
 
 module.exports = [
@@ -65,5 +72,30 @@ module.exports = [
 			removeCircularLinks(newickJson),
 		],
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],
+	},
+	{
+		// turn aligned fasta into PHYLIP
+		input: ['aligned-fasta', 'beast-trees'],
+		transform: ([fasta, beastTrees]) => {
+			let phylipIdentMap = hashFastaSequenceNames(fasta)
+			return [
+				phylipIdentMap,
+				fastaToPhylip(fasta, phylipIdentMap),
+				hashNexusTreeNames(beastTrees.species, phylipIdentMap),
+			]
+		},
+		output: ['phylip-identifier-map', 'aligned-phylip', 'phylipified-trees'],
+	},
+	{
+		// run JML
+		input: ['phylipified-trees', 'aligned-phylip', 'phylip-identifier-map'],
+		transform: ([phylipifiedTrees, alignedPhylip, phylipIdentMap]) => [
+			jml({
+				phylipData: alignedPhylip,
+				trees: phylipifiedTrees,
+				phylipMapping: phylipIdentMap,
+			}),
+		],
+		output: ['jml-output'],
 	},
 ]
