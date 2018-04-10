@@ -48,7 +48,7 @@ function hashFastaSequenceNames(fastaData) {
 			.get(hashedSpeciesName)
 			.toString()
 			.padStart(digitLen, '0')
-		output[`${trimmedName}_${currentCount}`] = species
+		output[`${trimmedName}x${currentCount}`] = species
 	}
 
 	return output

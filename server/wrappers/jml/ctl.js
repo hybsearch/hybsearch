@@ -28,7 +28,10 @@ module.exports = computeSpecies
 function computeSpecies(phylip) {
 	let allSpecies = [...getSpeciesFromPhylip(phylip)]
 	let speciesCounts = mapValues(
-		groupBy(allSpecies, speciesName => speciesName.split('_')[0]),
+		// hi jml
+		// jml is silly and removes underscores from the species name?
+		// so we use X, instead
+		groupBy(allSpecies, speciesName => speciesName.split('x')[0] + 'x'),
 		speciesInstances => speciesInstances.length
 	)
 
