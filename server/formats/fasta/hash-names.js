@@ -5,7 +5,7 @@ const crypto = require('crypto')
 let makeHash = str => {
 	let hash = crypto.createHash('sha256')
 	hash.update(str)
-	return hash.digest('base64')
+	return hash.digest('hex')
 }
 
 const { parseFasta } = require('./parse')
