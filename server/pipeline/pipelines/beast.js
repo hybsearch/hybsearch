@@ -81,7 +81,7 @@ module.exports = [
 			return [
 				phylipIdentMap,
 				fastaToPhylip(fasta, phylipIdentMap),
-				hashNexusTreeNames(beastTrees, phylipIdentMap),
+				hashNexusTreeNames(beastTrees.species, phylipIdentMap),
 			]
 		},
 		output: ['phylip-identifier-map', 'aligned-phylip', 'phylipified-trees'],
