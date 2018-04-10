@@ -36,7 +36,6 @@
     "loud-rejection": "^1.6.0",
     "make-dir": "^1.2.0",
     "minimist": "^1.2.0",
-    "regexp.escape": "^1.0.2",
     "serialize-error": "^2.1.0",
     "tempy": "^0.2.1",
     "wordwrap": "^1.0.0",
