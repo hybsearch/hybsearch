@@ -5,7 +5,7 @@ const tempy = require('tempy')
 const fs = require('fs')
 
 module.exports = clustal
-function clustal(data) {
+async function clustal(data) {
 	const inputFile = tempy.file()
 	const outputFile = tempy.file()
 	fs.writeFileSync(inputFile, data, 'utf-8')
@@ -20,7 +20,12 @@ function clustal(data) {
 		'--outfmt=fasta',
 	]
 
-	execa.sync(executable, args)
+	let result = execa(executable, args)
+
+	result.stdout.pipe(process.stderr)
+	result.stderr.pipe(process.stderr)
+
+	await result
 
 	return fs.readFileSync(outputFile, 'utf-8')
 }
