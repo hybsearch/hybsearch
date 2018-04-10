@@ -4,6 +4,8 @@ const execa = require('execa')
 const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
+const toPairs = require('lodash/toPairs')
+const escape = require('regexp.escape')
 const generateControlFile = require('./ctl')
 const csv = require('comma-separated-values')
 
@@ -79,6 +81,15 @@ async function jml({ phylipData, trees, phylipMapping }) {
 	let distributions = readJmlOutputFile(path.join(workDir, 'Distributions.txt'))
 	let probabilities = readJmlOutputFile(path.join(workDir, 'Probabilities.txt'))
 	let results = readJmlOutputFile(path.join(workDir, 'Results.txt'))
+
+	for (let [hashed, unhashed] of toPairs(phylipMapping)) {
+		hashed = hashed.split('x')[0]
+		unhashed = unhashed.split('__')[0]
+		let regex = new RegExp(escape(hashed), 'g')
+		distributions = distributions.replace(regex, unhashed)
+		probabilities = probabilities.replace(regex, unhashed)
+		results = results.replace(regex, unhashed)
+	}
 
 	let distObj = csv.parse(distributions, { header: true, cellDelimiter: '\t' })
 	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
