@@ -65,13 +65,22 @@ async function jml({ phylipData, trees, phylipMapping }) {
 
 	process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
 
-	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '').split('\n').map(l => l.trim()).join('\n')
-	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '').split('\n').map(l => l.trim()).join('\n')
-	let results = readFileOr(path.join(workDir, 'Results.txt'), '').split('\n').map(l => l.trim()).join('\n')
+	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '')
+		.split('\n')
+		.map(l => l.trim())
+		.join('\n')
+	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '')
+		.split('\n')
+		.map(l => l.trim())
+		.join('\n')
+	let results = readFileOr(path.join(workDir, 'Results.txt'), '')
+		.split('\n')
+		.map(l => l.trim())
+		.join('\n')
 
-	let distObj = csv.parse(distributions, {header: true, cellDelimiter: '\t'})
-	let probObj = csv.parse(probabilities, {header: true, cellDelimiter: '\t'})
-	let resObj = csv.parse(results, {header: true, cellDelimiter: '\t'})
+	let distObj = csv.parse(distributions, { header: true, cellDelimiter: '\t' })
+	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
+	let resObj = csv.parse(results, { header: true, cellDelimiter: '\t' })
 
 	return { distributions: distObj, probabilities: probObj, results: resObj }
 }
