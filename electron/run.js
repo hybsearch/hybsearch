@@ -57,6 +57,9 @@ function makeTableFromObject(data) {
 	let tr = document.createElement('tr')
 
 	let first = data[0]
+	if (!first) {
+		return table
+	}
 
 	for (let comparison of Object.keys(first)) {
 		let th = document.createElement('th')
@@ -104,15 +107,15 @@ function onData(phase, data) {
 		container.hidden = false
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
-		let serialize = data => JSON.stringify(data, null, 2)
-		let ress = serialize(data.results)
 		document
 			.querySelector('#distributions')
 			.appendChild(makeTableFromObject(data.distributions))
 		document
 			.querySelector('#probabilities')
 			.appendChild(makeTableFromObject(data.probabilities))
-		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
+		document
+			.querySelector('#results')
+			.appendChild(makeTableFromObject(data.results))
 		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
