@@ -29,6 +29,7 @@ const readFileOr = (filepath, orValue) => {
 }
 
 module.exports = jml
+// eslint-disable-next-line no-unused-vars
 async function jml({ phylipData, trees, phylipMapping }) {
 	let workDir = tempy.directory()
 
