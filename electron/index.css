@@ -53,9 +53,14 @@ section.loader wrapper.loading {
 section.loader.loading wrapper.loading {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 section.loader.loading wrapper.content {
 	display: none;
+}
+
+.loader {
+	flex: 1;
 }
 
 .loader .checkmark {
