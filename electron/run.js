@@ -159,7 +159,7 @@ function setLoadingErrors({ after: timeTaken }) {
 	for (let el of els) {
 		console.info(`error in ${el.dataset.loaderName}`)
 		el.classList.add('error')
-		el.dataset.time = timeTaken
+		el.dataset.time = prettyMs(timeTaken)
 	}
 }
 
