@@ -286,3 +286,11 @@ section button {
 details summary {
 	cursor: pointer;
 }
+
+#jml-container summary > h3 {
+	display: inline-block;
+}
+
+#jml-container table th {
+	text-align: left;
+}
