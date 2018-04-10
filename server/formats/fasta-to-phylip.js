@@ -16,7 +16,7 @@ function fastaToPhylip(fastaData, phylipIdentMap) {
 	})
 
 	let numberOfSequences = samples.length
-	let lengthOfSequences = samples[0].length
+	let lengthOfSequences = samples[0].sequence.length
 
 	let output = `${numberOfSequences} ${lengthOfSequences}
 ${phylipSamples.join('\n')}
