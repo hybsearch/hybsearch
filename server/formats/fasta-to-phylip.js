@@ -4,8 +4,15 @@
 const { parseFasta } = require('./fasta/parse')
 const invert = require('lodash/invert')
 
+/*::
+type HashedToUnhashedIdentifierMap = {[key: string]: string}
+*/
+
 module.exports = fastaToPhylip
-function fastaToPhylip(fastaData, phylipIdentMap) {
+function fastaToPhylip(
+	fastaData /* : string */,
+	phylipIdentMap /* : HashedToUnhashedIdentifierMap */
+) {
 	let samples = parseFasta(fastaData)
 
 	let sequenceToHashedIdentMap = invert(phylipIdentMap)
