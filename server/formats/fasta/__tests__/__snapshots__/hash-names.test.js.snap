@@ -2,28 +2,28 @@
 
 exports[`pads accession numbers to the left with 0s when they grow past one digit 1`] = `
 Object {
-  "a13630e3_01": "Emydura_victoriae__KC755189",
-  "a13630e3_02": "Emydura_victoriae__KC755189",
-  "a13630e3_03": "Emydura_victoriae__KC755188",
-  "a13630e3_04": "Emydura_victoriae__KC755188",
-  "a13630e3_05": "Emydura_victoriae__KC755188",
-  "a13630e3_06": "Emydura_victoriae__KC755188",
-  "a13630e3_07": "Emydura_victoriae__KC755188",
-  "a13630e3_08": "Emydura_victoriae__KC755188",
-  "a13630e3_09": "Emydura_victoriae__KC755188",
-  "a13630e3_10": "Emydura_victoriae__KC755188",
-  "a13630e3_11": "Emydura_victoriae__KC755188",
-  "a13630e3_12": "Emydura_victoriae__KC755188",
-  "a13630e3_13": "Emydura_victoriae__KC755188",
-  "a13630e3_14": "Emydura_victoriae__KC755188",
-  "a13630e3_15": "Emydura_victoriae__KC755188",
+  "a13630e3x01": "Emydura_victoriae__KC755189",
+  "a13630e3x02": "Emydura_victoriae__KC755189",
+  "a13630e3x03": "Emydura_victoriae__KC755188",
+  "a13630e3x04": "Emydura_victoriae__KC755188",
+  "a13630e3x05": "Emydura_victoriae__KC755188",
+  "a13630e3x06": "Emydura_victoriae__KC755188",
+  "a13630e3x07": "Emydura_victoriae__KC755188",
+  "a13630e3x08": "Emydura_victoriae__KC755188",
+  "a13630e3x09": "Emydura_victoriae__KC755188",
+  "a13630e3x10": "Emydura_victoriae__KC755188",
+  "a13630e3x11": "Emydura_victoriae__KC755188",
+  "a13630e3x12": "Emydura_victoriae__KC755188",
+  "a13630e3x13": "Emydura_victoriae__KC755188",
+  "a13630e3x14": "Emydura_victoriae__KC755188",
+  "a13630e3x15": "Emydura_victoriae__KC755188",
 }
 `;
 
 exports[`shortens the accession identifiers 1`] = `
 Object {
-  "a13630e35_1": "Emydura_victoriae__KC755189",
-  "a13630e35_2": "Emydura_victoriae__KC755188",
-  "b50c0d0cb_1": "Emydura_subglobosa__KC755190",
+  "a13630e35x1": "Emydura_victoriae__KC755189",
+  "a13630e35x2": "Emydura_victoriae__KC755188",
+  "b50c0d0cbx1": "Emydura_subglobosa__KC755190",
 }
 `;
