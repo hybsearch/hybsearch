@@ -294,3 +294,7 @@ details summary {
 #jml-container table th {
 	text-align: left;
 }
+
+#jml-container table .highlight {
+	background-color: lightyellow;
+}
