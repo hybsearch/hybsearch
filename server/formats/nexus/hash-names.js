@@ -3,10 +3,7 @@ const invert = require('lodash/invert')
 const escape = require('lodash/escapeRegExp')
 const mapKeys = require('lodash/mapKeys')
 
-module.exports = function hashNexusTreeNames(
-	beastTrees,
-	phylipIdentMap
-) {
+module.exports = function hashNexusTreeNames(beastTrees, phylipIdentMap) {
 	let labelRegex = /taxlabels(\n\s*[^;]*)+\s;/i
 	let labels = labelRegex.exec(beastTrees)[1]
 	labels = labels
