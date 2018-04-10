@@ -29,6 +29,17 @@ const readFileOr = (filepath, orValue) => {
 	}
 }
 
+const trimEveryLine = string => {
+	return string
+		.split('\n')
+		.map(l => l.trim())
+		.join('\n')
+}
+
+const readJmlOutputFile = filepath => {
+	return trimEveryLine(readFileOr(filepath, ''))
+}
+
 module.exports = jml
 // eslint-disable-next-line no-unused-vars
 async function jml({ phylipData, trees, phylipMapping }) {
@@ -65,18 +76,9 @@ async function jml({ phylipData, trees, phylipMapping }) {
 
 	process.stderr.write(execa.sync('ls', ['-l', workDir]).stdout)
 
-	let distributions = readFileOr(path.join(workDir, 'Distributions.txt'), '')
-		.split('\n')
-		.map(l => l.trim())
-		.join('\n')
-	let probabilities = readFileOr(path.join(workDir, 'Probabilities.txt'), '')
-		.split('\n')
-		.map(l => l.trim())
-		.join('\n')
-	let results = readFileOr(path.join(workDir, 'Results.txt'), '')
-		.split('\n')
-		.map(l => l.trim())
-		.join('\n')
+	let distributions = readJmlOutputFile(path.join(workDir, 'Distributions.txt'))
+	let probabilities = readJmlOutputFile(path.join(workDir, 'Probabilities.txt'))
+	let results = readJmlOutputFile(path.join(workDir, 'Results.txt'))
 
 	let distObj = csv.parse(distributions, { header: true, cellDelimiter: '\t' })
 	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
