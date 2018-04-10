@@ -282,3 +282,7 @@ section button {
 #jml-container table {
 	width: 100%;
 }
+
+details summary {
+	cursor: pointer;
+}
