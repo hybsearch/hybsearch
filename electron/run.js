@@ -105,7 +105,7 @@ function onData(phase, data) {
 		document.querySelector('#phylogram').hidden = false
 		load(data)
 	} else if (phase === 'pruned-identifiers') {
-		let container = document.querySelector('#omitted-results')
+		let container = document.querySelector('#omitted-container')
 
 		let formattedNames = data.map(node => {
 			let ident = node.ident ? ` [${node.ident}]` : ''
