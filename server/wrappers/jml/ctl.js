@@ -21,7 +21,8 @@ function getSpeciesFromPhylip(phylipData) {
 		.slice(1)
 		.map(line => line.trim())
 		.filter(line => line)
-		.map(line => line.slice(0, 11))
+		.map(line => line.slice(0, 10))
+		.map(line => line.replace(/\d/g, ''))
 }
 
 module.exports = computeSpecies
@@ -31,7 +32,7 @@ function computeSpecies(phylip) {
 		// hi jml
 		// jml is silly and removes underscores from the species name?
 		// so we use X, instead
-		groupBy(allSpecies, speciesName => speciesName.split('x')[0] + 'x'),
+		groupBy(allSpecies, speciesName => speciesName.split('x')[0]),
 		speciesInstances => speciesInstances.length
 	)
 

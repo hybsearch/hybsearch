@@ -6,6 +6,16 @@ let makeHash = str => {
 	let hash = crypto.createHash('sha256')
 	hash.update(str)
 	return hash.digest('hex')
+		.replace(/0/g, 'g')
+		.replace(/1/g, 'h')
+		.replace(/2/g, 'i')
+		.replace(/3/g, 'j')
+		.replace(/4/g, 'k')
+		.replace(/5/g, 'l')
+		.replace(/6/g, 'm')
+		.replace(/7/g, 'n')
+		.replace(/8/g, 'o')
+		.replace(/9/g, 'p')
 }
 
 const { parseFasta } = require('./parse')
@@ -20,7 +30,7 @@ function hashFastaSequenceNames(fastaData) {
 
 	for (let { species } of samples) {
 		let [speciesName] = species.split('__')
-		let hashedSpeciesName = makeHash(speciesName).substr(0, 11)
+		let hashedSpeciesName = makeHash(speciesName).substr(0, 10)
 
 		speciesCounter.set(
 			hashedSpeciesName,

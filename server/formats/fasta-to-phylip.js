@@ -11,8 +11,8 @@ function fastaToPhylip(fastaData, phylipIdentMap) {
 	let sequenceToHashedIdentMap = invert(phylipIdentMap)
 
 	let phylipSamples = samples.map(({ species, sequence }) => {
-		let hashedName = sequenceToHashedIdentMap[species]
-		return `${hashedName.padEnd(12, ' ')}${sequence}`
+		let hashedName = sequenceToHashedIdentMap[species].split('x').join('')
+		return `${hashedName.padEnd(10, ' ')}${sequence}`
 	})
 
 	let numberOfSequences = samples.length
