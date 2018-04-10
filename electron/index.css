@@ -276,7 +276,9 @@ section button {
 }
 
 #jml-container .container {
+	height: 30vh;
 	overflow-x: scroll;
+	overflow-y: scroll;
 }
 
 #jml-container table {
