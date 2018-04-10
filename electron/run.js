@@ -106,7 +106,7 @@ function onData(phase, data) {
 		load(data)
 	} else if (phase === 'pruned-identifiers') {
 		let container = document.querySelector('#omitted-container')
-		let results = document.querySelector("#omitted-results")
+		let results = document.querySelector('#omitted-results')
 
 		let formattedNames = data.map(node => {
 			let ident = node.ident ? ` [${node.ident}]` : ''
@@ -115,6 +115,10 @@ function onData(phase, data) {
 
 		results.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
 		container.hidden = false
+		if (formattedNames.length > 0) {
+			results.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
+			container.hidden = false
+		}
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
 
@@ -135,8 +139,6 @@ function onData(phase, data) {
 		document
 			.querySelector('#results')
 			.appendChild(makeTableFromObject(data.results))
-
-		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
 	} else {
