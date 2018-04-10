@@ -8,7 +8,7 @@ let makeHash = str => {
 	return hash.digest('base64')
 }
 
-const {parseFasta} = require('./parse')
+const { parseFasta } = require('./parse')
 
 module.exports = hashFastaSequenceNames
 function hashFastaSequenceNames(fastaData) {
@@ -18,16 +18,19 @@ function hashFastaSequenceNames(fastaData) {
 
 	let samples = parseFasta(fastaData)
 
-	for (let {species} of samples) {
+	for (let { species } of samples) {
 		let [speciesName] = species.split('__')
 		let hashedSpeciesName = makeHash(speciesName).substr(0, 11)
 
-		speciesCounter.set(hashedSpeciesName, (speciesCounter.get(hashedSpeciesName) || 0) + 1)
+		speciesCounter.set(
+			hashedSpeciesName,
+			(speciesCounter.get(hashedSpeciesName) || 0) + 1
+		)
 		fullHashes.set(speciesName, hashedSpeciesName)
 	}
 
 	let speciesCounter2 = new Map()
-	for (let {species} of samples) {
+	for (let { species } of samples) {
 		let [speciesName] = species.split('__')
 		let hashedSpeciesName = fullHashes.get(speciesName)
 		let count = speciesCounter.get(hashedSpeciesName)
@@ -36,7 +39,10 @@ function hashFastaSequenceNames(fastaData) {
 		let newHashedSpeciesNameLength = hashedSpeciesName.length - 1 - digitLen
 
 		let trimmedName = hashedSpeciesName.substr(0, newHashedSpeciesNameLength)
-		speciesCounter2.set(hashedSpeciesName, (speciesCounter2.get(hashedSpeciesName) || 0) + 1)
+		speciesCounter2.set(
+			hashedSpeciesName,
+			(speciesCounter2.get(hashedSpeciesName) || 0) + 1
+		)
 
 		let currentCount = speciesCounter2
 			.get(hashedSpeciesName)

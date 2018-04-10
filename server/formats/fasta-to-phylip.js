@@ -1,7 +1,7 @@
 // @flow
 'use strict'
 
-const {parseFasta} = require('./fasta/parse')
+const { parseFasta } = require('./fasta/parse')
 const invert = require('lodash/invert')
 
 module.exports = fastaToPhylip
@@ -10,7 +10,7 @@ function fastaToPhylip(fastaData, phylipIdentMap) {
 
 	let sequenceToHashedIdentMap = invert(phylipIdentMap)
 
-	let phylipSamples = samples.map(({species, sequence}) => {
+	let phylipSamples = samples.map(({ species, sequence }) => {
 		let hashedName = sequenceToHashedIdentMap[species]
 		return `${hashedName.padEnd(12, ' ')}${sequence}`
 	})
