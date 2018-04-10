@@ -53,41 +53,69 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 function makeDistributionsTable(distributions) {
 	let table = document.createElement('table')
 
-	{
-		let thead = document.createElement('thead')
+	let thead = document.createElement('thead')
+	let tr = document.createElement('tr')
+
+	let firstDistribution = distributions[0]
+
+	for (let comparison of Object.keys(firstDistribution)) {
+		let th = document.createElement('th')
+		th.innerHTML = comparison
+		tr.appendChild(th)
+	}
+
+	thead.appendChild(tr)
+	table.appendChild(thead)
+
+	let tbody = document.createElement('tbody')
+	for (let distribution of distributions) {
 		let tr = document.createElement('tr')
 
-		let firstDistribution = distributions[0]
-
-		for (let comparison of Object.keys(firstDistribution)) {
+		for (let value of Object.values(distribution)) {
 			let td = document.createElement('td')
-			td.innerHTML = comparison
+			td.innerHTML = value
 			tr.appendChild(td)
 		}
 
-		thead.appendChild(tr)
-		table.appendChild(thead)
+		tbody.appendChild(tr)
 	}
 
-	{
-		let tbody = document.createElement('tbody')
+	table.appendChild(tbody)
 
-		for (let distribution of distributions) {
-			let tr = document.createElement('tr')
+	return table
+}
 
-			for (let value of Object.values(distribution)) {
-				let td = document.createElement('td')
+function makeProbabilitiesTable(probabilities) {
+	let table = document.createElement('table')
 
-				td.innerHTML = value
+	let thead = document.createElement('thead')
+	let tr = document.createElement('tr')
 
-				tr.appendChild(td)
-			}
+	let first = probabilities[0]
 
-			tbody.appendChild(tr)
+	for (let key of Object.keys(first)) {
+		let th = document.createElement('th')
+		th.innerHTML = key
+		tr.appendChild(th)
+	}
+
+	thead.appendChild(tr)
+	table.appendChild(thead)
+
+	let tbody = document.createElement('tbody')
+	for (let prob of probabilities) {
+		let tr = document.createElement('tr')
+
+		for (let value of Object.values(prob)) {
+			let td = document.createElement('td')
+			td.innerHTML = value
+			tr.appendChild(td)
 		}
 
-		table.appendChild(tbody)
+		tbody.appendChild(tr)
 	}
+
+	table.appendChild(tbody)
 
 	return table
 }
@@ -112,12 +140,13 @@ function onData(phase, data) {
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
 		let serialize = data => JSON.stringify(data, null, 2)
-		let probs = serialize(data.probabilities)
 		let ress = serialize(data.results)
 		document
 			.querySelector('#distributions')
 			.appendChild(makeDistributionsTable(data.distributions))
-		document.querySelector('#probabilities').innerHTML = `<pre>${probs}</pre>`
+		document
+			.querySelector('#probabilities')
+			.appendChild(makeProbabilitiesTable(data.probabilities))
 		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
 		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
