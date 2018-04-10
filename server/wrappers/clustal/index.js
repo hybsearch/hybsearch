@@ -18,6 +18,7 @@ async function clustal(data) {
 		'--in', inputFile,
 		'--out', outputFile,
 		'--outfmt=fasta',
+		'--verbose',
 	]
 
 	let result = execa(executable, args)
