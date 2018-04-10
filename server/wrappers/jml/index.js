@@ -5,7 +5,7 @@ const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
 const toPairs = require('lodash/toPairs')
-const escape = require('regexp.escape')
+const escape = require('lodash/escapeRegExp')
 const generateControlFile = require('./ctl')
 const csv = require('comma-separated-values')
 
