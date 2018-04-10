@@ -1,6 +1,6 @@
 'use strict'
 const invert = require('lodash/invert')
-const escape = require('regexp.escape')
+const escape = require('lodash/escapeRegExp')
 const mapKeys = require('lodash/mapKeys')
 
 module.exports = function hashNexusTreeNames(
