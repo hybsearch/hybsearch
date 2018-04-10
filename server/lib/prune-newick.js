@@ -4,6 +4,7 @@ This file will prune a newick tree to remove genes that are too dissimilar.
 
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
+const SEQUENCE_CUTOFF_LENGTH = 300
 
 module.exports.pruneOutliers = pruneOutliers
 
@@ -24,16 +25,24 @@ function pruneOutliers(newick, alignedFasta) {
 		}
 	}
 
-	// Compute average and standard deviation of all the pairs of distances
+	// Compute and store distances between each pair
 	getLeaves(newick)
-	let average = 0
-	let totalDistances = []
 	let distCache = {}
+	let geneLength = {}
 
 	for (let i = 0; i < leafNodes.length; i++) {
 		let node = leafNodes[i]
 		let species1 = node.ident ? node.name + '__' + node.ident : node.name
 		distCache[i] = {}
+		// Compute actual gene length
+		geneLength[i] = 0
+		for (let k = 0; k < sequenceMap[species1].length; k++) {
+			let seq = sequenceMap[species1]
+			if (seq[k] !== '-') {
+				geneLength[i]++
+			}
+		}
+
 		for (let j = 0; j < leafNodes.length; j++) {
 			if (i === j) {
 				continue
@@ -43,39 +52,39 @@ function pruneOutliers(newick, alignedFasta) {
 				? leafNodes[j].name + '__' + leafNodes[j].ident
 				: leafNodes[j].name
 			let dist = hammingDistance(sequenceMap[species1], sequenceMap[species2])
-			average += dist
-			totalDistances.push(dist)
 			distCache[i][j] = dist
 		}
 	}
-	average /= totalDistances.length
-
-	let std = 0
-	for (let dist of totalDistances) {
-		std += Math.pow(dist - average, 2)
-	}
-	std /= totalDistances.length
-	std = Math.sqrt(std)
 
 	let toRemoveNames = []
 	let toRemoveNodes = []
 
-	// Remove things if a majority of their pair checks are above average
+	// A sequence S will be removed if it is more than 20% different than a majority of the seqences
+	// Or if it is smaller than the cut off
 	for (let i = 0; i < leafNodes.length; i++) {
 		let node = leafNodes[i]
+		let gene1 = geneLength[i]
 		let diffCount = 0
 
 		for (let j = 0; j < leafNodes.length; j++) {
 			if (i === j) {
 				continue
 			}
-			let diff = distCache[i][j]
-			if (diff > average) {
+			let hammingDistance = distCache[i][j]
+			let gene2 = geneLength[j]
+			// The hamming distance can be at most the size of the smaller sequence
+			// So to get the proportion, we divide it by the length of the smalle sequence
+			let smallerGeneLength = gene1 < gene2 ? gene1 : gene2
+			let diffProportion = hammingDistance / smallerGeneLength
+			console.log(diffProportion)
+			if (diffProportion > 0.2) {
 				diffCount++
 			}
 		}
+
 		let diffPercent = diffCount / (leafNodes.length - 1)
-		if (diffPercent >= 0.75) {
+
+		if (diffPercent >= 0.5 || gene1 < SEQUENCE_CUTOFF_LENGTH) {
 			if (node.ident) {
 				toRemoveNames.push(node.ident)
 			} else {
@@ -103,7 +112,6 @@ function pruneOutliers(newick, alignedFasta) {
 	return {
 		prunedNewick: newick,
 		removedData: removedData,
-		standardDeviationOfRemoved: std,
 	}
 }
 
