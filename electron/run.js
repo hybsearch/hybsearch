@@ -113,8 +113,6 @@ function onData(phase, data) {
 			return `${node.name}${ident} (${node.length})`
 		})
 
-		results.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
-		container.hidden = false
 		if (formattedNames.length > 0) {
 			results.innerHTML = `<pre>${formattedNames.join('\n')}</pre>`
 			container.hidden = false
