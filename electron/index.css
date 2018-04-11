@@ -30,7 +30,7 @@ body {
 }
 
 pre {
-	font-family: Consolas, monospace;
+	font-family: Consolas, Menlo, monospace;
 }
 
 section {
@@ -42,40 +42,29 @@ section {
 	border-bottom: 3px solid var(--blue);
 }
 
-section.loader {
-	transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
-	position: relative;
-}
-
-section.loader wrapper.loading {
+#loader {
 	display: none;
 }
-section.loader.loading wrapper.loading {
+
+#loader.loading {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
 	grid-row-gap: 0.5rem;
 	grid-column-gap: 0.25rem;
 }
-section.loader.loading wrapper.content {
-	display: none;
-}
 
-.loader {
-	flex: 1;
-}
-
-.loader .checkmark {
+#loader .checkmark {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: var(--blue);
 }
 
-.loader .checkmark .label {
+#loader .checkmark .label {
 	text-align: center;
 }
 
-.loader .checkmark .icon {
+#loader .checkmark .icon {
 	border: 2px solid currentColor;
 	height: 30px;
 	width: 30px;
@@ -89,7 +78,7 @@ section.loader.loading wrapper.content {
 	box-sizing: content-box;
 }
 
-.loader .checkmark .icon::before {
+#loader .checkmark .icon::before {
 	content: '';
 	background-color: currentColor;
 	width: 0;
@@ -98,15 +87,15 @@ section.loader.loading wrapper.content {
 	transition: all 0.35s ease-out;
 }
 
-.loader .checkmark.error {
+#loader .checkmark.error {
 	color: var(--red);
 }
 
-.loader .checkmark.complete {
+#loader .checkmark.complete {
 	color: var(--navy);
 }
 
-.loader .checkmark.used-cache {
+#loader .checkmark.used-cache {
 	color: var(--green);
 }
 
@@ -122,18 +111,18 @@ section.loader.loading wrapper.content {
 	}
 }
 
-.loader .checkmark.active .icon::before {
+#loader .checkmark.active .icon::before {
 	animation: pulse 2s infinite;
 	width: 16px;
 	height: 16px;
 }
 
-.loader .checkmark.complete .icon::before {
+#loader .checkmark.complete .icon::before {
 	width: 32px;
 	height: 32px;
 }
 
-.loader .checkmark[data-time]::after {
+#loader .checkmark[data-time]::after {
 	font-size: 0.85em;
 	content: attr(data-time);
 }
@@ -198,11 +187,6 @@ button:active {
 input[type='text'],
 input[type='url'] {
 	padding: 10px 15px;
-}
-
-section wrapper {
-	width: 100%;
-	display: inline-block;
 }
 
 .right-aligned {
@@ -280,22 +264,23 @@ section button {
 	overflow-x: scroll;
 }
 
-#jml-container table {
-	width: 100%;
-}
-
 details summary {
 	cursor: pointer;
 }
 
-#jml-container summary > h3 {
+summary > h2,
+summary > h3 {
 	display: inline-block;
 }
 
-#jml-container table th {
+.results-table {
+	width: 100%;
+}
+
+.results-table th {
 	text-align: left;
 }
 
-#jml-container table .highlight {
+.results-table .highlight {
 	background-color: lightyellow;
 }

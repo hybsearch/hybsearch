@@ -1,5 +1,6 @@
 'use strict'
 
+const makeTableFromObjectList = require('./lib/html-table')
 const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
 
@@ -8,10 +9,10 @@ let newick
 let newickNodes
 
 function formatEnt(results) {
-	const { nm: nmlist } = results
-	return nmlist
-		.map(pair => pair.map(node => `${node.name} (${node.ident})`).join(' / '))
-		.join('\n')
+	return results.nm.map(pair => {
+		let [left, right] = pair.map(node => `${node.name} (${node.ident})`)
+		return { left, right }
+	})
 }
 
 module.exports.setEntResults = setEntResults
@@ -24,10 +25,15 @@ function setEntResults(results) {
 			: null
 	console.log(non)
 
-	let formattedReslults = formatEnt(nmResults)
-	let resultsEl = document.querySelector('#nonmonophyly-results')
-	resultsEl.innerHTML = `<pre>${formattedReslults}</pre>`
-	document.querySelector('#nm-container').hidden = false
+	if (non) {
+		let formattedReslults = formatEnt(nmResults)
+		document
+			.querySelector('#nonmonophyly-results')
+			.appendChild(makeTableFromObjectList(formattedReslults))
+		document.querySelector('#nm-container').hidden = false
+	} else {
+		console.warn('no nonmonophyly object')
+	}
 
 	// Re-render with the nmResults, assuming newick and newickNodes have already been processed
 	render(newick, newickNodes, nmResults)
@@ -79,7 +85,7 @@ function render(newickData, newickNodes, nmResults) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => {
 			let name = node.name.replace(/_/g, ' ')
-			console.log(node)
+			// console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
 		nonmonophyly: nmResults

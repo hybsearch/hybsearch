@@ -86,7 +86,7 @@ function connectionIsUp() {
 					.reduce((acc, item) => [...acc, ...item], [])
 			)
 
-			let el = document.querySelector('wrapper.loading')
+			let el = document.querySelector('#loader')
 			el.innerHTML = steps
 				.map(
 					stage =>
