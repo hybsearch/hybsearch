@@ -36,8 +36,9 @@ function pruneOutliers(newick, alignedFasta) {
 		distCache[i] = {}
 		// Compute actual gene length
 		geneLength[i] = 0
-		for (let seq of sequenceMap[species1]) {
-			if (seq[k] !== '-') {
+
+		for (let letter of sequenceMap[species1]) {
+			if (letter !== '-') {
 				geneLength[i] += 1
 			}
 		}
