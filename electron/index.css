@@ -280,10 +280,6 @@ section button {
 	overflow-x: scroll;
 }
 
-#jml-container table {
-	width: 100%;
-}
-
 details summary {
 	cursor: pointer;
 }
@@ -292,10 +288,14 @@ details summary {
 	display: inline-block;
 }
 
-#jml-container table th {
+.results-table {
+	width: 100%;
+}
+
+.results-table th {
 	text-align: left;
 }
 
-#jml-container table .highlight {
+.results-table .highlight {
 	background-color: lightyellow;
 }
