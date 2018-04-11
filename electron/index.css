@@ -51,9 +51,10 @@ section.loader wrapper.loading {
 	display: none;
 }
 section.loader.loading wrapper.loading {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+	grid-row-gap: 0.5rem;
+	grid-column-gap: 0.25rem;
 }
 section.loader.loading wrapper.content {
 	display: none;
