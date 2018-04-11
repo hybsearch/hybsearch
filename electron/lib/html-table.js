@@ -4,6 +4,7 @@ const toPairs = require('lodash/toPairs')
 module.exports = makeTableFromObjectList
 function makeTableFromObjectList(data) {
 	let table = document.createElement('table')
+	table.classList.add('results-table')
 
 	let thead = document.createElement('thead')
 	let tr = document.createElement('tr')
