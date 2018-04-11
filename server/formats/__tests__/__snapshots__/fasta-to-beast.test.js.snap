@@ -26,7 +26,7 @@ exports[`emydura-short.fasta 1`] = `
 <map name=\\"InverseGamma\\">beast.math.distributions.InverseGamma</map>
 <map name=\\"OneOnX\\">beast.math.distributions.OneOnX</map>
 
-<run id=\\"mcmc\\" spec=\\"MCMC\\" chainLength=\\"1000000\\" storeEvery=\\"5000\\">
+<run id=\\"mcmc\\" spec=\\"MCMC\\" chainLength=\\"10000000\\" storeEvery=\\"5000\\">
 	<state id=\\"state\\" storeEvery=\\"5000\\">
 		<parameter id=\\"popSize\\" name=\\"stateNode\\">1.0</parameter>
 		<tree id=\\"Tree.t:Species\\" name=\\"stateNode\\">
