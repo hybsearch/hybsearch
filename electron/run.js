@@ -119,6 +119,7 @@ function onData(phase, data) {
 		}
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
+		container.hidden = false
 
 		document
 			.querySelector('#distributions')
