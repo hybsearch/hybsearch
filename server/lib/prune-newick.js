@@ -38,7 +38,7 @@ function pruneOutliers(newick, alignedFasta) {
 		geneLength[i] = 0
 		for (let seq of sequenceMap[species1]) {
 			if (seq[k] !== '-') {
-				geneLength[i]+=1
+				geneLength[i] += 1
 			}
 		}
 
@@ -73,7 +73,7 @@ function pruneOutliers(newick, alignedFasta) {
 			let gene2 = geneLength[j]
 			// The hamming distance can be at most the size of the smaller sequence
 			// So to get the proportion, we divide it by the length of the smalle sequence
-			let smallerGeneLength = Math.min(gene1,gene2)
+			let smallerGeneLength = Math.min(gene1, gene2)
 			let diffProportion = hammingDistance / smallerGeneLength
 
 			if (diffProportion > 0.2) {
