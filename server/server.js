@@ -22,6 +22,17 @@ if (Number.isNaN(numericPort)) {
 const wss = new WebSocket.Server({ port: numericPort })
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
+function trimMessage(message) {
+	return JSON.parse(
+		JSON.stringify(message, (k, v) => {
+			if (typeof v === 'string' && v.length > 99) {
+				return v.substr(0, 99) + '…'
+			}
+			return v
+		})
+	)
+}
+
 // listen for new websocket connections
 wss.on('connection', ws => {
 	console.log('connection initiated')
@@ -31,7 +42,7 @@ wss.on('connection', ws => {
 		// when we get a message from the GUI
 		const message = JSON.parse(communique)
 
-		console.log(message)
+		console.log(trimMessage(message))
 
 		// forward the message to the pipeline
 		child.send(message)
@@ -49,7 +60,7 @@ wss.on('connection', ws => {
 		// when we get a message from the pipeline
 		const message = communique
 
-		console.log(message)
+		console.log(trimMessage(message))
 
 		// forward the message to the GUI
 		ws.send(JSON.stringify(message))

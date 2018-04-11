@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/.*/__tests?__/.*
+.*/node_modules/.*/tests?/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

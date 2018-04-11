@@ -22,7 +22,7 @@ let makeHash = str => {
 const { parseFasta } = require('./parse')
 
 module.exports = hashFastaSequenceNames
-function hashFastaSequenceNames(fastaData) {
+function hashFastaSequenceNames(fastaData /* : string */) {
 	let output = Object.create(null)
 	let speciesTotalCounter = new Map()
 	let fullHashes = new Map()
@@ -44,7 +44,10 @@ function hashFastaSequenceNames(fastaData) {
 	for (let { species: speciesIdentifier } of samples) {
 		let [speciesName] = speciesIdentifier.split('__')
 		let hashedSpeciesName = fullHashes.get(speciesName)
-		let count = speciesTotalCounter.get(hashedSpeciesName)
+		if (!hashedSpeciesName) {
+			throw new Error('could not look up species name in map!')
+		}
+		let count = speciesTotalCounter.get(hashedSpeciesName) || 0
 
 		let digitLen = count.toString().length
 		let newHashedSpeciesNameLength = hashedSpeciesName.length - 1 - digitLen
@@ -55,10 +58,9 @@ function hashFastaSequenceNames(fastaData) {
 			(speciesIncrementerCounter.get(hashedSpeciesName) || 0) + 1
 		)
 
-		let currentCount = speciesIncrementerCounter
-			.get(hashedSpeciesName)
-			.toString()
-			.padStart(digitLen, '0')
+		let currentCount = speciesIncrementerCounter.get(hashedSpeciesName) || 0
+
+		currentCount = currentCount.toString()
 		output[`${trimmedName}x${currentCount}`] = speciesIdentifier
 	}
 
