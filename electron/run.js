@@ -17,7 +17,13 @@ function run() {
 	const data = fs.readFileSync(filepath, 'utf-8')
 
 	// start the loading bar
-	document.querySelector('section.loader').classList.add('loading')
+	let loader = document.querySelector('#loader')
+	loader.classList.add('loading')
+	loader.hidden = false
+
+	// hide the input boxes
+	document.querySelector('#file-input').hidden = true
+	document.querySelector('#newick-input').hidden = true
 
 	// get the chosen pipeline name
 	let pipeline = document.querySelector('#pick-pipeline').value
