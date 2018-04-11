@@ -284,7 +284,8 @@ details summary {
 	cursor: pointer;
 }
 
-#jml-container summary > h3 {
+summary > h2,
+summary > h3 {
 	display: inline-block;
 }
 
