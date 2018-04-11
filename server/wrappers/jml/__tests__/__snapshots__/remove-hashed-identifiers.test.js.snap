@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replaces the hashed identifiers with the unhashed ones in distributions 1`] = `
+Object {
+  "distributions": Array [
+    Object {
+      "Emydura_macquarii-Emydura_subglobosa": 0,
+      "Emydura_macquarii-Emydura_tanybaraga": 0,
+      "Emydura_macquarii-Emydura_victoriae": 0,
+      "Emydura_tanybaraga-Emydura_subglobosa": 0,
+      "Emydura_tanybaraga-Emydura_victoriae": 0,
+      "Emydura_victoriae-Emydura_subglobosa": 0,
+    },
+    Object {
+      "Emydura_macquarii-Emydura_subglobosa": 0,
+      "Emydura_macquarii-Emydura_tanybaraga": 0,
+      "Emydura_macquarii-Emydura_victoriae": 0,
+      "Emydura_tanybaraga-Emydura_subglobosa": 0,
+      "Emydura_tanybaraga-Emydura_victoriae": 0,
+      "Emydura_victoriae-Emydura_subglobosa": 0,
+    },
+    Object {
+      "Emydura_macquarii-Emydura_subglobosa": 0,
+      "Emydura_macquarii-Emydura_tanybaraga": 0,
+      "Emydura_macquarii-Emydura_victoriae": 0,
+      "Emydura_tanybaraga-Emydura_subglobosa": 0,
+      "Emydura_tanybaraga-Emydura_victoriae": 0,
+      "Emydura_victoriae-Emydura_subglobosa": 0,
+    },
+    Object {
+      "Emydura_macquarii-Emydura_subglobosa": 0,
+      "Emydura_macquarii-Emydura_tanybaraga": 0,
+      "Emydura_macquarii-Emydura_victoriae": 0,
+      "Emydura_tanybaraga-Emydura_subglobosa": 0,
+      "Emydura_tanybaraga-Emydura_victoriae": 0,
+      "Emydura_victoriae-Emydura_subglobosa": 0,
+    },
+  ],
+  "probabilities": Array [],
+  "results": Array [],
+}
+`;
+
+exports[`replaces the hashed identifiers with the unhashed ones in probabilities 1`] = `
+Object {
+  "distributions": Array [],
+  "probabilities": Array [
+    Object {
+      "Comparison": "Emydura_victoriae-Emydura_subglobosa",
+      "Probability": 0.118441,
+      "minDist": 0.00462147,
+    },
+    Object {
+      "Comparison": "Emydura_tanybaraga-Emydura_subglobosa",
+      "Probability": 0.130935,
+      "minDist": 0.000304044,
+    },
+    Object {
+      "Comparison": "Emydura_tanybaraga-Emydura_victoriae",
+      "Probability": 0.102449,
+      "minDist": 0.00504713,
+    },
+    Object {
+      "Comparison": "Emydura_macquarii-Emydura_subglobosa",
+      "Probability": 0.0944528,
+      "minDist": 0.00449985,
+    },
+    Object {
+      "Comparison": "Emydura_macquarii-Emydura_victoriae",
+      "Probability": 0.0394803,
+      "minDist": 0.00218912,
+    },
+    Object {
+      "Comparison": "Emydura_macquarii-Emydura_tanybaraga",
+      "Probability": 0.0784608,
+      "minDist": 0.00529036,
+    },
+  ],
+  "results": Array [],
+}
+`;
+
+exports[`replaces the hashed identifiers with the unhashed ones in results 1`] = `
+Object {
+  "distributions": Array [],
+  "probabilities": Array [],
+  "results": Array [
+    Object {
+      "Distance": 0.00449985,
+      "Probability": 0.0944528,
+      "Sp Comparison": "Emydura_macquarii-Emydura_subglobosa",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_subglobosa__KC755190",
+    },
+    Object {
+      "Distance": 0.00474308,
+      "Probability": 0.0944528,
+      "Sp Comparison": "Emydura_macquarii-Emydura_subglobosa",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_subglobosa__KC755185",
+    },
+    Object {
+      "Distance": 0.00492551,
+      "Probability": 0.0944528,
+      "Sp Comparison": "Emydura_macquarii-Emydura_subglobosa",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_subglobosa__KC755184",
+    },
+    Object {
+      "Distance": 0.00224992,
+      "Probability": 0.0394803,
+      "Sp Comparison": "Emydura_macquarii-Emydura_victoriae",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_victoriae__KC755189",
+    },
+    Object {
+      "Distance": 0.00218912,
+      "Probability": 0.0394803,
+      "Sp Comparison": "Emydura_macquarii-Emydura_victoriae",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_victoriae__KC755188",
+    },
+    Object {
+      "Distance": 0.00529036,
+      "Probability": 0.0784608,
+      "Sp Comparison": "Emydura_macquarii-Emydura_tanybaraga",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_tanybaraga__KC755187",
+    },
+    Object {
+      "Distance": 0.00529036,
+      "Probability": 0.0784608,
+      "Sp Comparison": "Emydura_macquarii-Emydura_tanybaraga",
+      "seq1": "Emydura_macquarii__KC755183",
+      "seq2": "Emydura_tanybaraga__KC755186",
+    },
+  ],
+}
+`;

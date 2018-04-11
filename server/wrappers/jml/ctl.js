@@ -19,9 +19,9 @@ function getSpeciesFromPhylip(phylipData) {
 	return phylipData
 		.split('\n')
 		.slice(1)
+		.map(line => line.slice(0, 10))
 		.map(line => line.trim())
 		.filter(line => line)
-		.map(line => line.slice(0, 10))
 		.map(line => line.replace(/\d/g, ''))
 }
 

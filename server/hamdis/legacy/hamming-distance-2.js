@@ -1,5 +1,4 @@
 /* eslint-disable */
-// @flow
 // Hamming distances script
 //
 // usage: ./hammingDistance infile.fa

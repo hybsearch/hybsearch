@@ -4,10 +4,8 @@ const execa = require('execa')
 const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
-const toPairs = require('lodash/toPairs')
-const escape = require('lodash/escapeRegExp')
 const generateControlFile = require('./ctl')
-const csv = require('comma-separated-values')
+const revertHashedIdentifiers = require('./revert-hashed-identifiers')
 
 const readFileOr = (filepath, orValue) => {
 	try {
@@ -65,18 +63,16 @@ async function jml({ phylipData, trees, phylipMapping }) {
 	let probabilities = readJmlOutputFile(path.join(workDir, 'Probabilities.txt'))
 	let results = readJmlOutputFile(path.join(workDir, 'Results.txt'))
 
-	for (let [hashed, unhashed] of toPairs(phylipMapping)) {
-		hashed = hashed.split('x')[0]
-		unhashed = unhashed.split('__')[0]
-		let regex = new RegExp(escape(hashed), 'g')
-		distributions = distributions.replace(regex, unhashed)
-		probabilities = probabilities.replace(regex, unhashed)
-		results = results.replace(regex, unhashed)
-	}
-
-	let distObj = csv.parse(distributions, { header: true, cellDelimiter: '\t' })
-	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
-	let resObj = csv.parse(results, { header: true, cellDelimiter: '\t' })
+	let {
+		distributions: distObj,
+		probabilities: probObj,
+		results: resObj,
+	} = revertHashedIdentifiers({
+		distributions,
+		probabilities,
+		results,
+		phylipMapping,
+	})
 
 	return { distributions: distObj, probabilities: probObj, results: resObj }
 }

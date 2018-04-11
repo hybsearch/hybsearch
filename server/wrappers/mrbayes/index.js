@@ -35,7 +35,7 @@ function insertCommandBlock(data) {
 }
 
 module.exports = mrbayes
-function mrbayes(data, argv = {}) {
+async function mrbayes(data) {
 	const inputFile = tempy.file()
 	const outputFile = inputFile + '.con.tre'
 
@@ -61,16 +61,16 @@ function mrbayes(data, argv = {}) {
 		]
 	}
 
-	let result = execa.sync(executable, args, {
+	let result = execa(executable, args, {
 		env: {
 			TMPDIR: '/tmp/',
 		},
 	})
 
-	if (!argv.quiet) {
-		process.stderr.write(result.stdout)
-		process.stderr.write(result.stderr)
-	}
+	result.stdout.pipe(process.stderr)
+	result.stderr.pipe(process.stderr)
+
+	await result
 
 	return fs.readFileSync(outputFile, 'utf-8').replace(os.EOL, '\n')
 }

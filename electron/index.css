@@ -282,3 +282,19 @@ section button {
 #jml-container table {
 	width: 100%;
 }
+
+details summary {
+	cursor: pointer;
+}
+
+#jml-container summary > h3 {
+	display: inline-block;
+}
+
+#jml-container table th {
+	text-align: left;
+}
+
+#jml-container table .highlight {
+	background-color: lightyellow;
+}

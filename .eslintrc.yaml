@@ -46,3 +46,9 @@ rules:
 
   # Forbid use of `==` operator (use `===` instead)
   eqeqeq: error
+
+  # Allow some unused vars
+  no-unused-vars:
+    - warn
+    - argsIgnorePattern: '^_'
+      args: after-used

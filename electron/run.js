@@ -3,6 +3,7 @@
 const { load, setEntResults } = require('./graph')
 const prettyMs = require('pretty-ms')
 const fs = require('fs')
+const toPairs = require('lodash/toPairs')
 
 function run() {
 	// get the file
@@ -57,6 +58,9 @@ function makeTableFromObject(data) {
 	let tr = document.createElement('tr')
 
 	let first = data[0]
+	if (!first) {
+		return table
+	}
 
 	for (let comparison of Object.keys(first)) {
 		let th = document.createElement('th')
@@ -71,7 +75,15 @@ function makeTableFromObject(data) {
 	for (let distribution of data) {
 		let tr = document.createElement('tr')
 
-		for (let value of Object.values(distribution)) {
+		if (distribution.__highlight) {
+			tr.classList.add('highlight')
+		}
+
+		let values = toPairs(distribution)
+			.filter(([key]) => !key.startsWith('__'))
+			.map(([_, value]) => value)
+
+		for (let value of values) {
 			let td = document.createElement('td')
 			td.innerHTML = value
 			tr.appendChild(td)
@@ -104,15 +116,25 @@ function onData(phase, data) {
 		container.hidden = false
 	} else if (phase === 'jml-output') {
 		let container = document.querySelector('#jml-container')
-		let serialize = data => JSON.stringify(data, null, 2)
-		let ress = serialize(data.results)
+
 		document
 			.querySelector('#distributions')
 			.appendChild(makeTableFromObject(data.distributions))
+
 		document
 			.querySelector('#probabilities')
 			.appendChild(makeTableFromObject(data.probabilities))
-		document.querySelector('#results').innerHTML = `<pre>${ress}</pre>`
+
+		data.results = data.results.map(item => {
+			if (item.Probability < 0.05) {
+				return Object.assign({}, item, { __highlight: true })
+			}
+			return item
+		})
+		document
+			.querySelector('#results')
+			.appendChild(makeTableFromObject(data.results))
+
 		container.hidden = false
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
