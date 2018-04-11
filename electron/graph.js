@@ -1,8 +1,8 @@
 'use strict'
 
+const makeTableFromObjectList = require('./lib/html-table')
 const d3 = require('d3')
 d3.phylogram = require('./lib/d3.phylogram')
-const makeTableFromObjectList = require('./lib/html-table')
 
 let nmResults
 let newick
