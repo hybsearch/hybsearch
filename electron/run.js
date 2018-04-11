@@ -62,9 +62,11 @@ function makeTableFromObject(data) {
 		return table
 	}
 
-	for (let comparison of Object.keys(first)) {
+	let keys = Object.keys(first).filter(key => !key.startsWith('__'))
+
+	for (let key of keys) {
 		let th = document.createElement('th')
-		th.innerHTML = comparison
+		th.innerHTML = key
 		tr.appendChild(th)
 	}
 
