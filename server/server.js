@@ -5,15 +5,29 @@ const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
 const http = require('http')
+const Koa = require('koa')
+const Router = require('koa-router')
+const compress = require('koa-compress')
+const logger = require('koa-logger')
 const PORT = 8080
+const app = new Koa()
 const server = new http.createServer(app.callback())
 const wss = new WebSocket.Server({
 	server,
 	perMessageDeflate: {},
 })
 
+const router = new Router()
+
+router.get('/', ctx => {
+	ctx.body = 'hello, world!'
+})
 
 
+app.use(logger())
+app.use(compress())
+app.use(router.routes())
+app.use(router.allowedMethods())
 
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
