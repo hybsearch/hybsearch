@@ -6,5 +6,5 @@
 
 [build]
 base    = "electron"
-publish = "dist"
+publish = "electron/dist"
 command = "npm run build"
