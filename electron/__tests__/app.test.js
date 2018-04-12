@@ -22,5 +22,5 @@ test('verify a visible window is opened with a title', async () => {
 	expect(await app.browserWindow.isVisible()).toBe(true)
 
 	// Verify the window's title
-	expect(await app.client.getTitle()).toBe('Hybsearch')
+	expect(await app.client.getTitle()).toMatch(/^Hybsearch/)
 })
