@@ -18,10 +18,24 @@ const wss = new WebSocket.Server({
 	perMessageDeflate: {},
 })
 
+const PIPELINES = require('./pipeline/pipelines')
 const router = new Router()
 
 router.get('/', ctx => {
 	ctx.body = 'hello, world!'
+})
+
+router.get('/pipelines', ctx => {
+	ctx.body = { pipelines: Object.keys(PIPELINES) }
+})
+
+router.get('/pipeline/:name', ctx => {
+	let pipe = PIPELINES[ctx.params.name]
+	if (pipe) {
+		ctx.body = { steps: pipe }
+	} else {
+		ctx.throw(404, { error: 'pipeline not found' })
+	}
 })
 
 
