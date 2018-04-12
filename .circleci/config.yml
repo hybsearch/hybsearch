@@ -160,17 +160,6 @@ jobs:
       - run: cd server && npm install
       - run: cd server && npm test
 
-  # test ent.js against all our sample files
-  test-app:
-    <<: *defaults
-    docker:
-      - image: circleci/node:8-stretch-browsers
-    steps:
-      - checkout
-      - run: npm install
-      - run: cd electron && npm install
-      - run: cd electron && npm test
-
   # deploy the docker images to Docker Hub
   deploy-docker:
     <<: *defaults
