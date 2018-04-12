@@ -20,7 +20,7 @@
     "hyb-seq-gen": "./wrappers/seq-gen/hyb-seq-gen"
   },
   "scripts": {
-    "start": "./server.js",
+    "start": "env NODE_ENV=production ./server.js",
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
@@ -32,6 +32,10 @@
     "dedent": "^0.7.0",
     "execa": "^0.10.0",
     "get-stdin": "^6.0.0",
+    "koa": "^2.5.0",
+    "koa-compress": "^2.0.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
     "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
     "make-dir": "^1.2.0",
