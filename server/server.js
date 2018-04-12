@@ -4,22 +4,16 @@
 const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
+const http = require('http')
+const PORT = 8080
+const server = new http.createServer(app.callback())
+const wss = new WebSocket.Server({
+	server,
+})
 
-const [port = 8080] = process.argv.slice(2)
-const numericPort = parseInt(port)
 
-if (port === '-h' || port === '--help') {
-	console.error('usage: server.js [PORT=8080]')
-	process.exit(1)
-}
 
-if (Number.isNaN(numericPort)) {
-	console.error('usage: server.js [PORT=8080]')
-	console.error('error: given port was not a number')
-	process.exit(1)
-}
 
-const wss = new WebSocket.Server({ port: numericPort })
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
 function trimMessage(message) {
@@ -74,4 +68,5 @@ wss.on('connection', ws => {
 	})
 })
 
-console.log(`listening on localhost:${port}`)
+server.listen(PORT)
+console.log(`listening on localhost:${PORT}`)
