@@ -7,69 +7,26 @@
   "homepage": "https://hybsearch.github.io/",
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
-  "main": "main.js",
   "scripts": {
-    "build": "npm run build:setup && npm run build:app",
-    "build:setup": "npm run clean && npm run build:copy && npm run build:js && npm run build:css",
-    "build:app": "electron-builder --macos --windows --linux",
-    "build:copy": "mkdir -p out/data && cp -v index.html index.css out/ && cp -rv ../data/*.gb ../data/*.fasta out/data/",
-    "build:css": "parcel build -t electron --no-minify --detailed-report --out-dir out index.css",
-    "build:js": "parcel build -t electron --no-minify --detailed-report --out-dir out index.js",
-    "clean": "rm -rf dist/ out/",
+    "build": "parcel build --detailed-report --out-dir out index.html",
     "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
-    "start": "electron ./main.js"
-  },
-  "build": {
-    "appId": "edu.stolaf.bio.hybsearch",
-    "productName": "HybSearch",
-    "mac": {
-      "target": [
-        {
-          "target": "zip",
-          "arch": "x64"
-        }
-      ]
-    },
-    "win": {
-      "target": [
-        {
-          "target": "portable",
-          "arch": "x64"
-        }
-      ]
-    },
-    "linux": {
-      "target": [
-        {
-          "target": "tar.gz",
-          "arch": "x64"
-        }
-      ],
-      "category": "Education"
-    },
-    "files": [
-      "out/",
-      "main.js",
-      "package.json",
-      "node_modules/"
-    ]
+    "start": "parcel serve ./index.html"
   },
   "dependencies": {
     "d3": "^3.5.17",
-    "electron-is-dev": "^0.3.0",
-    "electron-unhandled": "^1.1.0",
-    "electron-updater": "^2.21.4",
     "lodash": "^4.17.5",
     "loud-rejection": "^1.6.0",
     "normalize.css": "^8.0.0",
     "pretty-ms": "^3.1.0"
   },
   "devDependencies": {
-    "electron": "^1.8.4",
-    "spectron": "^3.8.0"
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "parcel-bundler": "^1.7.0"
   }
 }

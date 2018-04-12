@@ -1,7 +1,6 @@
 'use strict'
 
-// catch unhandled promise rejections
-require('electron-unhandled')()
+// set the title to include the app version
 
 // start the code
 require('./ui')

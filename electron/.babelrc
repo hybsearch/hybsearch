@@ -1,0 +1,22 @@
+{
+	"presets": [
+		"flow",
+		["env", {
+			"targets": {
+				"browsers": [
+					"edge >= 16",
+					"chrome >= 64",
+					"firefox >= 59",
+					"safari >= 11"
+				]
+			},
+			"modules": false,
+			"exclude": [
+				"transform-regenerator"
+			]
+		}]
+	],
+	"plugins": [
+		"transform-object-rest-spread"
+	]
+}
