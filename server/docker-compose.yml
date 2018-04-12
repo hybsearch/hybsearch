@@ -6,9 +6,21 @@ services:
     restart: unless-stopped
     ports:
       - 0.0.0.0:80:8080
+    volumes:
+      - type: "volume"
+        source: "hs--pipeline-cache"
+        target: "/tmp/hybsearch"
 
   hs-head:
     image: docker.io/hybsearch/hybsearch:HEAD
     restart: unless-stopped
     ports:
       - 0.0.0.0:81:8080
+    volumes:
+      - type: "volume"
+        source: "hs-head--pipeline-cache"
+        target: "/tmp/hybsearch"
+
+volumes:
+  hs--pipeline-cache:
+  hs-head--pipeline-cache:
