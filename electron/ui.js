@@ -4,7 +4,6 @@ const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const uniq = require('lodash/uniq')
-const getFiles = require('./lib/get-files')
 const { attachListeners } = require('./run')
 
 attachListeners()
@@ -54,6 +53,9 @@ const getSteps = pipeline =>
 		})
 	)
 
+const getFiles = () =>
+	global.socket.send(JSON.stringify({ type: 'available-files' }))
+
 function connectionIsUp() {
 	document.querySelector('#server-status').classList.remove('down')
 	document.querySelector('#server-status').classList.add('up')
@@ -77,6 +79,7 @@ function connectionIsUp() {
 
 			getSteps(pipelines[0])
 			el.addEventListener('change', ev => getSteps(ev.currentTarget.value))
+			getFiles()
 		} else if (data.type === 'pipeline-steps') {
 			let payload = JSON.parse(data.payload)
 
@@ -96,6 +99,38 @@ function connectionIsUp() {
 						</div>`
 				)
 				.join('')
+		} else if (data.type === 'available-files') {
+			let payload = JSON.parse(data.payload)
+
+			const groupedFiles = groupBy(payload, ({ filename }) => {
+				if (filename.endsWith('.fasta')) {
+					return 'fasta'
+				}
+
+				if (filename.endsWith('.gb')) {
+					return 'genbank'
+				}
+
+				return filename.split('.')[filename.split('.').length - 1]
+			})
+
+			const optgroups = mapValues(groupedFiles, group =>
+				group.map(({ filename, filepath }) => {
+					let opt = document.createElement('option')
+					opt.value = filepath
+					opt.textContent = filename
+					return opt
+				})
+			)
+
+			const picker = document.querySelector('#pick-file')
+
+			for (let [type, options] of toPairs(optgroups)) {
+				let group = document.createElement('optgroup')
+				group.label = type
+				options.forEach(opt => group.appendChild(opt))
+				picker.appendChild(group)
+			}
 		}
 	})
 
@@ -114,39 +149,4 @@ function connectionRefused() {
 
 	// TODO: rework connectionIsUp/connectionRefused to remove the
 	// event listeners when the socket changes
-}
-
-const files = getFiles()
-const groupedFiles = groupBy(files, ({ filename }) => {
-	if (/\.aln/.test(filename)) {
-		return 'aligned'
-	}
-
-	if (filename.endsWith('.fasta')) {
-		return 'fasta'
-	}
-
-	if (filename.endsWith('.gb')) {
-		return 'genbank'
-	}
-
-	return filename.split('.')[filename.split('.').length - 1]
-})
-
-const optgroups = mapValues(groupedFiles, group =>
-	group.map(({ filename, filepath }) => {
-		let opt = document.createElement('option')
-		opt.value = filepath
-		opt.textContent = filename
-		return opt
-	})
-)
-
-const picker = document.querySelector('#pick-file')
-
-for (let [type, options] of toPairs(optgroups)) {
-	let group = document.createElement('optgroup')
-	group.label = type
-	options.forEach(opt => group.appendChild(opt))
-	picker.appendChild(group)
 }

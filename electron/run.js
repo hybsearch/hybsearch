@@ -3,18 +3,18 @@
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
-const fs = require('fs')
 
-function run() {
+const readFileFromBrowser = file =>
+	new Promise((resolve, reject) => {
+		let reader = new FileReader()
+		reader.addEventListener('error', reject)
+		reader.addEventListener('load', evt => resolve(evt.target.result))
+		reader.readAsText(file)
+	})
+
+async function run() {
 	// get the file
 	let filepicker = document.querySelector('#load-file')
-	let filedropdown = document.querySelector('#pick-file')
-	let filepath = filepicker.files.length
-		? filepicker.files[0].path
-		: filedropdown.value
-
-	console.log(`The file is ${filepath}`)
-	const data = fs.readFileSync(filepath, 'utf-8')
 
 	// start the loading bar
 	let loader = document.querySelector('#loader')
@@ -28,8 +28,21 @@ function run() {
 	// get the chosen pipeline name
 	let pipeline = document.querySelector('#pick-pipeline').value
 
+	let data
+	let file
+	if (filepicker.files.length) {
+		let selected = filepicker.files[0]
+		console.log(`The file is ${file.name}`)
+		file = selected.name
+		data = await readFileFromBrowser(selected)
+	} else {
+		let fileDropdown = document.querySelector('#pick-file')
+		file = fileDropdown.value
+		data = null
+	}
+
 	// start the pipeline
-	submitJob({ pipeline, filepath, data })
+	submitJob({ pipeline, filepath: file, data })
 
 	return false
 }
