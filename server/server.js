@@ -10,6 +10,9 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const compress = require('koa-compress')
 const logger = require('koa-logger')
+const getFiles = require('./lib/get-files')
+const { loadFile } = getFiles
+
 const PORT = 8080
 const app = new Koa()
 const server = new http.createServer(app.callback())
@@ -38,6 +41,13 @@ router.get('/pipeline/:name', ctx => {
 	}
 })
 
+router.get('/files', async ctx => {
+	ctx.body = { files: await getFiles() }
+})
+
+router.get('/file/:name', async ctx => {
+	ctx.body = { content: await loadFile(ctx.params.name) }
+})
 
 router.get('/uptime', ctx => {
 	ctx.body = { uptime: Date.now() - STARTED }
