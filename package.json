@@ -12,6 +12,7 @@
     "start": "cd electron && npm start",
     "test": "jest",
     "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.js\"",
+    "propagate-version": "node -e 'let ver=require(\"./package.json\").version;let ePth=\"./electron/package.json\";let electronPkg=require(ePth);electronPkg.version=ver;fs.writeFileSync(ePth, JSON.stringify(electronPkg), \"utf-8\")'",
     "pretty-check": "npm run prettify -- --list-different",
     "prettify": "prettier --write \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.{js,css}\""
   },

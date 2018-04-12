@@ -199,39 +199,13 @@ jobs:
             fi
 
   # deploy the compiled electron binaries to GitHub Releases
-  build-app-windows: &electron-builder-base
+  build-app:
     <<: *defaults
-    docker:
-      - image: electronuserland/builder:wine
     steps:
-      - checkout:
-          path: /root/project
-      - run: &install-electron-builder npm i -g electron-builder parcel-bundler
-      - run: &electron-pkg-version
+      - checkout
+      - run:
           name: Update the electron package version number
-          command: node -e 'let ver=require("./package.json").version;let ePth="./electron/package.json";let electronPkg=require(ePth);electronPkg.version=ver;fs.writeFileSync(ePth, JSON.stringify(electronPkg), "utf-8")'
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --windows
-
-  build-app-mac:
-    <<: *electron-builder-base
-    steps:
-      - checkout:
-          path: /root/project
-      - run: *install-electron-builder
-      - run: *electron-pkg-version
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --macos
-
-  build-app-linux:
-    <<: *electron-builder-base
-    steps:
-      - checkout:
-          path: /root/project
-      - run: *install-electron-builder
-      - run: *electron-pkg-version
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --linux
+          command: npm run propagate-version
+      - run: cd electron && npm install
+      - run: cd electron && npm run build
+      # - run: cd electron && npm run gh-pages
