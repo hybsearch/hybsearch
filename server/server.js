@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
+const STARTED = Date.now()
 const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
@@ -23,6 +24,10 @@ router.get('/', ctx => {
 	ctx.body = 'hello, world!'
 })
 
+
+router.get('/uptime', ctx => {
+	ctx.body = { uptime: Date.now() - STARTED }
+})
 
 app.use(logger())
 app.use(compress())
