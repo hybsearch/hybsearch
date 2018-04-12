@@ -39,7 +39,7 @@
     "serialize-error": "^2.1.0",
     "tempy": "^0.2.1",
     "wordwrap": "^1.0.0",
-    "ws": "^4.1.0"
+    "ws": "^5.1.1"
   },
   "optionalDependencies": {
     "bufferutil": "^3.0.4",
