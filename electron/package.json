@@ -8,7 +8,7 @@
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "scripts": {
-    "build": "parcel build --detailed-report --out-dir out index.html",
+    "build": "parcel build --detailed-report index.html",
     "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
