@@ -9,6 +9,7 @@ const PORT = 8080
 const server = new http.createServer(app.callback())
 const wss = new WebSocket.Server({
 	server,
+	perMessageDeflate: {},
 })
 
 
