@@ -1,10 +1,13 @@
 'use strict'
 
 const serializeError = require('serialize-error')
-
+const fs = require('fs')
+const getFiles = require('../lib/get-files')
 const Cache = require('./cache')
 const zip = require('lodash/zip')
 const PIPELINES = require('./pipelines')
+const path = require('path')
+const dataDir = getFiles.dir
 
 /////
 ///// helpers
@@ -66,6 +69,16 @@ async function main({ pipeline: pipelineName, filepath, data, type }) {
 			payload: JSON.stringify(PIPELINES[pipelineName]),
 		})
 		return
+	} else if (type === 'available-files') {
+		send({
+			type: 'available-files',
+			payload: JSON.stringify(await getFiles()),
+		})
+		return
+	}
+
+	if (!data) {
+		data = fs.readFileSync(path.join(dataDir, filepath), 'utf-8')
 	}
 
 	try {

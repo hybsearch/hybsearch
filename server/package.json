@@ -20,7 +20,7 @@
     "hyb-seq-gen": "./wrappers/seq-gen/hyb-seq-gen"
   },
   "scripts": {
-    "start": "./server.js",
+    "start": "env NODE_ENV=production ./server.js",
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
