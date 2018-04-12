@@ -11,9 +11,9 @@
   "scripts": {
     "start": "cd electron && npm start",
     "test": "jest",
-    "lint": "eslint --cache 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.js'",
+    "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.js\"",
     "pretty-check": "npm run prettify -- --list-different",
-    "prettify": "prettier --write 'server/**/*.js' 'server/**/hyb-*' 'electron/**/*.{js,css}'"
+    "prettify": "prettier --write \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.{js,css}\""
   },
   "prettier": {
     "overrides": [
