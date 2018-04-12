@@ -40,5 +40,9 @@
     "tempy": "^0.2.1",
     "wordwrap": "^1.0.0",
     "ws": "^4.1.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^3.0.4",
+    "utf-8-validate": "^4.0.1"
   }
 }
