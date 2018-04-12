@@ -4,6 +4,7 @@ const {
 	app, // Module to control application life.
 	BrowserWindow, // Module to create native browser window.
 } = require('electron')
+const { version } = require('./package.json')
 
 // catch unhandled promise rejections
 require('electron-unhandled')()
@@ -37,6 +38,7 @@ function createWindow() {
 		width: 900,
 		height: 775,
 		backgroundColor: '#F7F7F7',
+		title: `HybSearch (v${version})`,
 	})
 
 	// and load the index.html of the app.
