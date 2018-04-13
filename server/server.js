@@ -15,7 +15,7 @@ const { loadFile } = getFiles
 
 const PORT = 8080
 const app = new Koa()
-const server = new http.createServer(app.callback())
+const server = http.createServer(app.callback())
 const wss = new WebSocket.Server({
 	server,
 	perMessageDeflate: {},
