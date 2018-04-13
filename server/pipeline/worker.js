@@ -52,7 +52,7 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-async function main({ pipeline: pipelineName, filepath, data, type }) {
+async function main({ pipeline: pipelineName, filepath, data }) {
 	let start = now()
 
 	try {
