@@ -9,6 +9,8 @@ const { attachListeners } = require('./run')
 
 attachListeners()
 
+const fetchJson = (...args) => fetch(...args).then(r => r.json())
+
 global.socket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
 
@@ -46,58 +48,27 @@ document.querySelector('#server-url').addEventListener('change', ev => {
 	updateWebSocket(ev.currentTarget.value)
 })
 
-const getSteps = pipeline =>
-	global.socket.send(
-		JSON.stringify({
-			type: 'pipeline-steps',
-			pipeline: pipeline,
-		})
-	)
+const getSteps = (baseUrl, pipeline) =>
+	fetchJson(`${baseUrl}pipeline/${pipeline}`)
 
-function connectionIsUp() {
+async function connectionIsUp() {
 	document.querySelector('#server-status').classList.remove('down')
 	document.querySelector('#server-status').classList.add('up')
 
-	global.socket.send(JSON.stringify({ type: 'pipeline-list' }), err => {
-		if (err) {
-			console.error('server error', err)
-			window.alert('server error:', err.message)
-		}
-	})
+	let baseUrl = global.socket.url.replace('ws:', 'http:')
 
-	global.socket.addEventListener('message', ({ data }) => {
-		data = JSON.parse(data)
-		if (data.type === 'pipeline-list') {
-			let pipelines = JSON.parse(data.payload)
+	let [uptime, pipelines, files] = await Promise.all([
+		fetchJson(baseUrl + 'uptime').then(r => r.uptime),
+		fetchJson(baseUrl + 'pipelines').then(r => r.pipelines),
+		fetchJson(baseUrl + 'files').then(r => r.files),
+	])
 
-			let el = document.querySelector('#pick-pipeline')
-			el.innerHTML = pipelines
-				.map(name => `<option value="${name}">${name}</option>`)
-				.join('')
+	console.log(uptime)
+	console.log(pipelines)
+	console.log(files)
 
-			getSteps(pipelines[0])
-			el.addEventListener('change', ev => getSteps(ev.currentTarget.value))
-		} else if (data.type === 'pipeline-steps') {
-			let payload = JSON.parse(data.payload)
-
-			let steps = uniq(
-				payload
-					.map(segment => [...segment.input, ...segment.output])
-					.reduce((acc, item) => [...acc, ...item], [])
-			)
-
-			let el = document.querySelector('#loader')
-			el.innerHTML = steps
-				.map(
-					stage =>
-						`<div class="checkmark" data-loader-name="${stage}">
-							<div class="icon"></div>
-							<div class="label">${stage}</div>
-						</div>`
-				)
-				.join('')
-		}
-	})
+	populatePipelinePicker(pipelines, baseUrl)
+	populateFilePicker(files, baseUrl)
 
 	global.socket.addEventListener('disconnect', (...args) =>
 		console.log('disconnect', ...args)
@@ -116,37 +87,70 @@ function connectionRefused() {
 	// event listeners when the socket changes
 }
 
-const files = getFiles()
-const groupedFiles = groupBy(files, ({ filename }) => {
-	if (/\.aln/.test(filename)) {
-		return 'aligned'
-	}
+function populateFilePicker(files) {
+	const groupedFiles = groupBy(files, ({ filename }) => {
+		if (/\.aln/.test(filename)) {
+			return 'aligned'
+		}
 
-	if (filename.endsWith('.fasta')) {
-		return 'fasta'
-	}
+		if (filename.endsWith('.fasta')) {
+			return 'fasta'
+		}
 
-	if (filename.endsWith('.gb')) {
-		return 'genbank'
-	}
+		if (filename.endsWith('.gb')) {
+			return 'genbank'
+		}
 
-	return filename.split('.')[filename.split('.').length - 1]
-})
-
-const optgroups = mapValues(groupedFiles, group =>
-	group.map(({ filename, filepath }) => {
-		let opt = document.createElement('option')
-		opt.value = filepath
-		opt.textContent = filename
-		return opt
+		return filename.split('.')[filename.split('.').length - 1]
 	})
-)
 
-const picker = document.querySelector('#pick-file')
+	const optgroups = mapValues(groupedFiles, group =>
+		group.map(({ filename, filepath }) => {
+			let opt = document.createElement('option')
+			opt.value = filepath
+			opt.textContent = filename
+			return opt
+		})
+	)
 
-for (let [type, options] of toPairs(optgroups)) {
-	let group = document.createElement('optgroup')
-	group.label = type
-	options.forEach(opt => group.appendChild(opt))
-	picker.appendChild(group)
+	const picker = document.querySelector('#pick-file')
+
+	for (let [type, options] of toPairs(optgroups)) {
+		let group = document.createElement('optgroup')
+		group.label = type
+		options.forEach(opt => group.appendChild(opt))
+		picker.appendChild(group)
+	}
+}
+
+function populatePipelinePicker(pipelines, baseUrl) {
+	let pipelinesPicker = document.querySelector('#pick-pipeline')
+	pipelinesPicker.innerHTML = pipelines
+		.map(name => `<option value="${name}">${name}</option>`)
+		.join('')
+
+	getSteps(baseUrl, pipelines[0]).then(handleNewSteps)
+
+	pipelinesPicker.addEventListener('change', ev =>
+		getSteps(baseUrl, ev.currentTarget.value).then(handleNewSteps)
+	)
+}
+
+const handleNewSteps = payload => {
+	let steps = uniq(
+		payload.steps
+			.map(segment => [...segment.input, ...segment.output])
+			.reduce((acc, item) => [...acc, ...item], [])
+	)
+
+	let el = document.querySelector('#loader')
+	el.innerHTML = steps
+		.map(
+			stage =>
+				`<div class="checkmark" data-loader-name="${stage}">
+					<div class="icon"></div>
+					<div class="label">${stage}</div>
+				</div>`
+		)
+		.join('')
 }
