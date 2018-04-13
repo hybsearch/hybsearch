@@ -4,7 +4,6 @@ const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const uniq = require('lodash/uniq')
-const getFiles = require('./lib/get-files')
 const { attachListeners } = require('./run')
 
 attachListeners()
