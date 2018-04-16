@@ -5,6 +5,7 @@ const serializeError = require('serialize-error')
 const Cache = require('./cache')
 const zip = require('lodash/zip')
 const PIPELINES = require('./pipelines')
+const { loadFile } = require('../lib/get-files')
 
 /////
 ///// helpers
@@ -51,24 +52,14 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-async function main({ pipeline: pipelineName, filepath, data, type }) {
+async function main({ pipeline: pipelineName, filepath, data }) {
 	let start = now()
 
-	if (type === 'pipeline-list') {
-		send({
-			type: 'pipeline-list',
-			payload: JSON.stringify(Object.keys(PIPELINES)),
-		})
-		return
-	} else if (type === 'pipeline-steps') {
-		send({
-			type: 'pipeline-steps',
-			payload: JSON.stringify(PIPELINES[pipelineName]),
-		})
-		return
-	}
-
 	try {
+		if (!data) {
+			data = await loadFile(filepath)
+		}
+
 		let cache = new Cache({ filepath, contents: data })
 
 		let pipeline = PIPELINES[pipelineName]

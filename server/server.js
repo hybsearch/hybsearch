@@ -1,25 +1,63 @@
 #!/usr/bin/env node
 'use strict'
 
+const STARTED = Date.now()
 const WebSocket = require('ws')
 const childProcess = require('child_process')
 const path = require('path')
+const http = require('http')
+const Koa = require('koa')
+const Router = require('koa-router')
+const compress = require('koa-compress')
+const logger = require('koa-logger')
+const getFiles = require('./lib/get-files')
+const { loadFile } = getFiles
 
-const [port = 8080] = process.argv.slice(2)
-const numericPort = parseInt(port)
+const PORT = 8080
+const app = new Koa()
+const server = http.createServer(app.callback())
+const wss = new WebSocket.Server({
+	server,
+	perMessageDeflate: {},
+})
 
-if (port === '-h' || port === '--help') {
-	console.error('usage: server.js [PORT=8080]')
-	process.exit(1)
-}
+const PIPELINES = require('./pipeline/pipelines')
+const router = new Router()
 
-if (Number.isNaN(numericPort)) {
-	console.error('usage: server.js [PORT=8080]')
-	console.error('error: given port was not a number')
-	process.exit(1)
-}
+router.get('/', ctx => {
+	ctx.body = 'hello, world!'
+})
 
-const wss = new WebSocket.Server({ port: numericPort })
+router.get('/pipelines', ctx => {
+	ctx.body = { pipelines: Object.keys(PIPELINES) }
+})
+
+router.get('/pipeline/:name', ctx => {
+	let pipe = PIPELINES[ctx.params.name]
+	if (pipe) {
+		ctx.body = { steps: pipe }
+	} else {
+		ctx.throw(404, { error: 'pipeline not found' })
+	}
+})
+
+router.get('/files', async ctx => {
+	ctx.body = { files: await getFiles() }
+})
+
+router.get('/file/:name', async ctx => {
+	ctx.body = { content: await loadFile(ctx.params.name) }
+})
+
+router.get('/uptime', ctx => {
+	ctx.body = { uptime: Date.now() - STARTED }
+})
+
+app.use(logger())
+app.use(compress())
+app.use(router.routes())
+app.use(router.allowedMethods())
+
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
 function trimMessage(message) {
@@ -74,4 +112,5 @@ wss.on('connection', ws => {
 	})
 })
 
-console.log(`listening on localhost:${port}`)
+server.listen(PORT)
+console.log(`listening on localhost:${PORT}`)
