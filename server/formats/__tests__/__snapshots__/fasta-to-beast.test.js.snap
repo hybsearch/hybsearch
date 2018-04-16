@@ -68,7 +68,7 @@ exports[`emydura-short.fasta 1`] = `
 	<distribution id=\\"posterior\\" spec=\\"util.CompoundDistribution\\">
 		<distribution id=\\"speciescoalescent\\" spec=\\"util.CompoundDistribution\\">
 			<distribution idref=\\"SpeciesTreePopSize.Species\\"/>
-			<distribution id=\\"treePrior.t:data\\" spec=\\"beast.evolution.speciation.GeneTreeForSpeciesTreeDistribution\\" ploidy=\\"0.5\\" speciesTree=\\"@Tree.t:Species\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:data\\"/>
+			<distribution id=\\"treePrior.t:data\\" spec=\\"beast.evolution.speciation.GeneTreeForSpeciesTreeDistribution\\" ploidy=\\"0.25\\" speciesTree=\\"@Tree.t:Species\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:data\\"/>
 		</distribution>
 		<distribution id=\\"prior\\" spec=\\"util.CompoundDistribution\\">
 			<distribution id=\\"YuleModel.t:Species\\" spec=\\"beast.evolution.speciation.YuleModel\\" birthDiffRate=\\"@birthRate.t:Species\\" tree=\\"@Tree.t:Species\\"/>
