@@ -57,7 +57,7 @@ RUN mkdir /hybsearch
 WORKDIR /hybsearch
 
 ADD ["requirements.txt", "./"]
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 ADD ["package.json", "package-lock.json", "./"]
 RUN npm install
