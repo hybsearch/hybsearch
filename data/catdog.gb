@@ -1,0 +1,1492 @@
+LOCUS       KU253532                1140 bp    DNA     linear   MAM 27-JAN-2016
+DEFINITION  Canis lupus familiaris isolate SP158 cytochrome b (cytb) gene,
+            complete cds; mitochondrial.
+ACCESSION   KU253532
+VERSION     KU253532.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-DEC-2015) Molecular Biology, Pasteur Institute, Av.
+            Paulista, 393, Sao Paulo, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP158"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AMA34085.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQRSMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFIIIGQVASILYFTILLILMPTVSVIENNLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaaac ccacccacta gccaaaattg ttaataactc attcattgac
+       61 ctcccagcgc cgtctaacat ctctgcttga tggaacttcg gatccttact aggagtatgc
+      121 ttgattctac agattctaac aggtttattc ttagctatgc actatacatc ggacacagcc
+      181 acagcttttt catcagtcac ccacatctgc cgagacgtta actacggctg aattatccgc
+      241 tatatgcacg caaatggcgc ttccatattc tttatctgcc tattcctaca tgtaggacga
+      301 ggcctatatt acggatccta tgtattcata gaaacatgaa acattggaat tgtactatta
+      361 ttcgcaacca tagccacagc attcatgggc tatgtactac catgaggaca aatatcattt
+      421 tgaggagcaa ctgtaatcac taatcttctc tctgccatcc cttatatcgg aactgactta
+      481 gtagaatgaa tctgaggcgg cttctcagtg gacaaagcaa ccctaacacg attctttgca
+      541 ttccatttca tcctcccttt catcatcgca gctctagcaa tagtacacct cctatttcta
+      601 cacgaaaccg gatccaacaa cccttcagga atcacatcag actcagacaa aattccattt
+      661 cacccttact acacaatcaa ggatatccta ggagccttac tcctactcct aatcctaata
+      721 tcactagttt tattttcacc tgacctacta ggagacccag ataactacac ccctgcaaac
+      781 cccctaaaca cccctccaca tattaaacct gagtgatatt ttctattcgc ctatgctatc
+      841 ctacgatcca ttcctaataa attaggaggt gtactcgccc tagtattctc catcctaatc
+      901 ctggcattca ttccactcct ccacacatct aagcaacgca gcataatatt ccggcccctt
+      961 agccaatgcc tattctgact tttagtcgcc gatcttctca ctttaacatg aattggagga
+     1021 caaccagttg aacacccttt catcattatc ggacaagtcg cttcaatctt atatttcacc
+     1081 atcttattga tcctaatacc aacagttagc gttatcgaaa acaaccttct aaaatgaaga
+//
+
+LOCUS       KU253531                1140 bp    DNA     linear   MAM 27-JAN-2016
+DEFINITION  Canis lupus familiaris isolate SP157 cytochrome b (cytb) gene,
+            complete cds; mitochondrial.
+ACCESSION   KU253531
+VERSION     KU253531.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-DEC-2015) Molecular Biology, Pasteur Institute, Av.
+            Paulista, 393, Sao Paulo, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP157"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AMA34084.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQRSMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFIIIGQVASILYFTILLILMPTVSVIENNLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaaac ccacccacta gccaaaattg ttaataactc attcattgac
+       61 ctcccagcgc cgtctaacat ctctgcttga tggaacttcg gatccttact aggagtatgc
+      121 ttgattctac agattctaac aggtttattc ttagctatgc actatacatc ggacacagcc
+      181 acagcttttt catcagtcac ccacatctgc cgagacgtta actacggctg aattatccgc
+      241 tatatgcacg caaatggcgc ttccatattc tttatctgcc tattcctaca tgtaggacga
+      301 ggcctatatt acggatccta tgtattcata gaaacatgaa acattggaat tgtactatta
+      361 ttcgcaacca tagccacagc attcatgggc tatgtactac catgaggaca aatatcattt
+      421 tgaggagcaa ctgtaatcac taatcttctc tctgccatcc cttatatcgg aactgactta
+      481 gtagaatgaa tctgaggcgg cttctcagtg gacaaagcaa ccctaacacg attctttgca
+      541 ttccatttca tcctcccttt catcatcgca gctctagcaa tagtacacct cctatttcta
+      601 cacgaaaccg gatccaacaa cccttcagga atcacatcag actcagacaa aattccattt
+      661 cacccttact acacaatcaa ggatatccta ggagccttac tcctactcct aatcctaata
+      721 tcactagttt tattttcacc tgacctacta ggagacccag ataactacac ccctgcaaac
+      781 cccctaaaca cccctccaca tattaaacct gagtgatatt ttctattcgc ctatgctatc
+      841 ctacgatcca ttcctaataa attaggaggt gtactcgccc tagtattctc catcctaatc
+      901 ctggcattca ttccactcct ccacacatct aagcaacgca gcataatatt ccggcccctt
+      961 agccaatgcc tattctgact tttagtcgcc gatcttctca ctttaacatg aattggagga
+     1021 caaccagttg aacacccttt catcattatc ggacaagtcg cttcaatctt atatttcacc
+     1081 atcttattga tcctaatacc aacagttagc gttatcgaaa acaaccttct aaaatgaaga
+//
+
+LOCUS       KU253483                1140 bp    DNA     linear   MAM 27-JAN-2016
+DEFINITION  Felis catus isolate SP109 cytochrome b (cytb) gene, complete cds;
+            mitochondrial.
+ACCESSION   KU253483
+VERSION     KU253483.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-DEC-2015) Molecular Biology, Pasteur Institute, Av.
+            Paulista, 393, Sao Paulo, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP109"
+                     /db_xref="taxon:9685"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AMA34036.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgga tctgaggggg cttctcagta gacaaagcca ccctaacacg attcttcgcc
+      541 ttccacttca tccttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggagga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       KU253482                1140 bp    DNA     linear   MAM 27-JAN-2016
+DEFINITION  Felis catus isolate SP108 cytochrome b (cytb) gene, complete cds;
+            mitochondrial.
+ACCESSION   KU253482
+VERSION     KU253482.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-DEC-2015) Molecular Biology, Pasteur Institute, Av.
+            Paulista, 393, Sao Paulo, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP108"
+                     /db_xref="taxon:9685"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AMA34035.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgga tctgaggggg cttctcagta gacaaagcca ccctaacacg attcttcgcc
+      541 ttccacttca tccttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggagga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       KT626624                1140 bp    DNA     linear   MAM 04-NOV-2015
+DEFINITION  Felis catus isolate SP75 cytochrome b (cytb) gene, complete cds;
+            mitochondrial.
+ACCESSION   KT626624
+VERSION     KT626624.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.C.R.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.C.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (31-AUG-2015) Molecular Biology, Pasteur Institute, Av
+            Paulista, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP75"
+                     /db_xref="taxon:9685"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="ALL73584.1"
+                     /translation="MTNIRKSHPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTTTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc acaccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacctgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaaca
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgct
+      541 ttccacttca ttcttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggggga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgcctact caaatgaaga
+//
+
+LOCUS       KT626623                1140 bp    DNA     linear   MAM 04-NOV-2015
+DEFINITION  Felis catus isolate SP74 cytochrome b (cytb) gene, complete cds;
+            mitochondrial.
+ACCESSION   KT626623
+VERSION     KT626623.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.C.R.
+  TITLE     Genetic identification of different species of mammals involved in
+            epidemiology of rabies as reservoirs or hosts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Carnieli,P. Jr., Oliveira,R.N., Castilho,J.G., Brandao,P.E. and
+            Batista,H.B.C.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (31-AUG-2015) Molecular Biology, Pasteur Institute, Av
+            Paulista, 393, Sao Paulo 01311-000, Brazil
+COMMENT     ##Assembly-Data-START##
+            Assembly Method       :: BIOEDIT v. v. 7.2.5
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="SP74"
+                     /db_xref="taxon:9685"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="ALL73583.1"
+                     /translation="MTNIRKSHPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTTTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc acaccccctt accaaaatta ttaatcactc attcatcgat
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaaca
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac caacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgcc
+      541 ttccacttca ttcttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggggga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgcctact caaatgaaga
+//
+
+LOCUS       KC346426                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern20 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346426
+VERSION     KC346426.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern20"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46297.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46298.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFMLPFIIAALAMVHLLFLHETGSNNPSRITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcata ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcacgaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cccccacata ttaaacctga
+      901 gtgatatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346425                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern6 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346425
+VERSION     KC346425.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern6"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46295.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46296.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPSHIKPEWNFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc ccttcacata ttaaacctga
+      901 gtgaaatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346424                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern18 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346424
+VERSION     KC346424.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern18"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46293.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46294.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIMLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaatta tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtgatatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346423                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern4 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346423
+VERSION     KC346423.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern4"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46291.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46292.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLQPSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtgatatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc aaccatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346422                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Southeastern14 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346422
+VERSION     KC346422.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Southeastern14"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46289.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46290.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcctatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtggtatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346421                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern7 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346421
+VERSION     KC346421.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern7"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46287.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46288.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVSSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtaga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtgatatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtatcctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346420                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Southeastern5 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346420
+VERSION     KC346420.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Southeastern5"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46285.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46286.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag attctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcctatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtggtatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       KC346419                1029 bp    DNA     linear   MAM 31-AUG-2015
+DEFINITION  Canis lupus familiaris isolate Northwestern16 NADH dehydrogenase
+            subunit 6 (ND6) gene, partial cds; tRNA-Gly gene, complete
+            sequence; and cytochrome b (CYTB) gene, partial cds; mitochondrial.
+ACCESSION   KC346419
+VERSION     KC346419.1
+KEYWORDS    .
+SOURCE      mitochondrion Canis lupus familiaris (dog)
+  ORGANISM  Canis lupus familiaris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Canis.
+REFERENCE   1  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Whole mitochondrial genome data suggests that dingoes immigrated
+            into Australia at least twice from the oceanic continent of Sahul
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1029)
+  AUTHORS   Cairns,K.M., Wilton,A.N. and Ballard,J.W.O.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-DEC-2012) School of Biotechnology and Biomolecular
+            Sciences, University of New South Wales, Sydney, NSW 2052,
+            Australia
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1029
+                     /organism="Canis lupus familiaris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="Northwestern16"
+                     /sub_species="familiaris"
+                     /db_xref="taxon:9615"
+                     /country="Australia"
+                     /note="breed: Dingo"
+     gene            complement(<1..15)
+                     /gene="ND6"
+     CDS             complement(<1..15)
+                     /gene="ND6"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="NADH dehydrogenase subunit 6"
+                     /protein_id="AGY46283.1"
+                     /translation="MMTYI"
+     tRNA            complement(16..85)
+                     /product="tRNA-Gly"
+     gene            89..>1029
+                     /gene="CYTB"
+     CDS             89..>1029
+                     /gene="CYTB"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AGY46284.1"
+                     /translation="MTNIRKTHPLAKIVNNSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFLHVGRGL
+                     YYGSYVFMETWNIGIVLLFATMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTDL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIIAALAMVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGALLLLLILMSLVLFSPDLLGDPDNYTPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVFSILILAFIPLLHTSKQR"
+ORIGIN      
+        1 aatgtatgtt atcattattc ctacatggaa tttaaccatg actaatgaca tgaaaaatca
+       61 tcgttgtatt tcaactataa gaacattaat gaccaacatt cgaaaaaccc acccactagc
+      121 caaaattgtt aataactcat tcattgacct cccagcgccg tctaacatct ctgcttgatg
+      181 gaacttcgga tccttactag gagtatgctt gattctacag atcctaacag gtttgttctt
+      241 agctatgcac tatacatcgg acacagccac agctttttca tcagtcacgc acatctgccg
+      301 agacgttaac tacggctgaa ttatccgcta tatgcacgca aatggcgctt ccatattctt
+      361 tatctgccta tttctacatg taggacgagg cctatattac ggatcttatg tattcataga
+      421 aacatgaaac attggaattg tactattatt cgcaaccata gccacagcat tcatgggcta
+      481 tgtactacca tgaggacaaa tatcattttg aggagcaact gtaatcacta atcttctctc
+      541 tgccatccct tatatcggaa ctgacttagt agaatggatc tgaggcggct tctcagtgga
+      601 caaagcaacc ctaacacgat tctttgcatt ccatttcatc ctccctttca tcatcgcagc
+      661 tctagcaata gtacacctcc tatttctaca cgaaaccgga tccaacaacc cttcaggaat
+      721 cacatcagac tcagacaaaa ttccatttca cccttactac acaatcaagg atatcctagg
+      781 agccttactc ctactcctaa tcctaatatc actagtttta ttttcacctg acctattagg
+      841 agacccagat aactacaccc ctgcaaaccc cctaaacacc cctccacata ttaaacctga
+      901 gtgatatttt ctattcgcct atgctatcct acgatccatt cctaataaat taggaggtgt
+      961 actcgcccta gtattctcca tcctaatctt ggcattcatt ccactcctcc acacatctaa
+     1021 gcaacgcag
+//
+
+LOCUS       AB194817                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: F-type.
+ACCESSION   AB194817
+VERSION     AB194817.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="F-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02735.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgga tctgaggggg cttctcagta gacaaagcca ccctaacacg attcttcgcc
+      541 ttccacttca tccttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggagga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       AB194816                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: E-type.
+ACCESSION   AB194816
+VERSION     AB194816.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="E-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02734.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFLTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc ttcatctgcc tgtacataca tgtgggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgcc
+      541 ttccacttca tccttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggagga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctta
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       AB194815                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: D-type.
+ACCESSION   AB194815
+VERSION     AB194815.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="D-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02733.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAITPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacccgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtgggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgcc
+      541 ttccacttca tccttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggagga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ctccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       AB194814                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: C-type.
+ACCESSION   AB194814
+VERSION     AB194814.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="C-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02732.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTTTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIILALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacctgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaaca
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgct
+      541 ttccacttca ttcttccatt cattatctta gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggggga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgcctact caaatgaaga
+//
+
+LOCUS       AB194813                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: B-type.
+ACCESSION   AB194813
+VERSION     AB194813.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="B-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02731.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPTPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTMTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLTLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgat
+       61 ctacccaccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaata
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatgtact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac caacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgcc
+      541 ttccacttca ttcttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcaca
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggggga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact tctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgtctact caaatgaaga
+//
+
+LOCUS       AB194812                1140 bp    DNA     linear   MAM 26-JUL-2016
+DEFINITION  Felis catus mitochondrial cytb gene for cytochrome b, complete cds,
+            haplotype: A-type.
+ACCESSION   AB194812
+VERSION     AB194812.1
+KEYWORDS    .
+SOURCE      mitochondrion Felis catus (domestic cat)
+  ORGANISM  Felis catus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Felinae; Felis.
+REFERENCE   1
+  AUTHORS   Tamada,T., Kurose,N. and Masuda,R.
+  TITLE     Genetic diversity in domestic cats Felis catus of the Tsushima
+            Islands, based on mitochondrial DNA cytochrome b and control region
+            nucleotide sequences
+  JOURNAL   Zool. Sci. 22 (6), 627-633 (2005)
+   PUBMED   15988156
+REFERENCE   2  (bases 1 to 1140)
+  AUTHORS   Masuda,R. and Tamada,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-NOV-2004) Contact:Ryuichi Masuda Hokkaido University,
+            Department of Natural History Sciences, Faculty of Science; North
+            10, West 8, Kita-ku, Sapporo, Hokkaido 060-0810, Japan
+FEATURES             Location/Qualifiers
+     source          1..1140
+                     /organism="Felis catus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9685"
+                     /haplotype="A-type"
+     gene            1..1140
+                     /gene="cytb"
+     CDS             1..1140
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAE02730.1"
+                     /translation="MTNIRKSYPLTKIINHSFIDLPAPSNISAWWNFGSLLGVCLILQ
+                     ILTGLFLAMHYTSDTTTAFSSVTHICRDVNYGWIIRYLHANGASMFFICLYMHVGRGM
+                     YYGSYTFSETWNIGIMLLFTVMATAFMGYVLPWGQMSFWGATVITNLLSAIPYIGTEL
+                     VEWIWGGFSVDKATLTRFFAFHFILPFIISALAAVHLLFLHETGSNNPSGITSDSDKI
+                     PFHPYYTIKDILGLLVLVLTLMLLVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLF
+                     AYAILRSIPNKLGGVLALVLSILVLAIIPILHTSKQRGMMFRPLSQCLFWLLVADLLT
+                     LTWIGGQPVEHPFITIGQLASILYFSTLLILMPISGIIENRLLKW"
+ORIGIN      
+        1 atgaccaaca ttcgaaaatc ataccccctt accaaaatta ttaatcactc attcatcgac
+       61 ctacctgccc catctaacat ctcagcatga tgaaacttcg gctcccttct aggagtctgc
+      121 ctaatcttac aaatcctcac cggcctcttt ttggccatac actacacatc agacacaaca
+      181 accgcctttt catcagttac ccacatctgt cgcgacgtta attatggctg aatcatccga
+      241 tatttacacg ccaacggagc ttctatattc tttatctgcc tgtacataca tgtaggacgg
+      301 ggaatatact acggctccta caccttctca gagacatgaa acattggaat catactatta
+      361 tttacagtca tagccacagc ttttatggga tacgtcctac catgaggcca aatgtccttc
+      421 tgaggagcaa ccgtaatcac taacctcctg tcagcaattc catacatcgg gactgaacta
+      481 gtagaatgaa tctgaggggg cttctcagta gacaaagcca ccctaacacg attctttgct
+      541 ttccacttca ttcttccatt cattatctca gccttagcag cagtacacct cttattcctt
+      601 catgaaacag gatctaacaa cccctcagga attacatccg attcagacaa aatcccattc
+      661 cacccatact atacaatcaa agacatccta ggtcttctag tactagtttt aacactcata
+      721 ctactcgtcc tattttcacc agacctgcta ggagacccag acaactacat cccagccaac
+      781 cctttaaata cccctcccca tattaaacct gaatgatact tcctattcgc atacgcaatt
+      841 ctccgatcca tccccaacaa actaggggga gtcctagccc tagtactctc catcctagta
+      901 ctagcaatca ttccaatcct ccacacctcc aaacaacgag gaataatgtt tcgaccacta
+      961 agccaatgtc tattctgact cctagtagcg gatctcctaa ccctaacatg aatcggtggc
+     1021 caacctgtag aacatccatt catcaccatc ggccaactag cctccatcct atatttctca
+     1081 accctcctaa tcctaatacc catctcaggc attattgaaa accgcctact caaatgaaga
+//
+
