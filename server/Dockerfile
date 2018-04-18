@@ -54,6 +54,7 @@ RUN apt-get update \
 ENV DOCKER=1
 
 RUN mkdir /hybsearch
+RUN mkdir /hybsearch/data
 WORKDIR /hybsearch
 
 ADD ["requirements.txt", "./"]
