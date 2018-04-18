@@ -6,7 +6,7 @@ const groupBy = require('lodash/groupBy')
 function makeControlData(speciesCounts) {
 	return `species = ${Object.keys(speciesCounts).join(' ')}
 seqperspecies = ${Object.values(speciesCounts).join(' ')}
-locusrate = 0.8762
+locusrate = 1.0
 heredityscalar = 0.25
 seqgencommand = -mHKY -f0.2678,0.1604,0.2031,0.3687 -t1.5161 -i0 -a0.2195 -l810
 significancelevel = 0.1
