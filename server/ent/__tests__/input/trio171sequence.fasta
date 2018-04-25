@@ -1,4 +1,4 @@
->Pelodiscus sinensis__AB904729
+>Pelodiscus_sinensis__AB904729
 -----------cctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactacaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -19,7 +19,7 @@ atcacccaaacattattctgattatttgtggctaaccttatagtattaacatgaatcgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaataaa
 -----------------------------
->Pelodiscus sinensis__AB904728
+>Pelodiscus_sinensis__AB904728
 -----------cctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactacaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -40,7 +40,7 @@ atcacccaaacactattctgattatttgtggctaaccttatagtattaacatgaatcgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaattaa
 -----------------------------
->Pelodiscus sinensis__AB904727
+>Pelodiscus_sinensis__AB904727
 -----------cctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactacaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -61,7 +61,7 @@ atcacccaaacactattctgattatttgtggctaaccttatagtattaacatgaatcgga
 ggaaaaccagtagaaaacccatttatcattatcggccaagcatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaattaa
 -----------------------------
->Pelodiscus sinensis__AB904726
+>Pelodiscus_sinensis__AB904726
 -----------cctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactacaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -82,7 +82,7 @@ atcacccaaacactattctgattatttgtggctaaccttatagtattaacatgaatcgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaattaa
 -----------------------------
->Pelodiscus maackii__AB904725
+>Pelodiscus_maackii__AB904725
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -103,7 +103,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaataaa
 -----------------------------
->Pelodiscus maackii__AB904724
+>Pelodiscus_maackii__AB904724
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -124,7 +124,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaattaa
 -----------------------------
->Pelodiscus maackii__AB904723
+>Pelodiscus_maackii__AB904723
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gatctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -145,7 +145,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaattaa
 -----------------------------
->Pelodiscus maackii__AB904722
+>Pelodiscus_maackii__AB904722
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -166,7 +166,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaattaa
 -----------------------------
->Pelodiscus maackii__AB904721
+>Pelodiscus_maackii__AB904721
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -187,7 +187,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaattaa
 -----------------------------
->Pelodiscus maackii__AB904720
+>Pelodiscus_maackii__AB904720
 -----------tctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -208,7 +208,7 @@ atcacccaaacactattctgactatttgtagctaaccttatagtattaacatgaattggg
 ggaaaaccagtagaaaacccattcatcactatcggccaaacatcctccatcctttacttt
 ttaatcctactagtattaataccaatctcaaacataatcgaaaataaaacaatcaattaa
 -----------------------------
->Amyda ornata__LM537490
+>Amyda_ornata__LM537490
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccatttgatgaaacttcggatccctattaggtgcg
 tgcttagccttacaaatcaccacaggattattcctagctatacattattcaccagatatc
@@ -229,7 +229,7 @@ attacacaaatactattttgatcattcgtagccaacatcgtattactaacatgaattggg
 gggcaacctgtagaaaacccattcatccacatcggccaagtagcatccattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda ornata__LM537482
+>Amyda_ornata__LM537482
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccatttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacattattcaccagatatc
@@ -250,7 +250,7 @@ attacacaaatactattttgatcattcgtagccaacatcgtattactaacatgaattggg
 gggcaacctgtagaaaacccattcatccacatcggccaagtagcctccattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda ornata__LM537478
+>Amyda_ornata__LM537478
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -271,7 +271,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda ornata__LM537462
+>Amyda_ornata__LM537462
 atggccatcaacctacgaaaatcccacccaatgattaaaatcattaataactcactaatc
 gacctgccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacactattcaccaaatatc
@@ -292,7 +292,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataaaaaag--
->Amyda cartilaginea__LM537494
+>Amyda_cartilaginea__LM537494
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcctagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -313,7 +313,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggtcaagtagcctccattctccacttt
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537493
+>Amyda_cartilaginea__LM537493
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcctagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -334,7 +334,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggtcaagtagcctccattctccacttt
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537492
+>Amyda_cartilaginea__LM537492
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcctagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -355,7 +355,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggccaagtagcctccattctccacttc
 acaattttactcatacttataccaatctcaaacataattgaaaacaaaatcataacctaa
 atcactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537491
+>Amyda_cartilaginea__LM537491
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcctagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -376,7 +376,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggccaagtagcctccattctccacttc
 acaattttactcatacttataccaatctcaaacataattgaaaacaaaatcataacctaa
 atcactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537485
+>Amyda_cartilaginea__LM537485
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccatttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacattattcaccagatatc
@@ -397,7 +397,7 @@ attacacaaatactattttgatcattcgtagccaacatcgtattactaacatgaattggg
 gggcaacctgtagaaaacccattcatccacatcggccaagtagcctccattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537484
+>Amyda_cartilaginea__LM537484
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccatttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacattattcaccagatatc
@@ -418,7 +418,7 @@ attacacaaatactattttgatcattcgtagccaacatcgtattactaacatgaattggg
 gggcaacctgtagaaaacccattcatccacatcggccaagtagcctccattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537483
+>Amyda_cartilaginea__LM537483
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccatttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacattattcaccagatatc
@@ -439,7 +439,7 @@ attacacaaatactattttgatcattcgtagccaacatcgtattactaacatgaattggg
 gggcaacctgtagaaaacccattcatccacatcggccaagtagcctccattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537481
+>Amyda_cartilaginea__LM537481
 atgaccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -460,7 +460,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggccaagtagcctccattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 accactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537480
+>Amyda_cartilaginea__LM537480
 atgaccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcg
 tgcttagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -481,7 +481,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggccaagtagcctccattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 accactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537476
+>Amyda_cartilaginea__LM537476
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcctagccttacaaatcatcacaggattattcctagctatacattattcaccaaatatc
@@ -502,7 +502,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggtcaagtagcctccattctccacttt
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaacaacaaag--
->Amyda cartilaginea__LM537467
+>Amyda_cartilaginea__LM537467
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacagatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -523,7 +523,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537466
+>Amyda_cartilaginea__LM537466
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -544,7 +544,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537465
+>Amyda_cartilaginea__LM537465
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacagatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -565,7 +565,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataacaaag--
->Amyda cartilaginea__LM537464
+>Amyda_cartilaginea__LM537464
 atggccatcaacctacgaaaatcccacccaatgattaaaatcattaataactcactaatc
 gacctgccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacactattcaccaaatatc
@@ -586,7 +586,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataaaaaag--
->Amyda cartilaginea__LM537463
+>Amyda_cartilaginea__LM537463
 atggccatcaacctacgaaaatcccacccaatgattaaaatcattaataactcactaatc
 gacctgccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcaccacaggattattcctagctatacactattcaccaaatatc
@@ -607,7 +607,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 atcactcaagtagcttaaataaaaaag--
->Pelodiscus sinensis__FR851459
+>Pelodiscus_sinensis__FR851459
 ------------------------------------------------------------
 --------------------------------------------------------agcc
 tgcttaatactacaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -628,7 +628,7 @@ atcacccaaacactattctgattatttgtagctaaccttatagtattaacatgaatcgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcttttacttt
 ttaatcctactagtattaataccaatctcaaacataattgaaaataaaa-----------
 -----------------------------
->Nilssonia nigricans__HE801760
+>Nilssonia_nigricans__HE801760
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -649,7 +649,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__HE801759
+>Nilssonia_nigricans__HE801759
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -670,7 +670,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__HE801758
+>Nilssonia_nigricans__HE801758
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -691,7 +691,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__HE801757
+>Nilssonia_nigricans__HE801757
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -712,7 +712,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__HE801756
+>Nilssonia_hurum__HE801756
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -733,7 +733,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__HE801755
+>Nilssonia_hurum__HE801755
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -754,7 +754,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__HE801754
+>Nilssonia_hurum__HE801754
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -775,7 +775,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__HE801753
+>Nilssonia_hurum__HE801753
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -796,7 +796,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaa----------
->Nilssonia hurum__HE801752
+>Nilssonia_hurum__HE801752
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -817,7 +817,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801751
+>Nilssonia_gangetica__HE801751
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -838,7 +838,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801750
+>Nilssonia_gangetica__HE801750
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -859,7 +859,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801749
+>Nilssonia_gangetica__HE801749
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -880,7 +880,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801748
+>Nilssonia_gangetica__HE801748
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -901,7 +901,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801747
+>Nilssonia_gangetica__HE801747
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -922,7 +922,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801746
+>Nilssonia_gangetica__HE801746
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -943,7 +943,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801745
+>Nilssonia_gangetica__HE801745
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -964,7 +964,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801744
+>Nilssonia_gangetica__HE801744
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -985,7 +985,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801743
+>Nilssonia_gangetica__HE801743
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -1006,7 +1006,7 @@ atcacacaaacactattttgatcattcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__HE801742
+>Nilssonia_gangetica__HE801742
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -1027,7 +1027,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia formosa__HE801741
+>Nilssonia_formosa__HE801741
 ------------------------------------------------------------
 ------------------------------------------ggatcccttttaggaacc
 tgcttagccctacaaatcatcacaggactattcctagccatacattactcaccaaacatc
@@ -1048,7 +1048,7 @@ atcacacaaacattattctgatcattcgtagccaacaccatactactaacatgaattgga
 ggacaacccgtagaaaacccattcattaatattggccaagcagcctcaatcctccacttc
 acaattctacttttacttataccaatttcaaacataatcgaaaacaaaatcattaaataa
 accactcaagtagcttaaatacctaaagc
->Nilssonia formosa__HE801740
+>Nilssonia_formosa__HE801740
 ------------------------------------------------------------
 ------------------------------------------ggatcccttttaggaacc
 tgcttagccctacaaatcatcacaggactattcctagccatacattactcaccaaacatc
@@ -1069,7 +1069,7 @@ atcacacaaacattattctgatcattcgtagccaacaccatactactaacatgaattgga
 ggacaacccgtagaaaacccattcattaatattggccaagcagcctcaatcctccacttc
 acaattctacttttacttataccaatttcaaacataatcgaaaacaaaatcattaaataa
 accactcaagtagcttaaatacctaaagc
->Amyda cartilaginea__JN232534
+>Amyda_cartilaginea__JN232534
 ------------------------------------------------------------
 ----------gcccatccaacatctccatttgatgaaatttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -1090,7 +1090,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 accactc----------------------
->Pelochelys cantorii__JN232533
+>Pelochelys_cantorii__JN232533
 -----------------------------------tcaaattattaacaactcattaatc
 gacctcccaagcccatcaaacatttccacctgatgaaacttcggatccttattaagtgct
 tgtctagcccttcaaatcatcacaggcctattcctagccatacactactcaccaaatatc
@@ -1132,7 +1132,7 @@ ataacccaaacactattctgatgttttactgccaacattattatcctcacatgaattggt
 ggtcaaccagtagaagaccccttcaccaccattggacaactagcctctatcctttacttc
 acaattctactcgtactcataccactctccagcctaatcgagaacaaaatactccatta-
 -----------------------------
->Chitra indica__JN232529
+>Chitra_indica__JN232529
 ------------------------------------------------------------
 -------------------------------ctgatgaatttcggatcttacttggcgct
 tgcctaatcatccaaatcatcactggcctattcctagccatgcattactcaccaaacatc
@@ -1153,7 +1153,7 @@ atcacccaaaccctattctgattattcgtagccaacctcgcagtattaacatgaatcgga
 ggacaaccagtagaaaacccattcatcttcatcggacaaacatcctccatcctctacttc
 ctaatcctacttgtactcataccaatctcaagcataatcgaaaacaaagcaaccaactaa
 ac---------------------------
->Nilssonia hurum__JN232528
+>Nilssonia_hurum__JN232528
 ------------------------------------------------------------
 -----------------------------------------cggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -1174,7 +1174,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactc----------------------
->Nilssonia nigricans__JN232527
+>Nilssonia_nigricans__JN232527
 ------------------------------------------------------------
 -----------------------------------------cggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -2245,7 +2245,7 @@ ataacccaaacactattctgatgttttactgccaacattattatcctcacatgaattggt
 ggtcaaccagtagaagaccccttcaccaccattggacaactagcctctatcctttacttc
 acaattctactcgtactcataccactctccagcctaatcgagaacaaaatact-------
 -----------------------------
->Pelodiscus maackii__FM999011
+>Pelodiscus_maackii__FM999011
 atggccaccaatctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccagatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -2413,7 +2413,7 @@ atcacccaaaccttattctgactattcgtagccaacctaatagtactgacatgaattgga
 ggtcaaccagtagaaaacccattcattcttatcggacaaacagcctccatcctctatttc
 ctaatcttactcgtactaataccaatctcgggcataatcgaaaacaaagcaatcagctaa
 -----------------------------
->Chitra vandijki__AY259563
+>Chitra_vandijki__AY259563
 atgacctccaatctacgaaaatcacacccaataatcaaaatcatcaacaactcactaatt
 gaccttccaactccatcaaacatctccatttgatgaaacttcggatctttacttggcgcc
 tgcctaatcatccaaatcattacaggcctattcctagccatacattactcaccaaacatc
@@ -2434,7 +2434,7 @@ atcacccaaaccctattctgactattcgtagccaaccttgcagtactaacatgaatcgga
 ggacaaccagtagaaaacccattcatcctcatcggacaaacatcctccatcctctacttc
 ctaatcctacttgtactcataccaatctcaagcataatcgaaaacaaagcaaccaactaa
 -----------------------------
->Chitra chitra _AY259562
+>Chitra_chitra__AY259562
 atgacctccaacctacgaaaatcacacccagtaaccaaaatcatcaacaactcactaatt
 gaccttccaactccatcaaacatctccatctgatgaaacttcggatctttacttggcgcc
 tgcctaatcatccaaatcatcacaggcctattcctagccatacattactcaccaaacatc
@@ -2455,7 +2455,7 @@ atcacccaaaccttattctgattattcgtagccaacctcgcagtactaacatgaatcgga
 ggacaaccagtagaaaacccattcatcttcatcggacaaacatcttccatcctctacttc
 ctaatcctacttgtactcataccaatctcaagcataatcgaaaacaaaacaaccaactaa
 -----------------------------
->Chitra indica__AY259561
+>Chitra_indica__AY259561
 atgacctccaacctacgaaaatcacacccaataattaaaatcatcaacaactcactaatt
 gacctcccaactccatcaaacatctccatctgatgaaatttcggatctttacttggcgct
 tgcctaatcatccaaatcatcactggcctattcctagccatgcattactcaccaaacatc
@@ -2476,7 +2476,7 @@ atcacccaaaccctattctgattattcgtagccaacctcgcagtattaacatgaatcgga
 ggacaaccagtagaaaacccattcatcttcatcggacaaacatcctccatcctctacttc
 ctaatcctacttgtactcataccaatctcaagcataatcgaaaacaaagcaaccaactaa
 -----------------------------
->Pelochelys cantorii__AY259560
+>Pelochelys_cantorii__AY259560
 atggcccacaacctacgaaaatcacacccaataatcaaaattattaacaactcattaatc
 gacctcccaagcccatcaaacatttccacctgatgaaacttcggatccttattaagtgct
 tgtctagcccttcaaatcatcacaggcctattcctagccatacactactcaccaaatatc
@@ -2497,7 +2497,7 @@ atcacccaaaccatattctgactattcgtagccaacctcacagtactaacatgaatcgga
 ggacaacctgtagaaaacccattcgtctttattggacaaacagcttcaatcacctacttc
 ctaatcctgcttgtactcataccaatctcaaacataatcgaaaacaaaataaccaattaa
 -----------------------------
->Pelochelys bibroni__AY259559
+>Pelochelys_bibroni__AY259559
 atgactcacaacctacgaaaatcacacccaataatcaaaattattaacaactcattaatt
 gacctcccaagcccatccaacatttccacctgatgaaacttcgggtccttactaggtgcc
 tgcctggccctccaaatcatcacaggcctattcctagccatgcattactcaccaaacatc
@@ -2623,7 +2623,7 @@ atcacccaaacactattctgatcattcgtagccaacctcatagtactaacatgaattgga
 gggcagccagtagaaaacccattcattataatcggacaaacagcctccattctttatttc
 ttaatcctactcgtacttataccagcctcaaacataattgaaaacaaaacaatcaactaa
 -----------------------------
->Pelodiscus sinensis__AY259553
+>Pelodiscus_sinensis__AY259553
 atggccaccaatctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccaaatcatcacaggcttattcctagccatacattactcaccaaacatc
@@ -2644,7 +2644,7 @@ atcacccagacactattctgattatttgtagctaaccttatagtattaacatgaattgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttt
 tttatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaattaa
 -----------------------------
->Palea steindachneri__AY259552
+>Palea_steindachneri__AY259552
 atgaccatcaatctacgaaaatcccacccaataattaaaattatcaataactcattaatt
 gatttaccaagcccatccaatatctccacttgatgaaactttggatccctattaggtgct
 tgcctaatcctacaaatcattacaggactattcttagccatacattattcaccaaacatc
@@ -2665,7 +2665,7 @@ attacccaaacactattttggttatttgtagccaacctcatagtactgacatgaatcgga
 ggacaaccagtagaaaacccattcatctctattggccaaacagcctccatcttttacttc
 acaatcttactcgtactcataccaatctcaaatataattgaaaacaaaactaccaactaa
 -----------------------------
->Dogania subplana__AY259551
+>Dogania_subplana__AY259551
 atggccaccaacctacgaaaaacccacccaataataaaaatcatcaacaactcactaatc
 gacctaccaagcccatccaacatctccacttgatggaatttcggatctctattaggcgcc
 tgcctaaccctacaaatcattacagggttattcctagctatacactattcaccaagtatc
@@ -2686,7 +2686,7 @@ atcacacaaatactattctgatcatttacagctaaccttatactactaacatgaatcgga
 ggacaacccgtagaaaatccattcatccacattggccaaacagcctccattctacacttc
 acaattttacttgtactaataccgatatcgaacataatcgaaaacaaaactaccaactaa
 -----------------------------
->Amyda cartilaginea__AY259550
+>Amyda_cartilaginea__AY259550
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatacactattcaccaaatatc
@@ -2707,7 +2707,7 @@ attacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacccgtagaaaacccattcatccacatcggccaagtagcctctattctccacttc
 acaattctactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 -----------------------------
->Nilssonia gangetica__AY259549
+>Nilssonia_gangetica__AY259549
 atggccatcaacctacgaaaatctcacccaataattaaaatcatcaataactcacttatt
 gacctaccaagtccatccaacatttccatatgatgaaacttcggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -2728,7 +2728,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 -----------------------------
->Nilssonia hurum__AY259548
+>Nilssonia_hurum__AY259548
 atggccatcaacctacgaaaatctcacccaataattaaaatcatcaacaacttactcatt
 gacctgccaagtccatctaacatctccatatgatgaaacttcggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -2749,7 +2749,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 -----------------------------
->Nilssonia formosa__AY259547
+>Nilssonia_formosa__AY259547
 atggccatcaacctacgaaaatctcacccaataatcaaaatcattaacaactcactaatt
 gacctaccaagtccatctaacatctccatatgatgaaattttggatcccttttaggaacc
 tgcttagccctacaaatcatcacaggactattcctagccatacattactcaccaaacatc
@@ -2770,7 +2770,7 @@ atcacacaaacattattctgatcattcgtagccaacaccatactactaacatgaattgga
 ggacaacccgtagaaaacccattcattaatattggccaagcagcctcaatcctccacttc
 acaattctacttttacttataccaatttcaaacataatcgaaaacaaaatcattaaataa
 -----------------------------
->Palea steindachneri__AY743417
+>Palea_steindachneri__AY743417
 atggccatcaacctacgaaaatcccacccaataattaaaatcattaataactcactaatc
 gacctaccaagcccatccaacatctccacttgatgaaacttcggatccctattaggtgcc
 tgcttagccttacaaatcatcacaggattattcctagctatgcattattcaccaaatatc
@@ -2791,7 +2791,7 @@ atcacacaaatactattttgatcattcgtagccaacatcatattactaacatgaattgga
 ggacaacctgtagaaaacccattcatctacatcggccaagtagcctccattctccacttc
 acaattttactcatactcataccaatctcaaacataattgaaaacaaaatcataaactaa
 -----------------------------
->Pelodiscus axenaria__AY583693
+>Pelodiscus_axenaria__AY583693
 atggccaccaatctacgaaaatcccacccaatgattaaaatcattaacaactcattaatt
 gacctaccaagtccatccaacatttccatttgatgaaaccttggatcactattaggagct
 tgcctaatactccaaatcattacaggtttattcctagccatacactattcaccaaacatc
@@ -2812,7 +2812,7 @@ attacccaaacactattctggttatttgtagccaaccttatagtactggcatgaattgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttc
 ataatcctattagtactaataccaatctcaaacataattgaaaataaaacaaccaactaa
 -----------------------------
->Pelodiscus sinensis__AY583692
+>Pelodiscus_sinensis__AY583692
 atggccaccaatctacgaaaaacccacccaataattaaaatcattaacaactcactaatt
 gacctaccaagtccatccaacatttccatttgatgaaactttggatcattattaggagcc
 tgcttaatactccaaatcatcacaggcttattcctagccatacattactcaccaaacatc
@@ -2833,7 +2833,7 @@ atcacccagacactattctgattatttgtagctaaccttatagtattaacatgaattgga
 ggaaaaccagtagaaaacccattcatcattatcggccaagcatcctccatcctttacttt
 tttatcctactagtattaataccaatctcaaacataattgaaaataaaacaaccaattaa
 -----------------------------
->Nilssonia gangetica__AM495217
+>Nilssonia_gangetica__AM495217
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -2854,7 +2854,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495216
+>Nilssonia_gangetica__AM495216
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -2875,7 +2875,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495215
+>Nilssonia_gangetica__AM495215
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -2896,7 +2896,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatactactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495236
+>Nilssonia_nigricans__AM495236
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -2917,7 +2917,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495235
+>Nilssonia_nigricans__AM495235
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -2938,7 +2938,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495234
+>Nilssonia_nigricans__AM495234
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -2959,7 +2959,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495233
+>Nilssonia_nigricans__AM495233
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -2980,7 +2980,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495232
+>Nilssonia_nigricans__AM495232
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3001,7 +3001,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495231
+>Nilssonia_nigricans__AM495231
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaagtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3022,7 +3022,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495230
+>Nilssonia_nigricans__AM495230
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaagtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3043,7 +3043,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495229
+>Nilssonia_nigricans__AM495229
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaagtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3064,7 +3064,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495228
+>Nilssonia_nigricans__AM495228
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaagtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3085,7 +3085,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia nigricans__AM495227
+>Nilssonia_nigricans__AM495227
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaagtgcc
 tgcctagccctacaaatcatcacaggactattcctagccatacattattcaccaaacatc
@@ -3106,7 +3106,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcttcaattctacacttc
 acaattctactcatactcataccaatctcaaacataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia leithii__AM495226
+>Nilssonia_leithii__AM495226
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcttagccctacaaatcatcacaggattattcctagccatacattactcaccaaacatc
@@ -3127,7 +3127,7 @@ atcacacaaacactattctgatcattcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccaaatcggccaaacagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataatcgaaaacaaaatcattaattaa
 accactcaagtagcttaaataaccaaagc
->Nilssonia leithii__AM495225
+>Nilssonia_leithii__AM495225
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcttagccctacaaatcatcacaggattattcctagccatacattactcaccaaacatc
@@ -3148,7 +3148,7 @@ atcacacaaacactattctgatcattcgtagccaacaccatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatccaaatcggccaaacagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataatcgaaaacaaaatcattaattaa
 accactcaagtagcttaaataaccaaagc
->Nilssonia hurum__AM495224
+>Nilssonia_hurum__AM495224
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3169,7 +3169,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495223
+>Nilssonia_hurum__AM495223
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3190,7 +3190,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495222
+>Nilssonia_hurum__AM495222
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3211,7 +3211,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495221
+>Nilssonia_hurum__AM495221
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3232,7 +3232,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495220
+>Nilssonia_hurum__AM495220
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3253,7 +3253,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495219
+>Nilssonia_hurum__AM495219
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3274,7 +3274,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia hurum__AM495218
+>Nilssonia_hurum__AM495218
 ------------------------------------------------------------
 ------------------------------------------ggatccttattaggtgcc
 tgcctagccctacaaatcatcacaggattattcttagccatacattactcaccaaacatt
@@ -3295,7 +3295,7 @@ atcacacaaacactattctgatcattcgtagccaacatcatactactaacatgaattgga
 ggacaaccagtagaaaacccattcatcctcatcggccaagcagcctcaattctacacttc
 acaattctactcatactcataccaatctcaaatataatcgaaaacaaaataattaactaa
 accactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495214
+>Nilssonia_gangetica__AM495214
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3316,7 +3316,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495213
+>Nilssonia_gangetica__AM495213
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3337,7 +3337,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495212
+>Nilssonia_gangetica__AM495212
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3358,7 +3358,7 @@ atcacacaaacactattttgatcgttcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatctacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 tccactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495211
+>Nilssonia_gangetica__AM495211
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3379,7 +3379,7 @@ atcacacaaacactattttgatcattcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495210
+>Nilssonia_gangetica__AM495210
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3400,7 +3400,7 @@ atcacacaaacactattttgatcattcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495209
+>Nilssonia_gangetica__AM495209
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
@@ -3421,7 +3421,7 @@ atcacacaaacactattttgatcattcgtagccaacaccatattactaacatgaatcgga
 ggacaaccagtagaaaacccattcatccacattggccaagtagcctcaattctccacttc
 accattctacttatacttataccaatttcaaacataattgaaaacaaaatcataaactaa
 ttcactcaagtagcttaaacaactaaagc
->Nilssonia gangetica__AM495208
+>Nilssonia_gangetica__AM495208
 ------------------------------------------------------------
 ------------------------------------------ggatccttactaggtgcc
 tgcttaaccctacaaatcatcacaggattatttttagccatacattactcaccagacatc
