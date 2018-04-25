@@ -31,136 +31,147 @@ function nmMark(node, species1, species2) {
 module.exports.strictSearch = strictSearch
 function strictSearch(node, fasta) {
 	let entResults = strictSearchHelper(node)
-	// Filter out nonmono pairs before returning
+	// Out of all the nonmonophyletic pairs found, we want to
+	// return just the closest pair for each nm individual
 	let finalResults = { species: entResults.species, nm: [] }
 
 	const fastaData = parseFasta(fasta)
 	// Build a dict map of species -> sequence
+	// We'll use this to compute hamming distances 
 	let sequenceMap = {}
 	for (let obj of fastaData) {
 		sequenceMap[obj.species] = obj.sequence
 	}
 
-	// For each species S marked in an nm pair,
-	// Go through all other pairs with S in them
-	// Find the shortest pair
-	// If that pair is shorter than the current pair including either of them
-	// That is the new shortest pair
-	let allSpecies = []
-	let speciesCheck = {}
 
+	// 1- Find which column contains the nm individuals 
+		// This column will have less unique individuals
+	let nmCol = 0;
+	let col1Count = 0;
+	let col2Count = 0;
+	let speciesCheck = {}
 	for (let result of entResults.nm) {
 		let sp1 = result.pair[0]
 		let sp2 = result.pair[1]
-
+		// Unique individual are identified by `ident` 
+		// While a species is identified by `name`
 		if (!speciesCheck[sp1.ident]) {
-			allSpecies.push(sp1.ident)
 			speciesCheck[sp1.ident] = true
+			col1Count ++
 		}
 		if (!speciesCheck[sp2.ident]) {
-			allSpecies.push(sp2.ident)
 			speciesCheck[sp2.ident] = true
+			col2Count ++
 		}
 	}
-
-	let shortestPairs = {}
-
-	for (let speciesIdent of allSpecies) {
-		let smallestResult = undefined
-		let smallestDist = -1
-
-		for (let result of entResults.nm) {
-			let sp1 = result.pair[0]
-			let sp2 = result.pair[1]
-			let id1 = makeIdent(sp1)
-			let id2 = makeIdent(sp2)
-
-			let sequence1 = sequenceMap[id1]
-			let sequence2 = sequenceMap[id2]
-
-			if (!sequence1) {
-				throw new Error(`ent: sequenceMap does not have an entry for ${id1}`)
-			} else if (!sequence2) {
-				throw new Error(`ent: sequenceMap does not have an entry for ${id2}`)
-			}
-
-			let dist = hammingDistance(sequence1, sequence2)
-
-			if (sp1.ident === speciesIdent || sp2.ident === speciesIdent) {
-				if (smallestDist === -1) {
-					smallestDist = dist
-				}
-
-				if (dist <= smallestDist) {
-					smallestDist = dist
-					smallestResult = result
-				}
-			}
-		}
-
-		let sp1 = smallestResult.pair[0]
-		let sp2 = smallestResult.pair[1]
-		let id1 = makeIdent(sp1)
-		let id2 = makeIdent(sp2)
-
-		if (
-			(!shortestPairs.hasOwnProperty(id1) ||
-				smallestDist < shortestPairs[id1].dist) &&
-			(!shortestPairs.hasOwnProperty(id2) ||
-				smallestDist < shortestPairs[id2].dist)
-		) {
-			shortestPairs[id1] = { dist: smallestDist, result: smallestResult }
-			shortestPairs[id2] = { dist: smallestDist, result: smallestResult }
-		}
+	if(col2Count < col1Count){
+		nmCol = 1
 	}
 
-	let uniqueHash = {}
-	let foundSpecies = {}
+	// 2- For each nm individual S marked in an nm pair,
+		// Go through all other pairs with S in them
+		// Find the pair with the shortest distance
+	let otherCol = (nmCol == 0) ? 1 : 0
+	let nmIndividualCheck = {}
+	let otherIndividualCheck = {}
+	finalResults.output = []
+	let smallestPairs = []
+	let foundSoFar = 0
 
-	for (let key in shortestPairs) {
-		let result = shortestPairs[key].result
-		let sp1 = result.pair[0]
-		let sp2 = result.pair[1]
-		let id1 = makeIdent(sp1)
-		let id2 = makeIdent(sp2)
-		let hash = id1 > id2 ? id1 + id2 : id2 + id1
+	for (let i=0; i < entResults.nm.length; i++) {
+		let result = entResults.nm[i]
+		let nmIndividual = result.pair[nmCol]
+		let otherIndividual = result.pair[otherCol]
 
-		let allowed = true
-
-		if (!foundSpecies[id1] && !foundSpecies[id2]) {
-			foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
-			foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }
-		} else {
-			let dist = shortestPairs[key].dist
-			if (
-				(!foundSpecies[id1] || dist < foundSpecies[id1].dist) &&
-				(!foundSpecies[id2] || dist < foundSpecies[id2].dist)
-			) {
-				// We must have added one that shouldn't have been added! Remove anything with either id1 or id2
-				if (foundSpecies[id1]) {
-					delete uniqueHash[foundSpecies[id1].hash]
-				}
-				if (foundSpecies[id2]) {
-					delete uniqueHash[foundSpecies[id2].hash]
-				}
-
-				foundSpecies[id1] = { dist: shortestPairs[key].dist, hash: hash }
-				foundSpecies[id2] = { dist: shortestPairs[key].dist, hash: hash }
-			} else {
-				allowed = false
-			}
-		}
-
-		if (!uniqueHash.hasOwnProperty(hash) && allowed) {
-			uniqueHash[hash] = result
-		}
-	}
-
-	for (let hash in uniqueHash) {
-		let result = uniqueHash[hash]
-		nmMark(result.node, result.pair[0], result.pair[1])
 		finalResults.nm.push(result.pair)
+		nmMark(result.node,result.pair[0],result.pair[1])
 	}
+
+	// while(true){
+	// 	finalResults.output.push("========At this point, otherIndividualCheck is the following ========")
+	// 	finalResults.output.push(JSON.stringify(otherIndividualCheck))
+	// 	for (let i=0; i < entResults.nm.length; i++) {
+	// 		let result = entResults.nm[i]
+	// 		let nmIndividual = result.pair[nmCol]
+	// 		let otherIndividual = result.pair[otherCol]
+	// 		let smallestResult
+	// 		let smallestDist = -1
+
+	// 		finalResults.output.push("Looking at " + nmIndividual.ident)
+
+	// 		// Check if we've already got this nm individual 
+	// 		if(nmIndividualCheck[nmIndividual.ident] == true){
+	// 			continue 
+	// 		}
+
+	// 		finalResults.output.push("Entering search for " + nmIndividual.ident)
+
+	// 		for (let j=0; j < entResults.nm.length; j++) {
+	// 			let result2 = entResults.nm[j]
+	// 			let nm2 = result2.pair[nmCol]
+	// 			let other2 = result2.pair[otherCol]
+	// 			if(nm2.name == nmIndividual.name && !otherIndividualCheck[other2.ident]){
+	// 				let sq1 = sequenceMap[makeIdent(nmIndividual)]
+	// 				let sq2 = sequenceMap[makeIdent(other2)]
+	// 				let dist = hammingDistance(sq1, sq2)
+	// 				if(smallestDist == -1 || dist < smallestDist){
+	// 					smallestDist = dist 
+	// 					let newPair = []
+	// 					newPair[nmCol] = nmIndividual
+	// 					newPair[otherCol] = other2
+	// 					smallestResult = {pair:newPair,node:result2.node,dist:dist}
+	// 				}
+	// 				finalResults.output.push("Distance to " + makeIdent(other2) + " is " + String(dist))
+	// 			}
+				
+	// 		}
+
+	// 		if(smallestResult){
+	// 			// Is there a chance we might not find a smallest result??
+	// 			// Need to look into this 
+	// 			nmIndividualCheck[nmIndividual.ident] = true 
+	// 			smallestPairs.push(smallestResult)
+	// 		}
+			
+
+			
+	// 	}
+
+	// 	finalResults.output.push("Out of the loop! The smallest pairs are:")
+	// 	finalResults.output.push(smallestPairs)
+
+	// 	// Now out of all the smallest pairs, which is the smallest?
+	// 	if(smallestPairs.length == 0){
+	// 		break 
+	// 	}
+
+	// 	let smallestDist = smallestPairs[0].dist 
+	// 	let smallestResult = smallestPairs[0];
+	// 	for(let result of smallestPairs){
+	// 		if(result.dist < smallestDist){
+	// 			smallestResult = result 
+	// 			smallestDist = result.dist 
+	// 		}
+	// 	}
+	// 	// This is the one to add!
+	// 	otherIndividualCheck[smallestResult.pair[otherCol].ident] = true
+	// 	finalResults.nm.push(smallestResult.pair)
+	// 	nmMark(smallestResult.node, smallestResult.pair[nmCol], smallestResult.pair[otherCol])
+	// 	// Now repeat this whole process 
+	// 	nmIndividualCheck = {}
+	// 	smallestPairs = []
+	// 	for(let pair of finalResults.nm){
+	// 		let nm = pair[nmCol]
+	// 		nmIndividualCheck[nm.ident] = true 
+	// 	}
+
+	// 	// Break when we have repeated and found nothing new 
+	// 	if(foundSoFar == finalResults.nm.length){
+	// 		break
+	// 	}
+	// 	foundSoFar = finalResults.nm.length 
+	// }
+	
 
 	return finalResults
 }

@@ -98,6 +98,7 @@ function onData(phase, data) {
 			.querySelector('#results')
 			.appendChild(makeTableFromObjectList(data.results))
 	} else if (phase === 'nonmonophyletic-sequences') {
+		console.log("OUTPUT",data.output)
 		setEntResults(data)
 	} else {
 		console.warn(`Client doesn't understand data for "${phase}"`)

@@ -10,8 +10,8 @@ let newickNodes
 
 function formatEnt(results) {
 	return results.nm.map(pair => {
-		let [left, right] = pair.map(node => `${node.name} (${node.ident})`)
-		return { left, right }
+		let [nonmonophyly, other] = pair.map(node => `${node.name} (${node.ident})`)
+		return { nonmonophyly, other }
 	})
 }
 
