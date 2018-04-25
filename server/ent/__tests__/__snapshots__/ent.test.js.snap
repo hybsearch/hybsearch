@@ -49,22 +49,22 @@ Array [
 
 exports[`trio171sequence 1`] = `
 Array [
-  "Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)",
-  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)",
-  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)",
-  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)",
-  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495232)",
+  "Amyda_cartilaginea (LM537476) / Palea_steindachneri (AY743417)",
+  "Amyda_ornata (LM537482) / Amyda_cartilaginea (LM537464)",
+  "Amyda_ornata (LM537490) / Amyda_cartilaginea (LM537463)",
+  "Amyda_cartilaginea (LM537483) / Amyda_ornata (LM537462)",
+  "Palea_steindachneri (AY259552) / Nilssonia_nigricans (AM495232)",
 ]
 `;
 
 exports[`trionychcytb 1`] = `
 Array [
-  "Amyda cartilaginea (LM537492) / Palea steindachneri (AY743417)",
-  "Amyda cartilaginea (LM537464) / Amyda ornata (LM537490)",
-  "Amyda cartilaginea (LM537463) / Amyda ornata (LM537482)",
-  "Amyda ornata (LM537462) / Amyda cartilaginea (LM537483)",
-  "Pelodiscus sinensis (JN860674) / Pelodiscus maackii (AB904722)",
-  "Pelodiscus sinensis (AB904729) / Pelodiscus maackii (AB904725)",
-  "Palea steindachneri (AY259552) / Nilssonia nigricans (AM495237)",
+  "Amyda_cartilaginea (LM537492) / Palea_steindachneri (AY743417)",
+  "Amyda_cartilaginea (LM537464) / Amyda_ornata (LM537490)",
+  "Amyda_cartilaginea (LM537463) / Amyda_ornata (LM537482)",
+  "Amyda_ornata (LM537462) / Amyda_cartilaginea (LM537483)",
+  "Pelodiscus_sinensis (JN860674) / Pelodiscus_maackii (AB904722)",
+  "Pelodiscus_sinensis (AB904729) / Pelodiscus_maackii (AB904725)",
+  "Palea_steindachneri (AY259552) / Nilssonia_nigricans (AM495237)",
 ]
 `;
