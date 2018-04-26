@@ -1,0 +1,268 @@
+{
+	"species": [
+		{
+			"name": "Canis_latrans",
+			"length": 0.2177116,
+			"ident": "EU400554"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1126116,
+			"ident": "EU400561"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1126116,
+			"ident": "EU400570"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1126116,
+			"ident": "EU400559"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1289238,
+			"ident": "EU400552"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1289238,
+			"ident": "EU400571"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400565"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400567"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400564"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400562"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400560"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.1695118,
+			"ident": "EU400547"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400563"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400572"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.02316783,
+			"ident": "EU400551"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.02316783,
+			"ident": "EU400558"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400556"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400555"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400546"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2386009,
+			"ident": "EU400545"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400573"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400574"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400569"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400553"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400550"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.2826199,
+			"ident": "EU400548"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400568"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400575"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400566"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400557"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400549"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.220379,
+			"ident": "EU400544"
+		},
+		{
+			"name": "Canis_latrans",
+			"length": 0.5359419,
+			"ident": "EU400576"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.07001062,
+			"ident": "AF115702"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.07001062,
+			"ident": "AF115703"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.03784267,
+			"ident": "AF115699"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.03784267,
+			"ident": "AF115700"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.1011911,
+			"ident": "AF115701"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.5372998,
+			"ident": "AF115698"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.5372998,
+			"ident": "AF115697"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.08908435,
+			"ident": "AF115694"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.08908435,
+			"ident": "AF115695"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.1945993,
+			"ident": "AF115696"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.01861895,
+			"ident": "AF115687"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.01861895,
+			"ident": "AF115688"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.1009244,
+			"ident": "AF115689"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.135605,
+			"ident": "AF115690"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.135605,
+			"ident": "AF115691"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.06336589,
+			"ident": "AF115692"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.06336589,
+			"ident": "AF115693"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Canis_lupus",
+				"length": 0.5372998,
+				"ident": "AF115697"
+			},
+			{
+				"name": "Canis_latrans",
+				"length": 0.1106009,
+				"ident": "EU400578"
+			}
+		]
+	]
+}

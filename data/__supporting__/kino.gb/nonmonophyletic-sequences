@@ -1,0 +1,214 @@
+{
+	"species": [
+		{
+			"name": "Kinosternon_acutum",
+			"length": 0.0004012513,
+			"ident": "KF301366"
+		},
+		{
+			"name": "Kinosternon_acutum",
+			"length": 0.0004012513,
+			"ident": "KF301367"
+		},
+		{
+			"name": "Kinosternon_creaseri",
+			"length": 0.009658711,
+			"ident": "KF301373"
+		},
+		{
+			"name": "Kinosternon_herrerai",
+			"length": 0.0008435128,
+			"ident": "KF301377"
+		},
+		{
+			"name": "Kinosternon_herrerai",
+			"length": 0.0008435128,
+			"ident": "KF301378"
+		},
+		{
+			"name": "Kinosternon_angustipons",
+			"length": 0.04365521,
+			"ident": "KF301369"
+		},
+		{
+			"name": "Kinosternon_dunni",
+			"length": 0.04365521,
+			"ident": "KF301374"
+		},
+		{
+			"name": "Kinosternon_leucostomum",
+			"length": 0.08953419,
+			"ident": "KF301383"
+		},
+		{
+			"name": "Kinosternon_arizonense",
+			"length": 0.0359565,
+			"ident": "KF301370"
+		},
+		{
+			"name": "Kinosternon_durangoense",
+			"length": 0.0359565,
+			"ident": "KF301375"
+		},
+		{
+			"name": "Kinosternon_scorpioides",
+			"length": 0.0354499,
+			"ident": "KF301386"
+		},
+		{
+			"name": "Kinosternon_scorpioides",
+			"length": 0.0354499,
+			"ident": "KF301387"
+		},
+		{
+			"name": "Kinosternon_oaxacae",
+			"length": 0.02530782,
+			"ident": "KF301384"
+		},
+		{
+			"name": "Kinosternon_scorpioides",
+			"length": 0.02530782,
+			"ident": "KF301385"
+		},
+		{
+			"name": "Kinosternon_integrum",
+			"length": 0.009176555,
+			"ident": "KF301380"
+		},
+		{
+			"name": "Kinosternon_integrum",
+			"length": 0.005185028,
+			"ident": "KF301381"
+		},
+		{
+			"name": "Kinosternon_integrum",
+			"length": 0.005185028,
+			"ident": "KF301382"
+		},
+		{
+			"name": "Kinosternon_chimalhuaca",
+			"length": 0.02269314,
+			"ident": "KF301372"
+		},
+		{
+			"name": "Kinosternon_hirtipes",
+			"length": 0.02269314,
+			"ident": "KF301379"
+		},
+		{
+			"name": "Kinosternon_sonoriense",
+			"length": 0.02712253,
+			"ident": "KF301389"
+		},
+		{
+			"name": "Kinosternon_alamosae",
+			"length": 0.07191845,
+			"ident": "KF301368"
+		},
+		{
+			"name": "Kinosternon_flavescens",
+			"length": 0.01536826,
+			"ident": "KF301376"
+		},
+		{
+			"name": "Kinosternon_subrubrum",
+			"length": 0.01536826,
+			"ident": "KF301390"
+		},
+		{
+			"name": "Kinosternon_subrubrum",
+			"length": 0.03827613,
+			"ident": "KF301391"
+		},
+		{
+			"name": "Sternotherus_minor",
+			"length": 0.02782936,
+			"ident": "KF301363"
+		},
+		{
+			"name": "Sternotherus_minor",
+			"length": 0.00099767,
+			"ident": "KF301364"
+		},
+		{
+			"name": "Sternotherus_odoratus",
+			"length": 0.06391977,
+			"ident": "KF301365"
+		},
+		{
+			"name": "Sternotherus_carinatus",
+			"length": 0.001193097,
+			"ident": "KF301361"
+		},
+		{
+			"name": "Sternotherus_carinatus",
+			"length": 0.001193097,
+			"ident": "JN860673"
+		},
+		{
+			"name": "Claudius_angustatus",
+			"length": 0.09495229,
+			"ident": "KF301358"
+		},
+		{
+			"name": "Staurotypus_salvinii",
+			"length": 0.01144986,
+			"ident": "KF301359"
+		},
+		{
+			"name": "Staurotypus_triporcatus",
+			"length": 0.01144986,
+			"ident": "KF301360"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Kinosternon_scorpioides",
+				"length": 0.0354499,
+				"ident": "KF301387"
+			},
+			{
+				"name": "Kinosternon_oaxacae",
+				"length": 0.02530782,
+				"ident": "KF301384"
+			}
+		],
+		[
+			{
+				"name": "Kinosternon_subrubrum",
+				"length": 0.01536826,
+				"ident": "KF301390"
+			},
+			{
+				"name": "Kinosternon_baurii",
+				"length": 0.03827613,
+				"ident": "KF301371"
+			}
+		],
+		[
+			{
+				"name": "Kinosternon_subrubrum",
+				"length": 0.03827613,
+				"ident": "KF301391"
+			},
+			{
+				"name": "Kinosternon_flavescens",
+				"length": 0.01536826,
+				"ident": "KF301376"
+			}
+		],
+		[
+			{
+				"name": "Sternotherus_minor",
+				"length": 0.02782936,
+				"ident": "KF301363"
+			},
+			{
+				"name": "Sternotherus_depressus",
+				"length": 0.00099767,
+				"ident": "KF301362"
+			}
+		]
+	]
+}

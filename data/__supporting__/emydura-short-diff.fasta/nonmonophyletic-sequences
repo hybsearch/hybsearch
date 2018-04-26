@@ -1,0 +1,58 @@
+{
+	"species": [
+		{
+			"name": "Emydura_macquarii",
+			"length": 0.02331255,
+			"ident": "KC755183"
+		},
+		{
+			"name": "Emydura_victoriae",
+			"length": 0.000877664,
+			"ident": "KC755188"
+		},
+		{
+			"name": "Emydura_victoriae",
+			"length": 0.000877664,
+			"ident": "KC755189"
+		},
+		{
+			"name": "Emydura_subglobosa",
+			"length": 0.007974937,
+			"ident": "KC755184"
+		},
+		{
+			"name": "Emydura_tanybaraga",
+			"length": 0.002189443,
+			"ident": "KC755186"
+		},
+		{
+			"name": "Emydura_tanybaraga",
+			"length": 0.002189443,
+			"ident": "KC755187"
+		},
+		{
+			"name": "Emydura_subglobosa",
+			"length": 0.02093947,
+			"ident": "KC755185"
+		},
+		{
+			"name": "Emydura_subglobosa",
+			"length": 0.02093947,
+			"ident": "KC755190"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Emydura_subglobosa",
+				"length": 0.02093947,
+				"ident": "KC755190"
+			},
+			{
+				"name": "Emydura_tanybaraga",
+				"length": 0.002189443,
+				"ident": "KC755187"
+			}
+		]
+	]
+}

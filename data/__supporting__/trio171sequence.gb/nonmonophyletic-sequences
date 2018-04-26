@@ -1,0 +1,802 @@
+{
+	"species": [
+		{
+			"name": "Lissemys_scutata",
+			"length": 0.01348801,
+			"ident": "FR850652"
+		},
+		{
+			"name": "Lissemys_scutata",
+			"length": 0.004756793,
+			"ident": "AY259567"
+		},
+		{
+			"name": "Lissemys_scutata",
+			"length": 0.004756793,
+			"ident": "FR850650"
+		},
+		{
+			"name": "Lissemys_scutata",
+			"length": 0.0008107377,
+			"ident": "FR850651"
+		},
+		{
+			"name": "Lissemys_scutata",
+			"length": 0.0008107377,
+			"ident": "FR850653"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.002189173,
+			"ident": "FR850646"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0007938836,
+			"ident": "FR850645"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0007938843,
+			"ident": "FR850648"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006086572,
+			"ident": "FR850647"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006086571,
+			"ident": "FR850649"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.007610501,
+			"ident": "FR850625"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.007610501,
+			"ident": "FR850631"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.005897151,
+			"ident": "FR850616"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850629"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688007,
+			"ident": "FR850630"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850628"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688007,
+			"ident": "FR850627"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850626"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850624"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850623"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850622"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004688008,
+			"ident": "FR850621"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0008520364,
+			"ident": "FR850635"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0008520364,
+			"ident": "FR850636"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.002384069,
+			"ident": "FR850634"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.002384069,
+			"ident": "FR850642"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.002384069,
+			"ident": "FR850633"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.002384069,
+			"ident": "FR850632"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0006332869,
+			"ident": "FR850643"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.0006332868,
+			"ident": "FR850644"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.01722391,
+			"ident": "AY259568"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850620"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850640"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850641"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850639"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850638"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850637"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850618"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850617"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.004087181,
+			"ident": "FR850607"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613048,
+			"ident": "FR850619"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850615"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850614"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613048,
+			"ident": "FR850613"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613048,
+			"ident": "FR850612"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850611"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850610"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613049,
+			"ident": "FR850609"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.006613048,
+			"ident": "FR850608"
+		},
+		{
+			"name": "Lissemys_punctata",
+			"length": 0.02111029,
+			"ident": "JN232531"
+		},
+		{
+			"name": "Dogania_subplana",
+			"length": 0.3051658,
+			"ident": "AY259551"
+		},
+		{
+			"name": "Nilssonia_formosa",
+			"length": 0.004448228,
+			"ident": "HE801740"
+		},
+		{
+			"name": "Nilssonia_formosa",
+			"length": 0.001813181,
+			"ident": "AY259547"
+		},
+		{
+			"name": "Nilssonia_formosa",
+			"length": 0.001813181,
+			"ident": "HE801741"
+		},
+		{
+			"name": "Nilssonia_leithii",
+			"length": 0.001235301,
+			"ident": "AM495225"
+		},
+		{
+			"name": "Nilssonia_leithii",
+			"length": 0.001235301,
+			"ident": "AM495226"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003781338,
+			"ident": "HE801747"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003781338,
+			"ident": "HE801748"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003781338,
+			"ident": "HE801746"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003781338,
+			"ident": "HE801745"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003781338,
+			"ident": "HE801744"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.001765975,
+			"ident": "AM495215"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.001765975,
+			"ident": "HE801749"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.0003609912,
+			"ident": "HE801750"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.0003609913,
+			"ident": "HE801751"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "HE801742"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AY259549"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AM495217"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AM495216"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AM495214"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AM495213"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.007019601,
+			"ident": "AM495212"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003622699,
+			"ident": "AM495211"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003622699,
+			"ident": "HE801743"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003622699,
+			"ident": "AM495210"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003622699,
+			"ident": "AM495209"
+		},
+		{
+			"name": "Nilssonia_gangetica",
+			"length": 0.003622699,
+			"ident": "AM495208"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.003391089,
+			"ident": "HE801754"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00339109,
+			"ident": "HE801755"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.003391089,
+			"ident": "HE801752"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00339109,
+			"ident": "AM495221"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00339109,
+			"ident": "AM495220"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022609,
+			"ident": "HE801756"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022609,
+			"ident": "HE801753"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022608,
+			"ident": "JN232528"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022611,
+			"ident": "AY259548"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00802261,
+			"ident": "AM495224"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022609,
+			"ident": "AM495223"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00802261,
+			"ident": "AM495222"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.008022611,
+			"ident": "AM495219"
+		},
+		{
+			"name": "Nilssonia_hurum",
+			"length": 0.00802261,
+			"ident": "AM495218"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.01257592,
+			"ident": "HE801759"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.01257593,
+			"ident": "HE801760"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.001903971,
+			"ident": "HE801757"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.00190397,
+			"ident": "HE801758"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.001903971,
+			"ident": "AM495233"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.001827779,
+			"ident": "AM495236"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.00182778,
+			"ident": "JN232527"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.001827779,
+			"ident": "AM495235"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.001827779,
+			"ident": "AM495234"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.01257592,
+			"ident": "AM495232"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.002700347,
+			"ident": "AM495230"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.002700347,
+			"ident": "AM495231"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.002700347,
+			"ident": "AM495229"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.002700347,
+			"ident": "AM495228"
+		},
+		{
+			"name": "Nilssonia_nigricans",
+			"length": 0.002700347,
+			"ident": "AM495227"
+		},
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.02312683,
+			"ident": "AY743417"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003521611,
+			"ident": "LM537480"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003521611,
+			"ident": "LM537481"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0021749,
+			"ident": "LM537491"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0021749,
+			"ident": "LM537492"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.002590838,
+			"ident": "LM537476"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0005048454,
+			"ident": "LM537493"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0005048454,
+			"ident": "LM537494"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003111157,
+			"ident": "AY259550"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003111157,
+			"ident": "JN232534"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003242765,
+			"ident": "LM537465"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003242765,
+			"ident": "LM537467"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.006794119,
+			"ident": "LM537466"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001795499,
+			"ident": "LM537464"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001795499,
+			"ident": "LM537463"
+		},
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.266384,
+			"ident": "AY259552"
+		},
+		{
+			"name": "Rafetus_euphraticus",
+			"length": 0.2692482,
+			"ident": "AY259554"
+		},
+		{
+			"name": "Apalone_mutica",
+			"length": 0.1455223,
+			"ident": "AY259556"
+		},
+		{
+			"name": "Apalone_ferox",
+			"length": 0.09746278,
+			"ident": "AY259555"
+		},
+		{
+			"name": "Apalone_spinifera",
+			"length": 0.07466565,
+			"ident": "AY259557"
+		},
+		{
+			"name": "Apalone_spinifera",
+			"length": 0.07466565,
+			"ident": "AY259558"
+		},
+		{
+			"name": "Trionyx_triunguis",
+			"length": 0.3063182,
+			"ident": "AY259564"
+		},
+		{
+			"name": "Chitra_chitra",
+			"length": 0.05867091,
+			"ident": "AY259562"
+		},
+		{
+			"name": "Chitra_vandijki",
+			"length": 0.05867091,
+			"ident": "AY259563"
+		},
+		{
+			"name": "Chitra_indica",
+			"length": 0.01451555,
+			"ident": "AY259561"
+		},
+		{
+			"name": "Chitra_indica",
+			"length": 0.01451555,
+			"ident": "JN232529"
+		},
+		{
+			"name": "Pelochelys_bibroni",
+			"length": 0.1069316,
+			"ident": "AY259559"
+		},
+		{
+			"name": "Pelochelys_cantorii",
+			"length": 0.00394929,
+			"ident": "AY259560"
+		},
+		{
+			"name": "Pelochelys_cantorii",
+			"length": 0.00394929,
+			"ident": "JN232533"
+		},
+		{
+			"name": "Pelodiscus_sp",
+			"length": 0.001303125,
+			"ident": "_FM999015"
+		},
+		{
+			"name": "Pelodiscus_sinensis",
+			"length": 0.001303124,
+			"ident": "AB904727"
+		},
+		{
+			"name": "Pelodiscus_sp",
+			"length": 0.001303125,
+			"ident": "_FM999014"
+		},
+		{
+			"name": "Pelodiscus_sinensis",
+			"length": 0.00491865,
+			"ident": "AB904728"
+		},
+		{
+			"name": "Pelodiscus_sp",
+			"length": 0.00491865,
+			"ident": "_FM999013"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.002590838,
+				"ident": "LM537476"
+			},
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.02312683,
+				"ident": "AY743417"
+			}
+		],
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.003242765,
+				"ident": "LM537467"
+			},
+			{
+				"name": "Amyda_ornata",
+				"length": 0.006794119,
+				"ident": "LM537478"
+			}
+		],
+		[
+			{
+				"name": "Amyda_ornata",
+				"length": 0.004128425,
+				"ident": "LM537482"
+			},
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.001795499,
+				"ident": "LM537464"
+			}
+		],
+		[
+			{
+				"name": "Amyda_ornata",
+				"length": 0.004128426,
+				"ident": "LM537490"
+			},
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.001795499,
+				"ident": "LM537463"
+			}
+		],
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.004128425,
+				"ident": "LM537483"
+			},
+			{
+				"name": "Amyda_ornata",
+				"length": 0.001795499,
+				"ident": "LM537462"
+			}
+		],
+		[
+			{
+				"name": "Pelodiscus_sp",
+				"length": 0.00491865,
+				"ident": "_FM999013"
+			},
+			{
+				"name": "Pelodiscus_sinensis",
+				"length": 0.001413544,
+				"ident": "AB904726"
+			}
+		],
+		[
+			{
+				"name": "Pelodiscus_sinensis",
+				"length": 0.001303124,
+				"ident": "AB904727"
+			},
+			{
+				"name": "Pelodiscus_sp",
+				"length": 0.001413544,
+				"ident": "_FM999012"
+			}
+		],
+		[
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.266384,
+				"ident": "AY259552"
+			},
+			{
+				"name": "Nilssonia_nigricans",
+				"length": 0.01257592,
+				"ident": "AM495232"
+			}
+		]
+	]
+}

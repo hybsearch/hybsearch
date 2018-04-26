@@ -1,0 +1,158 @@
+{
+	"species": [
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.006452853,
+			"ident": "AY743417"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001193691,
+			"ident": "LM537480"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001193691,
+			"ident": "LM537481"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0008862728,
+			"ident": "LM537491"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0008862728,
+			"ident": "LM537492"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001161475,
+			"ident": "LM537476"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0001958361,
+			"ident": "LM537493"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0001958361,
+			"ident": "LM537494"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001129715,
+			"ident": "AY259550"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.001129715,
+			"ident": "JN232534"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0008252375,
+			"ident": "LM537465"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0008252375,
+			"ident": "LM537467"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.003080775,
+			"ident": "LM537466"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0006601354,
+			"ident": "LM537464"
+		},
+		{
+			"name": "Amyda_cartilaginea",
+			"length": 0.0006601354,
+			"ident": "LM537463"
+		},
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.3520691,
+			"ident": "AY259552"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.001161475,
+				"ident": "LM537476"
+			},
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.006452853,
+				"ident": "AY743417"
+			}
+		],
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.0008252375,
+				"ident": "LM537467"
+			},
+			{
+				"name": "Amyda_ornata",
+				"length": 0.003080775,
+				"ident": "LM537478"
+			}
+		],
+		[
+			{
+				"name": "Amyda_ornata",
+				"length": 0.001802907,
+				"ident": "LM537482"
+			},
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.0006601354,
+				"ident": "LM537464"
+			}
+		],
+		[
+			{
+				"name": "Amyda_ornata",
+				"length": 0.001802906,
+				"ident": "LM537490"
+			},
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.0006601354,
+				"ident": "LM537463"
+			}
+		],
+		[
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.001802906,
+				"ident": "LM537483"
+			},
+			{
+				"name": "Amyda_ornata",
+				"length": 0.0006601353,
+				"ident": "LM537462"
+			}
+		],
+		[
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.3520691,
+				"ident": "AY259552"
+			},
+			{
+				"name": "Amyda_cartilaginea",
+				"length": 0.0001958361,
+				"ident": "LM537494"
+			}
+		]
+	]
+}

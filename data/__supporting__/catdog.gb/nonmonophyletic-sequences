@@ -1,0 +1,95 @@
+{
+	"species": [
+		{
+			"name": "Felis_catus",
+			"length": 0.001282364,
+			"ident": "AB194814"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.001282364,
+			"ident": "KT626624"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.001282364,
+			"ident": "AB194812"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.001429643,
+			"ident": "AB194815"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.001429643,
+			"ident": "AB194816"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.0007068952,
+			"ident": "KU253482"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.0007068951,
+			"ident": "KU253483"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.0007068952,
+			"ident": "AB194817"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.002986382,
+			"ident": "AB194813"
+		},
+		{
+			"name": "Felis_catus",
+			"length": 0.002986382,
+			"ident": "KT626623"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.000391137,
+			"ident": "KC346420"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.000391137,
+			"ident": "KC346422"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346425"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346426"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346424"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346423"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346421"
+		},
+		{
+			"name": "Canis_lupus",
+			"length": 0.002739906,
+			"ident": "KC346419"
+		}
+	],
+	"nm": []
+}

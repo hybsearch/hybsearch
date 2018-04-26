@@ -1,0 +1,100 @@
+{
+	"species": [
+		{
+			"name": "Pelodiscus_sinensis",
+			"length": 0.001082408,
+			"ident": "AB904727"
+		},
+		{
+			"name": "Pelodiscus_sinensis",
+			"length": 0.001082408,
+			"ident": "AB904726"
+		},
+		{
+			"name": "Pelodiscus_maackii",
+			"length": 0.002413828,
+			"ident": "AB904721"
+		},
+		{
+			"name": "Pelodiscus_maackii",
+			"length": 0.002413828,
+			"ident": "AB904720"
+		},
+		{
+			"name": "Pelodiscus_axenaria",
+			"length": 0.05428069,
+			"ident": "AY583693"
+		},
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.1252672,
+			"ident": "AY259552"
+		},
+		{
+			"name": "Palea_steindachneri",
+			"length": 0.09345147,
+			"ident": "AY743417"
+		},
+		{
+			"name": "Pelochelys_cantorii",
+			"length": 0.02115149,
+			"ident": "JN232533"
+		},
+		{
+			"name": "Pelochelys_cantorii",
+			"length": 0.02115149,
+			"ident": "AY259560"
+		},
+		{
+			"name": "Pelochelys_bibroni",
+			"length": 0.05135177,
+			"ident": "AY259559"
+		},
+		{
+			"name": "Apalone_mutica",
+			"length": 0.06607221,
+			"ident": "AY259556"
+		},
+		{
+			"name": "Apalone_spinifera",
+			"length": 0.0323943,
+			"ident": "AY259558"
+		},
+		{
+			"name": "Apalone_spinifera",
+			"length": 0.0323943,
+			"ident": "AY259557"
+		},
+		{
+			"name": "Apalone_ferox",
+			"length": 0.04669792,
+			"ident": "AY259555"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.1252672,
+				"ident": "AY259552"
+			},
+			{
+				"name": "Nilssonia_formosa",
+				"length": 0.001834878,
+				"ident": "HE801740"
+			}
+		],
+		[
+			{
+				"name": "Palea_steindachneri",
+				"length": 0.09345147,
+				"ident": "AY743417"
+			},
+			{
+				"name": "Pelodiscus_maackii",
+				"length": 0.002413828,
+				"ident": "AB904720"
+			}
+		]
+	]
+}

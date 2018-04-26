@@ -1,0 +1,755 @@
+{
+	"species": [
+		{
+			"name": "Pelusios_gabonensis",
+			"length": 0.02294361,
+			"ident": "JQ352040"
+		},
+		{
+			"name": "Pelusios_gabonensis",
+			"length": 0.00843931,
+			"ident": "FR716927"
+		},
+		{
+			"name": "Pelusios_gabonensis",
+			"length": 0.00843931,
+			"ident": "JQ352041"
+		},
+		{
+			"name": "Pelusios_rhodesianus",
+			"length": 0.3232805,
+			"ident": "FR716935"
+		},
+		{
+			"name": "Pelusios_rhodesianus",
+			"length": 0.150766,
+			"ident": "FR716936"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.1193662,
+			"ident": "FR716912"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.1193662,
+			"ident": "FR716913"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.01157098,
+			"ident": "FR716904"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.01157098,
+			"ident": "FR716905"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.001896951,
+			"ident": "FR716914"
+		},
+		{
+			"name": "Pelusios_castaneus",
+			"length": 0.001896951,
+			"ident": "FR716915"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "JQ352037"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "JQ352038"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "FR716900"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "FR716899"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "FR716898"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "FR716897"
+		},
+		{
+			"name": "Pelusios_broadleyi",
+			"length": 0.01445807,
+			"ident": "FR716896"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "HE979982"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "HE979983"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "HE979981"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "HE979980"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "HE979979"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02339335,
+			"ident": "FR716919"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230302"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "HQ230306"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "HQ230307"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590522,
+			"ident": "HE979987"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "HE979986"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590522,
+			"ident": "HE979985"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "FR716918"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "FR716917"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.02590523,
+			"ident": "FR716916"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230301"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230300"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230298"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230297"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230296"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230295"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230294"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230293"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230292"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230291"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230290"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230289"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230288"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230287"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230286"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230285"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230284"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230283"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230281"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230280"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230279"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230278"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230277"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230276"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230275"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230274"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230273"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230272"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230271"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230270"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230269"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HQ230268"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "HE979984"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "FR716921"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.07896909,
+			"ident": "FR716920"
+		},
+		{
+			"name": "Pelusios_castanoides",
+			"length": 0.1671608,
+			"ident": "JQ352039"
+		},
+		{
+			"name": "Pelusios_nanus",
+			"length": 1.023771,
+			"ident": "FR716929"
+		},
+		{
+			"name": "Pelusios_carinatus",
+			"length": 0.01855907,
+			"ident": "FR716901"
+		},
+		{
+			"name": "Pelusios_carinatus",
+			"length": 0.01855907,
+			"ident": "FR716902"
+		},
+		{
+			"name": "Pelusios_carinatus",
+			"length": 0.0789008,
+			"ident": "FR716903"
+		},
+		{
+			"name": "Pelusios_cupulatta",
+			"length": 0.03012658,
+			"ident": "FR716925"
+		},
+		{
+			"name": "Pelusios_cupulatta",
+			"length": 0.03012658,
+			"ident": "FR716926"
+		},
+		{
+			"name": "Pelusios_cupulatta",
+			"length": 0.008779738,
+			"ident": "FR716923"
+		},
+		{
+			"name": "Pelusios_cupulatta",
+			"length": 0.008779736,
+			"ident": "FR716924"
+		},
+		{
+			"name": "Pelusios_chapini",
+			"length": 0.09066025,
+			"ident": "FR716922"
+		},
+		{
+			"name": "Pelusios_sinuatus",
+			"length": 0.008883533,
+			"ident": "FR716937"
+		},
+		{
+			"name": "Pelusios_sinuatus",
+			"length": 0.008883533,
+			"ident": "FR716938"
+		},
+		{
+			"name": "Pelusios_marani",
+			"length": 0.02819144,
+			"ident": "JQ352044"
+		},
+		{
+			"name": "Pelusios_marani",
+			"length": 0.02819145,
+			"ident": "JQ352045"
+		},
+		{
+			"name": "Pelusios_marani",
+			"length": 0.02819144,
+			"ident": "JQ352043"
+		},
+		{
+			"name": "Pelusios_marani",
+			"length": 0.02819144,
+			"ident": "JQ352042"
+		},
+		{
+			"name": "Pelusios_marani",
+			"length": 0.02819145,
+			"ident": "FR716928"
+		},
+		{
+			"name": "Pelusios_bechuanicus",
+			"length": 0.03463224,
+			"ident": "FR716894"
+		},
+		{
+			"name": "Pelusios_bechuanicus",
+			"length": 0.03463224,
+			"ident": "FR716895"
+		},
+		{
+			"name": "Pelusios_upembae",
+			"length": 0.01198948,
+			"ident": "FR716943"
+		},
+		{
+			"name": "Pelusios_upembae",
+			"length": 0.01198948,
+			"ident": "FR716944"
+		},
+		{
+			"name": "Pelusios_upembae",
+			"length": 0.01198948,
+			"ident": "FR716942"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.009479183,
+			"ident": "HE979988"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.009479183,
+			"ident": "HE979989"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230266"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230267"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230265"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230264"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230263"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230262"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230261"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230260"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230259"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230258"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230257"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230256"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230255"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230254"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230253"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230251"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230250"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230249"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230248"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253433,
+			"ident": "HQ230247"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230246"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230245"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HQ230244"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980016"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980015"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980014"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980013"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980012"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980011"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980010"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980009"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980008"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980007"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980006"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980005"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980004"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980003"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980002"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980001"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE980000"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979999"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979998"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979997"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979996"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979995"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979994"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979993"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979992"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979991"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "HE979990"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "FR716939"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "FR716941"
+		},
+		{
+			"name": "Pelusios_subniger",
+			"length": 0.08253432,
+			"ident": "FR716940"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Pelusios_rhodesianus",
+				"length": 0.3232805,
+				"ident": "FR716935"
+			},
+			{
+				"name": "Pelusios_carinatus",
+				"length": 0.0789008,
+				"ident": "FR716903"
+			}
+		],
+		[
+			{
+				"name": "Pelusios_castaneus",
+				"length": 0.01157098,
+				"ident": "FR716904"
+			},
+			{
+				"name": "Pelusios_chapini",
+				"length": 0.09066025,
+				"ident": "FR716922"
+			}
+		]
+	]
+}

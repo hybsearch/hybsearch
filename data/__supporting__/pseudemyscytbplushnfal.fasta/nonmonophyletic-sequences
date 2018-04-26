@@ -1,0 +1,40 @@
+{
+	"species": [
+		{
+			"name": "Pseudemys_concinna",
+			"length": 0.012175,
+			"ident": "NA2"
+		},
+		{
+			"name": "Pseudemys_concinna",
+			"length": 0.012175,
+			"ident": "NA"
+		},
+		{
+			"name": "Pseudemys_nelsoni",
+			"length": 0.0004082938,
+			"ident": "FLMNH143606"
+		},
+		{
+			"name": "Pseudemys_nelsoni",
+			"length": 0.0004082938,
+			"ident": "FLMNH52686"
+		},
+		{
+			"name": "Pseudemys_suwanniensis",
+			"length": 0.001465126,
+			"ident": "FLMNH11115"
+		},
+		{
+			"name": "Pseudemys_suwanniensis",
+			"length": 0.001465126,
+			"ident": "FLMNH135541"
+		},
+		{
+			"name": "Pseudemys_rubriventris",
+			"length": 0.001465126,
+			"ident": "FLMNH150355"
+		}
+	],
+	"nm": []
+}

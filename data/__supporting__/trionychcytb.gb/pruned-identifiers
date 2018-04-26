@@ -1,0 +1,422 @@
+[
+	{
+		"name": "Paracentrotus_lividus__AH001273",
+		"length": 0.6661893
+	},
+	{
+		"name": "Anser_caerulescens__X77190",
+		"length": 0.6661893
+	},
+	{
+		"name": "Mus_minutoides__FN985221",
+		"length": 0.00102742
+	},
+	{
+		"name": "Mus_minutoides__FN985224",
+		"length": 0.00102742
+	},
+	{
+		"name": "Mus_minutoides__FN985222",
+		"length": 0.003342541
+	},
+	{
+		"name": "Mus_minutoides__FN985223",
+		"length": 0.003342541
+	},
+	{
+		"name": "Mus_musculoides__Z96069",
+		"length": 0.07339827
+	},
+	{
+		"name": "Pnoepyga_pusilla__JX518496",
+		"length": 0.1262368
+	},
+	{
+		"name": "Corvus_frugilegus__Y16885",
+		"length": 0.1262368
+	},
+	{
+		"name": "Mustela_nivalis__AM932882",
+		"length": 0.001212535
+	},
+	{
+		"name": "Mustela_nivalis__AM932884",
+		"length": 0.001212535
+	},
+	{
+		"name": "Mustela_nivalis__AM932885",
+		"length": 0.001212535
+	},
+	{
+		"name": "Mustela_nivalis__AM932883",
+		"length": 0.0026483
+	},
+	{
+		"name": "Acomys_spinosissimus__Z96067",
+		"length": 0.07786886
+	},
+	{
+		"name": "Acomys_spinosissimus__Z96068",
+		"length": 0.07786886
+	},
+	{
+		"name": "Pelodiscus_sinensis__AY259553",
+		"length": 0.003036009
+	},
+	{
+		"name": "Pelodiscus_sinensis__AY583692",
+		"length": 0.003036009
+	},
+	{
+		"name": "Pelodiscus_sinensis__JN860674",
+		"length": 0.0005828924
+	},
+	{
+		"name": "Pelodiscus_sinensis__FR851459",
+		"length": 0.009419019
+	},
+	{
+		"name": "Balaenoptera_bonaerensis__X75581",
+		"length": 0.03427325
+	},
+	{
+		"name": "Balaenoptera_acutorostrata__X75753",
+		"length": 0.03427325
+	},
+	{
+		"name": "Eschrichtius_robustus__X75585",
+		"length": 0.05428502
+	},
+	{
+		"name": "Megaptera_novaeangliae__X75584",
+		"length": 0.05428502
+	},
+	{
+		"name": "Balaenoptera_edeni__X75583",
+		"length": 0.02670438
+	},
+	{
+		"name": "Balaenoptera_borealis__X75582",
+		"length": 0.02670438
+	},
+	{
+		"name": "Balaena_mysticetus__X75588",
+		"length": 0.03758912
+	},
+	{
+		"name": "Eubalaena_glacialis__X75587",
+		"length": 0.03758912
+	},
+	{
+		"name": "Caperea_marginata__X75586",
+		"length": 0.09029299
+	},
+	{
+		"name": "Physeter_catodon__X75589",
+		"length": 0.1474889
+	},
+	{
+		"name": "Amyda_ornata__LM537482",
+		"length": 0.001984752
+	},
+	{
+		"name": "Amyda_ornata__LM537490",
+		"length": 0.00198475
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537483",
+		"length": 0.00198475
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537484",
+		"length": 0.001984752
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537485",
+		"length": 0.001984752
+	},
+	{
+		"name": "Amyda_cartilaginea__AY259550",
+		"length": 0.001229889
+	},
+	{
+		"name": "Amyda_cartilaginea__JN232534",
+		"length": 0.001229889
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537465",
+		"length": 0.001334522
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537467",
+		"length": 0.001334522
+	},
+	{
+		"name": "Amyda_cartilaginea__LM537466",
+		"length": 0.006980882
+	},
+	{
+		"name": "Palea_steindachneri__AY743417",
+		"length": 0.01154452
+	},
+	{
+		"name": "Capra_ibex__AJ010055",
+		"length": 0.02071484
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010047",
+		"length": 0.007341727
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010048",
+		"length": 0.007341727
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010049",
+		"length": 0.007341727
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010050",
+		"length": 0.007341726
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010051",
+		"length": 0.007341728
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010052",
+		"length": 0.007341727
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010053",
+		"length": 0.007341731
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010056",
+		"length": 0.007341728
+	},
+	{
+		"name": "Capra_pyrenaica__AJ010054",
+		"length": 0.02071484
+	},
+	{
+		"name": "Capra_nubiana__AJ009879",
+		"length": 0.05105048
+	},
+	{
+		"name": "Amphistichus_argenteus__JN125234",
+		"length": 0.001320094
+	},
+	{
+		"name": "Amphistichus_argenteus__JN125235",
+		"length": 0.001320094
+	},
+	{
+		"name": "Amphistichus_argenteus__JN125236",
+		"length": 0.004213586
+	},
+	{
+		"name": "Amphistichus_koelzi__JN125237",
+		"length": 0.005103283
+	},
+	{
+		"name": "Amphistichus_koelzi__JN125238",
+		"length": 0.000280229
+	},
+	{
+		"name": "Amphistichus_koelzi__JN125239",
+		"length": 0.000280229
+	},
+	{
+		"name": "Amphistichus_rhodoterus__JN125240",
+		"length": 0.001052241
+	},
+	{
+		"name": "Amphistichus_rhodoterus__JN125241",
+		"length": 0.001052241
+	},
+	{
+		"name": "Amphistichus_rhodoterus__JN125242",
+		"length": 0.004997953
+	},
+	{
+		"name": "Hyperprosopon_ellipticum__JN125246",
+		"length": 0.0752691
+	},
+	{
+		"name": "Hyperprosopon_anale__JN125243",
+		"length": 0.001544717
+	},
+	{
+		"name": "Hyperprosopon_anale__JN125244",
+		"length": 0.001544717
+	},
+	{
+		"name": "Hyperprosopon_anale__JN125245",
+		"length": 0.001544717
+	},
+	{
+		"name": "Hyperprosopon_argenteum__JN125250",
+		"length": 0.0752691
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305008",
+		"length": 0.0139899
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305009",
+		"length": 0.0139899
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305010",
+		"length": 0.002243126
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305014",
+		"length": 0.002243126
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305011",
+		"length": 0.004781421
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305012",
+		"length": 0.002190899
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305013",
+		"length": 0.002190899
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305015",
+		"length": 0.01398991
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305016",
+		"length": 0.0139899
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305017",
+		"length": 0.01398991
+	},
+	{
+		"name": "Chioninia_delalandii__AJ305018",
+		"length": 0.0139899
+	},
+	{
+		"name": "Pongo_pygmaeus__X97717",
+		"length": 0.4435255
+	},
+	{
+		"name": "Macaca_mulatta__AF378365",
+		"length": 0.4435255
+	},
+	{
+		"name": "Lissemys_punctata__JN232531",
+		"length": 0.01145145
+	},
+	{
+		"name": "Cyclanorbis_elegans__AY259570",
+		"length": 0.1425898
+	},
+	{
+		"name": "Cycloderma_aubryi__AY259566",
+		"length": 0.002539446
+	},
+	{
+		"name": "Cycloderma_aubryi__FR850655",
+		"length": 0.0003228437
+	},
+	{
+		"name": "Cycloderma_aubryi__FR850656",
+		"length": 0.0003228437
+	},
+	{
+		"name": "Cycloderma_frenatum__AY259565",
+		"length": 0.103137
+	},
+	{
+		"name": "Cyclanorbis_senegalensis__AY259569",
+		"length": 0.01782591
+	},
+	{
+		"name": "Cyclanorbis_senegalensis__FR850654",
+		"length": 0.01782591
+	},
+	{
+		"name": "Acomys_dimidiatus__Z96060",
+		"length": 0.008250274
+	},
+	{
+		"name": "Acomys_dimidiatus__Z96061",
+		"length": 0.008250274
+	},
+	{
+		"name": "Acomys_dimidiatus__Z96062",
+		"length": 0.01844273
+	},
+	{
+		"name": "Acomys_sp___Z96054",
+		"length": 0.002671683
+	},
+	{
+		"name": "Acomys_sp___Z96055",
+		"length": 0.002671683
+	},
+	{
+		"name": "Acomys_sp___Z96056",
+		"length": 0.02060143
+	},
+	{
+		"name": "Acomys_sp___Z96057",
+		"length": 0.01515063
+	},
+	{
+		"name": "Acomys_sp___Z96058",
+		"length": 0.01515063
+	},
+	{
+		"name": "Acomys_sp___Z96059",
+		"length": 0.03352389
+	},
+	{
+		"name": "Acomys_cahirinus__Z96051",
+		"length": 0.05298915
+	},
+	{
+		"name": "Acomys_cahirinus__Z96052",
+		"length": 0.01254775
+	},
+	{
+		"name": "Acomys_cahirinus__Z96053",
+		"length": 0.01254775
+	},
+	{
+		"name": "Acomys_ignitus__Z96063",
+		"length": 0.06115234
+	},
+	{
+		"name": "Acomys_ignitus__Z96064",
+		"length": 0.06115234
+	},
+	{
+		"name": "Acomys_russatus__Z96065",
+		"length": 0.01524834
+	},
+	{
+		"name": "Acomys_russatus__Z96066",
+		"length": 0.01524834
+	},
+	{
+		"name": "Pelochelys_bibroni__AY259559",
+		"length": 0.05231457
+	},
+	{
+		"name": "Pelochelys_cantorii__AY259560",
+		"length": 0.002632259
+	},
+	{
+		"name": "Chitra_indica__JN232529",
+		"length": 0.01126824
+	}
+]

@@ -1,0 +1,1198 @@
+{
+	"species": [
+		{
+			"name": "Batagur_dhongoka",
+			"length": 0.01262844,
+			"ident": "AM495283"
+		},
+		{
+			"name": "Batagur_dhongoka",
+			"length": 0.01262844,
+			"ident": "AY434569"
+		},
+		{
+			"name": "Batagur_dhongoka",
+			"length": 0.01262844,
+			"ident": "AM495282"
+		},
+		{
+			"name": "Batagur_dhongoka",
+			"length": 0.001885782,
+			"ident": "AJ564452"
+		},
+		{
+			"name": "Batagur_dhongoka",
+			"length": 0.001885782,
+			"ident": "AM495281"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.6274501,
+			"ident": "EF558362"
+		},
+		{
+			"name": "Morenia_petersi",
+			"length": 0.04868868,
+			"ident": "JN202621"
+		},
+		{
+			"name": "Morenia_ocellata",
+			"length": 0.001794997,
+			"ident": "JN860667"
+		},
+		{
+			"name": "Morenia_ocellata",
+			"length": 0.001794997,
+			"ident": "AY434605"
+		},
+		{
+			"name": "Batagur_borneoensis",
+			"length": 0.009515908,
+			"ident": "AM691757"
+		},
+		{
+			"name": "Batagur_borneoensis",
+			"length": 0.009515908,
+			"ident": "AY434601"
+		},
+		{
+			"name": "Batagur_borneoensis",
+			"length": 0.00951591,
+			"ident": "AM691756"
+		},
+		{
+			"name": "Batagur_borneoensis",
+			"length": 0.0008794482,
+			"ident": "AM495270"
+		},
+		{
+			"name": "Batagur_borneoensis",
+			"length": 0.000879449,
+			"ident": "AM691755"
+		},
+		{
+			"name": "Batagur_trivittata",
+			"length": 0.00783672,
+			"ident": "AM691758"
+		},
+		{
+			"name": "Batagur_trivittata",
+			"length": 0.00783672,
+			"ident": "EU030216"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495280"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.002427193,
+			"ident": "AM495274"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.002427194,
+			"ident": "AY434603"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.002427196,
+			"ident": "AM495273"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.002427194,
+			"ident": "AM495271"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495279"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495278"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495277"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495275"
+		},
+		{
+			"name": "Hardella_thurjii",
+			"length": 0.01058078,
+			"ident": "AM495272"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.002631239,
+			"ident": "AM495300"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.002631239,
+			"ident": "AM495296"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.002631239,
+			"ident": "AM495299"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.005792828,
+			"ident": "AM495297"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.0008089307,
+			"ident": "AM495298"
+		},
+		{
+			"name": "Pangshura_sylhetensis",
+			"length": 0.0008089293,
+			"ident": "JN232519"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.006696337,
+			"ident": "AM495303"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.0007774453,
+			"ident": "AM495302"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.0007774453,
+			"ident": "AM495304"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.006696337,
+			"ident": "AM495301"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.005556518,
+			"ident": "AM495306"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.001203194,
+			"ident": "AM495307"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.001203194,
+			"ident": "JN232520"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.01117394,
+			"ident": "AY434583"
+		},
+		{
+			"name": "Pangshura_tecta",
+			"length": 0.01117394,
+			"ident": "AM495305"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.001206581,
+			"ident": "AM495289"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.001206582,
+			"ident": "JN232521"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.002883939,
+			"ident": "AM495288"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.002883938,
+			"ident": "AY434589"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.01502373,
+			"ident": "AM495295"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.01502373,
+			"ident": "AM495293"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.01502373,
+			"ident": "AM495292"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.01502373,
+			"ident": "AM495291"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.01502373,
+			"ident": "AM495290"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.01502373,
+			"ident": "AM495328"
+		},
+		{
+			"name": "Batagur_baska",
+			"length": 0.006034325,
+			"ident": "AM495269"
+		},
+		{
+			"name": "Batagur_baska",
+			"length": 0.006034326,
+			"ident": "FN313567"
+		},
+		{
+			"name": "Batagur_baska",
+			"length": 0.006034325,
+			"ident": "AM495268"
+		},
+		{
+			"name": "Batagur_baska",
+			"length": 0.006034325,
+			"ident": "AM495267"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256236"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256237"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256235"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256234"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256233"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256232"
+		},
+		{
+			"name": "Batagur_sp",
+			"length": 0.008390723,
+			"ident": "_FN256231"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "AM691754"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596178,
+			"ident": "AY434600"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "AM691753"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "AM691752"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596178,
+			"ident": "AM691751"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "AM691750"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.00959618,
+			"ident": "FN313570"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "FN313569"
+		},
+		{
+			"name": "Batagur_affinis",
+			"length": 0.009596179,
+			"ident": "FN313568"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.01464879,
+			"ident": "AM495287"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.01464879,
+			"ident": "EU030215"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.01464879,
+			"ident": "AM495286"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.01464879,
+			"ident": "AM495285"
+		},
+		{
+			"name": "Batagur_kachuga",
+			"length": 0.01464879,
+			"ident": "AM495284"
+		},
+		{
+			"name": "Geoclemys_hamiltonii",
+			"length": 0.2472534,
+			"ident": "JN860644"
+		},
+		{
+			"name": "Geoclemys_hamiltonii",
+			"length": 0.001098755,
+			"ident": "JN232526"
+		},
+		{
+			"name": "Geoclemys_hamiltonii",
+			"length": 0.001098755,
+			"ident": "AY434573"
+		},
+		{
+			"name": "Ocadia_philippeni",
+			"length": 0.4447821,
+			"ident": "AY434582"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01026626,
+			"ident": "KU848635"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01026626,
+			"ident": "KU848650"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01026626,
+			"ident": "KU848587"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.00994026,
+			"ident": "KU848632"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.002090293,
+			"ident": "KU848611"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.002090293,
+			"ident": "KU848652"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.02022201,
+			"ident": "JN860668"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.003816423,
+			"ident": "KU848651"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.003816423,
+			"ident": "KU848620"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.003816423,
+			"ident": "KU848614"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.003816422,
+			"ident": "KU848582"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01267804,
+			"ident": "KU848656"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01267804,
+			"ident": "KU848644"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01267804,
+			"ident": "KU848625"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01267804,
+			"ident": "KU848602"
+		},
+		{
+			"name": "Malayemys_khoratensis",
+			"length": 0.01267804,
+			"ident": "KU848593"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874377,
+			"ident": "KU848630"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874377,
+			"ident": "KU848668"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874377,
+			"ident": "KU848623"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874378,
+			"ident": "KU848615"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874377,
+			"ident": "KU848595"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.007874377,
+			"ident": "KU848583"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "AY434591"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0191037,
+			"ident": "KU848643"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848666"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.001911461,
+			"ident": "KU848629"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.00191146,
+			"ident": "KU848664"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848663"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848662"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848661"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848660"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848659"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848657"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848640"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.009592159,
+			"ident": "AJ519502"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848634"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848616"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848609"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848608"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848607"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848606"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848600"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848597"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.0630248,
+			"ident": "KU848596"
+		},
+		{
+			"name": "Orlitia_borneensis",
+			"length": 0.3604019,
+			"ident": "AJ564464"
+		},
+		{
+			"name": "Orlitia_borneensis",
+			"length": 0.3604019,
+			"ident": "AY434619"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AY434610"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709056,
+			"ident": "AY434612"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709056,
+			"ident": "JN232523"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.004383126,
+			"ident": "AM495315"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.004383127,
+			"ident": "JN232522"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.004383126,
+			"ident": "AM495314"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.004383126,
+			"ident": "AM495313"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.004383125,
+			"ident": "AM495312"
+		},
+		{
+			"name": "Pangshura_smithii",
+			"length": 0.02709056,
+			"ident": "AM495294"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.00689643,
+			"ident": "AM495318"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.002251383,
+			"ident": "AM495319"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.002251383,
+			"ident": "AM495320"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.002251383,
+			"ident": "AM495316"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.006896432,
+			"ident": "AM495317"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.006896432,
+			"ident": "AM495322"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.006896431,
+			"ident": "AM495321"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709056,
+			"ident": "AM495311"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495310"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495309"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709056,
+			"ident": "AM495308"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709056,
+			"ident": "AM495327"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495326"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495325"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495324"
+		},
+		{
+			"name": "Pangshura_tentoria",
+			"length": 0.02709055,
+			"ident": "AM495323"
+		},
+		{
+			"name": "Malayemys_subtrijuga",
+			"length": 0.00994026,
+			"ident": "JN860669"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.003816423,
+			"ident": "KU848636"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.003816423,
+			"ident": "KU848612"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848665"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848667"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848654"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848653"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.001985184,
+			"ident": "KU848621"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.001985183,
+			"ident": "KU848649"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.001985185,
+			"ident": "KU848605"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848648"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848646"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848645"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848641"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848618"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848613"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848610"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848604"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848601"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848598"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848594"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848591"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848590"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848586"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848585"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848584"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0191037,
+			"ident": "KU848580"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848658"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848655"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848647"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848642"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848639"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592159,
+			"ident": "KU848637"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592158,
+			"ident": "KU848638"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592159,
+			"ident": "KU848622"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592158,
+			"ident": "KU848592"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592158,
+			"ident": "KU848588"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.009592157,
+			"ident": "KU848581"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848633"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848631"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848628"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848627"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848626"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848624"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848619"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848617"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848603"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848599"
+		},
+		{
+			"name": "Malayemys_macrocephala",
+			"length": 0.0630248,
+			"ident": "KU848589"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Pangshura_tentoria",
+				"length": 0.004383127,
+				"ident": "JN232522"
+			},
+			{
+				"name": "Pangshura_smithii",
+				"length": 0.002883939,
+				"ident": "AM495288"
+			}
+		],
+		[
+			{
+				"name": "Pangshura_tentoria",
+				"length": 0.02709055,
+				"ident": "AY434610"
+			},
+			{
+				"name": "Pangshura_smithii",
+				"length": 0.01502373,
+				"ident": "AM495290"
+			}
+		],
+		[
+			{
+				"name": "Pangshura_tentoria",
+				"length": 0.004383126,
+				"ident": "AM495315"
+			},
+			{
+				"name": "Pangshura_smithii",
+				"length": 0.002883938,
+				"ident": "AY434589"
+			}
+		],
+		[
+			{
+				"name": "Pangshura_tentoria",
+				"length": 0.004383126,
+				"ident": "AM495313"
+			},
+			{
+				"name": "Pangshura_smithii",
+				"length": 0.001206582,
+				"ident": "JN232521"
+			}
+		],
+		[
+			{
+				"name": "Pangshura_smithii",
+				"length": 0.02709056,
+				"ident": "AM495294"
+			},
+			{
+				"name": "Pangshura_tentoria",
+				"length": 0.01502373,
+				"ident": "AM495328"
+			}
+		],
+		[
+			{
+				"name": "Batagur_kachuga",
+				"length": 0.6274501,
+				"ident": "EF558362"
+			},
+			{
+				"name": "Batagur_baska",
+				"length": 0.006034325,
+				"ident": "AM495267"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_khoratensis",
+				"length": 0.01026626,
+				"ident": "KU848650"
+			},
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.00994026,
+				"ident": "JN860669"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.02022201,
+				"ident": "JN860668"
+			},
+			{
+				"name": "Malayemys_khoratensis",
+				"length": 0.00994026,
+				"ident": "KU848632"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_khoratensis",
+				"length": 0.01267804,
+				"ident": "KU848656"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.003816423,
+				"ident": "KU848612"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_khoratensis",
+				"length": 0.01267804,
+				"ident": "KU848593"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.003816423,
+				"ident": "KU848636"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.0630248,
+				"ident": "AY434591"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.009592159,
+				"ident": "KU848622"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.0630248,
+				"ident": "KU848596"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.0191037,
+				"ident": "KU848646"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.0630248,
+				"ident": "KU848663"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.009592159,
+				"ident": "KU848637"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.0630248,
+				"ident": "KU848660"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.0191037,
+				"ident": "KU848598"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.0630248,
+				"ident": "KU848589"
+			},
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.009592159,
+				"ident": "AJ519502"
+			}
+		],
+		[
+			{
+				"name": "Malayemys_subtrijuga",
+				"length": 0.0630248,
+				"ident": "KU848597"
+			},
+			{
+				"name": "Malayemys_macrocephala",
+				"length": 0.009592158,
+				"ident": "KU848588"
+			}
+		]
+	]
+}

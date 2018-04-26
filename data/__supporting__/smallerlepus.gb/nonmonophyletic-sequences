@@ -1,0 +1,189 @@
+{
+	"species": [
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.005252338,
+			"ident": "HM233010"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.005252338,
+			"ident": "HM233011"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.01076959,
+			"ident": "HM233014"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.002532579,
+			"ident": "AB687528"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.0006094135,
+			"ident": "AB687529"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.0006094135,
+			"ident": "AB687530"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.002532579,
+			"ident": "AB687527"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.002532579,
+			"ident": "AB687526"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.002532579,
+			"ident": "AB687525"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.003170999,
+			"ident": "HM232991"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.0009037082,
+			"ident": "HM232995"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.000903708,
+			"ident": "HM232996"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.000903708,
+			"ident": "HM232994"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.0009037082,
+			"ident": "HM232993"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.000903708,
+			"ident": "HM232992"
+		},
+		{
+			"name": "Lepus_coreanus",
+			"length": 0.00273998,
+			"ident": "AB687531"
+		},
+		{
+			"name": "Lepus_coreanus",
+			"length": 0.0004868228,
+			"ident": "AB687532"
+		},
+		{
+			"name": "Lepus_coreanus",
+			"length": 0.0004868228,
+			"ident": "AB687533"
+		},
+		{
+			"name": "Lepus_coreanus",
+			"length": 0.001472072,
+			"ident": "AB687534"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.001796701,
+			"ident": "AB687524"
+		},
+		{
+			"name": "Lepus_timidus",
+			"length": 0.001796701,
+			"ident": "AB058607"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.005605512,
+			"ident": "HM233077"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.005605512,
+			"ident": "HM233088"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.001449875,
+			"ident": "HM233090"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.001449875,
+			"ident": "HM233091"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.001449875,
+			"ident": "HM233089"
+		},
+		{
+			"name": "Lepus_mandshuricus",
+			"length": 0.3568472,
+			"ident": "DQ793161"
+		}
+	],
+	"nm": [
+		[
+			{
+				"name": "Lepus_mandshuricus",
+				"length": 0.01076959,
+				"ident": "HM233014"
+			},
+			{
+				"name": "Lepus_timidus",
+				"length": 0.002532579,
+				"ident": "AB687525"
+			}
+		],
+		[
+			{
+				"name": "Lepus_timidus",
+				"length": 0.001796701,
+				"ident": "AB687524"
+			},
+			{
+				"name": "Lepus_mandshuricus",
+				"length": 0.003170999,
+				"ident": "HM232991"
+			}
+		],
+		[
+			{
+				"name": "Lepus_timidus",
+				"length": 0.001796701,
+				"ident": "AB058607"
+			},
+			{
+				"name": "Lepus_mandshuricus",
+				"length": 0.0009037082,
+				"ident": "HM232995"
+			}
+		],
+		[
+			{
+				"name": "Lepus_mandshuricus",
+				"length": 0.005252338,
+				"ident": "HM233011"
+			},
+			{
+				"name": "Lepus_brachyurus",
+				"length": 0.003181071,
+				"ident": "AB058616"
+			}
+		]
+	]
+}
