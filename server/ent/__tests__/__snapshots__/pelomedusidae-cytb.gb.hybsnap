@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pelomedusidae-cytb.gb 1`] = `
+Array [
+  "Pelusios_rhodesianus (FR716935) / Pelusios_carinatus (FR716903)",
+  "Pelusios_castaneus (FR716904) / Pelusios_chapini (FR716922)",
+]
+`;

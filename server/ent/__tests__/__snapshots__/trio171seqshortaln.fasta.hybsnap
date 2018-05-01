@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trio171seqshortaln.fasta 1`] = `
+Array [
+  "Palea_steindachneri (AY259552) / Nilssonia_formosa (HE801740)",
+  "Palea_steindachneri (AY743417) / Pelodiscus_maackii (AB904720)",
+]
+`;

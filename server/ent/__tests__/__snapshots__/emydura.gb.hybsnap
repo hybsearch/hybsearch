@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`emydura 1`] = `
+exports[`emydura.gb 1`] = `
 Array [
-  "Emydura subglobosa (KC755184) / Emydura tanybaraga (KC755187)",
+  "Emydura_subglobosa (KC755184) / Emydura_tanybaraga (KC755187)",
 ]
 `;
