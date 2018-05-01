@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`smallerlepus 1`] = `
+Array [
+  "Lepus mandshuricus (HM233014) / Lepus timidus (AB687525)",
+  "Lepus timidus (AB687524) / Lepus mandshuricus (HM232991)",
+  "Lepus timidus (AB058607) / Lepus mandshuricus (HM233011)",
+  "Lepus mandshuricus (DQ793161) / Lepus brachyurus (AB058615)",
+]
+`;

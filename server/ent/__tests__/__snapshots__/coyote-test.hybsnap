@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`coyote-test 1`] = `
+Array [
+  "Canis lupus (AF115697) / Canis latrans (EU400578)",
+]
+`;

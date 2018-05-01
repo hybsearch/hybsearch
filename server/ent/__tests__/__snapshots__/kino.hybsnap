@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`kino 1`] = `
+Array [
+  "Kinosternon scorpioides (KF301387) / Kinosternon oaxacae (KF301384)",
+  "Kinosternon subrubrum (KF301390) / Kinosternon baurii (KF301371)",
+  "Kinosternon subrubrum (KF301391) / Kinosternon flavescens (KF301376)",
+  "Sternotherus minor (KF301363) / Sternotherus depressus (KF301362)",
+]
+`;

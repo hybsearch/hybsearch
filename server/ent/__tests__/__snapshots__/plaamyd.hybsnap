@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plaamyd 1`] = `
+Array [
+  "Amyda cartilaginea (LM537476) / Palea steindachneri (AY743417)",
+  "Amyda cartilaginea (LM537467) / Amyda ornata (LM537478)",
+  "Amyda ornata (LM537482) / Amyda cartilaginea (LM537464)",
+  "Amyda ornata (LM537490) / Amyda cartilaginea (LM537463)",
+  "Amyda cartilaginea (LM537483) / Amyda ornata (LM537462)",
+  "Palea steindachneri (AY259552) / Amyda cartilaginea (LM537494)",
+]
+`;
