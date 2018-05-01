@@ -21,6 +21,6 @@ for (const file of files) {
 		const tree = newickToJson(content)
 
 		const actual = formatData(search(tree, fasta))
-		expect(actual.split('\n')).toMatchSpecificSnapshot(path.join('.', '__snapshots__', file + '.hybsnap'))
+		expect(actual.split('\n').filter(str => str.length > 0)).toMatchSpecificSnapshot(path.join('.', '__snapshots__', file + '.hybsnap'))
 	})
 }
