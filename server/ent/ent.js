@@ -31,6 +31,7 @@ function nmMark(node, species1, species2) {
 module.exports.strictSearch = strictSearch
 function strictSearch(node, fasta) {
 	let entResults = strictSearchHelper(node)
+	return entResults
 	// Filter out nonmono pairs before returning
 	let finalResults = { species: entResults.species, nm: [] }
 
@@ -247,9 +248,7 @@ function strictSearchHelper(node, nmInstances = []) {
 
 module.exports.formatData = formatData
 function formatData(results) {
-	const { nm: nmlist } = results
-	// prettier-ignore
-	return nmlist
-		.map(pair => pair.map(label).join(' / '))
+	return results.nm
+		.map(({pair}) => pair.map(label).join(' / '))
 		.join('\n')
 }

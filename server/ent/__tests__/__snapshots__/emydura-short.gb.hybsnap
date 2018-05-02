@@ -2,6 +2,9 @@
 
 exports[`emydura-short.gb (unpruned) 1`] = `
 Array [
+  "Emydura_subglobosa (KC755185) / Emydura_tanybaraga (KC755186)",
+  "Emydura_subglobosa (KC755185) / Emydura_tanybaraga (KC755187)",
+  "Emydura_subglobosa (KC755190) / Emydura_tanybaraga (KC755186)",
   "Emydura_subglobosa (KC755190) / Emydura_tanybaraga (KC755187)",
 ]
 `;

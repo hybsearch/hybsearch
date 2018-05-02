@@ -2,7 +2,12 @@
 
 exports[`pelomedusidae-cytb.gb (pruned) 1`] = `
 Array [
+  "Pelusios_rhodesianus (FR716935) / Pelusios_carinatus (FR716901)",
+  "Pelusios_rhodesianus (FR716935) / Pelusios_carinatus (FR716902)",
   "Pelusios_rhodesianus (FR716935) / Pelusios_carinatus (FR716903)",
   "Pelusios_castaneus (FR716904) / Pelusios_chapini (FR716922)",
+  "Pelusios_castaneus (FR716905) / Pelusios_chapini (FR716922)",
+  "Pelusios_castaneus (FR716912) / Pelusios_chapini (FR716922)",
+  "Pelusios_castaneus (FR716913) / Pelusios_chapini (FR716922)",
 ]
 `;
