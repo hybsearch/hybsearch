@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`kino.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01144986,
+              "name": "Staurotypus_triporcatus__KF301360",
+            },
+            Object {
+              "length": 0.01144986,
+              "name": "Staurotypus_salvinii__KF301359",
+            },
+          ],
+          "length": 0.08350242,
+          "name": "",
+        },
+        Object {
+          "length": 0.09495229,
+          "name": "Claudius_angustatus__KF301358",
+        },
+      ],
+      "length": 0.1936858,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001193097,
+                          "name": "Sternotherus_carinatus__JN860673",
+                        },
+                        Object {
+                          "length": 0.001193097,
+                          "name": "Sternotherus_carinatus__KF301361",
+                        },
+                      ],
+                      "length": 0.06272667,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.06391977,
+                      "name": "Sternotherus_odoratus__KF301365",
+                    },
+                  ],
+                  "length": 0.00739041,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.00099767,
+                          "name": "Sternotherus_minor__KF301364",
+                        },
+                        Object {
+                          "length": 0.00099767,
+                          "name": "Sternotherus_depressus__KF301362",
+                        },
+                      ],
+                      "length": 0.02683169,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.02782936,
+                      "name": "Sternotherus_minor__KF301363",
+                    },
+                  ],
+                  "length": 0.04348082,
+                  "name": "",
+                },
+              ],
+              "length": 0.04695417,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.03827613,
+                          "name": "Kinosternon_subrubrum__KF301391",
+                        },
+                        Object {
+                          "length": 0.03827613,
+                          "name": "Kinosternon_baurii__KF301371",
+                        },
+                      ],
+                      "length": 0.01675861,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01536826,
+                          "name": "Kinosternon_subrubrum__KF301390",
+                        },
+                        Object {
+                          "length": 0.01536826,
+                          "name": "Kinosternon_flavescens__KF301376",
+                        },
+                      ],
+                      "length": 0.03966648,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.03409099,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.02712253,
+                              "name": "Kinosternon_sonoriense__KF301389",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.02269314,
+                                  "name": "Kinosternon_hirtipes__KF301379",
+                                },
+                                Object {
+                                  "length": 0.02269314,
+                                  "name": "Kinosternon_chimalhuaca__KF301372",
+                                },
+                              ],
+                              "length": 0.004429397,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.02006392,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0354499,
+                              "name": "Kinosternon_scorpioides__KF301387",
+                            },
+                            Object {
+                              "length": 0.0354499,
+                              "name": "Kinosternon_scorpioides__KF301386",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.02530782,
+                                  "name": "Kinosternon_scorpioides__KF301385",
+                                },
+                                Object {
+                                  "length": 0.02530782,
+                                  "name": "Kinosternon_oaxacae__KF301384",
+                                },
+                              ],
+                              "length": 0.01014208,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.005185028,
+                                      "name": "Kinosternon_integrum__KF301382",
+                                    },
+                                    Object {
+                                      "length": 0.005185028,
+                                      "name": "Kinosternon_integrum__KF301381",
+                                    },
+                                  ],
+                                  "length": 0.003991525,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.009176555,
+                                  "name": "Kinosternon_integrum__KF301380",
+                                },
+                              ],
+                              "length": 0.02627334,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.01173655,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.02473199,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0359565,
+                          "name": "Kinosternon_durangoense__KF301375",
+                        },
+                        Object {
+                          "length": 0.0359565,
+                          "name": "Kinosternon_arizonense__KF301370",
+                        },
+                      ],
+                      "length": 0.03596194,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.07191845,
+                      "name": "Kinosternon_alamosae__KF301368",
+                    },
+                  ],
+                  "length": 0.01720729,
+                  "name": "",
+                },
+              ],
+              "length": 0.02913862,
+              "name": "",
+            },
+          ],
+          "length": 0.01643233,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.08953419,
+                  "name": "Kinosternon_leucostomum__KF301383",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.04365521,
+                      "name": "Kinosternon_dunni__KF301374",
+                    },
+                    Object {
+                      "length": 0.04365521,
+                      "name": "Kinosternon_angustipons__KF301369",
+                    },
+                  ],
+                  "length": 0.04587898,
+                  "name": "",
+                },
+              ],
+              "length": 0.01420345,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0008435128,
+                      "name": "Kinosternon_herrerai__KF301378",
+                    },
+                    Object {
+                      "length": 0.0008435128,
+                      "name": "Kinosternon_herrerai__KF301377",
+                    },
+                  ],
+                  "length": 0.04744995,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.009658711,
+                      "name": "Kinosternon_creaseri__KF301373",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0004012513,
+                          "name": "Kinosternon_acutum__KF301367",
+                        },
+                        Object {
+                          "length": 0.0004012513,
+                          "name": "Kinosternon_acutum__KF301366",
+                        },
+                      ],
+                      "length": 0.00925746,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.03863475,
+                  "name": "",
+                },
+              ],
+              "length": 0.05544418,
+              "name": "",
+            },
+          ],
+          "length": 0.03095904,
+          "name": "",
+        },
+      ],
+      "length": 0.1539414,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

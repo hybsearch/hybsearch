@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emydura.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001108727,
+              "name": "Emydura_victoriae__KC755189",
+            },
+            Object {
+              "length": 0.001108727,
+              "name": "Emydura_victoriae__KC755188",
+            },
+          ],
+          "length": 0.02577707,
+          "name": "",
+        },
+        Object {
+          "length": 0.0268858,
+          "name": "Emydura_macquarii__KC755183",
+        },
+      ],
+      "length": 0.04598937,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.02363153,
+              "name": "Emydura_subglobosa__KC755190",
+            },
+            Object {
+              "length": 0.02363153,
+              "name": "Emydura_subglobosa__KC755185",
+            },
+          ],
+          "length": 0.01913123,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001716704,
+                      "name": "Emydura_tanybaraga__KC755187",
+                    },
+                    Object {
+                      "length": 0.001716704,
+                      "name": "Emydura_tanybaraga__KC755186",
+                    },
+                  ],
+                  "length": 0.00196504,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00002274138,
+                      "name": "Emydura_subglobosa__NC_026048",
+                    },
+                    Object {
+                      "length": 0.00002274138,
+                      "name": "Emydura_subglobosa__KC692462",
+                    },
+                  ],
+                  "length": 0.003659002,
+                  "name": "",
+                },
+              ],
+              "length": 0.004731633,
+              "name": "",
+            },
+            Object {
+              "length": 0.008413377,
+              "name": "Emydura_subglobosa__KC755184",
+            },
+          ],
+          "length": 0.03434938,
+          "name": "",
+        },
+      ],
+      "length": 0.03011241,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

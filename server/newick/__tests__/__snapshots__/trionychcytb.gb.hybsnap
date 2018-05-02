@@ -1,0 +1,1773 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trionychcytb.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "length": 0.6661893,
+      "name": "Paracentrotus_lividus__AH001273",
+    },
+    Object {
+      "length": 0.6661893,
+      "name": "Dogania_subplana__AY259551",
+    },
+    Object {
+      "length": 0.6661893,
+      "name": "Anser_caerulescens__X77190",
+    },
+    Object {
+      "length": 0.6661893,
+      "name": "Palea_steindachneri__AY259552",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.00102742,
+                  "name": "Mus_minutoides__FN985221",
+                },
+                Object {
+                  "length": 0.00102742,
+                  "name": "Mus_minutoides__FN985224",
+                },
+              ],
+              "length": 0.02228684,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.003342541,
+                  "name": "Mus_minutoides__FN985222",
+                },
+                Object {
+                  "length": 0.003342541,
+                  "name": "Mus_minutoides__FN985223",
+                },
+              ],
+              "length": 0.01997172,
+              "name": "",
+            },
+          ],
+          "length": 0.05008401,
+          "name": "",
+        },
+        Object {
+          "length": 0.07339827,
+          "name": "Mus_musculoides__Z96069",
+        },
+      ],
+      "length": 0.592791,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.1262368,
+          "name": "Pnoepyga_pusilla__JX518496",
+        },
+        Object {
+          "length": 0.1262368,
+          "name": "Corvus_frugilegus__Y16885",
+        },
+      ],
+      "length": 0.5399525,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001212535,
+              "name": "Mustela_nivalis__AM932882",
+            },
+            Object {
+              "length": 0.001212535,
+              "name": "Mustela_nivalis__AM932884",
+            },
+            Object {
+              "length": 0.001212535,
+              "name": "Mustela_nivalis__AM932885",
+            },
+          ],
+          "length": 0.001435765,
+          "name": "",
+        },
+        Object {
+          "length": 0.0026483,
+          "name": "Mustela_nivalis__AM932883",
+        },
+      ],
+      "length": 0.663541,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.07786886,
+          "name": "Acomys_spinosissimus__Z96067",
+        },
+        Object {
+          "length": 0.07786886,
+          "name": "Acomys_spinosissimus__Z96068",
+        },
+      ],
+      "length": 0.5883205,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.003036009,
+                      "name": "Pelodiscus_sinensis__AY259553",
+                    },
+                    Object {
+                      "length": 0.003036009,
+                      "name": "Pelodiscus_sinensis__AY583692",
+                    },
+                  ],
+                  "length": 0.02656169,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001797161,
+                          "name": "Pelodiscus_maackii__FM999011",
+                        },
+                        Object {
+                          "length": 0.001797161,
+                          "name": "Pelodiscus_maackii__AB904721",
+                        },
+                      ],
+                      "length": 0.006737889,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002056733,
+                              "name": "Pelodiscus_maackii__AB904720",
+                            },
+                            Object {
+                              "length": 0.002056732,
+                              "name": "Pelodiscus_maackii__AB904723",
+                            },
+                            Object {
+                              "length": 0.002056732,
+                              "name": "Pelodiscus_maackii__AB904724",
+                            },
+                          ],
+                          "length": 0.001558813,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.003615546,
+                          "name": "Pelodiscus_maackii__AB904722",
+                        },
+                        Object {
+                          "length": 0.003615546,
+                          "name": "Pelodiscus_maackii__AB904725",
+                        },
+                      ],
+                      "length": 0.004919504,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.02106265,
+                  "name": "",
+                },
+              ],
+              "length": 0.01441382,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0005828924,
+                          "name": "Pelodiscus_sinensis__JN860674",
+                        },
+                        Object {
+                          "length": 0.0005828923,
+                          "name": "Pelodiscus_sp___FM999013",
+                        },
+                      ],
+                      "length": 0.01071749,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001281764,
+                          "name": "Pelodiscus_sinensis__AB904726",
+                        },
+                        Object {
+                          "length": 0.001281764,
+                          "name": "Pelodiscus_sp___FM999012",
+                        },
+                      ],
+                      "length": 0.01001861,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001746582,
+                          "name": "Pelodiscus_sinensis__AB904727",
+                        },
+                        Object {
+                          "length": 0.001746582,
+                          "name": "Pelodiscus_sp___FM999014",
+                        },
+                        Object {
+                          "length": 0.001746582,
+                          "name": "Pelodiscus_sp___FM999015",
+                        },
+                      ],
+                      "length": 0.009553797,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.01130038,
+                      "name": "Pelodiscus_sinensis__AB904728",
+                    },
+                  ],
+                  "length": 0.008196709,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.009419019,
+                      "name": "Pelodiscus_sinensis__FR851459",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.002677463,
+                          "name": "Pelodiscus_sp___FM999018",
+                        },
+                        Object {
+                          "length": 0.002677463,
+                          "name": "Pelodiscus_sp___FM999017",
+                        },
+                      ],
+                      "length": 0.006741557,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.01007807,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.01949709,
+                  "name": "Pelodiscus_sinensis__AB904729",
+                },
+                Object {
+                  "length": 0.01949709,
+                  "name": "Pelodiscus_sp___FM999016",
+                },
+              ],
+              "length": 0.02451443,
+              "name": "",
+            },
+          ],
+          "length": 0.05806694,
+          "name": "",
+        },
+        Object {
+          "length": 0.1020785,
+          "name": "Pelodiscus_axenaria__AY583693",
+        },
+      ],
+      "length": 0.5641108,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.03427325,
+                      "name": "Balaenoptera_bonaerensis__X75581",
+                    },
+                    Object {
+                      "length": 0.03427325,
+                      "name": "Balaenoptera_acutorostrata__X75753",
+                    },
+                  ],
+                  "length": 0.04480568,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.05428502,
+                      "name": "Eschrichtius_robustus__X75585",
+                    },
+                    Object {
+                      "length": 0.05428502,
+                      "name": "Megaptera_novaeangliae__X75584",
+                    },
+                  ],
+                  "length": 0.02479391,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.02670438,
+                      "name": "Balaenoptera_edeni__X75583",
+                    },
+                    Object {
+                      "length": 0.02670438,
+                      "name": "Balaenoptera_borealis__X75582",
+                    },
+                  ],
+                  "length": 0.05237455,
+                  "name": "",
+                },
+              ],
+              "length": 0.03063243,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.03758912,
+                      "name": "Balaena_mysticetus__X75588",
+                    },
+                    Object {
+                      "length": 0.03758912,
+                      "name": "Eubalaena_glacialis__X75587",
+                    },
+                  ],
+                  "length": 0.05270387,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.09029299,
+                  "name": "Caperea_marginata__X75586",
+                },
+              ],
+              "length": 0.01941837,
+              "name": "",
+            },
+          ],
+          "length": 0.03777757,
+          "name": "",
+        },
+        Object {
+          "length": 0.1474889,
+          "name": "Physeter_catodon__X75589",
+        },
+      ],
+      "length": 0.5187004,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001969202,
+                  "name": "Amyda_ornata__LM537462",
+                },
+                Object {
+                  "length": 0.001969203,
+                  "name": "Amyda_cartilaginea__LM537463",
+                },
+                Object {
+                  "length": 0.001969203,
+                  "name": "Amyda_cartilaginea__LM537464",
+                },
+              ],
+              "length": 0.01809554,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001984752,
+                  "name": "Amyda_ornata__LM537482",
+                },
+                Object {
+                  "length": 0.00198475,
+                  "name": "Amyda_ornata__LM537490",
+                },
+                Object {
+                  "length": 0.00198475,
+                  "name": "Amyda_cartilaginea__LM537483",
+                },
+                Object {
+                  "length": 0.001984752,
+                  "name": "Amyda_cartilaginea__LM537484",
+                },
+                Object {
+                  "length": 0.001984752,
+                  "name": "Amyda_cartilaginea__LM537485",
+                },
+              ],
+              "length": 0.01807999,
+              "name": "",
+            },
+          ],
+          "length": 0.03004177,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.006980882,
+              "name": "Amyda_ornata__LM537478",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001229889,
+                      "name": "Amyda_cartilaginea__AY259550",
+                    },
+                    Object {
+                      "length": 0.001229889,
+                      "name": "Amyda_cartilaginea__JN232534",
+                    },
+                  ],
+                  "length": 0.002018851,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001334522,
+                      "name": "Amyda_cartilaginea__LM537465",
+                    },
+                    Object {
+                      "length": 0.001334522,
+                      "name": "Amyda_cartilaginea__LM537467",
+                    },
+                  ],
+                  "length": 0.001914217,
+                  "name": "",
+                },
+              ],
+              "length": 0.003732142,
+              "name": "",
+            },
+            Object {
+              "length": 0.006980882,
+              "name": "Amyda_cartilaginea__LM537466",
+            },
+          ],
+          "length": 0.04312564,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001538158,
+                  "name": "Amyda_cartilaginea__LM537476",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0001932313,
+                      "name": "Amyda_cartilaginea__LM537493",
+                    },
+                    Object {
+                      "length": 0.0001932313,
+                      "name": "Amyda_cartilaginea__LM537494",
+                    },
+                  ],
+                  "length": 0.001344927,
+                  "name": "",
+                },
+              ],
+              "length": 0.003649216,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001229122,
+                  "name": "Amyda_cartilaginea__LM537491",
+                },
+                Object {
+                  "length": 0.001229122,
+                  "name": "Amyda_cartilaginea__LM537492",
+                },
+              ],
+              "length": 0.003958252,
+              "name": "",
+            },
+          ],
+          "length": 0.04491914,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002783557,
+                  "name": "Amyda_cartilaginea__LM537480",
+                },
+                Object {
+                  "length": 0.002783557,
+                  "name": "Amyda_cartilaginea__LM537481",
+                },
+              ],
+              "length": 0.008760961,
+              "name": "",
+            },
+            Object {
+              "length": 0.01154452,
+              "name": "Palea_steindachneri__AY743417",
+            },
+          ],
+          "length": 0.038562,
+          "name": "",
+        },
+      ],
+      "length": 0.6160828,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.02071484,
+              "name": "Capra_ibex__AJ010055",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.007341727,
+                  "name": "Capra_pyrenaica__AJ010047",
+                },
+                Object {
+                  "length": 0.007341727,
+                  "name": "Capra_pyrenaica__AJ010048",
+                },
+                Object {
+                  "length": 0.007341727,
+                  "name": "Capra_pyrenaica__AJ010049",
+                },
+                Object {
+                  "length": 0.007341726,
+                  "name": "Capra_pyrenaica__AJ010050",
+                },
+                Object {
+                  "length": 0.007341728,
+                  "name": "Capra_pyrenaica__AJ010051",
+                },
+                Object {
+                  "length": 0.007341727,
+                  "name": "Capra_pyrenaica__AJ010052",
+                },
+                Object {
+                  "length": 0.007341731,
+                  "name": "Capra_pyrenaica__AJ010053",
+                },
+                Object {
+                  "length": 0.007341728,
+                  "name": "Capra_pyrenaica__AJ010056",
+                },
+              ],
+              "length": 0.01337311,
+              "name": "",
+            },
+            Object {
+              "length": 0.02071484,
+              "name": "Capra_pyrenaica__AJ010054",
+            },
+          ],
+          "length": 0.03033564,
+          "name": "",
+        },
+        Object {
+          "length": 0.05105048,
+          "name": "Capra_nubiana__AJ009879",
+        },
+      ],
+      "length": 0.6151388,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001320094,
+                          "name": "Amphistichus_argenteus__JN125234",
+                        },
+                        Object {
+                          "length": 0.001320094,
+                          "name": "Amphistichus_argenteus__JN125235",
+                        },
+                      ],
+                      "length": 0.002893492,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.004213586,
+                      "name": "Amphistichus_argenteus__JN125236",
+                    },
+                  ],
+                  "length": 0.03623743,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.005103283,
+                          "name": "Amphistichus_koelzi__JN125237",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.000280229,
+                              "name": "Amphistichus_koelzi__JN125238",
+                            },
+                            Object {
+                              "length": 0.000280229,
+                              "name": "Amphistichus_koelzi__JN125239",
+                            },
+                          ],
+                          "length": 0.004823054,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.02392392,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001052241,
+                              "name": "Amphistichus_rhodoterus__JN125240",
+                            },
+                            Object {
+                              "length": 0.001052241,
+                              "name": "Amphistichus_rhodoterus__JN125241",
+                            },
+                          ],
+                          "length": 0.003945712,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.004997953,
+                          "name": "Amphistichus_rhodoterus__JN125242",
+                        },
+                      ],
+                      "length": 0.02402925,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.01142381,
+                  "name": "",
+                },
+              ],
+              "length": 0.03481809,
+              "name": "",
+            },
+            Object {
+              "length": 0.0752691,
+              "name": "Hyperprosopon_ellipticum__JN125246",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001544717,
+                  "name": "Hyperprosopon_anale__JN125243",
+                },
+                Object {
+                  "length": 0.001544717,
+                  "name": "Hyperprosopon_anale__JN125244",
+                },
+                Object {
+                  "length": 0.001544717,
+                  "name": "Hyperprosopon_anale__JN125245",
+                },
+              ],
+              "length": 0.07372439,
+              "name": "",
+            },
+            Object {
+              "length": 0.0752691,
+              "name": "Hyperprosopon_argenteum__JN125250",
+            },
+          ],
+          "length": 0.2523599,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0139899,
+              "name": "Chioninia_delalandii__AJ305008",
+            },
+            Object {
+              "length": 0.0139899,
+              "name": "Chioninia_delalandii__AJ305009",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002243126,
+                  "name": "Chioninia_delalandii__AJ305010",
+                },
+                Object {
+                  "length": 0.002243126,
+                  "name": "Chioninia_delalandii__AJ305014",
+                },
+              ],
+              "length": 0.01174678,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.004781421,
+                  "name": "Chioninia_delalandii__AJ305011",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.002190899,
+                      "name": "Chioninia_delalandii__AJ305012",
+                    },
+                    Object {
+                      "length": 0.002190899,
+                      "name": "Chioninia_delalandii__AJ305013",
+                    },
+                  ],
+                  "length": 0.002590522,
+                  "name": "",
+                },
+              ],
+              "length": 0.009208485,
+              "name": "",
+            },
+            Object {
+              "length": 0.01398991,
+              "name": "Chioninia_delalandii__AJ305015",
+            },
+            Object {
+              "length": 0.0139899,
+              "name": "Chioninia_delalandii__AJ305016",
+            },
+            Object {
+              "length": 0.01398991,
+              "name": "Chioninia_delalandii__AJ305017",
+            },
+            Object {
+              "length": 0.0139899,
+              "name": "Chioninia_delalandii__AJ305018",
+            },
+          ],
+          "length": 0.3136391,
+          "name": "",
+        },
+      ],
+      "length": 0.3385603,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.4435255,
+          "name": "Pongo_pygmaeus__X97717",
+        },
+        Object {
+          "length": 0.4435255,
+          "name": "Macaca_mulatta__AF378365",
+        },
+      ],
+      "length": 0.2226638,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0009834005,
+                          "name": "Lissemys_scutata__AY259567",
+                        },
+                        Object {
+                          "length": 0.0009834005,
+                          "name": "Lissemys_scutata__FR850650",
+                        },
+                      ],
+                      "length": 0.001821361,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.002804762,
+                      "name": "Lissemys_scutata__FR850651",
+                    },
+                    Object {
+                      "length": 0.002804762,
+                      "name": "Lissemys_scutata__FR850653",
+                    },
+                  ],
+                  "length": 0.002734682,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.005539443,
+                  "name": "Lissemys_scutata__FR850652",
+                },
+              ],
+              "length": 0.1430518,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__AY259568",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850607",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850608",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850609",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850610",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850611",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850612",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850613",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850615",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850617",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850618",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850619",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__JN232531",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850614",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850620",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850637",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850638",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850639",
+                        },
+                        Object {
+                          "length": 0.01145145,
+                          "name": "Lissemys_punctata__FR850640",
+                        },
+                        Object {
+                          "length": 0.01145146,
+                          "name": "Lissemys_punctata__FR850641",
+                        },
+                      ],
+                      "length": 0.04327558,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850616",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850621",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850622",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850623",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850624",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850626",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850627",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850628",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850629",
+                            },
+                            Object {
+                              "length": 0.006887013,
+                              "name": "Lissemys_punctata__FR850630",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.000886903,
+                                  "name": "Lissemys_punctata__FR850635",
+                                },
+                                Object {
+                                  "length": 0.000886903,
+                                  "name": "Lissemys_punctata__FR850636",
+                                },
+                              ],
+                              "length": 0.00600011,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.02647146,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003374086,
+                              "name": "Lissemys_punctata__FR850625",
+                            },
+                            Object {
+                              "length": 0.003374086,
+                              "name": "Lissemys_punctata__FR850631",
+                            },
+                          ],
+                          "length": 0.02998439,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.02136855,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001951082,
+                              "name": "Lissemys_punctata__FR850632",
+                            },
+                            Object {
+                              "length": 0.001951082,
+                              "name": "Lissemys_punctata__FR850633",
+                            },
+                            Object {
+                              "length": 0.001951082,
+                              "name": "Lissemys_punctata__FR850634",
+                            },
+                            Object {
+                              "length": 0.001951082,
+                              "name": "Lissemys_punctata__FR850642",
+                            },
+                          ],
+                          "length": 0.003995231,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0003801055,
+                              "name": "Lissemys_punctata__FR850643",
+                            },
+                            Object {
+                              "length": 0.0003801055,
+                              "name": "Lissemys_punctata__FR850644",
+                            },
+                          ],
+                          "length": 0.005566208,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.04878071,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.0397104,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.002028121,
+                          "name": "Lissemys_punctata__FR850645",
+                        },
+                        Object {
+                          "length": 0.002028121,
+                          "name": "Lissemys_punctata__FR850646",
+                        },
+                        Object {
+                          "length": 0.002028121,
+                          "name": "Lissemys_punctata__FR850648",
+                        },
+                      ],
+                      "length": 0.007691301,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.009719423,
+                      "name": "Lissemys_punctata__FR850647",
+                    },
+                    Object {
+                      "length": 0.009719422,
+                      "name": "Lissemys_punctata__FR850649",
+                    },
+                  ],
+                  "length": 0.08471801,
+                  "name": "",
+                },
+              ],
+              "length": 0.05415384,
+              "name": "",
+            },
+          ],
+          "length": 0.05842214,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.1425898,
+                  "name": "Cyclanorbis_elegans__AY259570",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.002539446,
+                          "name": "Cycloderma_aubryi__AY259566",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0003228437,
+                              "name": "Cycloderma_aubryi__FR850655",
+                            },
+                            Object {
+                              "length": 0.0003228437,
+                              "name": "Cycloderma_aubryi__FR850656",
+                            },
+                          ],
+                          "length": 0.002216603,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.1005976,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.103137,
+                      "name": "Cycloderma_frenatum__AY259565",
+                    },
+                  ],
+                  "length": 0.03945279,
+                  "name": "",
+                },
+              ],
+              "length": 0.02282747,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.01782591,
+                  "name": "Cyclanorbis_senegalensis__AY259569",
+                },
+                Object {
+                  "length": 0.01782591,
+                  "name": "Cyclanorbis_senegalensis__FR850654",
+                },
+              ],
+              "length": 0.1475914,
+              "name": "",
+            },
+          ],
+          "length": 0.04159613,
+          "name": "",
+        },
+      ],
+      "length": 0.4591759,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0006036307,
+                  "name": "Nilssonia_formosa__AY259547",
+                },
+                Object {
+                  "length": 0.000603632,
+                  "name": "Nilssonia_formosa__HE801741",
+                },
+              ],
+              "length": 0.001864406,
+              "name": "",
+            },
+            Object {
+              "length": 0.002468037,
+              "name": "Nilssonia_formosa__HE801740",
+            },
+          ],
+          "length": 0.1205457,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AY259549",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00206619,
+                      "name": "Nilssonia_gangetica__AM495208",
+                    },
+                    Object {
+                      "length": 0.002066191,
+                      "name": "Nilssonia_gangetica__AM495209",
+                    },
+                    Object {
+                      "length": 0.00206619,
+                      "name": "Nilssonia_gangetica__AM495210",
+                    },
+                    Object {
+                      "length": 0.00206619,
+                      "name": "Nilssonia_gangetica__AM495211",
+                    },
+                    Object {
+                      "length": 0.002066191,
+                      "name": "Nilssonia_gangetica__HE801743",
+                    },
+                  ],
+                  "length": 0.01314375,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495212",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495213",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495214",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495215",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495216",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__AM495217",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__HE801742",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.002140989,
+                      "name": "Nilssonia_gangetica__HE801744",
+                    },
+                    Object {
+                      "length": 0.002140989,
+                      "name": "Nilssonia_gangetica__HE801745",
+                    },
+                    Object {
+                      "length": 0.002140989,
+                      "name": "Nilssonia_gangetica__HE801746",
+                    },
+                    Object {
+                      "length": 0.002140989,
+                      "name": "Nilssonia_gangetica__HE801747",
+                    },
+                    Object {
+                      "length": 0.002140989,
+                      "name": "Nilssonia_gangetica__HE801748",
+                    },
+                  ],
+                  "length": 0.01306895,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.01520994,
+                  "name": "Nilssonia_gangetica__HE801749",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0002547009,
+                      "name": "Nilssonia_gangetica__HE801750",
+                    },
+                    Object {
+                      "length": 0.0002547008,
+                      "name": "Nilssonia_gangetica__HE801751",
+                    },
+                  ],
+                  "length": 0.01495524,
+                  "name": "",
+                },
+              ],
+              "length": 0.0671974,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.000826796,
+                  "name": "Nilssonia_leithii__AM495225",
+                },
+                Object {
+                  "length": 0.000826796,
+                  "name": "Nilssonia_leithii__AM495226",
+                },
+              ],
+              "length": 0.08158054,
+              "name": "",
+            },
+          ],
+          "length": 0.04060644,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__AY259548",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__AM495218",
+                },
+                Object {
+                  "length": 0.004523896,
+                  "name": "Nilssonia_hurum__AM495219",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__AM495220",
+                },
+                Object {
+                  "length": 0.004523898,
+                  "name": "Nilssonia_hurum__AM495221",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__AM495222",
+                },
+                Object {
+                  "length": 0.004523898,
+                  "name": "Nilssonia_hurum__AM495223",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__AM495224",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__JN232528",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__HE801752",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__HE801753",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__HE801754",
+                },
+                Object {
+                  "length": 0.004523897,
+                  "name": "Nilssonia_hurum__HE801755",
+                },
+                Object {
+                  "length": 0.004523898,
+                  "name": "Nilssonia_hurum__HE801756",
+                },
+              ],
+              "length": 0.09296449,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495227",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495228",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495229",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495230",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495231",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495232",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495233",
+                },
+                Object {
+                  "length": 0.008765094,
+                  "name": "Nilssonia_nigricans__AM495234",
+                },
+                Object {
+                  "length": 0.008765094,
+                  "name": "Nilssonia_nigricans__AM495235",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495236",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__AM495237",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__JN232527",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__HE801757",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__HE801758",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__HE801759",
+                },
+                Object {
+                  "length": 0.008765095,
+                  "name": "Nilssonia_nigricans__HE801760",
+                },
+              ],
+              "length": 0.08872329,
+              "name": "",
+            },
+          ],
+          "length": 0.02552539,
+          "name": "",
+        },
+      ],
+      "length": 0.5431755,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.008250274,
+                              "name": "Acomys_dimidiatus__Z96060",
+                            },
+                            Object {
+                              "length": 0.008250274,
+                              "name": "Acomys_dimidiatus__Z96061",
+                            },
+                          ],
+                          "length": 0.01019246,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01844273,
+                          "name": "Acomys_dimidiatus__Z96062",
+                        },
+                      ],
+                      "length": 0.04876525,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002671683,
+                                  "name": "Acomys_sp___Z96054",
+                                },
+                                Object {
+                                  "length": 0.002671683,
+                                  "name": "Acomys_sp___Z96055",
+                                },
+                              ],
+                              "length": 0.01792975,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02060143,
+                              "name": "Acomys_sp___Z96056",
+                            },
+                          ],
+                          "length": 0.03731852,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01515063,
+                                  "name": "Acomys_sp___Z96057",
+                                },
+                                Object {
+                                  "length": 0.01515063,
+                                  "name": "Acomys_sp___Z96058",
+                                },
+                              ],
+                              "length": 0.01837326,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.03352389,
+                              "name": "Acomys_sp___Z96059",
+                            },
+                          ],
+                          "length": 0.02439606,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.009288039,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.01909469,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.05298915,
+                      "name": "Acomys_cahirinus__Z96051",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01254775,
+                          "name": "Acomys_cahirinus__Z96052",
+                        },
+                        Object {
+                          "length": 0.01254775,
+                          "name": "Acomys_cahirinus__Z96053",
+                        },
+                      ],
+                      "length": 0.0404414,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.03331352,
+                  "name": "",
+                },
+              ],
+              "length": 0.0485019,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.06115234,
+                  "name": "Acomys_ignitus__Z96063",
+                },
+                Object {
+                  "length": 0.06115234,
+                  "name": "Acomys_ignitus__Z96064",
+                },
+              ],
+              "length": 0.07365223,
+              "name": "",
+            },
+          ],
+          "length": 0.02786811,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01524834,
+              "name": "Acomys_russatus__Z96065",
+            },
+            Object {
+              "length": 0.01524834,
+              "name": "Acomys_russatus__Z96066",
+            },
+          ],
+          "length": 0.1474243,
+          "name": "",
+        },
+      ],
+      "length": 0.5035166,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.1650147,
+              "name": "Trionyx_triunguis__AY259564",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.05231457,
+                      "name": "Pelochelys_bibroni__AY259559",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.002632259,
+                          "name": "Pelochelys_cantorii__AY259560",
+                        },
+                        Object {
+                          "length": 0.002632259,
+                          "name": "Pelochelys_cantorii__JN232533",
+                        },
+                      ],
+                      "length": 0.04968231,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.07818566,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.03292959,
+                          "name": "Chitra_chitra__AY259562",
+                        },
+                        Object {
+                          "length": 0.03292959,
+                          "name": "Chitra_vandijki__AY259563",
+                        },
+                      ],
+                      "length": 0.01709534,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01126824,
+                          "name": "Chitra_indica__AY259561",
+                        },
+                        Object {
+                          "length": 0.01126824,
+                          "name": "Chitra_indica__JN232529",
+                        },
+                      ],
+                      "length": 0.03875669,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.0804753,
+                  "name": "",
+                },
+              ],
+              "length": 0.0345145,
+              "name": "",
+            },
+          ],
+          "length": 0.02403075,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.04260347,
+                          "name": "Apalone_spinifera__AY259558",
+                        },
+                        Object {
+                          "length": 0.04260347,
+                          "name": "Apalone_spinifera__AY259557",
+                        },
+                      ],
+                      "length": 0.01484123,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.0574447,
+                      "name": "Apalone_ferox__AY259555",
+                    },
+                  ],
+                  "length": 0.01981093,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.07725564,
+                  "name": "Apalone_mutica__AY259556",
+                },
+              ],
+              "length": 0.07519155,
+              "name": "",
+            },
+            Object {
+              "length": 0.1524472,
+              "name": "Rafetus_euphraticus__AY259554",
+            },
+          ],
+          "length": 0.03659829,
+          "name": "",
+        },
+      ],
+      "length": 0.4771438,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

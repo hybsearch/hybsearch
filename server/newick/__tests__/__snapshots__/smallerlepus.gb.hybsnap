@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`smallerlepus.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "length": 0.3568472,
+      "name": "Lepus_mandshuricus__DQ793161",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001449875,
+                      "name": "Lepus_mandshuricus__HM233091",
+                    },
+                    Object {
+                      "length": 0.001449875,
+                      "name": "Lepus_mandshuricus__HM233090",
+                    },
+                    Object {
+                      "length": 0.001449875,
+                      "name": "Lepus_mandshuricus__HM233089",
+                    },
+                  ],
+                  "length": 0.006809356,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.005605512,
+                      "name": "Lepus_mandshuricus__HM233088",
+                    },
+                    Object {
+                      "length": 0.005605512,
+                      "name": "Lepus_mandshuricus__HM233077",
+                    },
+                  ],
+                  "length": 0.002653719,
+                  "name": "",
+                },
+              ],
+              "length": 0.04181259,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.003181071,
+                  "name": "Lepus_brachyurus__AB058616",
+                },
+                Object {
+                  "length": 0.003181071,
+                  "name": "Lepus_brachyurus__AB058615",
+                },
+              ],
+              "length": 0.04689075,
+              "name": "",
+            },
+          ],
+          "length": 0.01588047,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01076959,
+              "name": "Lepus_mandshuricus__HM233014",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.005252338,
+                  "name": "Lepus_mandshuricus__HM233011",
+                },
+                Object {
+                  "length": 0.005252338,
+                  "name": "Lepus_mandshuricus__HM233010",
+                },
+              ],
+              "length": 0.005517253,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.000903708,
+                          "name": "Lepus_mandshuricus__HM232996",
+                        },
+                        Object {
+                          "length": 0.0009037082,
+                          "name": "Lepus_mandshuricus__HM232995",
+                        },
+                        Object {
+                          "length": 0.000903708,
+                          "name": "Lepus_mandshuricus__HM232994",
+                        },
+                        Object {
+                          "length": 0.0009037082,
+                          "name": "Lepus_mandshuricus__HM232993",
+                        },
+                        Object {
+                          "length": 0.000903708,
+                          "name": "Lepus_mandshuricus__HM232992",
+                        },
+                      ],
+                      "length": 0.002267291,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.003170999,
+                      "name": "Lepus_mandshuricus__HM232991",
+                    },
+                  ],
+                  "length": 0.002991456,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0006094135,
+                          "name": "Lepus_timidus__AB687530",
+                        },
+                        Object {
+                          "length": 0.0006094135,
+                          "name": "Lepus_timidus__AB687529",
+                        },
+                      ],
+                      "length": 0.001923166,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.002532579,
+                      "name": "Lepus_timidus__AB687528",
+                    },
+                    Object {
+                      "length": 0.002532579,
+                      "name": "Lepus_timidus__AB687527",
+                    },
+                    Object {
+                      "length": 0.002532579,
+                      "name": "Lepus_timidus__AB687526",
+                    },
+                    Object {
+                      "length": 0.002532579,
+                      "name": "Lepus_timidus__AB687525",
+                    },
+                  ],
+                  "length": 0.003629876,
+                  "name": "",
+                },
+              ],
+              "length": 0.004607135,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001796701,
+                      "name": "Lepus_timidus__AB058607",
+                    },
+                    Object {
+                      "length": 0.001796701,
+                      "name": "Lepus_timidus__AB687524",
+                    },
+                  ],
+                  "length": 0.005497395,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001472072,
+                          "name": "Lepus_coreanus__AB687534",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0004868228,
+                              "name": "Lepus_coreanus__AB687533",
+                            },
+                            Object {
+                              "length": 0.0004868228,
+                              "name": "Lepus_coreanus__AB687532",
+                            },
+                          ],
+                          "length": 0.0009852487,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.001267909,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.00273998,
+                      "name": "Lepus_coreanus__AB687531",
+                    },
+                  ],
+                  "length": 0.004554116,
+                  "name": "",
+                },
+              ],
+              "length": 0.003475495,
+              "name": "",
+            },
+          ],
+          "length": 0.0551827,
+          "name": "",
+        },
+      ],
+      "length": 0.2908949,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

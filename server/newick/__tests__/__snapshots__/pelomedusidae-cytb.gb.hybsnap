@@ -1,0 +1,793 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pelomedusidae-cytb.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230267",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230266",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230265",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230264",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230263",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230262",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230261",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230260",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230259",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230258",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230257",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230256",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230255",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230254",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230253",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230251",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230250",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230249",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230248",
+                        },
+                        Object {
+                          "length": 0.08253433,
+                          "name": "Pelusios_subniger__HQ230247",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230246",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230245",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HQ230244",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980016",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980015",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980014",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980013",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980012",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980011",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980010",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980009",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980008",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980007",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980006",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980005",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980004",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980003",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980002",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980001",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE980000",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979999",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979998",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979997",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979996",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979995",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979994",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979993",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979992",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979991",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__HE979990",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__FR716939",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__FR716941",
+                        },
+                        Object {
+                          "length": 0.08253432,
+                          "name": "Pelusios_subniger__FR716940",
+                        },
+                      ],
+                      "length": 0.3533537,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.009479183,
+                          "name": "Pelusios_subniger__HE979989",
+                        },
+                        Object {
+                          "length": 0.009479183,
+                          "name": "Pelusios_subniger__HE979988",
+                        },
+                      ],
+                      "length": 0.4264089,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1720422,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01198948,
+                          "name": "Pelusios_upembae__FR716944",
+                        },
+                        Object {
+                          "length": 0.01198948,
+                          "name": "Pelusios_upembae__FR716943",
+                        },
+                        Object {
+                          "length": 0.01198948,
+                          "name": "Pelusios_upembae__FR716942",
+                        },
+                      ],
+                      "length": 0.1676853,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.03463224,
+                          "name": "Pelusios_bechuanicus__FR716895",
+                        },
+                        Object {
+                          "length": 0.03463224,
+                          "name": "Pelusios_bechuanicus__FR716894",
+                        },
+                      ],
+                      "length": 0.1450425,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.4282555,
+                  "name": "",
+                },
+              ],
+              "length": 0.2737028,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.02819145,
+                  "name": "Pelusios_marani__JQ352045",
+                },
+                Object {
+                  "length": 0.02819144,
+                  "name": "Pelusios_marani__JQ352044",
+                },
+                Object {
+                  "length": 0.02819144,
+                  "name": "Pelusios_marani__JQ352043",
+                },
+                Object {
+                  "length": 0.02819144,
+                  "name": "Pelusios_marani__JQ352042",
+                },
+                Object {
+                  "length": 0.02819145,
+                  "name": "Pelusios_marani__FR716928",
+                },
+              ],
+              "length": 0.8534416,
+              "name": "",
+            },
+          ],
+          "length": 0.05404952,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.008883533,
+              "name": "Pelusios_sinuatus__FR716938",
+            },
+            Object {
+              "length": 0.008883533,
+              "name": "Pelusios_sinuatus__FR716937",
+            },
+          ],
+          "length": 0.926799,
+          "name": "",
+        },
+      ],
+      "length": 0.1005649,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__HQ230307",
+                            },
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__HQ230306",
+                            },
+                            Object {
+                              "length": 0.02590522,
+                              "name": "Pelusios_castanoides__HE979987",
+                            },
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__HE979986",
+                            },
+                            Object {
+                              "length": 0.02590522,
+                              "name": "Pelusios_castanoides__HE979985",
+                            },
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__FR716918",
+                            },
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__FR716917",
+                            },
+                            Object {
+                              "length": 0.02590523,
+                              "name": "Pelusios_castanoides__FR716916",
+                            },
+                          ],
+                          "length": 0.05306386,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230302",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230301",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230300",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230298",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230297",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230296",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230295",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230294",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230293",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230292",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230291",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230290",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230289",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230288",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230287",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230286",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230285",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230284",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230283",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230281",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230280",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230279",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230278",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230277",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230276",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230275",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230274",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230273",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230272",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230271",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230270",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230269",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HQ230268",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__HE979984",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__FR716921",
+                        },
+                        Object {
+                          "length": 0.07896909,
+                          "name": "Pelusios_castanoides__FR716920",
+                        },
+                      ],
+                      "length": 0.08819176,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__HE979983",
+                        },
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__HE979982",
+                        },
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__HE979981",
+                        },
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__HE979980",
+                        },
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__HE979979",
+                        },
+                        Object {
+                          "length": 0.02339335,
+                          "name": "Pelusios_castanoides__FR716919",
+                        },
+                      ],
+                      "length": 0.1437675,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.1671608,
+                      "name": "Pelusios_castanoides__JQ352039",
+                    },
+                  ],
+                  "length": 0.7561876,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__JQ352038",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__JQ352037",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__FR716900",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__FR716899",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__FR716898",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__FR716897",
+                        },
+                        Object {
+                          "length": 0.01445807,
+                          "name": "Pelusios_broadleyi__FR716896",
+                        },
+                      ],
+                      "length": 0.6096374,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.09066025,
+                                  "name": "Pelusios_chapini__FR716922",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.001896951,
+                                      "name": "Pelusios_castaneus__FR716915",
+                                    },
+                                    Object {
+                                      "length": 0.001896951,
+                                      "name": "Pelusios_castaneus__FR716914",
+                                    },
+                                  ],
+                                  "length": 0.0887633,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.04099251,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01157098,
+                                  "name": "Pelusios_castaneus__FR716905",
+                                },
+                                Object {
+                                  "length": 0.01157098,
+                                  "name": "Pelusios_castaneus__FR716904",
+                                },
+                              ],
+                              "length": 0.1200818,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.04717975,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.1193662,
+                              "name": "Pelusios_castaneus__FR716913",
+                            },
+                            Object {
+                              "length": 0.1193662,
+                              "name": "Pelusios_castaneus__FR716912",
+                            },
+                          ],
+                          "length": 0.05946633,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.445263,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.299253,
+                  "name": "",
+                },
+              ],
+              "length": 0.01839842,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.150766,
+                      "name": "Pelusios_rhodesianus__FR716936",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0789008,
+                          "name": "Pelusios_carinatus__FR716903",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01855907,
+                              "name": "Pelusios_carinatus__FR716902",
+                            },
+                            Object {
+                              "length": 0.01855907,
+                              "name": "Pelusios_carinatus__FR716901",
+                            },
+                          ],
+                          "length": 0.06034173,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.07186517,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1725145,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.3232805,
+                  "name": "Pelusios_rhodesianus__FR716935",
+                },
+              ],
+              "length": 0.6184664,
+              "name": "",
+            },
+          ],
+          "length": 0.08202459,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.00843931,
+                  "name": "Pelusios_gabonensis__JQ352041",
+                },
+                Object {
+                  "length": 0.00843931,
+                  "name": "Pelusios_gabonensis__FR716927",
+                },
+              ],
+              "length": 0.0145043,
+              "name": "",
+            },
+            Object {
+              "length": 0.02294361,
+              "name": "Pelusios_gabonensis__JQ352040",
+            },
+          ],
+          "length": 1.000828,
+          "name": "",
+        },
+        Object {
+          "length": 1.023771,
+          "name": "Pelusios_nanus__FR716929",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.03012658,
+              "name": "Pelusios_cupulatta__FR716926",
+            },
+            Object {
+              "length": 0.03012658,
+              "name": "Pelusios_cupulatta__FR716925",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.008779736,
+                  "name": "Pelusios_cupulatta__FR716924",
+                },
+                Object {
+                  "length": 0.008779738,
+                  "name": "Pelusios_cupulatta__FR716923",
+                },
+              ],
+              "length": 0.02134685,
+              "name": "",
+            },
+          ],
+          "length": 0.9936449,
+          "name": "",
+        },
+      ],
+      "length": 0.01247601,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

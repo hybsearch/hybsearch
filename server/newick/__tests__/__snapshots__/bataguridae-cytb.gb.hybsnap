@@ -1,0 +1,1149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bataguridae-cytb.gb 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "length": 0.6274501,
+      "name": "Geoclemys_hamiltonii__EF558365",
+    },
+    Object {
+      "length": 0.6274501,
+      "name": "Batagur_kachuga__EF558362",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01262844,
+          "name": "Batagur_dhongoka__AY434569",
+        },
+        Object {
+          "length": 0.01262844,
+          "name": "Batagur_dhongoka__AM495283",
+        },
+        Object {
+          "length": 0.01262844,
+          "name": "Batagur_dhongoka__AM495282",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001885782,
+              "name": "Batagur_dhongoka__AM495281",
+            },
+            Object {
+              "length": 0.001885782,
+              "name": "Batagur_dhongoka__AJ564452",
+            },
+          ],
+          "length": 0.01074266,
+          "name": "",
+        },
+      ],
+      "length": 0.6148216,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001794997,
+              "name": "Morenia_ocellata__AY434605",
+            },
+            Object {
+              "length": 0.001794997,
+              "name": "Morenia_ocellata__JN860667",
+            },
+          ],
+          "length": 0.04689369,
+          "name": "",
+        },
+        Object {
+          "length": 0.04868868,
+          "name": "Morenia_petersi__JN202621",
+        },
+      ],
+      "length": 0.5787614,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.00783672,
+              "name": "Batagur_trivittata__EU030216",
+            },
+            Object {
+              "length": 0.00783672,
+              "name": "Batagur_trivittata__AM691758",
+            },
+          ],
+          "length": 0.1319105,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.009515908,
+              "name": "Batagur_borneoensis__AY434601",
+            },
+            Object {
+              "length": 0.009515908,
+              "name": "Batagur_borneoensis__AM691757",
+            },
+            Object {
+              "length": 0.00951591,
+              "name": "Batagur_borneoensis__AM691756",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.000879449,
+                  "name": "Batagur_borneoensis__AM691755",
+                },
+                Object {
+                  "length": 0.0008794482,
+                  "name": "Batagur_borneoensis__AM495270",
+                },
+              ],
+              "length": 0.008636461,
+              "name": "",
+            },
+          ],
+          "length": 0.1302313,
+          "name": "",
+        },
+      ],
+      "length": 0.4877029,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.002427194,
+              "name": "Hardella_thurjii__AY434603",
+            },
+            Object {
+              "length": 0.002427193,
+              "name": "Hardella_thurjii__AM495274",
+            },
+            Object {
+              "length": 0.002427196,
+              "name": "Hardella_thurjii__AM495273",
+            },
+            Object {
+              "length": 0.002427194,
+              "name": "Hardella_thurjii__AM495271",
+            },
+          ],
+          "length": 0.008153588,
+          "name": "",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495280",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495279",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495278",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495277",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495275",
+        },
+        Object {
+          "length": 0.01058078,
+          "name": "Hardella_thurjii__AM495272",
+        },
+      ],
+      "length": 0.6168693,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_tentoria__AY434612",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AY434610",
+                    },
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_tentoria__JN232523",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.004383127,
+                          "name": "Pangshura_tentoria__JN232522",
+                        },
+                        Object {
+                          "length": 0.004383126,
+                          "name": "Pangshura_tentoria__AM495315",
+                        },
+                        Object {
+                          "length": 0.004383126,
+                          "name": "Pangshura_tentoria__AM495314",
+                        },
+                        Object {
+                          "length": 0.004383126,
+                          "name": "Pangshura_tentoria__AM495313",
+                        },
+                        Object {
+                          "length": 0.004383125,
+                          "name": "Pangshura_tentoria__AM495312",
+                        },
+                      ],
+                      "length": 0.02270743,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_smithii__AM495294",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002251383,
+                              "name": "Pangshura_tentoria__AM495320",
+                            },
+                            Object {
+                              "length": 0.002251383,
+                              "name": "Pangshura_tentoria__AM495319",
+                            },
+                            Object {
+                              "length": 0.002251383,
+                              "name": "Pangshura_tentoria__AM495316",
+                            },
+                          ],
+                          "length": 0.004645048,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.00689643,
+                          "name": "Pangshura_tentoria__AM495318",
+                        },
+                        Object {
+                          "length": 0.006896432,
+                          "name": "Pangshura_tentoria__AM495317",
+                        },
+                        Object {
+                          "length": 0.006896432,
+                          "name": "Pangshura_tentoria__AM495322",
+                        },
+                        Object {
+                          "length": 0.006896431,
+                          "name": "Pangshura_tentoria__AM495321",
+                        },
+                      ],
+                      "length": 0.02019412,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_tentoria__AM495311",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495310",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495309",
+                    },
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_tentoria__AM495308",
+                    },
+                    Object {
+                      "length": 0.02709056,
+                      "name": "Pangshura_tentoria__AM495327",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495326",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495325",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495324",
+                    },
+                    Object {
+                      "length": 0.02709055,
+                      "name": "Pangshura_tentoria__AM495323",
+                    },
+                  ],
+                  "length": 0.09957464,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.002883938,
+                          "name": "Pangshura_smithii__AY434589",
+                        },
+                        Object {
+                          "length": 0.002883939,
+                          "name": "Pangshura_smithii__AM495288",
+                        },
+                      ],
+                      "length": 0.01213979,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001206582,
+                          "name": "Pangshura_smithii__JN232521",
+                        },
+                        Object {
+                          "length": 0.001206581,
+                          "name": "Pangshura_smithii__AM495289",
+                        },
+                      ],
+                      "length": 0.01381715,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_smithii__AM495295",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_smithii__AM495293",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_smithii__AM495292",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_smithii__AM495291",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_smithii__AM495290",
+                    },
+                    Object {
+                      "length": 0.01502373,
+                      "name": "Pangshura_tentoria__AM495328",
+                    },
+                  ],
+                  "length": 0.1116415,
+                  "name": "",
+                },
+              ],
+              "length": 0.02091708,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.01117394,
+                      "name": "Pangshura_tecta__AY434583",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001203194,
+                              "name": "Pangshura_tecta__JN232520",
+                            },
+                            Object {
+                              "length": 0.001203194,
+                              "name": "Pangshura_tecta__AM495307",
+                            },
+                          ],
+                          "length": 0.004353324,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.005556518,
+                          "name": "Pangshura_tecta__AM495306",
+                        },
+                      ],
+                      "length": 0.005617424,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.01117394,
+                      "name": "Pangshura_tecta__AM495305",
+                    },
+                  ],
+                  "length": 0.01037151,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0007774453,
+                          "name": "Pangshura_tecta__AM495304",
+                        },
+                        Object {
+                          "length": 0.0007774453,
+                          "name": "Pangshura_tecta__AM495302",
+                        },
+                      ],
+                      "length": 0.005918891,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.006696337,
+                      "name": "Pangshura_tecta__AM495303",
+                    },
+                    Object {
+                      "length": 0.006696337,
+                      "name": "Pangshura_tecta__AM495301",
+                    },
+                  ],
+                  "length": 0.01484912,
+                  "name": "",
+                },
+              ],
+              "length": 0.1260368,
+              "name": "",
+            },
+          ],
+          "length": 0.1253431,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0008089293,
+                      "name": "Pangshura_sylhetensis__JN232519",
+                    },
+                    Object {
+                      "length": 0.0008089307,
+                      "name": "Pangshura_sylhetensis__AM495298",
+                    },
+                  ],
+                  "length": 0.004983898,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.005792828,
+                  "name": "Pangshura_sylhetensis__AM495297",
+                },
+              ],
+              "length": 0.009752304,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002631239,
+                  "name": "Pangshura_sylhetensis__AM495296",
+                },
+                Object {
+                  "length": 0.002631239,
+                  "name": "Pangshura_sylhetensis__AM495300",
+                },
+                Object {
+                  "length": 0.002631239,
+                  "name": "Pangshura_sylhetensis__AM495299",
+                },
+              ],
+              "length": 0.01291389,
+              "name": "",
+            },
+          ],
+          "length": 0.2573802,
+          "name": "",
+        },
+      ],
+      "length": 0.3545247,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01464879,
+              "name": "Batagur_kachuga__EU030215",
+            },
+            Object {
+              "length": 0.01464879,
+              "name": "Batagur_kachuga__AM495287",
+            },
+            Object {
+              "length": 0.01464879,
+              "name": "Batagur_kachuga__AM495286",
+            },
+            Object {
+              "length": 0.01464879,
+              "name": "Batagur_kachuga__AM495285",
+            },
+            Object {
+              "length": 0.01464879,
+              "name": "Batagur_kachuga__AM495284",
+            },
+          ],
+          "length": 0.179098,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.009596178,
+                      "name": "Batagur_affinis__AY434600",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__AM691754",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__AM691753",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__AM691752",
+                    },
+                    Object {
+                      "length": 0.009596178,
+                      "name": "Batagur_affinis__AM691751",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__AM691750",
+                    },
+                    Object {
+                      "length": 0.00959618,
+                      "name": "Batagur_affinis__FN313570",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__FN313569",
+                    },
+                    Object {
+                      "length": 0.009596179,
+                      "name": "Batagur_affinis__FN313568",
+                    },
+                  ],
+                  "length": 0.06508278,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256237",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256236",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256235",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256234",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256233",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256232",
+                    },
+                    Object {
+                      "length": 0.008390723,
+                      "name": "Batagur_sp___FN256231",
+                    },
+                  ],
+                  "length": 0.06628823,
+                  "name": "",
+                },
+              ],
+              "length": 0.04224478,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.006034326,
+                  "name": "Batagur_baska__FN313567",
+                },
+                Object {
+                  "length": 0.006034325,
+                  "name": "Batagur_baska__AM495269",
+                },
+                Object {
+                  "length": 0.006034325,
+                  "name": "Batagur_baska__AM495268",
+                },
+                Object {
+                  "length": 0.006034325,
+                  "name": "Batagur_baska__AM495267",
+                },
+              ],
+              "length": 0.1108894,
+              "name": "",
+            },
+          ],
+          "length": 0.0768231,
+          "name": "",
+        },
+      ],
+      "length": 0.4337033,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001098755,
+              "name": "Geoclemys_hamiltonii__AY434573",
+            },
+            Object {
+              "length": 0.001098755,
+              "name": "Geoclemys_hamiltonii__JN232526",
+            },
+          ],
+          "length": 0.2461546,
+          "name": "",
+        },
+        Object {
+          "length": 0.2472534,
+          "name": "Geoclemys_hamiltonii__JN860644",
+        },
+      ],
+      "length": 0.3801967,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.3604019,
+                  "name": "Orlitia_borneensis__AY434619",
+                },
+                Object {
+                  "length": 0.3604019,
+                  "name": "Orlitia_borneensis__AJ564464",
+                },
+              ],
+              "length": 0.026374,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__AY434591",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.007874377,
+                          "name": "Malayemys_subtrijuga__KU848668",
+                        },
+                        Object {
+                          "length": 0.007874377,
+                          "name": "Malayemys_subtrijuga__KU848630",
+                        },
+                        Object {
+                          "length": 0.007874377,
+                          "name": "Malayemys_subtrijuga__KU848623",
+                        },
+                        Object {
+                          "length": 0.007874378,
+                          "name": "Malayemys_subtrijuga__KU848615",
+                        },
+                        Object {
+                          "length": 0.007874377,
+                          "name": "Malayemys_subtrijuga__KU848595",
+                        },
+                        Object {
+                          "length": 0.007874377,
+                          "name": "Malayemys_subtrijuga__KU848583",
+                        },
+                      ],
+                      "length": 0.05515042,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848667",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848665",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848654",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848653",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001985183,
+                              "name": "Malayemys_macrocephala__KU848649",
+                            },
+                            Object {
+                              "length": 0.001985184,
+                              "name": "Malayemys_macrocephala__KU848621",
+                            },
+                            Object {
+                              "length": 0.001985185,
+                              "name": "Malayemys_macrocephala__KU848605",
+                            },
+                          ],
+                          "length": 0.01711852,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848648",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848646",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848645",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_subtrijuga__KU848643",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848641",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848618",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848613",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848610",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848604",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848601",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848598",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848594",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848591",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848590",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848586",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848585",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848584",
+                        },
+                        Object {
+                          "length": 0.0191037,
+                          "name": "Malayemys_macrocephala__KU848580",
+                        },
+                      ],
+                      "length": 0.0439211,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848666",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.00191146,
+                          "name": "Malayemys_subtrijuga__KU848664",
+                        },
+                        Object {
+                          "length": 0.001911461,
+                          "name": "Malayemys_subtrijuga__KU848629",
+                        },
+                      ],
+                      "length": 0.06111334,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848663",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848662",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848661",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848660",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848659",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848658",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848657",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848655",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848647",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848642",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848640",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848639",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.009592158,
+                          "name": "Malayemys_macrocephala__KU848638",
+                        },
+                        Object {
+                          "length": 0.009592159,
+                          "name": "Malayemys_macrocephala__KU848637",
+                        },
+                        Object {
+                          "length": 0.009592159,
+                          "name": "Malayemys_macrocephala__KU848622",
+                        },
+                        Object {
+                          "length": 0.009592158,
+                          "name": "Malayemys_macrocephala__KU848592",
+                        },
+                        Object {
+                          "length": 0.009592158,
+                          "name": "Malayemys_macrocephala__KU848588",
+                        },
+                        Object {
+                          "length": 0.009592157,
+                          "name": "Malayemys_macrocephala__KU848581",
+                        },
+                        Object {
+                          "length": 0.009592159,
+                          "name": "Malayemys_subtrijuga__AJ519502",
+                        },
+                      ],
+                      "length": 0.05343264,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848634",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848633",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848631",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848628",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848627",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848626",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848624",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848619",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848617",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848616",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848609",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848608",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848607",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848606",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848603",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848600",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848599",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848597",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_subtrijuga__KU848596",
+                    },
+                    Object {
+                      "length": 0.0630248,
+                      "name": "Malayemys_macrocephala__KU848589",
+                    },
+                  ],
+                  "length": 0.228835,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01267804,
+                          "name": "Malayemys_khoratensis__KU848656",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003816423,
+                              "name": "Malayemys_khoratensis__KU848651",
+                            },
+                            Object {
+                              "length": 0.003816423,
+                              "name": "Malayemys_macrocephala__KU848636",
+                            },
+                            Object {
+                              "length": 0.003816423,
+                              "name": "Malayemys_khoratensis__KU848620",
+                            },
+                            Object {
+                              "length": 0.003816423,
+                              "name": "Malayemys_khoratensis__KU848614",
+                            },
+                            Object {
+                              "length": 0.003816423,
+                              "name": "Malayemys_macrocephala__KU848612",
+                            },
+                            Object {
+                              "length": 0.003816422,
+                              "name": "Malayemys_khoratensis__KU848582",
+                            },
+                          ],
+                          "length": 0.008861621,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01267804,
+                          "name": "Malayemys_khoratensis__KU848644",
+                        },
+                        Object {
+                          "length": 0.01267804,
+                          "name": "Malayemys_khoratensis__KU848625",
+                        },
+                        Object {
+                          "length": 0.01267804,
+                          "name": "Malayemys_khoratensis__KU848602",
+                        },
+                        Object {
+                          "length": 0.01267804,
+                          "name": "Malayemys_khoratensis__KU848593",
+                        },
+                      ],
+                      "length": 0.02204482,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002090293,
+                                  "name": "Malayemys_khoratensis__KU848652",
+                                },
+                                Object {
+                                  "length": 0.002090293,
+                                  "name": "Malayemys_khoratensis__KU848611",
+                                },
+                              ],
+                              "length": 0.007849967,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.00994026,
+                              "name": "Malayemys_khoratensis__KU848632",
+                            },
+                            Object {
+                              "length": 0.00994026,
+                              "name": "Malayemys_subtrijuga__JN860669",
+                            },
+                          ],
+                          "length": 0.01028175,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01026626,
+                              "name": "Malayemys_khoratensis__KU848650",
+                            },
+                            Object {
+                              "length": 0.01026626,
+                              "name": "Malayemys_khoratensis__KU848635",
+                            },
+                            Object {
+                              "length": 0.01026626,
+                              "name": "Malayemys_khoratensis__KU848587",
+                            },
+                          ],
+                          "length": 0.009955755,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02022201,
+                          "name": "Malayemys_subtrijuga__JN860668",
+                        },
+                      ],
+                      "length": 0.01450085,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.2571369,
+                  "name": "",
+                },
+              ],
+              "length": 0.09491614,
+              "name": "",
+            },
+          ],
+          "length": 0.05800622,
+          "name": "",
+        },
+        Object {
+          "length": 0.4447821,
+          "name": "Ocadia_philippeni__AY434582",
+        },
+      ],
+      "length": 0.182668,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
