@@ -11,6 +11,7 @@ const blacklist = ['bataguridae-cytb.gb']
 const files = fs
 	.readdirSync(base)
 	.filter(name => !name.startsWith('.') && !name.startsWith('_'))
+	.filter(name => name.endsWith('.gb'))
 	.filter(name => !blacklist.includes(name))
 
 for (const file of files) {
