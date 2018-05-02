@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`emydura-short-diff.fasta (unpruned) 1`] = `
+exports[`emydura-short.gb (pruned) 1`] = `
 Array [
   "Emydura_subglobosa (KC755190) / Emydura_tanybaraga (KC755187)",
 ]

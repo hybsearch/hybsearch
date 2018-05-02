@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`emydura.gb (unpruned) 1`] = `
+exports[`emydura.gb (pruned) 1`] = `
 Array [
   "Emydura_subglobosa (KC755184) / Emydura_tanybaraga (KC755187)",
 ]

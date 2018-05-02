@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`plaamyd.gb (unpruned) 1`] = `
+exports[`plaamyd.gb (pruned) 1`] = `
 Array [
   "Amyda_cartilaginea (LM537476) / Palea_steindachneri (AY743417)",
   "Amyda_cartilaginea (LM537467) / Amyda_ornata (LM537478)",

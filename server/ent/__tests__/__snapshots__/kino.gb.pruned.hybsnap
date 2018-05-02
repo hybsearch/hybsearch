@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`kino.gb (unpruned) 1`] = `
+exports[`kino.gb (pruned) 1`] = `
 Array [
   "Kinosternon_scorpioides (KF301387) / Kinosternon_oaxacae (KF301384)",
   "Kinosternon_subrubrum (KF301390) / Kinosternon_baurii (KF301371)",

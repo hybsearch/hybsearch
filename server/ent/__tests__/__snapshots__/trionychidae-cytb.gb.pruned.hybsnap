@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`trionychidae-cytb.gb (unpruned) 1`] = `
+exports[`trionychidae-cytb.gb (pruned) 1`] = `
 Array [
   "Amyda_ornata (LM537482) / Amyda_cartilaginea (LM537464)",
   "Amyda_ornata (LM537490) / Amyda_cartilaginea (LM537463)",

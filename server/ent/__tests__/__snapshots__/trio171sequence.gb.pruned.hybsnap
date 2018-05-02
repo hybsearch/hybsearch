@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`plaamyd.gb (unpruned) 1`] = `
+exports[`trio171sequence.gb (pruned) 1`] = `
 Array [
   "Amyda_cartilaginea (LM537476) / Palea_steindachneri (AY743417)",
   "Amyda_cartilaginea (LM537467) / Amyda_ornata (LM537478)",
   "Amyda_ornata (LM537482) / Amyda_cartilaginea (LM537464)",
   "Amyda_ornata (LM537490) / Amyda_cartilaginea (LM537463)",
   "Amyda_cartilaginea (LM537483) / Amyda_ornata (LM537462)",
-  "Palea_steindachneri (AY259552) / Amyda_cartilaginea (LM537494)",
+  "Pelodiscus_sp_ (FM999013) / Pelodiscus_sinensis (AB904726)",
+  "Pelodiscus_sinensis (AB904727) / Pelodiscus_sp_ (FM999012)",
+  "Palea_steindachneri (AY259552) / Nilssonia_nigricans (AM495232)",
 ]
 `;

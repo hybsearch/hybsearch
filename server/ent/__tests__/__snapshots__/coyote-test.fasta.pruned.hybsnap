@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`coyote-test.fasta (unpruned) 1`] = `
+exports[`coyote-test.fasta (pruned) 1`] = `
 Array [
   "Canis_lupus (AF115697) / Canis_latrans (EU400578)",
 ]

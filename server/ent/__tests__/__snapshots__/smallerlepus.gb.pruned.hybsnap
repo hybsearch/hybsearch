@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`smallerlepus.gb (unpruned) 1`] = `
+exports[`smallerlepus.gb (pruned) 1`] = `
 Array [
   "Lepus_mandshuricus (HM233014) / Lepus_timidus (AB687525)",
   "Lepus_timidus (AB687524) / Lepus_mandshuricus (HM232991)",
