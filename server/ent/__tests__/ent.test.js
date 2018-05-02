@@ -9,7 +9,7 @@ const path = require('path')
 const cloneDeep = require('lodash/cloneDeep')
 
 const base = path.join(__dirname, '..', '..', '..', 'data', '__supporting__')
-const blacklist = ['bataguridae-cytb.gb']
+const blacklist = ['bataguridae-cytb.gb', 'trionychcytb.gb']
 const files = fs
 	.readdirSync(base)
 	.filter(name => !name.startsWith('.') && !name.startsWith('_'))
