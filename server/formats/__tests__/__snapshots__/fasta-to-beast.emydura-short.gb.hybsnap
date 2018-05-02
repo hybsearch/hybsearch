@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`emydura-short.fasta 1`] = `
+exports[`emydura-short.gb 1`] = `
 "<?xml version=\\"1.0\\" encoding=\\"UTF-8\\" standalone=\\"no\\"?>
 <beast beautitemplate='StarBeast' beautistatus='' namespace=\\"beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood\\" required=\\"\\" version=\\"2.4\\">
 
