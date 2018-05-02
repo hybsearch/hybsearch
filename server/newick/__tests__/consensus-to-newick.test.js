@@ -1,4 +1,5 @@
 /* eslint-env jest */
+require('jest-specific-snapshot')
 
 const consensusToNewick = require('../consensus-to-newick')
 const fs = require('fs')
@@ -12,7 +13,7 @@ describe('trees from MrBayes', () => {
 		test(file, () => {
 			const content = fs.readFileSync(path.join(base, file), 'utf-8')
 			const tree = consensusToNewick(content)
-			expect(tree).toMatchSnapshot()
+			expect(tree).toMatchSpecificSnapshot(path.join('.', '__snapshots__', file + '.hybsnap'))
 		})
 	}
 })
@@ -25,7 +26,7 @@ describe('trees from BEAST', () => {
 		test(file, () => {
 			const content = fs.readFileSync(path.join(base, file), 'utf-8')
 			const tree = consensusToNewick(content)
-			expect(tree).toMatchSnapshot()
+			expect(tree).toMatchSpecificSnapshot(path.join('.', '__snapshots__', file + '.hybsnap'))
 		})
 	}
 })
