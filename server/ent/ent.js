@@ -169,9 +169,15 @@ function strictSearchHelper(node, nmInstances = []) {
 	// Remove individuals after being flagged for inner nm, to prevent
 	// unnecessary repeated nm findings
 	if (node.name && !node.ident) {
-		let splitted = node.name.split(LABEL_DIVIDER)
-		node.name = splitted[0]
-		node.ident = splitted[1]
+		// we used to just do `node.name.split(LABEL_DIVIDER)`, but
+		// then we got identifiers like "Pelodiscus_sp___FM999014",
+		// which with up with ["Pelodiscus_sp", "_FM999014"], instead
+		// of ["Pelodiscus_sp_", "FM999014"]
+		let splitStartAt = node.name.lastIndexOf('__')
+		let name = node.name.substr(0, splitStartAt)
+		let ident = node.name.substr(splitStartAt + 2)
+		node.name = name
+		node.ident = ident
 	}
 
 	if (node.branchset) {
