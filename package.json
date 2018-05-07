@@ -1,7 +1,7 @@
 {
   "name": "@hybsearch/hybsearch",
   "private": true,
-  "version": "4.0.0-beta.16",
+  "version": "4.0.0-beta.17",
   "description": "Find nonmonophyly in genetic sequences",
   "repository": "hybsearch/hybsearch",
   "homepage": "https://hybsearch.github.io/",
@@ -37,7 +37,7 @@
     "eslint-plugin-import": "^2.11.0",
     "expect": "^22.4.3",
     "jest": "^22.4.3",
-    "parcel-bundler": "^1.7.0",
-    "prettier": "^1.12.0"
+    "parcel-bundler": "^1.7.1",
+    "prettier": "^1.12.1"
   }
 }
