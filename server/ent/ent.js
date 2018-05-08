@@ -83,14 +83,14 @@ function recursiveSearch(node, nmInstances = []) {
 				if (hasName && notAllEqual) {
 					otherSpeciesList.forEach(species3 => {
 						if (species3.name === species1.name) {
-							const pairCheck = pair => isEqual(pair.pair, [species3, species3])
+							const pairCheck = pair => isEqual(pair, [species3, species3])
 							const count = nmInstances.filter(pairCheck).length
 
 							if (!count) {
 								debug(`nmMark called on ${species3} and ${species3}`)
 								debug(`nonmonophyly: ${label(species3)} / ${label(species3)}`)
 
-								nmInstances.push({ pair: [species3, species3], node: node })
+								nmInstances.push([species3, species3])
 
 								forRemoval.push(species3.ident)
 								debug(`removing from A ${label(species3)}`)
@@ -122,5 +122,5 @@ function recursiveSearch(node, nmInstances = []) {
 module.exports.formatData = formatData
 function formatData(results) {
 	const { nm: nmlist } = results
-	return nmlist.map(pair => pair.pair.map(label).join(' / ')).join('\n')
+	return nmlist.map(pair => pair.map(label).join(' / ')).join('\n')
 }
