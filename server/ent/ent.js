@@ -122,8 +122,5 @@ function recursiveSearch(node, nmInstances = []) {
 module.exports.formatData = formatData
 function formatData(results) {
 	const { nm: nmlist } = results
-	// prettier-ignore
-	return nmlist
-		.map(pair => pair.map(label).join(' / '))
-		.join('\n')
+	return nmlist.map(pair => pair.pair.map(label).join(' / ')).join('\n')
 }
