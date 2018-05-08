@@ -5,6 +5,7 @@ let electron = require('electron')
 let path = require('path')
 
 let app
+/*
 beforeEach(async () => {
 	app = new Application({
 		path: electron,
@@ -16,8 +17,9 @@ beforeEach(async () => {
 afterEach(async () => {
 	;(await app.isRunning()) && (await app.stop())
 })
+*/
 
-test('verify a visible window is opened with a title', async () => {
+xtest('verify a visible window is opened with a title', async () => {
 	// Check if the window is visible
 	expect(await app.browserWindow.isVisible()).toBe(true)
 
