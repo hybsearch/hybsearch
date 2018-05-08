@@ -2,7 +2,6 @@
 
 const { buildFasta } = require('./fasta/build')
 const wrap = require('wordwrap')
-const take = require('lodash/take')
 
 function* parseGenbankEntry(data) {
 	let current = ''
@@ -55,7 +54,8 @@ function genbankEntryToObject(data) {
 
 const genbankEntryToFasta = entry => {
 	// We only want the first two words in the ORGANISM field
-	let species = take(entry.ORGANISM.split(' '), 2).join(' ')
+	let species = entry.__prettyOrganism
+
 	// Genbank (or some tool) doesn't like spaces in the names
 	species = species.replace(/[^a-z0-9]/gi, '_')
 
@@ -85,9 +85,23 @@ function genbankToFasta(genbankFile) {
 	const entryObjects = entries.map(genbankEntryToObject)
 
 	// prevent empty objects ("entries") from making it to the final file
-	const actualEntries = entryObjects.filter(
+	let actualEntries = entryObjects.filter(
 		entry => Object.keys(entry).length > 0
 	)
+
+	actualEntries = actualEntries
+		.map(entry => {
+			let pretty = entry.ORGANISM.split(' ')
+				.slice(0, 2)
+				.join(' ')
+			entry.__prettyOrganism = pretty
+			return entry
+		})
+		.filter(entry => {
+			// exclude all entries that end in "sp" or "sp."
+			let endsInSp = entry.__prettyOrganism.match(/\ssp(?:\.|\s)/)
+			return !endsInSp
+		})
 
 	// convert entries into the expected format for building a fasta file
 	const fastaEntries = actualEntries.map(genbankEntryToFasta)
