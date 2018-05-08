@@ -16,10 +16,10 @@ const makeIdent = speciesEntry =>
 	speciesEntry.name + LABEL_DIVIDER + speciesEntry.ident
 
 // This likely doesn't do anything at the time of writing (5/7/2018)
-// I can't find any reference to nmInner or nmOuter anywhere else. 
+// I can't find any reference to nmInner or nmOuter anywhere else.
 function nmMark(node, species1, species2) {
 	if (node.branchset) {
-		for(let branch of node.branchset){
+		for (let branch of node.branchset) {
 			nmMark(branch, species1, species2)
 		}
 	} else if (node.name === species1.name) {
@@ -32,14 +32,14 @@ function nmMark(node, species1, species2) {
 }
 
 // Given a root node, will make sure all the names are split into `name` and `ident`
-function fixTreeNames(node){
+function fixTreeNames(node) {
 	if (node.branchset) {
 		// If it's a not a leaf, keep going
-		for(let branch of node.branchset){
+		for (let branch of node.branchset) {
 			fixTreeNames(branch)
 		}
 	} else if (node.name && !node.ident) {
-		// If it's a leaf, and has a name, but not ident, split it up! 
+		// If it's a leaf, and has a name, but not ident, split it up!
 		let splitted = node.name.split(LABEL_DIVIDER)
 		node.name = splitted[0]
 		node.ident = splitted[1]
@@ -55,7 +55,7 @@ function strictSearch(rootNode, fasta) {
 
 // Given a node, it will return {species:[],nm:[]}
 // where `species` is a list of individuals under that node
-// and `nm` is a list of flagged hybrids 
+// and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
 	if (node.branchset) {
 		debug('has branchset')
