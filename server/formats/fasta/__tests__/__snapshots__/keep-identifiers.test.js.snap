@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`removes the given identifiers from the data 1`] = `
+"> Emydura_subglobosa__KC755190
+ggaacaataaattatcacctcaaaagacac
+> Emydura_victoriae__KC755189
+ggaacaatcaattattaccccacaaagac"
+`;
