@@ -17,6 +17,7 @@ module.exports = {
 	buildFasta: fasta.build,
 	hashFastaSequenceNames: fasta.hashFastaSequenceNames,
 	removeFastaIdentifiers: fasta.removeFastaIdentifiers,
+	keepFastaIdentifiers: fasta.keepFastaIdentifiers,
 	fastaToPhylip: fastaToPhylip,
 	hashNexusTreeNames: nexus.hashNexusTreeNames,
 }
