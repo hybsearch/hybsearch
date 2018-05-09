@@ -25,7 +25,7 @@ function removeFastaIdentifiers(
 ) {
 	let samples = parseFasta(dataString)
 	let identifiersToRemove = new Set(
-		flatten(identifiers.nm.map(pair => pair.map(node => node.ident)))
+		flatten(identifiers.nm.map(pair => pair.map(node => `${node.name}__${node.ident}`)))
 	)
 
 	let filtered = samples.filter(
