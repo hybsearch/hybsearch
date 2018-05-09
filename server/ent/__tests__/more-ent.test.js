@@ -37,10 +37,8 @@ for (const file of files) {
 		let nonmonoInfo = removeCircularLinks(
 			ent.strictSearch(JSON.parse(serializedNewick), alignedFasta)
 		)
-		console.log(nonmonoInfo.nm)
 
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
-		console.log(monophyleticFasta)
 		let beastConfig = fastaToBeast(monophyleticFasta)
 
 		expect(beastConfig).toMatchSnapshot()
