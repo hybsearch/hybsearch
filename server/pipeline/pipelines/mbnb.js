@@ -84,9 +84,17 @@ module.exports = [
 		transform: ([data, nmSeqs]) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
-			return [fastaToBeast(monophyleticFasta), monophyleticFasta, nonmonophyleticFasta]
+			return [
+				fastaToBeast(monophyleticFasta),
+				monophyleticFasta,
+				nonmonophyleticFasta,
+			]
 		},
-		output: ['beast-config', 'monophyletic-aligned-fasta', 'nonmonophyletic-aligned-fasta'],
+		output: [
+			'beast-config',
+			'monophyletic-aligned-fasta',
+			'nonmonophyletic-aligned-fasta',
+		],
 	},
 	{
 		// generates the Species Tree used by JML

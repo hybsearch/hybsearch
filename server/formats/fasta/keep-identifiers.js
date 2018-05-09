@@ -32,8 +32,8 @@ function keepFastaIdentifiers(
 		)
 	)
 
-	let filtered = samples.filter(
-		({ species }) => identifiersToRemove.has(species)
+	let filtered = samples.filter(({ species }) =>
+		identifiersToRemove.has(species)
 	)
 
 	return buildFasta(filtered)
