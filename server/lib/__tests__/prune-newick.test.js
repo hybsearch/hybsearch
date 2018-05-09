@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-const {pruneOutliers} = require('../prune-newick')
+const { pruneOutliers } = require('../prune-newick')
 const fs = require('fs')
 const path = require('path')
 
@@ -17,7 +17,7 @@ for (const file of files) {
 		let fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 		let inputTree = JSON.parse(content)
 
-		let {removedData} = pruneOutliers(inputTree, fasta)
+		let { removedData } = pruneOutliers(inputTree, fasta)
 
 		let removed = removedData.map(node => node.name)
 

@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-const {fastaToBeast, removeFastaIdentifiers, } = require('../../formats')
+const { fastaToBeast, removeFastaIdentifiers } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
 const { removeCircularLinks } = require('../../pipeline/lib')
 
@@ -34,7 +34,9 @@ for (const file of files) {
 
 		let serializedNewick = JSON.stringify(prunedNewick)
 
-		let nonmonoInfo = removeCircularLinks(ent.strictSearch(JSON.parse(serializedNewick), alignedFasta))
+		let nonmonoInfo = removeCircularLinks(
+			ent.strictSearch(JSON.parse(serializedNewick), alignedFasta)
+		)
 		console.log(nonmonoInfo.nm)
 
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
