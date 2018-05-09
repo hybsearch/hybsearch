@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+'use strict'
+
+const getData = require('../lib/get-data')
+const {parse: {parseFasta}} = require('./fasta')
+
+async function main() {
+	let file = process.argv[2]
+
+	if (!file && process.stdin.isTTY) {
+		console.error('usage: hyb-fasta-to-json (<input> | -)')
+		process.exit(1)
+	}
+
+	let data = await getData(file)
+	let fasta = parseFasta(data)
+
+	let serialized = JSON.stringify(fasta)
+	console.log(serialized)
+}
+
+if (require.main === module) {
+	main()
+}
