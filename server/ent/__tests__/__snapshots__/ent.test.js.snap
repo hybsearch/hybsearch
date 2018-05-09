@@ -2,11 +2,11 @@
 
 exports[`coyote-test 1`] = `
 Array [
-  "Canis lupus (AF115699) / Canis lupus (AF115699)",
-  "Canis lupus (AF115700) / Canis lupus (AF115700)",
-  "Canis lupus (AF115701) / Canis lupus (AF115701)",
-  "Canis latrans (EU400577) / Canis latrans (EU400577)",
-  "Canis latrans (EU400578) / Canis latrans (EU400578)",
+  "Canis_lupus (AF115699) / Canis_lupus (AF115699)",
+  "Canis_lupus (AF115700) / Canis_lupus (AF115700)",
+  "Canis_lupus (AF115701) / Canis_lupus (AF115701)",
+  "Canis_latrans (EU400577) / Canis_latrans (EU400577)",
+  "Canis_latrans (EU400578) / Canis_latrans (EU400578)",
 ]
 `;
 
