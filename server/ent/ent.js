@@ -4,32 +4,12 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
 const isEqual = require('lodash/isEqual')
-const { parseFasta } = require('../formats/fasta/parse')
-const hammingDistance = require('../hamdis/hamming-distance')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
-const makeIdent = speciesEntry =>
-	speciesEntry.name + LABEL_DIVIDER + speciesEntry.ident
-
-// This likely doesn't do anything at the time of writing (5/7/2018)
-// I can't find any reference to nmInner or nmOuter anywhere else.
-function nmMark(node, species1, species2) {
-	if (node.branchset) {
-		for (let branch of node.branchset) {
-			nmMark(branch, species1, species2)
-		}
-	} else if (node.name === species1.name) {
-		node.nmInner = node.nmInner || []
-		node.nmInner.push(species2)
-	} else if (node.name === species2.name) {
-		node.nmOuter = node.nmOuter || []
-		node.nmOuter.push(species1)
-	}
-}
 
 // Given a root node, will make sure all the names are split into `name` and `ident`
 function fixTreeNames(node) {
@@ -47,7 +27,7 @@ function fixTreeNames(node) {
 }
 
 module.exports.strictSearch = strictSearch
-function strictSearch(rootNode, fasta) {
+function strictSearch(rootNode) {
 	fixTreeNames(rootNode)
 
 	return recursiveSearch(rootNode)
