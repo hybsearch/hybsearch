@@ -10,6 +10,7 @@ const {
 	hashNexusTreeNames,
 	fastaToNexus,
 	removeFastaIdentifiers,
+	keepFastaIdentifiers,
 } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
 const clustal = require('../../wrappers/clustal')
@@ -81,10 +82,19 @@ module.exports = [
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
 		transform: ([data, nmSeqs]) => {
-			let fasta = removeFastaIdentifiers(data, nmSeqs)
-			return [fastaToBeast(fasta), fasta]
+			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
+			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
+			return [
+				fastaToBeast(monophyleticFasta),
+				monophyleticFasta,
+				nonmonophyleticFasta,
+			]
 		},
-		output: ['beast-config', 'monophyletic-aligned-fasta'],
+		output: [
+			'beast-config',
+			'monophyletic-aligned-fasta',
+			'nonmonophyletic-aligned-fasta',
+		],
 	},
 	{
 		// generates the Species Tree used by JML
@@ -94,7 +104,7 @@ module.exports = [
 	},
 	{
 		// turn aligned fasta into PHYLIP
-		input: ['monophyletic-aligned-fasta', 'beast-trees'],
+		input: ['aligned-fasta', 'beast-trees'],
 		transform: ([fasta, beastTrees]) => {
 			let phylipIdentMap = hashFastaSequenceNames(fasta)
 			return [
