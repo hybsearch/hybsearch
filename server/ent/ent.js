@@ -67,7 +67,7 @@ function strictSearch(rootNode, fasta) {
 	for (let pair of results.nm) {
 		let hybrid = pair[0]
 		let speciesName = hybrid.name
-		if (hybridSpeciesCount[speciesName] == undefined) {
+		if (hybridSpeciesCount[speciesName] === undefined) {
 			hybridSpeciesCount[speciesName] = 0
 		}
 		hybridSpeciesCount[speciesName]++
@@ -77,7 +77,7 @@ function strictSearch(rootNode, fasta) {
 	let totalSpeciesCount = {}
 	for (let individual of allIndividuals) {
 		let speciesName = individual.name
-		if (totalSpeciesCount[speciesName] == undefined) {
+		if (totalSpeciesCount[speciesName] === undefined) {
 			totalSpeciesCount[speciesName] = 0
 		}
 		totalSpeciesCount[speciesName]++
