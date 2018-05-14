@@ -27,7 +27,6 @@ Array [
 exports[`kino 1`] = `
 Array [
   "Kinosternon scorpioides (KF301385) / Kinosternon scorpioides (KF301385)",
-  "Kinosternon subrubrum (KF301391) / Kinosternon subrubrum (KF301391)",
   "Kinosternon subrubrum (KF301390) / Kinosternon subrubrum (KF301390)",
   "Sternotherus minor (KF301364) / Sternotherus minor (KF301364)",
 ]
@@ -37,7 +36,6 @@ exports[`plaamyd 1`] = `
 Array [
   "Amyda cartilaginea (LM537480) / Amyda cartilaginea (LM537480)",
   "Amyda cartilaginea (LM537481) / Amyda cartilaginea (LM537481)",
-  "Amyda cartilaginea (LM537466) / Amyda cartilaginea (LM537466)",
   "Amyda cartilaginea (LM537485) / Amyda cartilaginea (LM537485)",
   "Amyda cartilaginea (LM537484) / Amyda cartilaginea (LM537484)",
   "Amyda cartilaginea (LM537483) / Amyda cartilaginea (LM537483)",
@@ -50,7 +48,6 @@ Array [
   "Amyda cartilaginea (JN232534) / Amyda cartilaginea (JN232534)",
   "Amyda cartilaginea (LM537465) / Amyda cartilaginea (LM537465)",
   "Amyda cartilaginea (LM537467) / Amyda cartilaginea (LM537467)",
-  "Amyda ornata (LM537478) / Amyda ornata (LM537478)",
   "Amyda cartilaginea (LM537491) / Amyda cartilaginea (LM537491)",
   "Amyda cartilaginea (LM537492) / Amyda cartilaginea (LM537492)",
   "Amyda cartilaginea (LM537476) / Amyda cartilaginea (LM537476)",
@@ -73,7 +70,6 @@ Array [
   "Lepus timidus (AB687530) / Lepus timidus (AB687530)",
   "Lepus timidus (AB687527) / Lepus timidus (AB687527)",
   "Lepus timidus (AB687526) / Lepus timidus (AB687526)",
-  "Lepus timidus (AB687525) / Lepus timidus (AB687525)",
   "Lepus timidus (AB687524) / Lepus timidus (AB687524)",
   "Lepus timidus (AB058607) / Lepus timidus (AB058607)",
   "Lepus mandshuricus (HM233077) / Lepus mandshuricus (HM233077)",
@@ -103,8 +99,6 @@ Array [
   "Amyda cartilaginea (JN232534) / Amyda cartilaginea (JN232534)",
   "Amyda cartilaginea (LM537465) / Amyda cartilaginea (LM537465)",
   "Amyda cartilaginea (LM537467) / Amyda cartilaginea (LM537467)",
-  "Amyda cartilaginea (LM537466) / Amyda cartilaginea (LM537466)",
-  "Amyda ornata (LM537478) / Amyda ornata (LM537478)",
   "Amyda cartilaginea (LM537491) / Amyda cartilaginea (LM537491)",
   "Amyda cartilaginea (LM537492) / Amyda cartilaginea (LM537492)",
   "Amyda cartilaginea (LM537476) / Amyda cartilaginea (LM537476)",
@@ -126,12 +120,10 @@ Array [
   "Amyda cartilaginea (LM537485) / Amyda cartilaginea (LM537485)",
   "Amyda ornata (LM537490) / Amyda ornata (LM537490)",
   "Amyda ornata (LM537482) / Amyda ornata (LM537482)",
-  "Amyda ornata (LM537478) / Amyda ornata (LM537478)",
   "Amyda cartilaginea (LM537467) / Amyda cartilaginea (LM537467)",
   "Amyda cartilaginea (LM537465) / Amyda cartilaginea (LM537465)",
   "Amyda cartilaginea (JN232534) / Amyda cartilaginea (JN232534)",
   "Amyda cartilaginea (AY259550) / Amyda cartilaginea (AY259550)",
-  "Amyda cartilaginea (LM537466) / Amyda cartilaginea (LM537466)",
   "Amyda cartilaginea (LM537492) / Amyda cartilaginea (LM537492)",
   "Amyda cartilaginea (LM537491) / Amyda cartilaginea (LM537491)",
   "Amyda cartilaginea (LM537494) / Amyda cartilaginea (LM537494)",
@@ -140,6 +132,5 @@ Array [
   "Pelodiscus sinensis (AY583692) / Pelodiscus sinensis (AY583692)",
   "Pelodiscus sinensis (AY259553) / Pelodiscus sinensis (AY259553)",
   "Palea steindachneri (AY743417) / Palea steindachneri (AY743417)",
-  "Palea steindachneri (AY259552) / Palea steindachneri (AY259552)",
 ]
 `;
