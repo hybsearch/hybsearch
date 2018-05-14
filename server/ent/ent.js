@@ -56,45 +56,45 @@ function strictSearch(rootNode, fasta) {
 	function getAllIndividuals(node) {
 		if (!node.branchset) {
 			allIndividuals.push(node)
-		} else{
+		} else {
 			node.branchset.forEach(getAllIndividuals)
 		}
 	}
 
 	getAllIndividuals(rootNode)
-	// Count number of hybrids for each species 
+	// Count number of hybrids for each species
 	let hybridSpeciesCount = {}
-	for(let pair of results.nm){
+	for (let pair of results.nm) {
 		let hybrid = pair[0]
-		let speciesName = hybrid.name 
-		if(hybridSpeciesCount[speciesName] == undefined){
+		let speciesName = hybrid.name
+		if (hybridSpeciesCount[speciesName] == undefined) {
 			hybridSpeciesCount[speciesName] = 0
 		}
-		hybridSpeciesCount[speciesName] ++
+		hybridSpeciesCount[speciesName]++
 	}
 
 	// Count number of individuals in each species
 	let totalSpeciesCount = {}
-	for(let individual of allIndividuals){
+	for (let individual of allIndividuals) {
 		let speciesName = individual.name
-		if(totalSpeciesCount[speciesName] == undefined){
+		if (totalSpeciesCount[speciesName] == undefined) {
 			totalSpeciesCount[speciesName] = 0
 		}
-		totalSpeciesCount[speciesName] ++
+		totalSpeciesCount[speciesName]++
 	}
-	
-	for(let speciesName in hybridSpeciesCount){
-		if(hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]){
+
+	for (let speciesName in hybridSpeciesCount) {
+		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
 			// We need to unflag the one that's furthest away from its closest
-			let longestDist;
-			let furthestHybrid;
-			for(let pair of results.nm){
+			let longestDist
+			let furthestHybrid
+			for (let pair of results.nm) {
 				let hybrid = pair[0]
-				if(hybrid.name === speciesName){
-					if(longestDist === undefined){
+				if (hybrid.name === speciesName) {
+					if (longestDist === undefined) {
 						longestDist = hybrid.length
 					}
-					if(hybrid.length >= longestDist){
+					if (hybrid.length >= longestDist) {
 						longestDist = hybrid.length
 						furthestHybrid = hybrid
 					}
@@ -102,7 +102,7 @@ function strictSearch(rootNode, fasta) {
 			}
 
 			// furthestHybrid should be removed
-			remove(results.nm, pair => (pair[0].ident === furthestHybrid.ident))
+			remove(results.nm, pair => pair[0].ident === furthestHybrid.ident)
 		}
 	}
 
