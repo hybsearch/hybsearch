@@ -12,14 +12,10 @@ ggaacaatcaattattaccccacaaagac
 > Emydura_victoriae__KC755188
 ggaacaatcaattattaccccacaaggaa`
 
-	let filteredSequences = removeIdentifiers(input, {
-		nm: [
-			[
-				{ name: 'Emydura_subglobosa', ident: 'KC755190' },
-				{ name: 'Emydura_victoriae', ident: 'KC755189' },
-			],
-		],
-	})
+	let filteredSequences = removeIdentifiers(input, [
+		'Emydura_subglobosa__KC755190',
+		'Emydura_victoriae__KC755189',
+	])
 
 	expect(filteredSequences).toMatchSnapshot()
 })
