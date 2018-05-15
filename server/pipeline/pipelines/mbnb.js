@@ -108,7 +108,7 @@ module.exports = [
 	},
 	{
 		// turn aligned fasta into PHYLIP
-		input: ['aligned-fasta', 'beast-trees'],
+		input: ['pruned-aligned-fasta', 'beast-trees'],
 		transform: ([fasta, beastTrees]) => {
 			let phylipIdentMap = hashFastaSequenceNames(fasta)
 			return [
