@@ -18,6 +18,7 @@ const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
+const flatten = require('lodash/flatten')
 
 module.exports = [
 	{
@@ -86,8 +87,11 @@ module.exports = [
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
 		transform: ([data, nmSeqs]) => {
-			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
-			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
+			let identifiers = flatten(
+				nmSeqs.nm.map(pair => pair.map(node => `${node.name}__${node.ident}`))
+			)
+			let monophyleticFasta = removeFastaIdentifiers(data, identifiers)
+			let nonmonophyleticFasta = keepFastaIdentifiers(data, identifiers)
 			return [
 				fastaToBeast(monophyleticFasta),
 				monophyleticFasta,
