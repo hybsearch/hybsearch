@@ -8,6 +8,7 @@ const ent = require('../index')
 const { parse: newickToJson } = require('../../newick')
 const fs = require('fs')
 const path = require('path')
+const flatten = require('lodash/flatten')
 
 const base = path.join(__dirname, 'input')
 const files = fs
@@ -38,7 +39,13 @@ for (const file of files) {
 			ent.strictSearch(JSON.parse(serializedNewick), alignedFasta)
 		)
 
-		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
+		let identifiers = flatten(
+			nonmonoInfo.nm.map(pair =>
+				pair.map(node => `${node.name}__${node.ident}`)
+			)
+		)
+
+		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, identifiers)
 		let beastConfig = fastaToBeast(monophyleticFasta)
 
 		expect(beastConfig).toMatchSnapshot()
