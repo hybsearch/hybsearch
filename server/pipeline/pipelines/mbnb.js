@@ -60,13 +60,17 @@ module.exports = [
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta]) => {
-			let { removedData, prunedNewick } = pruneOutliers(
+			let { removedData, removedIdentifiers, prunedNewick } = pruneOutliers(
 				newickJson,
 				alignedFasta
 			)
-			return [prunedNewick, removedData]
+			let prunedAlignedFasta = removeFastaIdentifiers(
+				alignedFasta,
+				removedIdentifiers
+			)
+			return [prunedNewick, removedData, prunedAlignedFasta]
 		},
-		output: ['newick-json:2', 'pruned-identifiers'],
+		output: ['newick-json:2', 'pruned-identifiers', 'pruned-aligned-fasta'],
 	},
 	{
 		// identifies the non-monophyletic sequences
