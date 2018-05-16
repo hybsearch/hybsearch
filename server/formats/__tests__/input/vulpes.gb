@@ -1,0 +1,70 @@
+LOCUS       AH005827                 807 bp    DNA     linear   MAM 10-JUN-2016
+DEFINITION  Vulpes macrotis zinseri isolate MEX5 cytochrome b (cytb) gene,
+            partial cds; mitochondrial.
+ACCESSION   AH005827 AF036466 AF042174
+VERSION     AH005827.2
+KEYWORDS    .
+SOURCE      mitochondrion Vulpes macrotis zinseri
+  ORGANISM  Vulpes macrotis zinseri
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Caniformia; Canidae;
+            Vulpes.
+REFERENCE   1  (bases 1 to 807)
+  AUTHORS   Maldonado,J.E., Cotera,M., Geffen E. and Wayne R.K.
+  TITLE     Relationships of the endangered Mexican kit fox (Vulpes macrotis
+            zinseri) to North American arid-land foxes based on mitochondrial
+            DNA sequence data
+  JOURNAL   Southwest. Nat. 42, 460-470 (1997)
+REFERENCE   2  (bases 1 to 807)
+  AUTHORS   Maldonado,J.E., Cotera,M., Geffen E. and Wayne R.K.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-1998) Biology, UCLA, 621 Circle Dr. South, Los
+            Angeles, CA 90095, USA
+COMMENT     On or before Jun 10, 2016 this sequence version replaced
+            AF036466.1, AF042174.1, AH005827.1.
+FEATURES             Location/Qualifiers
+     source          1..807
+                     /organism="Vulpes macrotis zinseri"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="MEX5"
+                     /sub_species="zinseri"
+                     /db_xref="taxon:71547"
+     gene            <1..>807
+                     /gene="cytb"
+     CDS             <1..>357
+                     /gene="cytb"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AAB97745.1"
+                     /translation="HPLAKIVNDSFIDLPAPSNISAWWNFGSLLGICLILQIMTGLFL
+                     AMHYTSDTATAFSSVTHICRDVNYGWIIRYMHANGASMFFICLFMHVGRGLYYGSYVF
+                     METWNVGIVLLFATMA"
+     gap             358..457
+                     /estimated_length=unknown
+     CDS             <458..>807
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="AAB97746.1"
+                     /translation="PLHMSNPEWYFLFAYAILRSIPNKLGGVLALVFSILILALIPHL
+                     HTSKQRGMMFRPLSQCLFWLLTADLLTLTWIGGQPVEHPFIIIGQIASILYFAILLIL
+                     MPTISIIENNLLKW"
+ORIGIN
+        1 ctcacccact agctaaaatc gttaacgact cattcattga cctccccgca ccatcaaaca
+       61 tttctgcctg atgaaacttc ggatccctcc taggtatctg cctcattcta cagattataa
+      121 caggcctatt tctagccata cactacacat ccgatacagc tactgctttt tcatcagtta
+      181 cacacatttg ccgagacgtt aactacggct gaatcattcg ctacatacat gcaaatggag
+      241 catctatatt cttcatttgt ctgttcatgc acgtgggacg aggcctatat tatggatcct
+      301 acgtattcat agaaacatga aacgtcggaa ttgtcttact attcgcaacc atagccannn
+      361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnccc ctccacatat caaaccctga
+      481 gtgatacttc ctattcgcct acgctattct ccggtccatc cctaacaaac tagggggagt
+      541 cctcgcccta gtattctcca tcctaatctt agcactcatc cctcacctcc atacctcaaa
+      601 acaacgcgga ataatattcc gacccctcag tcaatgccta ttctgactcc taaccgcaga
+      661 cctcctcacc ttaacctgaa tcggaggaca gccagtagaa caccccttta tcatcatcgg
+      721 ccaaatcgcc tctatcctat actttgctat cttattgatt ctaataccaa ccattagcat
+      781 tattgaaaat aatctcctaa agtgaag
+//
