@@ -47,16 +47,12 @@ function revertHashedIdentifiers(
 	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
 	let resObj = csv.parse(results, { header: true, cellDelimiter: '\t' })
 
-	const formatSpecies = (str) => {
-		let [species, ident] = str.split('__')
-		species = species.replace(/_/g, ' ')
-		return `${species} (${ident})`
-	}
-
 	resObj = resObj.map(row => {
 		row.seq1 = formatSpecies(row.seq1)
 		row.seq2 = formatSpecies(row.seq2)
-		row['Sp Comparison'] = row['Sp Comparison'].replace(/_/g, ' ')
+		row['Sp Comparison'] = row['Sp Comparison']
+			.replace(/_/g, ' ')
+			.replace('-', ' – ')
 		return row
 	})
 
@@ -72,4 +68,10 @@ function revertHashedIdentifiers(
 	})
 
 	return { distributions: distObj, probabilities: probObj, results: resObj }
+}
+
+function formatSpecies(str) {
+	let [species, ident] = str.split('__')
+	species = species.replace(/_/g, ' ')
+	return `${species} [${ident}]`
 }
