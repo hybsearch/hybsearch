@@ -15,7 +15,7 @@ const files = fs
 	.filter(f => f.endsWith('.tree'))
 	.map(f => f.replace(/(.*)\.tree$/, '$1'))
 
-let whitelist = ['coyote-test']
+let whitelist = ['coyote-test', 'vulpes']
 
 for (const file of files) {
 	if (!whitelist.includes(file)) {
