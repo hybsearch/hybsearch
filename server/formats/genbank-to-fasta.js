@@ -59,7 +59,11 @@ const genbankEntryToFasta = entry => {
 	// Genbank (or some tool) doesn't like spaces in the names
 	species = species.replace(/[^a-z0-9]/gi, '_')
 
-	let accession = entry.ACCESSION
+	let accession = entry.ACCESSION.split(/\s/)
+	accession = accession[0]
+	if (!accession) {
+		throw new Error('no accession number found!')
+	}
 
 	let origin = entry.ORIGIN
 	origin = origin.replace(/ /g, '')
