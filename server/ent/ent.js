@@ -6,6 +6,7 @@ const remove = require('lodash/remove')
 const isEqual = require('lodash/isEqual')
 const { parseFasta } = require('../formats/fasta/parse')
 const hammingDistance = require('../hamdis/hamming-distance')
+const { removeNodes } = require('../lib/prune-newick')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
@@ -51,6 +52,50 @@ function strictSearch(rootNode, fasta) {
 	fixTreeNames(rootNode)
 
 	let results = recursiveSearch(rootNode)
+
+	// We don't report all the hybrids found as hybrids just yet
+	let hybridSpeciesByName = {}
+	let totalHybridSpecies = 0
+	for (let pair of results.nm) {
+		let hybrid = pair[0]
+		let speciesName = hybrid.name
+		if (hybridSpeciesByName[speciesName] === undefined) {
+			hybridSpeciesByName[speciesName] = []
+			totalHybridSpecies ++
+		}
+		hybridSpeciesByName[speciesName].push(hybrid)
+	}
+
+	let unflag = []
+	// For each species found
+	for(let name in hybridSpeciesByName){
+		let hybrids = hybridSpeciesByName[name]
+		// remove the flagged hybrids and redo the search.
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		removeNodes(rootNodeCopy,hybrids.map(h => h.ident))
+		let resultsRedo = recursiveSearch(rootNodeCopy)
+		//  If what remains is N-1 hybrid species, then that was a true hybrid
+		let newSpeciesNames = {}
+		let newSpeciesCount = 0
+		for(let pair of resultsRedo.nm){
+			let speciesName = pair[0].name 
+			if(newSpeciesNames[speciesName] === undefined){
+				newSpeciesNames[speciesName] = true 
+				newSpeciesCount ++
+			}
+		}
+		// if less, then that is NOT a true hybrid. Unmark those. 
+		if(newSpeciesCount < totalHybridSpecies - 1){
+			// This species is a true nonmonophyly!
+		} else {
+			// Unflag this
+			for(let hybrid of hybrids){
+				unflag.push(hybrid.ident)
+			}
+		}
+	}
+	remove(results.nm, pair => unflag.indexOf(pair[0].ident) != -1)
+
 	let allIndividuals = []
 
 	function getAllIndividuals(node) {
