@@ -61,7 +61,7 @@ function strictSearch(rootNode, fasta) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesByName[speciesName] === undefined) {
 			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies ++
+			totalHybridSpecies++
 		}
 		hybridSpeciesByName[speciesName].push(hybrid)
 	}
@@ -95,9 +95,9 @@ function strictSearch(rootNode, fasta) {
 				}
 			}
 		}
-		remove(results.nm, pair => unflag.indexOf(pair[0].ident) != -1)
+		remove(results.nm, pair => unflag.indexOf(pair[0].ident) !== -1)
 	}
-	
+
 	let allIndividuals = []
 
 	function getAllIndividuals(node) {
