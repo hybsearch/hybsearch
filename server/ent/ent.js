@@ -61,7 +61,7 @@ function strictSearch(rootNode, fasta) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesByName[speciesName] === undefined) {
 			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies++
+			totalHybridSpecies += 1
 		}
 		hybridSpeciesByName[speciesName].push(hybrid)
 	}
@@ -82,7 +82,7 @@ function strictSearch(rootNode, fasta) {
 				let speciesName = pair[0].name
 				if (newSpeciesNames[speciesName] === undefined) {
 					newSpeciesNames[speciesName] = true
-					newSpeciesCount++
+					newSpeciesCount += 1
 				}
 			}
 			// if less, then that is NOT a true hybrid. Unmark those.
