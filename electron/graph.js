@@ -9,9 +9,8 @@ let newick
 let newickNodes
 
 function formatEnt(results) {
-	return results.nm.map(pair => {
-		let [left, right] = pair.map(node => `${node.name} (${node.ident})`)
-		return { left, right }
+	return results.nm.map(hybrid => {
+		return { Nonmonophyly: `${hybrid.name} (${hybrid.ident})` }
 	})
 }
 
@@ -20,9 +19,7 @@ function setEntResults(results) {
 	nmResults = results
 	console.log('Got ent!', results)
 	let non =
-		nmResults !== undefined
-			? nmResults.nm.map(pair => pair.map(node => node.ident))
-			: null
+		nmResults !== undefined ? nmResults.nm.map(hybrid => hybrid.ident) : null
 	console.log(non)
 
 	if (non) {
