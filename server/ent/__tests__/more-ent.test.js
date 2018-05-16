@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
-const { fastaToBeast, removeFastaIdentifiers } = require('../../formats')
+const { removeFastaIdentifiers } = require('../../formats')
+const { parseFasta } = require('../../formats/fasta/parse')
 const { pruneOutliers } = require('../../lib/prune-newick')
 const { removeCircularLinks } = require('../../pipeline/lib')
 
@@ -15,13 +16,7 @@ const files = fs
 	.filter(f => f.endsWith('.tree'))
 	.map(f => f.replace(/(.*)\.tree$/, '$1'))
 
-let whitelist = ['coyote-test', 'vulpes']
-
 for (const file of files) {
-	if (!whitelist.includes(file)) {
-		continue
-	}
-
 	let content = fs.readFileSync(path.join(base, file) + '.tree', 'utf-8')
 	let alignedFasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 	let serializedTree = JSON.stringify(newickToJson(content))
@@ -39,8 +34,8 @@ for (const file of files) {
 		)
 
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
-		let beastConfig = fastaToBeast(monophyleticFasta)
+		let results = parseFasta(monophyleticFasta).map(s => s.species)
 
-		expect(beastConfig).toMatchSnapshot()
+		expect(results).toMatchSnapshot()
 	})
 }
