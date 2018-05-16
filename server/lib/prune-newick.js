@@ -7,6 +7,7 @@ const { parseFasta } = require('../formats/fasta/parse')
 const SEQUENCE_CUTOFF_LENGTH = 300
 
 module.exports.pruneOutliers = pruneOutliers
+module.exports.removeNodes = removeNodes
 
 function pruneOutliers(newick, alignedFasta) {
 	const fastaData = parseFasta(alignedFasta)
