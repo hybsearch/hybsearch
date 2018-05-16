@@ -113,6 +113,9 @@ function pruneOutliers(newick, alignedFasta) {
 	return {
 		prunedNewick: newick,
 		removedData: removedData,
+		removedIdentifiers: removedData.map(
+			({ name, ident }) => (ident ? `${name}__${ident}` : name)
+		),
 	}
 }
 

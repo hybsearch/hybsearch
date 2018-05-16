@@ -18,6 +18,7 @@ const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
+const flatten = require('lodash/flatten')
 
 module.exports = [
 	{
@@ -60,13 +61,17 @@ module.exports = [
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta]) => {
-			let { removedData, prunedNewick } = pruneOutliers(
+			let { removedData, removedIdentifiers, prunedNewick } = pruneOutliers(
 				newickJson,
 				alignedFasta
 			)
-			return [prunedNewick, removedData]
+			let prunedAlignedFasta = removeFastaIdentifiers(
+				alignedFasta,
+				removedIdentifiers
+			)
+			return [prunedNewick, removedData, prunedAlignedFasta]
 		},
-		output: ['newick-json:2', 'pruned-identifiers'],
+		output: ['newick-json:2', 'pruned-identifiers', 'pruned-aligned-fasta'],
 	},
 	{
 		// identifies the non-monophyletic sequences
@@ -82,8 +87,11 @@ module.exports = [
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
 		transform: ([data, nmSeqs]) => {
-			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
-			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
+			let identifiers = flatten(
+				nmSeqs.nm.map(pair => pair.map(node => `${node.name}__${node.ident}`))
+			)
+			let monophyleticFasta = removeFastaIdentifiers(data, identifiers)
+			let nonmonophyleticFasta = keepFastaIdentifiers(data, identifiers)
 			return [
 				fastaToBeast(monophyleticFasta),
 				monophyleticFasta,
@@ -104,7 +112,7 @@ module.exports = [
 	},
 	{
 		// turn aligned fasta into PHYLIP
-		input: ['aligned-fasta', 'beast-trees'],
+		input: ['pruned-aligned-fasta', 'beast-trees'],
 		transform: ([fasta, beastTrees]) => {
 			let phylipIdentMap = hashFastaSequenceNames(fasta)
 			return [
