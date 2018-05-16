@@ -19,6 +19,7 @@
     "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
+    "p": "PATH=$PATH:../node_modules/.bin; pretty-quick",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
     "start": "electron ./main.js"
