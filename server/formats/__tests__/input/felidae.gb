@@ -1,0 +1,129 @@
+LOCUS       AB817079                 846 bp    DNA     linear   MAM 05-FEB-2014
+DEFINITION  Panthera pardus orientalis mitochondrial cytb gene for cytochrome
+            b, complete cds, haplotype: TypeT.
+ACCESSION   AB817079
+VERSION     AB817079.1
+KEYWORDS    .
+SOURCE      mitochondrion Panthera pardus orientalis (Amur leopard)
+  ORGANISM  Panthera pardus orientalis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Pantherinae; Panthera.
+REFERENCE   1
+  AUTHORS   Sugimoto,T., Aramilev,V.V., Nagata,J. and McCullough,D.R.
+  TITLE     Genetic diversity of the Far Eastern leopard
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 846)
+  AUTHORS   Sugimoto,T., Aramilev,V.V., Nagata,J. and McCullough,D.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (10-APR-2013) Contact:Taro Sugimoto Graduate School of
+            Environmental Science Hokkaido University, Devision of
+            Environmental Science Creation; Kitaku kita 10-jou nishi 5-chome,
+            Sapporo, Hokkaido 060-0810, Japan URL
+            :http://www.ees.hokudai.ac.jp/
+FEATURES             Location/Qualifiers
+     source          1..846
+                     /organism="Panthera pardus orientalis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolation_source="Feces collected in the wild"
+                     /sub_species="orientalis"
+                     /db_xref="taxon:9692"
+                     /haplotype="TypeT"
+                     /country="Russia:Primorsky Krai"
+     gene            <1..>846
+                     /gene="cytb"
+     CDS             <1..>846
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAO49752.1"
+                     /translation="PSNISTWWNFGSLLGVCLILQILTGLFLAMHYTSDTTTAFSSVT
+                     HICRDVNYGWIIRYLHANGASMFFICLYMHVGRGMYYGSYTFSETWNIGVVLLFTVMA
+                     TAFMGYVLPWGQMSFWGATVITNLLSAIPYIGIDLVEWIWGGFSVDKATLTRFFAFHF
+                     ILPFIISALAAVHLLFLHETGSNNPSGMVSDSDKIPFHPYYTIKDILGLLVLILALML
+                     LVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLFAYAILRSIPNKLGGVLALVLSIL
+                     ILAVIP"
+ORIGIN
+        1 ccatccaaca tctcaacatg atggaacttt ggctccctat taggggtatg tttaatccta
+       61 caaattctca ccggcctctt tctagccata cattatacat cagacacaac aaccgctttc
+      121 tcatcagtta cccatatctg ccgcgatgta aattatggct gaattatccg gtatctacac
+      181 gccaatggag cctccatatt ctttatctgc ctatacatac atgtaggacg agggatatac
+      241 tatggctcct acactttctc agagacatgg aacattggag tcgtattatt gttcacggtt
+      301 atggccacag ccttcatagg atatgtctta ccgtggggcc aaatatcctt ttgaggggca
+      361 accgtaatta ccaacctcct atcagcaatc ccatacattg ggattgacct agtagaatga
+      421 atctgagggg gcttctcagt agacaaagct accttgacac gattctttgc cttccacttc
+      481 atccttccat ttatcatctc agctctagca gcagtccacc tcctattcct tcacgagaca
+      541 ggatctaaca acccctcagg aatagtatct gactcagaca aaattccatt ccacccatac
+      601 tacacaatca aagatatcct gggccttcta gtactaatct tagcactcat actactcgtc
+      661 ctattctcac cagacctgtt aggagacccc gataactaca tccccgccaa ccctctaaat
+      721 acccctcccc atatcaagcc tgaatgatac ttcctatttg catacgcaat cctccgatcc
+      781 attcccaaca aactaggagg agtcctagcc ctagtcctat ccatcctaat cttagcagtc
+      841 atcccc
+//
+
+LOCUS       AB817078                 846 bp    DNA     linear   MAM 05-FEB-2014
+DEFINITION  Panthera pardus orientalis mitochondrial cytb gene for cytochrome
+            b, complete cds, haplotype: TypeA.
+ACCESSION   AB817078
+VERSION     AB817078.1
+KEYWORDS    .
+SOURCE      mitochondrion Panthera pardus orientalis (Amur leopard)
+  ORGANISM  Panthera pardus orientalis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Pantherinae; Panthera.
+REFERENCE   1
+  AUTHORS   Sugimoto,T., Aramilev,V.V., Nagata,J. and McCullough,D.R.
+  TITLE     Genetic diversity of the Far Eastern leopard
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 846)
+  AUTHORS   Sugimoto,T., Aramilev,V.V., Nagata,J. and McCullough,D.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (10-APR-2013) Contact:Taro Sugimoto Graduate School of
+            Environmental Science Hokkaido University, Devision of
+            Environmental Science Creation; Kitaku kita 10-jou nishi 5-chome,
+            Sapporo, Hokkaido 060-0810, Japan URL
+            :http://www.ees.hokudai.ac.jp/
+FEATURES             Location/Qualifiers
+     source          1..846
+                     /organism="Panthera pardus orientalis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolation_source="Feces collected in the wild"
+                     /sub_species="orientalis"
+                     /db_xref="taxon:9692"
+                     /haplotype="TypeA"
+                     /country="Russia:Primorsky Krai"
+     gene            <1..>846
+                     /gene="cytb"
+     CDS             <1..>846
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="BAO49751.1"
+                     /translation="PSNISTWWNFGSLLGVCLILQILTGLFLAMHYTSDTTTAFSSVT
+                     HICRDVNYGWIIRYLHANGASMFFICLYMHVGRGMYYGSYTFSETWNIGVVLLFTVMA
+                     TAFMGYVLPWGQMSFWGATVITNLLSAIPYIGIDLVEWIWGGFSVDKATLTRFFAFHF
+                     ILPIIISALAAVHLLFLHETGSNNPSGMVSDSDKIPFHPYYTIKDILGLLVLILALML
+                     LVLFSPDLLGDPDNYIPANPLNTPPHIKPEWYFLFAYAILRSIPNKLGGVLALVLSIL
+                     ILAVIP"
+ORIGIN
+        1 ccatccaaca tctcaacatg atggaacttt ggctccctat taggggtatg tttaatccta
+       61 caaattctca ccggcctctt tctagccata cattatacat cagacacaac aaccgctttc
+      121 tcatcagtta cccatatctg ccgcgatgta aattatggct gaattatccg gtatctacac
+      181 gccaatggag cctccatatt ctttatctgc ctatacatac atgtaggacg agggatatac
+      241 tatggctcct acactttctc agagacatgg aacattggag tcgtattatt gttcacggtt
+      301 atggccacag ccttcatagg atatgtctta ccgtggggcc aaatatcctt ttgaggggca
+      361 accgtaatta ccaacctcct atcagcaatc ccatacattg ggattgacct agtagaatga
+      421 atctgagggg gcttctcagt agacaaagct accttgacac gattctttgc cttccacttc
+      481 atccttccaa ttatcatctc agctctagca gcagtccacc tcctattcct tcacgagaca
+      541 ggatctaaca acccctcagg aatagtatct gactcagaca aaattccatt ccacccatac
+      601 tacacaatca aagatatcct gggccttcta gtactaatct tagcactcat actactcgtc
+      661 ctattctcac cagacctgtt aggagacccc gataactaca tccccgccaa ccctctaaat
+      721 acccctcccc atatcaagcc tgaatgatac ttcctatttg catacgcaat cctccgatcc
+      781 attcccaaca aactaggagg agtcctagcc ctagtcctat ccatcctaat cttagcagtc
+      841 atcccc
+//
