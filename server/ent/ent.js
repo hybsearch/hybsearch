@@ -66,9 +66,8 @@ function strictSearch(rootNode) {
 }
 
 function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
-	let unflag = []
-
 	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
+	let unflag = []
 
 	for (let hybrids of Object.values(hybridSpeciesByName)) {
 		// remove the flagged hybrids and redo the search.
@@ -84,10 +83,8 @@ function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
 		if (newSpeciesCount < totalHybridSpecies - 1) {
 			// This species is a true nonmonophyly!
 		} else {
-			// Unflag this
-			for (let hybrid of hybrids) {
-				unflag.push(hybrid.ident)
-			}
+			// Unflag this species
+			unflag = [...unflag, ...hybrids.map(h => h.ident)]
 		}
 	}
 
