@@ -2,7 +2,6 @@
 
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
-const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
 const countBy = require('lodash/countBy')
 const groupBy = require('lodash/groupBy')
@@ -64,7 +63,8 @@ function strictSearch(rootNode) {
 				}
 			}
 		}
-		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
+
+		results.nm = results.nm.filter(hybrid => !(unflag.indexOf(hybrid.ident) !== -1))
 	}
 
 	let allIndividuals = []
@@ -92,7 +92,7 @@ function strictSearch(rootNode) {
 			let furthestHybrid = maxBy(matchingHybrids, hybrid => hybrid.length)
 
 			// furthestHybrid should be removed
-			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
+			results.nm = results.nm.filter(hybrid => hybrid.ident !== furthestHybrid.ident)
 		}
 	}
 
@@ -146,10 +146,10 @@ function recursiveSearch(node, nmInstances = []) {
 			}
 
 			speciesListA.forEach(speciesChecker(speciesListB))
-			remove(speciesListA, n => forRemoval.includes(n.ident))
+			speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
 
 			speciesListB.forEach(speciesChecker(speciesListA))
-			remove(speciesListB, n => forRemoval.includes(n.ident))
+			speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
 
 			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
 		}
