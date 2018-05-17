@@ -20,7 +20,7 @@ function* parseGenbankEntry(data) {
 		const value = line.substr(12)
 
 		if (current === 'FEATURES') {
-			if (!key.trim().startsWith('ORIGIN')) {
+			if (key.trim() !== 'ORIGIN') {
 				yield [current, line]
 				continue
 			}
