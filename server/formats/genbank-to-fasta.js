@@ -24,7 +24,9 @@ function* parseGenbankEntry(data) {
 				yield [current, line]
 				continue
 			}
-		} else if (current === 'ORIGIN') {
+		}
+
+		if (current === 'ORIGIN') {
 			// the origin lines go from column 10 to ~80
 			const data = line.substr(10)
 			yield [current, data]
