@@ -20,18 +20,20 @@ function* parseGenbankEntry(data) {
 		const value = line.substr(12)
 
 		if (current === 'FEATURES') {
-			if (!key.trim().startsWith('ORIGIN')) {
+			if (key.trim() !== 'ORIGIN') {
 				yield [current, line]
 				continue
 			}
-		} else if (current === 'ORIGIN') {
+		}
+
+		if (current === 'ORIGIN') {
 			// the origin lines go from column 10 to ~80
 			const data = line.substr(10)
 			yield [current, data]
 			continue
 		}
 
-		const keyNameRegex = /\s*([A-Z]+)\s*/
+		const keyNameRegex = /^\s*([A-Z]+)\s*/
 		if (keyNameRegex.test(key)) {
 			current = keyNameRegex.exec(key)[1]
 		}
@@ -83,7 +85,7 @@ const genbankEntryToFasta = entry => {
 
 module.exports = genbankToFasta
 function genbankToFasta(genbankFile) {
-	const entries = genbankFile.split('//')
+	const entries = genbankFile.split(/^\s*\/\/\s*$/m)
 
 	// turn strings into objects with named keys
 	const entryObjects = entries.map(genbankEntryToObject)
