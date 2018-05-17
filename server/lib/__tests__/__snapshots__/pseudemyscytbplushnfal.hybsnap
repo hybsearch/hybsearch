@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Array [
+  "Pseudemys_floridana__LSUMZ83551",
+  "Pseudemys_floridana__LSUMZ83549",
+  "Pseudemys_floridana__HBS123560",
+]
+`;

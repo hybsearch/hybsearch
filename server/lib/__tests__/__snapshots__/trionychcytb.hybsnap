@@ -1,73 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`bataguridae-cytb 1`] = `
-Array [
-  "Geoclemys_hamiltonii__EF558365",
-]
-`;
-
-exports[`catdog 1`] = `
-Array [
-  "Canis_lupus__KU253532",
-  "Canis_lupus__KU253531",
-]
-`;
-
-exports[`coyote-test 1`] = `Array []`;
-
-exports[`emydura 1`] = `Array []`;
-
-exports[`emydura-short 1`] = `Array []`;
-
-exports[`kino 1`] = `Array []`;
-
-exports[`lepomis 1`] = `
-Array [
-  "Lepomis_auritus__AY828957",
-  "Lepomis_humilis__JF742831",
-  "Lepomis_humilis__AY828965",
-  "Lepomis_humilis__AY828964",
-  "Lepomis_humilis__AY374293",
-  "Lepomis_macrochirus__AY828968",
-  "Lepomis_macrochirus__AY115976",
-  "Lepomis_macrochirus__AY828967",
-  "Lepomis_macrochirus__AY828966",
-  "Lepomis_macrochirus__AY225667",
-  "Lepomis_symmetricus__JF742837",
-  "Lepomis_cyanellus__JF742828",
-  "Lepomis_cyanellus__AY828959",
-  "Lepomis_cyanellus__AY115973",
-  "Lepomis_cyanellus__AY828958",
-  "Lepomis_cyanellus__AY115974",
-  "Lepomis_symmetricus__AY828996",
-]
-`;
-
-exports[`pelomedusidae-cytb 1`] = `Array []`;
-
-exports[`plaamyd 1`] = `Array []`;
-
-exports[`pseudemyscytbplushnfal 1`] = `
-Array [
-  "Pseudemys_floridana__LSUMZ83551",
-  "Pseudemys_floridana__LSUMZ83549",
-  "Pseudemys_floridana__HBS123560",
-]
-`;
-
-exports[`smallerlepus 1`] = `Array []`;
-
-exports[`trio171sequence 1`] = `
-Array [
-  "Cycloderma_aubryi__FR850656",
-  "Cycloderma_aubryi__FR850655",
-  "Cycloderma_aubryi__AY259566",
-  "Cycloderma_frenatum__AY259565",
-  "Cyclanorbis_elegans__AY259570",
-  "Cyclanorbis_senegalensis__AY259569",
-]
-`;
-
 exports[`trionychcytb 1`] = `
 Array [
   "Paracentrotus_lividus__AH001273",
@@ -172,13 +104,5 @@ Array [
   "Chioninia_delalandii__AJ305018",
   "Pnoepyga_pusilla__JX518496",
   "Corvus_frugilegus__Y16885",
-]
-`;
-
-exports[`vulpes 1`] = `
-Array [
-  "Vulpes_vulpes__EF689061",
-  "Vulpes_vulpes__EF689059",
-  "Vulpes_macrotis__AH005827",
 ]
 `;
