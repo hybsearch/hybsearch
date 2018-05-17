@@ -1,7 +1,7 @@
 // @flow
 const zip = require('lodash/zip')
 
-function asciiArt(node, options={}) {
+function asciiArt(node, options = {}) {
 	let {
 		char = '-',
 		showInternal = false,
