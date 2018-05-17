@@ -41,21 +41,23 @@ function strictSearch(rootNode) {
 	}
 
 	// Count number of hybrids for each species
-	let hybridSpeciesCount = countBy(results.nm, h => h.name)
+	let hybridSpeciesCounter = countBy(results.nm, h => h.name)
 
 	// Count number of individuals in each species
 	let allIndividuals = getAllIndividuals(rootNode)
-	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
+	let totalSpeciesCounter = countBy(allIndividuals, individual => individual.name)
 
-	for (let speciesName in hybridSpeciesCount) {
-		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
-			// We need to unflag the one that's furthest away from its closest
-			let matchingHybrids = results.nm.filter(h => h.name === speciesName)
-			let furthestHybrid = maxBy(matchingHybrids, h => h.length)
-
-			// furthestHybrid should be removed
-			results.nm = results.nm.filter(h => h.ident !== furthestHybrid.ident)
+	for (let speciesName of Object.keys(hybridSpeciesCounter)) {
+		if (hybridSpeciesCounter[speciesName] !== totalSpeciesCounter[speciesName]) {
+			continue
 		}
+
+		// We need to unflag the one that's furthest away from its closest
+		let matchingHybrids = results.nm.filter(h => h.name === speciesName)
+		let furthestHybrid = maxBy(matchingHybrids, h => h.length)
+
+		// furthestHybrid should be removed
+		results.nm = results.nm.filter(h => h.ident !== furthestHybrid.ident)
 	}
 
 	return results
