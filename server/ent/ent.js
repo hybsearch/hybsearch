@@ -121,6 +121,7 @@ function recursiveSearch(rootNode) {
 
 		let speciesList = []
 		let forRemoval = []
+
 		for (let speciesSet of combinations) {
 			// if species is in speciesList: continue
 			let speciesListA = recurse(speciesSet[1])
