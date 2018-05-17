@@ -134,7 +134,7 @@ function recursiveSearch(rootNode) {
 			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
 		}
 
-		speciesList = uniqBy(speciesList, 'ident')
+		speciesList = uniqBy(speciesList, n => n.ident)
 
 		return speciesList
 	}
