@@ -21,12 +21,16 @@ for (const file of files) {
 	let content = fs.readFileSync(path.join(base, file) + '.tree', 'utf-8')
 	let alignedFasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 	let serializedTree = JSON.stringify(newickToJson(content))
+	let snapshotName = `./__snapshots__/more-ent-${file}.hybsnap`
 
 	test(file, () => {
+		expect(JSON.parse(serializedTree)).toMatchSpecificSnapshot(snapshotName)
 		let { prunedNewick } = pruneOutliers(
 			JSON.parse(serializedTree),
 			alignedFasta
 		)
+
+		expect(prunedNewick).toMatchSpecificSnapshot(snapshotName)
 
 		let serializedNewick = JSON.stringify(prunedNewick)
 
@@ -34,11 +38,11 @@ for (const file of files) {
 			ent.strictSearch(JSON.parse(serializedNewick), alignedFasta)
 		)
 
+		expect(nonmonoInfo.nm).toMatchSpecificSnapshot(snapshotName)
+
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
 		let results = parseFasta(monophyleticFasta).map(s => s.species)
 
-		expect(results).toMatchSpecificSnapshot(
-			`./__snapshots__/more-ent-${file}.hybsnap`
-		)
+		expect(results).toMatchSpecificSnapshot(snapshotName)
 	})
 }
