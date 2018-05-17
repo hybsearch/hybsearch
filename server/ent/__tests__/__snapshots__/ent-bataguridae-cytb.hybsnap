@@ -2,7 +2,6 @@
 
 exports[`bataguridae-cytb 1`] = `
 Array [
-  "Pangshura_tentoria (AY434610)",
   "Pangshura_tentoria (AY434612)",
   "Pangshura_tentoria (JN232523)",
   "Pangshura_tentoria (AM495315)",
@@ -25,6 +24,7 @@ Array [
   "Pangshura_tentoria (AM495326)",
   "Pangshura_tentoria (AM495325)",
   "Pangshura_tentoria (AM495324)",
+  "Pangshura_tentoria (AM495323)",
   "Pangshura_tentoria (AM495328)",
   "Pangshura_smithii (JN232521)",
   "Pangshura_smithii (AM495288)",
