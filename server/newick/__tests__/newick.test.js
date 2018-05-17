@@ -4,7 +4,7 @@ const newickToJson = require('../parser')
 const fs = require('fs')
 const path = require('path')
 
-const base = path.join(__dirname, 'input')
+const base = path.join(__dirname, '..', '..', '__supporting__', 'input')
 const files = fs.readdirSync(base).filter(f => f.endsWith('.tree'))
 
 for (const file of files) {
