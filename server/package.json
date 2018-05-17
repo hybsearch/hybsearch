@@ -27,6 +27,9 @@
     "p": "PATH=$PATH:../node_modules/.bin; pretty-quick",
     "test": "PATH=$PATH:../node_modules/.bin; jest"
   },
+  "jest": {
+    "verbose": true
+  },
   "dependencies": {
     "combinations-generator": "^1.0.1",
     "comma-separated-values": "^3.6.4",
