@@ -7,9 +7,6 @@ const countBy = require('lodash/countBy')
 const groupBy = require('lodash/groupBy')
 const maxBy = require('lodash/maxBy')
 
-const ENABLE_DEBUG = false
-let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
-
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
 
@@ -111,11 +108,9 @@ function getAllIndividuals(rootNode) {
 // and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
 	if (!node.branchset) {
-		debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
 		return { species: [node], nm: nmInstances }
 	}
 
-	debug('has branchset')
 	let combinations = combs(node.branchset, 2)
 
 	let speciesList = []
@@ -128,14 +123,11 @@ function recursiveSearch(node, nmInstances = []) {
 		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
 		let speciesListB = resultsB.species
 
-		debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
-
 		const speciesChecker = otherSpeciesList => species1 => {
 			let otherSpeciesNames = otherSpeciesList.map(s => s.name)
 
 			let hasName = otherSpeciesNames.includes(species1.name)
 			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
-			debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
 
 			if (hasName && notAllEqual) {
 				otherSpeciesList
@@ -147,8 +139,6 @@ function recursiveSearch(node, nmInstances = []) {
 							return
 						}
 
-						debug(`nonmonophyly: ${label(species3)}`)
-						debug(`removing from A ${label(species3)}`)
 						nmInstances.push(species3)
 						forRemoval.push(species3.ident)
 					})
@@ -166,7 +156,6 @@ function recursiveSearch(node, nmInstances = []) {
 
 	speciesList = uniqBy(speciesList, 'ident')
 
-	debug('speciesList', speciesList)
 	return { species: speciesList, nm: nmInstances }
 }
 
