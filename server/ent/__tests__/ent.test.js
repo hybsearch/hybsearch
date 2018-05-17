@@ -1,10 +1,12 @@
 /* eslint-env jest */
+require('jest-specific-snapshot')
+
 const { strictSearch: search, formatData } = require('../index')
 const { parse: newickToJson } = require('../../newick')
 const fs = require('fs')
 const path = require('path')
 
-const base = path.join(__dirname, 'input')
+const base = path.join(__dirname, '..', '..', '__supporting__', 'input')
 const files = fs
 	.readdirSync(base)
 	.filter(f => f.endsWith('.tree'))
@@ -18,6 +20,10 @@ for (const file of files) {
 		const fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 
 		const actual = formatData(search(tree, fasta))
-		expect(actual.split('\n')).toMatchSnapshot()
+
+		let asArray = actual.split('\n')
+		expect(asArray).toMatchSpecificSnapshot(
+			`./__snapshots__/ent-${file}.hybsnap`
+		)
 	})
 }

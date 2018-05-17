@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lepomis 1`] = `
+Array [
+  "Lepomis_megalotis (AY828976)",
+  "Lepomis_megalotis (AY828977)",
+  "Lepomis_auritus (AY828957)",
+  "Lepomis_auritus (AY115970)",
+  "Lepomis_auritus (AY828950)",
+  "Lepomis_auritus (AY828956)",
+  "Lepomis_auritus (JF742827)",
+  "Lepomis_auritus (AY828955)",
+  "Lepomis_auritus (AY828954)",
+  "Lepomis_auritus (AY828953)",
+  "Lepomis_auritus (AY828952)",
+  "Lepomis_auritus (AY828951)",
+  "Lepomis_auritus (AY115969)",
+]
+`;

@@ -1,4 +1,5 @@
 /* eslint-env jest */
+require('jest-specific-snapshot')
 
 const { removeFastaIdentifiers } = require('../../formats')
 const { parseFasta } = require('../../formats/fasta/parse')
@@ -10,7 +11,7 @@ const { parse: newickToJson } = require('../../newick')
 const fs = require('fs')
 const path = require('path')
 
-const base = path.join(__dirname, 'input')
+const base = path.join(__dirname, '..', '..', '__supporting__', 'input')
 const files = fs
 	.readdirSync(base)
 	.filter(f => f.endsWith('.tree'))
@@ -36,6 +37,8 @@ for (const file of files) {
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
 		let results = parseFasta(monophyleticFasta).map(s => s.species)
 
-		expect(results).toMatchSnapshot()
+		expect(results).toMatchSpecificSnapshot(
+			`./__snapshots__/more-ent-${file}.hybsnap`
+		)
 	})
 }

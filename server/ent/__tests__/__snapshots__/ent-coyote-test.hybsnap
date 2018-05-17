@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`coyote-test 1`] = `
+Array [
+  "Canis_latrans (EU400577)",
+  "Canis_latrans (EU400578)",
+]
+`;

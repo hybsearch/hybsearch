@@ -1,0 +1,1101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lepomis 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01017654,
+                          "name": "Lepomis_punctatus__JF742836",
+                        },
+                        Object {
+                          "length": 0.01017654,
+                          "name": "Lepomis_punctatus__AY828994",
+                        },
+                      ],
+                      "length": 0.06616246,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02231889,
+                          "name": "Lepomis_punctatus__AY828993",
+                        },
+                        Object {
+                          "length": 0.02231889,
+                          "name": "Lepomis_punctatus__AY828992",
+                        },
+                        Object {
+                          "length": 0.02231889,
+                          "name": "Lepomis_punctatus__AY828991",
+                        },
+                      ],
+                      "length": 0.05402011,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1384016,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "length": 0.001519833,
+                                          "name": "Lepomis_miniatus__JF742835",
+                                        },
+                                        Object {
+                                          "length": 0.001519833,
+                                          "name": "Lepomis_miniatus__AY225668",
+                                        },
+                                      ],
+                                      "length": 0.02588014,
+                                      "name": "",
+                                    },
+                                    Object {
+                                      "length": 0.02739997,
+                                      "name": "Lepomis_miniatus__AY828987",
+                                    },
+                                    Object {
+                                      "length": 0.02739997,
+                                      "name": "Lepomis_miniatus__AY828984",
+                                    },
+                                  ],
+                                  "length": 0.00969343,
+                                  "name": "",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "branchset": Array [
+                                            Object {
+                                              "length": 0.008029573,
+                                              "name": "Lepomis_miniatus__AY828990",
+                                            },
+                                            Object {
+                                              "length": 0.008029573,
+                                              "name": "Lepomis_miniatus__AY828989",
+                                            },
+                                          ],
+                                          "length": 0.01719902,
+                                          "name": "",
+                                        },
+                                        Object {
+                                          "length": 0.02522859,
+                                          "name": "Lepomis_miniatus__AY828985",
+                                        },
+                                      ],
+                                      "length": 0.004308939,
+                                      "name": "",
+                                    },
+                                    Object {
+                                      "length": 0.02953753,
+                                      "name": "Lepomis_miniatus__AY828988",
+                                    },
+                                  ],
+                                  "length": 0.007555872,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.02354273,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.06063613,
+                              "name": "Lepomis_miniatus__AY828986",
+                            },
+                          ],
+                          "length": 0.03904112,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.09967725,
+                          "name": "Lepomis_miniatus__AY828983",
+                        },
+                      ],
+                      "length": 0.05847893,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.009618223,
+                                      "name": "Lepomis_microlophus__JF742834",
+                                    },
+                                    Object {
+                                      "length": 0.009618223,
+                                      "name": "Lepomis_microlophus__AY828979",
+                                    },
+                                  ],
+                                  "length": 0.00925759,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.01887581,
+                                  "name": "Lepomis_microlophus__AY828978",
+                                },
+                              ],
+                              "length": 0.01126557,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01547268,
+                                  "name": "Lepomis_microlophus__AY828982",
+                                },
+                                Object {
+                                  "length": 0.01547268,
+                                  "name": "Lepomis_microlophus__AY828981",
+                                },
+                              ],
+                              "length": 0.0146687,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.0785746,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.108716,
+                          "name": "Lepomis_microlophus__AY828980",
+                        },
+                      ],
+                      "length": 0.0494402,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.05658442,
+                  "name": "",
+                },
+              ],
+              "length": 0.1997913,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__JF742827",
+                        },
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__AY828956",
+                        },
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__AY828955",
+                        },
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__AY828954",
+                        },
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__AY828953",
+                        },
+                        Object {
+                          "length": 0.0126715,
+                          "name": "Lepomis_auritus__AY828952",
+                        },
+                      ],
+                      "length": 0.04377167,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02362348,
+                          "name": "Lepomis_auritus__AY828950",
+                        },
+                        Object {
+                          "length": 0.02362348,
+                          "name": "Lepomis_auritus__AY115970",
+                        },
+                      ],
+                      "length": 0.03281969,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.2145633,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.2710065,
+                  "name": "Lepomis_auritus__AY828957",
+                },
+              ],
+              "length": 0.1435254,
+              "name": "",
+            },
+          ],
+          "length": 0.1884314,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01098725,
+                          "name": "Lepomis_humilis__JF742831",
+                        },
+                        Object {
+                          "length": 0.01098725,
+                          "name": "Lepomis_humilis__AY828965",
+                        },
+                        Object {
+                          "length": 0.01098725,
+                          "name": "Lepomis_humilis__AY828964",
+                        },
+                      ],
+                      "length": 0.0476129,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.05860015,
+                      "name": "Lepomis_humilis__AY374293",
+                    },
+                  ],
+                  "length": 0.165051,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.008605595,
+                              "name": "Lepomis_macrochirus__AY828968",
+                            },
+                            Object {
+                              "length": 0.008605595,
+                              "name": "Lepomis_macrochirus__AY115976",
+                            },
+                          ],
+                          "length": 0.02084387,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.00667331,
+                                  "name": "Lepomis_macrochirus__AY828967",
+                                },
+                                Object {
+                                  "length": 0.00667331,
+                                  "name": "Lepomis_macrochirus__AY828966",
+                                },
+                              ],
+                              "length": 0.007838544,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01451185,
+                              "name": "Lepomis_macrochirus__AY225667",
+                            },
+                          ],
+                          "length": 0.01493761,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.1177212,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.1471707,
+                      "name": "Lepomis_macrochirus__AY115975",
+                    },
+                  ],
+                  "length": 0.07648049,
+                  "name": "",
+                },
+              ],
+              "length": 0.1082419,
+              "name": "",
+            },
+            Object {
+              "length": 0.331893,
+              "name": "Lepomis_auritus__AY828949",
+            },
+          ],
+          "length": 0.2710703,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.09039788,
+              "name": "Lepomis_gibbosus__JF742829",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.007216084,
+                                  "name": "Lepomis_gibbosus__AY828962",
+                                },
+                                Object {
+                                  "length": 0.007216084,
+                                  "name": "Lepomis_gibbosus__KJ513207",
+                                },
+                              ],
+                              "length": 0.002610224,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.009826309,
+                              "name": "Lepomis_auritus__AY828951",
+                            },
+                          ],
+                          "length": 0.01119918,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02102549,
+                          "name": "Lepomis_auritus__AY115969",
+                        },
+                      ],
+                      "length": 0.009722718,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.03074821,
+                      "name": "Lepomis_gibbosus__AY828961",
+                    },
+                  ],
+                  "length": 0.03351996,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.06426817,
+                  "name": "Lepomis_gibbosus__AY828960",
+                },
+              ],
+              "length": 0.02612971,
+              "name": "",
+            },
+          ],
+          "length": 0.5125654,
+          "name": "",
+        },
+      ],
+      "length": 0.09700459,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.146237,
+                  "name": "Lepomis_symmetricus__JF742837",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02928884,
+                          "name": "Lepomis_cyanellus__JF742828",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003468643,
+                                  "name": "Lepomis_cyanellus__AY828959",
+                                },
+                                Object {
+                                  "length": 0.003468643,
+                                  "name": "Lepomis_cyanellus__AY115973",
+                                },
+                              ],
+                              "length": 0.01552297,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01361868,
+                                  "name": "Lepomis_cyanellus__AY828958",
+                                },
+                                Object {
+                                  "length": 0.01361868,
+                                  "name": "Lepomis_cyanellus__AY115974",
+                                },
+                              ],
+                              "length": 0.005372928,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.01029723,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.02828408,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.05757292,
+                      "name": "Lepomis_symmetricus__AY828996",
+                    },
+                  ],
+                  "length": 0.08866409,
+                  "name": "",
+                },
+              ],
+              "length": 0.1492099,
+              "name": "",
+            },
+            Object {
+              "length": 0.2954469,
+              "name": "Lepomis_symmetricus__AY828995",
+            },
+          ],
+          "length": 0.3091911,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.1312215,
+                      "name": "Lepomis_megalotis__JF742833",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01565735,
+                              "name": "Lepomis_megalotis__AY828975",
+                            },
+                            Object {
+                              "length": 0.01565735,
+                              "name": "Lepomis_megalotis__AY828973",
+                            },
+                          ],
+                          "length": 0.02706627,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.04272362,
+                          "name": "Lepomis_megalotis__AY828974",
+                        },
+                      ],
+                      "length": 0.08849789,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.2765753,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.06527076,
+                          "name": "Lepomis_megalotis__KF571627",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.001960487,
+                                  "name": "Lepomis_megalotis__KF571574",
+                                },
+                                Object {
+                                  "length": 0.00196049,
+                                  "name": "Lepomis_megalotis__KF571573",
+                                },
+                              ],
+                              "length": 0.008971477,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01093197,
+                              "name": "Lepomis_megalotis__KF571572",
+                            },
+                          ],
+                          "length": 0.0543388,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.1600499,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.05321325,
+                          "name": "Lepomis_megalotis__KF571626",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.008075618,
+                                  "name": "Lepomis_megalotis__KF571625",
+                                },
+                                Object {
+                                  "length": 0.008075617,
+                                  "name": "Lepomis_megalotis__KF571624",
+                                },
+                                Object {
+                                  "length": 0.008075618,
+                                  "name": "Lepomis_megalotis__KF571623",
+                                },
+                                Object {
+                                  "length": 0.008075617,
+                                  "name": "Lepomis_megalotis__KF571622",
+                                },
+                                Object {
+                                  "length": 0.008075618,
+                                  "name": "Lepomis_megalotis__KF571621",
+                                },
+                              ],
+                              "length": 0.01946937,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.007644635,
+                                  "name": "Lepomis_megalotis__KF571560",
+                                },
+                                Object {
+                                  "length": 0.007644635,
+                                  "name": "Lepomis_megalotis__KF571559",
+                                },
+                                Object {
+                                  "length": 0.007644635,
+                                  "name": "Lepomis_megalotis__KF571558",
+                                },
+                                Object {
+                                  "length": 0.007644635,
+                                  "name": "Lepomis_megalotis__KF571557",
+                                },
+                                Object {
+                                  "length": 0.007644635,
+                                  "name": "Lepomis_megalotis__KF571556",
+                                },
+                                Object {
+                                  "length": 0.007644636,
+                                  "name": "Lepomis_megalotis__KF571555",
+                                },
+                              ],
+                              "length": 0.01990035,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.02566826,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.1721075,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.007365989,
+                                  "name": "Lepomis_megalotis__KF571620",
+                                },
+                                Object {
+                                  "length": 0.007365989,
+                                  "name": "Lepomis_megalotis__KF571619",
+                                },
+                                Object {
+                                  "length": 0.007365989,
+                                  "name": "Lepomis_megalotis__KF571618",
+                                },
+                                Object {
+                                  "length": 0.007365989,
+                                  "name": "Lepomis_megalotis__KF571617",
+                                },
+                                Object {
+                                  "length": 0.007365988,
+                                  "name": "Lepomis_megalotis__KF571615",
+                                },
+                              ],
+                              "length": 0.01450926,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02187525,
+                              "name": "Lepomis_megalotis__KF571571",
+                            },
+                          ],
+                          "length": 0.01091041,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.03278566,
+                          "name": "Lepomis_megalotis__KF571616",
+                        },
+                      ],
+                      "length": 0.192535,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002041758,
+                              "name": "Lepomis_megalotis__KF571614",
+                            },
+                            Object {
+                              "length": 0.002041759,
+                              "name": "Lepomis_megalotis__KF571613",
+                            },
+                          ],
+                          "length": 0.04209452,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.005365245,
+                              "name": "Lepomis_megalotis__KF571609",
+                            },
+                            Object {
+                              "length": 0.005365246,
+                              "name": "Lepomis_megalotis__KF571608",
+                            },
+                            Object {
+                              "length": 0.005365245,
+                              "name": "Lepomis_megalotis__KF571606",
+                            },
+                            Object {
+                              "length": 0.005365246,
+                              "name": "Lepomis_megalotis__KF571605",
+                            },
+                          ],
+                          "length": 0.03877104,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571603",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571602",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571601",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571600",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571599",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571598",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571596",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571595",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571594",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571593",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571592",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571591",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571590",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571589",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571588",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571587",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571586",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571585",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571584",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571583",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571582",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571581",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571580",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571579",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571578",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571577",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571576",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571575",
+                        },
+                        Object {
+                          "length": 0.04413628,
+                          "name": "Lepomis_megalotis__KF571569",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01719713,
+                              "name": "Lepomis_megalotis__KF571568",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.004352015,
+                                  "name": "Lepomis_megalotis__KF571564",
+                                },
+                                Object {
+                                  "length": 0.004352015,
+                                  "name": "Lepomis_megalotis__KF571563",
+                                },
+                              ],
+                              "length": 0.01284512,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.02693915,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.1811844,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "branchset": Array [
+                                            Object {
+                                              "length": 0.001480544,
+                                              "name": "Lepomis_megalotis__KF571612",
+                                            },
+                                            Object {
+                                              "length": 0.001480544,
+                                              "name": "Lepomis_megalotis__KF571611",
+                                            },
+                                          ],
+                                          "length": 0.01780969,
+                                          "name": "",
+                                        },
+                                        Object {
+                                          "length": 0.01929023,
+                                          "name": "Lepomis_megalotis__KF571607",
+                                        },
+                                      ],
+                                      "length": 0.006963531,
+                                      "name": "",
+                                    },
+                                    Object {
+                                      "length": 0.02625377,
+                                      "name": "Lepomis_megalotis__KF571604",
+                                    },
+                                  ],
+                                  "length": 0.09365172,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.1199055,
+                                  "name": "Lepomis_megalotis__KF571610",
+                                },
+                              ],
+                              "length": 0.04104166,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.08380591,
+                                  "name": "Lepomis_megalotis__KF571597",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.05872153,
+                                      "name": "Lepomis_megalotis__KF571570",
+                                    },
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "branchset": Array [
+                                            Object {
+                                              "branchset": Array [
+                                                Object {
+                                                  "length": 0.004915378,
+                                                  "name": "Lepomis_megalotis__KF571567",
+                                                },
+                                                Object {
+                                                  "length": 0.004915378,
+                                                  "name": "Lepomis_megalotis__KF571565",
+                                                },
+                                              ],
+                                              "length": 0.01246444,
+                                              "name": "",
+                                            },
+                                            Object {
+                                              "length": 0.01737982,
+                                              "name": "Lepomis_megalotis__KF571566",
+                                            },
+                                          ],
+                                          "length": 0.03323263,
+                                          "name": "",
+                                        },
+                                        Object {
+                                          "length": 0.05061245,
+                                          "name": "Lepomis_megalotis__KF571562",
+                                        },
+                                      ],
+                                      "length": 0.008109079,
+                                      "name": "",
+                                    },
+                                  ],
+                                  "length": 0.02508438,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.07714124,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.01293444,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.1738816,
+                          "name": "Lepomis_megalotis__KF571561",
+                        },
+                      ],
+                      "length": 0.05143912,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.005589188,
+                              "name": "Lepomis_megalotis__KF571554",
+                            },
+                            Object {
+                              "length": 0.005589188,
+                              "name": "Lepomis_megalotis__KF571553",
+                            },
+                            Object {
+                              "length": 0.005589188,
+                              "name": "Lepomis_megalotis__KF571551",
+                            },
+                          ],
+                          "length": 0.112718,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.1183072,
+                          "name": "Lepomis_megalotis__KF571552",
+                        },
+                      ],
+                      "length": 0.1070135,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1824761,
+                  "name": "",
+                },
+              ],
+              "length": 0.1127688,
+              "name": "",
+            },
+            Object {
+              "length": 0.5205656,
+              "name": "Lepomis_marginatus__JF742832",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02744529,
+                          "name": "Lepomis_megalotis__AY828977",
+                        },
+                        Object {
+                          "length": 0.02744529,
+                          "name": "Lepomis_megalotis__AY828976",
+                        },
+                      ],
+                      "length": 0.09479567,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.02878724,
+                          "name": "Lepomis_marginatus__AY828971",
+                        },
+                        Object {
+                          "length": 0.02878724,
+                          "name": "Lepomis_marginatus__AY828970",
+                        },
+                      ],
+                      "length": 0.09345373,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1070068,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.08338102,
+                      "name": "Lepomis_marginatus__AY828972",
+                    },
+                    Object {
+                      "length": 0.08338102,
+                      "name": "Lepomis_marginatus__AY828969",
+                    },
+                  ],
+                  "length": 0.1458667,
+                  "name": "",
+                },
+              ],
+              "length": 0.2913179,
+              "name": "",
+            },
+          ],
+          "length": 0.08407248,
+          "name": "",
+        },
+      ],
+      "length": 0.09532984,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
