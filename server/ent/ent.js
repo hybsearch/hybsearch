@@ -135,7 +135,7 @@ function recursiveSearch(node, nmInstances = []) {
 					.forEach(species3 => {
 						let count = nmInstances.filter(sp => sp === species3).length
 
-						if (count) {
+						if (count > 0) {
 							return
 						}
 
