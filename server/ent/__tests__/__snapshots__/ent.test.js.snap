@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`bataguridae-cytb 1`] = `
+Array [
+  "Pangshura_tentoria (AY434610) / Pangshura_tentoria (AY434610)",
+  "Pangshura_tentoria (AY434612) / Pangshura_tentoria (AY434612)",
+  "Pangshura_tentoria (JN232523) / Pangshura_tentoria (JN232523)",
+  "Pangshura_tentoria (AM495315) / Pangshura_tentoria (AM495315)",
+  "Pangshura_tentoria (JN232522) / Pangshura_tentoria (JN232522)",
+  "Pangshura_tentoria (AM495314) / Pangshura_tentoria (AM495314)",
+  "Pangshura_tentoria (AM495313) / Pangshura_tentoria (AM495313)",
+  "Pangshura_tentoria (AM495312) / Pangshura_tentoria (AM495312)",
+  "Pangshura_tentoria (AM495319) / Pangshura_tentoria (AM495319)",
+  "Pangshura_tentoria (AM495320) / Pangshura_tentoria (AM495320)",
+  "Pangshura_tentoria (AM495318) / Pangshura_tentoria (AM495318)",
+  "Pangshura_tentoria (AM495317) / Pangshura_tentoria (AM495317)",
+  "Pangshura_tentoria (AM495316) / Pangshura_tentoria (AM495316)",
+  "Pangshura_tentoria (AM495322) / Pangshura_tentoria (AM495322)",
+  "Pangshura_tentoria (AM495321) / Pangshura_tentoria (AM495321)",
+  "Pangshura_tentoria (AM495311) / Pangshura_tentoria (AM495311)",
+  "Pangshura_tentoria (AM495310) / Pangshura_tentoria (AM495310)",
+  "Pangshura_tentoria (AM495309) / Pangshura_tentoria (AM495309)",
+  "Pangshura_tentoria (AM495308) / Pangshura_tentoria (AM495308)",
+  "Pangshura_tentoria (AM495327) / Pangshura_tentoria (AM495327)",
+  "Pangshura_tentoria (AM495326) / Pangshura_tentoria (AM495326)",
+  "Pangshura_tentoria (AM495325) / Pangshura_tentoria (AM495325)",
+  "Pangshura_tentoria (AM495324) / Pangshura_tentoria (AM495324)",
+  "Pangshura_tentoria (AM495328) / Pangshura_tentoria (AM495328)",
+  "Pangshura_smithii (JN232521) / Pangshura_smithii (JN232521)",
+  "Pangshura_smithii (AM495288) / Pangshura_smithii (AM495288)",
+  "Pangshura_smithii (AY434589) / Pangshura_smithii (AY434589)",
+  "Pangshura_smithii (AM495295) / Pangshura_smithii (AM495295)",
+  "Pangshura_smithii (AM495293) / Pangshura_smithii (AM495293)",
+  "Pangshura_smithii (AM495292) / Pangshura_smithii (AM495292)",
+  "Pangshura_smithii (AM495291) / Pangshura_smithii (AM495291)",
+  "Pangshura_smithii (AM495290) / Pangshura_smithii (AM495290)",
+  "Pangshura_smithii (AM495289) / Pangshura_smithii (AM495289)",
+]
+`;
+
+exports[`catdog 1`] = `
+Array [
+  "",
+]
+`;
+
 exports[`coyote-test 1`] = `
 Array [
   "Canis_latrans (EU400577) / Canis_latrans (EU400577)",
@@ -27,6 +71,30 @@ Array [
 ]
 `;
 
+exports[`lepomis 1`] = `
+Array [
+  "Lepomis_megalotis (AY828976) / Lepomis_megalotis (AY828976)",
+  "Lepomis_megalotis (AY828977) / Lepomis_megalotis (AY828977)",
+  "Lepomis_auritus (AY828957) / Lepomis_auritus (AY828957)",
+  "Lepomis_auritus (AY115970) / Lepomis_auritus (AY115970)",
+  "Lepomis_auritus (AY828950) / Lepomis_auritus (AY828950)",
+  "Lepomis_auritus (AY828956) / Lepomis_auritus (AY828956)",
+  "Lepomis_auritus (JF742827) / Lepomis_auritus (JF742827)",
+  "Lepomis_auritus (AY828955) / Lepomis_auritus (AY828955)",
+  "Lepomis_auritus (AY828954) / Lepomis_auritus (AY828954)",
+  "Lepomis_auritus (AY828953) / Lepomis_auritus (AY828953)",
+  "Lepomis_auritus (AY828952) / Lepomis_auritus (AY828952)",
+  "Lepomis_auritus (AY828951) / Lepomis_auritus (AY828951)",
+  "Lepomis_auritus (AY115969) / Lepomis_auritus (AY115969)",
+]
+`;
+
+exports[`pelomedusidae-cytb 1`] = `
+Array [
+  "",
+]
+`;
+
 exports[`plaamyd 1`] = `
 Array [
   "Amyda cartilaginea (LM537480) / Amyda cartilaginea (LM537480)",
@@ -45,6 +113,12 @@ Array [
   "Amyda cartilaginea (LM537476) / Amyda cartilaginea (LM537476)",
   "Amyda cartilaginea (LM537493) / Amyda cartilaginea (LM537493)",
   "Amyda cartilaginea (LM537494) / Amyda cartilaginea (LM537494)",
+]
+`;
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Array [
+  "",
 ]
 `;
 
