@@ -43,20 +43,16 @@ function strictSearch(rootNode) {
 	if (totalHybridSpecies > 1) {
 		for (let name in hybridSpeciesByName) {
 			let hybrids = hybridSpeciesByName[name]
+
 			// remove the flagged hybrids and redo the search.
 			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
 			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
 			let resultsRedo = recursiveSearch(rootNodeCopy)
+
 			//  If what remains is N-1 hybrid species, then that was a true hybrid
-			let newSpeciesNames = {}
-			let newSpeciesCount = 0
-			for (let hybrid of resultsRedo.nm) {
-				let speciesName = hybrid.name
-				if (newSpeciesNames[speciesName] === undefined) {
-					newSpeciesNames[speciesName] = true
-					newSpeciesCount += 1
-				}
-			}
+			let newSpeciesNames = new Set(resultsRedo.nm.map(hybrid => hybrid.name))
+			let newSpeciesCount = newSpeciesNames.size
+
 			// if less, then that is NOT a true hybrid. Unmark those.
 			if (newSpeciesCount < totalHybridSpecies - 1) {
 				// This species is a true nonmonophyly!
