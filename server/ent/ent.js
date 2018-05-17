@@ -35,7 +35,7 @@ function strictSearch(rootNode) {
 	let results = recursiveSearch(rootNode)
 
 	// We don't report all the hybrids found as hybrids just yet
-	let hybridSpeciesByName = groupBy(results.nm, hybrid => hybrid.name)
+	let hybridSpeciesByName = groupBy(results.nm, h => h.name)
 	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
 	// For each species found (if at least 2)
@@ -46,7 +46,7 @@ function strictSearch(rootNode) {
 	let allIndividuals = getAllIndividuals(rootNode)
 
 	// Count number of hybrids for each species
-	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
+	let hybridSpeciesCount = countBy(results.nm, h => h.name)
 
 	// Count number of individuals in each species
 	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
@@ -54,11 +54,11 @@ function strictSearch(rootNode) {
 	for (let speciesName in hybridSpeciesCount) {
 		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
 			// We need to unflag the one that's furthest away from its closest
-			let matchingHybrids = results.nm.filter(hybrid => hybrid.name === speciesName)
-			let furthestHybrid = maxBy(matchingHybrids, hybrid => hybrid.length)
+			let matchingHybrids = results.nm.filter(h => h.name === speciesName)
+			let furthestHybrid = maxBy(matchingHybrids, h => h.length)
 
 			// furthestHybrid should be removed
-			results.nm = results.nm.filter(hybrid => hybrid.ident !== furthestHybrid.ident)
+			results.nm = results.nm.filter(h => h.ident !== furthestHybrid.ident)
 		}
 	}
 
@@ -76,7 +76,7 @@ function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
 		let resultsRedo = recursiveSearch(rootNodeCopy)
 
 		//  If what remains is N-1 hybrid species, then that was a true hybrid
-		let newSpeciesNames = new Set(resultsRedo.nm.map(hybrid => hybrid.name))
+		let newSpeciesNames = new Set(resultsRedo.nm.map(h => h.name))
 		let newSpeciesCount = newSpeciesNames.size
 
 		// if less, then that is NOT a true hybrid. Unmark those.
