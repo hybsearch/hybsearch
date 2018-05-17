@@ -37,6 +37,8 @@ for (const file of files) {
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
 		let results = parseFasta(monophyleticFasta).map(s => s.species)
 
-		expect(results).toMatchSpecificSnapshot(`./__snapshots__/more-ent-${file}.hybsnap`)
+		expect(results).toMatchSpecificSnapshot(
+			`./__snapshots__/more-ent-${file}.hybsnap`
+		)
 	})
 }
