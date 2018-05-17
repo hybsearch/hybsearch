@@ -93,8 +93,10 @@ function strictSearch(rootNode) {
 			// We need to unflag the one that's furthest away from its closest
 			let longestDist
 			let furthestHybrid
-			for (let hybrid of results.nm) {
-				if (hybrid.name === speciesName) {
+
+			results.nm
+				.filter(hybrid => hybrid.name === speciesName)
+				.forEach(hybrid => {
 					if (longestDist === undefined) {
 						longestDist = hybrid.length
 					}
@@ -102,8 +104,7 @@ function strictSearch(rootNode) {
 						longestDist = hybrid.length
 						furthestHybrid = hybrid
 					}
-				}
-			}
+				})
 
 			// furthestHybrid should be removed
 			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
