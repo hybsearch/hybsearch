@@ -108,33 +108,38 @@ function getAllIndividuals(rootNode) {
 // Given a node, it will return {species:[],nm:[]}
 // where `species` is a list of individuals under that node
 // and `nm` is a list of flagged hybrids
-function recursiveSearch(node, nmInstances = []) {
-	if (!node.branchset) {
-		return { species: [node], nm: nmInstances }
+function recursiveSearch(rootNode) {
+	let nmInstances = []
+
+	function recurse(node) {
+		if (!node.branchset) {
+			return [node]
+		}
+
+		let combinations = combs(node.branchset, 2)
+
+		let speciesList = []
+		let forRemoval = []
+		for (let speciesSet of combinations) {
+			// if species is in speciesList: continue
+			let speciesListA = recurse(speciesSet[1])
+			let speciesListB = recurse(speciesSet[0])
+
+			speciesListA.forEach(speciesChecker(speciesListB, nmInstances, forRemoval))
+			speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
+
+			speciesListB.forEach(speciesChecker(speciesListA, nmInstances, forRemoval))
+			speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
+
+			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
+		}
+
+		speciesList = uniqBy(speciesList, 'ident')
+
+		return speciesList
 	}
 
-	let combinations = combs(node.branchset, 2)
-
-	let speciesList = []
-	let forRemoval = []
-	for (let speciesSet of combinations) {
-		// if species is in speciesList: continue
-		let resultsA = recursiveSearch(speciesSet[1], nmInstances)
-		let speciesListA = resultsA.species
-
-		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
-		let speciesListB = resultsB.species
-
-		speciesListA.forEach(speciesChecker(speciesListB, nmInstances, forRemoval))
-		speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
-
-		speciesListB.forEach(speciesChecker(speciesListA, nmInstances, forRemoval))
-		speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
-
-		speciesList = [...speciesList, ...speciesListA, ...speciesListB]
-	}
-
-	speciesList = uniqBy(speciesList, 'ident')
+	let speciesList = recurse(rootNode)
 
 	return { species: speciesList, nm: nmInstances }
 }
