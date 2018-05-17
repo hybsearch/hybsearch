@@ -45,10 +45,13 @@ function strictSearch(rootNode) {
 
 	// Count number of individuals in each species
 	let allIndividuals = getAllIndividuals(rootNode)
-	let totalSpeciesCounter = countBy(allIndividuals, individual => individual.name)
+	let totalSpeciesCounter = countBy(allIndividuals, ind => ind.name)
 
 	for (let speciesName of Object.keys(hybridSpeciesCounter)) {
-		if (hybridSpeciesCounter[speciesName] !== totalSpeciesCounter[speciesName]) {
+		let countsMatch =
+			hybridSpeciesCounter[speciesName] === totalSpeciesCounter[speciesName]
+
+		if (!countsMatch) {
 			continue
 		}
 
@@ -127,9 +130,11 @@ function recursiveSearch(rootNode) {
 			let speciesListA = recurse(speciesSet[1])
 			let speciesListB = recurse(speciesSet[0])
 
+			// prettier-ignore
 			speciesListA.forEach(speciesChecker(speciesListB, nmInstances, forRemoval))
 			speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
 
+			// prettier-ignore
 			speciesListB.forEach(speciesChecker(speciesListA, nmInstances, forRemoval))
 			speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
 
