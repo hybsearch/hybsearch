@@ -674,39 +674,6 @@ Object {
                 Object {
                   "branchset": Array [
                     Object {
-                      "branchset": Array [],
-                      "length": 0.0476129,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.165051,
-                  "name": "",
-                },
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.02084387,
-                          "name": "",
-                        },
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [],
-                              "length": 0.007838544,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.01493761,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.1177212,
-                      "name": "",
-                    },
-                    Object {
                       "length": 0.1471707,
                       "name": "Lepomis_macrochirus__AY115975",
                     },
@@ -798,40 +765,6 @@ Object {
       "branchset": Array [
         Object {
           "branchset": Array [
-            Object {
-              "branchset": Array [
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [],
-                              "length": 0.01552297,
-                              "name": "",
-                            },
-                            Object {
-                              "branchset": Array [],
-                              "length": 0.005372928,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.01029723,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.02828408,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.08866409,
-                  "name": "",
-                },
-              ],
-              "length": 0.1492099,
-              "name": "",
-            },
             Object {
               "length": 0.2954469,
               "name": "Lepomis_symmetricus__AY828995",
