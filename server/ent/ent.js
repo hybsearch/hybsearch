@@ -88,7 +88,7 @@ function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
 		}
 	}
 
-	return nonmonophyly.filter(hybrid => !(unflag.indexOf(hybrid.ident) !== -1))
+	return nonmonophyly.filter(h => !unflag.includes(h.ident))
 }
 
 function getAllIndividuals(rootNode) {
