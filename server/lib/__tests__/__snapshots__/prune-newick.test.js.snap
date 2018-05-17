@@ -1,58 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`coyote-test 1`] = `
+exports[`bataguridae-cytb 1`] = `
 Array [
-  "Canis_latrans__EU400576",
-  "Canis_latrans__EU400575",
-  "Canis_latrans__EU400568",
-  "Canis_latrans__EU400566",
-  "Canis_latrans__EU400557",
-  "Canis_latrans__EU400549",
-  "Canis_latrans__EU400544",
-  "Canis_latrans__EU400574",
-  "Canis_latrans__EU400573",
-  "Canis_latrans__EU400569",
-  "Canis_latrans__EU400553",
-  "Canis_latrans__EU400550",
-  "Canis_latrans__EU400548",
-  "Canis_latrans__EU400572",
-  "Canis_latrans__EU400567",
-  "Canis_latrans__EU400565",
-  "Canis_latrans__EU400564",
-  "Canis_latrans__EU400562",
-  "Canis_latrans__EU400560",
-  "Canis_latrans__EU400547",
-  "Canis_latrans__EU400563",
-  "Canis_latrans__EU400558",
-  "Canis_latrans__EU400551",
-  "Canis_latrans__EU400556",
-  "Canis_latrans__EU400555",
-  "Canis_latrans__EU400546",
-  "Canis_latrans__EU400545",
-  "Canis_latrans__EU400571",
-  "Canis_latrans__EU400552",
-  "Canis_latrans__EU400570",
-  "Canis_latrans__EU400561",
-  "Canis_latrans__EU400559",
-  "Canis_latrans__EU400554",
-  "Canis_latrans__EU400578",
-  "Canis_latrans__EU400577",
-  "Canis_lupus__AF115701",
-  "Canis_lupus__AF115700",
-  "Canis_lupus__AF115699",
-  "Canis_lupus__AF115703",
-  "Canis_lupus__AF115702",
-  "Canis_lupus__AF115698",
-  "Canis_lupus__AF115697",
-  "Canis_lupus__AF115696",
-  "Canis_lupus__AF115695",
-  "Canis_lupus__AF115694",
-  "Canis_lupus__AF115693",
-  "Canis_lupus__AF115692",
-  "Canis_lupus__AF115691",
-  "Canis_lupus__AF115690",
-  "Canis_lupus__AF115689",
-  "Canis_lupus__AF115688",
-  "Canis_lupus__AF115687",
+  "Geoclemys_hamiltonii__EF558365",
+]
+`;
+
+exports[`catdog 1`] = `
+Array [
+  "Canis_lupus__KU253532",
+  "Canis_lupus__KU253531",
+]
+`;
+
+exports[`coyote-test 1`] = `Array []`;
+
+exports[`emydura 1`] = `Array []`;
+
+exports[`emydura-short 1`] = `Array []`;
+
+exports[`kino 1`] = `Array []`;
+
+exports[`lepomis 1`] = `
+Array [
+  "Lepomis_auritus__AY828957",
+  "Lepomis_humilis__JF742831",
+  "Lepomis_humilis__AY828965",
+  "Lepomis_humilis__AY828964",
+  "Lepomis_humilis__AY374293",
+  "Lepomis_macrochirus__AY828968",
+  "Lepomis_macrochirus__AY115976",
+  "Lepomis_macrochirus__AY828967",
+  "Lepomis_macrochirus__AY828966",
+  "Lepomis_macrochirus__AY225667",
+  "Lepomis_symmetricus__JF742837",
+  "Lepomis_cyanellus__JF742828",
+  "Lepomis_cyanellus__AY828959",
+  "Lepomis_cyanellus__AY115973",
+  "Lepomis_cyanellus__AY828958",
+  "Lepomis_cyanellus__AY115974",
+  "Lepomis_symmetricus__AY828996",
+]
+`;
+
+exports[`pelomedusidae-cytb 1`] = `Array []`;
+
+exports[`plaamyd 1`] = `Array []`;
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Array [
+  "Pseudemys_floridana__LSUMZ83551",
+  "Pseudemys_floridana__LSUMZ83549",
+  "Pseudemys_floridana__HBS123560",
+]
+`;
+
+exports[`smallerlepus 1`] = `Array []`;
+
+exports[`trio171sequence 1`] = `
+Array [
+  "Cycloderma_aubryi__FR850656",
+  "Cycloderma_aubryi__FR850655",
+  "Cycloderma_aubryi__AY259566",
+  "Cycloderma_frenatum__AY259565",
+  "Cyclanorbis_elegans__AY259570",
+  "Cyclanorbis_senegalensis__AY259569",
+]
+`;
+
+exports[`trionychcytb 1`] = `
+Array [
+  "Paracentrotus_lividus__AH001273",
+  "Anser_caerulescens__X77190",
+  "Acomys_dimidiatus__Z96060",
+  "Acomys_dimidiatus__Z96061",
+  "Acomys_dimidiatus__Z96062",
+  "Acomys_cahirinus__Z96051",
+  "Acomys_cahirinus__Z96052",
+  "Acomys_cahirinus__Z96053",
+  "Acomys_ignitus__Z96063",
+  "Acomys_ignitus__Z96064",
+  "Acomys_russatus__Z96065",
+  "Acomys_russatus__Z96066",
+  "Acomys_spinosissimus__Z96067",
+  "Acomys_spinosissimus__Z96068",
+  "Mus_minutoides__FN985221",
+  "Mus_minutoides__FN985224",
+  "Mus_minutoides__FN985222",
+  "Mus_minutoides__FN985223",
+  "Mus_musculoides__Z96069",
+  "Balaenoptera_bonaerensis__X75581",
+  "Balaenoptera_acutorostrata__X75753",
+  "Eschrichtius_robustus__X75585",
+  "Megaptera_novaeangliae__X75584",
+  "Balaenoptera_edeni__X75583",
+  "Balaenoptera_borealis__X75582",
+  "Balaena_mysticetus__X75588",
+  "Eubalaena_glacialis__X75587",
+  "Caperea_marginata__X75586",
+  "Physeter_catodon__X75589",
+  "Capra_ibex__AJ010055",
+  "Capra_pyrenaica__AJ010047",
+  "Capra_pyrenaica__AJ010048",
+  "Capra_pyrenaica__AJ010049",
+  "Capra_pyrenaica__AJ010050",
+  "Capra_pyrenaica__AJ010053",
+  "Capra_pyrenaica__AJ010051",
+  "Capra_pyrenaica__AJ010056",
+  "Capra_pyrenaica__AJ010052",
+  "Capra_pyrenaica__AJ010054",
+  "Capra_nubiana__AJ009879",
+  "Mustela_nivalis__AM932882",
+  "Mustela_nivalis__AM932885",
+  "Mustela_nivalis__AM932884",
+  "Mustela_nivalis__AM932883",
+  "Pongo_pygmaeus__X97717",
+  "Macaca_mulatta__AF378365",
+  "Pelochelys_bibroni__AY259559",
+  "Pelochelys_cantorii__AY259560",
+  "Pelochelys_cantorii__JN232533",
+  "Chitra_indica__JN232529",
+  "Amyda_ornata__LM537482",
+  "Amyda_ornata__LM537490",
+  "Amyda_cartilaginea__LM537483",
+  "Amyda_cartilaginea__LM537484",
+  "Amyda_cartilaginea__LM537485",
+  "Amyda_cartilaginea__LM537466",
+  "Amyda_cartilaginea__AY259550",
+  "Amyda_cartilaginea__JN232534",
+  "Amyda_cartilaginea__LM537465",
+  "Amyda_cartilaginea__LM537467",
+  "Palea_steindachneri__AY743417",
+  "Pelodiscus_sinensis__AY259553",
+  "Pelodiscus_sinensis__AY583692",
+  "Pelodiscus_sinensis__JN860674",
+  "Pelodiscus_sinensis__AB904727",
+  "Pelodiscus_sinensis__AB904728",
+  "Pelodiscus_sinensis__FR851459",
+  "Lissemys_punctata__JN232531",
+  "Cyclanorbis_elegans__AY259570",
+  "Cycloderma_aubryi__AY259566",
+  "Cycloderma_aubryi__FR850655",
+  "Cycloderma_aubryi__FR850656",
+  "Cycloderma_frenatum__AY259565",
+  "Cyclanorbis_senegalensis__AY259569",
+  "Cyclanorbis_senegalensis__FR850654",
+  "Amphistichus_argenteus__JN125234",
+  "Amphistichus_argenteus__JN125235",
+  "Amphistichus_argenteus__JN125236",
+  "Amphistichus_koelzi__JN125237",
+  "Amphistichus_koelzi__JN125238",
+  "Amphistichus_koelzi__JN125239",
+  "Amphistichus_rhodoterus__JN125240",
+  "Amphistichus_rhodoterus__JN125241",
+  "Amphistichus_rhodoterus__JN125242",
+  "Hyperprosopon_ellipticum__JN125246",
+  "Hyperprosopon_argenteum__JN125250",
+  "Hyperprosopon_anale__JN125243",
+  "Hyperprosopon_anale__JN125244",
+  "Hyperprosopon_anale__JN125245",
+  "Chioninia_delalandii__AJ305008",
+  "Chioninia_delalandii__AJ305009",
+  "Chioninia_delalandii__AJ305010",
+  "Chioninia_delalandii__AJ305014",
+  "Chioninia_delalandii__AJ305011",
+  "Chioninia_delalandii__AJ305012",
+  "Chioninia_delalandii__AJ305013",
+  "Chioninia_delalandii__AJ305015",
+  "Chioninia_delalandii__AJ305016",
+  "Chioninia_delalandii__AJ305017",
+  "Chioninia_delalandii__AJ305018",
+  "Pnoepyga_pusilla__JX518496",
+  "Corvus_frugilegus__Y16885",
+]
+`;
+
+exports[`vulpes 1`] = `
+Array [
+  "Vulpes_vulpes__EF689061",
+  "Vulpes_vulpes__EF689059",
+  "Vulpes_macrotis__AH005827",
 ]
 `;
