@@ -110,65 +110,64 @@ function getAllIndividuals(rootNode) {
 // where `species` is a list of individuals under that node
 // and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
-	if (node.branchset) {
-		debug('has branchset')
-		let combinations = combs(node.branchset, 2)
-
-		let speciesList = []
-		let forRemoval = []
-		for (let speciesSet of combinations) {
-			// if species is in speciesList: continue
-			let resultsA = recursiveSearch(speciesSet[1], nmInstances)
-			let speciesListA = resultsA.species
-
-			let resultsB = recursiveSearch(speciesSet[0], nmInstances)
-			let speciesListB = resultsB.species
-
-			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
-
-			const speciesChecker = otherSpeciesList => species1 => {
-				const otherSpeciesNames = otherSpeciesList.map(s => s.name)
-
-				let hasName = otherSpeciesNames.includes(species1.name)
-				let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
-				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
-
-				if (hasName && notAllEqual) {
-					otherSpeciesList.forEach(species3 => {
-						if (species3.name === species1.name) {
-							const count = nmInstances.filter(sp => sp === species3).length
-
-							if (!count) {
-								debug(`nmMark called on ${species3}`)
-								debug(`nonmonophyly: ${label(species3)}`)
-
-								nmInstances.push(species3)
-
-								forRemoval.push(species3.ident)
-								debug(`removing from A ${label(species3)}`)
-							}
-						}
-					})
-				}
-			}
-
-			speciesListA.forEach(speciesChecker(speciesListB))
-			speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
-
-			speciesListB.forEach(speciesChecker(speciesListA))
-			speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
-
-			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
-		}
-
-		speciesList = uniqBy(speciesList, 'ident')
-
-		debug('speciesList', speciesList)
-		return { species: speciesList, nm: nmInstances }
+	if (!node.branchset) {
+		debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
+		return { species: [node], nm: nmInstances }
 	}
 
-	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
-	return { species: [node], nm: nmInstances }
+	debug('has branchset')
+	let combinations = combs(node.branchset, 2)
+
+	let speciesList = []
+	let forRemoval = []
+	for (let speciesSet of combinations) {
+		// if species is in speciesList: continue
+		let resultsA = recursiveSearch(speciesSet[1], nmInstances)
+		let speciesListA = resultsA.species
+
+		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
+		let speciesListB = resultsB.species
+
+		debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
+
+		const speciesChecker = otherSpeciesList => species1 => {
+			let otherSpeciesNames = otherSpeciesList.map(s => s.name)
+
+			let hasName = otherSpeciesNames.includes(species1.name)
+			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
+			debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
+
+			if (hasName && notAllEqual) {
+				otherSpeciesList
+					.filter(species3 => species3.name === species1.name)
+					.forEach(species3 => {
+						let count = nmInstances.filter(sp => sp === species3).length
+
+						if (count) {
+							return
+						}
+
+						debug(`nonmonophyly: ${label(species3)}`)
+						debug(`removing from A ${label(species3)}`)
+						nmInstances.push(species3)
+						forRemoval.push(species3.ident)
+					})
+			}
+		}
+
+		speciesListA.forEach(speciesChecker(speciesListB))
+		speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
+
+		speciesListB.forEach(speciesChecker(speciesListA))
+		speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
+
+		speciesList = [...speciesList, ...speciesListA, ...speciesListB]
+	}
+
+	speciesList = uniqBy(speciesList, 'ident')
+
+	debug('speciesList', speciesList)
+	return { species: speciesList, nm: nmInstances }
 }
 
 module.exports.formatData = formatData
