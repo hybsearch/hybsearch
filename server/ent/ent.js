@@ -56,8 +56,7 @@ function strictSearch(rootNode, fasta) {
 	// We don't report all the hybrids found as hybrids just yet
 	let hybridSpeciesByName = {}
 	let totalHybridSpecies = 0
-	for (let pair of results.nm) {
-		let hybrid = pair[0]
+	for (let hybrid of results.nm) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesByName[speciesName] === undefined) {
 			hybridSpeciesByName[speciesName] = []
@@ -78,8 +77,8 @@ function strictSearch(rootNode, fasta) {
 			//  If what remains is N-1 hybrid species, then that was a true hybrid
 			let newSpeciesNames = {}
 			let newSpeciesCount = 0
-			for (let pair of resultsRedo.nm) {
-				let speciesName = pair[0].name
+			for (let hybrid of resultsRedo.nm) {
+				let speciesName = hybrid.name
 				if (newSpeciesNames[speciesName] === undefined) {
 					newSpeciesNames[speciesName] = true
 					newSpeciesCount++
@@ -95,7 +94,7 @@ function strictSearch(rootNode, fasta) {
 				}
 			}
 		}
-		remove(results.nm, pair => unflag.indexOf(pair[0].ident) !== -1)
+		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
 	}
 
 	let allIndividuals = []
@@ -111,8 +110,7 @@ function strictSearch(rootNode, fasta) {
 	getAllIndividuals(rootNode)
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = {}
-	for (let pair of results.nm) {
-		let hybrid = pair[0]
+	for (let hybrid of results.nm) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesCount[speciesName] === undefined) {
 			hybridSpeciesCount[speciesName] = 0
@@ -135,8 +133,7 @@ function strictSearch(rootNode, fasta) {
 			// We need to unflag the one that's furthest away from its closest
 			let longestDist
 			let furthestHybrid
-			for (let pair of results.nm) {
-				let hybrid = pair[0]
+			for (let hybrid of results.nm) {
 				if (hybrid.name === speciesName) {
 					if (longestDist === undefined) {
 						longestDist = hybrid.length
@@ -149,7 +146,7 @@ function strictSearch(rootNode, fasta) {
 			}
 
 			// furthestHybrid should be removed
-			remove(results.nm, pair => pair[0].ident === furthestHybrid.ident)
+			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
 		}
 	}
 
@@ -186,14 +183,13 @@ function recursiveSearch(node, nmInstances = []) {
 				if (hasName && notAllEqual) {
 					otherSpeciesList.forEach(species3 => {
 						if (species3.name === species1.name) {
-							const pairCheck = pair => isEqual(pair, [species3, species3])
-							const count = nmInstances.filter(pairCheck).length
+							const count = nmInstances.filter(sp => sp === species3).length
 
 							if (!count) {
-								debug(`nmMark called on ${species3} and ${species3}`)
-								debug(`nonmonophyly: ${label(species3)} / ${label(species3)}`)
+								debug(`nmMark called on ${species3}`)
+								debug(`nonmonophyly: ${label(species3)}`)
 
-								nmInstances.push([species3, species3])
+								nmInstances.push(species3)
 
 								forRemoval.push(species3.ident)
 								debug(`removing from A ${label(species3)}`)
@@ -225,5 +221,5 @@ function recursiveSearch(node, nmInstances = []) {
 module.exports.formatData = formatData
 function formatData(results) {
 	const { nm: nmlist } = results
-	return nmlist.map(pair => pair.map(label).join(' / ')).join('\n')
+	return nmlist.map(label).join('\n')
 }
