@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emydura-short 1`] = `
+Array [
+  "Emydura subglobosa__KC755190",
+  "Emydura victoriae__KC755189",
+  "Emydura victoriae__KC755188",
+  "Emydura tanybaraga__KC755187",
+  "Emydura tanybaraga__KC755186",
+  "Emydura subglobosa__KC755185",
+  "Emydura macquarii__KC755183",
+]
+`;
