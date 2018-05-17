@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
 const { pruneOutliers } = require('../prune-newick')
+const { parse: newickToJson } = require('../../newick')
 const fs = require('fs')
 const path = require('path')
 
@@ -13,14 +14,15 @@ const files = fs
 for (const file of files) {
 	test(file, () => {
 		let content = fs.readFileSync(path.join(base, file) + '.tree', 'utf-8')
+		let inputTree = newickToJson(content)
 
 		let fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
-		let inputTree = JSON.parse(content)
 
-		let { removedData } = pruneOutliers(inputTree, fasta)
+		let { removedData, prunedNewick } = pruneOutliers(inputTree, fasta)
 
 		let removed = removedData.map(node => node.name)
 
 		expect(removed).toMatchSnapshot()
+		expect(prunedNewick).toMatchSnapshot()
 	})
 }
