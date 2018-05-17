@@ -80,10 +80,11 @@ function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
 		// if less, then that is NOT a true hybrid. Unmark those.
 		if (newSpeciesCount < totalHybridSpecies - 1) {
 			// This species is a true nonmonophyly!
-		} else {
-			// Unflag this species
-			toUnflag = [...toUnflag, ...hybrids.map(h => h.ident)]
+			continue
 		}
+
+		// Otherwise, unflag this species
+		toUnflag = [...toUnflag, ...hybrids.map(h => h.ident)]
 	}
 
 	return nonmonophyly.filter(h => !toUnflag.includes(h.ident))
