@@ -47,6 +47,9 @@ rules:
   # Forbid use of `==` operator (use `===` instead)
   eqeqeq: error
 
+  # Forbid ++ and -- (use += 1 and -= 1 instead)
+  no-plusplus: [error, {allowForLoopAfterthoughts: true}]
+
   # Allow some unused vars
   no-unused-vars:
     - warn

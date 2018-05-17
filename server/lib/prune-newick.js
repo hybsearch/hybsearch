@@ -88,7 +88,7 @@ function pruneOutliers(newick, alignedFasta) {
 			let diffProportion = hammingDistance / smallerGeneLength
 
 			if (diffProportion > 0.2) {
-				diffCount++
+				diffCount += 1
 			}
 		}
 

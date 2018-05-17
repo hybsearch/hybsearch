@@ -60,7 +60,7 @@ function strictSearch(rootNode, fasta) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesByName[speciesName] === undefined) {
 			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies++
+			totalHybridSpecies += 1
 		}
 		hybridSpeciesByName[speciesName].push(hybrid)
 	}
@@ -81,7 +81,7 @@ function strictSearch(rootNode, fasta) {
 				let speciesName = hybrid.name
 				if (newSpeciesNames[speciesName] === undefined) {
 					newSpeciesNames[speciesName] = true
-					newSpeciesCount++
+					newSpeciesCount += 1
 				}
 			}
 			// if less, then that is NOT a true hybrid. Unmark those.
@@ -115,7 +115,7 @@ function strictSearch(rootNode, fasta) {
 		if (hybridSpeciesCount[speciesName] === undefined) {
 			hybridSpeciesCount[speciesName] = 0
 		}
-		hybridSpeciesCount[speciesName]++
+		hybridSpeciesCount[speciesName] += 1
 	}
 
 	// Count number of individuals in each species
@@ -125,7 +125,7 @@ function strictSearch(rootNode, fasta) {
 		if (totalSpeciesCount[speciesName] === undefined) {
 			totalSpeciesCount[speciesName] = 0
 		}
-		totalSpeciesCount[speciesName]++
+		totalSpeciesCount[speciesName] += 1
 	}
 
 	for (let speciesName in hybridSpeciesCount) {
