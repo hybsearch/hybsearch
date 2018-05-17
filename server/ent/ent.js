@@ -205,7 +205,12 @@ function recursiveSearch(node, nmInstances = []) {
 			speciesListB.forEach(speciesChecker(speciesListA))
 			remove(speciesListB, n => forRemoval.includes(n.ident))
 
-			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
+			if (speciesListA.length) {
+				speciesList.push(...speciesListA)
+			}
+			if (speciesListB.length) {
+				speciesList.push(...speciesListB)
+			}
 		}
 
 		speciesList = uniqBy(speciesList, 'ident')
