@@ -1,6 +1,2401 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`vulpes 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.0004072201,
+          "name": "Vulpes_vulpes__EF689061",
+        },
+        Object {
+          "length": 0.0004072201,
+          "name": "Vulpes_vulpes__EF689059",
+        },
+      ],
+      "length": 0.5266033,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00366725,
+                      "name": "Vulpes_cana__KU378587",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.00042013,
+                          "name": "Vulpes_cana__KU378586",
+                        },
+                        Object {
+                          "length": 0.00042013,
+                          "name": "Vulpes_cana__KU378585",
+                        },
+                      ],
+                      "length": 0.003247121,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.004644443,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001529173,
+                      "name": "Vulpes_cana__KU378584",
+                    },
+                    Object {
+                      "length": 0.001529173,
+                      "name": "Vulpes_cana__KU378583",
+                    },
+                  ],
+                  "length": 0.006782521,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.008311693,
+                  "name": "Vulpes_cana__KU378582",
+                },
+              ],
+              "length": 0.01311386,
+              "name": "",
+            },
+            Object {
+              "length": 0.02142555,
+              "name": "Vulpes_cana__KU378581",
+            },
+          ],
+          "length": 0.303927,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.007372748,
+                                  "name": "Vulpes_vulpes__KU378580",
+                                },
+                                Object {
+                                  "length": 0.007372748,
+                                  "name": "Vulpes_vulpes__KU378576",
+                                },
+                              ],
+                              "length": 0.02212312,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378579",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378578",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378577",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378575",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378574",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378573",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378572",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378571",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378570",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378569",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378568",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.002187163,
+                                      "name": "Vulpes_vulpes__KU378567",
+                                    },
+                                    Object {
+                                      "length": 0.002187163,
+                                      "name": "Vulpes_vulpes__KU378566",
+                                    },
+                                  ],
+                                  "length": 0.002927773,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.005114936,
+                                  "name": "Vulpes_vulpes__KU378565",
+                                },
+                              ],
+                              "length": 0.02438093,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378562",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378561",
+                            },
+                            Object {
+                              "length": 0.02949586,
+                              "name": "Vulpes_vulpes__KU378560",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.005381756,
+                                  "name": "Vulpes_vulpes__KU378552",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.00277493,
+                                      "name": "Vulpes_vulpes__KU378518",
+                                    },
+                                    Object {
+                                      "length": 0.002774929,
+                                      "name": "Vulpes_vulpes__KU378515",
+                                    },
+                                  ],
+                                  "length": 0.002606828,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.02411411,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378549",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378548",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378547",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378546",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378545",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378542",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.001162754,
+                                  "name": "Vulpes_vulpes__KU378541",
+                                },
+                                Object {
+                                  "length": 0.001162754,
+                                  "name": "Vulpes_vulpes__KU378517",
+                                },
+                              ],
+                              "length": 0.02833311,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378532",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378529",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002055762,
+                                  "name": "Vulpes_vulpes__KU378527",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.001394895,
+                                      "name": "Vulpes_vulpes__KU378526",
+                                    },
+                                    Object {
+                                      "length": 0.001394893,
+                                      "name": "Vulpes_vulpes__KU378525",
+                                    },
+                                  ],
+                                  "length": 0.0006608687,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.0274401,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949586,
+                              "name": "Vulpes_vulpes__KU378523",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002248767,
+                                  "name": "Vulpes_vulpes__KU378522",
+                                },
+                                Object {
+                                  "length": 0.002248767,
+                                  "name": "Vulpes_vulpes__KU378520",
+                                },
+                              ],
+                              "length": 0.0272471,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378521",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378516",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378514",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378513",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378512",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378511",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378510",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.001297197,
+                                  "name": "Vulpes_vulpes__KU378509",
+                                },
+                                Object {
+                                  "length": 0.001297197,
+                                  "name": "Vulpes_vulpes__KU378508",
+                                },
+                              ],
+                              "length": 0.02819867,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378507",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378506",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.003619143,
+                                      "name": "Vulpes_vulpes__KU378502",
+                                    },
+                                    Object {
+                                      "length": 0.003619143,
+                                      "name": "Vulpes_vulpes__KU378500",
+                                    },
+                                  ],
+                                  "length": 0.002746034,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.006365179,
+                                  "name": "Vulpes_vulpes__KU378501",
+                                },
+                                Object {
+                                  "length": 0.006365177,
+                                  "name": "Vulpes_vulpes__KU378491",
+                                },
+                              ],
+                              "length": 0.02313069,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378498",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__KU378495",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__EF689062",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__EF689060",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__EF689058",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__AY928669",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "length": 0.000891771,
+                                          "name": "Vulpes_vulpes__DQ498127",
+                                        },
+                                        Object {
+                                          "length": 0.0008917716,
+                                          "name": "Vulpes_vulpes__JN652603",
+                                        },
+                                      ],
+                                      "length": 0.001663585,
+                                      "name": "",
+                                    },
+                                    Object {
+                                      "length": 0.002555356,
+                                      "name": "Vulpes_vulpes__JX013647",
+                                    },
+                                  ],
+                                  "length": 0.003338939,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.005894294,
+                                  "name": "Vulpes_vulpes__DQ498125",
+                                },
+                              ],
+                              "length": 0.02360157,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__DQ498126",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003011465,
+                                  "name": "Vulpes_vulpes__DQ498124",
+                                },
+                                Object {
+                                  "length": 0.003011465,
+                                  "name": "Vulpes_vulpes__JN652604",
+                                },
+                              ],
+                              "length": 0.0264844,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.005250855,
+                                  "name": "Vulpes_vulpes__JQ003578",
+                                },
+                                Object {
+                                  "length": 0.005250855,
+                                  "name": "Vulpes_vulpes__JN652608",
+                                },
+                                Object {
+                                  "length": 0.005250856,
+                                  "name": "Vulpes_vulpes__JX013648",
+                                },
+                                Object {
+                                  "length": 0.005250856,
+                                  "name": "Vulpes_vulpes__JX013646",
+                                },
+                              ],
+                              "length": 0.02424501,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JQ003577",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652618",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652617",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003590202,
+                                  "name": "Vulpes_vulpes__JN652616",
+                                },
+                                Object {
+                                  "length": 0.003590204,
+                                  "name": "Vulpes_vulpes__JN652615",
+                                },
+                              ],
+                              "length": 0.02590566,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652614",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652613",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652612",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002548805,
+                                  "name": "Vulpes_vulpes__JN652611",
+                                },
+                                Object {
+                                  "length": 0.002548804,
+                                  "name": "Vulpes_vulpes__JN652609",
+                                },
+                              ],
+                              "length": 0.02694706,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652610",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652607",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652606",
+                            },
+                            Object {
+                              "length": 0.02949587,
+                              "name": "Vulpes_vulpes__JN652605",
+                            },
+                          ],
+                          "length": 0.02298241,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378564",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378563",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378559",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378557",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378556",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378555",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003551797,
+                                  "name": "Vulpes_vulpes__KU378540",
+                                },
+                                Object {
+                                  "length": 0.003551797,
+                                  "name": "Vulpes_vulpes__KU378539",
+                                },
+                              ],
+                              "length": 0.04114708,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378538",
+                            },
+                            Object {
+                              "length": 0.04469888,
+                              "name": "Vulpes_vulpes__KU378537",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.000770414,
+                                  "name": "Vulpes_vulpes__KU378536",
+                                },
+                                Object {
+                                  "length": 0.000770414,
+                                  "name": "Vulpes_vulpes__KU378524",
+                                },
+                              ],
+                              "length": 0.04392846,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378535",
+                            },
+                            Object {
+                              "length": 0.04469888,
+                              "name": "Vulpes_vulpes__KU378533",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378530",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378528",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.00509514,
+                                  "name": "Vulpes_vulpes__KU378505",
+                                },
+                                Object {
+                                  "length": 0.00509514,
+                                  "name": "Vulpes_vulpes__KU378504",
+                                },
+                              ],
+                              "length": 0.03960373,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.04469887,
+                              "name": "Vulpes_vulpes__KU378503",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003362609,
+                                  "name": "Vulpes_vulpes__KU378497",
+                                },
+                                Object {
+                                  "length": 0.003362609,
+                                  "name": "Vulpes_vulpes__KU378494",
+                                },
+                              ],
+                              "length": 0.04133626,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.0077794,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.0009884565,
+                                  "name": "Vulpes_vulpes__KM657043",
+                                },
+                                Object {
+                                  "length": 0.0009884571,
+                                  "name": "Vulpes_vulpes__KM657042",
+                                },
+                              ],
+                              "length": 0.005087044,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.006075501,
+                              "name": "Vulpes_vulpes__KM657041",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.0009124464,
+                                  "name": "Vulpes_vulpes__KM657040",
+                                },
+                                Object {
+                                  "length": 0.0009124464,
+                                  "name": "Vulpes_vulpes__KM657039",
+                                },
+                              ],
+                              "length": 0.005163054,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.006075501,
+                              "name": "Vulpes_vulpes__KM657038",
+                            },
+                          ],
+                          "length": 0.04640277,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.06061475,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378558",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.002384262,
+                                      "name": "Vulpes_vulpes__KU378554",
+                                    },
+                                    Object {
+                                      "length": 0.002384262,
+                                      "name": "Vulpes_vulpes__KU378493",
+                                    },
+                                  ],
+                                  "length": 0.01485387,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378553",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378534",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378519",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378499",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378496",
+                                },
+                                Object {
+                                  "length": 0.01723813,
+                                  "name": "Vulpes_vulpes__KU378492",
+                                },
+                              ],
+                              "length": 0.01218719,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01437572,
+                                  "name": "Vulpes_vulpes__KU378551",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.01351483,
+                                      "name": "Vulpes_vulpes__KU378550",
+                                    },
+                                    Object {
+                                      "length": 0.01351483,
+                                      "name": "Vulpes_vulpes__KU378531",
+                                    },
+                                  ],
+                                  "length": 0.0008608879,
+                                  "name": "",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.00308953,
+                                      "name": "Vulpes_vulpes__KU378544",
+                                    },
+                                    Object {
+                                      "length": 0.00308953,
+                                      "name": "Vulpes_vulpes__KU378543",
+                                    },
+                                  ],
+                                  "length": 0.01128619,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.0150496,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.008014207,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.0113144,
+                                      "name": "Vulpes_rueppellii__KU378373",
+                                    },
+                                    Object {
+                                      "branchset": Array [
+                                        Object {
+                                          "length": 0.003945273,
+                                          "name": "Vulpes_rueppellii__KU378371",
+                                        },
+                                        Object {
+                                          "length": 0.003945273,
+                                          "name": "Vulpes_rueppellii__KU378370",
+                                        },
+                                      ],
+                                      "length": 0.007369126,
+                                      "name": "",
+                                    },
+                                  ],
+                                  "length": 0.002870385,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.01418478,
+                                  "name": "Vulpes_rueppellii__KU378372",
+                                },
+                              ],
+                              "length": 0.006057784,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.009478462,
+                                  "name": "Vulpes_rueppellii__KU378369",
+                                },
+                                Object {
+                                  "length": 0.009478461,
+                                  "name": "Vulpes_rueppellii__KU378368",
+                                },
+                              ],
+                              "length": 0.01076411,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.01719696,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.0756535,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.0769403,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.004141873,
+                              "name": "Vulpes_corsac__KU378490",
+                            },
+                            Object {
+                              "length": 0.004141873,
+                              "name": "Vulpes_corsac__KU378489",
+                            },
+                          ],
+                          "length": 0.005546353,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.009688227,
+                          "name": "Vulpes_corsac__KU378488",
+                        },
+                      ],
+                      "length": 0.004466857,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.01415508,
+                      "name": "Vulpes_corsac__KU378487",
+                    },
+                  ],
+                  "length": 0.1758782,
+                  "name": "",
+                },
+              ],
+              "length": 0.03896133,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001604846,
+                              "name": "Vulpes_lagopus__LT560065",
+                            },
+                            Object {
+                              "length": 0.001604847,
+                              "name": "Vulpes_lagopus__LT560041",
+                            },
+                            Object {
+                              "length": 0.001604847,
+                              "name": "Vulpes_lagopus__LT559609",
+                            },
+                          ],
+                          "length": 0.01501384,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.005112098,
+                                  "name": "Vulpes_lagopus__LT560053",
+                                },
+                                Object {
+                                  "length": 0.005112098,
+                                  "name": "Vulpes_lagopus__LT560017",
+                                },
+                                Object {
+                                  "length": 0.005112099,
+                                  "name": "Vulpes_lagopus__LT559981",
+                                },
+                                Object {
+                                  "length": 0.005112098,
+                                  "name": "Vulpes_lagopus__LT559969",
+                                },
+                                Object {
+                                  "length": 0.005112098,
+                                  "name": "Vulpes_lagopus__LT559633",
+                                },
+                                Object {
+                                  "length": 0.005112097,
+                                  "name": "Vulpes_lagopus__LT559573",
+                                },
+                                Object {
+                                  "length": 0.005112098,
+                                  "name": "Vulpes_lagopus__LT559549",
+                                },
+                              ],
+                              "length": 0.005635035,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559945",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559921",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559909",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.0006974599,
+                                  "name": "Vulpes_lagopus__LT559861",
+                                },
+                                Object {
+                                  "length": 0.0006974598,
+                                  "name": "Vulpes_lagopus__LT559837",
+                                },
+                              ],
+                              "length": 0.01004967,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559813",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.001578804,
+                                  "name": "Vulpes_lagopus__LT559801",
+                                },
+                                Object {
+                                  "length": 0.001578805,
+                                  "name": "Vulpes_lagopus__LT559765",
+                                },
+                                Object {
+                                  "length": 0.001578805,
+                                  "name": "Vulpes_lagopus__LT559585",
+                                },
+                              ],
+                              "length": 0.009168329,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559789",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559777",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559729",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559693",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559669",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559621",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559561",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559525",
+                            },
+                            Object {
+                              "length": 0.01074713,
+                              "name": "Vulpes_lagopus__LT559489",
+                            },
+                          ],
+                          "length": 0.005871555,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01661869,
+                          "name": "Vulpes_lagopus__LT559681",
+                        },
+                      ],
+                      "length": 0.009287431,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT560029",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT560005",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559993",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559957",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559933",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559897",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559885",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559873",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559849",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559825",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559753",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559741",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559717",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559705",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559657",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559645",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559597",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559537",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559513",
+                        },
+                        Object {
+                          "length": 0.01342183,
+                          "name": "Vulpes_lagopus__LT559501",
+                        },
+                      ],
+                      "length": 0.01248429,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.02511167,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.02643327,
+                      "name": "Vulpes_macrotis__AH005827",
+                    },
+                    Object {
+                      "length": 0.02643327,
+                      "name": "Vulpes_macrotis__JF489127",
+                    },
+                  ],
+                  "length": 0.02458452,
+                  "name": "",
+                },
+              ],
+              "length": 0.1779769,
+              "name": "",
+            },
+          ],
+          "length": 0.09635794,
+          "name": "",
+        },
+      ],
+      "length": 0.2016579,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`vulpes 2`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.00366725,
+                  "name": "Vulpes_cana__KU378587",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00042013,
+                      "name": "Vulpes_cana__KU378586",
+                    },
+                    Object {
+                      "length": 0.00042013,
+                      "name": "Vulpes_cana__KU378585",
+                    },
+                  ],
+                  "length": 0.003247121,
+                  "name": "",
+                },
+              ],
+              "length": 0.004644443,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001529173,
+                  "name": "Vulpes_cana__KU378584",
+                },
+                Object {
+                  "length": 0.001529173,
+                  "name": "Vulpes_cana__KU378583",
+                },
+              ],
+              "length": 0.006782521,
+              "name": "",
+            },
+            Object {
+              "length": 0.008311693,
+              "name": "Vulpes_cana__KU378582",
+            },
+          ],
+          "length": 0.01311386,
+          "name": "",
+        },
+        Object {
+          "length": 0.02142555,
+          "name": "Vulpes_cana__KU378581",
+        },
+      ],
+      "length": 0.303927,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.007372748,
+                              "name": "Vulpes_vulpes__KU378580",
+                            },
+                            Object {
+                              "length": 0.007372748,
+                              "name": "Vulpes_vulpes__KU378576",
+                            },
+                          ],
+                          "length": 0.02212312,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378579",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378578",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378577",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378575",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378574",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378573",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378572",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378571",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378570",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378569",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378568",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002187163,
+                                  "name": "Vulpes_vulpes__KU378567",
+                                },
+                                Object {
+                                  "length": 0.002187163,
+                                  "name": "Vulpes_vulpes__KU378566",
+                                },
+                              ],
+                              "length": 0.002927773,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.005114936,
+                              "name": "Vulpes_vulpes__KU378565",
+                            },
+                          ],
+                          "length": 0.02438093,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378562",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378561",
+                        },
+                        Object {
+                          "length": 0.02949586,
+                          "name": "Vulpes_vulpes__KU378560",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.005381756,
+                              "name": "Vulpes_vulpes__KU378552",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.00277493,
+                                  "name": "Vulpes_vulpes__KU378518",
+                                },
+                                Object {
+                                  "length": 0.002774929,
+                                  "name": "Vulpes_vulpes__KU378515",
+                                },
+                              ],
+                              "length": 0.002606828,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.02411411,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378549",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378548",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378547",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378546",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378545",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378542",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001162754,
+                              "name": "Vulpes_vulpes__KU378541",
+                            },
+                            Object {
+                              "length": 0.001162754,
+                              "name": "Vulpes_vulpes__KU378517",
+                            },
+                          ],
+                          "length": 0.02833311,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378532",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378529",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002055762,
+                              "name": "Vulpes_vulpes__KU378527",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.001394895,
+                                  "name": "Vulpes_vulpes__KU378526",
+                                },
+                                Object {
+                                  "length": 0.001394893,
+                                  "name": "Vulpes_vulpes__KU378525",
+                                },
+                              ],
+                              "length": 0.0006608687,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.0274401,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949586,
+                          "name": "Vulpes_vulpes__KU378523",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002248767,
+                              "name": "Vulpes_vulpes__KU378522",
+                            },
+                            Object {
+                              "length": 0.002248767,
+                              "name": "Vulpes_vulpes__KU378520",
+                            },
+                          ],
+                          "length": 0.0272471,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378521",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378516",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378514",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378513",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378512",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378511",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378510",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001297197,
+                              "name": "Vulpes_vulpes__KU378509",
+                            },
+                            Object {
+                              "length": 0.001297197,
+                              "name": "Vulpes_vulpes__KU378508",
+                            },
+                          ],
+                          "length": 0.02819867,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378507",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378506",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.003619143,
+                                  "name": "Vulpes_vulpes__KU378502",
+                                },
+                                Object {
+                                  "length": 0.003619143,
+                                  "name": "Vulpes_vulpes__KU378500",
+                                },
+                              ],
+                              "length": 0.002746034,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.006365179,
+                              "name": "Vulpes_vulpes__KU378501",
+                            },
+                            Object {
+                              "length": 0.006365177,
+                              "name": "Vulpes_vulpes__KU378491",
+                            },
+                          ],
+                          "length": 0.02313069,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378498",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__KU378495",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__EF689062",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__EF689060",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__EF689058",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__AY928669",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.000891771,
+                                      "name": "Vulpes_vulpes__DQ498127",
+                                    },
+                                    Object {
+                                      "length": 0.0008917716,
+                                      "name": "Vulpes_vulpes__JN652603",
+                                    },
+                                  ],
+                                  "length": 0.001663585,
+                                  "name": "",
+                                },
+                                Object {
+                                  "length": 0.002555356,
+                                  "name": "Vulpes_vulpes__JX013647",
+                                },
+                              ],
+                              "length": 0.003338939,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.005894294,
+                              "name": "Vulpes_vulpes__DQ498125",
+                            },
+                          ],
+                          "length": 0.02360157,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__DQ498126",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003011465,
+                              "name": "Vulpes_vulpes__DQ498124",
+                            },
+                            Object {
+                              "length": 0.003011465,
+                              "name": "Vulpes_vulpes__JN652604",
+                            },
+                          ],
+                          "length": 0.0264844,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.005250855,
+                              "name": "Vulpes_vulpes__JQ003578",
+                            },
+                            Object {
+                              "length": 0.005250855,
+                              "name": "Vulpes_vulpes__JN652608",
+                            },
+                            Object {
+                              "length": 0.005250856,
+                              "name": "Vulpes_vulpes__JX013648",
+                            },
+                            Object {
+                              "length": 0.005250856,
+                              "name": "Vulpes_vulpes__JX013646",
+                            },
+                          ],
+                          "length": 0.02424501,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JQ003577",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652618",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652617",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003590202,
+                              "name": "Vulpes_vulpes__JN652616",
+                            },
+                            Object {
+                              "length": 0.003590204,
+                              "name": "Vulpes_vulpes__JN652615",
+                            },
+                          ],
+                          "length": 0.02590566,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652614",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652613",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652612",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.002548805,
+                              "name": "Vulpes_vulpes__JN652611",
+                            },
+                            Object {
+                              "length": 0.002548804,
+                              "name": "Vulpes_vulpes__JN652609",
+                            },
+                          ],
+                          "length": 0.02694706,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652610",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652607",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652606",
+                        },
+                        Object {
+                          "length": 0.02949587,
+                          "name": "Vulpes_vulpes__JN652605",
+                        },
+                      ],
+                      "length": 0.02298241,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378564",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378563",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378559",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378557",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378556",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378555",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003551797,
+                              "name": "Vulpes_vulpes__KU378540",
+                            },
+                            Object {
+                              "length": 0.003551797,
+                              "name": "Vulpes_vulpes__KU378539",
+                            },
+                          ],
+                          "length": 0.04114708,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378538",
+                        },
+                        Object {
+                          "length": 0.04469888,
+                          "name": "Vulpes_vulpes__KU378537",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.000770414,
+                              "name": "Vulpes_vulpes__KU378536",
+                            },
+                            Object {
+                              "length": 0.000770414,
+                              "name": "Vulpes_vulpes__KU378524",
+                            },
+                          ],
+                          "length": 0.04392846,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378535",
+                        },
+                        Object {
+                          "length": 0.04469888,
+                          "name": "Vulpes_vulpes__KU378533",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378530",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378528",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.00509514,
+                              "name": "Vulpes_vulpes__KU378505",
+                            },
+                            Object {
+                              "length": 0.00509514,
+                              "name": "Vulpes_vulpes__KU378504",
+                            },
+                          ],
+                          "length": 0.03960373,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.04469887,
+                          "name": "Vulpes_vulpes__KU378503",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.003362609,
+                              "name": "Vulpes_vulpes__KU378497",
+                            },
+                            Object {
+                              "length": 0.003362609,
+                              "name": "Vulpes_vulpes__KU378494",
+                            },
+                          ],
+                          "length": 0.04133626,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.0077794,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0009884565,
+                              "name": "Vulpes_vulpes__KM657043",
+                            },
+                            Object {
+                              "length": 0.0009884571,
+                              "name": "Vulpes_vulpes__KM657042",
+                            },
+                          ],
+                          "length": 0.005087044,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.006075501,
+                          "name": "Vulpes_vulpes__KM657041",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0009124464,
+                              "name": "Vulpes_vulpes__KM657040",
+                            },
+                            Object {
+                              "length": 0.0009124464,
+                              "name": "Vulpes_vulpes__KM657039",
+                            },
+                          ],
+                          "length": 0.005163054,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.006075501,
+                          "name": "Vulpes_vulpes__KM657038",
+                        },
+                      ],
+                      "length": 0.04640277,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.06061475,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378558",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.002384262,
+                                  "name": "Vulpes_vulpes__KU378554",
+                                },
+                                Object {
+                                  "length": 0.002384262,
+                                  "name": "Vulpes_vulpes__KU378493",
+                                },
+                              ],
+                              "length": 0.01485387,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378553",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378534",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378519",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378499",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378496",
+                            },
+                            Object {
+                              "length": 0.01723813,
+                              "name": "Vulpes_vulpes__KU378492",
+                            },
+                          ],
+                          "length": 0.01218719,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.01437572,
+                              "name": "Vulpes_vulpes__KU378551",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01351483,
+                                  "name": "Vulpes_vulpes__KU378550",
+                                },
+                                Object {
+                                  "length": 0.01351483,
+                                  "name": "Vulpes_vulpes__KU378531",
+                                },
+                              ],
+                              "length": 0.0008608879,
+                              "name": "",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.00308953,
+                                  "name": "Vulpes_vulpes__KU378544",
+                                },
+                                Object {
+                                  "length": 0.00308953,
+                                  "name": "Vulpes_vulpes__KU378543",
+                                },
+                              ],
+                              "length": 0.01128619,
+                              "name": "",
+                            },
+                          ],
+                          "length": 0.0150496,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.008014207,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.0113144,
+                                  "name": "Vulpes_rueppellii__KU378373",
+                                },
+                                Object {
+                                  "branchset": Array [
+                                    Object {
+                                      "length": 0.003945273,
+                                      "name": "Vulpes_rueppellii__KU378371",
+                                    },
+                                    Object {
+                                      "length": 0.003945273,
+                                      "name": "Vulpes_rueppellii__KU378370",
+                                    },
+                                  ],
+                                  "length": 0.007369126,
+                                  "name": "",
+                                },
+                              ],
+                              "length": 0.002870385,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.01418478,
+                              "name": "Vulpes_rueppellii__KU378372",
+                            },
+                          ],
+                          "length": 0.006057784,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.009478462,
+                              "name": "Vulpes_rueppellii__KU378369",
+                            },
+                            Object {
+                              "length": 0.009478461,
+                              "name": "Vulpes_rueppellii__KU378368",
+                            },
+                          ],
+                          "length": 0.01076411,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.01719696,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.0756535,
+                  "name": "",
+                },
+              ],
+              "length": 0.0769403,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.004141873,
+                          "name": "Vulpes_corsac__KU378490",
+                        },
+                        Object {
+                          "length": 0.004141873,
+                          "name": "Vulpes_corsac__KU378489",
+                        },
+                      ],
+                      "length": 0.005546353,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.009688227,
+                      "name": "Vulpes_corsac__KU378488",
+                    },
+                  ],
+                  "length": 0.004466857,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.01415508,
+                  "name": "Vulpes_corsac__KU378487",
+                },
+              ],
+              "length": 0.1758782,
+              "name": "",
+            },
+          ],
+          "length": 0.03896133,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.001604846,
+                          "name": "Vulpes_lagopus__LT560065",
+                        },
+                        Object {
+                          "length": 0.001604847,
+                          "name": "Vulpes_lagopus__LT560041",
+                        },
+                        Object {
+                          "length": 0.001604847,
+                          "name": "Vulpes_lagopus__LT559609",
+                        },
+                      ],
+                      "length": 0.01501384,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.005112098,
+                              "name": "Vulpes_lagopus__LT560053",
+                            },
+                            Object {
+                              "length": 0.005112098,
+                              "name": "Vulpes_lagopus__LT560017",
+                            },
+                            Object {
+                              "length": 0.005112099,
+                              "name": "Vulpes_lagopus__LT559981",
+                            },
+                            Object {
+                              "length": 0.005112098,
+                              "name": "Vulpes_lagopus__LT559969",
+                            },
+                            Object {
+                              "length": 0.005112098,
+                              "name": "Vulpes_lagopus__LT559633",
+                            },
+                            Object {
+                              "length": 0.005112097,
+                              "name": "Vulpes_lagopus__LT559573",
+                            },
+                            Object {
+                              "length": 0.005112098,
+                              "name": "Vulpes_lagopus__LT559549",
+                            },
+                          ],
+                          "length": 0.005635035,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559945",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559921",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559909",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.0006974599,
+                              "name": "Vulpes_lagopus__LT559861",
+                            },
+                            Object {
+                              "length": 0.0006974598,
+                              "name": "Vulpes_lagopus__LT559837",
+                            },
+                          ],
+                          "length": 0.01004967,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559813",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.001578804,
+                              "name": "Vulpes_lagopus__LT559801",
+                            },
+                            Object {
+                              "length": 0.001578805,
+                              "name": "Vulpes_lagopus__LT559765",
+                            },
+                            Object {
+                              "length": 0.001578805,
+                              "name": "Vulpes_lagopus__LT559585",
+                            },
+                          ],
+                          "length": 0.009168329,
+                          "name": "",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559789",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559777",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559729",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559693",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559669",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559621",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559561",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559525",
+                        },
+                        Object {
+                          "length": 0.01074713,
+                          "name": "Vulpes_lagopus__LT559489",
+                        },
+                      ],
+                      "length": 0.005871555,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.01661869,
+                      "name": "Vulpes_lagopus__LT559681",
+                    },
+                  ],
+                  "length": 0.009287431,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT560029",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT560005",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559993",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559957",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559933",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559897",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559885",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559873",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559849",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559825",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559753",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559741",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559717",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559705",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559657",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559645",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559597",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559537",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559513",
+                    },
+                    Object {
+                      "length": 0.01342183,
+                      "name": "Vulpes_lagopus__LT559501",
+                    },
+                  ],
+                  "length": 0.01248429,
+                  "name": "",
+                },
+              ],
+              "length": 0.02511167,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.02643327,
+                  "name": "Vulpes_macrotis__JF489127",
+                },
+              ],
+              "length": 0.02458452,
+              "name": "",
+            },
+          ],
+          "length": 0.1779769,
+          "name": "",
+        },
+      ],
+      "length": 0.09635794,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`vulpes 3`] = `
+Array [
+  Object {
+    "ident": "KU378531",
+    "length": 0.01351483,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378550",
+    "length": 0.01351483,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378551",
+    "length": 0.01437572,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378543",
+    "length": 0.00308953,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378544",
+    "length": 0.00308953,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378493",
+    "length": 0.002384262,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378554",
+    "length": 0.002384262,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378558",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378553",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378534",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378519",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378499",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378496",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+  Object {
+    "ident": "KU378492",
+    "length": 0.01723813,
+    "name": "Vulpes_vulpes",
+  },
+]
+`;
+
+exports[`vulpes 4`] = `
 Array [
   "Vulpes_cana__KU378587",
   "Vulpes_cana__KU378586",

@@ -1,6 +1,218 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emydura 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.02434643,
+              "name": "Emydura subglobosa__KC755190",
+            },
+            Object {
+              "length": 0.02434643,
+              "name": "Emydura subglobosa__KC755185",
+            },
+          ],
+          "length": 0.01888831,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001741018,
+                      "name": "Emydura tanybaraga__KC755187",
+                    },
+                    Object {
+                      "length": 0.001741018,
+                      "name": "Emydura tanybaraga__KC755186",
+                    },
+                  ],
+                  "length": 0.001773244,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00002279037,
+                      "name": "Emydura subglobosa__NC_026048",
+                    },
+                    Object {
+                      "length": 0.00002279037,
+                      "name": "Emydura subglobosa__KC692462",
+                    },
+                  ],
+                  "length": 0.003491472,
+                  "name": "",
+                },
+              ],
+              "length": 0.004462174,
+              "name": "",
+            },
+            Object {
+              "length": 0.007976437,
+              "name": "Emydura subglobosa__KC755184",
+            },
+          ],
+          "length": 0.03525831,
+          "name": "",
+        },
+      ],
+      "length": 0.02883687,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001013327,
+              "name": "Emydura victoriae__KC755189",
+            },
+            Object {
+              "length": 0.001013327,
+              "name": "Emydura victoriae__KC755188",
+            },
+          ],
+          "length": 0.02560361,
+          "name": "",
+        },
+        Object {
+          "length": 0.02661694,
+          "name": "Emydura macquarii__KC755183",
+        },
+      ],
+      "length": 0.04545468,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`emydura 2`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.02434643,
+              "name": "Emydura subglobosa__KC755190",
+            },
+            Object {
+              "length": 0.02434643,
+              "name": "Emydura subglobosa__KC755185",
+            },
+          ],
+          "length": 0.01888831,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001741018,
+                      "name": "Emydura tanybaraga__KC755187",
+                    },
+                    Object {
+                      "length": 0.001741018,
+                      "name": "Emydura tanybaraga__KC755186",
+                    },
+                  ],
+                  "length": 0.001773244,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00002279037,
+                      "name": "Emydura subglobosa__NC_026048",
+                    },
+                    Object {
+                      "length": 0.00002279037,
+                      "name": "Emydura subglobosa__KC692462",
+                    },
+                  ],
+                  "length": 0.003491472,
+                  "name": "",
+                },
+              ],
+              "length": 0.004462174,
+              "name": "",
+            },
+            Object {
+              "length": 0.007976437,
+              "name": "Emydura subglobosa__KC755184",
+            },
+          ],
+          "length": 0.03525831,
+          "name": "",
+        },
+      ],
+      "length": 0.02883687,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001013327,
+              "name": "Emydura victoriae__KC755189",
+            },
+            Object {
+              "length": 0.001013327,
+              "name": "Emydura victoriae__KC755188",
+            },
+          ],
+          "length": 0.02560361,
+          "name": "",
+        },
+        Object {
+          "length": 0.02661694,
+          "name": "Emydura macquarii__KC755183",
+        },
+      ],
+      "length": 0.04545468,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`emydura 3`] = `
+Array [
+  Object {
+    "ident": "KC692462",
+    "length": 0.00002279037,
+    "name": "Emydura subglobosa",
+  },
+  Object {
+    "ident": "NC_026048",
+    "length": 0.00002279037,
+    "name": "Emydura subglobosa",
+  },
+  Object {
+    "ident": "KC755184",
+    "length": 0.007976437,
+    "name": "Emydura subglobosa",
+  },
+]
+`;
+
+exports[`emydura 4`] = `
 Array [
   "Emydura subglobosa__KC755190",
   "Emydura victoriae__KC755189",

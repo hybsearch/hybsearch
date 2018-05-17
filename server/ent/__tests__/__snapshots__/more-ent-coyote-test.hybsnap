@@ -1,6 +1,789 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`coyote-test 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.4358066,
+                  "name": "Canis_latrans__EU400576",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400575",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400568",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400566",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400557",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400549",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400544",
+                    },
+                  ],
+                  "length": 0.2596895,
+                  "name": "",
+                },
+              ],
+              "length": 0.1773349,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400574",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400573",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400569",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400553",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400550",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400548",
+                    },
+                  ],
+                  "length": 0.1735615,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400572",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400563",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01867214,
+                                  "name": "Canis_latrans__EU400558",
+                                },
+                                Object {
+                                  "length": 0.01867214,
+                                  "name": "Canis_latrans__EU400551",
+                                },
+                              ],
+                              "length": 0.1625778,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400556",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400555",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400546",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400545",
+                            },
+                          ],
+                          "length": 0.09268936,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400567",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400565",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400564",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400562",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400560",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400547",
+                            },
+                          ],
+                          "length": 0.1295697,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.08360183,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.1032889,
+                          "name": "Canis_latrans__EU400571",
+                        },
+                        Object {
+                          "length": 0.1032889,
+                          "name": "Canis_latrans__EU400552",
+                        },
+                      ],
+                      "length": 0.2542521,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.08034381,
+                  "name": "",
+                },
+              ],
+              "length": 0.1752565,
+              "name": "",
+            },
+          ],
+          "length": 0.3083212,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400570",
+                },
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400561",
+                },
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400559",
+                },
+              ],
+              "length": 0.07623203,
+              "name": "",
+            },
+            Object {
+              "length": 0.1856944,
+              "name": "Canis_latrans__EU400554",
+            },
+          ],
+          "length": 0.7357683,
+          "name": "",
+        },
+      ],
+      "length": 0.3668261,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.12034,
+                  "name": "Canis_latrans__EU400578",
+                },
+                Object {
+                  "length": 0.12034,
+                  "name": "Canis_latrans__EU400577",
+                },
+              ],
+              "length": 0.1966454,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.1060993,
+                  "name": "Canis_lupus__AF115701",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.03894966,
+                      "name": "Canis_lupus__AF115700",
+                    },
+                    Object {
+                      "length": 0.03894966,
+                      "name": "Canis_lupus__AF115699",
+                    },
+                  ],
+                  "length": 0.06714961,
+                  "name": "",
+                },
+              ],
+              "length": 0.2108861,
+              "name": "",
+            },
+          ],
+          "length": 0.2036083,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.07484297,
+              "name": "Canis_lupus__AF115703",
+            },
+            Object {
+              "length": 0.07484297,
+              "name": "Canis_lupus__AF115702",
+            },
+          ],
+          "length": 0.4457507,
+          "name": "",
+        },
+        Object {
+          "length": 0.5205937,
+          "name": "Canis_lupus__AF115698",
+        },
+        Object {
+          "length": 0.5205937,
+          "name": "Canis_lupus__AF115697",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.1632827,
+              "name": "Canis_lupus__AF115696",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.08705937,
+                  "name": "Canis_lupus__AF115695",
+                },
+                Object {
+                  "length": 0.08705937,
+                  "name": "Canis_lupus__AF115694",
+                },
+              ],
+              "length": 0.07622337,
+              "name": "",
+            },
+          ],
+          "length": 0.357311,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.08191761,
+                  "name": "Canis_lupus__AF115693",
+                },
+                Object {
+                  "length": 0.08191761,
+                  "name": "Canis_lupus__AF115692",
+                },
+              ],
+              "length": 0.2240474,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.1208377,
+                      "name": "Canis_lupus__AF115691",
+                    },
+                    Object {
+                      "length": 0.1208377,
+                      "name": "Canis_lupus__AF115690",
+                    },
+                  ],
+                  "length": 0.1353586,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.07421878,
+                      "name": "Canis_lupus__AF115689",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01947208,
+                          "name": "Canis_lupus__AF115688",
+                        },
+                        Object {
+                          "length": 0.01947208,
+                          "name": "Canis_lupus__AF115687",
+                        },
+                      ],
+                      "length": 0.0547467,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1819775,
+                  "name": "",
+                },
+              ],
+              "length": 0.04976874,
+              "name": "",
+            },
+          ],
+          "length": 0.2146287,
+          "name": "",
+        },
+      ],
+      "length": 0.767695,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`coyote-test 2`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.4358066,
+                  "name": "Canis_latrans__EU400576",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400575",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400568",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400566",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400557",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400549",
+                    },
+                    Object {
+                      "length": 0.1761171,
+                      "name": "Canis_latrans__EU400544",
+                    },
+                  ],
+                  "length": 0.2596895,
+                  "name": "",
+                },
+              ],
+              "length": 0.1773349,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400574",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400573",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400569",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400553",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400550",
+                    },
+                    Object {
+                      "length": 0.2643234,
+                      "name": "Canis_latrans__EU400548",
+                    },
+                  ],
+                  "length": 0.1735615,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400572",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400563",
+                            },
+                            Object {
+                              "branchset": Array [
+                                Object {
+                                  "length": 0.01867214,
+                                  "name": "Canis_latrans__EU400558",
+                                },
+                                Object {
+                                  "length": 0.01867214,
+                                  "name": "Canis_latrans__EU400551",
+                                },
+                              ],
+                              "length": 0.1625778,
+                              "name": "",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400556",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400555",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400546",
+                            },
+                            Object {
+                              "length": 0.1812499,
+                              "name": "Canis_latrans__EU400545",
+                            },
+                          ],
+                          "length": 0.09268936,
+                          "name": "",
+                        },
+                        Object {
+                          "branchset": Array [
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400567",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400565",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400564",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400562",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400560",
+                            },
+                            Object {
+                              "length": 0.1443695,
+                              "name": "Canis_latrans__EU400547",
+                            },
+                          ],
+                          "length": 0.1295697,
+                          "name": "",
+                        },
+                      ],
+                      "length": 0.08360183,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.1032889,
+                          "name": "Canis_latrans__EU400571",
+                        },
+                        Object {
+                          "length": 0.1032889,
+                          "name": "Canis_latrans__EU400552",
+                        },
+                      ],
+                      "length": 0.2542521,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.08034381,
+                  "name": "",
+                },
+              ],
+              "length": 0.1752565,
+              "name": "",
+            },
+          ],
+          "length": 0.3083212,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400570",
+                },
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400561",
+                },
+                Object {
+                  "length": 0.1094623,
+                  "name": "Canis_latrans__EU400559",
+                },
+              ],
+              "length": 0.07623203,
+              "name": "",
+            },
+            Object {
+              "length": 0.1856944,
+              "name": "Canis_latrans__EU400554",
+            },
+          ],
+          "length": 0.7357683,
+          "name": "",
+        },
+      ],
+      "length": 0.3668261,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.12034,
+                  "name": "Canis_latrans__EU400578",
+                },
+                Object {
+                  "length": 0.12034,
+                  "name": "Canis_latrans__EU400577",
+                },
+              ],
+              "length": 0.1966454,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.1060993,
+                  "name": "Canis_lupus__AF115701",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.03894966,
+                      "name": "Canis_lupus__AF115700",
+                    },
+                    Object {
+                      "length": 0.03894966,
+                      "name": "Canis_lupus__AF115699",
+                    },
+                  ],
+                  "length": 0.06714961,
+                  "name": "",
+                },
+              ],
+              "length": 0.2108861,
+              "name": "",
+            },
+          ],
+          "length": 0.2036083,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.07484297,
+              "name": "Canis_lupus__AF115703",
+            },
+            Object {
+              "length": 0.07484297,
+              "name": "Canis_lupus__AF115702",
+            },
+          ],
+          "length": 0.4457507,
+          "name": "",
+        },
+        Object {
+          "length": 0.5205937,
+          "name": "Canis_lupus__AF115698",
+        },
+        Object {
+          "length": 0.5205937,
+          "name": "Canis_lupus__AF115697",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.1632827,
+              "name": "Canis_lupus__AF115696",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.08705937,
+                  "name": "Canis_lupus__AF115695",
+                },
+                Object {
+                  "length": 0.08705937,
+                  "name": "Canis_lupus__AF115694",
+                },
+              ],
+              "length": 0.07622337,
+              "name": "",
+            },
+          ],
+          "length": 0.357311,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.08191761,
+                  "name": "Canis_lupus__AF115693",
+                },
+                Object {
+                  "length": 0.08191761,
+                  "name": "Canis_lupus__AF115692",
+                },
+              ],
+              "length": 0.2240474,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.1208377,
+                      "name": "Canis_lupus__AF115691",
+                    },
+                    Object {
+                      "length": 0.1208377,
+                      "name": "Canis_lupus__AF115690",
+                    },
+                  ],
+                  "length": 0.1353586,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.07421878,
+                      "name": "Canis_lupus__AF115689",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.01947208,
+                          "name": "Canis_lupus__AF115688",
+                        },
+                        Object {
+                          "length": 0.01947208,
+                          "name": "Canis_lupus__AF115687",
+                        },
+                      ],
+                      "length": 0.0547467,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.1819775,
+                  "name": "",
+                },
+              ],
+              "length": 0.04976874,
+              "name": "",
+            },
+          ],
+          "length": 0.2146287,
+          "name": "",
+        },
+      ],
+      "length": 0.767695,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`coyote-test 3`] = `
+Array [
+  Object {
+    "ident": "EU400577",
+    "length": 0.12034,
+    "name": "Canis_latrans",
+  },
+  Object {
+    "ident": "EU400578",
+    "length": 0.12034,
+    "name": "Canis_latrans",
+  },
+]
+`;
+
+exports[`coyote-test 4`] = `
 Array [
   "Canis_latrans__EU400576",
   "Canis_latrans__EU400575",

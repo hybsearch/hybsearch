@@ -1,6 +1,168 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emydura-short 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0235062,
+              "name": "Emydura subglobosa__KC755190",
+            },
+            Object {
+              "length": 0.0235062,
+              "name": "Emydura subglobosa__KC755185",
+            },
+          ],
+          "length": 0.01899261,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001915092,
+                  "name": "Emydura tanybaraga__KC755187",
+                },
+                Object {
+                  "length": 0.001915092,
+                  "name": "Emydura tanybaraga__KC755186",
+                },
+              ],
+              "length": 0.006225307,
+              "name": "",
+            },
+            Object {
+              "length": 0.008140399,
+              "name": "Emydura subglobosa__KC755184",
+            },
+          ],
+          "length": 0.03435841,
+          "name": "",
+        },
+      ],
+      "length": 0.02999381,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.000868722,
+              "name": "Emydura victoriae__KC755189",
+            },
+            Object {
+              "length": 0.000868722,
+              "name": "Emydura victoriae__KC755188",
+            },
+          ],
+          "length": 0.02497062,
+          "name": "",
+        },
+        Object {
+          "length": 0.02583934,
+          "name": "Emydura macquarii__KC755183",
+        },
+      ],
+      "length": 0.04665328,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`emydura-short 2`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0235062,
+              "name": "Emydura subglobosa__KC755190",
+            },
+            Object {
+              "length": 0.0235062,
+              "name": "Emydura subglobosa__KC755185",
+            },
+          ],
+          "length": 0.01899261,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001915092,
+                  "name": "Emydura tanybaraga__KC755187",
+                },
+                Object {
+                  "length": 0.001915092,
+                  "name": "Emydura tanybaraga__KC755186",
+                },
+              ],
+              "length": 0.006225307,
+              "name": "",
+            },
+            Object {
+              "length": 0.008140399,
+              "name": "Emydura subglobosa__KC755184",
+            },
+          ],
+          "length": 0.03435841,
+          "name": "",
+        },
+      ],
+      "length": 0.02999381,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.000868722,
+              "name": "Emydura victoriae__KC755189",
+            },
+            Object {
+              "length": 0.000868722,
+              "name": "Emydura victoriae__KC755188",
+            },
+          ],
+          "length": 0.02497062,
+          "name": "",
+        },
+        Object {
+          "length": 0.02583934,
+          "name": "Emydura macquarii__KC755183",
+        },
+      ],
+      "length": 0.04665328,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`emydura-short 3`] = `
+Array [
+  Object {
+    "ident": "KC755184",
+    "length": 0.008140399,
+    "name": "Emydura subglobosa",
+  },
+]
+`;
+
+exports[`emydura-short 4`] = `
 Array [
   "Emydura subglobosa__KC755190",
   "Emydura victoriae__KC755189",

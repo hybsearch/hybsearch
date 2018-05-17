@@ -1,6 +1,319 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`catdog 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0003945421,
+              "name": "Canis_lupus__KU253532",
+            },
+            Object {
+              "length": 0.0003945421,
+              "name": "Canis_lupus__KU253531",
+            },
+          ],
+          "length": 0.006126598,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346426",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346425",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346424",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346423",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346421",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346419",
+                },
+              ],
+              "length": 0.0009694005,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0004464562,
+                  "name": "Canis_lupus__KC346422",
+                },
+                Object {
+                  "length": 0.0004464562,
+                  "name": "Canis_lupus__KC346420",
+                },
+              ],
+              "length": 0.003453781,
+              "name": "",
+            },
+          ],
+          "length": 0.002620903,
+          "name": "",
+        },
+      ],
+      "length": 0.1729114,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0006123714,
+                  "name": "Felis_catus__KU253483",
+                },
+                Object {
+                  "length": 0.0006123714,
+                  "name": "Felis_catus__KU253482",
+                },
+                Object {
+                  "length": 0.0006123713,
+                  "name": "Felis_catus__AB194817",
+                },
+              ],
+              "length": 0.002477377,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001487111,
+                  "name": "Felis_catus__AB194816",
+                },
+                Object {
+                  "length": 0.001487111,
+                  "name": "Felis_catus__AB194815",
+                },
+              ],
+              "length": 0.001602638,
+              "name": "",
+            },
+          ],
+          "length": 0.003311443,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__KT626624",
+                },
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__AB194814",
+                },
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__AB194812",
+                },
+              ],
+              "length": 0.003608773,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.003167446,
+                  "name": "Felis_catus__KT626623",
+                },
+                Object {
+                  "length": 0.003167446,
+                  "name": "Felis_catus__AB194813",
+                },
+              ],
+              "length": 0.001738277,
+              "name": "",
+            },
+          ],
+          "length": 0.001495469,
+          "name": "",
+        },
+      ],
+      "length": 0.1730313,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`catdog 2`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [],
+          "length": 0.006126598,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346426",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346425",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346424",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346423",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346421",
+                },
+                Object {
+                  "length": 0.002930837,
+                  "name": "Canis_lupus__KC346419",
+                },
+              ],
+              "length": 0.0009694005,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0004464562,
+                  "name": "Canis_lupus__KC346422",
+                },
+                Object {
+                  "length": 0.0004464562,
+                  "name": "Canis_lupus__KC346420",
+                },
+              ],
+              "length": 0.003453781,
+              "name": "",
+            },
+          ],
+          "length": 0.002620903,
+          "name": "",
+        },
+      ],
+      "length": 0.1729114,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0006123714,
+                  "name": "Felis_catus__KU253483",
+                },
+                Object {
+                  "length": 0.0006123714,
+                  "name": "Felis_catus__KU253482",
+                },
+                Object {
+                  "length": 0.0006123713,
+                  "name": "Felis_catus__AB194817",
+                },
+              ],
+              "length": 0.002477377,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.001487111,
+                  "name": "Felis_catus__AB194816",
+                },
+                Object {
+                  "length": 0.001487111,
+                  "name": "Felis_catus__AB194815",
+                },
+              ],
+              "length": 0.001602638,
+              "name": "",
+            },
+          ],
+          "length": 0.003311443,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__KT626624",
+                },
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__AB194814",
+                },
+                Object {
+                  "length": 0.00129695,
+                  "name": "Felis_catus__AB194812",
+                },
+              ],
+              "length": 0.003608773,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.003167446,
+                  "name": "Felis_catus__KT626623",
+                },
+                Object {
+                  "length": 0.003167446,
+                  "name": "Felis_catus__AB194813",
+                },
+              ],
+              "length": 0.001738277,
+              "name": "",
+            },
+          ],
+          "length": 0.001495469,
+          "name": "",
+        },
+      ],
+      "length": 0.1730313,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
+
+exports[`catdog 3`] = `Array []`;
+
+exports[`catdog 4`] = `
 Array [
   "Canis_lupus__KU253532",
   "Canis_lupus__KU253531",
