@@ -38,33 +38,9 @@ function strictSearch(rootNode) {
 	let hybridSpeciesByName = groupBy(results.nm, hybrid => hybrid.name)
 	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
-	let unflag = []
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
-		for (let name in hybridSpeciesByName) {
-			let hybrids = hybridSpeciesByName[name]
-
-			// remove the flagged hybrids and redo the search.
-			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
-			let resultsRedo = recursiveSearch(rootNodeCopy)
-
-			//  If what remains is N-1 hybrid species, then that was a true hybrid
-			let newSpeciesNames = new Set(resultsRedo.nm.map(hybrid => hybrid.name))
-			let newSpeciesCount = newSpeciesNames.size
-
-			// if less, then that is NOT a true hybrid. Unmark those.
-			if (newSpeciesCount < totalHybridSpecies - 1) {
-				// This species is a true nonmonophyly!
-			} else {
-				// Unflag this
-				for (let hybrid of hybrids) {
-					unflag.push(hybrid.ident)
-				}
-			}
-		}
-
-		results.nm = results.nm.filter(hybrid => !(unflag.indexOf(hybrid.ident) !== -1))
+		results.nm = removeHybridSpecies(rootNode, results.nm, hybridSpeciesByName)
 	}
 
 	let allIndividuals = getAllIndividuals(rootNode)
@@ -87,6 +63,35 @@ function strictSearch(rootNode) {
 	}
 
 	return results
+}
+
+function removeHybridSpecies(rootNode, nonmonophyly, hybridSpeciesByName) {
+	let unflag = []
+
+	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
+
+	for (let hybrids of Object.values(hybridSpeciesByName)) {
+		// remove the flagged hybrids and redo the search.
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+		let resultsRedo = recursiveSearch(rootNodeCopy)
+
+		//  If what remains is N-1 hybrid species, then that was a true hybrid
+		let newSpeciesNames = new Set(resultsRedo.nm.map(hybrid => hybrid.name))
+		let newSpeciesCount = newSpeciesNames.size
+
+		// if less, then that is NOT a true hybrid. Unmark those.
+		if (newSpeciesCount < totalHybridSpecies - 1) {
+			// This species is a true nonmonophyly!
+		} else {
+			// Unflag this
+			for (let hybrid of hybrids) {
+				unflag.push(hybrid.ident)
+			}
+		}
+	}
+
+	return nonmonophyly.filter(hybrid => !(unflag.indexOf(hybrid.ident) !== -1))
 }
 
 function getAllIndividuals(rootNode) {
