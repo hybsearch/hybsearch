@@ -125,32 +125,10 @@ function recursiveSearch(node, nmInstances = []) {
 		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
 		let speciesListB = resultsB.species
 
-		const speciesChecker = otherSpeciesList => species1 => {
-			let otherSpeciesNames = otherSpeciesList.map(s => s.name)
-
-			let hasName = otherSpeciesNames.includes(species1.name)
-			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
-
-			if (hasName && notAllEqual) {
-				otherSpeciesList
-					.filter(species3 => species3.name === species1.name)
-					.forEach(species3 => {
-						let count = nmInstances.filter(sp => sp === species3).length
-
-						if (count > 0) {
-							return
-						}
-
-						nmInstances.push(species3)
-						forRemoval.push(species3.ident)
-					})
-			}
-		}
-
-		speciesListA.forEach(speciesChecker(speciesListB))
+		speciesListA.forEach(speciesChecker(speciesListB, nmInstances, forRemoval))
 		speciesListA = speciesListA.filter(n => !forRemoval.includes(n.ident))
 
-		speciesListB.forEach(speciesChecker(speciesListA))
+		speciesListB.forEach(speciesChecker(speciesListA, nmInstances, forRemoval))
 		speciesListB = speciesListB.filter(n => !forRemoval.includes(n.ident))
 
 		speciesList = [...speciesList, ...speciesListA, ...speciesListB]
@@ -159,6 +137,32 @@ function recursiveSearch(node, nmInstances = []) {
 	speciesList = uniqBy(speciesList, 'ident')
 
 	return { species: speciesList, nm: nmInstances }
+}
+
+function speciesChecker(otherSpeciesList, nmInstances, forRemoval) {
+	return species1 => {
+		let otherSpeciesNames = otherSpeciesList.map(s => s.name)
+
+		let hasName = otherSpeciesNames.includes(species1.name)
+		let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
+
+		if (!(hasName && notAllEqual)) {
+			return []
+		}
+
+		otherSpeciesList
+			.filter(species3 => species3.name === species1.name)
+			.forEach(species3 => {
+				let count = nmInstances.filter(sp => sp === species3).length
+
+				if (count > 0) {
+					return
+				}
+
+				nmInstances.push(species3)
+				forRemoval.push(species3.ident)
+			})
+	}
 }
 
 module.exports.formatData = formatData
