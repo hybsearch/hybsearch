@@ -14,7 +14,13 @@ function main() {
 	}
 
 	return getData(file)
-		.then(parseNewick)
+		.then(data => {
+			try {
+				return parseNewick(data)
+			} catch (err) {
+				return JSON.parse(data)
+			}
+		})
 		.then(prettyPrintNewickTree)
 		.then(console.log)
 		.catch(console.error)

@@ -64,9 +64,10 @@ function asciiArt(node, options = {}) {
 	let hi = mids[mids.length - 1]
 	let end = result.length
 
+	console.log(hi, lo)
 	let prefixes = [
 		...new Array(lo + 1).fill(PAD),
-		...new Array(hi - lo - 1).fill(PA + '|'),
+		...new Array(Math.max(hi - lo - 1, 1)).fill(PA + '|'),
 		...new Array(end - hi).fill(PAD),
 	]
 

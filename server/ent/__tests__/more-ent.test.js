@@ -25,12 +25,14 @@ for (const file of files) {
 
 	test(file, () => {
 		expect(JSON.parse(serializedTree)).toMatchSpecificSnapshot(snapshotName)
+		// console.log(serializedTree)
 		let { prunedNewick } = pruneOutliers(
 			JSON.parse(serializedTree),
 			alignedFasta
 		)
 
 		expect(prunedNewick).toMatchSpecificSnapshot(snapshotName)
+		console.log(JSON.stringify(prunedNewick))
 
 		let serializedNewick = JSON.stringify(prunedNewick)
 
