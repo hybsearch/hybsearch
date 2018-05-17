@@ -83,7 +83,7 @@ const genbankEntryToFasta = entry => {
 
 module.exports = genbankToFasta
 function genbankToFasta(genbankFile) {
-	const entries = genbankFile.split('//')
+	const entries = genbankFile.split(/^\s*\/\/\s*$/m)
 
 	// turn strings into objects with named keys
 	const entryObjects = entries.map(genbankEntryToObject)
