@@ -31,7 +31,7 @@ function* parseGenbankEntry(data) {
 			continue
 		}
 
-		const keyNameRegex = /\s*([A-Z]+)\s*/
+		const keyNameRegex = /^\s*([A-Z]+)\s*/
 		if (keyNameRegex.test(key)) {
 			current = keyNameRegex.exec(key)[1]
 		}
