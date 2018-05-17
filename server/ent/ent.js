@@ -43,12 +43,11 @@ function strictSearch(rootNode) {
 		results.nm = removeHybridSpecies(rootNode, results.nm, hybridSpeciesByName)
 	}
 
-	let allIndividuals = getAllIndividuals(rootNode)
-
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = countBy(results.nm, h => h.name)
 
 	// Count number of individuals in each species
+	let allIndividuals = getAllIndividuals(rootNode)
 	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
 
 	for (let speciesName in hybridSpeciesCount) {
