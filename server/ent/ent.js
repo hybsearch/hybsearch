@@ -67,17 +67,7 @@ function strictSearch(rootNode) {
 		results.nm = results.nm.filter(hybrid => !(unflag.indexOf(hybrid.ident) !== -1))
 	}
 
-	let allIndividuals = []
-
-	function getAllIndividuals(node) {
-		if (!node.branchset) {
-			allIndividuals.push(node)
-		} else {
-			node.branchset.forEach(getAllIndividuals)
-		}
-	}
-
-	getAllIndividuals(rootNode)
+	let allIndividuals = getAllIndividuals(rootNode)
 
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
@@ -97,6 +87,22 @@ function strictSearch(rootNode) {
 	}
 
 	return results
+}
+
+function getAllIndividuals(rootNode) {
+	let allIndividuals = []
+
+	function recurse(node) {
+		if (!node.branchset) {
+			allIndividuals.push(node)
+		} else {
+			node.branchset.forEach(recurse)
+		}
+	}
+
+	recurse(rootNode)
+
+	return allIndividuals
 }
 
 // Given a node, it will return {species:[],nm:[]}
