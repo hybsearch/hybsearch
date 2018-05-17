@@ -6,6 +6,7 @@ const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
 const countBy = require('lodash/countBy')
 const groupBy = require('lodash/groupBy')
+const maxBy = require('lodash/maxBy')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
@@ -87,20 +88,8 @@ function strictSearch(rootNode) {
 	for (let speciesName in hybridSpeciesCount) {
 		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
 			// We need to unflag the one that's furthest away from its closest
-			let longestDist
-			let furthestHybrid
-
-			results.nm
-				.filter(hybrid => hybrid.name === speciesName)
-				.forEach(hybrid => {
-					if (longestDist === undefined) {
-						longestDist = hybrid.length
-					}
-					if (hybrid.length >= longestDist) {
-						longestDist = hybrid.length
-						furthestHybrid = hybrid
-					}
-				})
+			let matchingHybrids = results.nm.filter(hybrid => hybrid.name === speciesName)
+			let furthestHybrid = maxBy(matchingHybrids, hybrid => hybrid.length)
 
 			// furthestHybrid should be removed
 			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
