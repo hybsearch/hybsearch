@@ -1,4 +1,5 @@
 /* eslint-env jest */
+require('jest-specific-snapshot')
 
 const { pruneOutliers } = require('../prune-newick')
 const { parse: parseNewick } = require('../../newick')
@@ -22,6 +23,6 @@ for (const file of files) {
 
 		let removed = removedData.map(node => node.name)
 
-		expect(removed).toMatchSnapshot()
+		expect(removed).toMatchSpecificSnapshot(`./__snapshots__/${file}.hybsnap`)
 	})
 }

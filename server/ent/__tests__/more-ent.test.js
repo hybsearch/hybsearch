@@ -1,4 +1,5 @@
 /* eslint-env jest */
+require('jest-specific-snapshot')
 
 const { removeFastaIdentifiers } = require('../../formats')
 const { parseFasta } = require('../../formats/fasta/parse')
@@ -36,6 +37,6 @@ for (const file of files) {
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
 		let results = parseFasta(monophyleticFasta).map(s => s.species)
 
-		expect(results).toMatchSnapshot()
+		expect(results).toMatchSpecificSnapshot(`./__snapshots__/${file}.hybsnap`)
 	})
 }
