@@ -4,6 +4,8 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
+const countBy = require('lodash/countBy')
+const groupBy = require('lodash/groupBy')
 
 const ENABLE_DEBUG = false
 let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
@@ -33,16 +35,8 @@ function strictSearch(rootNode) {
 	let results = recursiveSearch(rootNode)
 
 	// We don't report all the hybrids found as hybrids just yet
-	let hybridSpeciesByName = {}
-	let totalHybridSpecies = 0
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesByName[speciesName] === undefined) {
-			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies += 1
-		}
-		hybridSpeciesByName[speciesName].push(hybrid)
-	}
+	let hybridSpeciesByName = groupBy(results.nm, hybrid => hybrid.name)
+	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
 	let unflag = []
 	// For each species found (if at least 2)
@@ -87,25 +81,12 @@ function strictSearch(rootNode) {
 	}
 
 	getAllIndividuals(rootNode)
+
 	// Count number of hybrids for each species
-	let hybridSpeciesCount = {}
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesCount[speciesName] === undefined) {
-			hybridSpeciesCount[speciesName] = 0
-		}
-		hybridSpeciesCount[speciesName] += 1
-	}
+	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
 
 	// Count number of individuals in each species
-	let totalSpeciesCount = {}
-	for (let individual of allIndividuals) {
-		let speciesName = individual.name
-		if (totalSpeciesCount[speciesName] === undefined) {
-			totalSpeciesCount[speciesName] = 0
-		}
-		totalSpeciesCount[speciesName] += 1
-	}
+	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
 
 	for (let speciesName in hybridSpeciesCount) {
 		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
