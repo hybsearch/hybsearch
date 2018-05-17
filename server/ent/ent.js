@@ -164,5 +164,5 @@ function recursiveSearch(node, nmInstances = []) {
 module.exports.formatData = formatData
 function formatData(results) {
 	const { nm: nmlist } = results
-	return nmlist.map(label).join('\n')
+	return nmlist.map(label)
 }

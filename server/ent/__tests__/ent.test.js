@@ -21,7 +21,7 @@ for (const file of files) {
 
 		const actual = formatData(search(tree, fasta))
 
-		let asArray = actual.split('\n')
+		let asArray = actual
 		expect(asArray).toMatchSpecificSnapshot(
 			`./__snapshots__/ent-${file}.hybsnap`
 		)
