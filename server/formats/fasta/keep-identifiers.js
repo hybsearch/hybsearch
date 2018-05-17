@@ -6,14 +6,14 @@ const { buildFasta } = require('./build')
 const flatten = require('lodash/flatten')
 
 /*::
-type EntNmPair = {
+type EntNmNode = {
 	ident: string,
 	length: number,
 	name: string,
 }
 
 type EntNonmonophylyResults = {
-	nm: Array<[EntNmPair, EntNmPair]>,
+	nm: Array<EntNmNode>,
 	species: any,
 }
 */
