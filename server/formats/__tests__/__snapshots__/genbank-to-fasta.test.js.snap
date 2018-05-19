@@ -32,6 +32,11 @@ acccctccccatatcaagcctgaatgatacttcctatttgcatacgcaatcctccgatccattcccaacaaactaggagg
 agtcctagccctagtcctatccatcctaatcttagcagtcatcccc"
 `;
 
+exports[`handles URLs with // in them 1`] = `
+"> Panthera_pardus__AB817079
+ccatccaacatctcaacatgatggaactttggctccctattaggggtatgtttaatccta"
+`;
+
 exports[`vulpes.gb 1`] = `
 "> Vulpes_macrotis__AH005827
 ctcacccactagctaaaatcgttaacgactcattcattgacctccccgcaccatcaaacatttctgcctgatgaaacttc
