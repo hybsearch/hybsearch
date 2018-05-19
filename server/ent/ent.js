@@ -140,7 +140,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 				}
 			}
 		}
-		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
+		remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 	}
 }
 
