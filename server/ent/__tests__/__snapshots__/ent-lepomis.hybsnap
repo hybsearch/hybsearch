@@ -2,8 +2,6 @@
 
 exports[`lepomis 1`] = `
 Array [
-  "Lepomis_marginatus (AY828970)",
-  "Lepomis_marginatus (AY828971)",
   "Lepomis_megalotis (AY828976)",
   "Lepomis_megalotis (AY828977)",
   "Lepomis_symmetricus (AY828996)",
