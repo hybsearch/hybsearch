@@ -4,6 +4,7 @@ const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
 const countBy = require('lodash/countBy')
+const maxBy = require('lodash/maxBy')
 const { removeNodes } = require('../lib/prune-newick')
 
 const ENABLE_DEBUG = false
@@ -169,19 +170,8 @@ function unflagIfOnlyTwo(results, rootNode) {
 	for (let speciesName in hybridSpeciesCount) {
 		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
 			// We need to unflag the one that's furthest away from its closest
-			let longestDist
-			let furthestHybrid
-			for (let hybrid of results.nm) {
-				if (hybrid.name === speciesName) {
-					if (longestDist === undefined) {
-						longestDist = hybrid.length
-					}
-					if (hybrid.length >= longestDist) {
-						longestDist = hybrid.length
-						furthestHybrid = hybrid
-					}
-				}
-			}
+			let applicableSpecies = results.nm.filter(hybrid => hybrid.name === speciesName)
+			let furthestHybrid = maxBy(applicableSpecies, hybrid => hybrid.length)
 
 			// furthestHybrid should be removed
 			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)

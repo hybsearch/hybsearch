@@ -4,6 +4,7 @@ exports[`bataguridae-cytb 1`] = `
 Array [
   "Batagur_trivittata__EU030216",
   "Orlitia_borneensis__AY434619",
+  "Pangshura_tentoria__AY434610",
   "Morenia_ocellata__AY434605",
   "Hardella_thurjii__AY434603",
   "Batagur_borneoensis__AY434601",
@@ -12,10 +13,11 @@ Array [
   "Ocadia_philippeni__AY434582",
   "Geoclemys_hamiltonii__AY434573",
   "Batagur_dhongoka__AY434569",
+  "Malayemys_subtrijuga__KU848668",
+  "Malayemys_macrocephala__KU848658",
   "Malayemys_khoratensis__KU848650",
   "Malayemys_khoratensis__KU848635",
   "Malayemys_khoratensis__KU848587",
-  "Malayemys_macrocephala__KU848581",
   "Morenia_ocellata__JN860667",
   "Geoclemys_hamiltonii__JN860644",
   "Morenia_petersi__JN202621",
@@ -64,11 +66,9 @@ Array [
   "Pangshura_tecta__AM495303",
   "Pangshura_tecta__AM495302",
   "Pangshura_tecta__AM495301",
-  "Pangshura_tentoria__AM495323",
   "Pangshura_sylhetensis__AM495300",
   "Pangshura_sylhetensis__AM495299",
   "Orlitia_borneensis__AJ564464",
   "Batagur_dhongoka__AJ564452",
-  "Malayemys_subtrijuga__AJ519502",
 ]
 `;
