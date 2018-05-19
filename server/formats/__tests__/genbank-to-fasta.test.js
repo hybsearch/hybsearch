@@ -15,3 +15,16 @@ for (const file of files) {
 		expect(tree).toMatchSnapshot()
 	})
 }
+
+test('accounts for multiple spaces in the species name', () => {
+	let input = `
+ACCESSION   AB817079
+  ORGANISM  Panthera   pardus orientalis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia; Felidae;
+            Pantherinae; Panthera.
+ORIGIN
+        1 ccatccaaca tctcaacatg atggaacttt ggctccctat taggggtatg tttaatccta`
+
+    expect(genbankToFasta(input)).toMatchSnapshot()
+})

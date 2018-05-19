@@ -1,5 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`accounts for multiple spaces in the species name 1`] = `
+"> Panthera_pardus__AB817079
+ccatccaacatctcaacatgatggaactttggctccctattaggggtatgtttaatccta"
+`;
+
 exports[`felidae.gb 1`] = `
 "> Panthera_pardus__AB817079
 ccatccaacatctcaacatgatggaactttggctccctattaggggtatgtttaatcctacaaattctcaccggcctctt
