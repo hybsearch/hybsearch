@@ -26,7 +26,7 @@ ACCESSION   AB817079
 ORIGIN
         1 ccatccaaca tctcaacatg atggaacttt ggctccctat taggggtatg tttaatccta`
 
-    expect(genbankToFasta(input)).toMatchSnapshot()
+	expect(genbankToFasta(input)).toMatchSnapshot()
 })
 
 test('handles URLs with // in them', () => {
@@ -44,5 +44,5 @@ ACCESSION   AB817079
 ORIGIN
         1 ccatccaaca tctcaacatg atggaacttt ggctccctat taggggtatg tttaatccta`
 
-    expect(genbankToFasta(input)).toMatchSnapshot()
+	expect(genbankToFasta(input)).toMatchSnapshot()
 })
