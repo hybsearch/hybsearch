@@ -47,17 +47,7 @@ function searchWithNoFilter(rootNode) {
 // all the individuals of this species lie
 function getMostRecentCommonAncestor(rootNode, speciesName) {
 	let rootCopy = JSON.parse(JSON.stringify(rootNode))
-	// Add parent references to each node
-	function addParent(node) {
-		if (node.branchset) {
-			for (let child of node.branchset) {
-				child.parent = node
-			}
-			node.branchset.forEach(addParent)
-		}
-	}
-
-	addParent(rootCopy)
+	addParents(rootCopy)
 
 	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
 
@@ -74,6 +64,20 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 		leafNodes = findIndividualsOfSpecies(individual, speciesName)
 	}
 	return individual
+}
+
+function addParents(rootNode) {
+	// Add parent references to each node
+	function recurse(node) {
+		if (node.branchset) {
+			for (let child of node.branchset) {
+				child.parent = node
+			}
+			node.branchset.forEach(recurse)
+		}
+	}
+
+	recurse(rootNode)
 }
 
 // Find just one individual of the species
