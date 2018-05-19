@@ -4,6 +4,8 @@ exports[`lepomis 1`] = `
 Array [
   "Lepomis_megalotis (AY828976)",
   "Lepomis_megalotis (AY828977)",
+  "Lepomis_symmetricus (AY828996)",
+  "Lepomis_symmetricus (JF742837)",
   "Lepomis_auritus (AY828957)",
   "Lepomis_auritus (AY115970)",
   "Lepomis_auritus (AY828950)",
@@ -14,6 +16,10 @@ Array [
   "Lepomis_auritus (AY828953)",
   "Lepomis_auritus (AY828952)",
   "Lepomis_auritus (AY828951)",
+  "Lepomis_gibbosus (KJ513207)",
+  "Lepomis_gibbosus (AY828962)",
+  "Lepomis_gibbosus (AY828961)",
+  "Lepomis_gibbosus (AY828960)",
   "Lepomis_auritus (AY115969)",
 ]
 `;

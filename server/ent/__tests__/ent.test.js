@@ -1,7 +1,7 @@
 /* eslint-env jest */
 require('jest-specific-snapshot')
 
-const { strictSearch: search, formatData } = require('../index')
+const { search, formatData } = require('../index')
 const { parse: newickToJson } = require('../../newick')
 const fs = require('fs')
 const path = require('path')

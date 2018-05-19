@@ -2,12 +2,8 @@
 
 exports[`plaamyd 1`] = `
 Array [
-  "Amyda ornata__LM537490",
-  "Amyda ornata__LM537482",
   "Amyda ornata__LM537478",
-  "Amyda ornata__LM537462",
   "Amyda cartilaginea__LM537466",
   "Palea steindachneri__AY259552",
-  "Palea steindachneri__AY743417",
 ]
 `;

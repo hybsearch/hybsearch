@@ -2,7 +2,7 @@
 'use strict'
 
 const getData = require('../lib/get-data')
-const { strictSearch, formatData } = require('./index')
+const { search, formatData } = require('./index')
 
 function main() {
 	let file = process.argv[2]
@@ -14,7 +14,7 @@ function main() {
 
 	return getData(file)
 		.then(d => JSON.parse(d))
-		.then(strictSearch)
+		.then(search)
 		.then(formatData)
 		.then(console.log.bind(console))
 		.catch(console.error.bind(console))
