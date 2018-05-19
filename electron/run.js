@@ -145,6 +145,7 @@ function attachListeners() {
 			e.preventDefault()
 
 			let data = document.getElementById('tree-box').value
+			document.querySelector('#phylogram').hidden = false
 			load(JSON.parse(data))
 		})
 

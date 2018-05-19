@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trio171sequence 1`] = `
+Array [
+  "Cycloderma_aubryi__FR850656",
+  "Cycloderma_aubryi__FR850655",
+  "Cycloderma_aubryi__AY259566",
+  "Cycloderma_frenatum__AY259565",
+  "Cyclanorbis_elegans__AY259570",
+  "Cyclanorbis_senegalensis__AY259569",
+]
+`;

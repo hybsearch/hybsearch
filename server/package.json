@@ -24,7 +24,11 @@
     "lint": "cd .. && npm run lint",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
+    "p": "PATH=$PATH:../node_modules/.bin; pretty-quick",
     "test": "PATH=$PATH:../node_modules/.bin; jest"
+  },
+  "jest": {
+    "verbose": true
   },
   "dependencies": {
     "combinations-generator": "^1.0.1",

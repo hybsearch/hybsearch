@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plaamyd 1`] = `
+Array [
+  "Amyda cartilaginea (LM537480)",
+  "Amyda cartilaginea (LM537481)",
+  "Amyda cartilaginea (LM537485)",
+  "Amyda cartilaginea (LM537484)",
+  "Amyda cartilaginea (LM537483)",
+  "Amyda cartilaginea (LM537464)",
+  "Amyda cartilaginea (LM537463)",
+  "Amyda cartilaginea (AY259550)",
+  "Amyda cartilaginea (JN232534)",
+  "Amyda cartilaginea (LM537465)",
+  "Amyda cartilaginea (LM537467)",
+  "Amyda cartilaginea (LM537491)",
+  "Amyda cartilaginea (LM537492)",
+  "Amyda cartilaginea (LM537476)",
+  "Amyda cartilaginea (LM537493)",
+  "Amyda cartilaginea (LM537494)",
+]
+`;

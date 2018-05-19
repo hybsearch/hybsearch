@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emydura 1`] = `
+Array [
+  "Emydura subglobosa (KC692462)",
+  "Emydura subglobosa (NC_026048)",
+  "Emydura subglobosa (KC755184)",
+]
+`;

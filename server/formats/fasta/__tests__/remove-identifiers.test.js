@@ -14,10 +14,8 @@ ggaacaatcaattattaccccacaaggaa`
 
 	let filteredSequences = removeIdentifiers(input, {
 		nm: [
-			[
-				{ name: 'Emydura_subglobosa', ident: 'KC755190' },
-				{ name: 'Emydura_victoriae', ident: 'KC755189' },
-			],
+			{ name: 'Emydura_subglobosa', ident: 'KC755190' },
+			{ name: 'Emydura_victoriae', ident: 'KC755189' },
 		],
 	})
 

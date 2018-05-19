@@ -9,9 +9,8 @@ let newick
 let newickNodes
 
 function formatEnt(results) {
-	return results.nm.map(pair => {
-		let [left, right] = pair.map(node => `${node.name} (${node.ident})`)
-		return { left, right }
+	return results.nm.map(hybrid => {
+		return { Nonmonophyly: `${hybrid.name} (${hybrid.ident})` }
 	})
 }
 
@@ -20,9 +19,7 @@ function setEntResults(results) {
 	nmResults = results
 	console.log('Got ent!', results)
 	let non =
-		nmResults !== undefined
-			? nmResults.nm.map(pair => pair.map(node => node.ident))
-			: null
+		nmResults !== undefined ? nmResults.nm.map(hybrid => hybrid.ident) : null
 	console.log(non)
 
 	if (non) {
@@ -88,11 +85,7 @@ function render(newickData, newickNodes, nmResults) {
 			// console.log(node)
 			return `${name} [${node.ident}] (${node.length})`
 		},
-		nonmonophyly: nmResults
-			? nmResults.nm
-					.filter(pair => pair)
-					.map(pair => pair.map(node => node.ident))
-			: null,
+		nonmonophyly: nmResults ? nmResults.nm.map(hybrid => hybrid.ident) : null,
 		onNodeClicked: onNodeClicked,
 	})
 }
@@ -143,17 +136,7 @@ function onNodeClicked(data) {
 	}
 
 	// Find the other individual that is nonmonophyletic with this one
-	let nonMonoPair
-	for (let pair of nmResults.nm) {
-		if (pair[0].ident === data.ident) {
-			nonMonoPair = pair[1]
-			break
-		}
-		if (pair[1].ident === data.ident) {
-			nonMonoPair = pair[0]
-			break
-		}
-	}
+	let nonMonoPair = nmResults.nm.find(hybrid => hybrid.ident === data.ident)
 
 	// Now let's toggle the non-mono pair green if one was found
 	if (nonMonoPair) {

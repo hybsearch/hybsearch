@@ -2,6 +2,7 @@
 'use strict'
 
 const toPairs = require('lodash/toPairs')
+const fromPairs = require('lodash/fromPairs')
 const escape = require('lodash/escapeRegExp')
 const csv = require('comma-separated-values')
 
@@ -46,5 +47,31 @@ function revertHashedIdentifiers(
 	let probObj = csv.parse(probabilities, { header: true, cellDelimiter: '\t' })
 	let resObj = csv.parse(results, { header: true, cellDelimiter: '\t' })
 
+	resObj = resObj.map(row => {
+		row.seq1 = formatSpecies(row.seq1)
+		row.seq2 = formatSpecies(row.seq2)
+		row['Sp Comparison'] = row['Sp Comparison']
+			.replace(/_/g, ' ')
+			.replace('-', ' – ')
+		return row
+	})
+
+	probObj = probObj.map(row => {
+		row['Comparison'] = row['Comparison'].replace(/_/g, ' ')
+		return row
+	})
+
+	distObj = distObj.map(row => {
+		let pairs = toPairs(row)
+		pairs = pairs.map(([key, value]) => [key.replace(/_/g, ' '), value])
+		return fromPairs(pairs)
+	})
+
 	return { distributions: distObj, probabilities: probObj, results: resObj }
+}
+
+function formatSpecies(str) {
+	let [species, ident] = str.split('__')
+	species = species.replace(/_/g, ' ')
+	return `${species} [${ident}]`
 }

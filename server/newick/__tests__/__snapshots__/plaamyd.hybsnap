@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plaamyd 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "length": 0.2765171,
+      "name": "Palea steindachneri__AY259552",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00184103,
+                      "name": "Amyda ornata__LM537490",
+                    },
+                    Object {
+                      "length": 0.00184103,
+                      "name": "Amyda ornata__LM537482",
+                    },
+                    Object {
+                      "length": 0.00184103,
+                      "name": "Amyda cartilaginea__LM537485",
+                    },
+                    Object {
+                      "length": 0.00184103,
+                      "name": "Amyda cartilaginea__LM537484",
+                    },
+                    Object {
+                      "length": 0.00184103,
+                      "name": "Amyda cartilaginea__LM537483",
+                    },
+                  ],
+                  "length": 0.01447691,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0005738014,
+                      "name": "Amyda ornata__LM537462",
+                    },
+                    Object {
+                      "length": 0.0005738014,
+                      "name": "Amyda cartilaginea__LM537464",
+                    },
+                    Object {
+                      "length": 0.0005738013,
+                      "name": "Amyda cartilaginea__LM537463",
+                    },
+                  ],
+                  "length": 0.01574414,
+                  "name": "",
+                },
+              ],
+              "length": 0.003932896,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.002896375,
+                      "name": "Amyda ornata__LM537478",
+                    },
+                    Object {
+                      "length": 0.002896375,
+                      "name": "Amyda cartilaginea__LM537466",
+                    },
+                  ],
+                  "length": 0.00151658,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0008493944,
+                          "name": "Amyda cartilaginea__LM537467",
+                        },
+                        Object {
+                          "length": 0.0008493944,
+                          "name": "Amyda cartilaginea__LM537465",
+                        },
+                      ],
+                      "length": 0.001848442,
+                      "name": "",
+                    },
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0009315972,
+                          "name": "Amyda cartilaginea__JN232534",
+                        },
+                        Object {
+                          "length": 0.0009315972,
+                          "name": "Amyda cartilaginea__AY259550",
+                        },
+                      ],
+                      "length": 0.001766239,
+                      "name": "",
+                    },
+                  ],
+                  "length": 0.001715119,
+                  "name": "",
+                },
+              ],
+              "length": 0.01583788,
+              "name": "",
+            },
+          ],
+          "length": 0.005135661,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "branchset": Array [
+                        Object {
+                          "length": 0.0002783816,
+                          "name": "Amyda cartilaginea__LM537494",
+                        },
+                        Object {
+                          "length": 0.0002783816,
+                          "name": "Amyda cartilaginea__LM537493",
+                        },
+                      ],
+                      "length": 0.000921291,
+                      "name": "",
+                    },
+                    Object {
+                      "length": 0.001199673,
+                      "name": "Amyda cartilaginea__LM537476",
+                    },
+                  ],
+                  "length": 0.002203144,
+                  "name": "",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.0007563957,
+                      "name": "Amyda cartilaginea__LM537492",
+                    },
+                    Object {
+                      "length": 0.0007563957,
+                      "name": "Amyda cartilaginea__LM537491",
+                    },
+                  ],
+                  "length": 0.002646421,
+                  "name": "",
+                },
+              ],
+              "length": 0.01187587,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.001074637,
+                      "name": "Amyda cartilaginea__LM537481",
+                    },
+                    Object {
+                      "length": 0.001074637,
+                      "name": "Amyda cartilaginea__LM537480",
+                    },
+                  ],
+                  "length": 0.005213941,
+                  "name": "",
+                },
+                Object {
+                  "length": 0.006288577,
+                  "name": "Palea steindachneri__AY743417",
+                },
+              ],
+              "length": 0.008990111,
+              "name": "",
+            },
+          ],
+          "length": 0.01010781,
+          "name": "",
+        },
+      ],
+      "length": 0.2511306,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;

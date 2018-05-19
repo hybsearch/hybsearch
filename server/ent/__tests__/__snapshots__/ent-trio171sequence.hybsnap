@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trio171sequence 1`] = `
+Array [
+  "Amyda_cartilaginea (LM537480)",
+  "Amyda_cartilaginea (LM537481)",
+  "Amyda_cartilaginea (LM537485)",
+  "Amyda_cartilaginea (LM537484)",
+  "Amyda_cartilaginea (LM537483)",
+  "Amyda_cartilaginea (LM537464)",
+  "Amyda_cartilaginea (LM537463)",
+  "Amyda_cartilaginea (AY259550)",
+  "Amyda_cartilaginea (JN232534)",
+  "Amyda_cartilaginea (LM537465)",
+  "Amyda_cartilaginea (LM537467)",
+  "Amyda_cartilaginea (LM537491)",
+  "Amyda_cartilaginea (LM537492)",
+  "Amyda_cartilaginea (LM537476)",
+  "Amyda_cartilaginea (LM537493)",
+  "Amyda_cartilaginea (LM537494)",
+]
+`;

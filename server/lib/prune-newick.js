@@ -38,6 +38,10 @@ function pruneOutliers(newick, alignedFasta) {
 		// Compute actual gene length
 		geneLength[i] = 0
 
+		if (!sequenceMap[species1]) {
+			throw new Error(`could not find ${species1}`)
+		}
+
 		for (let letter of sequenceMap[species1]) {
 			if (letter !== '-') {
 				geneLength[i] += 1
@@ -52,6 +56,11 @@ function pruneOutliers(newick, alignedFasta) {
 			let species2 = leafNodes[j].ident
 				? leafNodes[j].name + '__' + leafNodes[j].ident
 				: leafNodes[j].name
+
+			if (!sequenceMap[species2]) {
+				throw new Error(`could not find ${species2}`)
+			}
+
 			let dist = hammingDistance(sequenceMap[species1], sequenceMap[species2])
 			distCache[i][j] = dist
 		}
@@ -79,7 +88,7 @@ function pruneOutliers(newick, alignedFasta) {
 			let diffProportion = hammingDistance / smallerGeneLength
 
 			if (diffProportion > 0.2) {
-				diffCount++
+				diffCount += 1
 			}
 		}
 

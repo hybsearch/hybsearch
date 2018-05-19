@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vulpes 1`] = `
+Array [
+  "Vulpes_vulpes__EF689061",
+  "Vulpes_vulpes__EF689059",
+  "Vulpes_macrotis__AH005827",
+]
+`;

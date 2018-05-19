@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Array [
+  "Pseudemys_suwanniensis__FLMNH135541",
+  "Pseudemys_suwanniensis__FLMNH11115",
+  "Pseudemys_rubriventris__FLMNH150355",
+  "Pseudemys_nelsoni__FLMNH52686",
+  "Pseudemys_nelsoni__FLMNH143606",
+  "Pseudemys_concinna__NA",
+  "Pseudemys_concinna__NA2",
+  "Pseudemys_floridana__LSUMZ83551",
+  "Pseudemys_floridana__LSUMZ83549",
+  "Pseudemys_floridana__HBS123560",
+]
+`;

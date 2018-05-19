@@ -47,8 +47,8 @@ function fixTreeNames(node) {
 	}
 }
 
-module.exports.strictSearch = strictSearch
-function strictSearch(rootNode, fasta) {
+module.exports.search = search
+function search(rootNode, fasta) {
 	fixTreeNames(rootNode)
 
 	let results = recursiveSearch(rootNode)
@@ -56,6 +56,12 @@ function strictSearch(rootNode, fasta) {
 	unflagIfRemovingDoesNotFix(results, rootNode) // Also mutates
 
 	return results
+}
+
+module.exports.searchWithNoFilter = searchWithNoFilter
+function searchWithNoFilter(rootNode, fasta) {
+	fixTreeNames(rootNode)
+	return recursiveSearch(rootNode)
 }
 
 // Given a species name and a tree, find the node under which
@@ -114,17 +120,14 @@ const { removeCircularLinks } = require('../pipeline/lib')
 function unflagIfRemovingDoesNotFix(results, rootNode){
 	let hybridSpeciesByName = {}
 	let totalHybridSpecies = 0
-	for (let pair of results.nm) {
-		let hybrid = pair[0]
+	for (let hybrid of results.nm) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesByName[speciesName] === undefined) {
 			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies++
+			totalHybridSpecies += 1
 		}
 		hybridSpeciesByName[speciesName].push(hybrid)
 	}
-
-	results.debug = rootNode
 
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
@@ -147,7 +150,6 @@ function unflagIfRemovingDoesNotFix(results, rootNode){
 			}
 			getLeafNodes(MCRA)
 			let allEqual = leafNodes.every(n => n.name === name)
-			console.log(name,allEqual,JSON.parse(JSON.stringify(removeCircularLinks(MCRA))))
 
 			// if the species is still nonmono, then we unflag these 
 			if (!allEqual) {
@@ -156,7 +158,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode){
 				}
 			}
 		}
-		remove(results.nm, pair => unflag.indexOf(pair[0].ident) !== -1)
+		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
 	}
 }
 
@@ -175,13 +177,12 @@ function unflagIfOnlyTwo(results, rootNode){
 	getAllIndividuals(rootNode)
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = {}
-	for (let pair of results.nm) {
-		let hybrid = pair[0]
+	for (let hybrid of results.nm) {
 		let speciesName = hybrid.name
 		if (hybridSpeciesCount[speciesName] === undefined) {
 			hybridSpeciesCount[speciesName] = 0
 		}
-		hybridSpeciesCount[speciesName]++
+		hybridSpeciesCount[speciesName] += 1
 	}
 
 	// Count number of individuals in each species
@@ -191,7 +192,7 @@ function unflagIfOnlyTwo(results, rootNode){
 		if (totalSpeciesCount[speciesName] === undefined) {
 			totalSpeciesCount[speciesName] = 0
 		}
-		totalSpeciesCount[speciesName]++
+		totalSpeciesCount[speciesName] += 1
 	}
 
 	for (let speciesName in hybridSpeciesCount) {
@@ -199,8 +200,7 @@ function unflagIfOnlyTwo(results, rootNode){
 			// We need to unflag the one that's furthest away from its closest
 			let longestDist
 			let furthestHybrid
-			for (let pair of results.nm) {
-				let hybrid = pair[0]
+			for (let hybrid of results.nm) {
 				if (hybrid.name === speciesName) {
 					if (longestDist === undefined) {
 						longestDist = hybrid.length
@@ -213,7 +213,7 @@ function unflagIfOnlyTwo(results, rootNode){
 			}
 
 			// furthestHybrid should be removed
-			remove(results.nm, pair => pair[0].ident === furthestHybrid.ident)
+			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
 		}
 	}
 }
@@ -248,14 +248,13 @@ function recursiveSearch(node, nmInstances = []) {
 				if (hasName && notAllEqual) {
 					otherSpeciesList.forEach(species3 => {
 						if (species3.name === species1.name) {
-							const pairCheck = pair => isEqual(pair, [species3, species3])
-							const count = nmInstances.filter(pairCheck).length
+							const count = nmInstances.filter(sp => sp === species3).length
 
 							if (!count) {
-								debug(`nmMark called on ${species3} and ${species3}`)
-								debug(`nonmonophyly: ${label(species3)} / ${label(species3)}`)
+								debug(`nmMark called on ${species3}`)
+								debug(`nonmonophyly: ${label(species3)}`)
 
-								nmInstances.push([species3, species3])
+								nmInstances.push(species3)
 
 								forRemoval.push(species3.ident)
 								debug(`removing from A ${label(species3)}`)
@@ -271,7 +270,12 @@ function recursiveSearch(node, nmInstances = []) {
 			speciesListB.forEach(speciesChecker(speciesListA))
 			remove(speciesListB, n => forRemoval.includes(n.ident))
 
-			speciesList = [...speciesList, ...speciesListA, ...speciesListB]
+			if (speciesListA.length) {
+				speciesList.push(...speciesListA)
+			}
+			if (speciesListB.length) {
+				speciesList.push(...speciesListB)
+			}
 		}
 
 		speciesList = uniqBy(speciesList, 'ident')
@@ -287,5 +291,5 @@ function recursiveSearch(node, nmInstances = []) {
 module.exports.formatData = formatData
 function formatData(results) {
 	const { nm: nmlist } = results
-	return nmlist.map(pair => pair.map(label).join(' / ')).join('\n')
+	return nmlist.map(label).join('\n')
 }

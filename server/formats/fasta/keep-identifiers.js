@@ -6,14 +6,14 @@ const { buildFasta } = require('./build')
 const flatten = require('lodash/flatten')
 
 /*::
-type EntNmPair = {
+type EntNmNode = {
 	ident: string,
 	length: number,
 	name: string,
 }
 
 type EntNonmonophylyResults = {
-	nm: Array<[EntNmPair, EntNmPair]>,
+	nm: Array<EntNmNode>,
 	species: any,
 }
 */
@@ -25,11 +25,7 @@ function keepFastaIdentifiers(
 ) {
 	let samples = parseFasta(dataString)
 	let identifiersToRemove = new Set(
-		flatten(
-			identifiers.nm.map(pair =>
-				pair.map(node => `${node.name}__${node.ident}`)
-			)
-		)
+		flatten(identifiers.nm.map(hybrid => `${hybrid.name}__${hybrid.ident}`))
 	)
 
 	let filtered = samples.filter(({ species }) =>
