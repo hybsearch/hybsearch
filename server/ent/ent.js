@@ -109,39 +109,41 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	}
 
 	// For each species found (if at least 2)
-	if (totalHybridSpecies > 1) {
-		let unflag = []
+	if (totalHybridSpecies < 2) {
+		return
+	}
 
-		for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
-			// remove the flagged hybrids and check if their species becomes monophyletic
-			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+	let unflag = []
+	for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
+		// remove the flagged hybrids and check if their species becomes monophyletic
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
 
-			// Find the MRCA
-			let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
+		// Find the MRCA
+		let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
 
-			// Determine whether everything under that node is of the same species
-			let leafNodes = []
-			const getLeafNodes = node => {
-				if (node.branchset) {
-					node.branchset.forEach(getLeafNodes)
-				} else {
-					leafNodes.push(node)
-				}
-			}
-			getLeafNodes(MCRA)
-
-			let allEqual = leafNodes.every(n => n.name === name)
-
-			// if the species is still nonmono, then we unflag these
-			if (!allEqual) {
-				for (let hybrid of hybrids) {
-					unflag.push(hybrid.ident)
-				}
+		// Determine whether everything under that node is of the same species
+		let leafNodes = []
+		const getLeafNodes = node => {
+			if (node.branchset) {
+				node.branchset.forEach(getLeafNodes)
+			} else {
+				leafNodes.push(node)
 			}
 		}
-		remove(results.nm, hybrid => unflag.includes(hybrid.ident))
+		getLeafNodes(MCRA)
+
+		let allEqual = leafNodes.every(n => n.name === name)
+
+		// if the species is still nonmono, then we unflag these
+		if (!allEqual) {
+			for (let hybrid of hybrids) {
+				unflag.push(hybrid.ident)
+			}
+		}
 	}
+
+	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 }
 
 // Check if we've flagged the entire species. If two, keep at least one
