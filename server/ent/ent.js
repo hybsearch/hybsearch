@@ -86,10 +86,8 @@ function findIndividualsOfSpecies(startNode, targetSpeciesName) {
 	function find(node) {
 		if (node.branchset) {
 			node.branchset.forEach(find)
-		} else {
-			if (node.name === targetSpeciesName) {
-				allIndividuals.push(node)
-			}
+		} else if (node.name === targetSpeciesName) {
+			allIndividuals.push(node)
 		}
 	}
 	find(startNode)
