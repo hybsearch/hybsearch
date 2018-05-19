@@ -118,14 +118,15 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 			let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
 			// Determine whether everything under that node is of the same species
 			let leafNodes = []
-			const getLeafNodes = leaves => node => {
+			const getLeafNodes = node => {
 				if (node.branchset) {
 					node.branchset.forEach(getLeafNodes)
 				} else {
-					leaves.push(node)
+					leafNodes.push(node)
 				}
 			}
-			getLeafNodes(leafNodes)(MCRA)
+			getLeafNodes(MCRA)
+
 			let allEqual = leafNodes.every(n => n.name === name)
 
 			// if the species is still nonmono, then we unflag these
