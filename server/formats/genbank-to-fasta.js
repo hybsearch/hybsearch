@@ -97,7 +97,7 @@ function genbankToFasta(genbankFile) {
 
 	actualEntries = actualEntries
 		.map(entry => {
-			let pretty = entry.ORGANISM.split(' ')
+			let pretty = entry.ORGANISM.split(/\s+/)
 				.slice(0, 2)
 				.join(' ')
 			return Object.assign({}, entry, {__prettyOrganism: pretty})
