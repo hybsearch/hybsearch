@@ -47,13 +47,77 @@ function fixTreeNames(node) {
 	}
 }
 
-module.exports.strictSearch = strictSearch
-function strictSearch(rootNode, fasta) {
+module.exports.search = search
+function search(rootNode, fasta) {
 	fixTreeNames(rootNode)
 
 	let results = recursiveSearch(rootNode)
+	unflagIfOnlyTwo(results, rootNode) // Mutates the result
+	unflagIfRemovingDoesNotFix(results, rootNode) // Also mutates
 
-	// We don't report all the hybrids found as hybrids just yet
+	return results
+}
+
+module.exports.searchWithNoFilter = searchWithNoFilter
+function searchWithNoFilter(rootNode, fasta) {
+	fixTreeNames(rootNode)
+	return recursiveSearch(rootNode)
+}
+
+// Given a species name and a tree, find the node under which
+// all the individuals of this species lie
+function getMostRecentCommonAncestor(rootNode, speciesName) {
+	let rootCopy = JSON.parse(JSON.stringify(rootNode))
+	// Add parent references to each node
+	function addParent(node) {
+		if (node.branchset) {
+			for (let child of node.branchset) {
+				child.parent = node
+			}
+			node.branchset.forEach(addParent)
+		}
+	}
+
+	addParent(rootCopy)
+
+	// Find just one individual of the species
+	function findIndividualsOfSpecies(startNode, targetSpeciesName) {
+		let allIndividuals = []
+		function find(node) {
+			if (node.branchset) {
+				node.branchset.forEach(find)
+			} else {
+				if (node.name === targetSpeciesName) {
+					allIndividuals.push(node)
+				}
+			}
+		}
+		find(startNode)
+		return allIndividuals
+	}
+
+	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
+
+	if (allIndividuals.length === 0) {
+		throw new Error('Attempt to search for a species that is not in the tree.')
+	}
+
+	// Keep going to parent as long as not all the individuals in
+	// the species are under this parent
+	let individual = allIndividuals[0]
+	let leafNodes = findIndividualsOfSpecies(individual, speciesName)
+	while (leafNodes.length < allIndividuals.length) {
+		individual = individual.parent
+		leafNodes = findIndividualsOfSpecies(individual, speciesName)
+	}
+	return individual
+}
+
+const { removeCircularLinks } = require('../pipeline/lib')
+
+// We only want hybrids that, once removed, make their species monophyletic
+// Check if all the flagged ones have this property. Otherwise unflag them
+function unflagIfRemovingDoesNotFix(results, rootNode) {
 	let hybridSpeciesByName = {}
 	let totalHybridSpecies = 0
 	for (let hybrid of results.nm) {
@@ -65,30 +129,30 @@ function strictSearch(rootNode, fasta) {
 		hybridSpeciesByName[speciesName].push(hybrid)
 	}
 
-	let unflag = []
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
+		let unflag = []
 		for (let name in hybridSpeciesByName) {
 			let hybrids = hybridSpeciesByName[name]
-			// remove the flagged hybrids and redo the search.
+			// remove the flagged hybrids and check if their species becomes monophyletic
 			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
 			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
-			let resultsRedo = recursiveSearch(rootNodeCopy)
-			//  If what remains is N-1 hybrid species, then that was a true hybrid
-			let newSpeciesNames = {}
-			let newSpeciesCount = 0
-			for (let hybrid of resultsRedo.nm) {
-				let speciesName = hybrid.name
-				if (newSpeciesNames[speciesName] === undefined) {
-					newSpeciesNames[speciesName] = true
-					newSpeciesCount += 1
+			// Find the MRCA
+			let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
+			// Determine whether everything under that node is of the same species
+			let leafNodes = []
+			const getLeafNodes = leaves => node => {
+				if (node.branchset) {
+					node.branchset.forEach(getLeafNodes)
+				} else {
+					leaves.push(node)
 				}
 			}
-			// if less, then that is NOT a true hybrid. Unmark those.
-			if (newSpeciesCount < totalHybridSpecies - 1) {
-				// This species is a true nonmonophyly!
-			} else {
-				// Unflag this
+			getLeafNodes(leafNodes)(MCRA)
+			let allEqual = leafNodes.every(n => n.name === name)
+
+			// if the species is still nonmono, then we unflag these
+			if (!allEqual) {
 				for (let hybrid of hybrids) {
 					unflag.push(hybrid.ident)
 				}
@@ -96,7 +160,10 @@ function strictSearch(rootNode, fasta) {
 		}
 		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
 	}
+}
 
+// Check if we've flagged the entire species. If two, keep at least one
+function unflagIfOnlyTwo(results, rootNode) {
 	let allIndividuals = []
 
 	function getAllIndividuals(node) {
@@ -149,8 +216,6 @@ function strictSearch(rootNode, fasta) {
 			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
 		}
 	}
-
-	return results
 }
 
 // Given a node, it will return {species:[],nm:[]}

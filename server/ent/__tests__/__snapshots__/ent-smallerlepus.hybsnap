@@ -2,6 +2,26 @@
 
 exports[`smallerlepus 1`] = `
 Array [
-  "",
+  "Lepus mandshuricus (HM232991)",
+  "Lepus mandshuricus (HM232995)",
+  "Lepus mandshuricus (HM232996)",
+  "Lepus mandshuricus (HM232994)",
+  "Lepus mandshuricus (HM232993)",
+  "Lepus mandshuricus (HM232992)",
+  "Lepus timidus (AB687528)",
+  "Lepus timidus (AB687529)",
+  "Lepus timidus (AB687530)",
+  "Lepus timidus (AB687527)",
+  "Lepus timidus (AB687526)",
+  "Lepus timidus (AB687524)",
+  "Lepus timidus (AB058607)",
+  "Lepus mandshuricus (HM233077)",
+  "Lepus mandshuricus (HM233088)",
+  "Lepus mandshuricus (HM233090)",
+  "Lepus mandshuricus (HM233091)",
+  "Lepus mandshuricus (HM233089)",
+  "Lepus mandshuricus (HM233010)",
+  "Lepus mandshuricus (HM233011)",
+  "Lepus mandshuricus (HM233014)",
 ]
 `;

@@ -68,7 +68,7 @@ module.exports = [
 		// identifies the non-monophyletic sequences
 		input: ['newick-json:2', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta]) => [
-			removeCircularLinks(ent.strictSearch(newickJson, alignedFasta)),
+			removeCircularLinks(ent.search(newickJson, alignedFasta)),
 			removeCircularLinks(newickJson),
 		],
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],

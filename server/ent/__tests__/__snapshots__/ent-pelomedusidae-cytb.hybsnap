@@ -2,6 +2,8 @@
 
 exports[`pelomedusidae-cytb 1`] = `
 Array [
-  "",
+  "Pelusios_rhodesianus (FR716936)",
+  "Pelusios_castaneus (FR716914)",
+  "Pelusios_castaneus (FR716915)",
 ]
 `;
