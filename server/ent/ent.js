@@ -87,7 +87,7 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 			if (node.branchset) {
 				node.branchset.forEach(find)
 			} else {
-				if (node.name == targetSpeciesName) {
+				if (node.name === targetSpeciesName) {
 					allIndividuals.push(node)
 				}
 			}
@@ -98,7 +98,7 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 
 	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
 
-	if (allIndividuals.length == 0) {
+	if (allIndividuals.length === 0) {
 		throw new Error('Attempt to search for a species that is not in the tree.')
 	}
 
@@ -141,7 +141,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 			let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
 			// Determine whether everything under that node is of the same species
 			let leafNodes = []
-			function getLeafNodes(node) {
+			const getLeafNodes = node => {
 				if (node.branchset) {
 					node.branchset.forEach(getLeafNodes)
 				} else {
