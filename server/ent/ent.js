@@ -59,22 +59,6 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 
 	addParent(rootCopy)
 
-	// Find just one individual of the species
-	function findIndividualsOfSpecies(startNode, targetSpeciesName) {
-		let allIndividuals = []
-		function find(node) {
-			if (node.branchset) {
-				node.branchset.forEach(find)
-			} else {
-				if (node.name === targetSpeciesName) {
-					allIndividuals.push(node)
-				}
-			}
-		}
-		find(startNode)
-		return allIndividuals
-	}
-
 	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
 
 	if (allIndividuals.length === 0) {
@@ -90,6 +74,22 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 		leafNodes = findIndividualsOfSpecies(individual, speciesName)
 	}
 	return individual
+}
+
+// Find just one individual of the species
+function findIndividualsOfSpecies(startNode, targetSpeciesName) {
+	let allIndividuals = []
+	function find(node) {
+		if (node.branchset) {
+			node.branchset.forEach(find)
+		} else {
+			if (node.name === targetSpeciesName) {
+				allIndividuals.push(node)
+			}
+		}
+	}
+	find(startNode)
+	return allIndividuals
 }
 
 // We only want hybrids that, once removed, make their species monophyletic
