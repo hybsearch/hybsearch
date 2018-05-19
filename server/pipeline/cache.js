@@ -7,9 +7,10 @@ const path = require('path')
 const mkdir = require('make-dir')
 
 class Cache {
-	constructor({ filepath, contents }) {
+	constructor({ filepath, contents, pipelineName }) {
 		this.filepath = filepath
 		this.data = contents
+		this.pipelineName = pipelineName
 
 		this.memcache = new Map()
 
@@ -34,7 +35,7 @@ class Cache {
 	}
 
 	hashKey(key) {
-		return this._hash(`${key}:${this._dataHash}`)
+		return this._hash(`${key}:${this.pipelineName}:${this._dataHash}`)
 	}
 
 	diskFilename(hashedKey) {
