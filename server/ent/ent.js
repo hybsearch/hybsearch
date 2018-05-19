@@ -3,6 +3,7 @@
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
+const countBy = require('lodash/countBy')
 const { removeNodes } = require('../lib/prune-newick')
 
 const ENABLE_DEBUG = false
@@ -160,24 +161,10 @@ function unflagIfOnlyTwo(results, rootNode) {
 
 	getAllIndividuals(rootNode)
 	// Count number of hybrids for each species
-	let hybridSpeciesCount = {}
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesCount[speciesName] === undefined) {
-			hybridSpeciesCount[speciesName] = 0
-		}
-		hybridSpeciesCount[speciesName] += 1
-	}
+	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
 
 	// Count number of individuals in each species
-	let totalSpeciesCount = {}
-	for (let individual of allIndividuals) {
-		let speciesName = individual.name
-		if (totalSpeciesCount[speciesName] === undefined) {
-			totalSpeciesCount[speciesName] = 0
-		}
-		totalSpeciesCount[speciesName] += 1
-	}
+	let totalSpeciesCount = countBy(allIndividuals, ind => ind.name)
 
 	for (let speciesName in hybridSpeciesCount) {
 		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
