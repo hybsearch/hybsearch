@@ -23,8 +23,7 @@ function pruneOutliers(newick, alignedFasta) {
 			throw new Error(`could not find ${species1}`)
 		}
 
-		let innerDistCache = new Map()
-		distCache.set(node1, innerDistCache)
+		distCache.set(node1, new Map())
 
 		// Compute actual gene length
 		let filteredGene = [...sequenceMap.get(species1)].filter(ch => ch !== '-')
@@ -42,7 +41,7 @@ function pruneOutliers(newick, alignedFasta) {
 			}
 
 			let dist = hammingDistance(sequence1, sequence2)
-			innerDistCache.set(node2, dist)
+			distCache.get(node1).set(node2, dist)
 		})
 	})
 
