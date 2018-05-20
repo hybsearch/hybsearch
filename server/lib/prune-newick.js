@@ -107,6 +107,7 @@ function pruneOutliers(newick, alignedFasta) {
 
 		newick = removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
+		// TODO: why do we mutate here?
 		delete newick.length
 	}
 
