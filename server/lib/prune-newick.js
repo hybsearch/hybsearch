@@ -17,7 +17,7 @@ function pruneOutliers(newick, alignedFasta) {
 	let geneLength = new Map()
 
 	leafNodes.forEach(node1 => {
-		let species1 = node1.ident ? node1.name + '__' + node1.ident : node1.name
+		let species1 = node1.name
 		let sequence1 = sequenceMap.get(species1)
 		if (!sequence1) {
 			throw new Error(`could not find ${species1}`)
@@ -34,7 +34,7 @@ function pruneOutliers(newick, alignedFasta) {
 				return
 			}
 
-			let species2 = node2.ident ? node2.name + '__' + node2.ident : node2.name
+			let species2 = node2.name
 			let sequence2 = sequenceMap.get(species2)
 			if (!sequence2) {
 				throw new Error(`could not find ${species2}`)
@@ -78,16 +78,12 @@ function pruneOutliers(newick, alignedFasta) {
 		// (2) [than a majority of the sequences]
 		return diffPercent >= 0.5
 	})
-	let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 
 	// Now remove the nodes
 	let removedData = []
 	if (toRemoveNodes.length > 0) {
-		removedData = toRemoveNodes.map(node => ({
-			name: node.name,
-			ident: node.ident,
-			length: node.length,
-		}))
+		removedData = toRemoveNodes.map(({ name, length }) => ({ name, length }))
+		let toRemoveNames = toRemoveNodes.map(node => node.name)
 
 		newick = removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
