@@ -198,18 +198,15 @@ function recursiveSearch(node, nmInstances = []) {
 			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
 
 			if (hasName && notAllEqual) {
-				otherSpeciesList.forEach(species3 => {
-					if (species3.name === species1.name) {
-						const count = nmInstances.filter(sp => sp === species3).length
-
-						if (!count) {
-
-							nmInstances.push(species3)
-
-							forRemoval.push(species3.ident)
-						}
-					}
-				})
+				otherSpeciesList
+					.filter(species3 => species3.name === species1.name)
+					.filter(
+						species3 => nmInstances.filter(sp => sp === species3).length === 0
+					)
+					.forEach(species3 => {
+						nmInstances.push(species3)
+						forRemoval.push(species3.ident)
+					})
 			}
 		}
 
