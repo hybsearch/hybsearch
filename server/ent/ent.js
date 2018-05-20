@@ -13,10 +13,10 @@ let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
 
 // Given a root node, will make sure all the names are split into `name` and `ident`
-function fixTreeNames(node) {
+function setTreeNames(node) {
 	if (node.branchset) {
 		// If it's a not a leaf, keep going
-		node = { ...node, branchset: node.branchset.map(fixTreeNames) }
+		node = { ...node, branchset: node.branchset.map(setTreeNames) }
 	}
 
 	if (node.name && !node.ident) {
@@ -30,7 +30,7 @@ function fixTreeNames(node) {
 
 module.exports.search = search
 function search(rootNode) {
-	rootNode = fixTreeNames(rootNode)
+	rootNode = setTreeNames(rootNode)
 
 	let results = recursiveSearch(rootNode)
 	unflagIfOnlyTwo(results, rootNode) // Mutates the result
@@ -41,7 +41,7 @@ function search(rootNode) {
 
 module.exports.searchWithNoFilter = searchWithNoFilter
 function searchWithNoFilter(rootNode) {
-	rootNode = fixTreeNames(rootNode)
+	rootNode = setTreeNames(rootNode)
 	return recursiveSearch(rootNode)
 }
 
