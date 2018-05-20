@@ -150,17 +150,8 @@ function getLeaves(root) {
 
 // Check if we've flagged the entire species. If two, keep at least one
 function unflagIfOnlyTwo(results, rootNode) {
-	let allIndividuals = []
+	let allIndividuals = getLeaves(rootNode)
 
-	function getAllIndividuals(node) {
-		if (!node.branchset) {
-			allIndividuals.push(node)
-		} else {
-			node.branchset.forEach(getAllIndividuals)
-		}
-	}
-
-	getAllIndividuals(rootNode)
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
 
