@@ -122,19 +122,22 @@ function removeNodes(node, identArray) {
 		return node
 	}
 
-	let newBranchset = node.branchset
-		.filter(child => {
-			if (child.branchset) {
-				return true
-			}
-
-			if (identArray.includes(child.ident) || identArray.includes(child.name)) {
-				return false
-			}
-
+	let newBranchset = node.branchset.filter(child => {
+		// If we have a child, we want to preserve this node
+		if (child.branchset) {
 			return true
-		})
-		.map(child => removeNodes(child, identArray))
+		}
+
+		// Otherwise, if this node is one to remove, remove it
+		if (identArray.includes(child.ident) || identArray.includes(child.name)) {
+			return false
+		}
+
+		// Otherwise, keep it
+		return true
+	})
+
+	newBranchset = newBranchset.map(child => removeNodes(child, identArray))
 
 	return { ...node, branchset: newBranchset }
 }
