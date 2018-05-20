@@ -99,11 +99,10 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	let unflag = []
 	for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
 		// remove the flagged hybrids and check if their species becomes monophyletic
-		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-		removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+		rootNode = removeNodes(rootNode, hybrids.map(h => h.ident))
 
 		// Find the MRCA
-		let mCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
+		let mCRA = getMostRecentCommonAncestor(rootNode, name)
 
 		// Determine whether everything under that node is of the same species
 		let leafNodes = getLeaves(mCRA)

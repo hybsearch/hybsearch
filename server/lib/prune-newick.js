@@ -105,7 +105,7 @@ function pruneOutliers(newick, alignedFasta) {
 			length: node.length,
 		}))
 
-		removeNodes(newick, toRemoveNames)
+		newick = removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
 		delete newick.length
 	}
@@ -117,28 +117,25 @@ function pruneOutliers(newick, alignedFasta) {
 }
 
 function removeNodes(node, identArray) {
-	if (node.branchset) {
-		let newBranchset = []
-		for (let child of node.branchset) {
-			let include = true
-
-			if (!child.branchset) {
-				if (
-					(child.ident && identArray.indexOf(child.ident) !== -1) ||
-					identArray.indexOf(child.name) !== -1
-				) {
-					include = false
-				}
-			}
-			if (include) {
-				newBranchset.push(child)
-			}
-
-			removeNodes(child, identArray)
-		}
-
-		node.branchset = newBranchset
+	if (!node.branchset) {
+		return node
 	}
+
+	let newBranchset = node.branchset
+		.filter(child => {
+			if (child.branchset) {
+				return true
+			}
+
+			if (identArray.includes(child.ident) || identArray.includes(child.name)) {
+				return false
+			}
+
+			return true
+		})
+		.map(child => removeNodes(child, identArray))
+
+	return { ...node, branchset: newBranchset }
 }
 
 function removeRedundant(node) {
