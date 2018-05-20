@@ -11,90 +11,76 @@ module.exports.removeNodes = removeNodes
 function pruneOutliers(newick, alignedFasta) {
 	const fastaData = parseFasta(alignedFasta)
 	// Build a dict map of species -> sequence
-	let sequenceMap = {}
+	let sequenceMap = new Map()
 	for (let obj of fastaData) {
-		sequenceMap[obj.species] = obj.sequence
+		sequenceMap.set(obj.species, obj.sequence)
 	}
 
 	let leafNodes = getLeaves(newick)
 
 	// Compute and store distances between each pair
-	let distCache = {}
-	let geneLength = {}
+	let distCache = new Map()
+	let geneLength = new Map()
 
-	for (let i = 0; i < leafNodes.length; i++) {
-		let node = leafNodes[i]
-		let species1 = node.ident ? node.name + '__' + node.ident : node.name
-		distCache[i] = {}
-		// Compute actual gene length
-		geneLength[i] = 0
-
-		if (!sequenceMap[species1]) {
+	leafNodes.forEach(node1 => {
+		let species1 = node1.ident ? node1.name + '__' + node1.ident : node1.name
+		let sequence1 = sequenceMap.get(species1)
+		if (!sequence1) {
 			throw new Error(`could not find ${species1}`)
 		}
 
-		for (let letter of sequenceMap[species1]) {
-			if (letter !== '-') {
-				geneLength[i] += 1
+		let innerDistCache = new Map()
+		distCache.set(node1, innerDistCache)
+
+		// Compute actual gene length
+		let filteredGene = [...sequenceMap.get(species1)].filter(ch => ch !== '-')
+		geneLength.set(node1, filteredGene.length)
+
+		leafNodes.forEach(node2 => {
+			if (node1 === node2) {
+				return
 			}
-		}
 
-		for (let j = 0; j < leafNodes.length; j++) {
-			if (i === j) {
-				continue
-			}
-
-			let species2 = leafNodes[j].ident
-				? leafNodes[j].name + '__' + leafNodes[j].ident
-				: leafNodes[j].name
-
-			if (!sequenceMap[species2]) {
+			let species2 = node2.ident ? node2.name + '__' + node2.ident : node2.name
+			let sequence2 = sequenceMap.get(species2)
+			if (!sequence2) {
 				throw new Error(`could not find ${species2}`)
 			}
 
-			let dist = hammingDistance(sequenceMap[species1], sequenceMap[species2])
-			distCache[i][j] = dist
-		}
-	}
+			let dist = hammingDistance(sequence1, sequence2)
+			innerDistCache.set(node2, dist)
+		})
+	})
 
-	let toRemoveNames = []
-	let toRemoveNodes = []
-
-	// A sequence S will be removed if it is more than 20% different than a majority of the seqences
-	// Or if it is smaller than the cut off
-	for (let i = 0; i < leafNodes.length; i++) {
-		let node = leafNodes[i]
-		let gene1 = geneLength[i]
-		let diffCount = 0
-
-		for (let j = 0; j < leafNodes.length; j++) {
-			if (i === j) {
-				continue
+	// A sequence S will be removed if it is more than 20% different (1) than a
+	// majority of the sequences (2), or if it is smaller than the cutoff (3).
+	let toRemoveNodes = leafNodes.filter(node1 => {
+		let gene1Distance = geneLength.get(node1)
+		let significantDiffs = leafNodes.filter(node2 => {
+			if (node1 === node2) {
+				return false
 			}
-			let hammingDistance = distCache[i][j]
-			let gene2 = geneLength[j]
-			// The hamming distance can be at most the size of the smaller sequence
-			// So to get the proportion, we divide it by the length of the smalle sequence
-			let smallerGeneLength = Math.min(gene1, gene2)
+
+			let gene2Distance = geneLength.get(node2)
+
+			let hammingDistance = distCache.get(node1).get(node2)
+
+			// The hamming distance can be at most the size of the smaller
+			// sequence. So to get the proportion, we divide it by the length
+			// of the smaller sequence
+			let smallerGeneLength = Math.min(gene1Distance, gene2Distance)
 			let diffProportion = hammingDistance / smallerGeneLength
 
-			if (diffProportion > 0.2) {
-				diffCount += 1
-			}
-		}
+			// (1) [more than 20% different]
+			return diffProportion > 0.2
+		})
 
-		let diffPercent = diffCount / (leafNodes.length - 1)
+		let diffPercent = significantDiffs.length / (leafNodes.length - 1)
 
-		if (diffPercent >= 0.5 || gene1 < SEQUENCE_CUTOFF_LENGTH) {
-			if (node.ident) {
-				toRemoveNames.push(node.ident)
-			} else {
-				toRemoveNames.push(node.name)
-			}
-
-			toRemoveNodes.push(node)
-		}
-	}
+		// (2) [than a majority of the sequences] || (3) [or smaller than the cutoff]
+		return diffPercent >= 0.5 || gene1Distance < SEQUENCE_CUTOFF_LENGTH
+	})
+	let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 
 	// Now remove the nodes
 	let removedData = []
