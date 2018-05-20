@@ -55,10 +55,10 @@ module.exports = [
 		// turns the Newick tree into a JSON object
 		input: ['newick-tree'],
 		transform: ([data]) => [parseNewick(data)],
-		output: ['newick-json:1'],
+		output: ['newick-json:original'],
 	},
 	{
-		input: ['newick-json:1', 'aligned-fasta'],
+		input: ['newick-json:original', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta]) => {
 			let { removedData, prunedNewick } = pruneOutliers(
 				newickJson,
@@ -66,16 +66,13 @@ module.exports = [
 			)
 			return [prunedNewick, removedData]
 		},
-		output: ['newick-json:2', 'pruned-identifiers'],
+		output: ['newick-json:pruned', 'pruned-identifiers'],
 	},
 	{
 		// identifies the non-monophyletic sequences
-		input: ['newick-json:2'],
-		transform: ([newickJson]) => [
-			removeCircularLinks(ent.search(newickJson)),
-			removeCircularLinks(newickJson),
-		],
-		output: ['nonmonophyletic-sequences', 'newick-json:3'],
+		input: ['newick-json:pruned'],
+		transform: ([newickJson]) => [ent.search(newickJson)],
+		output: ['nonmonophyletic-sequences'],
 	},
 	{
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
