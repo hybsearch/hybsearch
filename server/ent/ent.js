@@ -16,13 +16,13 @@ const LABEL_DIVIDER = '__'
 function fixTreeNames(node) {
 	if (node.branchset) {
 		// If it's a not a leaf, keep going
-		node.branchset = node.branchset.map(fixTreeNames)
+		node = { ...node, branchset: node.branchset.map(fixTreeNames) }
 	}
 
 	if (node.name && !node.ident) {
 		// If it's a leaf, and has a name, but not ident, split it up!
 		let [name, ident] = node.name.split(LABEL_DIVIDER)
-		return Object.assign({}, node, {name, ident})
+		node = { ...node, name, ident }
 	}
 
 	return node
