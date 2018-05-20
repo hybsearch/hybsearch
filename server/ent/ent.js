@@ -160,17 +160,19 @@ function unflagIfOnlyTwo(results, rootNode) {
 	// Count number of individuals in each species
 	let totalSpeciesCount = countBy(allIndividuals, ind => ind.name)
 
-	for (let speciesName in hybridSpeciesCount) {
-		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
-			// We need to unflag the one that's furthest away from its closest
-			let applicableSpecies = results.nm.filter(
-				hybrid => hybrid.name === speciesName
-			)
-			let furthestHybrid = maxBy(applicableSpecies, hybrid => hybrid.length)
-
-			// furthestHybrid should be removed
-			remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
+	for (let speciesName of Object.keys(hybridSpeciesCount)) {
+		if (hybridSpeciesCount[speciesName] !== totalSpeciesCount[speciesName]) {
+			continue
 		}
+
+		// We need to unflag the one that's furthest away from its closest
+		let applicableSpecies = results.nm.filter(
+			hybrid => hybrid.name === speciesName
+		)
+		let furthestHybrid = maxBy(applicableSpecies, hybrid => hybrid.length)
+
+		// furthestHybrid should be removed
+		remove(results.nm, hybrid => hybrid.ident === furthestHybrid.ident)
 	}
 }
 
