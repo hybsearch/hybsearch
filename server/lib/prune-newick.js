@@ -1,9 +1,8 @@
-/*
-This file will prune a newick tree to remove genes that are too dissimilar.
-*/
+// This file will prune a newick tree to remove genes that are too dissimilar.
 
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
+const { getLeaves } = require('../newick/lib')
 const SEQUENCE_CUTOFF_LENGTH = 300
 
 module.exports.pruneOutliers = pruneOutliers
@@ -17,17 +16,9 @@ function pruneOutliers(newick, alignedFasta) {
 		sequenceMap[obj.species] = obj.sequence
 	}
 
-	let leafNodes = []
-	function getLeaves(node) {
-		if (node.branchset) {
-			node.branchset.forEach(getLeaves)
-		} else {
-			leafNodes.push(node)
-		}
-	}
+	let leafNodes = getLeaves(newick)
 
 	// Compute and store distances between each pair
-	getLeaves(newick)
 	let distCache = {}
 	let geneLength = {}
 
