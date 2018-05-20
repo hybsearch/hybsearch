@@ -56,8 +56,8 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 		throw new Error('Attempt to search for a species that is not in the tree.')
 	}
 
-	// Keep going to parent as long as not all the individuals in
-	// the species are under this parent
+	// Keep going up to the parent as long as not all the individuals in the
+	// species are under this parent.
 	let individual = allIndividuals[0]
 	let leafNodes = findIndividualsOfSpecies(individual, speciesName)
 	while (leafNodes.length < allIndividuals.length) {
