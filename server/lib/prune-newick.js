@@ -60,14 +60,13 @@ function pruneOutliers(newick, alignedFasta) {
 				return false
 			}
 
-			let gene2Distance = geneLength.get(node2)
-
-			let hammingDistance = distCache.get(node1).get(node2)
-
 			// The hamming distance can be at most the size of the smaller
 			// sequence. So to get the proportion, we divide it by the length
 			// of the smaller sequence
+			let gene2Distance = geneLength.get(node2)
 			let smallerGeneLength = Math.min(gene1Distance, gene2Distance)
+
+			let hammingDistance = distCache.get(node1).get(node2)
 			let diffProportion = hammingDistance / smallerGeneLength
 
 			// (1) [more than 20% different]
