@@ -26,7 +26,7 @@ function pruneOutliers(newick, alignedFasta) {
 		distCache.set(node1, new Map())
 
 		// Compute actual gene length
-		let filteredGene = [...sequenceMap.get(species1)].filter(ch => ch !== '-')
+		let filteredGene = sequence1.replace(/-/g, '')
 		geneLength.set(node1, filteredGene.length)
 
 		leafNodes.forEach(node2 => {
