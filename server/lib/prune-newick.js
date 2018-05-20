@@ -9,13 +9,7 @@ module.exports.pruneOutliers = pruneOutliers
 module.exports.removeNodes = removeNodes
 
 function pruneOutliers(newick, alignedFasta) {
-	const fastaData = parseFasta(alignedFasta)
-	// Build a dict map of species -> sequence
-	let sequenceMap = new Map()
-	for (let obj of fastaData) {
-		sequenceMap.set(obj.species, obj.sequence)
-	}
-
+	let sequenceMap = parseFastaAsMap(alignedFasta)
 	let leafNodes = getLeaves(newick)
 
 	// Compute and store distances between each pair
@@ -176,4 +170,11 @@ function removeRedundant(node) {
 	}
 
 	return { ...node, branchset: newBranchset }
+}
+
+// Build a map of species -> sequence
+function parseFastaAsMap(fasta) {
+	let parsed = parseFasta(fasta)
+	let pairs = parsed.map(({ species, sequence }) => [species, sequence])
+	return new Map(pairs)
 }
