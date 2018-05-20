@@ -82,16 +82,7 @@ function addParents(rootNode) {
 
 // Find just one individual of the species
 function findIndividualsOfSpecies(startNode, targetSpeciesName) {
-	let allIndividuals = []
-	function find(node) {
-		if (node.branchset) {
-			node.branchset.forEach(find)
-		} else if (node.name === targetSpeciesName) {
-			allIndividuals.push(node)
-		}
-	}
-	find(startNode)
-	return allIndividuals
+	return getLeaves(startNode).filter(node => node.name === targetSpeciesName)
 }
 
 // We only want hybrids that, once removed, make their species monophyletic
