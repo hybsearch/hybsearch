@@ -112,9 +112,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 
 		// if the species is still nonmono, then we unflag these
 		if (!allEqual) {
-			for (let hybrid of hybrids) {
-				unflag.push(hybrid.ident)
-			}
+			unflag.push(...hybrids.map(h => h.ident))
 		}
 	}
 
