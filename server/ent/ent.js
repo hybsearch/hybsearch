@@ -6,6 +6,7 @@ const remove = require('lodash/remove')
 const countBy = require('lodash/countBy')
 const maxBy = require('lodash/maxBy')
 const groupBy = require('lodash/groupBy')
+const { getLeaves } = require('../newick/lib')
 const { removeNodes } = require('../lib/prune-newick')
 
 let label = node => `${node.name} (${node.ident})`
@@ -118,21 +119,6 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	}
 
 	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
-}
-
-function getLeaves(root) {
-	let leafNodes = []
-
-	const recurse = node => {
-		if (node.branchset) {
-			node.branchset.forEach(recurse)
-		} else {
-			leafNodes.push(node)
-		}
-	}
-	recurse(root)
-
-	return leafNodes
 }
 
 // Check if we've flagged the entire species. If two, keep at least one
