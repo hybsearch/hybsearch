@@ -56,6 +56,12 @@ function pruneOutliers(newick, alignedFasta) {
 	// majority of the sequences (2), or if it is smaller than the cutoff (3).
 	let toRemoveNodes = leafNodes.filter(node1 => {
 		let gene1Distance = geneLength.get(node1)
+
+		// (3) [if smaller than the cutoff]
+		if (gene1Distance < SEQUENCE_CUTOFF_LENGTH) {
+			return true
+		}
+
 		let significantDiffs = leafNodes.filter(node2 => {
 			if (node1 === node2) {
 				return false
@@ -77,8 +83,8 @@ function pruneOutliers(newick, alignedFasta) {
 
 		let diffPercent = significantDiffs.length / (leafNodes.length - 1)
 
-		// (2) [than a majority of the sequences] || (3) [or smaller than the cutoff]
-		return diffPercent >= 0.5 || gene1Distance < SEQUENCE_CUTOFF_LENGTH
+		// (2) [than a majority of the sequences]
+		return diffPercent >= 0.5
 	})
 	let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 
