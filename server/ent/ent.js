@@ -224,7 +224,7 @@ function recursiveSearch(node, nmInstances = []) {
 		}
 	}
 
-	speciesList = uniqBy(speciesList, 'ident')
+	speciesList = uniqBy(speciesList, sp => sp.ident)
 
 	return { species: speciesList, nm: nmInstances }
 }
