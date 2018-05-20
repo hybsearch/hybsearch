@@ -115,18 +115,10 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 		removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
 
 		// Find the MRCA
-		let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
+		let mCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
 
 		// Determine whether everything under that node is of the same species
-		let leafNodes = []
-		const getLeafNodes = node => {
-			if (node.branchset) {
-				node.branchset.forEach(getLeafNodes)
-			} else {
-				leafNodes.push(node)
-			}
-		}
-		getLeafNodes(MCRA)
+		let leafNodes = getLeaves(mCRA)
 
 		let allEqual = leafNodes.every(n => n.name === name)
 
@@ -139,6 +131,21 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	}
 
 	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
+}
+
+function getLeaves(root) {
+	let leafNodes = []
+
+	const recurse = node => {
+		if (node.branchset) {
+			node.branchset.forEach(recurse)
+		} else {
+			leafNodes.push(node)
+		}
+	}
+	recurse(root)
+
+	return leafNodes
 }
 
 // Check if we've flagged the entire species. If two, keep at least one
