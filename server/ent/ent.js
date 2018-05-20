@@ -175,61 +175,61 @@ function unflagIfOnlyTwo(results, rootNode) {
 // where `species` is a list of individuals under that node
 // and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
-	if (node.branchset) {
-		let combinations = combs(node.branchset, 2)
+	if (!node.branchset) {
+		return { species: [node], nm: nmInstances }
+	}
 
-		let speciesList = []
-		let forRemoval = []
-		for (let speciesSet of combinations) {
-			// if species is in speciesList: continue
-			let resultsA = recursiveSearch(speciesSet[1], nmInstances)
-			let speciesListA = resultsA.species
+	let combinations = combs(node.branchset, 2)
 
-			let resultsB = recursiveSearch(speciesSet[0], nmInstances)
-			let speciesListB = resultsB.species
+	let speciesList = []
+	let forRemoval = []
+	for (let speciesSet of combinations) {
+		// if species is in speciesList: continue
+		let resultsA = recursiveSearch(speciesSet[1], nmInstances)
+		let speciesListA = resultsA.species
 
-			const speciesChecker = otherSpeciesList => species1 => {
-				const otherSpeciesNames = otherSpeciesList.map(s => s.name)
+		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
+		let speciesListB = resultsB.species
 
-				let hasName = otherSpeciesNames.includes(species1.name)
-				let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
+		const speciesChecker = otherSpeciesList => species1 => {
+			const otherSpeciesNames = otherSpeciesList.map(s => s.name)
 
-				if (hasName && notAllEqual) {
-					otherSpeciesList.forEach(species3 => {
-						if (species3.name === species1.name) {
-							const count = nmInstances.filter(sp => sp === species3).length
+			let hasName = otherSpeciesNames.includes(species1.name)
+			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
 
-							if (!count) {
+			if (hasName && notAllEqual) {
+				otherSpeciesList.forEach(species3 => {
+					if (species3.name === species1.name) {
+						const count = nmInstances.filter(sp => sp === species3).length
 
-								nmInstances.push(species3)
+						if (!count) {
 
-								forRemoval.push(species3.ident)
-							}
+							nmInstances.push(species3)
+
+							forRemoval.push(species3.ident)
 						}
-					})
-				}
-			}
-
-			speciesListA.forEach(speciesChecker(speciesListB))
-			remove(speciesListA, n => forRemoval.includes(n.ident))
-
-			speciesListB.forEach(speciesChecker(speciesListA))
-			remove(speciesListB, n => forRemoval.includes(n.ident))
-
-			if (speciesListA.length) {
-				speciesList.push(...speciesListA)
-			}
-			if (speciesListB.length) {
-				speciesList.push(...speciesListB)
+					}
+				})
 			}
 		}
 
-		speciesList = uniqBy(speciesList, 'ident')
+		speciesListA.forEach(speciesChecker(speciesListB))
+		remove(speciesListA, n => forRemoval.includes(n.ident))
 
-		return { species: speciesList, nm: nmInstances }
+		speciesListB.forEach(speciesChecker(speciesListA))
+		remove(speciesListB, n => forRemoval.includes(n.ident))
+
+		if (speciesListA.length) {
+			speciesList.push(...speciesListA)
+		}
+		if (speciesListB.length) {
+			speciesList.push(...speciesListB)
+		}
 	}
 
-	return { species: [node], nm: nmInstances }
+	speciesList = uniqBy(speciesList, 'ident')
+
+	return { species: speciesList, nm: nmInstances }
 }
 
 module.exports.formatData = formatData
