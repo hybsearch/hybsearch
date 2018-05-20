@@ -138,39 +138,46 @@ function removeNodes(node, identArray) {
 	return { ...node, branchset: newBranchset }
 }
 
+function hasSingleChildWithChildren(node) {
+	return (
+		node.branchset && node.branchset.length === 1 && node.branchset[0].branchset
+	)
+}
+
 function removeRedundant(node) {
-	// If a node points to just one branch, go down until you hit
-	// something that's either a leaf or just more than one branch, and set that to be
-	// the thing it points to
-	if (
-		node.branchset &&
-		node.branchset.length === 1 &&
-		node.branchset[0].branchset
-	) {
-		return removeRedundant(node.branchset[0])
-	} else {
-		let newBranchset = []
-		for (let child of node.branchset) {
-			if (
-				child.branchset &&
-				child.branchset.length === 1 &&
-				child.branchset[0].branchset
-			) {
-				child = removeRedundant(child)
-			}
-
-			if (child.branchset && child.branchset.length === 0) {
-				// This should not be included!
-			} else {
-				newBranchset.push(child)
-			}
-		}
-		if (newBranchset.length === 1) {
-			return removeRedundant(newBranchset[0])
-		} else {
-			node.branchset = newBranchset
-		}
-
+	if (!node.branchset) {
 		return node
 	}
+
+	// If a node points to just one branch, go down until you hit something
+	// that's either a leaf or just more than one branch, and set that to be
+	// the thing it points to
+	if (hasSingleChildWithChildren(node)) {
+		return removeRedundant(node.branchset[0])
+	}
+
+	let newBranchset = node.branchset.map(child => {
+		// if the child has only a single child, just remove the
+		// intermediate node
+		if (hasSingleChildWithChildren(child)) {
+			return child.branchset[0]
+		}
+		return child
+	})
+
+	newBranchset = newBranchset.filter(child => {
+		// If there is no child of this node
+		if (child.branchset && child.branchset.length === 0) {
+			// This should not be included!
+			return false
+		}
+		return true
+	})
+
+	// TODO: Can this re-use hasSingleChildWithChildren?
+	if (newBranchset.length === 1) {
+		return removeRedundant(newBranchset[0])
+	}
+
+	return { ...node, branchset: newBranchset }
 }
