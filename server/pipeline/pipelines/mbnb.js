@@ -17,7 +17,6 @@ const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
-const { removeCircularLinks } = require('../lib')
 
 module.exports = [
 	{
