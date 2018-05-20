@@ -8,11 +8,15 @@ const {
 	hashFastaSequenceNames,
 	fastaToPhylip,
 	hashNexusTreeNames,
+	fastaToNexus,
+	removeFastaIdentifiers,
+	keepFastaIdentifiers,
 } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
 const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
+const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
 
 module.exports = [
@@ -32,19 +36,19 @@ module.exports = [
 	{
 		// converts the aligned FASTA into Nexus
 		input: ['aligned-fasta'],
-		transform: ([data]) => [fastaToBeast(data)],
-		output: ['beast-config'],
+		transform: ([data]) => [fastaToNexus(data)],
+		output: ['aligned-nexus'],
 	},
 	{
-		// does whatever beast does
-		input: ['beast-config'],
-		transform: ([data]) => [beast(data)],
-		output: ['beast-trees'],
+		// does whatever mrbayes does
+		input: ['aligned-nexus'],
+		transform: ([data]) => [mrBayes(data)],
+		output: ['consensus-tree'],
 	},
 	{
 		// turns MrBayes' consensus tree into a Newick tree
-		input: ['beast-trees'],
-		transform: ([data]) => [consensusTreeToNewick(data.trees)],
+		input: ['consensus-tree'],
+		transform: ([data]) => [consensusTreeToNewick(data)],
 		output: ['newick-tree'],
 	},
 	{
@@ -68,10 +72,35 @@ module.exports = [
 		// identifies the non-monophyletic sequences
 		input: ['newick-json:2'],
 		transform: ([newickJson]) => [
-			removeCircularLinks(ent.search(newickJson)),
+			removeCircularLinks(ent.searchWithNoFilter(newickJson)),
 			removeCircularLinks(newickJson),
 		],
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],
+	},
+	{
+		// converts the aligned FASTA into Nexus for BEAST, and removes the
+		// nonmonophyletic sequences before aligning
+		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
+		transform: ([data, nmSeqs]) => {
+			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
+			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
+			return [
+				fastaToBeast(monophyleticFasta),
+				monophyleticFasta,
+				nonmonophyleticFasta,
+			]
+		},
+		output: [
+			'beast-config',
+			'monophyletic-aligned-fasta',
+			'nonmonophyletic-aligned-fasta',
+		],
+	},
+	{
+		// generates the Species Tree used by JML
+		input: ['beast-config'],
+		transform: ([data]) => [beast(data)],
+		output: ['beast-trees'],
 	},
 	{
 		// turn aligned fasta into PHYLIP

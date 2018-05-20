@@ -3,9 +3,6 @@
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const remove = require('lodash/remove')
-const isEqual = require('lodash/isEqual')
-const { parseFasta } = require('../formats/fasta/parse')
-const hammingDistance = require('../hamdis/hamming-distance')
 const { removeNodes } = require('../lib/prune-newick')
 
 const ENABLE_DEBUG = false
@@ -13,24 +10,6 @@ let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
-const makeIdent = speciesEntry =>
-	speciesEntry.name + LABEL_DIVIDER + speciesEntry.ident
-
-// This likely doesn't do anything at the time of writing (5/7/2018)
-// I can't find any reference to nmInner or nmOuter anywhere else.
-function nmMark(node, species1, species2) {
-	if (node.branchset) {
-		for (let branch of node.branchset) {
-			nmMark(branch, species1, species2)
-		}
-	} else if (node.name === species1.name) {
-		node.nmInner = node.nmInner || []
-		node.nmInner.push(species2)
-	} else if (node.name === species2.name) {
-		node.nmOuter = node.nmOuter || []
-		node.nmOuter.push(species1)
-	}
-}
 
 // Given a root node, will make sure all the names are split into `name` and `ident`
 function fixTreeNames(node) {
@@ -48,7 +27,7 @@ function fixTreeNames(node) {
 }
 
 module.exports.search = search
-function search(rootNode, fasta) {
+function search(rootNode) {
 	fixTreeNames(rootNode)
 
 	let results = recursiveSearch(rootNode)
@@ -59,7 +38,7 @@ function search(rootNode, fasta) {
 }
 
 module.exports.searchWithNoFilter = searchWithNoFilter
-function searchWithNoFilter(rootNode, fasta) {
+function searchWithNoFilter(rootNode) {
 	fixTreeNames(rootNode)
 	return recursiveSearch(rootNode)
 }
@@ -113,8 +92,6 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	return individual
 }
 
-const { removeCircularLinks } = require('../pipeline/lib')
-
 // We only want hybrids that, once removed, make their species monophyletic
 // Check if all the flagged ones have this property. Otherwise unflag them
 function unflagIfRemovingDoesNotFix(results, rootNode) {
@@ -134,21 +111,25 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 		let unflag = []
 		for (let name in hybridSpeciesByName) {
 			let hybrids = hybridSpeciesByName[name]
+
 			// remove the flagged hybrids and check if their species becomes monophyletic
 			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
 			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+
 			// Find the MRCA
 			let MCRA = getMostRecentCommonAncestor(rootNodeCopy, name)
+
 			// Determine whether everything under that node is of the same species
 			let leafNodes = []
-			const getLeafNodes = leaves => node => {
+			const getLeafNodes = node => {
 				if (node.branchset) {
 					node.branchset.forEach(getLeafNodes)
 				} else {
-					leaves.push(node)
+					leafNodes.push(node)
 				}
 			}
-			getLeafNodes(leafNodes)(MCRA)
+			getLeafNodes(MCRA)
+
 			let allEqual = leafNodes.every(n => n.name === name)
 
 			// if the species is still nonmono, then we unflag these

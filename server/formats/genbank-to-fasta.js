@@ -97,11 +97,10 @@ function genbankToFasta(genbankFile) {
 
 	actualEntries = actualEntries
 		.map(entry => {
-			let pretty = entry.ORGANISM.split(' ')
+			let pretty = entry.ORGANISM.split(/\s+/)
 				.slice(0, 2)
 				.join(' ')
-			entry.__prettyOrganism = pretty
-			return entry
+			return Object.assign({}, entry, { __prettyOrganism: pretty })
 		})
 		.filter(entry => {
 			// exclude all entries that end in "sp" or "sp."

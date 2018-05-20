@@ -60,7 +60,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 			data = await loadFile(filepath)
 		}
 
-		let cache = new Cache({ filepath, contents: data })
+		let cache = new Cache({ filepath, contents: data, pipelineName })
 
 		let pipeline = PIPELINES[pipelineName]
 

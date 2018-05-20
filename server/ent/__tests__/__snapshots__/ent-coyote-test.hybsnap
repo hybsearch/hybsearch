@@ -2,9 +2,6 @@
 
 exports[`coyote-test 1`] = `
 Array [
-  "Canis_lupus (AF115699)",
-  "Canis_lupus (AF115700)",
-  "Canis_lupus (AF115701)",
   "Canis_latrans (EU400577)",
   "Canis_latrans (EU400578)",
 ]
