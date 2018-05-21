@@ -116,6 +116,7 @@ function populateFilePicker(files) {
 	)
 
 	const picker = document.querySelector('#pick-file')
+	picker.innerHTML = ''
 
 	for (let [type, options] of toPairs(optgroups)) {
 		let group = document.createElement('optgroup')
