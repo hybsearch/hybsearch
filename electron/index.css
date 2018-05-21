@@ -175,10 +175,16 @@ button {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-input[type='submit']:hover,
-button:hover,
-input[type='submit']:active,
-button:active {
+input[type='submit'][disabled],
+button[disabled] {
+	background-color: var(--medium-gray);
+	box-shadow: none;
+}
+
+input[type='submit']:not([disabled]):hover,
+button:not([disabled]):hover,
+input[type='submit']:not([disabled]):active,
+button:not([disabled]):active {
 	cursor: pointer;
 	background-color: var(--teal);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
