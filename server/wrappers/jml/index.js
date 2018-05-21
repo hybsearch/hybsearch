@@ -5,6 +5,7 @@ const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
 const generateControlFile = require('./ctl')
+const { highlightSignificantResults } = require('./highlight')
 const revertHashedIdentifiers = require('./revert-hashed-identifiers')
 
 const readFileOr = (filepath, orValue) => {
@@ -74,5 +75,6 @@ async function jml({ phylipData, trees, phylipMapping }) {
 		phylipMapping,
 	})
 
+	resObj = resObj.map(highlightSignificantResults)
 	return { distributions: distObj, probabilities: probObj, results: resObj }
 }
