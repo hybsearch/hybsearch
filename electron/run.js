@@ -73,6 +73,7 @@ function onData(phase, data) {
 		})
 
 		if (formattedNames.length > 0) {
+			container.innerHTML = ''
 			container.hidden = false
 			container.appendChild(makeTableFromObjectList(formattedNames))
 		}
