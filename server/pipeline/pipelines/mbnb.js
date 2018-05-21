@@ -26,6 +26,12 @@ let options = {
 		label: 'outlierRemovalPercentage',
 		description: 'desc',
 	},
+	beastChainLength: {
+		default: '10000000',
+		type: 'text',
+		label: "BEAST's 'chainLength' parameter",
+		description: 'another desc',
+	},
 }
 
 let steps = [
@@ -91,11 +97,11 @@ let steps = [
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
-		transform: ([data, nmSeqs]) => {
+		transform: ([data, nmSeqs], { beastChainLength }) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
 			return [
-				fastaToBeast(monophyleticFasta),
+				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength }),
 				monophyleticFasta,
 				nonmonophyleticFasta,
 			]
