@@ -1,6 +1,5 @@
 'use strict'
 
-const crypto = require('crypto')
 const hasha = require('hasha')
 const tempy = require('tempy')
 const fs = require('fs')
