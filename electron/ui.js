@@ -24,11 +24,13 @@ function updateWebSocket(newUri) {
 
 function initWebsocket() {
 	global.socket.addEventListener('open', connectionIsUp)
+	global.socket.addEventListener('close', connectionClosed)
 	global.socket.addEventListener('error', connectionRefused)
 }
 
 function destroyWebsocket() {
 	global.socket.removeEventListener('open', connectionIsUp)
+	global.socket.removeEventListener('close', connectionClosed)
 	global.socket.removeEventListener('error', connectionRefused)
 	global.socket.close()
 }
@@ -85,6 +87,16 @@ function connectionRefused() {
 
 	// TODO: rework connectionIsUp/connectionRefused to remove the
 	// event listeners when the socket changes
+}
+
+function connectionClosed() {
+	document.querySelector('#server-status').classList.remove('up')
+	document.querySelector('#server-status').classList.add('down')
+
+	Array.from(document.querySelectorAll('.checkmark.active')).forEach(node => {
+		node.classList.remove('active')
+		node.classList.add('error')
+	})
 }
 
 function populateFilePicker(files) {
