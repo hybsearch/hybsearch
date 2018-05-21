@@ -284,3 +284,7 @@ summary > h3 {
 .results-table .highlight {
 	background-color: lightyellow;
 }
+
+.row {
+	margin-bottom: 2em;
+}
