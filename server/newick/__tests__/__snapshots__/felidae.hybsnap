@@ -1,0 +1,2025 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`felidae 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297200",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297199",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297198",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297197",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297196",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297195",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297191",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297190",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297189",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297188",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297187",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297186",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297185",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297184",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297183",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297182",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297181",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297180",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297179",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297178",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297177",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297176",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297175",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297174",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297173",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297172",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297171",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297170",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297169",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297168",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297167",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297166",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297165",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297164",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297163",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KR297162",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866327",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866326",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866325",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866324",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866323",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866322",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866321",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866320",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866319",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866318",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866317",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866316",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866315",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866314",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866313",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866312",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866311",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866310",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866309",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866308",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866307",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866306",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866305",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866304",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866303",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866302",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866301",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866300",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866299",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866298",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866297",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866296",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866295",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866294",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866293",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866292",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866291",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866290",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866289",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866288",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866287",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866286",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866285",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866284",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866283",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866282",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KX866281",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110073",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110072",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110070",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110069",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110068",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110067",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110066",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110065",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110064",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110062",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110061",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110060",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KX110059",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384818",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384817",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384816",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384815",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384814",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384813",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384812",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__AF384811",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Puma_concolor__GU984641",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Felis_silvestris__EF689045",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__FJ594959",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KU253487",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KJ652251",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KJ652250",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_uncia__KF990331",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Otocolobus_manul__KF990330",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__KF754961",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__KF754960",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__KF754958",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__KF754957",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__KF754956",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754931",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754930",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754928",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754927",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754926",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754925",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754924",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754923",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754920",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754919",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754918",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754917",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754916",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754915",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754914",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754913",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__KF754912",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720185",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720184",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720183",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720182",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720181",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720180",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720179",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720178",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720177",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720176",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720175",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720174",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720173",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720172",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720171",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720170",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720169",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720168",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720167",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720166",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720165",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720164",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720163",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720162",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720161",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720160",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720159",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720157",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720156",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720155",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720154",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720153",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720152",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720151",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720150",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720149",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720148",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720147",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720146",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720145",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720144",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720143",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720142",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720141",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720140",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720139",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720137",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720136",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720135",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720134",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720133",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720132",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720131",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720130",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720129",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720128",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720127",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720125",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720124",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720123",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720122",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720121",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720120",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720119",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720118",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720117",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720116",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720115",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720113",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720112",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720111",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720110",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720109",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720108",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720107",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720105",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720104",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720103",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720102",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720101",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720100",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720099",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720098",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720097",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720095",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720094",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720093",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720092",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720091",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720090",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720089",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720088",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720087",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720086",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720085",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720084",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720083",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720082",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720081",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720080",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720079",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720078",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720076",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720075",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720074",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720073",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720072",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720071",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720070",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720069",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720068",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720067",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720066",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720065",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720064",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720063",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720062",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720061",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720060",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720059",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720058",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_pardus__JF720057",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__JN811051",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__JN811050",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__JN811049",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495058",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495057",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495056",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495055",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495054",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495053",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495052",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Panthera_leo__KC495050",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__JF693231",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__JF693230",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Lynx_rufus__GU175436",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__FJ788107",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__AB210240",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_viverrinus__AB210239",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210238",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210237",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210236",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210235",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210234",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210233",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210232",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210231",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210230",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210229",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_iriomotensis__AB210228",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210227",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB210226",
+    },
+    Object {
+      "length": 0.5552529,
+      "name": "Prionailurus_bengalensis__AB194818",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.00432032,
+          "name": "Puma_concolor__KU253489",
+        },
+        Object {
+          "length": 0.00432032,
+          "name": "Puma_concolor__GU175442",
+        },
+      ],
+      "length": 0.5509326,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01746832,
+          "name": "Panthera_leo__KC701376",
+        },
+        Object {
+          "length": 0.01746832,
+          "name": "Panthera_leo__KC701375",
+        },
+      ],
+      "length": 0.5377846,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.03695139,
+          "name": "Prionailurus_planiceps__KR297161",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01824749,
+              "name": "Prionailurus_planiceps__KR297160",
+            },
+            Object {
+              "length": 0.01824749,
+              "name": "Prionailurus_planiceps__FJ594958",
+            },
+          ],
+          "length": 0.0187039,
+          "name": "",
+        },
+      ],
+      "length": 0.5183015,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.0150121,
+          "name": "Panthera_tigris__AF053054",
+        },
+        Object {
+          "length": 0.0150121,
+          "name": "Panthera_tigris__AF053053",
+        },
+      ],
+      "length": 0.5402408,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.02618471,
+          "name": "Panthera_onca__HM107682",
+        },
+        Object {
+          "length": 0.02618472,
+          "name": "Panthera_onca__GU175435",
+        },
+      ],
+      "length": 0.5290682,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01463743,
+          "name": "Leopardus_pardalis__KU253484",
+        },
+        Object {
+          "length": 0.01463743,
+          "name": "Leopardus_pardalis__KT626622",
+        },
+      ],
+      "length": 0.5406155,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01158893,
+          "name": "Puma_yagouaroundi__JQ743624",
+        },
+        Object {
+          "length": 0.01158894,
+          "name": "Puma_yagouaroundi__JF519764",
+        },
+      ],
+      "length": 0.543664,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.002308923,
+                  "name": "Pardofelis_marmorata__KF754937",
+                },
+                Object {
+                  "length": 0.002308923,
+                  "name": "Pardofelis_marmorata__KF754936",
+                },
+              ],
+              "length": 0.01150822,
+              "name": "",
+            },
+            Object {
+              "length": 0.01381714,
+              "name": "Pardofelis_marmorata__KF754935",
+            },
+            Object {
+              "length": 0.01381714,
+              "name": "Pardofelis_marmorata__KF754934",
+            },
+            Object {
+              "length": 0.01381714,
+              "name": "Pardofelis_marmorata__KF754933",
+            },
+          ],
+          "length": 0.08686006,
+          "name": "",
+        },
+        Object {
+          "length": 0.1006772,
+          "name": "Pardofelis_marmorata__KF754932",
+        },
+      ],
+      "length": 0.4545757,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.003605916,
+          "name": "Prionailurus_viverrinus__KF754959",
+        },
+        Object {
+          "length": 0.003605917,
+          "name": "Prionailurus_viverrinus__JN811053",
+        },
+      ],
+      "length": 0.551647,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.003317562,
+              "name": "Prionailurus_viverrinus__KF754953",
+            },
+            Object {
+              "length": 0.003317563,
+              "name": "Prionailurus_viverrinus__KF754952",
+            },
+          ],
+          "length": 0.00139079,
+          "name": "",
+        },
+        Object {
+          "length": 0.004708353,
+          "name": "Prionailurus_viverrinus__JN811055",
+        },
+      ],
+      "length": 0.5505446,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__FJ594957",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754950",
+        },
+        Object {
+          "length": 0.03258085,
+          "name": "Catopuma_temminckii__KF754949",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754948",
+        },
+        Object {
+          "length": 0.03258085,
+          "name": "Catopuma_temminckii__KF754947",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754946",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754945",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754944",
+        },
+        Object {
+          "length": 0.03258086,
+          "name": "Catopuma_temminckii__KF754943",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.006390799,
+              "name": "Catopuma_temminckii__KF754942",
+            },
+            Object {
+              "length": 0.006390799,
+              "name": "Catopuma_temminckii__KF754941",
+            },
+          ],
+          "length": 0.02619006,
+          "name": "",
+        },
+        Object {
+          "length": 0.03258085,
+          "name": "Catopuma_temminckii__KF754940",
+        },
+        Object {
+          "length": 0.03258085,
+          "name": "Catopuma_temminckii__KF754939",
+        },
+        Object {
+          "length": 0.03258085,
+          "name": "Catopuma_temminckii__KF754938",
+        },
+      ],
+      "length": 0.5226721,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.0118541,
+          "name": "Prionailurus_bengalensis__KR297192",
+        },
+        Object {
+          "length": 0.0118541,
+          "name": "Prionailurus_bengalensis__KF754929",
+        },
+      ],
+      "length": 0.5433988,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.007843386,
+          "name": "Panthera_leo__AF384809",
+        },
+        Object {
+          "length": 0.007843388,
+          "name": "Panthera_leo__KC495049",
+        },
+      ],
+      "length": 0.5474095,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.03926129,
+                  "name": "Panthera_pardus__EF056507",
+                },
+                Object {
+                  "branchset": Array [
+                    Object {
+                      "length": 0.00698729,
+                      "name": "Panthera_pardus__AB817079",
+                    },
+                    Object {
+                      "length": 0.006987287,
+                      "name": "Panthera_pardus__AB817078",
+                    },
+                  ],
+                  "length": 0.032274,
+                  "name": "",
+                },
+              ],
+              "length": 0.02193775,
+              "name": "",
+            },
+            Object {
+              "length": 0.06119904,
+              "name": "Panthera_pardus__EF056505",
+            },
+          ],
+          "length": 0.07234367,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.05533809,
+              "name": "Panthera_pardus__EF056506",
+            },
+            Object {
+              "length": 0.05533809,
+              "name": "Panthera_pardus__EF199742",
+            },
+          ],
+          "length": 0.07820461,
+          "name": "",
+        },
+      ],
+      "length": 0.4217102,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.008494638,
+          "name": "Prionailurus_viverrinus__KF754955",
+        },
+        Object {
+          "length": 0.008494642,
+          "name": "Prionailurus_viverrinus__KF754954",
+        },
+        Object {
+          "length": 0.008494642,
+          "name": "Prionailurus_viverrinus__KF754951",
+        },
+      ],
+      "length": 0.5467583,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01590681,
+              "name": "Prionailurus_viverrinus__JN811057",
+            },
+            Object {
+              "length": 0.01590682,
+              "name": "Prionailurus_viverrinus__JN811056",
+            },
+            Object {
+              "length": 0.01590681,
+              "name": "Prionailurus_viverrinus__JN811054",
+            },
+            Object {
+              "length": 0.01590681,
+              "name": "Prionailurus_viverrinus__JN811047",
+            },
+          ],
+          "length": 0.01721025,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.01082583,
+              "name": "Prionailurus_viverrinus__JN811052",
+            },
+            Object {
+              "length": 0.01082583,
+              "name": "Prionailurus_viverrinus__JN811048",
+            },
+          ],
+          "length": 0.02229124,
+          "name": "",
+        },
+      ],
+      "length": 0.5221358,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.003754697,
+                  "name": "Lynx_pardinus__EF689048",
+                },
+                Object {
+                  "length": 0.003754697,
+                  "name": "Lynx_pardinus__EF689047",
+                },
+              ],
+              "length": 0.07520748,
+              "name": "",
+            },
+            Object {
+              "length": 0.07896218,
+              "name": "Lynx_canadensis__AY928671",
+            },
+          ],
+          "length": 0.02948484,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0006511836,
+                  "name": "Lynx_lynx__KF990332",
+                },
+                Object {
+                  "length": 0.0006511839,
+                  "name": "Lynx_lynx__KM000081",
+                },
+              ],
+              "length": 0.004083876,
+              "name": "",
+            },
+            Object {
+              "length": 0.00473506,
+              "name": "Lynx_lynx__KM000082",
+            },
+          ],
+          "length": 0.103712,
+          "name": "",
+        },
+      ],
+      "length": 0.4468059,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01660628,
+          "name": "Panthera_leo__KX110071",
+        },
+        Object {
+          "length": 0.01660628,
+          "name": "Panthera_leo__KX110063",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.002594403,
+              "name": "Panthera_leo__AF384810",
+            },
+            Object {
+              "length": 0.002594404,
+              "name": "Panthera_leo__KC495051",
+            },
+          ],
+          "length": 0.01401188,
+          "name": "",
+        },
+      ],
+      "length": 0.5386466,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.006770304,
+              "name": "Felis_silvestris__EF689046",
+            },
+            Object {
+              "length": 0.006770304,
+              "name": "Felis_catus__AB194813",
+            },
+          ],
+          "length": 0.0289984,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0193232,
+              "name": "Felis_silvestris__AY170102",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.01205015,
+                  "name": "Felis_catus__KU253483",
+                },
+                Object {
+                  "length": 0.01205015,
+                  "name": "Felis_catus__KU253482",
+                },
+                Object {
+                  "length": 0.01205015,
+                  "name": "Felis_catus__AB194817",
+                },
+              ],
+              "length": 0.007273053,
+              "name": "",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.009316242,
+                  "name": "Felis_catus__AB194816",
+                },
+                Object {
+                  "length": 0.009316242,
+                  "name": "Felis_catus__AB194815",
+                },
+              ],
+              "length": 0.01000696,
+              "name": "",
+            },
+          ],
+          "length": 0.0164455,
+          "name": "",
+        },
+        Object {
+          "length": 0.03576871,
+          "name": "Felis_catus__KT626624",
+        },
+        Object {
+          "length": 0.03576871,
+          "name": "Felis_catus__KT626623",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.002638099,
+              "name": "Felis_catus__AB194814",
+            },
+            Object {
+              "length": 0.002638097,
+              "name": "Felis_catus__AB194812",
+            },
+          ],
+          "length": 0.03313061,
+          "name": "",
+        },
+      ],
+      "length": 0.5194842,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.005638007,
+          "name": "Prionailurus_bengalensis__KR297194",
+        },
+        Object {
+          "length": 0.005638007,
+          "name": "Prionailurus_bengalensis__KR297193",
+        },
+      ],
+      "length": 0.5496149,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01081775,
+          "name": "Prionailurus_bengalensis__KF754922",
+        },
+        Object {
+          "length": 0.01081776,
+          "name": "Prionailurus_bengalensis__KF754921",
+        },
+      ],
+      "length": 0.5444352,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.00987984,
+              "name": "Panthera_leo__AY928670",
+            },
+            Object {
+              "length": 0.009879842,
+              "name": "Panthera_leo__HM107681",
+            },
+            Object {
+              "branchset": Array [
+                Object {
+                  "length": 0.0005179967,
+                  "name": "Panthera_leo__KJ652249",
+                },
+                Object {
+                  "length": 0.0005179969,
+                  "name": "Panthera_leo__JX023542",
+                },
+              ],
+              "length": 0.009361843,
+              "name": "",
+            },
+            Object {
+              "length": 0.009879842,
+              "name": "Panthera_leo__KJ652248",
+            },
+            Object {
+              "length": 0.009879842,
+              "name": "Panthera_leo__KC495048",
+            },
+          ],
+          "length": 0.006059915,
+          "name": "",
+        },
+        Object {
+          "length": 0.01593976,
+          "name": "Panthera_leo__AF053052",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.004000048,
+              "name": "Panthera_leo__KJ652247",
+            },
+            Object {
+              "length": 0.004000054,
+              "name": "Panthera_leo__KT626621",
+            },
+          ],
+          "length": 0.01193971,
+          "name": "",
+        },
+      ],
+      "length": 0.5393132,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040936",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040934",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040933",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040932",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040931",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040930",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040929",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040928",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040922",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040921",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040920",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040915",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040914",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040913",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__JQ040911",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__JQ040910",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053051",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.005206687,
+              "name": "Panthera_tigris__AF053050",
+            },
+            Object {
+              "length": 0.005206685,
+              "name": "Panthera_tigris__AF053049",
+            },
+          ],
+          "length": 0.04763527,
+          "name": "",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053048",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053047",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053046",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053045",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053044",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053043",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053042",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053041",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053040",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053039",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053038",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053037",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053036",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053035",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053034",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053033",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053032",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053031",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053030",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053029",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053028",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053027",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053026",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053025",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053024",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053023",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053022",
+        },
+        Object {
+          "length": 0.05284196,
+          "name": "Panthera_tigris__AF053021",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053020",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053019",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__AF053018",
+        },
+        Object {
+          "length": 0.05284195,
+          "name": "Panthera_tigris__KC495059",
+        },
+      ],
+      "length": 0.502411,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
