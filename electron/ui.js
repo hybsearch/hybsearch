@@ -4,6 +4,7 @@ const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const uniq = require('lodash/uniq')
+const prettyMs = require('pretty-ms')
 const getFiles = require('./lib/get-files')
 const { attachListeners, follow } = require('./run')
 
@@ -73,7 +74,7 @@ async function connectionIsUp() {
 
 	populatePipelinePicker(pipelines, baseUrl)
 	populateFilePicker(files)
-	populateJobList(jobs)
+	populateJobList(jobs, baseUrl)
 
 	global.socket.addEventListener('disconnect', (...args) =>
 		console.log('disconnect', ...args)
@@ -154,7 +155,10 @@ function populatePipelinePicker(pipelines, baseUrl) {
 	)
 }
 
-function populateJobList(jobs) {
+const cancelJob = (id, baseUrl) => fetchJson(baseUrl + `job/${id}`, {method: 'DELETE'})
+const restartJob = (id, baseUrl) => fetchJson(baseUrl + `job/${id}`, {method: 'POST'})
+
+function populateJobList(jobs, baseUrl) {
 	let jobsContainer = document.querySelector('#existing-jobs')
 
 	const jobToHtml = ({
@@ -168,16 +172,52 @@ function populateJobList(jobs) {
 	}) => {
 		let li = document.createElement('li')
 		li.classList.add('job')
-		li.addEventListener('click', () => follow({ pipelineId: id }))
+		li.classList.add('row')
+
 		li.innerHTML = `
-			<strong>Pipeline</strong>: ${pipeline}<br>
-			<strong>Filename</strong>: ${filename}<br>
-			<strong>Status</strong>: ${status}<br>
-			<strong>ID</strong>: ${id}<br>
-			<strong>Options</strong>: ${JSON.stringify(options)}<br>
-			${duration ? `Duration: ${duration}<br>` : ''}
-			<strong>Started by</strong>: ${initialClientAddress}
+			<div class="info">
+				<table>
+					<tr><th>Pipeline</th><td>${pipeline}</td></tr>
+					<tr><th>Filename</th><td>${filename}</td></tr>
+					<tr><th>Status</th><td>${status}</td></tr>
+					<tr><th>ID</th><td>${id}</td></tr>
+					<tr><th>Options</th><td>${JSON.stringify(options)}</td></tr>
+					${duration ? `<tr><th>Duration</th><td>${prettyMs(duration)}</td></tr>` : ''}
+					<tr><th>Started by</th><td>${initialClientAddress}</td></tr>
+				</table>
+			</div>
+			<div class="buttons"></div>
 		`
+
+		let buttons = li.querySelector('.buttons')
+
+		let followButton = document.createElement('button')
+		followButton.addEventListener('click', () => follow({ pipelineId: id }))
+		followButton.textContent = 'Follow'
+		followButton.type = 'button'
+		buttons.appendChild(followButton)
+
+		let cancelButton = document.createElement('button')
+		if (status === 'stopped') {
+			cancelButton.addEventListener('click', () => {
+				restartJob(id, baseUrl)
+				fetchJson(baseUrl + 'jobs').then(r => populateJobList(r.jobs, baseUrl))
+			})
+			cancelButton.textContent = 'Restart'
+			cancelButton.type = 'button'
+			cancelButton.disabled = status !== 'stopped'
+		} else {
+			cancelButton.addEventListener('click', () => {
+				cancelJob(id, baseUrl)
+				fetchJson(baseUrl + 'jobs').then(r => populateJobList(r.jobs, baseUrl))
+			})
+			cancelButton.textContent = 'Stop'
+			cancelButton.type = 'button'
+			cancelButton.disabled = status !== 'active'
+		}
+
+		buttons.appendChild(cancelButton)
+
 		return li
 	}
 

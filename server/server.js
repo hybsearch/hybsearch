@@ -75,6 +75,16 @@ router.delete('/job/:id', async ctx => {
 	}
 })
 
+router.post('/job/:id', async ctx => {
+	let worker = workers.get(ctx.params.id)
+	if (worker) {
+		worker.restart()
+		ctx.body = {started: true, id: worker.id}
+	} else {
+		ctx.throw(500, 'no worker found')
+	}
+})
+
 router.get('/uptime', ctx => {
 	ctx.body = { uptime: Date.now() - STARTED }
 })

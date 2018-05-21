@@ -9,7 +9,10 @@ const { trimMessage } = require('./lib/trim-message')
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
 
 class Job {
-	constructor({ pipeline, data, filepath, options = {}, ip }) {
+	constructor(payload) {
+		this.initialPayload = payload
+		let { pipeline, data, filepath, options = {}, ip } = payload
+
 		this.status = 'inactive'
 		this.clients = new Set()
 		this.workerMessages = []
@@ -29,11 +32,17 @@ class Job {
 
 		this.addClient = this.addClient.bind(this)
 		this.removeClient = this.removeClient.bind(this)
-		this.complete = this.complete.bind(this)
 		this.handleClientMessage = this.handleClientMessage.bind(this)
 		this.handleWorkerMessage = this.handleWorkerMessage.bind(this)
 		this.broadcast = this.broadcast.bind(this)
+		this.complete = this.complete.bind(this)
+		this.stop = this.stop.bind(this)
+		this.restart = this.restart.bind(this)
 
+		this.initChild()
+	}
+
+	initChild() {
 		this.child = childProcess.fork(workerPath)
 		this.child.on('message', this.handleWorkerMessage)
 	}
@@ -99,6 +108,14 @@ class Job {
 		this.status = 'stopped'
 		this.endTime = Date.now()
 		this.duration = this.endTime - this.startTime
+	}
+
+	restart() {
+		this.initChild()
+		this.status = 'inactive'
+		this.endTime = null
+		this.duration = 0
+		this.handleClientMessage(this.initialPayload)
 	}
 
 	broadcast(serialized) {
