@@ -4,6 +4,7 @@ const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
 const fs = require('fs')
+const fromPairs = require('lodash/fromPairs')
 
 function run() {
 	// get the file
@@ -28,13 +29,27 @@ function run() {
 	// get the chosen pipeline name
 	let pipeline = document.querySelector('#pick-pipeline').value
 
+	// get the pipeline options
+	let options = document.querySelector('#options .options')
+	let opts = Array.from(options.elements).map(el => [
+		el.name,
+		el.type === 'number' ? Number(el.value) : el.value,
+	])
+	opts = fromPairs(opts)
+
 	// start the pipeline
-	submitJob({ pipeline, filepath, data })
+	submitJob({ pipeline, filepath, data, options: opts })
 
 	return false
 }
 
-function submitJob({ socket = global.socket, pipeline, filepath, data }) {
+function submitJob({
+	socket = global.socket,
+	pipeline,
+	filepath,
+	data,
+	options,
+}) {
 	const ws = socket
 
 	ws.addEventListener('message', packet => onMessage(packet.data))
@@ -48,7 +63,7 @@ function submitJob({ socket = global.socket, pipeline, filepath, data }) {
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'start', pipeline, filepath, data }
+	let payload = { type: 'start', pipeline, filepath, data, options }
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)

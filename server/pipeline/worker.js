@@ -6,6 +6,8 @@ const Cache = require('./cache')
 const zip = require('lodash/zip')
 const PIPELINES = require('./pipelines')
 const { loadFile } = require('../lib/get-files')
+const fromPairs = require('lodash/fromPairs')
+const toPairs = require('lodash/toPairs')
 
 /////
 ///// helpers
@@ -52,7 +54,7 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-async function main({ pipeline: pipelineName, filepath, data }) {
+async function main({ pipeline: pipelineName, filepath, data, options }) {
 	let start = now()
 
 	try {
@@ -60,11 +62,15 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 			data = await loadFile(filepath)
 		}
 
-		let cache = new Cache({ filepath, contents: data, pipelineName })
+		let { steps, options: defaults } = PIPELINES[pipelineName]
+		defaults = fromPairs(
+			toPairs(defaults).map(([key, value]) => [key, value.default])
+		)
+		options = { ...defaults, ...options }
 
-		let pipeline = PIPELINES[pipelineName]
+		let cache = new Cache({ filepath, contents: data, pipelineName, options })
 
-		for (let step of pipeline) {
+		for (let step of steps) {
 			step.output.forEach(key => stageStart({ stage: key }))
 
 			let inputs = step.input.map(key => cache.get(key))
@@ -87,7 +93,7 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 				continue
 			}
 
-			let results = await Promise.all(await step.transform(inputs))
+			let results = await Promise.all(await step.transform(inputs, options))
 
 			// assert(results.length === step.output.length)
 			zip(step.output, results).forEach(([key, result]) => {

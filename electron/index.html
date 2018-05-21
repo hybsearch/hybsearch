@@ -12,25 +12,34 @@
 
 		<section id="file-input">
 			<h2>Genbank/Fasta</h2>
-			<input type="file" id="load-file" accept=".gb,.genbank,.fasta">
-			<select id="pick-file">
-				<option>No file chosen</option>
-			</select>
-			<br/><br/>
-			<span id="server-status" class="down"></span>
-			<label>
-				Server:
-				<input type="url" id="server-url" value="ws://localhost:8080/" placeholder="ws://server:port/">
-			</label>
-			<button id="use-thing3" data-url="ws://thing3.cs.stolaf.edu:80/">Use Thing3</button>
-			<button id="use-localhost" data-url="ws://localhost:8080/">Use localhost</button>
-			<br/><br/>
-			<label for="pick-pipeline">Pipeline:</label>
-			<select id="pick-pipeline">
-				<option>No pipelines present</option>
-			</select>
-			<br/><br/>
-			<button id="start">Run Hybsearch</button>
+			<div class="row">
+				<input type="file" id="load-file" accept=".gb,.genbank,.fasta">
+				<select id="pick-file">
+					<option>No file chosen</option>
+				</select>
+			</div>
+			<div class="row">
+				<span id="server-status" class="down"></span>
+				<label>
+					Server:
+					<input type="url" id="server-url" value="ws://localhost:8080/" placeholder="ws://server:port/">
+				</label>
+				<button id="use-thing3" data-url="ws://thing3.cs.stolaf.edu:80/">Use Thing3</button>
+				<button id="use-localhost" data-url="ws://localhost:8080/">Use localhost</button>
+			</div>
+			<div class="row">
+				<label for="pick-pipeline">Pipeline:</label>
+				<select id="pick-pipeline">
+					<option>No pipelines present</option>
+				</select>
+			</div>
+			<div class="row" id="options" hidden>
+				<h3>Options</h3>
+				<form class="options"></form>
+			</div>
+			<div class="row">
+				<button id="start">Run Hybsearch</button>
+			</div>
 		</section>
 
 		<section id="newick-input">

@@ -8,7 +8,9 @@ const clustal = require('../../wrappers/clustal')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
 
-module.exports = [
+let options = {}
+
+let steps = [
 	{
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
@@ -67,3 +69,5 @@ module.exports = [
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],
 	},
 ]
+
+module.exports = { steps, options }

@@ -2,7 +2,9 @@
 
 const { parse: parseNewick } = require('../../newick')
 
-module.exports = [
+let options = {}
+
+let steps = [
 	{
 		// turns the Newick tree into a JSON object
 		input: ['source'],
@@ -10,3 +12,5 @@ module.exports = [
 		output: ['newick-json:1'],
 	},
 ]
+
+module.exports = { steps, options }

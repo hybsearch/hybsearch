@@ -19,7 +19,22 @@ const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
 
-module.exports = [
+let options = {
+	outlierRemovalPercentage: {
+		default: 0.5,
+		type: 'number',
+		label: 'outlierRemovalPercentage',
+		description: 'desc',
+	},
+	beastChainLength: {
+		default: '10000000',
+		type: 'text',
+		label: "BEAST's 'chainLength' parameter",
+		description: 'another desc',
+	},
+}
+
+let steps = [
 	{
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
@@ -59,10 +74,11 @@ module.exports = [
 	},
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
-		transform: ([newickJson, alignedFasta]) => {
+		transform: ([newickJson, alignedFasta], { outlierRemovalPercentage }) => {
 			let { removedData, prunedNewick } = pruneOutliers(
 				newickJson,
-				alignedFasta
+				alignedFasta,
+				{ outlierRemovalPercentage }
 			)
 			return [prunedNewick, removedData]
 		},
@@ -81,11 +97,11 @@ module.exports = [
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
-		transform: ([data, nmSeqs]) => {
+		transform: ([data, nmSeqs], { beastChainLength }) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
 			return [
-				fastaToBeast(monophyleticFasta),
+				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength }),
 				monophyleticFasta,
 				nonmonophyleticFasta,
 			]
@@ -128,3 +144,5 @@ module.exports = [
 		output: ['jml-output'],
 	},
 ]
+
+module.exports = { steps, options }
