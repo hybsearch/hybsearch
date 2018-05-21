@@ -297,7 +297,6 @@ summary > h3 {
 }
 
 .job {
-	cursor: pointer;
 }
 
 .job + .job {
@@ -306,4 +305,22 @@ summary > h3 {
 
 .job:nth-child(even) {
 	background-color: var(--light-gray);
+}
+
+.job .info {
+	flex: 1;
+}
+
+.job .buttons {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.job .buttons button + button {
+	margin-top: 1em;
+}
+
+.row {
+	display: flex;
+	flex-flow: row nowrap;
 }
