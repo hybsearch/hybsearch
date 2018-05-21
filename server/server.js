@@ -3,7 +3,6 @@
 
 const STARTED = Date.now()
 const WebSocket = require('ws')
-const childProcess = require('child_process')
 const path = require('path')
 const http = require('http')
 const Koa = require('koa')
@@ -11,6 +10,7 @@ const Router = require('koa-router')
 const compress = require('koa-compress')
 const logger = require('koa-logger')
 const { trimMessage } = require('./lib/trim-message')
+const Job = require('./job')
 const getFiles = require('./lib/get-files')
 const { loadFile } = getFiles
 
@@ -59,12 +59,11 @@ app.use(compress())
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
+let workers = new Map()
 
 // listen for new websocket connections
 wss.on('connection', ws => {
-	console.log('connection initiated')
-	const child = childProcess.fork(workerPath)
+	let worker
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
@@ -72,33 +71,17 @@ wss.on('connection', ws => {
 
 		console.log(trimMessage(message))
 
+		if (message.type === 'start-pipeline') {
+			worker = new Job(message)
+			workers.set(worker.id, worker)
+			worker.addClient(ws, message.ip)
+		} else if (message.type === 'follow-pipeline') {
+			worker = workers.get(message.id)
+			worker.addClient(ws, message.ip)
+		}
+
 		// forward the message to the pipeline
-		child.send(message)
-	})
-
-	ws.on('close', () => {
-		console.log('connection was closed')
-
-		if (child.connected) {
-			child.disconnect()
-		}
-	})
-
-	child.on('message', communique => {
-		// when we get a message from the pipeline
-		const message = communique
-
-		console.log(trimMessage(message))
-
-		// forward the message to the GUI
-		ws.send(JSON.stringify(message))
-
-		// detach ourselves if the pipeline has finished
-		if (message.type === 'exit' || message.type === 'error') {
-			if (child.connected) {
-				child.disconnect()
-			}
-		}
+		worker.handleClientMessage(message)
 	})
 })
 
