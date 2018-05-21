@@ -289,3 +289,15 @@ summary > h3 {
 .row {
 	margin-bottom: 2em;
 }
+
+.job {
+	cursor: pointer;
+}
+
+.job + .job {
+	margin-top: 1em;
+}
+
+.job:nth-child(even) {
+	background-color: var(--light-gray);
+}
