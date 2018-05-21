@@ -25,6 +25,7 @@ function run() {
 
 	// hide the input boxes
 	document.querySelector('#file-input').hidden = true
+	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
 
 	// get the chosen pipeline name
