@@ -10,6 +10,7 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const compress = require('koa-compress')
 const logger = require('koa-logger')
+const { trimMessage } = require('./lib/trim-message')
 const getFiles = require('./lib/get-files')
 const { loadFile } = getFiles
 
@@ -59,17 +60,6 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 
 const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
-
-function trimMessage(message) {
-	return JSON.parse(
-		JSON.stringify(message, (k, v) => {
-			if (typeof v === 'string' && v.length > 99) {
-				return v.substr(0, 99) + '…'
-			}
-			return v
-		})
-	)
-}
 
 // listen for new websocket connections
 wss.on('connection', ws => {
