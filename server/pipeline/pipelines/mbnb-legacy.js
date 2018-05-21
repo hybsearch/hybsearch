@@ -19,7 +19,9 @@ const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
 
-module.exports = [
+let options = {}
+
+let steps = [
 	{
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
@@ -128,3 +130,5 @@ module.exports = [
 		output: ['jml-output'],
 	},
 ]
+
+module.exports = { steps, options }

@@ -6,6 +6,8 @@ const Cache = require('./cache')
 const zip = require('lodash/zip')
 const PIPELINES = require('./pipelines')
 const { loadFile } = require('../lib/get-files')
+const fromPairs = require('lodash/fromPairs')
+const toPairs = require('lodash/toPairs')
 
 /////
 ///// helpers
@@ -60,11 +62,14 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 			data = await loadFile(filepath)
 		}
 
-		let cache = new Cache({ filepath, contents: data, pipelineName })
+		let { steps, options } = PIPELINES[pipelineName]
+		options = fromPairs(
+			toPairs(options).map(([key, value]) => [key, value.default])
+		)
 
-		let pipeline = PIPELINES[pipelineName]
+		let cache = new Cache({ filepath, contents: data, pipelineName, options })
 
-		for (let step of pipeline) {
+		for (let step of steps) {
 			step.output.forEach(key => stageStart({ stage: key }))
 
 			let inputs = step.input.map(key => cache.get(key))

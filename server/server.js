@@ -35,7 +35,7 @@ router.get('/pipelines', ctx => {
 router.get('/pipeline/:name', ctx => {
 	let pipe = PIPELINES[ctx.params.name]
 	if (pipe) {
-		ctx.body = { steps: pipe }
+		ctx.body = { steps: pipe.steps, options: pipe.options || {} }
 	} else {
 		ctx.throw(404, { error: 'pipeline not found' })
 	}
