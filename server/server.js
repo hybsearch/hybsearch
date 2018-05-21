@@ -60,6 +60,7 @@ router.get('/jobs', async ctx => {
 			options: worker.options,
 			status: worker.status,
 			initialClientAddress: worker.initialClientAddress,
+			duration: worker.duration,
 		})),
 	}
 })
