@@ -159,13 +159,11 @@ const handleNewSteps = payload => {
 	let optionsEl = document.querySelector('#options')
 	let optionsContainer = optionsEl.querySelector('.options')
 	let options = Object.entries(payload.options).map(
-		([key, val]) => `
-		<div class="option-row">
-			<label>${val.label}: <input name="${key}" type="${val.type}" value="${
-			val.default
-		}" placeholder="${val.description}"></label>
-		</div>
-	`
+		([key, val]) =>
+			// prettier-ignore
+			`<div class="option-row">
+				<label>${val.label}: <input name="${key}" type="${val.type}" value="${val.default}" placeholder="${val.description}"></label>
+			</div>`
 	)
 	if (options.length) {
 		optionsEl.removeAttribute('hidden')
