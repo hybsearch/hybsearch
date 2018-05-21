@@ -13,6 +13,9 @@ const {
 	keepFastaIdentifiers,
 } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
+const {
+	findSignificantNonmonophyly,
+} = require('../../lib/find-significant-nonmonophyly')
 const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
@@ -126,5 +129,13 @@ module.exports = [
 			}),
 		],
 		output: ['jml-output'],
+	},
+	{
+		// find the significant nonmonophetic sequences
+		input: ['jml-output', 'nonmonophyletic-sequences'],
+		transform: ([jmlOutput, nmSequences]) => [
+			findSignificantNonmonophyly(jmlOutput, nmSequences),
+		],
+		output: ['significant-nonmonophyly'],
 	},
 ]
