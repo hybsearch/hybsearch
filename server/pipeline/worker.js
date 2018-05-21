@@ -54,7 +54,7 @@ process.on('disconnect', () => {
 ///// pipeline
 /////
 
-async function main({ pipeline: pipelineName, filepath, data }) {
+async function main({ pipeline: pipelineName, filepath, data, options }) {
 	let start = now()
 
 	try {
@@ -62,10 +62,11 @@ async function main({ pipeline: pipelineName, filepath, data }) {
 			data = await loadFile(filepath)
 		}
 
-		let { steps, options } = PIPELINES[pipelineName]
-		options = fromPairs(
-			toPairs(options).map(([key, value]) => [key, value.default])
+		let { steps, options: defaults } = PIPELINES[pipelineName]
+		defaults = fromPairs(
+			toPairs(defaults).map(([key, value]) => [key, value.default])
 		)
+		options = {...defaults, ...options}
 
 		let cache = new Cache({ filepath, contents: data, pipelineName, options })
 
