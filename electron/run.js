@@ -3,6 +3,7 @@
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
+const publicIp = require('public-ip')
 const fs = require('fs')
 const fromPairs = require('lodash/fromPairs')
 
@@ -43,7 +44,7 @@ function run() {
 	return false
 }
 
-function submitJob({
+async function submitJob({
 	socket = global.socket,
 	pipeline,
 	filepath,
@@ -51,6 +52,7 @@ function submitJob({
 	options,
 }) {
 	const ws = socket
+	const ip = (await publicIp.v6()) || (await publicIp.v4())
 
 	ws.addEventListener('message', packet => onMessage(packet.data))
 	ws.addEventListener('disconnect', (...args) =>
@@ -63,7 +65,14 @@ function submitJob({
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'start', pipeline, filepath, data, options }
+	let payload = {
+		type: 'start-pipeline',
+		pipeline,
+		filepath,
+		data,
+		options,
+		ip,
+	}
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)
