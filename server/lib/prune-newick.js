@@ -12,7 +12,7 @@ module.exports.removeNodes = removeNodes
 function pruneOutliers(
 	newick,
 	alignedFasta,
-	{ outlierRemovalPercentage = 0.5 }
+	{ outlierRemovalPercentage = 0.5 } = {}
 ) {
 	const fastaData = parseFasta(alignedFasta)
 	// Build a dict map of species -> sequence
