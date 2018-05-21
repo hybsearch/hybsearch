@@ -5,7 +5,7 @@ const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const uniq = require('lodash/uniq')
 const getFiles = require('./lib/get-files')
-const { attachListeners } = require('./run')
+const { attachListeners, follow } = require('./run')
 
 attachListeners()
 
@@ -59,18 +59,21 @@ async function connectionIsUp() {
 
 	let baseUrl = global.socket.url.replace('ws:', 'http:')
 
-	let [uptime, pipelines, files] = await Promise.all([
+	let [uptime, pipelines, files, jobs] = await Promise.all([
 		fetchJson(baseUrl + 'uptime').then(r => r.uptime),
 		fetchJson(baseUrl + 'pipelines').then(r => r.pipelines),
 		fetchJson(baseUrl + 'files').then(r => r.files),
+		fetchJson(baseUrl + 'jobs').then(r => r.jobs),
 	])
 
 	console.log('uptime', uptime)
 	console.log('pipelines', pipelines)
 	console.log('server files', files)
+	console.log('jobs', jobs)
 
 	populatePipelinePicker(pipelines, baseUrl)
-	populateFilePicker(files, baseUrl)
+	populateFilePicker(files)
+	populateJobList(jobs)
 
 	global.socket.addEventListener('disconnect', (...args) =>
 		console.log('disconnect', ...args)
@@ -149,6 +152,49 @@ function populatePipelinePicker(pipelines, baseUrl) {
 	pipelinesPicker.addEventListener('change', ev =>
 		getSteps(baseUrl, ev.currentTarget.value).then(handleNewSteps)
 	)
+}
+
+function populateJobList(jobs) {
+	let jobsContainer = document.querySelector('#existing-jobs')
+
+	const jobToHtml = ({
+		pipeline,
+		filename,
+		id,
+		options,
+		initialClientAddress,
+		duration,
+		status,
+	}) => {
+		let li = document.createElement('li')
+		li.classList.add('job')
+		li.addEventListener('click', () => follow({ pipelineId: id }))
+		li.innerHTML = `
+			<strong>Pipeline</strong>: ${pipeline}<br>
+			<strong>Filename</strong>: ${filename}<br>
+			<strong>Status</strong>: ${status}<br>
+			<strong>ID</strong>: ${id}<br>
+			<strong>Options</strong>: ${JSON.stringify(options)}<br>
+			${duration ? `Duration: ${duration}<br>` : ''}
+			<strong>Started by</strong>: ${initialClientAddress}
+		`
+		return li
+	}
+
+	let activeJobs = jobs
+		.filter(({ status }) => status === 'active')
+		.map(jobToHtml)
+	let inactiveJobs = jobs
+		.filter(({ status }) => status !== 'active')
+		.map(jobToHtml)
+
+	let activeJobsEl = jobsContainer.querySelector('.active-jobs-list')
+	let inactiveJobsEl = jobsContainer.querySelector('.inactive-jobs-list')
+
+	activeJobsEl.innerHTML = ''
+	activeJobs.forEach(node => activeJobsEl.appendChild(node))
+	inactiveJobsEl.innerHTML = ''
+	inactiveJobs.forEach(node => inactiveJobsEl.appendChild(node))
 }
 
 const handleNewSteps = payload => {
