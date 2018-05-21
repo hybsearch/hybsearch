@@ -44,7 +44,7 @@ function fastaToBeast(fastaData) {
 	let seqs = items.map(({ species, sequence }) => {
 		let id = `seq_${species}1`
 		let taxon = species
-		let count = 4 // TODO: setting to 4 until we how to compute it
+		let count = 4 // TODO: setting to 4 until we know how to compute it
 		let value = sequence
 		return `\t<sequence id="${id}" taxon="${taxon}" totalcount="${count}" value="${value}"/>`
 	})
