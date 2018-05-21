@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`felidae 1`] = `
+Array [
+  "Prionailurus_bengalensis__KX866308",
+  "Puma_concolor__GU984641",
+  "Felis_silvestris__EF689045",
+  "Panthera_tigris__JQ040910",
+]
+`;
