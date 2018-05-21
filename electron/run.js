@@ -31,7 +31,7 @@ function run() {
 
 	// get the pipeline options
 	let options = document.querySelector('#options .options')
-	let opts = Array.from(...options.elements).map(el => [
+	let opts = Array.from(options.elements).map(el => [
 		el.name,
 		el.type === 'number' ? Number(el.value) : el.value,
 	])
