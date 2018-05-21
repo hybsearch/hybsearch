@@ -24,7 +24,7 @@ class Job {
 		this.optionsHash = hashObj(options)
 		this.hash = hasha([this.dataHash, this.optionsHash])
 		this.filepath = filepath
-		this.id = this.hash
+		this.id = this.hash.substr(0, 32)
 		this.initialClientAddress = ip
 
 		this.addClient = this.addClient.bind(this)
