@@ -155,4 +155,23 @@ const handleNewSteps = payload => {
 				</div>`
 		)
 		.join('')
+
+	let optionsEl = document.querySelector('#options')
+	let optionsContainer = optionsEl.querySelector('.options')
+	let options = Object.entries(payload.options).map(
+		([key, val]) => `
+		<div class="option-row">
+			<label>${val.label}: <input name="${key}" type="${val.type}" value="${
+			val.default
+		}" placeholder="${val.description}"></label>
+		</div>
+	`
+	)
+	if (options.length) {
+		optionsEl.removeAttribute('hidden')
+		optionsContainer.innerHTML = options.join('')
+	} else {
+		optionsEl.setAttribute('hidden', 'hidden')
+		optionsContainer.innerHTML = ''
+	}
 }
