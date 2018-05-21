@@ -94,6 +94,15 @@ function onData(phase, data) {
 		results.appendChild(makeTableFromObjectList(data.results))
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
+	} else if (phase === 'significant-nonmonophyly') {
+		let container = document.querySelector(
+			'#significant-nonmonophyly-container'
+		)
+		container.hidden = false
+
+		let results = container.querySelector('#significant-nonmonophyly')
+		results.innerHTML = ''
+		results.appendChild(makeTableFromObjectList(data))
 	} else {
 		console.warn(`Client doesn't understand data for "${phase}"`)
 	}
