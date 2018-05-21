@@ -31,7 +31,10 @@ function run() {
 
 	// get the pipeline options
 	let options = document.querySelector('#options .options')
-	let opts = Array.from(...options.elements).map(el => [el.name, el.type === 'number' ? Number(el.value) : el.value])
+	let opts = Array.from(...options.elements).map(el => [
+		el.name,
+		el.type === 'number' ? Number(el.value) : el.value,
+	])
 	opts = fromPairs(opts)
 
 	// start the pipeline
@@ -40,7 +43,13 @@ function run() {
 	return false
 }
 
-function submitJob({ socket = global.socket, pipeline, filepath, data, options }) {
+function submitJob({
+	socket = global.socket,
+	pipeline,
+	filepath,
+	data,
+	options,
+}) {
 	const ws = socket
 
 	ws.addEventListener('message', packet => onMessage(packet.data))

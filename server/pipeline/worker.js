@@ -66,7 +66,7 @@ async function main({ pipeline: pipelineName, filepath, data, options }) {
 		defaults = fromPairs(
 			toPairs(defaults).map(([key, value]) => [key, value.default])
 		)
-		options = {...defaults, ...options}
+		options = { ...defaults, ...options }
 
 		let cache = new Cache({ filepath, contents: data, pipelineName, options })
 
