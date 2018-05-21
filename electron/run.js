@@ -82,6 +82,37 @@ async function submitJob({
 	})
 }
 
+function followJob({ socket = global.socket, pipelineId }) {
+	let loader = document.querySelector('#loader')
+	loader.classList.add('loading')
+	loader.hidden = false
+
+	document.querySelector('#file-input').hidden = true
+	document.querySelector('#existing-jobs').hidden = true
+	document.querySelector('#newick-input').hidden = true
+
+	const ws = socket
+
+	ws.addEventListener('message', packet => onMessage(packet.data))
+	ws.addEventListener('disconnect', (...args) =>
+		console.log('disconnect', ...args)
+	)
+	ws.addEventListener('error', (...args) => console.log('error', ...args))
+	ws.addEventListener('exit', (...args) => console.log('exit', ...args))
+
+	if (ws.readyState !== 1) {
+		throw new Error('socket not ready!')
+	}
+
+	let payload = { type: 'follow-pipeline', id: pipelineId }
+	ws.send(JSON.stringify(payload), err => {
+		if (err) {
+			console.error('server error', err)
+			window.alert('server error:', err.message)
+		}
+	})
+}
+
 function onData(phase, data) {
 	console.info([phase, data])
 	if (phase.startsWith('newick-json:')) {
@@ -220,4 +251,5 @@ function setLoadingErrors({ after: timeTaken }) {
 }
 
 module.exports = run
+module.exports.follow = followJob
 module.exports.attachListeners = attachListeners
