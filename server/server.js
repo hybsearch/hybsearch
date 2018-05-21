@@ -14,7 +14,7 @@ const { trimMessage } = require('./lib/trim-message')
 const getFiles = require('./lib/get-files')
 const { loadFile } = getFiles
 
-const PORT = 8080
+const PORT = parseInt(process.env.PORT, 10) || 8080
 const app = new Koa()
 const server = http.createServer(app.callback())
 const wss = new WebSocket.Server({
