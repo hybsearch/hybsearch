@@ -69,7 +69,7 @@ router.delete('/job/:id', async ctx => {
 	let worker = workers.get(ctx.params.id)
 	if (worker) {
 		worker.stop()
-		ctx.body = {stopped: true, id: worker.id}
+		ctx.body = { stopped: true, id: worker.id }
 	} else {
 		ctx.throw(500, 'no worker found')
 	}
@@ -79,7 +79,7 @@ router.post('/job/:id', async ctx => {
 	let worker = workers.get(ctx.params.id)
 	if (worker) {
 		worker.restart()
-		ctx.body = {started: true, id: worker.id}
+		ctx.body = { started: true, id: worker.id }
 	} else {
 		ctx.throw(500, 'no worker found')
 	}

@@ -155,8 +155,10 @@ function populatePipelinePicker(pipelines, baseUrl) {
 	)
 }
 
-const cancelJob = (id, baseUrl) => fetchJson(baseUrl + `job/${id}`, {method: 'DELETE'})
-const restartJob = (id, baseUrl) => fetchJson(baseUrl + `job/${id}`, {method: 'POST'})
+const cancelJob = (id, baseUrl) =>
+	fetchJson(baseUrl + `job/${id}`, { method: 'DELETE' })
+const restartJob = (id, baseUrl) =>
+	fetchJson(baseUrl + `job/${id}`, { method: 'POST' })
 
 function populateJobList(jobs, baseUrl) {
 	let jobsContainer = document.querySelector('#existing-jobs')
