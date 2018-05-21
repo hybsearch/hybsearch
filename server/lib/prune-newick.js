@@ -9,7 +9,11 @@ const SEQUENCE_CUTOFF_LENGTH = 300
 module.exports.pruneOutliers = pruneOutliers
 module.exports.removeNodes = removeNodes
 
-function pruneOutliers(newick, alignedFasta) {
+function pruneOutliers(
+	newick,
+	alignedFasta,
+	{ outlierRemovalPercentage = 0.5 }
+) {
 	const fastaData = parseFasta(alignedFasta)
 	// Build a dict map of species -> sequence
 	let sequenceMap = {}
@@ -73,7 +77,7 @@ function pruneOutliers(newick, alignedFasta) {
 	// Or if it is smaller than the cut off
 	for (let i = 0; i < leafNodes.length; i++) {
 		let node = leafNodes[i]
-		let gene1 = geneLength[i]
+		let gene1Length = geneLength[i]
 		let diffCount = 0
 
 		for (let j = 0; j < leafNodes.length; j++) {
@@ -81,10 +85,10 @@ function pruneOutliers(newick, alignedFasta) {
 				continue
 			}
 			let hammingDistance = distCache[i][j]
-			let gene2 = geneLength[j]
+			let gene2Length = geneLength[j]
 			// The hamming distance can be at most the size of the smaller sequence
 			// So to get the proportion, we divide it by the length of the smalle sequence
-			let smallerGeneLength = Math.min(gene1, gene2)
+			let smallerGeneLength = Math.min(gene1Length, gene2Length)
 			let diffProportion = hammingDistance / smallerGeneLength
 
 			if (diffProportion > 0.2) {
@@ -94,7 +98,10 @@ function pruneOutliers(newick, alignedFasta) {
 
 		let diffPercent = diffCount / (leafNodes.length - 1)
 
-		if (diffPercent >= 0.5 || gene1 < SEQUENCE_CUTOFF_LENGTH) {
+		if (
+			diffPercent >= outlierRemovalPercentage ||
+			gene1Length < SEQUENCE_CUTOFF_LENGTH
+		) {
 			if (node.ident) {
 				toRemoveNames.push(node.ident)
 			} else {
