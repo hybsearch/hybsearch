@@ -50,6 +50,20 @@ router.get('/file/:name', async ctx => {
 	ctx.body = { content: await loadFile(ctx.params.name) }
 })
 
+router.get('/jobs', async ctx => {
+	ctx.body = {
+		jobs: [...workers.values()].reverse().map(worker => ({
+			pipeline: worker.pipeline,
+			filename: path.basename(worker.filepath),
+			id: worker.id,
+			hash: worker.hash,
+			options: worker.options,
+			status: worker.status,
+			initialClientAddress: worker.initialClientAddress,
+		})),
+	}
+})
+
 router.get('/uptime', ctx => {
 	ctx.body = { uptime: Date.now() - STARTED }
 })
