@@ -1,5 +1,7 @@
 'use strict'
 
+const os = require('os')
+const tempy = require('tempy')
 const ent = require('../../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
 const {
@@ -15,7 +17,32 @@ const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
 const { removeCircularLinks } = require('../lib')
 
-let options = {}
+let options = {
+	outlierRemovalPercentage: {
+		default: 0.5,
+		type: 'number',
+		label: 'outlierRemovalPercentage',
+		description: 'desc',
+	},
+	beastChainLength: {
+		default: '10000000',
+		type: 'text',
+		label: "BEAST's 'chainLength' parameter",
+		description: 'another desc',
+	},
+	beastCpuCoreCount: {
+		default: os.cpus().length,
+		type: 'number',
+		label: "BEAST's CPU core count",
+		description: 'the number of CPUs that BEAST should run over',
+	},
+	beastSyncStepSize: {
+		default: 25000,
+		type: 'number',
+		label: "BEAST's syncronization step size",
+		description: 'the number of iterations run between thread syncronizations',
+	},
+}
 
 let steps = [
 	{
@@ -34,13 +61,21 @@ let steps = [
 	{
 		// converts the aligned FASTA into Nexus
 		input: ['aligned-fasta'],
-		transform: ([data]) => [fastaToBeast(data)],
-		output: ['beast-config'],
+		transform: ([data, { beastChainLength, beastCpuCoreCount, beastSyncStepSize }]) => {
+			let beastParticleDir = tempy.directory()
+			return [fastaToBeast(data, {
+					chainLength: beastChainLength,
+					particleDir: beastParticleDir,
+					numParticles: beastCpuCoreCount,
+					stepSize: beastSyncStepSize,
+				}), beastParticleDir,]
+		},
+		output: ['beast-config', 'beast-particle-dir'],
 	},
 	{
-		// does whatever beast does
-		input: ['beast-config'],
-		transform: ([data]) => [beast(data)],
+		// generates the Species Tree used by JML
+		input: ['beast-config', 'beast-particle-dir'],
+		transform: ([data, particleDir]) => [beast(data, { particleDir })],
 		output: ['beast-trees'],
 	},
 	{
@@ -57,10 +92,11 @@ let steps = [
 	},
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
-		transform: ([newickJson, alignedFasta]) => {
+		transform: ([newickJson, alignedFasta], { outlierRemovalPercentage }) => {
 			let { removedData, prunedNewick } = pruneOutliers(
 				newickJson,
-				alignedFasta
+				alignedFasta,
+				{ outlierRemovalPercentage }
 			)
 			return [prunedNewick, removedData]
 		},
