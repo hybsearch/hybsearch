@@ -33,6 +33,10 @@ pre {
 	font-family: Consolas, Menlo, monospace;
 }
 
+[hidden] {
+	display: none !important;
+}
+
 section {
 	background: var(--white);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -296,9 +300,6 @@ summary > h3 {
 	margin-bottom: 2em;
 }
 
-.job {
-}
-
 .job + .job {
 	margin-top: 1em;
 }
@@ -320,7 +321,7 @@ summary > h3 {
 	margin-top: 1em;
 }
 
-.row {
+.flex-row {
 	display: flex;
 	flex-flow: row nowrap;
 }

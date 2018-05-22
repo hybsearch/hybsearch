@@ -174,7 +174,7 @@ function populateJobList(jobs, baseUrl) {
 	}) => {
 		let li = document.createElement('li')
 		li.classList.add('job')
-		li.classList.add('row')
+		li.classList.add('flex-row')
 
 		li.innerHTML = `
 			<div class="info">
