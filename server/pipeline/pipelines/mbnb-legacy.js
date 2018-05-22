@@ -1,6 +1,7 @@
 'use strict'
 
 const ent = require('../../ent')
+const fromPairs = require('lodash/fromPairs')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
 const {
 	genbankToFasta,
@@ -13,13 +14,29 @@ const {
 	keepFastaIdentifiers,
 } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
+const {
+	findSignificantNonmonophyly,
+} = require('../../lib/find-significant-nonmonophyly')
 const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
 const mrBayes = require('../../wrappers/mrbayes')
 const { removeCircularLinks } = require('../lib')
 
-let options = {}
+let options = {
+	outlierRemovalPercentage: {
+		default: 0.2,
+		type: 'number',
+		label: 'outlierRemovalPercentage',
+		description: 'desc',
+	},
+	beastChainLength: {
+		default: '10000000',
+		type: 'text',
+		label: "BEAST's 'chainLength' parameter",
+		description: 'another desc',
+	},
+}
 
 let steps = [
 	{
@@ -61,14 +78,23 @@ let steps = [
 	},
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
-		transform: ([newickJson, alignedFasta]) => {
-			let { removedData, prunedNewick } = pruneOutliers(
+		transform: ([newickJson, alignedFasta], { outlierRemovalPercentage }) => {
+			let { removedData, prunedNewick, diffRecords } = pruneOutliers(
 				newickJson,
-				alignedFasta
+				alignedFasta,
+				{ outlierRemovalPercentage }
 			)
-			return [prunedNewick, removedData]
+
+			let diffRecordsObj = fromPairs(
+				[...diffRecords.entries()].map(([key, value]) => [
+					key,
+					fromPairs([...value.entries()]),
+				])
+			)
+
+			return [prunedNewick, removedData, diffRecordsObj]
 		},
-		output: ['newick-json:2', 'pruned-identifiers'],
+		output: ['newick-json:2', 'pruned-identifiers', 'newick-diff-records'],
 	},
 	{
 		// identifies the non-monophyletic sequences
@@ -83,11 +109,11 @@ let steps = [
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
-		transform: ([data, nmSeqs]) => {
+		transform: ([data, nmSeqs], { beastChainLength }) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
 			return [
-				fastaToBeast(monophyleticFasta),
+				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength }),
 				monophyleticFasta,
 				nonmonophyleticFasta,
 			]
@@ -128,6 +154,14 @@ let steps = [
 			}),
 		],
 		output: ['jml-output'],
+	},
+	{
+		// find the significant nonmonophetic sequences
+		input: ['jml-output', 'nonmonophyletic-sequences'],
+		transform: ([jmlOutput, nmSequences]) => [
+			findSignificantNonmonophyly(jmlOutput, nmSequences),
+		],
+		output: ['significant-nonmonophyly'],
 	},
 ]
 
