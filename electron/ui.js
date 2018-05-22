@@ -194,7 +194,9 @@ function populateJobList(jobs, baseUrl) {
 		let buttons = li.querySelector('.buttons')
 
 		let followButton = document.createElement('button')
-		followButton.addEventListener('click', () => follow({ pipelineId: id }))
+		followButton.addEventListener('click', () =>
+			follow({ pipelineId: id }, { filename })
+		)
 		followButton.textContent = 'Follow'
 		followButton.type = 'button'
 		buttons.appendChild(followButton)
