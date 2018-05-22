@@ -61,10 +61,10 @@ let steps = [
 	{
 		// converts the aligned FASTA into Nexus
 		input: ['aligned-fasta'],
-		transform: ([
-			data,
-			{ beastChainLength, beastCpuCoreCount, beastSyncStepSize },
-		]) => {
+		transform: (
+			[data],
+			{ beastChainLength, beastCpuCoreCount, beastSyncStepSize }
+		) => {
 			let beastParticleDir = tempy.directory()
 			return [
 				fastaToBeast(data, {
