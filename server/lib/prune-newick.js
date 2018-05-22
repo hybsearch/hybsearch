@@ -98,10 +98,7 @@ function pruneOutliers(
 
 		let diffPercent = diffCount / (leafNodes.length - 1)
 
-		if (
-			diffPercent >= 0.5 ||
-			gene1Length < SEQUENCE_CUTOFF_LENGTH
-		) {
+		if (diffPercent >= 0.5 || gene1Length < SEQUENCE_CUTOFF_LENGTH) {
 			if (node.ident) {
 				toRemoveNames.push(node.ident)
 			} else {
