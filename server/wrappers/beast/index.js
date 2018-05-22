@@ -4,9 +4,10 @@ const execa = require('execa')
 const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
+const randomItem = require('random-item')
 
 module.exports = beast
-async function beast(data, argv = {}) {
+async function beast(data, {quiet, particleDir} = {}) {
 	const dir = tempy.directory()
 
 	const inputName = 'input'
@@ -19,11 +20,12 @@ async function beast(data, argv = {}) {
 	// prettier-ignore
 	const args = [
 		// use as many threads as possible
-		// '-threads', -1,
+		// '-threads', '4',
+		// '-instances', '2',
 		// change to the working directory of the input file
-		'-working',
-		// something something
-		// '-instances', 10,
+		// '-working',
+		// disable beagle
+		'-java',
 		// use beagle if possible
 		// '-beagle',
 		// provide the input file path
@@ -39,7 +41,7 @@ async function beast(data, argv = {}) {
 		},
 	})
 
-	if (!argv.quiet) {
+	if (!quiet) {
 		result.stdout.pipe(process.stderr)
 		result.stderr.pipe(process.stderr)
 	}
@@ -48,9 +50,12 @@ async function beast(data, argv = {}) {
 
 	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
 
-	const log = fs.readFileSync(path.join(dir, 'data.log'), 'utf-8')
-	const trees = fs.readFileSync(path.join(dir, 'data.trees'), 'utf-8')
-	const species = fs.readFileSync(path.join(dir, 'species.trees'), 'utf-8')
+	let dirs = fs.readdirSync(particleDir).filter(item => fs.statSync(item).isDirectory())
+	let chosenDir = randomItem(dirs)
+
+	const log = fs.readFileSync(path.join(chosenDir, 'data.log'), 'utf-8')
+	const trees = fs.readFileSync(path.join(chosenDir, 'data.trees'), 'utf-8')
+	const species = fs.readFileSync(path.join(chosenDir, 'species.trees'), 'utf-8')
 
 	return { log, trees, species }
 }

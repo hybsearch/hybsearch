@@ -1,5 +1,8 @@
 'use strict'
 
+const tempy = require('tempy')
+const os = require('os')
+
 const ent = require('../../ent')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
 const {
@@ -34,6 +37,18 @@ let options = {
 		type: 'text',
 		label: "BEAST's 'chainLength' parameter",
 		description: 'another desc',
+	},
+	beastCpuCoreCount: {
+		default: os.cpus().length,
+		type: 'number',
+		label: "BEAST's CPU core count",
+		description: 'the number of CPUs that BEAST should run over',
+	},
+	beastSyncStepSize: {
+		default: 25000,
+		type: 'number',
+		label: "BEAST's syncronization step size",
+		description: 'the number of iterations run between thread syncronizations',
 	},
 }
 
@@ -100,25 +115,28 @@ let steps = [
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
-		transform: ([data, nmSeqs], { beastChainLength }) => {
+		transform: ([data, nmSeqs], { beastChainLength, beastCpuCoreCount, beastSyncStepSize }) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
+			let beastParticleDir = tempy.directory()
 			return [
-				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength }),
+				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength, particleDir: beastParticleDir, numParticles: beastCpuCoreCount, stepSize: beastSyncStepSize }),
 				monophyleticFasta,
 				nonmonophyleticFasta,
+				beastParticleDir,
 			]
 		},
 		output: [
 			'beast-config',
 			'monophyletic-aligned-fasta',
 			'nonmonophyletic-aligned-fasta',
+			'beast-particle-dir',
 		],
 	},
 	{
 		// generates the Species Tree used by JML
-		input: ['beast-config'],
-		transform: ([data]) => [beast(data)],
+		input: ['beast-config', 'beast-particle-dir'],
+		transform: ([data, particleDir]) => [beast(data, {particleDir})],
 		output: ['beast-trees'],
 	},
 	{

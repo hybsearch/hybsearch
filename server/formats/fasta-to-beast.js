@@ -37,7 +37,7 @@ function inflateTemplate(vars) {
 }
 
 module.exports = fastaToBeast
-function fastaToBeast(fastaData, { chainLength = '10000000' } = {}) {
+function fastaToBeast(fastaData, { chainLength = '10000000', particleDir, numParticles, stepSize } = {}) {
 	let items = parseFasta(fastaData)
 	items = sortBy(items, ({ species }) => species)
 
@@ -69,5 +69,8 @@ function fastaToBeast(fastaData, { chainLength = '10000000' } = {}) {
 		sequences: seqs.join('\n'),
 		taxon: taxon.join('\n'),
 		chainLength: chainLength,
+		particleDir: particleDir,
+		numParticles: numParticles,
+		stepSize: stepSize,
 	})
 }
