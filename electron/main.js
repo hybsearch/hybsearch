@@ -37,6 +37,7 @@ function createWindow() {
 		width: 900,
 		height: 775,
 		backgroundColor: '#F7F7F7',
+		tabbingIdentifier: 'mainGroup',
 	})
 
 	// and load the index.html of the app.
@@ -46,6 +47,11 @@ function createWindow() {
 	win.on('closed', () => {
 		// Dereference the window object so that it can be GCd.
 		windows.delete(win)
+	})
+
+	win.on('new-window-for-tab', () => {
+		// `new-window-for-tab` is fired when the native "new tab" button is clicked
+		createWindow()
 	})
 
 	windows.add(win)
