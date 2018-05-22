@@ -2,7 +2,7 @@
 
 exports[`emydura-short.fasta 1`] = `
 "<?xml version=\\"1.0\\" encoding=\\"UTF-8\\" standalone=\\"no\\"?>
-<beast beautitemplate='StarBeast' beautistatus='' namespace=\\"beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood\\" required=\\"\\" version=\\"2.4\\">
+<beast beautitemplate=\\"StarBeast\\" beautistatus=\\"\\" namespace=\\"beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood\\" required=\\"\\" version=\\"2.4\\">
 
 <data id=\\"data\\" name=\\"alignment\\">
 	<sequence id=\\"seq_Emydura_macquarii__KC7551831\\" taxon=\\"Emydura_macquarii__KC755183\\" totalcount=\\"4\\" value=\\"-ggaacaatcaattattacccacaaagacacataaaaccacaggaacctctactccaaccataaaaaacacaaatccactattaaaaatcattaataacacctttgttgatcttcccaccccatccaatatctccgccttatgaaacttcggatcattactaggggcatgcctcattctacaactagccacaggaattttcttagccatacactactcatccgacatttctacagcattctcatcaatttcccacatccaacgagatgttcaatatggatgacttattcgaaatatacacgccaacggtgcttcattattctttatatgcatctaccttcatattggacgaggaatctattacggttcctacctttacaataaaacctgaaacactggagtaatattactactactagtcatagccactgcattcgtaggctacgtactaccatgaggccaaatatcattctgaggggctacagtaatcaccaacctattatcagccatcccatacgtaggcccaacacttgtagagtgaatttgaggagggttctccgtagacaacgccacccttactcgattcttcacatttcactttctaatcccattcgccatcctaggaataaccctactacacctcctacttctacacgaaacaggatcaaataacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcgtataaagacctactaggactcatcctaataatcatatgtctacttaccctcaccctattttacccaaacctactaggagatccagacaactttacaccagccaatccactaaccact\\"/>
@@ -26,12 +26,24 @@ exports[`emydura-short.fasta 1`] = `
 <map name=\\"InverseGamma\\">beast.math.distributions.InverseGamma</map>
 <map name=\\"OneOnX\\">beast.math.distributions.OneOnX</map>
 
-<run id=\\"mcmc\\" spec=\\"MCMC\\" chainLength=\\"10000000\\" storeEvery=\\"5000\\">
-	<state id=\\"state\\" storeEvery=\\"5000\\">
-		<parameter id=\\"popSize\\" name=\\"stateNode\\">1.0</parameter>
-		<tree id=\\"Tree.t:Species\\" name=\\"stateNode\\">
-			<taxonset id=\\"taxonsuperset\\" spec=\\"TaxonSet\\">
-				<taxon id=\\"Emydura_macquarii\\" spec=\\"TaxonSet\\">
+<run spec=\\"beast.inference.ParticleFilter\\" id=\\"pf\\" nrofparticles=\\"4\\" stepsize=\\"25000\\" rootdir=\\"/tmp/particles\\" launcher=\\"beast.inference.ParticleLauncherByFile\\">
+	<!-- this next text block is run as a script -->
+	<![CDATA[
+		#!/bin/sh
+		cd $(dir)
+		echo $(java.library.path)
+		echo $(java.class.path)
+		java -Dbeast.particle.dir=$(dir) -Dbeast.debug=false -Djava.library.path=/usr/local/lib/beast.jar -cp /usr/local/lib/beast.jar beast.app.BeastMCMC -resume -seed $(seed) $(dir)/beast.xml >> $(dir)/beast.log 2>&1
+		exit
+	]]>
+	<!-- end the script text block -->
+
+	<mcmc spec=\\"beast.inference.MCMCParticleAsync\\" chainLength=\\"10000000\\" id=\\"mcmc\\">
+		<state id=\\"state\\" storeEvery=\\"5000\\">
+			<parameter id=\\"popSize\\" name=\\"stateNode\\">1.0</parameter>
+			<tree id=\\"Tree.t:Species\\" name=\\"stateNode\\">
+				<taxonset id=\\"taxonsuperset\\" spec=\\"TaxonSet\\">
+					<taxon id=\\"Emydura_macquarii\\" spec=\\"TaxonSet\\">
 					<taxon id=\\"Emydura_macquarii__KC755183\\" spec=\\"Taxon\\"/>
 				</taxon>
 				<taxon id=\\"Emydura_subglobosa\\" spec=\\"TaxonSet\\">
@@ -47,137 +59,138 @@ exports[`emydura-short.fasta 1`] = `
 					<taxon id=\\"Emydura_victoriae__KC755188\\" spec=\\"Taxon\\"/>
 					<taxon id=\\"Emydura_victoriae__KC755189\\" spec=\\"Taxon\\"/>
 				</taxon>
-			</taxonset>
-		</tree>
-		<parameter id=\\"birthRate.t:Species\\" lower=\\"0.0\\" name=\\"stateNode\\">1.0</parameter>
-		<parameter id=\\"popMean\\" name=\\"stateNode\\">1.0</parameter>
-		<tree id=\\"Tree.t:data\\" name=\\"stateNode\\">
-			<taxonset id=\\"TaxonSet.data\\" spec=\\"TaxonSet\\">
-				<alignment idref=\\"data\\"/>
-			</taxonset>
-		</tree>
-		<parameter id=\\"kappa.s:data\\" lower=\\"0.0\\" name=\\"stateNode\\">2.0</parameter>
-		<parameter id=\\"freqParameter.s:data\\" dimension=\\"4\\" lower=\\"0.0\\" name=\\"stateNode\\" upper=\\"1.0\\">0.25</parameter>
-	</state>
+				</taxonset>
+			</tree>
+			<parameter id=\\"birthRate.t:Species\\" lower=\\"0.0\\" name=\\"stateNode\\">1.0</parameter>
+			<parameter id=\\"popMean\\" name=\\"stateNode\\">1.0</parameter>
+			<tree id=\\"Tree.t:data\\" name=\\"stateNode\\">
+				<taxonset id=\\"TaxonSet.data\\" spec=\\"TaxonSet\\">
+					<alignment idref=\\"data\\"/>
+				</taxonset>
+			</tree>
+			<parameter id=\\"kappa.s:data\\" lower=\\"0.0\\" name=\\"stateNode\\">2.0</parameter>
+			<parameter id=\\"freqParameter.s:data\\" dimension=\\"4\\" lower=\\"0.0\\" name=\\"stateNode\\" upper=\\"1.0\\">0.25</parameter>
+		</state>
 
-	<init id=\\"SBI\\" spec=\\"beast.evolution.speciation.StarBeastStartState\\" birthRate=\\"@birthRate.t:Species\\" popMean=\\"@popMean\\" speciesTree=\\"@Tree.t:Species\\">
-		<gene idref=\\"Tree.t:data\\"/>
-		<speciesTreePrior id=\\"SpeciesTreePopSize.Species\\" spec=\\"beast.evolution.speciation.SpeciesTreePrior\\" bottomPopSize=\\"@popSize\\" gammaParameter=\\"@popMean\\" taxonset=\\"@taxonsuperset\\" tree=\\"@Tree.t:Species\\"/>
-	</init>
+		<init id=\\"SBI\\" spec=\\"beast.evolution.speciation.StarBeastStartState\\" birthRate=\\"@birthRate.t:Species\\" popMean=\\"@popMean\\" speciesTree=\\"@Tree.t:Species\\">
+			<gene idref=\\"Tree.t:data\\"/>
+			<speciesTreePrior id=\\"SpeciesTreePopSize.Species\\" spec=\\"beast.evolution.speciation.SpeciesTreePrior\\" bottomPopSize=\\"@popSize\\" gammaParameter=\\"@popMean\\" taxonset=\\"@taxonsuperset\\" tree=\\"@Tree.t:Species\\"/>
+		</init>
 
-	<distribution id=\\"posterior\\" spec=\\"util.CompoundDistribution\\">
-		<distribution id=\\"speciescoalescent\\" spec=\\"util.CompoundDistribution\\">
-			<distribution idref=\\"SpeciesTreePopSize.Species\\"/>
-			<distribution id=\\"treePrior.t:data\\" spec=\\"beast.evolution.speciation.GeneTreeForSpeciesTreeDistribution\\" ploidy=\\"0.25\\" speciesTree=\\"@Tree.t:Species\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:data\\"/>
-		</distribution>
-		<distribution id=\\"prior\\" spec=\\"util.CompoundDistribution\\">
-			<distribution id=\\"YuleModel.t:Species\\" spec=\\"beast.evolution.speciation.YuleModel\\" birthDiffRate=\\"@birthRate.t:Species\\" tree=\\"@Tree.t:Species\\"/>
-			<prior id=\\"YuleBirthRatePrior.t:Species\\" name=\\"distribution\\" x=\\"@birthRate.t:Species\\">
-				<OneOnX id=\\"OneOnX.0\\" name=\\"distr\\"/>
-			</prior>
-			<prior id=\\"popMean.prior\\" name=\\"distribution\\" x=\\"@popMean\\">
-				<OneOnX id=\\"OneOnX.1\\" name=\\"distr\\"/>
-			</prior>
-			<prior id=\\"KappaPrior.s:data\\" name=\\"distribution\\" x=\\"@kappa.s:data\\">
-				<LogNormal id=\\"LogNormalDistributionModel.0\\" name=\\"distr\\">
-					<parameter id=\\"RealParameter.1\\" estimate=\\"false\\" name=\\"M\\">1.0</parameter>
-					<parameter id=\\"RealParameter.2\\" estimate=\\"false\\" name=\\"S\\">1.25</parameter>
-				</LogNormal>
-			</prior>
-		</distribution>
-		<distribution id=\\"likelihood\\" spec=\\"util.CompoundDistribution\\" useThreads=\\"true\\">
-			<distribution id=\\"treeLikelihood.data\\" spec=\\"TreeLikelihood\\" data=\\"@data\\" tree=\\"@Tree.t:data\\">
-				<siteModel id=\\"SiteModel.s:data\\" spec=\\"SiteModel\\">
-					<parameter id=\\"mutationRate.s:data\\" estimate=\\"false\\" name=\\"mutationRate\\">1.0</parameter>
-					<parameter id=\\"gammaShape.s:data\\" estimate=\\"false\\" name=\\"shape\\">1.0</parameter>
-					<parameter id=\\"proportionInvariant.s:data\\" estimate=\\"false\\" lower=\\"0.0\\" name=\\"proportionInvariant\\" upper=\\"1.0\\">0.0</parameter>
-					<substModel id=\\"hky.s:data\\" spec=\\"HKY\\" kappa=\\"@kappa.s:data\\">
-						<frequencies id=\\"estimatedFreqs.s:data\\" spec=\\"Frequencies\\" frequencies=\\"@freqParameter.s:data\\"/>
-					</substModel>
-				</siteModel>
-				<branchRateModel id=\\"StrictClock.c:data\\" spec=\\"beast.evolution.branchratemodel.StrictClockModel\\">
-					<parameter id=\\"clockRate.c:data\\" estimate=\\"false\\" name=\\"clock.rate\\">1.0</parameter>
-				</branchRateModel>
+		<distribution id=\\"posterior\\" spec=\\"util.CompoundDistribution\\">
+			<distribution id=\\"speciescoalescent\\" spec=\\"util.CompoundDistribution\\">
+				<distribution idref=\\"SpeciesTreePopSize.Species\\"/>
+				<distribution id=\\"treePrior.t:data\\" spec=\\"beast.evolution.speciation.GeneTreeForSpeciesTreeDistribution\\" ploidy=\\"0.25\\" speciesTree=\\"@Tree.t:Species\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:data\\"/>
+			</distribution>
+			<distribution id=\\"prior\\" spec=\\"util.CompoundDistribution\\">
+				<distribution id=\\"YuleModel.t:Species\\" spec=\\"beast.evolution.speciation.YuleModel\\" birthDiffRate=\\"@birthRate.t:Species\\" tree=\\"@Tree.t:Species\\"/>
+				<prior id=\\"YuleBirthRatePrior.t:Species\\" name=\\"distribution\\" x=\\"@birthRate.t:Species\\">
+					<OneOnX id=\\"OneOnX.0\\" name=\\"distr\\"/>
+				</prior>
+				<prior id=\\"popMean.prior\\" name=\\"distribution\\" x=\\"@popMean\\">
+					<OneOnX id=\\"OneOnX.1\\" name=\\"distr\\"/>
+				</prior>
+				<prior id=\\"KappaPrior.s:data\\" name=\\"distribution\\" x=\\"@kappa.s:data\\">
+					<LogNormal id=\\"LogNormalDistributionModel.0\\" name=\\"distr\\">
+						<parameter id=\\"RealParameter.1\\" estimate=\\"false\\" name=\\"M\\">1.0</parameter>
+						<parameter id=\\"RealParameter.2\\" estimate=\\"false\\" name=\\"S\\">1.25</parameter>
+					</LogNormal>
+				</prior>
+			</distribution>
+			<distribution id=\\"likelihood\\" spec=\\"util.CompoundDistribution\\" useThreads=\\"true\\">
+				<distribution id=\\"treeLikelihood.data\\" spec=\\"TreeLikelihood\\" data=\\"@data\\" tree=\\"@Tree.t:data\\">
+					<siteModel id=\\"SiteModel.s:data\\" spec=\\"SiteModel\\">
+						<parameter id=\\"mutationRate.s:data\\" estimate=\\"false\\" name=\\"mutationRate\\">1.0</parameter>
+						<parameter id=\\"gammaShape.s:data\\" estimate=\\"false\\" name=\\"shape\\">1.0</parameter>
+						<parameter id=\\"proportionInvariant.s:data\\" estimate=\\"false\\" lower=\\"0.0\\" name=\\"proportionInvariant\\" upper=\\"1.0\\">0.0</parameter>
+						<substModel id=\\"hky.s:data\\" spec=\\"HKY\\" kappa=\\"@kappa.s:data\\">
+							<frequencies id=\\"estimatedFreqs.s:data\\" spec=\\"Frequencies\\" frequencies=\\"@freqParameter.s:data\\"/>
+						</substModel>
+					</siteModel>
+					<branchRateModel id=\\"StrictClock.c:data\\" spec=\\"beast.evolution.branchratemodel.StrictClockModel\\">
+						<parameter id=\\"clockRate.c:data\\" estimate=\\"false\\" name=\\"clock.rate\\">1.0</parameter>
+					</branchRateModel>
+				</distribution>
 			</distribution>
 		</distribution>
-	</distribution>
 
-	<operator id=\\"Reheight.t:Species\\" spec=\\"NodeReheight\\" taxonset=\\"@taxonsuperset\\" tree=\\"@Tree.t:Species\\" weight=\\"94.0\\">
-		<genetree idref=\\"Tree.t:data\\"/>
-	</operator>
+		<operator id=\\"Reheight.t:Species\\" spec=\\"NodeReheight\\" taxonset=\\"@taxonsuperset\\" tree=\\"@Tree.t:Species\\" weight=\\"94.0\\">
+			<genetree idref=\\"Tree.t:data\\"/>
+		</operator>
 
-	<operator id=\\"popSizeBottomScaler.t:Species\\" spec=\\"ScaleOperator\\" degreesOfFreedom=\\"1\\" parameter=\\"@popSize\\" scaleFactor=\\"0.5\\" weight=\\"5.0\\"/>
+		<operator id=\\"popSizeBottomScaler.t:Species\\" spec=\\"ScaleOperator\\" degreesOfFreedom=\\"1\\" parameter=\\"@popSize\\" scaleFactor=\\"0.5\\" weight=\\"5.0\\"/>
 
-	<operator id=\\"popMeanScale.t:Species\\" spec=\\"ScaleOperator\\" parameter=\\"@popMean\\" scaleFactor=\\"0.75\\" weight=\\"3.0\\"/>
+		<operator id=\\"popMeanScale.t:Species\\" spec=\\"ScaleOperator\\" parameter=\\"@popMean\\" scaleFactor=\\"0.75\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"updown.all.Species\\" spec=\\"UpDownOperator\\" scaleFactor=\\"0.75\\" weight=\\"20.0\\">
-		<up idref=\\"birthRate.t:Species\\"/>
-		<down idref=\\"popMean\\"/>
-		<down idref=\\"popSize\\"/>
-		<down idref=\\"Tree.t:Species\\"/>
-		<down idref=\\"Tree.t:data\\"/>
-	</operator>
+		<operator id=\\"updown.all.Species\\" spec=\\"UpDownOperator\\" scaleFactor=\\"0.75\\" weight=\\"20.0\\">
+			<up idref=\\"birthRate.t:Species\\"/>
+			<down idref=\\"popMean\\"/>
+			<down idref=\\"popSize\\"/>
+			<down idref=\\"Tree.t:Species\\"/>
+			<down idref=\\"Tree.t:data\\"/>
+		</operator>
 
-	<operator id=\\"YuleBirthRateScaler.t:Species\\" spec=\\"ScaleOperator\\" parameter=\\"@birthRate.t:Species\\" scaleFactor=\\"0.75\\" weight=\\"3.0\\"/>
+		<operator id=\\"YuleBirthRateScaler.t:Species\\" spec=\\"ScaleOperator\\" parameter=\\"@birthRate.t:Species\\" scaleFactor=\\"0.75\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"treeScaler.t:data\\" spec=\\"ScaleOperator\\" scaleFactor=\\"0.5\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
+		<operator id=\\"treeScaler.t:data\\" spec=\\"ScaleOperator\\" scaleFactor=\\"0.5\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"treeRootScaler.t:data\\" spec=\\"ScaleOperator\\" rootOnly=\\"true\\" scaleFactor=\\"0.5\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
+		<operator id=\\"treeRootScaler.t:data\\" spec=\\"ScaleOperator\\" rootOnly=\\"true\\" scaleFactor=\\"0.5\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"UniformOperator.t:data\\" spec=\\"Uniform\\" tree=\\"@Tree.t:data\\" weight=\\"30.0\\"/>
+		<operator id=\\"UniformOperator.t:data\\" spec=\\"Uniform\\" tree=\\"@Tree.t:data\\" weight=\\"30.0\\"/>
 
-	<operator id=\\"SubtreeSlide.t:data\\" spec=\\"SubtreeSlide\\" tree=\\"@Tree.t:data\\" weight=\\"15.0\\"/>
+		<operator id=\\"SubtreeSlide.t:data\\" spec=\\"SubtreeSlide\\" tree=\\"@Tree.t:data\\" weight=\\"15.0\\"/>
 
-	<operator id=\\"narrow.t:data\\" spec=\\"Exchange\\" tree=\\"@Tree.t:data\\" weight=\\"15.0\\"/>
+		<operator id=\\"narrow.t:data\\" spec=\\"Exchange\\" tree=\\"@Tree.t:data\\" weight=\\"15.0\\"/>
 
-	<operator id=\\"wide.t:data\\" spec=\\"Exchange\\" isNarrow=\\"false\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
+		<operator id=\\"wide.t:data\\" spec=\\"Exchange\\" isNarrow=\\"false\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"WilsonBalding.t:data\\" spec=\\"WilsonBalding\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
+		<operator id=\\"WilsonBalding.t:data\\" spec=\\"WilsonBalding\\" tree=\\"@Tree.t:data\\" weight=\\"3.0\\"/>
 
-	<operator id=\\"KappaScaler.s:data\\" spec=\\"ScaleOperator\\" parameter=\\"@kappa.s:data\\" scaleFactor=\\"0.5\\" weight=\\"0.1\\"/>
+		<operator id=\\"KappaScaler.s:data\\" spec=\\"ScaleOperator\\" parameter=\\"@kappa.s:data\\" scaleFactor=\\"0.5\\" weight=\\"0.1\\"/>
 
-	<operator id=\\"FrequenciesExchanger.s:data\\" spec=\\"DeltaExchangeOperator\\" delta=\\"0.01\\" weight=\\"0.1\\">
-		<parameter idref=\\"freqParameter.s:data\\"/>
-	</operator>
+		<operator id=\\"FrequenciesExchanger.s:data\\" spec=\\"DeltaExchangeOperator\\" delta=\\"0.01\\" weight=\\"0.1\\">
+			<parameter idref=\\"freqParameter.s:data\\"/>
+		</operator>
 
-	<logger id=\\"tracelog\\" fileName=\\"data.log\\" logEvery=\\"5000\\" model=\\"@posterior\\" sort=\\"smart\\">
-		<log idref=\\"posterior\\"/>
-		<log idref=\\"likelihood\\"/>
-		<log idref=\\"prior\\"/>
-		<log idref=\\"speciescoalescent\\"/>
-		<log idref=\\"birthRate.t:Species\\"/>
-		<log idref=\\"YuleModel.t:Species\\"/>
-		<log idref=\\"popMean\\"/>
-		<log id=\\"TreeHeight.Species\\" spec=\\"beast.evolution.tree.TreeHeightLogger\\" tree=\\"@Tree.t:Species\\"/>
-		<log idref=\\"treeLikelihood.data\\"/>
-		<log idref=\\"treePrior.t:data\\"/>
-		<log id=\\"TreeHeight.t:data\\" spec=\\"beast.evolution.tree.TreeHeightLogger\\" tree=\\"@Tree.t:data\\"/>
-		<log idref=\\"kappa.s:data\\"/>
-		<log idref=\\"freqParameter.s:data\\"/>
-	</logger>
+		<logger id=\\"tracelog\\" fileName=\\"data.log\\" logEvery=\\"5000\\" model=\\"@posterior\\" sort=\\"smart\\">
+			<log idref=\\"posterior\\"/>
+			<log idref=\\"likelihood\\"/>
+			<log idref=\\"prior\\"/>
+			<log idref=\\"speciescoalescent\\"/>
+			<log idref=\\"birthRate.t:Species\\"/>
+			<log idref=\\"YuleModel.t:Species\\"/>
+			<log idref=\\"popMean\\"/>
+			<log id=\\"TreeHeight.Species\\" spec=\\"beast.evolution.tree.TreeHeightLogger\\" tree=\\"@Tree.t:Species\\"/>
+			<log idref=\\"treeLikelihood.data\\"/>
+			<log idref=\\"treePrior.t:data\\"/>
+			<log id=\\"TreeHeight.t:data\\" spec=\\"beast.evolution.tree.TreeHeightLogger\\" tree=\\"@Tree.t:data\\"/>
+			<log idref=\\"kappa.s:data\\"/>
+			<log idref=\\"freqParameter.s:data\\"/>
+		</logger>
 
-	<logger id=\\"speciesTreeLogger\\" fileName=\\"species.trees\\" logEvery=\\"5000\\" mode=\\"tree\\">
-		<log id=\\"SpeciesTreeLoggerX\\" spec=\\"beast.evolution.speciation.SpeciesTreeLogger\\" popSize=\\"@popSize\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:Species\\">
-			<treetop id=\\"treeTopFinder\\" spec=\\"beast.evolution.speciation.TreeTopFinder\\">
-				<tree idref=\\"Tree.t:data\\"/>
-			</treetop>
-		</log>
-	</logger>
+		<logger id=\\"speciesTreeLogger\\" fileName=\\"species.trees\\" logEvery=\\"5000\\" mode=\\"tree\\">
+			<log id=\\"SpeciesTreeLoggerX\\" spec=\\"beast.evolution.speciation.SpeciesTreeLogger\\" popSize=\\"@popSize\\" speciesTreePrior=\\"@SpeciesTreePopSize.Species\\" tree=\\"@Tree.t:Species\\">
+				<treetop id=\\"treeTopFinder\\" spec=\\"beast.evolution.speciation.TreeTopFinder\\">
+					<tree idref=\\"Tree.t:data\\"/>
+				</treetop>
+			</log>
+		</logger>
 
-	<logger id=\\"screenlog\\" logEvery=\\"5000\\" model=\\"@posterior\\">
-		<log idref=\\"posterior\\"/>
-		<log id=\\"ESS.0\\" spec=\\"util.ESS\\" arg=\\"@posterior\\"/>
-		<log idref=\\"likelihood\\"/>
-		<log idref=\\"prior\\"/>
-	</logger>
+		<logger id=\\"screenlog\\" logEvery=\\"5000\\" model=\\"@posterior\\">
+			<log idref=\\"posterior\\"/>
+			<log id=\\"ESS.0\\" spec=\\"util.ESS\\" arg=\\"@posterior\\"/>
+			<log idref=\\"likelihood\\"/>
+			<log idref=\\"prior\\"/>
+		</logger>
 
-	<logger id=\\"treelog.t:data\\" fileName=\\"$(tree).trees\\" logEvery=\\"5000\\" mode=\\"tree\\">
-		<log id=\\"TreeWithMetaDataLogger.t:data\\" spec=\\"beast.evolution.tree.TreeWithMetaDataLogger\\" tree=\\"@Tree.t:data\\"/>
-	</logger>
+		<logger id=\\"treelog.t:data\\" fileName=\\"$(tree).trees\\" logEvery=\\"5000\\" mode=\\"tree\\">
+			<log id=\\"TreeWithMetaDataLogger.t:data\\" spec=\\"beast.evolution.tree.TreeWithMetaDataLogger\\" tree=\\"@Tree.t:data\\"/>
+		</logger>
 
-	<operatorschedule id=\\"operatorSchedule\\" spec=\\"OperatorSchedule\\">
-		<subschedule id=\\"operatorSubschedule\\" spec=\\"OperatorSchedule\\" operatorPattern=\\"^.*Species$\\" weight=\\"20.0\\" weightIsPercentage=\\"true\\"/>
-	</operatorschedule>
+		<operatorschedule id=\\"operatorSchedule\\" spec=\\"OperatorSchedule\\">
+			<subschedule id=\\"operatorSubschedule\\" spec=\\"OperatorSchedule\\" operatorPattern=\\"^.*Species$\\" weight=\\"20.0\\" weightIsPercentage=\\"true\\"/>
+		</operatorschedule>
+	</mcmc>
 
 </run>
 
