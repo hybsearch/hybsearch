@@ -39,7 +39,12 @@ function inflateTemplate(vars) {
 module.exports = fastaToBeast
 function fastaToBeast(
 	fastaData,
-	{ chainLength = '10000000', particleDir, numParticles, stepSize } = {}
+	{
+		chainLength = '10000000',
+		particleDir = '/tmp/particles',
+		numParticles = 4,
+		stepSize = 25000,
+	} = {}
 ) {
 	let items = parseFasta(fastaData)
 	items = sortBy(items, ({ species }) => species)
