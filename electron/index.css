@@ -321,6 +321,10 @@ summary > h3 {
 	margin-top: 1em;
 }
 
+menu button + button {
+	margin-left: 1em;
+}
+
 .flex-row {
 	display: flex;
 	flex-flow: row nowrap;
