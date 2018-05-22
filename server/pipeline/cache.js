@@ -1,6 +1,6 @@
 'use strict'
 
-const crypto = require('crypto')
+const hasha = require('hasha')
 const tempy = require('tempy')
 const fs = require('fs')
 const path = require('path')
@@ -14,26 +14,17 @@ class Cache {
 		this.pipelineName = pipelineName
 		this.options = options
 
-		this.hashKey = this.hash(
-			`${this.pipelineName}${JSON.stringify(this.options)}`
-		)
-		this.dataHash = this.hash(`${this.hashKey}:${this.data}`)
+		this.hashKey = hasha(`${this.pipelineName}${JSON.stringify(this.options)}`)
+		this.dataHash = hasha(`${this.hashKey}:${this.data}`)
 
 		this.get = this.get.bind(this)
 		this.set = this.set.bind(this)
-		this.hash = this.hash.bind(this)
 		this.diskFilename = this.diskFilename.bind(this)
 
 		let cacheRoot = process.env.DOCKER ? `/tmp/hybsearch` : tempy.directory()
 		this.cacheDir = mkdir.sync(`${cacheRoot}/${this.dataHash}`)
 
 		this.set('source', { filepath: this.filepath, contents: this.data })
-	}
-
-	hash(data) {
-		let hash = crypto.createHash('sha256')
-		hash.update(data)
-		return hash.digest('hex')
 	}
 
 	diskFilename(filename) {

@@ -33,6 +33,10 @@ pre {
 	font-family: Consolas, Menlo, monospace;
 }
 
+[hidden] {
+	display: none !important;
+}
+
 section {
 	background: var(--white);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -175,10 +179,16 @@ button {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-input[type='submit']:hover,
-button:hover,
-input[type='submit']:active,
-button:active {
+input[type='submit'][disabled],
+button[disabled] {
+	background-color: var(--medium-gray);
+	box-shadow: none;
+}
+
+input[type='submit']:not([disabled]):hover,
+button:not([disabled]):hover,
+input[type='submit']:not([disabled]):active,
+button:not([disabled]):active {
 	cursor: pointer;
 	background-color: var(--teal);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -288,4 +298,30 @@ summary > h3 {
 
 .row {
 	margin-bottom: 2em;
+}
+
+.job + .job {
+	margin-top: 1em;
+}
+
+.job:nth-child(even) {
+	background-color: var(--light-gray);
+}
+
+.job .info {
+	flex: 1;
+}
+
+.job .buttons {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.job .buttons button + button {
+	margin-top: 1em;
+}
+
+.flex-row {
+	display: flex;
+	flex-flow: row nowrap;
 }

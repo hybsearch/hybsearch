@@ -3,6 +3,7 @@
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
+const publicIp = require('public-ip')
 const fs = require('fs')
 const fromPairs = require('lodash/fromPairs')
 
@@ -24,6 +25,7 @@ function run() {
 
 	// hide the input boxes
 	document.querySelector('#file-input').hidden = true
+	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
 
 	// get the chosen pipeline name
@@ -43,13 +45,52 @@ function run() {
 	return false
 }
 
-function submitJob({
+async function submitJob({
 	socket = global.socket,
 	pipeline,
 	filepath,
 	data,
 	options,
 }) {
+	const ws = socket
+	const ip = (await publicIp.v6()) || (await publicIp.v4())
+
+	ws.addEventListener('message', packet => onMessage(packet.data))
+	ws.addEventListener('disconnect', (...args) =>
+		console.log('disconnect', ...args)
+	)
+	ws.addEventListener('error', (...args) => console.log('error', ...args))
+	ws.addEventListener('exit', (...args) => console.log('exit', ...args))
+
+	if (ws.readyState !== 1) {
+		throw new Error('socket not ready!')
+	}
+
+	let payload = {
+		type: 'start-pipeline',
+		pipeline,
+		filepath,
+		data,
+		options,
+		ip,
+	}
+	ws.send(JSON.stringify(payload), err => {
+		if (err) {
+			console.error('server error', err)
+			window.alert('server error:', err.message)
+		}
+	})
+}
+
+function followJob({ socket = global.socket, pipelineId }) {
+	let loader = document.querySelector('#loader')
+	loader.classList.add('loading')
+	loader.hidden = false
+
+	document.querySelector('#file-input').hidden = true
+	document.querySelector('#existing-jobs').hidden = true
+	document.querySelector('#newick-input').hidden = true
+
 	const ws = socket
 
 	ws.addEventListener('message', packet => onMessage(packet.data))
@@ -63,7 +104,7 @@ function submitJob({
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'start', pipeline, filepath, data, options }
+	let payload = { type: 'follow-pipeline', id: pipelineId }
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)
@@ -210,4 +251,5 @@ function setLoadingErrors({ after: timeTaken }) {
 }
 
 module.exports = run
+module.exports.follow = followJob
 module.exports.attachListeners = attachListeners

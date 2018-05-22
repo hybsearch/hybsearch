@@ -3,17 +3,18 @@
 
 const STARTED = Date.now()
 const WebSocket = require('ws')
-const childProcess = require('child_process')
 const path = require('path')
 const http = require('http')
 const Koa = require('koa')
 const Router = require('koa-router')
 const compress = require('koa-compress')
 const logger = require('koa-logger')
+const { trimMessage } = require('./lib/trim-message')
+const Job = require('./job')
 const getFiles = require('./lib/get-files')
 const { loadFile } = getFiles
 
-const PORT = 8080
+const PORT = parseInt(process.env.PORT, 10) || 8080
 const app = new Koa()
 const server = http.createServer(app.callback())
 const wss = new WebSocket.Server({
@@ -49,6 +50,41 @@ router.get('/file/:name', async ctx => {
 	ctx.body = { content: await loadFile(ctx.params.name) }
 })
 
+router.get('/jobs', async ctx => {
+	ctx.body = {
+		jobs: [...workers.values()].reverse().map(worker => ({
+			pipeline: worker.pipeline,
+			filename: path.basename(worker.filepath),
+			id: worker.id,
+			hash: worker.hash,
+			options: worker.options,
+			status: worker.status,
+			initialClientAddress: worker.initialClientAddress,
+			duration: worker.duration,
+		})),
+	}
+})
+
+router.delete('/job/:id', async ctx => {
+	let worker = workers.get(ctx.params.id)
+	if (worker) {
+		worker.stop()
+		ctx.body = { stopped: true, id: worker.id }
+	} else {
+		ctx.throw(500, 'no worker found')
+	}
+})
+
+router.post('/job/:id', async ctx => {
+	let worker = workers.get(ctx.params.id)
+	if (worker) {
+		worker.restart()
+		ctx.body = { started: true, id: worker.id }
+	} else {
+		ctx.throw(500, 'no worker found')
+	}
+})
+
 router.get('/uptime', ctx => {
 	ctx.body = { uptime: Date.now() - STARTED }
 })
@@ -58,23 +94,11 @@ app.use(compress())
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-const workerPath = path.join(__dirname, 'pipeline', 'worker.js')
-
-function trimMessage(message) {
-	return JSON.parse(
-		JSON.stringify(message, (k, v) => {
-			if (typeof v === 'string' && v.length > 99) {
-				return v.substr(0, 99) + '…'
-			}
-			return v
-		})
-	)
-}
+let workers = new Map()
 
 // listen for new websocket connections
 wss.on('connection', ws => {
-	console.log('connection initiated')
-	const child = childProcess.fork(workerPath)
+	let worker
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
@@ -82,33 +106,17 @@ wss.on('connection', ws => {
 
 		console.log(trimMessage(message))
 
+		if (message.type === 'start-pipeline') {
+			worker = new Job(message)
+			workers.set(worker.id, worker)
+			worker.addClient(ws, message.ip)
+		} else if (message.type === 'follow-pipeline') {
+			worker = workers.get(message.id)
+			worker.addClient(ws, message.ip)
+		}
+
 		// forward the message to the pipeline
-		child.send(message)
-	})
-
-	ws.on('close', () => {
-		console.log('connection was closed')
-
-		if (child.connected) {
-			child.disconnect()
-		}
-	})
-
-	child.on('message', communique => {
-		// when we get a message from the pipeline
-		const message = communique
-
-		console.log(trimMessage(message))
-
-		// forward the message to the GUI
-		ws.send(JSON.stringify(message))
-
-		// detach ourselves if the pipeline has finished
-		if (message.type === 'exit' || message.type === 'error') {
-			if (child.connected) {
-				child.disconnect()
-			}
-		}
+		worker.handleClientMessage(message)
 	})
 })
 
