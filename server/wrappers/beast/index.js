@@ -8,7 +8,7 @@ const mkdir = require('make-dir')
 const randomItem = require('random-item')
 
 module.exports = beast
-async function beast(data, { quiet, particleDir } = {}) {
+async function beast(data, { quiet, particleDir = '/tmp/particles' } = {}) {
 	const dir = tempy.directory()
 
 	mkdir.sync(particleDir)
