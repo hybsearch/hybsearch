@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
+const meow = require('meow')
 const getData = require('../lib/get-data')
 const path = require('path')
 const childProcess = require('child_process')
@@ -11,8 +12,29 @@ if (process.argv.length < 3) {
 }
 
 async function main() {
-	const pipeline = process.argv[2]
-	const filepath = process.argv[3]
+	const cli = meow(
+		`
+			Usage
+			  $ hyb-pipeline [options] <pipeline> <filepath | ->
+
+			Options
+			  --beast-chain-length  Affects the BEAST chain length
+
+			Examples
+			  $ hyb-pipeline --beast-chain-length 10000 mbnb catdog.gb
+		`,
+		{
+			description: 'Control the pipeline worker',
+			flags: {
+				beastChainLength: {
+					type: 'number',
+					default: 10000000,
+				},
+			},
+		}
+	)
+
+	const [pipeline, filepath] = cli.input
 
 	console.log(`processing ${filepath}`)
 	const data = await getData(filepath)
@@ -56,7 +78,12 @@ async function main() {
 		}
 	})
 
-	child.send({ pipeline, filepath, data })
+	child.send({
+		pipeline,
+		filepath,
+		data,
+		options: { beastChainLength: cli.flags.beastChainLength },
+	})
 }
 
 main()
