@@ -87,7 +87,7 @@ async function submitJob({
 	})
 }
 
-function followJob({ socket = global.socket, pipelineId }, { filename }) {
+async function followJob({ socket = global.socket, pipelineId }, { filename }) {
 	let loader = document.querySelector('#loader')
 	loader.classList.add('loading')
 	loader.hidden = false
@@ -95,6 +95,8 @@ function followJob({ socket = global.socket, pipelineId }, { filename }) {
 	document.querySelector('#file-input').hidden = true
 	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
+
+	const ip = (await publicIp.v6()) || (await publicIp.v4())
 
 	document.title = filename
 
@@ -111,7 +113,7 @@ function followJob({ socket = global.socket, pipelineId }, { filename }) {
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'follow-pipeline', id: pipelineId }
+	let payload = { type: 'follow-pipeline', id: pipelineId, ip }
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)
