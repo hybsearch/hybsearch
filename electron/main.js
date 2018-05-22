@@ -3,6 +3,7 @@
 const {
 	app, // Module to control application life.
 	BrowserWindow, // Module to create native browser window.
+	Menu,
 } = require('electron')
 
 // catch unhandled promise rejections
@@ -68,3 +69,72 @@ app.on('activate', () => {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', createWindow)
+app.on('ready', createMenus)
+
+function createMenus() {
+	const template = [
+		{
+			label: 'File',
+			submenu: [
+				{
+					label: 'New Window',
+					click: createWindow,
+					accelerator: 'CommandOrControl+N',
+				},
+			],
+		},
+		{
+			role: 'editMenu',
+		},
+		{
+			label: 'View',
+			submenu: [
+				{ role: 'reload' },
+				{ role: 'forcereload' },
+				{ role: 'toggledevtools' },
+				{ type: 'separator' },
+				{ role: 'resetzoom' },
+				{ role: 'zoomin' },
+				{ role: 'zoomout' },
+				{ type: 'separator' },
+				{ role: 'togglefullscreen' },
+			],
+		},
+		{
+			role: 'windowMenu',
+		},
+		{
+			role: 'help',
+			submenu: [
+				{
+					label: 'Learn More',
+					click() {
+						require('electron').shell.openExternal(
+							'https://github.com/hybsearch/hybsearch'
+						)
+					},
+				},
+			],
+		},
+	]
+
+	if (process.platform === 'darwin') {
+		template.unshift({
+			label: app.getName(),
+			submenu: [
+				{ role: 'about' },
+				{ type: 'separator' },
+				{ role: 'services', submenu: [] },
+				{ type: 'separator' },
+				{ role: 'hide' },
+				{ role: 'hideothers' },
+				{ role: 'unhide' },
+				{ type: 'separator' },
+				{ role: 'quit' },
+			],
+		})
+	}
+
+	const menu = Menu.buildFromTemplate(template)
+	Menu.setApplicationMenu(menu)
+}
