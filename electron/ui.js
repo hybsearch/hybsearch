@@ -183,7 +183,7 @@ function populateJobList(jobs, baseUrl) {
 					<tr><th>Filename</th><td>${filename}</td></tr>
 					<tr><th>Status</th><td>${status}</td></tr>
 					<tr><th>ID</th><td>${id}</td></tr>
-					<tr><th>Options</th><td>${JSON.stringify(options)}</td></tr>
+					<tr><th>Options</th><td>${JSON.stringify(options, null, 2)}</td></tr>
 					${duration ? `<tr><th>Duration</th><td>${prettyMs(duration)}</td></tr>` : ''}
 					<tr><th>Started by</th><td>${initialClientAddress}</td></tr>
 				</table>
