@@ -24,7 +24,7 @@ const { removeCircularLinks } = require('../lib')
 
 let options = {
 	outlierRemovalPercentage: {
-		default: 0.5,
+		default: 0.2,
 		type: 'number',
 		label: 'outlierRemovalPercentage',
 		description: 'desc',
