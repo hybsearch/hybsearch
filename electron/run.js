@@ -131,6 +131,7 @@ function onData(phase, data) {
 		})
 
 		if (formattedNames.length > 0) {
+			container.innerHTML = ''
 			container.hidden = false
 			container.appendChild(makeTableFromObjectList(formattedNames))
 		}
@@ -138,25 +139,28 @@ function onData(phase, data) {
 		let container = document.querySelector('#jml-container')
 		container.hidden = false
 
-		document
-			.querySelector('#distributions')
-			.appendChild(makeTableFromObjectList(data.distributions))
+		let distributions = document.querySelector('#distributions')
+		distributions.innerHTML = ''
+		distributions.appendChild(makeTableFromObjectList(data.distributions))
 
-		document
-			.querySelector('#probabilities')
-			.appendChild(makeTableFromObjectList(data.probabilities))
+		let probabilities = document.querySelector('#probabilities')
+		probabilities.innerHTML = ''
+		probabilities.appendChild(makeTableFromObjectList(data.probabilities))
 
-		data.results = data.results.map(item => {
-			if (item.Probability < 0.05) {
-				return Object.assign({}, item, { __highlight: true })
-			}
-			return item
-		})
-		document
-			.querySelector('#results')
-			.appendChild(makeTableFromObjectList(data.results))
+		let results = document.querySelector('#results')
+		results.innerHTML = ''
+		results.appendChild(makeTableFromObjectList(data.results))
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
+	} else if (phase === 'significant-nonmonophyly') {
+		let container = document.querySelector(
+			'#significant-nonmonophyly-container'
+		)
+		container.hidden = false
+
+		let results = container.querySelector('#significant-nonmonophyly')
+		results.innerHTML = ''
+		results.appendChild(makeTableFromObjectList(data))
 	} else {
 		console.warn(`Client doesn't understand data for "${phase}"`)
 	}
