@@ -4,11 +4,14 @@ const execa = require('execa')
 const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
+const mkdir = require('make-dir')
 const randomItem = require('random-item')
 
 module.exports = beast
 async function beast(data, { quiet, particleDir } = {}) {
 	const dir = tempy.directory()
+
+	mkdir.sync(particleDir)
 
 	const inputName = 'input'
 	const inputFile = path.join(dir, `${inputName}.xml`)
