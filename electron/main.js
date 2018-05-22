@@ -39,6 +39,9 @@ function createWindow() {
 		height: 775,
 		backgroundColor: '#F7F7F7',
 		tabbingIdentifier: 'mainGroup',
+		webPreferences: {
+			scrollBounce: true,
+		},
 	})
 
 	// and load the index.html of the app.
