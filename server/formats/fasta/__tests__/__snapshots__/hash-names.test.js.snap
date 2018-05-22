@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`pads accession numbers to the left with 0s when they grow past one digit 1`] = `
+exports[`does not pad accession numbers to the left with 0s when they grow past one digit 1`] = `
 Object {
   "ahjmjgex1": "Emydura_victoriae__KC755189",
   "ahjmjgex10": "Emydura_victoriae__KC755188",

@@ -17,7 +17,7 @@ ggaacaatcaattattaccccacaaggaa`
 	expect(hashedNames).toMatchSnapshot()
 })
 
-test('pads accession numbers to the left with 0s when they grow past one digit', () => {
+test('does not pad accession numbers to the left with 0s when they grow past one digit', () => {
 	let input = `> Emydura_victoriae__KC755189
 ggaacaataaattatcacctcaaaagacac
 > Emydura_victoriae__KC755189
