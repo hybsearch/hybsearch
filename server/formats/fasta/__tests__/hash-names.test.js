@@ -51,5 +51,9 @@ ggaacaatcaattattaccccacaaggaa`
 
 	let hashedNames = hashNames(input)
 
+	for (let key of Object.keys(hashNames)) {
+		expect(key).toMatch(/ahjmjgex[1-9][0-9]*/)
+	}
+
 	expect(hashedNames).toMatchSnapshot()
 })
