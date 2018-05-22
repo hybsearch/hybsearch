@@ -1,6 +1,7 @@
 'use strict'
 
 const { clipboard } = require('electron')
+const path = require('path')
 const safeStringify = require('json-stringify-safe')
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
@@ -57,6 +58,8 @@ async function submitJob({
 	const ws = socket
 	const ip = (await publicIp.v6()) || (await publicIp.v4())
 
+	document.title = path.basename(filepath)
+
 	ws.addEventListener('message', packet => onMessage(packet.data))
 	ws.addEventListener('disconnect', (...args) =>
 		console.log('disconnect', ...args)
@@ -84,7 +87,7 @@ async function submitJob({
 	})
 }
 
-function followJob({ socket = global.socket, pipelineId }) {
+function followJob({ socket = global.socket, pipelineId }, { filename }) {
 	let loader = document.querySelector('#loader')
 	loader.classList.add('loading')
 	loader.hidden = false
@@ -92,6 +95,8 @@ function followJob({ socket = global.socket, pipelineId }) {
 	document.querySelector('#file-input').hidden = true
 	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
+
+	document.title = filename
 
 	const ws = socket
 
