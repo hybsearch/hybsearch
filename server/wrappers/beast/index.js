@@ -7,7 +7,7 @@ const fs = require('fs')
 const randomItem = require('random-item')
 
 module.exports = beast
-async function beast(data, {quiet, particleDir} = {}) {
+async function beast(data, { quiet, particleDir } = {}) {
 	const dir = tempy.directory()
 
 	const inputName = 'input'
@@ -50,12 +50,14 @@ async function beast(data, {quiet, particleDir} = {}) {
 
 	// process.stderr.write(execa.sync('ls', ['-l', dir]).stdout)
 
-	let dirs = fs.readdirSync(particleDir).filter(item => fs.statSync(item).isDirectory())
+	let dirs = fs
+		.readdirSync(particleDir)
+		.filter(item => fs.statSync(item).isDirectory())
 	let chosenDir = randomItem(dirs)
 
-	const log = fs.readFileSync(path.join(chosenDir, 'data.log'), 'utf-8')
-	const trees = fs.readFileSync(path.join(chosenDir, 'data.trees'), 'utf-8')
-	const species = fs.readFileSync(path.join(chosenDir, 'species.trees'), 'utf-8')
+	let log = fs.readFileSync(path.join(chosenDir, 'data.log'), 'utf-8')
+	let trees = fs.readFileSync(path.join(chosenDir, 'data.trees'), 'utf-8')
+	let species = fs.readFileSync(path.join(chosenDir, 'species.trees'), 'utf-8')
 
 	return { log, trees, species }
 }

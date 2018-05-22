@@ -115,12 +115,20 @@ let steps = [
 		// converts the aligned FASTA into Nexus for BEAST, and removes the
 		// nonmonophyletic sequences before aligning
 		input: ['aligned-fasta', 'nonmonophyletic-sequences'],
-		transform: ([data, nmSeqs], { beastChainLength, beastCpuCoreCount, beastSyncStepSize }) => {
+		transform: (
+			[data, nmSeqs],
+			{ beastChainLength, beastCpuCoreCount, beastSyncStepSize }
+		) => {
 			let monophyleticFasta = removeFastaIdentifiers(data, nmSeqs)
 			let nonmonophyleticFasta = keepFastaIdentifiers(data, nmSeqs)
 			let beastParticleDir = tempy.directory()
 			return [
-				fastaToBeast(monophyleticFasta, { chainLength: beastChainLength, particleDir: beastParticleDir, numParticles: beastCpuCoreCount, stepSize: beastSyncStepSize }),
+				fastaToBeast(monophyleticFasta, {
+					chainLength: beastChainLength,
+					particleDir: beastParticleDir,
+					numParticles: beastCpuCoreCount,
+					stepSize: beastSyncStepSize,
+				}),
 				monophyleticFasta,
 				nonmonophyleticFasta,
 				beastParticleDir,
@@ -136,7 +144,7 @@ let steps = [
 	{
 		// generates the Species Tree used by JML
 		input: ['beast-config', 'beast-particle-dir'],
-		transform: ([data, particleDir]) => [beast(data, {particleDir})],
+		transform: ([data, particleDir]) => [beast(data, { particleDir })],
 		output: ['beast-trees'],
 	},
 	{
