@@ -19,7 +19,6 @@ class Cache {
 
 		this.get = this.get.bind(this)
 		this.set = this.set.bind(this)
-		this.hash = this.hash.bind(this)
 		this.diskFilename = this.diskFilename.bind(this)
 
 		let cacheRoot = process.env.DOCKER ? `/tmp/hybsearch` : tempy.directory()
