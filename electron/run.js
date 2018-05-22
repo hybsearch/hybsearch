@@ -1,5 +1,7 @@
 'use strict'
 
+const { clipboard } = require('electron')
+const safeStringify = require('json-stringify-safe')
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
@@ -291,6 +293,7 @@ function createResultsDialog(node, result, stage) {
 	dialog.appendChild(data)
 
 	let buttons = document.createElement('menu')
+
 	let closeButton = document.createElement('button')
 	closeButton.type = 'reset'
 	closeButton.textContent = 'Close'
@@ -300,6 +303,25 @@ function createResultsDialog(node, result, stage) {
 		dialog.close()
 	})
 	buttons.appendChild(closeButton)
+
+	let copyButton = document.createElement('button')
+	copyButton.type = 'button'
+	copyButton.textContent = 'Copy to Clipboard'
+	copyButton.addEventListener('click', ev => {
+		ev.preventDefault()
+		ev.stopPropagation()
+		if (typeof result === 'string') {
+			clipboard.writeText(result)
+		} else {
+			clipboard.writeText(safeStringify(result))
+		}
+		copyButton.textContent = 'Copied!'
+		setTimeout(() => {
+			copyButton.textContent = 'Copy to Clipboard'
+		}, 1000)
+	})
+	buttons.appendChild(copyButton)
+
 	dialog.appendChild(buttons)
 
 	dialog.addEventListener('click', ev => {
