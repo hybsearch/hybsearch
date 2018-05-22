@@ -57,6 +57,8 @@ RUN mkdir /hybsearch
 RUN mkdir /hybsearch/data
 WORKDIR /hybsearch
 
+RUN java -cp /usr/local/lib/beast.jar beast.util.AddOnManager -add BEASTLabs
+
 ADD ["requirements.txt", "./"]
 RUN pip install --no-cache-dir -r requirements.txt
 
