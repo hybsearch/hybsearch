@@ -2,6 +2,7 @@
 'use strict'
 
 const meow = require('meow')
+const os = require('os')
 const getData = require('../lib/get-data')
 const path = require('path')
 const childProcess = require('child_process')
@@ -18,7 +19,9 @@ async function main() {
 			  $ hyb-pipeline [options] <pipeline> <filepath | ->
 
 			Options
-			  --beast-chain-length  Affects the BEAST chain length
+			  --beast-chain-length N    Affects the BEAST chain length
+			  --beast-cpu-core-count N  How many cores BEAST should run on
+			  --[no-]quiet              Should the output of each step be printed
 
 			Examples
 			  $ hyb-pipeline --beast-chain-length 10000 mbnb catdog.gb
@@ -30,6 +33,14 @@ async function main() {
 					type: 'number',
 					default: 10000000,
 				},
+				beastCpuCoreCount: {
+					type: 'number',
+					default: os.cpus().length,
+				},
+				quiet: {
+					type: 'boolean',
+					default: false,
+				}
 			},
 		}
 	)
@@ -61,7 +72,9 @@ async function main() {
 				let { stage, result, timeTaken } = payload
 				console.log(`completed stage: ${stage} (in ${timeTaken.toFixed(2)}ms)`)
 				console.log()
-				console.log(result)
+				if (!cli.flags.quiet) {
+					console.log(result)
+				}
 				break
 			}
 			default:
