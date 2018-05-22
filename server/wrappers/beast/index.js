@@ -52,6 +52,7 @@ async function beast(data, { quiet, particleDir } = {}) {
 
 	let dirs = fs
 		.readdirSync(particleDir)
+		.map(item => path.join(particleDir, item))
 		.filter(item => fs.statSync(item).isDirectory())
 	let chosenDir = randomItem(dirs)
 
