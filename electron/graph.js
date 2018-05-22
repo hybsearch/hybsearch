@@ -84,7 +84,7 @@ function render(newickData, newickNodes, nmResults) {
 			let name = node.name.replace(/_/g, ' ')
 			let meta = `${node.length}`
 			if (node.hasOwnProperty('_diffPercent')) {
-				meta = `${meta}, ${node._diffPercent.toFixed(4)}`
+				meta = `${meta}, ${node._diffPercent}`
 			}
 			return `${name} (${node.ident}) [${meta}]`
 		},
