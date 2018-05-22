@@ -12,24 +12,27 @@ if (process.argv.length < 3) {
 }
 
 async function main() {
-	const cli = meow(`
-		Usage
-		  $ hyb-pipeline [options] <pipeline> <filepath | ->
+	const cli = meow(
+		`
+			Usage
+			  $ hyb-pipeline [options] <pipeline> <filepath | ->
 
-		Options
-		  --beast-chain-length  Affects the BEAST chain length
+			Options
+			  --beast-chain-length  Affects the BEAST chain length
 
-		Examples
-		  $ hyb-pipeline --beast-chain-length 10000 mbnb catdog.gb
-	`, {
-		description: 'Control the pipeline worker',
-		flags: {
-			beastChainLength: {
-				type: 'number',
-				default: 10000000,
+			Examples
+			  $ hyb-pipeline --beast-chain-length 10000 mbnb catdog.gb
+		`,
+		{
+			description: 'Control the pipeline worker',
+			flags: {
+				beastChainLength: {
+					type: 'number',
+					default: 10000000,
+				},
 			},
 		}
-	})
+	)
 
 	const [pipeline, filepath] = cli.input
 
@@ -75,7 +78,12 @@ async function main() {
 		}
 	})
 
-	child.send({ pipeline, filepath, data, options: {beastChainLength: cli.flags.beastChainLength} })
+	child.send({
+		pipeline,
+		filepath,
+		data,
+		options: { beastChainLength: cli.flags.beastChainLength },
+	})
 }
 
 main()
