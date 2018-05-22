@@ -321,7 +321,22 @@ summary > h3 {
 	margin-top: 1em;
 }
 
+menu button + button {
+	margin-left: 1em;
+}
+
 .flex-row {
 	display: flex;
 	flex-flow: row nowrap;
+}
+
+.preformatted {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+dialog.pinned {
+	width: 90vw;
+	top: 5vh;
 }

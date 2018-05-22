@@ -1,5 +1,7 @@
 'use strict'
 
+const { clipboard } = require('electron')
+const safeStringify = require('json-stringify-safe')
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
@@ -172,6 +174,7 @@ function onMessage(packet) {
 			label: stage,
 			duration: timeTaken,
 			usedCache: cached,
+			result: result,
 		})
 		onData(stage, result)
 	} else if (type === 'error') {
@@ -218,7 +221,119 @@ function attachListeners() {
 	})
 }
 
-function updateLoadingStatus({ label, duration, usedCache }) {
+function makeDetailsSection(title, data) {
+	let details = document.createElement('details')
+
+	let summary = document.createElement('summary')
+	let heading = document.createElement('h2')
+	heading.textContent = title
+	summary.appendChild(heading)
+	details.appendChild(summary)
+
+	let content = document.createElement('pre')
+	content.classList.add('preformatted')
+	content.textContent = data
+
+	details.appendChild(content)
+	return details
+}
+
+function formatResult(phase, data) {
+	if (phase === 'beast-trees') {
+		let wrapper = document.createElement('div')
+
+		wrapper.appendChild(makeDetailsSection('log', data.log))
+		wrapper.appendChild(makeDetailsSection('species', data.species))
+		wrapper.appendChild(makeDetailsSection('trees', data.trees))
+
+		return wrapper
+	}
+
+	if (phase === 'jml-output') {
+		let wrapper = document.createElement('div')
+
+		let distributions = JSON.stringify(data.distributions, null, 2)
+		wrapper.appendChild(makeDetailsSection('distributions', distributions))
+		let probabilities = JSON.stringify(data.probabilities, null, 2)
+		wrapper.appendChild(makeDetailsSection('probabilities', probabilities))
+		let results = JSON.stringify(data.results, null, 2)
+		wrapper.appendChild(makeDetailsSection('results', results))
+
+		return wrapper
+	}
+
+	if (phase === 'nonmonophyletic-sequences') {
+		let wrapper = document.createElement('div')
+
+		let species = JSON.stringify(data.species, null, 2)
+		wrapper.appendChild(makeDetailsSection('species', species))
+		let nm = JSON.stringify(data.nm, null, 2)
+		wrapper.appendChild(makeDetailsSection('nm', nm))
+
+		return wrapper
+	}
+
+	let dataEl = document.createElement('pre')
+	dataEl.classList.add('preformatted')
+
+	if (typeof data !== 'string') {
+		dataEl.textContent = JSON.stringify(data, null, 2)
+		return dataEl
+	}
+
+	dataEl.textContent = data
+	return dataEl
+}
+
+function createResultsDialog(node, result, stage) {
+	let dialog = document.createElement('dialog')
+	dialog.classList.add('pinned')
+
+	let data = formatResult(stage, result)
+	dialog.appendChild(data)
+
+	let buttons = document.createElement('menu')
+
+	let closeButton = document.createElement('button')
+	closeButton.type = 'reset'
+	closeButton.textContent = 'Close'
+	closeButton.addEventListener('click', ev => {
+		ev.preventDefault()
+		ev.stopPropagation()
+		dialog.close()
+	})
+	buttons.appendChild(closeButton)
+
+	let copyButton = document.createElement('button')
+	copyButton.type = 'button'
+	copyButton.textContent = 'Copy to Clipboard'
+	copyButton.addEventListener('click', ev => {
+		ev.preventDefault()
+		ev.stopPropagation()
+		if (typeof result === 'string') {
+			clipboard.writeText(result)
+		} else {
+			clipboard.writeText(safeStringify(result))
+		}
+		copyButton.textContent = 'Copied!'
+		setTimeout(() => {
+			copyButton.textContent = 'Copy to Clipboard'
+		}, 1000)
+	})
+	buttons.appendChild(copyButton)
+
+	dialog.appendChild(buttons)
+
+	dialog.addEventListener('click', ev => {
+		ev.stopPropagation()
+	})
+
+	node.appendChild(dialog)
+
+	return dialog
+}
+
+function updateLoadingStatus({ label, duration, usedCache, result }) {
 	console.info(`finished ${label} in ${duration}ms`)
 	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
 	if (!el) {
@@ -227,6 +342,17 @@ function updateLoadingStatus({ label, duration, usedCache }) {
 	}
 	el.classList.remove('active')
 	el.classList.add('complete')
+
+	let dialog = el.querySelector('dialog')
+	if (!dialog) {
+		dialog = createResultsDialog(el, result, label)
+
+		el.addEventListener('click', ev => {
+			ev.preventDefault()
+			dialog.showModal()
+		})
+	}
+
 	usedCache && el.classList.add('used-cache')
 	el.dataset.time = prettyMs(duration)
 }
