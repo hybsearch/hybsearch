@@ -16,7 +16,7 @@ autoUpdater.checkForUpdatesAndNotify()
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow = null
+let windows = new Set()
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -33,29 +33,28 @@ const HTML_PATH = isDev
 
 function createWindow() {
 	// Create the browser window.
-	mainWindow = new BrowserWindow({
+	let win = new BrowserWindow({
 		width: 900,
 		height: 775,
 		backgroundColor: '#F7F7F7',
 	})
 
 	// and load the index.html of the app.
-	mainWindow.loadURL(HTML_PATH)
-
-	// Open the DevTools.
-	// mainWindow.openDevTools()
+	win.loadURL(HTML_PATH)
 
 	// Emitted when the window is closed.
-	mainWindow.on('closed', () => {
+	win.on('closed', () => {
 		// Dereference the window object so that it can be GCd.
-		mainWindow = null
+		windows.delete(win)
 	})
+
+	windows.add(win)
 }
 
 app.on('activate', () => {
 	// On OS X it's common to re-create a window in the app when the
 	// dock icon is clicked and there are no other windows open.
-	if (mainWindow === null) {
+	if (windows.size === 0) {
 		createWindow()
 	}
 })
