@@ -68,7 +68,6 @@ function pruneOutliers(
 		}
 	}
 
-	let toRemoveNames = []
 	let toRemoveNodes = []
 
 	// A sequence S will be removed if it is more than 20% different than a majority of the seqences
@@ -101,15 +100,11 @@ function pruneOutliers(
 			diffPercent >= outlierRemovalPercentage ||
 			gene1Length < SEQUENCE_CUTOFF_LENGTH
 		) {
-			if (node.ident) {
-				toRemoveNames.push(node.ident)
-			} else {
-				toRemoveNames.push(node.name)
-			}
-
 			toRemoveNodes.push(node)
 		}
 	}
+
+	let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 
 	// Now remove the nodes
 	let removedData = []
