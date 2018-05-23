@@ -82,11 +82,7 @@ function render(newickData, newickNodes, nmResults) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => {
 			let name = node.name.replace(/_/g, ' ')
-			let meta = `${node.length}`
-			if (node.hasOwnProperty('_diffPercent')) {
-				meta = `${meta}, ${node._diffPercent}`
-			}
-			return `${name} (${node.ident}) [${meta}]`
+			return `${name} (${node.ident}) [${node.length}]`
 		},
 		nonmonophyly: nmResults ? nmResults.nm.map(hybrid => hybrid.ident) : null,
 		onNodeClicked: onNodeClicked,
