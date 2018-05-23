@@ -320,7 +320,7 @@ function formatResult(phase, data) {
 	dataEl.classList.add('preformatted')
 
 	if (typeof data !== 'string') {
-		dataEl.textContent = JSON.stringify(data, null, 2)
+		dataEl.textContent = safeStringify(data, null, 2)
 		return dataEl
 	}
 
@@ -386,15 +386,16 @@ function updateLoadingStatus({ label, duration, usedCache, result }) {
 	el.classList.remove('active')
 	el.classList.add('complete')
 
-	let dialog = el.querySelector('dialog')
-	if (!dialog) {
-		dialog = createResultsDialog(el, result, label)
-
-		el.addEventListener('click', ev => {
-			ev.preventDefault()
-			dialog.showModal()
-		})
-	}
+	el.addEventListener('click', ev => {
+		ev.preventDefault()
+		el.classList.add('opening')
+		let dialog = el.querySelector('dialog')
+		if (!dialog) {
+			dialog = createResultsDialog(el, result, label)
+		}
+		dialog.showModal()
+		el.classList.remove('opening')
+	})
 
 	usedCache && el.classList.add('used-cache')
 	el.dataset.time = prettyMs(duration)

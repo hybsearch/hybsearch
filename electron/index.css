@@ -99,6 +99,10 @@ section {
 	color: var(--navy);
 }
 
+#loader .checkmark.opening {
+	color: var(--medium-gray);
+}
+
 #loader .checkmark.used-cache {
 	color: var(--green);
 }
