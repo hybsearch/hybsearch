@@ -167,19 +167,19 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 			}
 
 			// We also need to check if removing the hybrids of this species made _another_
-            // species monophyletic. If it has, then the hybrids in that species are not 
-            // really hybrids and should be unflagged
-            for(let otherName in hybridSpeciesByName){
-            	if(otherName === name){
-            		continue 
-            	}
-            	if(isSpeciesMonophyletic(rootNodeCopy,otherName)){
-            		let otherHybrids = hybridSpeciesByName[otherName]
-            		for (let hybrid of otherHybrids) {
+			// species monophyletic. If it has, then the hybrids in that species are not
+			// really hybrids and should be unflagged
+			for (let otherName in hybridSpeciesByName) {
+				if (otherName === name) {
+					continue
+				}
+				if (isSpeciesMonophyletic(rootNodeCopy, otherName)) {
+					let otherHybrids = hybridSpeciesByName[otherName]
+					for (let hybrid of otherHybrids) {
 						unflag.push(hybrid.ident)
 					}
-            	}
-            }
+				}
+			}
 		}
 		remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 	}
