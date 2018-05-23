@@ -168,6 +168,38 @@ function onData(phase, data) {
 		let results = container.querySelector('#significant-nonmonophyly')
 		results.innerHTML = ''
 		results.appendChild(makeTableFromObjectList(data))
+	} else if (phase === 'newick-diff-records') {
+		let container = document.querySelector('#newick-diff-records-container')
+		container.hidden = false
+
+		let results = container.querySelector('#newick-diff-records')
+		results.innerHTML = '<summary>Diff Records</summary>'
+		for (let [node1, relatives] of Object.entries(data)) {
+			let block = document.createElement('div')
+			block.innerHTML = `<h3>## ${node1}</h3>`
+
+			let list = document.createElement('ul')
+			for (let [node2, distance] of Object.entries(relatives)) {
+				let item = document.createElement('li')
+				item.innerText = `${node2}: ${distance}`
+				list.appendChild(item)
+			}
+			block.appendChild(list)
+
+			results.appendChild(block)
+		}
+
+		let copyButton = document.createElement('button')
+		copyButton.textContent = 'Copy'
+		copyButton.addEventListener('click', ev => {
+			ev.preventDefault()
+			// use innertext here for the formatting
+			clipboard.writeText(results.innerText)
+			copyButton.textContent = 'Copied!'
+		})
+
+		let summary = results.querySelector('summary')
+		summary.parentNode.insertBefore(copyButton, summary.nextSibling)
 	} else {
 		console.warn(`Client doesn't understand data for "${phase}"`)
 	}
