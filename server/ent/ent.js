@@ -199,13 +199,11 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 		}
 
 		// We initially assume we're going to remove everybody
-		let toRemove = []
 		let collectedHybridIdents = {}
-		for (let hybrid of results.nm) {
-			if (hybrid.name === speciesName) {
-				toRemove.push(hybrid.ident)
-			}
-		}
+		let toRemove = results.nm
+			.filter(hybrid => hybrid.name === speciesName)
+			.map(hybrid => hybrid.ident)
+
 		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
 		let isMono = false
 
