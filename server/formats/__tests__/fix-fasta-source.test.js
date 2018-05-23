@@ -60,4 +60,3 @@ test('removes entries labelled "UNVERIFIED"', () => {
 	let output = fixFastaSource(input)
 	expect(parseFasta(output)[0].species).toBe('Pelochelys_cantorii__JN232533x1')
 })
-
