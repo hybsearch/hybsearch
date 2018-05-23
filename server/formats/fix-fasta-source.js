@@ -1,5 +1,6 @@
 'use strict'
 const { parseFasta } = require('./fasta/parse')
+const { buildFasta } = require('./fasta/build')
 
 module.exports.fixFastaSource = fixFastaSource
 function fixFastaSource(fasta) {
@@ -18,5 +19,5 @@ function fixFastaSource(fasta) {
 		return { species, sequence }
 	})
 
-	return data
+	return buildFasta(data)
 }
