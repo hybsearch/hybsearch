@@ -76,21 +76,6 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	addParent(rootCopy)
 
 	// Find just one individual of the species
-	function findIndividualsOfSpecies(startNode, targetSpeciesName) {
-		let allIndividuals = []
-		function find(node) {
-			if (node.branchset) {
-				node.branchset.forEach(find)
-			} else {
-				if (node.name === targetSpeciesName) {
-					allIndividuals.push(node)
-				}
-			}
-		}
-		find(startNode)
-		return allIndividuals
-	}
-
 	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
 
 	if (allIndividuals.length === 0) {
@@ -111,6 +96,10 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 		leafNodes = findIndividualsOfSpecies(individual, speciesName)
 	}
 	return individual
+}
+
+function findIndividualsOfSpecies(rootNode, speciesName) {
+	return getLeafNodes(rootNode).filter(node => node.name === speciesName)
 }
 
 // Given a species and a tree, will return true if all individuals
@@ -175,17 +164,7 @@ function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 
 // Check if we've flagged the entire species. If so, start unflagging
 function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
-	let allIndividuals = []
-
-	function getAllIndividuals(node) {
-		if (!node.branchset) {
-			allIndividuals.push(node)
-		} else {
-			node.branchset.forEach(getAllIndividuals)
-		}
-	}
-
-	getAllIndividuals(rootNode)
+	let allIndividuals = getLeafNodes(rootNode)
 
 	// Count number of hybrids for each species
 	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
