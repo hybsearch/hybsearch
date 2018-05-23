@@ -2,13 +2,13 @@
 
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
+const countBy = require('lodash/countBy')
+const groupBy = require('lodash/groupBy')
 const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
+const { getLeafNodes } = require('../lib/get-leaf-nodes')
 const { parseFasta } = require('../formats/fasta/parse')
 const hammingDistance = require('../hamdis/hamming-distance')
-
-const ENABLE_DEBUG = false
-let debug = ENABLE_DEBUG ? console.log.bind(console) : () => {}
 
 let label = node => `${node.name} (${node.ident})`
 const LABEL_DIVIDER = '__'
@@ -76,21 +76,6 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	addParent(rootCopy)
 
 	// Find just one individual of the species
-	function findIndividualsOfSpecies(startNode, targetSpeciesName) {
-		let allIndividuals = []
-		function find(node) {
-			if (node.branchset) {
-				node.branchset.forEach(find)
-			} else {
-				if (node.name === targetSpeciesName) {
-					allIndividuals.push(node)
-				}
-			}
-		}
-		find(startNode)
-		return allIndividuals
-	}
-
 	let allIndividuals = findIndividualsOfSpecies(rootCopy, speciesName)
 
 	if (allIndividuals.length === 0) {
@@ -113,6 +98,10 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	return individual
 }
 
+function findIndividualsOfSpecies(rootNode, speciesName) {
+	return getLeafNodes(rootNode).filter(node => node.name === speciesName)
+}
+
 // Given a species and a tree, will return true if all individuals
 // in this species are found under the most recent common ancestor, and no other
 // individuals are found under this ancestor
@@ -121,15 +110,7 @@ function isSpeciesMonophyletic(rootNode, speciesName) {
 	let MCRA = getMostRecentCommonAncestor(rootNode, speciesName)
 
 	// Determine whether everything under that node is of the same species
-	let leafNodes = []
-	const getLeafNodes = node => {
-		if (node.branchset) {
-			node.branchset.forEach(getLeafNodes)
-		} else {
-			leafNodes.push(node)
-		}
-	}
-	getLeafNodes(MCRA)
+	let leafNodes = getLeafNodes(MCRA)
 
 	let allEqual = leafNodes.every(n => n.name === speciesName)
 	return allEqual
@@ -138,16 +119,8 @@ function isSpeciesMonophyletic(rootNode, speciesName) {
 // We only want hybrids that, once removed, make their species monophyletic
 // Check if all the flagged ones have this property. Otherwise unflag them
 function unflagIfRemovingDoesNotFix(results, rootNode) {
-	let hybridSpeciesByName = {}
-	let totalHybridSpecies = 0
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesByName[speciesName] === undefined) {
-			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies += 1
-		}
-		hybridSpeciesByName[speciesName].push(hybrid)
-	}
+	let hybridSpeciesByName = groupBy(results.nm, hybrid => hybrid.name)
+	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
@@ -191,36 +164,13 @@ function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 
 // Check if we've flagged the entire species. If so, start unflagging
 function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
-	let allIndividuals = []
+	let allIndividuals = getLeafNodes(rootNode)
 
-	function getAllIndividuals(node) {
-		if (!node.branchset) {
-			allIndividuals.push(node)
-		} else {
-			node.branchset.forEach(getAllIndividuals)
-		}
-	}
-
-	getAllIndividuals(rootNode)
 	// Count number of hybrids for each species
-	let hybridSpeciesCount = {}
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesCount[speciesName] === undefined) {
-			hybridSpeciesCount[speciesName] = 0
-		}
-		hybridSpeciesCount[speciesName] += 1
-	}
+	let hybridSpeciesCount = countBy(results.nm, hybrid => hybrid.name)
 
 	// Count number of individuals in each species
-	let totalSpeciesCount = {}
-	for (let individual of allIndividuals) {
-		let speciesName = individual.name
-		if (totalSpeciesCount[speciesName] === undefined) {
-			totalSpeciesCount[speciesName] = 0
-		}
-		totalSpeciesCount[speciesName] += 1
-	}
+	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
 
 	for (let speciesName in hybridSpeciesCount) {
 		// If we've flagged every individual in this species
@@ -281,7 +231,6 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 // and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
 	if (node.branchset) {
-		debug('has branchset')
 		let combinations = combs(node.branchset, 2)
 
 		let speciesList = []
@@ -294,14 +243,11 @@ function recursiveSearch(node, nmInstances = []) {
 			let resultsB = recursiveSearch(speciesSet[0], nmInstances)
 			let speciesListB = resultsB.species
 
-			debug('speciesListA:', speciesListA, 'speciesListB', speciesListB)
-
 			const speciesChecker = otherSpeciesList => species1 => {
 				const otherSpeciesNames = otherSpeciesList.map(s => s.name)
 
 				let hasName = otherSpeciesNames.includes(species1.name)
 				let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
-				debug(`included: ${hasName}; not all equal: ${notAllEqual}`)
 
 				if (hasName && notAllEqual) {
 					otherSpeciesList.forEach(species3 => {
@@ -309,13 +255,8 @@ function recursiveSearch(node, nmInstances = []) {
 							const count = nmInstances.filter(sp => sp === species3).length
 
 							if (!count) {
-								debug(`nmMark called on ${species3}`)
-								debug(`nonmonophyly: ${label(species3)}`)
-
 								nmInstances.push(species3)
-
 								forRemoval.push(species3.ident)
-								debug(`removing from A ${label(species3)}`)
 							}
 						}
 					})
@@ -338,11 +279,9 @@ function recursiveSearch(node, nmInstances = []) {
 
 		speciesList = uniqBy(speciesList, 'ident')
 
-		debug('speciesList', speciesList)
 		return { species: speciesList, nm: nmInstances }
 	}
 
-	debug(`no branchset, name: ${node.name}, ident: ${node.ident}`)
 	return { species: [node], nm: nmInstances }
 }
 
