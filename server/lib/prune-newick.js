@@ -94,7 +94,6 @@ function pruneOutliers(
 		}
 
 		let diffPercent = diffCount / (leafNodes.length - 1)
-		node._diffPercent = diffPercent
 
 		if (
 			diffPercent >= outlierRemovalPercentage ||
