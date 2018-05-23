@@ -1,5 +1,6 @@
 'use strict'
 
+const isDev = require('electron-is-dev')
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
@@ -11,6 +12,11 @@ const { attachListeners, follow } = require('./run')
 attachListeners()
 
 const fetchJson = (...args) => fetch(...args).then(r => r.json())
+
+if (!isDev) {
+	// set the server to default to thing3 in production
+	document.querySelector('#server-url').value = 'ws://thing3.cs.stolaf.edu:80/'
+}
 
 global.socket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
