@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emydura-short.fasta 1`] = `
+Array [
+  Object {
+    "sequence": "-ggaacaataaattatcacctcaaaagacacataaaaccacaggaaccccta-ctcaaccataaaaaacacaaatccactattaaaaatcattaacaacacctttattgatctccccaccccatctaacatctctactttatgaaactttggttcattactaggggcatgcctcattctacaactagccacaggaatcttcttagctatacactactcatctgatatttccatagcattctcatcaatctcccacatccaacgagacgttcaatatggctgactaattcgaaatatacacgctaacggtgcttcattattctttatatgcatttacctccatattggacgaggaatctactacggttcatacctttacaagaaaacctgaaacactggagtaatattactactcctagtcatagccactgcattcgtgggctacgtactaccatgaggacaaatatcattctgaggagctacagtaatcaccaatctcctatcagccattccatatgtaggccctacacttgtagaatgaatttgaggggggttctccgtagataacgccacccttacccgattctttacattccacttcctaatcccattcgccatcctaggaataactatactacatctactactactacatgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcctataaagatctactaggccttattctaataataacactcctactcacccttaccctattctaccctaacctactaggagatccagacaactttacaccagccaacccactaaccacc",
+    "species": "Emydura_subglobosa__KC755190",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaagacacataaaaccacaggaacccctactccaaccataaaaaacacaaatccactattaaaaatcattaacaacaccttcgttgatcttcccaccccatccaacatctccgctttatgaaacttcggatcattactaggagcatgcctcattctacaactagccacaggaatcttcttagctatacactactcatccgacatttctacagcattctcatcaatttcccacatccaacgagatgttcaatatggatgacttattcgaaatatacacgccaacggtgcttcattattctttatatgcatctaccttcatattggacgagggatctactacggttcctacctttacaacaaaacctgaaacactggagtaatattactactcctagttatagccactgcattcgtgggctacgtgctaccatgaggccaaatatcattctgaggggctacagtaatcaccaacctattatcagccattccatacgtaggcccaacacttgtagagtggatttgaggagggttctccgtagacaacgctactcttactcgattcttcacatttcactttctaatcccattcgccatcctaggaataaccctactacacctcctacttctacacgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcgtataaagacctactaggcctcatcctaataattatatgtctactcacccttaccctatttcacccaaacctactaggagatccagacaactttacaccagccaatccactaaccacc",
+    "species": "Emydura_victoriae__KC755189",
+  },
+  Object {
+    "sequence": "ggaacaatcaattattaccccacaaagacacataaaaccacaggaacctctactccaaccataaaaaacacaaatccactattaaaaatcattaacaacaccttcgttgatcttcccaccccatccaacatctccgctttatgaaacttcggatcattactaggagcatgcctcattctacaactagccacaggaatcttcttagctatacactactcatccgacatttctacagcattctcatcaatttcccacatccaacgagatgttcaatatggatgacttattcgaaatatacacgccaacggtgcttcattattctttatatgcatctaccttcatattggacgagggatctactacggttcctacctttacaacaaaacctgaaacactggagtaatattactactcctagttatagccactgcattcgtgggctacgtgctaccatgaggccaaatatcattctgaggggctacagtaatcaccaacctattatcagccattccatacgtaggcccaacacttgtagagtggatttgaggagggttctccgtagacaacgctactcttactcgattcttcacatttcactttctaatcccattcgccatcctaggaataaccctactacacctcctacttctacacgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcgtataaagacctactaggcctcatcctaataattatatgtctactcacccttaccctatttcacccaaacctactaggagatccagacaactttacaccagccaatccactaaccacc",
+    "species": "Emydura_victoriae__KC755188",
+  },
+  Object {
+    "sequence": "-ggaacaataa--attatccccaaaagacacataaaactacaggaa-cccctactcaaccataaaaaacacaaacccactactaaaaatcattaataatacctttattgatctccccactccacctaacatctccgctttgtgaaactttggatcattactaggggcatgcctcgctctacaactagccacaggaatcttcttagcgatacactactcatccgatatctccatagcattctcatcaatctcccacatccaacgagatgttcaatatggctgactaattcgaaatatacacgccaacggtgcttcattattctttatatgcatttacctccatattggacgaggaatttactacggttcatatctttacaacaaaacctgaaacactggggtaatattactactcctagtcatagccactgcattcgtgggatacgtactaccatgaggacaaatatcattctgaggagctacagtaatcaccaatctcttatcagccattccatacgtaggccctacacttgtagagtgaatctgagggggattctccgtagatagtgctacccttactcgattcttcacattccactttctaatcccattcgctatcctagggataactatactacatctactactgctacatgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcttataaagatctactaggcctcattctgataatcacacttctactcactcttaccctattctaccccaacctactaggagacccagacaactttacaccagccaacccactaaccacc",
+    "species": "Emydura_tanybaraga__KC755187",
+  },
+  Object {
+    "sequence": "-ggaacaataa--attatccccaaaagacacataaaactacaggaa-cccctactcaaccataaaaaacacaaacccactattaaaaatcattaataatacctttattgacctccccactccacctaacatctccgctttgtgaaactttggatcattactaggggcatgcctcgctctacaactagccacaggaatcttcttagcgatacactactcatccgatatctccatagcattctcatcaatctcccacatccaacgagatgttcaatatggctgactaattcgaaatatacacgccaacggtgcttcattattctttatatgcatttacctccatattggacgaggaatttactacggttcatatctttacaacaaaacctgaaacactggggtaatattactactcctagtcatagccactgcattcgtgggatacgtactaccatgaggacaaatatcattctgaggagctacagtaatcaccaatctattatcagccattccatacgtaggccctacacttgtagagtgaatctgagggggattctccgtagatagtgctacccttactcgattcttcacattccactttctaatcccattcgctatcctagggataactatactacatctactattgctacatgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcttataaagatctactaggcctcattctgataatcacacttctactcactcttaccctattctaccccaacctactaggagacccagacaactttacaccagccaacccactaaccacc",
+    "species": "Emydura_tanybaraga__KC755186",
+  },
+  Object {
+    "sequence": "-ggaacaataaattaccaccccaaaagacacataaaaccacaggaacccctaccccaaccataaaaaacacaaatccactattaaaaatcattaacaataccttcattgacctccccaccccatctaacatctccgctctatgaaactttgggtcattactaggggcatgccttattctacaactagccacaggaatcttcttagctatacactactcatccgacatttccatagcattctcatcaatctcccacatccaacgagacgttcaatatggctgactaattcgaaatatacacgctaacggtgcttcattattctttatatgcatttacctccatattgggcgaggaatttactacggttcatacctttacaagaaaacttgaaacactggagtaatattactactcctagtaatagccactgcattcgtgggctacgtactaccatgaggacaaatatcattctgaggggctacagtaatcactaatcttctatcagccattccatatgtaggccctacacttgtagaatgaatttgaggaggattctccgtagataacgccacccttacccgattctttacattccactttctaatcccattcgccatcctgggaataactatactacatctactactactacatgaaacaggatcaaataacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcttataaagacctactaggccttattctaataatcacactcctactcacccttaccctgttctaccccaacctactaggagacccagacaactttacaccagccaacccactgaccacc",
+    "species": "Emydura_subglobosa__KC755185",
+  },
+  Object {
+    "sequence": "-ggaacaataaattacctccccaaaagacacataaaactacaggaacccctacctcaaccataaaaaacacaaacccactattaaaaatcattaataatacctttattgatctccccactccacctaacatctccgctttgtgaaactttggatcattactaggggcatgcctcgctctacaactagccacaggaatcttcttagcgatacactactcatctgatatctccatagcattctcatcaatctcccacatccaacgagatgttcaatatggctgactaattcgaaatatacacgccaacggtgcttcattattctttatatgcatttacctccatattggacgaggaatttactacggttcatacctttacaacaaaacctgaaacactggggtaatattactactcctagtcatagccactgcattcgtgggatacgtactaccatgaggacaaatatcattctgaggagctacagtaatcaccaacctcttatcagccattccatacgtaggccctacacttgtagagtgaatctgagggggattctccgtagatagtgctacccttactcgattcttcacattccactttctaatcccattcgctatcctagggataactatactacatctactactgctacatgaaacaggatcaaacaacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcttataaagatctactaggcctcattctgataatcacacttctactcactcttaccctattctaccccaacctactaggagacccagacaactttacaccagccaacccactaaccacc",
+    "species": "Emydura_subglobosa__KC755184",
+  },
+  Object {
+    "sequence": "-ggaacaatcaattattacccacaaagacacataaaaccacaggaacctctactccaaccataaaaaacacaaatccactattaaaaatcattaataacacctttgttgatcttcccaccccatccaatatctccgccttatgaaacttcggatcattactaggggcatgcctcattctacaactagccacaggaattttcttagccatacactactcatccgacatttctacagcattctcatcaatttcccacatccaacgagatgttcaatatggatgacttattcgaaatatacacgccaacggtgcttcattattctttatatgcatctaccttcatattggacgaggaatctattacggttcctacctttacaataaaacctgaaacactggagtaatattactactactagtcatagccactgcattcgtaggctacgtactaccatgaggccaaatatcattctgaggggctacagtaatcaccaacctattatcagccatcccatacgtaggcccaacacttgtagagtgaatttgaggagggttctccgtagacaacgccacccttactcgattcttcacatttcactttctaatcccattcgccatcctaggaataaccctactacacctcctacttctacacgaaacaggatcaaataacccaacaggactaaactcaaactgtgacaaaatcccattccacccatatttctcgtataaagacctactaggactcatcctaataatcatatgtctacttaccctcaccctattttacccaaacctactaggagatccagacaactttacaccagccaatccactaaccact",
+    "species": "Emydura_macquarii__KC755183",
+  },
+]
+`;
+
+exports[`outpluscox1.fasta 1`] = `
+Array [
+  Object {
+    "sequence": "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ACTAACCATAGCCACCGCATTCATAGGATACGTACTACCATGAGGGCAAATATCCTTCTGAGG------GGCCACCGTAATCACAAACCTACTATCAGCCGTCCCCTATATCGGCACCACAATAGTACAATGGGTCTGAGGAGGCTTCTCCGTAGACAATGCCA---------CCCTAAC---------------ACGA---------TTCTTCACCATACACTTCCTACTTCCATTCATAATCGCAGGAATAACCATAGT--ACATCTACTATTCCTACACGAAACTGGATCAAACAACCCAATAGGACTTAACTCAAACACAGACAAAATCCC-GTTCCATCCCTACTTCTCATACAAAGACCTACTGGGCCTAACTGTAATACTAACCACACTACTATCTATCGCCATATTTTACCCAAACCTATTGGGGGACCCAGACAACTTCACGCCAGCCAACCCACTATCCACCCCGCCCCACATCAAACCAGAATGATACTTTCTATTCGCATATGCCATCTTACGATCAATCCCAAACAAATTAGGCGGAGTCCTAGCCTTACTACTATCCATCCTAGTGCTATTCACCCTCCCCATAGTCCACACATCAAAACAACGAACACTTACCTTCCGACCAATCACCCAAACCTTATTCTGACTATTCGTAGCCAACCTAATAGTACTGACATGAATTGGAGGTCAACCAGTAGAAAACCCATTCATTCTTATCGGACAAACAGCCTCCATCCTCTATTTCCTAATCTTACTCGTACTAATACC----------------------------------------------------------------------",
+    "species": "Trionyx_triunguis__HQ012626x1",
+  },
+  Object {
+    "sequence": "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ACTAACCATAGCCACCGCATTCATAGGATACGTACTACCATGAGGGCAAATATCCTTCTGAGG------GGCCACCGTAATCACAAACCTACTATCAGCCGTCCCCTATATCGGCACCACAATAGTACAATGGGTCTGAGGAGGCTTCTCCGTAGACAATGCCA---------CCCTAAC---------------ACGA---------TTCTTCACCATACACTTCCTACTTCCATTCATAATCGCAGGAATAACCATAGT--ACATCTACTATTCCTACACGAAACTGGATCAAACAACCCAATAGGACTTAACTCAAACACAGACAAAATCCC-GTTCCATCCCTACTTCTCATACAAAGACCTACTGGGCCTAACTGTAATACTAACCACACTACTATCTATCGCCATATTTTACCCAAACCTATTGGGGGACCCAGACAACTTCACGCCAGCCAACCCACTATCCACCCCGCCCCACATCAAACCAGAATGATACTTTCTATTCGCATATGCCATCTTACGATCAATCCCAAACAAATTAGGCGGAGTCCTAGCCTTACTACTATCCATCCTAGTGCTATTCACCCTCCCCATAGTCCACACATCAAAACAACGAACACTTACCTTCCGACCAATCACCCAAACCTTATTCTGACTATTCGTAGCCAACCTAATAGTACTGACATGAATTGGAGGTCAACCAGTAGAAAACCCATTCATTCTTATCGGACAAACAGCCTCCATCCTCTATTTC---------------------------------------------------------------------------------------------",
+    "species": "Trionyx_triunguis__HQ012625x1",
+  },
+]
+`;

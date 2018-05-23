@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+'use strict'
+
+const getData = require('../lib/get-data')
+const {fixFastaSource} = require('./fix-fasta-source')
+
+async function main() {
+	let file = process.argv[2]
+
+	if (!file && process.stdin.isTTY) {
+		console.error('usage: hyb-fix-fasta-source (<input> | -)')
+		process.exit(1)
+	}
+
+	let data = await getData(file)
+	let fasta = fixFastaSource(data)
+
+	// let serialized = JSON.stringify(fasta)
+	console.log(fasta)
+}
+
+if (require.main === module) {
+	main()
+}
