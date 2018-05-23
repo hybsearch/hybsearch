@@ -105,22 +105,27 @@ function pruneOutliers(
 	}
 
 	// Now remove the nodes
-	let removedData = []
 	if (toRemoveNodes.length > 0) {
-		removedData = toRemoveNodes.map(node => ({
-			name: node.name,
-			length: node.length,
+		let removedData = toRemoveNodes.map(({ name, length }) => ({
+			name,
+			length,
 		}))
-
 		let toRemoveNames = toRemoveNodes.map(node => node.name)
+
 		removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
 		delete newick.length
+
+		return {
+			prunedNewick: newick,
+			removedData: removedData,
+			diffRecords: diffRecords,
+		}
 	}
 
 	return {
 		prunedNewick: newick,
-		removedData: removedData,
+		removedData: [],
 		diffRecords: diffRecords,
 	}
 }
