@@ -23,6 +23,6 @@ for (const file of files) {
 
 		let removed = removedData.map(node => node.name)
 
-		expect(removed).toMatchSpecificSnapshot(`./__snapshots__/${file}.hybsnap`)
+		expect(removed).toMatchSpecificSnapshot(`./__snapshots__/${file}.removals.hybsnap`)
 	})
 }
