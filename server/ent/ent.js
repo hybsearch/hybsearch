@@ -214,11 +214,11 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 			// removed ones are the true hybrids. Everyone else is unflagged
 			let shortestDist
 			let closestHybrid
-			for (let hybrid of results.nm) {
-				if (
-					hybrid.name === speciesName &&
-					!collectedHybridIdents[hybrid.ident]
-				) {
+
+			results.nm
+				.filter(hybrid => hybrid.name === speciesName)
+				.filter(hybrid => !collectedHybridIdents[hybrid.ident])
+				.forEach(hybrid => {
 					let dist = getSmallestInterSpeciesDistance(hybrid, sequenceMap)
 					if (shortestDist === undefined) {
 						shortestDist = dist
@@ -227,8 +227,7 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 						shortestDist = dist
 						closestHybrid = hybrid
 					}
-				}
-			}
+				})
 
 			// The closest one to a different species is probably a hybrid, so
 			// let's not remove it
