@@ -35,7 +35,7 @@ function pruneOutliers(
 
 	for (let i = 0; i < leafNodes.length; i++) {
 		let node = leafNodes[i]
-		let species1 = node.ident ? node.name + '__' + node.ident : node.name
+		let species1 = node.name
 		distCache[i] = {}
 		// Compute actual gene length
 		geneLength[i] = 0
@@ -55,9 +55,7 @@ function pruneOutliers(
 				continue
 			}
 
-			let species2 = leafNodes[j].ident
-				? leafNodes[j].name + '__' + leafNodes[j].ident
-				: leafNodes[j].name
+			let species2 = leafNodes[j].name
 
 			if (!sequenceMap[species2]) {
 				throw new Error(`could not find ${species2}`)
@@ -116,7 +114,7 @@ function pruneOutliers(
 			length: node.length,
 		}))
 
-		let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
+		let toRemoveNames = toRemoveNodes.map(node => node.name)
 		removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
 		delete newick.length
