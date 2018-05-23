@@ -7,10 +7,12 @@ const genbankToFasta = require('./genbank-to-fasta')
 const nexusToFasta = require('./nexus-to-fasta')
 const fasta = require('./fasta')
 const nexus = require('./nexus')
+const { fixFastaSource } = require('./fix-fasta-source')
 
 module.exports = {
 	fastaToNexus: fastaToNexus,
 	fastaToBeast: fastaToBeast,
+	fixFastaSource: fixFastaSource,
 	genbankToFasta: genbankToFasta,
 	nexusToFasta: nexusToFasta,
 	parseFasta: fasta.parse,
