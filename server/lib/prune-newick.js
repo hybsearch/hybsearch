@@ -4,10 +4,10 @@ This file will prune a newick tree to remove genes that are too dissimilar.
 
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
+const { removeNodes } = require('./remove-nodes')
 const SEQUENCE_CUTOFF_LENGTH = 300
 
 module.exports.pruneOutliers = pruneOutliers
-module.exports.removeNodes = removeNodes
 
 function pruneOutliers(
 	newick,
@@ -130,31 +130,6 @@ function pruneOutliers(
 	return {
 		prunedNewick: newick,
 		removedData: removedData,
-	}
-}
-
-function removeNodes(node, identArray) {
-	if (node.branchset) {
-		let newBranchset = []
-		for (let child of node.branchset) {
-			let include = true
-
-			if (!child.branchset) {
-				if (
-					(child.ident && identArray.indexOf(child.ident) !== -1) ||
-					identArray.indexOf(child.name) !== -1
-				) {
-					include = false
-				}
-			}
-			if (include) {
-				newBranchset.push(child)
-			}
-
-			removeNodes(child, identArray)
-		}
-
-		node.branchset = newBranchset
 	}
 }
 
