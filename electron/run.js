@@ -48,6 +48,15 @@ function run() {
 	return false
 }
 
+async function getIp() {
+	try {
+		return (await publicIp.v6()) || (await publicIp.v4())
+	} catch (err) {
+		// return the "unspecified address" address
+		return '::'
+	}
+}
+
 async function submitJob({
 	socket = global.socket,
 	pipeline,
@@ -56,7 +65,7 @@ async function submitJob({
 	options,
 }) {
 	const ws = socket
-	const ip = (await publicIp.v6()) || (await publicIp.v4())
+	const ip = await getIp()
 
 	document.title = path.basename(filepath)
 
