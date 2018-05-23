@@ -19,7 +19,7 @@ for (const file of files) {
 
 		let fasta = fs.readFileSync(path.join(base, file) + '.fasta', 'utf-8')
 
-		let { removedData, diffRecords } = pruneOutliers(inputTree, fasta)
+		let { removedData, diffRecords, prunedNewick } = pruneOutliers(inputTree, fasta)
 
 		let removed = removedData.map(node => node.name)
 		let diffs = new Map(
@@ -31,6 +31,9 @@ for (const file of files) {
 
 		expect(removed).toMatchSpecificSnapshot(
 			`./__snapshots__/${file}.removals.hybsnap`
+		)
+		expect(prunedNewick).toMatchSpecificSnapshot(
+			`./__snapshots__/${file}.tree.hybsnap`
 		)
 		expect(diffs).toMatchSpecificSnapshot(
 			`./__snapshots__/${file}.diffs.hybsnap`

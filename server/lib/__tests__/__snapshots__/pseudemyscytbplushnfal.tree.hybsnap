@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Object {
+  "branchset": Array [
+    Object {
+      "branchset": Array [
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.001512873,
+              "name": "Pseudemys_suwanniensis__FLMNH135541",
+            },
+            Object {
+              "length": 0.001512873,
+              "name": "Pseudemys_suwanniensis__FLMNH11115",
+            },
+            Object {
+              "length": 0.001512873,
+              "name": "Pseudemys_rubriventris__FLMNH150355",
+            },
+          ],
+          "length": 0.001501492,
+          "name": "",
+        },
+        Object {
+          "branchset": Array [
+            Object {
+              "length": 0.0004597249,
+              "name": "Pseudemys_nelsoni__FLMNH52686",
+            },
+            Object {
+              "length": 0.0004597249,
+              "name": "Pseudemys_nelsoni__FLMNH143606",
+            },
+          ],
+          "length": 0.00255464,
+          "name": "",
+        },
+      ],
+      "length": 0.08246185,
+      "name": "",
+    },
+    Object {
+      "branchset": Array [
+        Object {
+          "length": 0.01214438,
+          "name": "Pseudemys_concinna__NA",
+        },
+        Object {
+          "length": 0.01214438,
+          "name": "Pseudemys_concinna__NA2",
+        },
+      ],
+      "length": 0.07333183,
+      "name": "",
+    },
+  ],
+  "name": "",
+}
+`;
