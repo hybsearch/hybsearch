@@ -5,6 +5,7 @@ const fromPairs = require('lodash/fromPairs')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
 const {
 	genbankToFasta,
+	fixFastaSource,
 	fastaToBeast,
 	hashFastaSequenceNames,
 	fastaToPhylip,
@@ -43,7 +44,9 @@ let steps = [
 		// the first step: ensures that the input is converted to FASTA
 		input: ['source'],
 		transform: ([{ filepath, contents }]) =>
-			filepath.endsWith('.fasta') ? [contents] : [genbankToFasta(contents)],
+			filepath.endsWith('.fasta')
+				? [fixFastaSource(contents)]
+				: [genbankToFasta(contents)],
 		output: ['initial-fasta'],
 	},
 	{
