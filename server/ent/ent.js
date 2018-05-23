@@ -65,12 +65,14 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	let rootCopy = JSON.parse(JSON.stringify(rootNode))
 	// Add parent references to each node
 	function addParent(node) {
-		if (node.branchset) {
-			for (let child of node.branchset) {
-				child.parent = node
-			}
-			node.branchset.forEach(addParent)
+		if (!node.branchset) {
+			return
 		}
+
+		for (let child of node.branchset) {
+			child.parent = node
+		}
+		node.branchset.forEach(addParent)
 	}
 
 	addParent(rootCopy)
@@ -123,52 +125,57 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
 	// For each species found (if at least 2)
-	if (totalHybridSpecies > 1) {
-		let unflag = []
-		for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
-			// remove the flagged hybrids and check if their species becomes monophyletic
-			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+	if (totalHybridSpecies <= 1) {
+		return
+	}
 
-			// if the species is still nonmono, then we unflag these
-			if (!isSpeciesMonophyletic(rootNodeCopy, name)) {
-				for (let hybrid of hybrids) {
+	let unflag = []
+	for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
+		// remove the flagged hybrids and check if their species becomes monophyletic
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
+
+		// if the species is still nonmono, then we unflag these
+		if (!isSpeciesMonophyletic(rootNodeCopy, name)) {
+			for (let hybrid of hybrids) {
+				unflag.push(hybrid.ident)
+			}
+		}
+
+		// We also need to check if removing the hybrids of this species made _another_
+		// species monophyletic. If it has, then the hybrids in that species are not
+		// really hybrids and should be unflagged
+		for (let otherName of Object.keys(hybridSpeciesByName)) {
+			if (otherName === name) {
+				continue
+			}
+			if (isSpeciesMonophyletic(rootNodeCopy, otherName)) {
+				let otherHybrids = hybridSpeciesByName[otherName]
+				for (let hybrid of otherHybrids) {
 					unflag.push(hybrid.ident)
 				}
 			}
-
-			// We also need to check if removing the hybrids of this species made _another_
-			// species monophyletic. If it has, then the hybrids in that species are not
-			// really hybrids and should be unflagged
-			for (let otherName of Object.keys(hybridSpeciesByName)) {
-				if (otherName === name) {
-					continue
-				}
-				if (isSpeciesMonophyletic(rootNodeCopy, otherName)) {
-					let otherHybrids = hybridSpeciesByName[otherName]
-					for (let hybrid of otherHybrids) {
-						unflag.push(hybrid.ident)
-					}
-				}
-			}
 		}
-		remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 	}
+
+	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 }
 
-// Given an individual, find the shortest distance to an individiual that
-/// is not of the same species
+// Given an individual, find the shortest distance to an individiual that is
+// not of the same species
 function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 	let individualSequence = sequenceMap[makeIdent(individual)]
 	let shortestDist
 
 	for (let id of Object.keys(sequenceMap)) {
 		let speciesName = id.split(LABEL_DIVIDER)[0]
-		if (speciesName !== individual.name) {
-			let dist = hammingDistance(individualSequence, sequenceMap[id])
-			if (shortestDist === undefined || dist < shortestDist) {
-				shortestDist = dist
-			}
+		if (speciesName === individual.name) {
+			continue
+		}
+
+		let dist = hammingDistance(individualSequence, sequenceMap[id])
+		if (shortestDist === undefined || dist < shortestDist) {
+			shortestDist = dist
 		}
 	}
 
@@ -185,117 +192,117 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 	// Count number of individuals in each species
 	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
 
-	for (let speciesName in hybridSpeciesCount) {
+	for (let speciesName of Object.keys(hybridSpeciesCount)) {
 		// If we've flagged every individual in this species
-		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
-			// We initially assume we're going to remove everybody
-			let toRemove = []
-			let collectedHybridIdents = {}
-			for (let hybrid of results.nm) {
-				if (hybrid.name === speciesName) {
-					toRemove.push(hybrid.ident)
-				}
-			}
-			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-			let isMono = false
-
-			while (!isMono) {
-				// We need to remove the one that's closest to a different species
-				// and continue to do this until monophyly is achieved
-				// Those removed ones are the true hybrids. Everyone else is unflagged
-				let shortestDist
-				let closestHybrid
-				//let newResults = recursiveSearch(rootNodeCopy)
-				for (let hybrid of results.nm) {
-					if (
-						hybrid.name === speciesName &&
-						!collectedHybridIdents[hybrid.ident]
-					) {
-						let dist = getSmallestInterSpeciesDistance(hybrid, sequenceMap)
-						if (shortestDist === undefined) {
-							shortestDist = dist
-						}
-						if (shortestDist <= dist) {
-							shortestDist = dist
-							closestHybrid = hybrid
-						}
-					}
-				}
-
-				// The closest one to a different species is probably a hybrid so let's not remove it
-				if (closestHybrid === undefined) {
-					break
-				}
-				collectedHybridIdents[closestHybrid.ident] = true
-				remove(toRemove, ident => ident === closestHybrid.ident)
-				removeNodes(rootNodeCopy, [closestHybrid.ident])
-				// Now check if monophyly is achieved and repeat if not
-				isMono = isSpeciesMonophyletic(rootNodeCopy, speciesName)
-			}
-
-			// remove all the ones remaining in toRemove
-			remove(results.nm, hybrid => toRemove.includes(hybrid.ident))
+		if (hybridSpeciesCount[speciesName] !== totalSpeciesCount[speciesName]) {
+			continue
 		}
+
+		// We initially assume we're going to remove everybody
+		let collectedHybridIdents = {}
+		let toRemove = results.nm
+			.filter(hybrid => hybrid.name === speciesName)
+			.map(hybrid => hybrid.ident)
+
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		let isMono = false
+
+		while (!isMono) {
+			// We need to remove the one that's closest to a different species
+			// and continue to do this until monophyly is achieved. Those
+			// removed ones are the true hybrids. Everyone else is unflagged
+			let shortestDist
+			let closestHybrid
+
+			results.nm
+				.filter(hybrid => hybrid.name === speciesName)
+				.filter(hybrid => !collectedHybridIdents[hybrid.ident])
+				.forEach(hybrid => {
+					let dist = getSmallestInterSpeciesDistance(hybrid, sequenceMap)
+					if (shortestDist === undefined) {
+						shortestDist = dist
+					}
+					if (shortestDist <= dist) {
+						shortestDist = dist
+						closestHybrid = hybrid
+					}
+				})
+
+			// The closest one to a different species is probably a hybrid, so
+			// let's not remove it
+			if (closestHybrid === undefined) {
+				break
+			}
+
+			collectedHybridIdents[closestHybrid.ident] = true
+			remove(toRemove, ident => ident === closestHybrid.ident)
+			removeNodes(rootNodeCopy, [closestHybrid.ident])
+
+			// Now check if monophyly is achieved, and repeat if not
+			isMono = isSpeciesMonophyletic(rootNodeCopy, speciesName)
+		}
+
+		// remove all the ones remaining in toRemove
+		remove(results.nm, hybrid => toRemove.includes(hybrid.ident))
 	}
 }
 
-// Given a node, it will return {species:[],nm:[]}
-// where `species` is a list of individuals under that node
-// and `nm` is a list of flagged hybrids
+// Given a node, it will return {species:[],nm:[]} where `species` is a list
+// of individuals under that node and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
-	if (node.branchset) {
-		let combinations = combs(node.branchset, 2)
+	if (!node.branchset) {
+		return { species: [node], nm: nmInstances }
+	}
 
-		let speciesList = []
-		let forRemoval = []
-		for (let speciesSet of combinations) {
-			// if species is in speciesList: continue
-			let resultsA = recursiveSearch(speciesSet[1], nmInstances)
-			let speciesListA = resultsA.species
+	let combinations = combs(node.branchset, 2)
 
-			let resultsB = recursiveSearch(speciesSet[0], nmInstances)
-			let speciesListB = resultsB.species
+	let speciesList = []
+	let forRemoval = []
+	for (let speciesSet of combinations) {
+		// if species is in speciesList: continue
+		let resultsA = recursiveSearch(speciesSet[1], nmInstances)
+		let speciesListA = resultsA.species
 
-			const speciesChecker = otherSpeciesList => species1 => {
-				const otherSpeciesNames = otherSpeciesList.map(s => s.name)
+		let resultsB = recursiveSearch(speciesSet[0], nmInstances)
+		let speciesListB = resultsB.species
 
-				let hasName = otherSpeciesNames.includes(species1.name)
-				let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
+		const speciesChecker = otherSpeciesList => species1 => {
+			const otherSpeciesNames = otherSpeciesList.map(s => s.name)
 
-				if (hasName && notAllEqual) {
-					otherSpeciesList.forEach(species3 => {
-						if (species3.name === species1.name) {
-							const count = nmInstances.filter(sp => sp === species3).length
+			let hasName = otherSpeciesNames.includes(species1.name)
+			let notAllEqual = !otherSpeciesNames.every(n => n === species1.name)
 
-							if (!count) {
-								nmInstances.push(species3)
-								forRemoval.push(species3.ident)
-							}
+			if (hasName && notAllEqual) {
+				otherSpeciesList
+					.filter(species3 => species3.name === species1.name)
+					.forEach(species3 => {
+						const count = nmInstances.filter(sp => sp === species3).length
+
+						if (!count) {
+							nmInstances.push(species3)
+							forRemoval.push(species3.ident)
 						}
 					})
-				}
-			}
-
-			speciesListA.forEach(speciesChecker(speciesListB))
-			remove(speciesListA, n => forRemoval.includes(n.ident))
-
-			speciesListB.forEach(speciesChecker(speciesListA))
-			remove(speciesListB, n => forRemoval.includes(n.ident))
-
-			if (speciesListA.length) {
-				speciesList.push(...speciesListA)
-			}
-			if (speciesListB.length) {
-				speciesList.push(...speciesListB)
 			}
 		}
 
-		speciesList = uniqBy(speciesList, 'ident')
+		speciesListA.forEach(speciesChecker(speciesListB))
+		remove(speciesListA, n => forRemoval.includes(n.ident))
 
-		return { species: speciesList, nm: nmInstances }
+		speciesListB.forEach(speciesChecker(speciesListA))
+		remove(speciesListB, n => forRemoval.includes(n.ident))
+
+		if (speciesListA.length) {
+			speciesList.push(...speciesListA)
+		}
+		if (speciesListB.length) {
+			speciesList.push(...speciesListB)
+		}
 	}
 
-	return { species: [node], nm: nmInstances }
+	speciesList = uniqBy(speciesList, 'ident')
+
+	return { species: speciesList, nm: nmInstances }
 }
 
 module.exports.formatData = formatData
