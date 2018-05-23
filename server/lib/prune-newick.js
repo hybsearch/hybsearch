@@ -68,6 +68,7 @@ function pruneOutliers(
 	}
 
 	let toRemoveNodes = []
+	let diffRecords = new Map()
 
 	// A sequence S will be removed if it is more than 20% different than a majority of the seqences
 	// Or if it is smaller than the cut off
@@ -76,10 +77,18 @@ function pruneOutliers(
 		let gene1Length = geneLength[i]
 		let diffCount = 0
 
+		let diffRecord = diffRecords.get(node.name)
+		if (!diffRecord) {
+			diffRecord = new Map()
+			diffRecords.set(node.name, diffRecord)
+		}
+
 		for (let j = 0; j < leafNodes.length; j++) {
 			if (i === j) {
 				continue
 			}
+
+			let innerNode = leafNodes[j]
 			let hammingDistance = distCache[i][j]
 			let gene2Length = geneLength[j]
 
@@ -88,6 +97,8 @@ function pruneOutliers(
 			// of the smaller sequence.
 			let smallerGeneLength = Math.min(gene1Length, gene2Length)
 			let diffProportion = hammingDistance / smallerGeneLength
+
+			diffRecord.set(innerNode.name, diffProportion)
 
 			if (diffProportion > 0.2) {
 				diffCount += 1
@@ -122,5 +133,6 @@ function pruneOutliers(
 	return {
 		prunedNewick: newick,
 		removedData: removedData,
+		diffRecords: diffRecords,
 	}
 }
