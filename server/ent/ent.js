@@ -193,55 +193,57 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 
 	for (let speciesName in hybridSpeciesCount) {
 		// If we've flagged every individual in this species
-		if (hybridSpeciesCount[speciesName] === totalSpeciesCount[speciesName]) {
-			// We initially assume we're going to remove everybody
-			let toRemove = []
-			let collectedHybridIdents = {}
-			for (let hybrid of results.nm) {
-				if (hybrid.name === speciesName) {
-					toRemove.push(hybrid.ident)
-				}
-			}
-			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
-			let isMono = false
+		if (hybridSpeciesCount[speciesName] !== totalSpeciesCount[speciesName]) {
+			continue
+		}
 
-			while (!isMono) {
-				// We need to remove the one that's closest to a different species
-				// and continue to do this until monophyly is achieved
-				// Those removed ones are the true hybrids. Everyone else is unflagged
-				let shortestDist
-				let closestHybrid
-				//let newResults = recursiveSearch(rootNodeCopy)
-				for (let hybrid of results.nm) {
-					if (
-						hybrid.name === speciesName &&
-						!collectedHybridIdents[hybrid.ident]
-					) {
-						let dist = getSmallestInterSpeciesDistance(hybrid, sequenceMap)
-						if (shortestDist === undefined) {
-							shortestDist = dist
-						}
-						if (shortestDist <= dist) {
-							shortestDist = dist
-							closestHybrid = hybrid
-						}
+		// We initially assume we're going to remove everybody
+		let toRemove = []
+		let collectedHybridIdents = {}
+		for (let hybrid of results.nm) {
+			if (hybrid.name === speciesName) {
+				toRemove.push(hybrid.ident)
+			}
+		}
+		let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
+		let isMono = false
+
+		while (!isMono) {
+			// We need to remove the one that's closest to a different species
+			// and continue to do this until monophyly is achieved
+			// Those removed ones are the true hybrids. Everyone else is unflagged
+			let shortestDist
+			let closestHybrid
+			//let newResults = recursiveSearch(rootNodeCopy)
+			for (let hybrid of results.nm) {
+				if (
+					hybrid.name === speciesName &&
+					!collectedHybridIdents[hybrid.ident]
+				) {
+					let dist = getSmallestInterSpeciesDistance(hybrid, sequenceMap)
+					if (shortestDist === undefined) {
+						shortestDist = dist
+					}
+					if (shortestDist <= dist) {
+						shortestDist = dist
+						closestHybrid = hybrid
 					}
 				}
-
-				// The closest one to a different species is probably a hybrid so let's not remove it
-				if (closestHybrid === undefined) {
-					break
-				}
-				collectedHybridIdents[closestHybrid.ident] = true
-				remove(toRemove, ident => ident === closestHybrid.ident)
-				removeNodes(rootNodeCopy, [closestHybrid.ident])
-				// Now check if monophyly is achieved and repeat if not
-				isMono = isSpeciesMonophyletic(rootNodeCopy, speciesName)
 			}
 
-			// remove all the ones remaining in toRemove
-			remove(results.nm, hybrid => toRemove.includes(hybrid.ident))
+			// The closest one to a different species is probably a hybrid so let's not remove it
+			if (closestHybrid === undefined) {
+				break
+			}
+			collectedHybridIdents[closestHybrid.ident] = true
+			remove(toRemove, ident => ident === closestHybrid.ident)
+			removeNodes(rootNodeCopy, [closestHybrid.ident])
+			// Now check if monophyly is achieved and repeat if not
+			isMono = isSpeciesMonophyletic(rootNodeCopy, speciesName)
 		}
+
+		// remove all the ones remaining in toRemove
+		remove(results.nm, hybrid => toRemove.includes(hybrid.ident))
 	}
 }
 
