@@ -2,7 +2,7 @@
 'use strict'
 
 const getData = require('../lib/get-data')
-const {fixFastaSource} = require('./fix-fasta-source')
+const { fixFastaSource } = require('./fix-fasta-source')
 
 async function main() {
 	let file = process.argv[2]
