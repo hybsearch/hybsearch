@@ -103,7 +103,6 @@ function pruneOutliers(
 		}
 	}
 
-
 	// Now remove the nodes
 	let removedData = []
 	if (toRemoveNodes.length > 0) {
