@@ -50,8 +50,6 @@ workflows:
           requires: [lint, test-app]
       - build-app-mac:
           requires: [lint, test-app]
-      - build-app-linux:
-          requires: [lint, test-app]
 
   on_tag:
     jobs:
@@ -78,9 +76,6 @@ workflows:
           requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
       - build-app-mac:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
-          filters: *filters
-      - build-app-linux:
           requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
 
@@ -219,14 +214,3 @@ jobs:
       - run: cd electron && npm install --production
       - run: cd electron && npm run build:setup
       - run: cd electron && electron-builder --macos
-
-  build-app-linux:
-    <<: *electron-builder-base
-    steps:
-      - checkout:
-          path: /root/project
-      - run: *install-electron-builder
-      - run: *electron-pkg-version
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --linux
