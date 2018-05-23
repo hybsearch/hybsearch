@@ -210,11 +210,10 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 
 		while (!isMono) {
 			// We need to remove the one that's closest to a different species
-			// and continue to do this until monophyly is achieved
-			// Those removed ones are the true hybrids. Everyone else is unflagged
+			// and continue to do this until monophyly is achieved. Those
+			// removed ones are the true hybrids. Everyone else is unflagged
 			let shortestDist
 			let closestHybrid
-			//let newResults = recursiveSearch(rootNodeCopy)
 			for (let hybrid of results.nm) {
 				if (
 					hybrid.name === speciesName &&
@@ -231,14 +230,17 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 				}
 			}
 
-			// The closest one to a different species is probably a hybrid so let's not remove it
+			// The closest one to a different species is probably a hybrid, so
+			// let's not remove it
 			if (closestHybrid === undefined) {
 				break
 			}
+
 			collectedHybridIdents[closestHybrid.ident] = true
 			remove(toRemove, ident => ident === closestHybrid.ident)
 			removeNodes(rootNodeCopy, [closestHybrid.ident])
-			// Now check if monophyly is achieved and repeat if not
+
+			// Now check if monophyly is achieved, and repeat if not
 			isMono = isSpeciesMonophyletic(rootNodeCopy, speciesName)
 		}
 
