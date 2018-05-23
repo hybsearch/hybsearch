@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emydura 1`] = `
+Map {
+  "Emydura subglobosa__KC755190" => Map {
+    "Emydura subglobosa__KC755185" => 0.03804994054696789,
+    "Emydura tanybaraga__KC755187" => 0.06197854588796186,
+    "Emydura tanybaraga__KC755186" => 0.06436233611442194,
+    "Emydura subglobosa__NC_026048" => 0.06064209274673008,
+    "Emydura subglobosa__KC692462" => 0.06064209274673008,
+  },
+  "Emydura subglobosa__KC755185" => Map {
+    "Emydura subglobosa__KC755190" => 0.03804994054696789,
+    "Emydura tanybaraga__KC755187" => 0.07151370679380215,
+    "Emydura tanybaraga__KC755186" => 0.07032181168057211,
+    "Emydura subglobosa__NC_026048" => 0.07244655581947744,
+    "Emydura subglobosa__KC692462" => 0.07244655581947744,
+  },
+  "Emydura tanybaraga__KC755187" => Map {
+    "Emydura subglobosa__KC755190" => 0.06197854588796186,
+    "Emydura subglobosa__KC755185" => 0.07151370679380215,
+    "Emydura tanybaraga__KC755186" => 0.004767580452920143,
+    "Emydura subglobosa__NC_026048" => 0.0059594755661501785,
+    "Emydura subglobosa__KC692462" => 0.0059594755661501785,
+  },
+  "Emydura tanybaraga__KC755186" => Map {
+    "Emydura subglobosa__KC755190" => 0.06436233611442194,
+    "Emydura subglobosa__KC755185" => 0.07032181168057211,
+    "Emydura tanybaraga__KC755187" => 0.004767580452920143,
+    "Emydura subglobosa__NC_026048" => 0.00834326579261025,
+    "Emydura subglobosa__KC692462" => 0.00834326579261025,
+  },
+  "Emydura subglobosa__NC_026048" => Map {
+    "Emydura subglobosa__KC755190" => 0.06064209274673008,
+    "Emydura subglobosa__KC755185" => 0.07244655581947744,
+    "Emydura tanybaraga__KC755187" => 0.0059594755661501785,
+    "Emydura tanybaraga__KC755186" => 0.00834326579261025,
+    "Emydura subglobosa__KC692462" => 0,
+  },
+  "Emydura subglobosa__KC692462" => Map {
+    "Emydura subglobosa__KC755190" => 0.06064209274673008,
+    "Emydura subglobosa__KC755185" => 0.07244655581947744,
+    "Emydura tanybaraga__KC755187" => 0.0059594755661501785,
+    "Emydura tanybaraga__KC755186" => 0.00834326579261025,
+    "Emydura subglobosa__NC_026048" => 0,
+  },
+  "Emydura subglobosa__KC755184" => Map {
+    "Emydura subglobosa__KC755190" => 0.054696789536266346,
+    "Emydura subglobosa__KC755185" => 0.06294536817102138,
+    "Emydura tanybaraga__KC755187" => 0.013110846245530394,
+    "Emydura tanybaraga__KC755186" => 0.015494636471990465,
+    "Emydura subglobosa__NC_026048" => 0.009501187648456057,
+  },
+  "Emydura victoriae__KC755189" => Map {
+    "Emydura subglobosa__KC755190" => 0.09036860879904875,
+    "Emydura subglobosa__KC755185" => 0.09501187648456057,
+    "Emydura tanybaraga__KC755187" => 0.09892729439809297,
+    "Emydura tanybaraga__KC755186" => 0.09892729439809297,
+    "Emydura subglobosa__NC_026048" => 0.09845788849347568,
+  },
+  "Emydura victoriae__KC755188" => Map {
+    "Emydura subglobosa__KC755190" => 0.09155766944114149,
+    "Emydura subglobosa__KC755185" => 0.09619952494061758,
+    "Emydura tanybaraga__KC755187" => 0.10011918951132301,
+    "Emydura tanybaraga__KC755186" => 0.10011918951132301,
+    "Emydura subglobosa__NC_026048" => 0.099644128113879,
+  },
+  "Emydura macquarii__KC755183" => Map {
+    "Emydura subglobosa__KC755190" => 0.08799048751486326,
+    "Emydura subglobosa__KC755185" => 0.09263657957244656,
+    "Emydura tanybaraga__KC755187" => 0.10369487485101311,
+    "Emydura tanybaraga__KC755186" => 0.10369487485101311,
+    "Emydura subglobosa__NC_026048" => 0.1021377672209026,
+  },
+}
+`;
