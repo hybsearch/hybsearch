@@ -3,6 +3,7 @@
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
 const { removeNodes } = require('./remove-nodes')
+const { getLeafNodes } = require('./get-leaf-nodes')
 const { removeRedundant } = require('./remove-redundant')
 const SEQUENCE_CUTOFF_LENGTH = 300
 
@@ -20,17 +21,8 @@ function pruneOutliers(
 		sequenceMap[obj.species] = obj.sequence
 	}
 
-	let leafNodes = []
-	function getLeaves(node) {
-		if (node.branchset) {
-			node.branchset.forEach(getLeaves)
-		} else {
-			leafNodes.push(node)
-		}
-	}
-
 	// Compute and store distances between each pair
-	getLeaves(newick)
+	let leafNodes = getLeafNodes(newick)
 	let distCache = {}
 	let geneLength = {}
 
