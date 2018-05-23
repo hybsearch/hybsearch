@@ -41,12 +41,10 @@ workflows:
       - lint
       - test-app
       - test-server
-      - test-pipeline-mrbayes:
-          requires: [build]
-      - test-pipeline-beast:
+      - test-pipeline-mbnb:
           requires: [build]
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-mbnb, test-app]
           context: docker-hub
       - build-app-windows:
           requires: [lint, test-app]
@@ -69,24 +67,21 @@ workflows:
           filters: *filters
       - test-server:
           filters: *filters
-      - test-pipeline-mrbayes:
-          requires: [build]
-          filters: *filters
-      - test-pipeline-beast:
+      - test-pipeline-mbnb:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
           context: docker-hub
       - build-app-windows:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
       - build-app-mac:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
       - build-app-linux:
-          requires: [lint, test-server, test-pipeline-beast, test-pipeline-mrbayes, test-app]
+          requires: [lint, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
 
   cron_weekly:
@@ -94,9 +89,7 @@ workflows:
       - build
       - test-app
       - test-server
-      - test-pipeline-mrbayes:
-          requires: [build]
-      - test-pipeline-beast:
+      - test-pipeline-mbnb:
           requires: [build]
     triggers:
       - schedule:
