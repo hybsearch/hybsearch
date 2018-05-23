@@ -51,3 +51,13 @@ test('formats an accession-only identifier', () => {
 	let output = fixFastaSource(input)
 	expect(parseFasta(output)[0].species).toBe('HQ012626')
 })
+
+test('removes entries labelled "UNVERIFIED"', () => {
+	let input = `>JN232531.1 UNVERIFIED: Lissemys punctata andersoni cytochrome b-like (cytb) gene, partial sequence; mitochondrial
+-------CTAATTGATCTCCAACCCATCTAACATCTCAACATGATGAAAC-TTCGGATCT
+>JN232533.1 Pelochelys cantorii cytochrome b (cytb) gene, partial cds; mitochondrial
+----------------------------------------------TCAAATTATTAACA`
+	let output = fixFastaSource(input)
+	expect(parseFasta(output)[0].species).toBe('Pelochelys_cantorii__JN232533x1')
+})
+
