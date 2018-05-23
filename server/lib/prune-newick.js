@@ -11,7 +11,7 @@ module.exports.pruneOutliers = pruneOutliers
 function pruneOutliers(
 	newick,
 	alignedFasta,
-	{ outlierRemovalPercentage = 0.5 } = {}
+	{ outlierRemovalPercentage = 0.2 } = {}
 ) {
 	const fastaData = parseFasta(alignedFasta)
 	// Build a dict map of species -> sequence
@@ -100,17 +100,14 @@ function pruneOutliers(
 
 			diffRecord.set(innerNode.name, diffProportion)
 
-			if (diffProportion > 0.2) {
+			if (diffProportion > outlierRemovalPercentage) {
 				diffCount += 1
 			}
 		}
 
 		let diffPercent = diffCount / (leafNodes.length - 1)
 
-		if (
-			diffPercent >= outlierRemovalPercentage ||
-			gene1Length < SEQUENCE_CUTOFF_LENGTH
-		) {
+		if (diffPercent >= 0.5 || gene1Length < SEQUENCE_CUTOFF_LENGTH) {
 			toRemoveNodes.push(node)
 		}
 	}

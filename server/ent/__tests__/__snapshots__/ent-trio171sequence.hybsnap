@@ -4,10 +4,9 @@ exports[`trio171sequence 1`] = `
 Array [
   "Amyda_cartilaginea (LM537480)",
   "Amyda_cartilaginea (LM537481)",
-  "Amyda_cartilaginea (LM537485)",
+  "Amyda_cartilaginea (LM537466)",
   "Amyda_cartilaginea (LM537484)",
   "Amyda_cartilaginea (LM537483)",
-  "Amyda_ornata (LM537482)",
   "Amyda_ornata (LM537490)",
   "Amyda_ornata (LM537462)",
   "Amyda_cartilaginea (LM537464)",
@@ -16,11 +15,12 @@ Array [
   "Amyda_cartilaginea (JN232534)",
   "Amyda_cartilaginea (LM537465)",
   "Amyda_cartilaginea (LM537467)",
+  "Amyda_ornata (LM537478)",
   "Amyda_cartilaginea (LM537491)",
   "Amyda_cartilaginea (LM537492)",
   "Amyda_cartilaginea (LM537476)",
   "Amyda_cartilaginea (LM537493)",
   "Amyda_cartilaginea (LM537494)",
-  "Palea_steindachneri (AY743417)",
+  "Palea_steindachneri (AY259552)",
 ]
 `;

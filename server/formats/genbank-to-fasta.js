@@ -1,7 +1,7 @@
 'use strict'
 
 const { buildFasta } = require('./fasta/build')
-const wrap = require('wordwrap')
+const wrap = require('word-wrap')
 
 function* parseGenbankEntry(data) {
 	let current = ''
@@ -61,15 +61,15 @@ const genbankEntryToFasta = entry => {
 	// Genbank (or some tool) doesn't like spaces in the names
 	species = species.replace(/[^a-z0-9]/gi, '_')
 
-	let accession = entry.ACCESSION.split(/\s/)
+	let accession = entry.ACCESSION.split(/\s+/)
 	accession = accession[0]
 	if (!accession) {
 		throw new Error('no accession number found!')
 	}
 
 	let origin = entry.ORIGIN
-	origin = origin.replace(/ /g, '')
-	origin = wrap(80, { mode: 'hard' })(origin)
+	origin = origin.replace(/\s+/g, '')
+	origin = wrap(origin, { cut: true, width: 80, trim: true, indent: '' })
 
 	let divider = '__'
 	let name = `${species}${divider}${accession}`
