@@ -14,229 +14,11 @@ Object {
                     Object {
                       "branchset": Array [
                         Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [
-                                    Object {
-                                      "branchset": Array [],
-                                      "length": 0.0129307,
-                                      "name": "",
-                                    },
-                                  ],
-                                  "length": 0.05417659,
-                                  "name": "",
-                                },
-                                Object {
-                                  "branchset": Array [
-                                    Object {
-                                      "branchset": Array [],
-                                      "length": 0.04828559,
-                                      "name": "",
-                                    },
-                                  ],
-                                  "length": 0.02014177,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.07332235,
-                              "name": "",
-                            },
-                            Object {
-                              "branchset": Array [],
-                              "length": 0.07313333,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.02545019,
-                          "name": "",
-                        },
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.1697555,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.05948418,
-                      "name": "",
-                    },
-                    Object {
-                      "branchset": Array [],
-                      "length": 0.1501162,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.06281316,
-                  "name": "",
-                },
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.04843635,
-                          "name": "",
-                        },
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.04100242,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.04133152,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.209542,
-                  "name": "",
-                },
-              ],
-              "length": 0.08245045,
-              "name": "",
-            },
-            Object {
-              "branchset": Array [
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.03235961,
-                                  "name": "",
-                                },
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.02022238,
-                                  "name": "",
-                                },
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.04373255,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.04014202,
-                              "name": "",
-                            },
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.0511938,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.02352308,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.05397592,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.1048434,
-                      "name": "",
-                    },
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.006155721,
-                                  "name": "",
-                                },
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.006506729,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.0187796,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.0303552,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.2189192,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.04932725,
-                  "name": "",
-                },
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.001020085,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.00240488,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.3201035,
-                  "name": "",
-                },
-              ],
-              "length": 0.05921125,
-              "name": "",
-            },
-          ],
-          "length": 0.1048982,
-          "name": "",
-        },
-        Object {
-          "branchset": Array [],
-          "length": 0.1407991,
-          "name": "",
-        },
-      ],
-      "length": 0.06645562,
-      "name": "",
-    },
-    Object {
-      "branchset": Array [
-        Object {
-          "branchset": Array [
-            Object {
-              "branchset": Array [
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
                           "length": 0.1585498,
                           "name": "Trionyx_triunguis__AY259564",
                         },
                         Object {
                           "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.0489129,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.08058236,
-                              "name": "",
-                            },
                             Object {
                               "branchset": Array [
                                 Object {
@@ -349,11 +131,6 @@ Object {
                                   "length": 0.02691139,
                                   "name": "",
                                 },
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.02420323,
-                                  "name": "",
-                                },
                               ],
                               "length": 0.004863025,
                               "name": "",
@@ -368,22 +145,6 @@ Object {
                                     },
                                   ],
                                   "length": 0.005249074,
-                                  "name": "",
-                                },
-                                Object {
-                                  "branchset": Array [
-                                    Object {
-                                      "branchset": Array [],
-                                      "length": 0.001949155,
-                                      "name": "",
-                                    },
-                                    Object {
-                                      "branchset": Array [],
-                                      "length": 0.002976456,
-                                      "name": "",
-                                    },
-                                  ],
-                                  "length": 0.004939254,
                                   "name": "",
                                 },
                               ],
@@ -811,27 +572,11 @@ Object {
                         Object {
                           "branchset": Array [
                             Object {
-                              "branchset": Array [],
-                              "length": 0.02001175,
-                              "name": "",
-                            },
-                            Object {
                               "branchset": Array [
                                 Object {
                                   "branchset": Array [
                                     Object {
                                       "branchset": Array [
-                                        Object {
-                                          "branchset": Array [
-                                            Object {
-                                              "branchset": Array [],
-                                              "length": 0.0008922937,
-                                              "name": "",
-                                            },
-                                          ],
-                                          "length": 0.001894096,
-                                          "name": "",
-                                        },
                                         Object {
                                           "length": 0.003795965,
                                           "name": "Pelodiscus_sinensis__AB904726",
@@ -1262,141 +1007,12 @@ Object {
                   "length": 0.0309856,
                   "name": "",
                 },
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.003258147,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.1114253,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.04500221,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.02572097,
-                      "name": "",
-                    },
-                    Object {
-                      "branchset": Array [],
-                      "length": 0.1616644,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.05551552,
-                  "name": "",
-                },
               ],
               "length": 0.1175927,
               "name": "",
             },
           ],
           "length": 0.1386485,
-          "name": "",
-        },
-        Object {
-          "branchset": Array [
-            Object {
-              "branchset": Array [
-                Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [],
-                              "length": 0.007547925,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.03667895,
-                          "name": "",
-                        },
-                        Object {
-                          "branchset": Array [
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.003386775,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.02850952,
-                              "name": "",
-                            },
-                            Object {
-                              "branchset": Array [
-                                Object {
-                                  "branchset": Array [],
-                                  "length": 0.002451261,
-                                  "name": "",
-                                },
-                              ],
-                              "length": 0.02952567,
-                              "name": "",
-                            },
-                          ],
-                          "length": 0.01283145,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.01545904,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.009011158,
-                  "name": "",
-                },
-              ],
-              "length": 0.01583921,
-              "name": "",
-            },
-            Object {
-              "branchset": Array [],
-              "length": 0.08430146,
-              "name": "",
-            },
-          ],
-          "length": 0.4117378,
-          "name": "",
-        },
-        Object {
-          "branchset": Array [
-            Object {
-              "branchset": Array [],
-              "length": 0.01043609,
-              "name": "",
-            },
-            Object {
-              "branchset": Array [
-                Object {
-                  "branchset": Array [],
-                  "length": 0.00298105,
-                  "name": "",
-                },
-              ],
-              "length": 0.008860771,
-              "name": "",
-            },
-          ],
-          "length": 0.4836509,
-          "name": "",
-        },
-        Object {
-          "branchset": Array [],
-          "length": 0.3857996,
           "name": "",
         },
       ],

@@ -360,29 +360,6 @@ Object {
             Object {
               "branchset": Array [
                 Object {
-                  "branchset": Array [
-                    Object {
-                      "branchset": Array [
-                        Object {
-                          "branchset": Array [],
-                          "length": 0.004694463,
-                          "name": "",
-                        },
-                      ],
-                      "length": 0.1903503,
-                      "name": "",
-                    },
-                  ],
-                  "length": 0.08710782,
-                  "name": "",
-                },
-              ],
-              "length": 0.01641391,
-              "name": "",
-            },
-            Object {
-              "branchset": Array [
-                Object {
                   "length": 0.02363127,
                   "name": "Cyclanorbis_senegalensis__FR850654",
                 },

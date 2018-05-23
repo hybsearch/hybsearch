@@ -6,11 +6,6 @@ Object {
     Object {
       "branchset": Array [
         Object {
-          "branchset": Array [],
-          "length": 0.006126598,
-          "name": "",
-        },
-        Object {
           "branchset": Array [
             Object {
               "branchset": Array [

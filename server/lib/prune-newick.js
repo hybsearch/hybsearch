@@ -128,7 +128,7 @@ function pruneOutliers(
 		delete newick.length
 	}
 
-	// trimEmptyBranches(newick)
+	trimEmptyBranches(newick)
 
 	return {
 		prunedNewick: newick,
