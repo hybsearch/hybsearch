@@ -157,6 +157,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 			}
 		}
 	}
+
 	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 }
 
@@ -248,9 +249,8 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 	}
 }
 
-// Given a node, it will return {species:[],nm:[]}
-// where `species` is a list of individuals under that node
-// and `nm` is a list of flagged hybrids
+// Given a node, it will return {species:[],nm:[]} where `species` is a list
+// of individuals under that node and `nm` is a list of flagged hybrids
 function recursiveSearch(node, nmInstances = []) {
 	if (!node.branchset) {
 		return { species: [node], nm: nmInstances }
