@@ -98,9 +98,7 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 		// this shouldn't happen in general because the filtering step before this
 		//  should unflag at least 1
 		throw new Error(
-			'Attempt to search for species "' +
-				speciesName +
-				'" which is not in the tree.'
+			`Attempt to search for species "${speciesName}" which is not in the tree.`
 		)
 	}
 
