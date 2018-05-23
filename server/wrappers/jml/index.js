@@ -4,7 +4,10 @@ const execa = require('execa')
 const tempy = require('tempy')
 const path = require('path')
 const fs = require('fs')
+const fromPairs = require('lodash/fromPairs')
+const toPairs = require('lodash/toPairs')
 const generateControlFile = require('./ctl')
+const { highlightSignificantResults } = require('./highlight')
 const revertHashedIdentifiers = require('./revert-hashed-identifiers')
 
 const readFileOr = (filepath, orValue) => {
@@ -73,6 +76,14 @@ async function jml({ phylipData, trees, phylipMapping }) {
 		results,
 		phylipMapping,
 	})
+
+	resObj = resObj.map(highlightSignificantResults)
+
+	// remove the 'Sp Comparison' key from jml results, since it's duplicated
+	// in the seq1/seq2 columns
+	resObj = resObj.map(item =>
+		fromPairs(toPairs(item).filter(([key]) => key !== 'Sp Comparison'))
+	)
 
 	return { distributions: distObj, probabilities: probObj, results: resObj }
 }

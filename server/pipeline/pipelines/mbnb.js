@@ -13,6 +13,9 @@ const {
 	keepFastaIdentifiers,
 } = require('../../formats')
 const { pruneOutliers } = require('../../lib/prune-newick')
+const {
+	findSignificantNonmonophyly,
+} = require('../../lib/find-significant-nonmonophyly')
 const clustal = require('../../wrappers/clustal')
 const beast = require('../../wrappers/beast')
 const jml = require('../../wrappers/jml')
@@ -21,7 +24,7 @@ const { removeCircularLinks } = require('../lib')
 
 let options = {
 	outlierRemovalPercentage: {
-		default: 0.5,
+		default: 0.2,
 		type: 'number',
 		label: 'outlierRemovalPercentage',
 		description: 'desc',
@@ -142,6 +145,14 @@ let steps = [
 			}),
 		],
 		output: ['jml-output'],
+	},
+	{
+		// find the significant nonmonophetic sequences
+		input: ['jml-output', 'nonmonophyletic-sequences'],
+		transform: ([jmlOutput, nmSequences]) => [
+			findSignificantNonmonophyly(jmlOutput, nmSequences),
+		],
+		output: ['significant-nonmonophyly'],
 	},
 ]
 

@@ -1,5 +1,8 @@
 'use strict'
 
+const { clipboard } = require('electron')
+const path = require('path')
+const safeStringify = require('json-stringify-safe')
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
@@ -55,6 +58,8 @@ async function submitJob({
 	const ws = socket
 	const ip = (await publicIp.v6()) || (await publicIp.v4())
 
+	document.title = path.basename(filepath)
+
 	ws.addEventListener('message', packet => onMessage(packet.data))
 	ws.addEventListener('disconnect', (...args) =>
 		console.log('disconnect', ...args)
@@ -82,7 +87,7 @@ async function submitJob({
 	})
 }
 
-function followJob({ socket = global.socket, pipelineId }) {
+async function followJob({ socket = global.socket, pipelineId }, { filename }) {
 	let loader = document.querySelector('#loader')
 	loader.classList.add('loading')
 	loader.hidden = false
@@ -90,6 +95,10 @@ function followJob({ socket = global.socket, pipelineId }) {
 	document.querySelector('#file-input').hidden = true
 	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
+
+	const ip = (await publicIp.v6()) || (await publicIp.v4())
+
+	document.title = filename
 
 	const ws = socket
 
@@ -104,7 +113,7 @@ function followJob({ socket = global.socket, pipelineId }) {
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'follow-pipeline', id: pipelineId }
+	let payload = { type: 'follow-pipeline', id: pipelineId, ip }
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)
@@ -129,6 +138,7 @@ function onData(phase, data) {
 		})
 
 		if (formattedNames.length > 0) {
+			container.innerHTML = ''
 			container.hidden = false
 			container.appendChild(makeTableFromObjectList(formattedNames))
 		}
@@ -136,25 +146,28 @@ function onData(phase, data) {
 		let container = document.querySelector('#jml-container')
 		container.hidden = false
 
-		document
-			.querySelector('#distributions')
-			.appendChild(makeTableFromObjectList(data.distributions))
+		let distributions = document.querySelector('#distributions')
+		distributions.innerHTML = ''
+		distributions.appendChild(makeTableFromObjectList(data.distributions))
 
-		document
-			.querySelector('#probabilities')
-			.appendChild(makeTableFromObjectList(data.probabilities))
+		let probabilities = document.querySelector('#probabilities')
+		probabilities.innerHTML = ''
+		probabilities.appendChild(makeTableFromObjectList(data.probabilities))
 
-		data.results = data.results.map(item => {
-			if (item.Probability < 0.05) {
-				return Object.assign({}, item, { __highlight: true })
-			}
-			return item
-		})
-		document
-			.querySelector('#results')
-			.appendChild(makeTableFromObjectList(data.results))
+		let results = document.querySelector('#results')
+		results.innerHTML = ''
+		results.appendChild(makeTableFromObjectList(data.results))
 	} else if (phase === 'nonmonophyletic-sequences') {
 		setEntResults(data)
+	} else if (phase === 'significant-nonmonophyly') {
+		let container = document.querySelector(
+			'#significant-nonmonophyly-container'
+		)
+		container.hidden = false
+
+		let results = container.querySelector('#significant-nonmonophyly')
+		results.innerHTML = ''
+		results.appendChild(makeTableFromObjectList(data))
 	} else {
 		console.warn(`Client doesn't understand data for "${phase}"`)
 	}
@@ -172,6 +185,7 @@ function onMessage(packet) {
 			label: stage,
 			duration: timeTaken,
 			usedCache: cached,
+			result: result,
 		})
 		onData(stage, result)
 	} else if (type === 'error') {
@@ -218,7 +232,119 @@ function attachListeners() {
 	})
 }
 
-function updateLoadingStatus({ label, duration, usedCache }) {
+function makeDetailsSection(title, data) {
+	let details = document.createElement('details')
+
+	let summary = document.createElement('summary')
+	let heading = document.createElement('h2')
+	heading.textContent = title
+	summary.appendChild(heading)
+	details.appendChild(summary)
+
+	let content = document.createElement('pre')
+	content.classList.add('preformatted')
+	content.textContent = data
+
+	details.appendChild(content)
+	return details
+}
+
+function formatResult(phase, data) {
+	if (phase === 'beast-trees') {
+		let wrapper = document.createElement('div')
+
+		wrapper.appendChild(makeDetailsSection('log', data.log))
+		wrapper.appendChild(makeDetailsSection('species', data.species))
+		wrapper.appendChild(makeDetailsSection('trees', data.trees))
+
+		return wrapper
+	}
+
+	if (phase === 'jml-output') {
+		let wrapper = document.createElement('div')
+
+		let distributions = JSON.stringify(data.distributions, null, 2)
+		wrapper.appendChild(makeDetailsSection('distributions', distributions))
+		let probabilities = JSON.stringify(data.probabilities, null, 2)
+		wrapper.appendChild(makeDetailsSection('probabilities', probabilities))
+		let results = JSON.stringify(data.results, null, 2)
+		wrapper.appendChild(makeDetailsSection('results', results))
+
+		return wrapper
+	}
+
+	if (phase === 'nonmonophyletic-sequences') {
+		let wrapper = document.createElement('div')
+
+		let species = JSON.stringify(data.species, null, 2)
+		wrapper.appendChild(makeDetailsSection('species', species))
+		let nm = JSON.stringify(data.nm, null, 2)
+		wrapper.appendChild(makeDetailsSection('nm', nm))
+
+		return wrapper
+	}
+
+	let dataEl = document.createElement('pre')
+	dataEl.classList.add('preformatted')
+
+	if (typeof data !== 'string') {
+		dataEl.textContent = JSON.stringify(data, null, 2)
+		return dataEl
+	}
+
+	dataEl.textContent = data
+	return dataEl
+}
+
+function createResultsDialog(node, result, stage) {
+	let dialog = document.createElement('dialog')
+	dialog.classList.add('pinned')
+
+	let data = formatResult(stage, result)
+	dialog.appendChild(data)
+
+	let buttons = document.createElement('menu')
+
+	let closeButton = document.createElement('button')
+	closeButton.type = 'reset'
+	closeButton.textContent = 'Close'
+	closeButton.addEventListener('click', ev => {
+		ev.preventDefault()
+		ev.stopPropagation()
+		dialog.close()
+	})
+	buttons.appendChild(closeButton)
+
+	let copyButton = document.createElement('button')
+	copyButton.type = 'button'
+	copyButton.textContent = 'Copy to Clipboard'
+	copyButton.addEventListener('click', ev => {
+		ev.preventDefault()
+		ev.stopPropagation()
+		if (typeof result === 'string') {
+			clipboard.writeText(result)
+		} else {
+			clipboard.writeText(safeStringify(result))
+		}
+		copyButton.textContent = 'Copied!'
+		setTimeout(() => {
+			copyButton.textContent = 'Copy to Clipboard'
+		}, 1000)
+	})
+	buttons.appendChild(copyButton)
+
+	dialog.appendChild(buttons)
+
+	dialog.addEventListener('click', ev => {
+		ev.stopPropagation()
+	})
+
+	node.appendChild(dialog)
+
+	return dialog
+}
+
+function updateLoadingStatus({ label, duration, usedCache, result }) {
 	console.info(`finished ${label} in ${duration}ms`)
 	let el = document.querySelector(`.checkmark[data-loader-name='${label}']`)
 	if (!el) {
@@ -227,6 +353,17 @@ function updateLoadingStatus({ label, duration, usedCache }) {
 	}
 	el.classList.remove('active')
 	el.classList.add('complete')
+
+	let dialog = el.querySelector('dialog')
+	if (!dialog) {
+		dialog = createResultsDialog(el, result, label)
+
+		el.addEventListener('click', ev => {
+			ev.preventDefault()
+			dialog.showModal()
+		})
+	}
+
 	usedCache && el.classList.add('used-cache')
 	el.dataset.time = prettyMs(duration)
 }

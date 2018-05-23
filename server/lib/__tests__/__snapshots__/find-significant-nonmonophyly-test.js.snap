@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles more than one case 1`] = `
+Array [
+  Object {
+    "__highlight": true,
+    "distance": 0.0154211,
+    "probability": 0.023988,
+    "seq1": "Emydura tanybaraga [KC755186]",
+    "seq2": "Emydura subglobosa [KC755184]",
+  },
+]
+`;
+
+exports[`only returns the highlighted sequences 1`] = `
+Array [
+  Object {
+    "__highlight": true,
+    "distance": 0.0130486,
+    "probability": 0.0214893,
+    "seq1": "Emydura tanybaraga [KC755187]",
+    "seq2": "Emydura subglobosa [KC755184]",
+  },
+  Object {
+    "__highlight": true,
+    "distance": 0.0154211,
+    "probability": 0.023988,
+    "seq1": "Emydura tanybaraga [KC755186]",
+    "seq2": "Emydura subglobosa [KC755184]",
+  },
+]
+`;
