@@ -50,8 +50,6 @@ function search(rootNode, alignedFasta) {
 	unflagIfAllAreFlagged(results, rootNode, sequenceMap)
 	unflagIfRemovingDoesNotFix(results, rootNode)
 
-	results.debug = JSON.stringify(rootNode)
-
 	return results
 }
 
