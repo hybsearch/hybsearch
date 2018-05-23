@@ -2,6 +2,7 @@
 
 const hammingDistance = require('../hamdis/hamming-distance')
 const { parseFasta } = require('../formats/fasta/parse')
+const { trimEmptyBranches } = require('./trim-empty-branches')
 const { removeNodes } = require('./remove-nodes')
 const { removeRedundant } = require('./remove-redundant')
 const SEQUENCE_CUTOFF_LENGTH = 300
@@ -126,6 +127,8 @@ function pruneOutliers(
 		newick = removeRedundant(newick)
 		delete newick.length
 	}
+
+	trimEmptyBranches(newick)
 
 	return {
 		prunedNewick: newick,
