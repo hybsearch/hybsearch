@@ -65,12 +65,14 @@ function getMostRecentCommonAncestor(rootNode, speciesName) {
 	let rootCopy = JSON.parse(JSON.stringify(rootNode))
 	// Add parent references to each node
 	function addParent(node) {
-		if (node.branchset) {
-			for (let child of node.branchset) {
-				child.parent = node
-			}
-			node.branchset.forEach(addParent)
+		if (!node.branchset) {
+			return
 		}
+
+		for (let child of node.branchset) {
+			child.parent = node
+		}
+		node.branchset.forEach(addParent)
 	}
 
 	addParent(rootCopy)
