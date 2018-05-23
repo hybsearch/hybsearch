@@ -161,8 +161,8 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 }
 
-// Given an individual, find the shortest distance to an individiual that
-/// is not of the same species
+// Given an individual, find the shortest distance to an individiual that is
+// not of the same species
 function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 	let individualSequence = sequenceMap[makeIdent(individual)]
 	let shortestDist
