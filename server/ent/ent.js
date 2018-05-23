@@ -125,9 +125,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
 		let unflag = []
-		for (let name in hybridSpeciesByName) {
-			let hybrids = hybridSpeciesByName[name]
-
+		for (let [name, hybrids] of Object.entries(hybridSpeciesByName)) {
 			// remove the flagged hybrids and check if their species becomes monophyletic
 			let rootNodeCopy = JSON.parse(JSON.stringify(rootNode))
 			removeNodes(rootNodeCopy, hybrids.map(h => h.ident))
@@ -136,6 +134,21 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 			if (!isSpeciesMonophyletic(rootNodeCopy, name)) {
 				for (let hybrid of hybrids) {
 					unflag.push(hybrid.ident)
+				}
+			}
+
+			// We also need to check if removing the hybrids of this species made _another_
+			// species monophyletic. If it has, then the hybrids in that species are not
+			// really hybrids and should be unflagged
+			for (let otherName of Object.keys(hybridSpeciesByName)) {
+				if (otherName === name) {
+					continue
+				}
+				if (isSpeciesMonophyletic(rootNodeCopy, otherName)) {
+					let otherHybrids = hybridSpeciesByName[otherName]
+					for (let hybrid of otherHybrids) {
+						unflag.push(hybrid.ident)
+					}
 				}
 			}
 		}
