@@ -89,9 +89,9 @@ let steps = [
 	},
 	{
 		// identifies the non-monophyletic sequences
-		input: ['newick-json:2'],
-		transform: ([newickJson]) => [
-			removeCircularLinks(ent.search(newickJson)),
+		input: ['newick-json:2', 'aligned-fasta'],
+		transform: ([newickJson, alignedFasta]) => [
+			removeCircularLinks(ent.search(newickJson, alignedFasta)),
 			removeCircularLinks(newickJson),
 		],
 		output: ['nonmonophyletic-sequences', 'newick-json:3'],

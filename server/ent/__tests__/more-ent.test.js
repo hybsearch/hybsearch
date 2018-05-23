@@ -31,7 +31,7 @@ for (const file of files) {
 		let serializedNewick = JSON.stringify(prunedNewick)
 
 		let nonmonoInfo = removeCircularLinks(
-			ent.search(JSON.parse(serializedNewick))
+			ent.search(JSON.parse(serializedNewick), alignedFasta)
 		)
 
 		let monophyleticFasta = removeFastaIdentifiers(alignedFasta, nonmonoInfo)
