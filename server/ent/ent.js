@@ -168,11 +168,13 @@ function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 
 	for (let id of Object.keys(sequenceMap)) {
 		let speciesName = id.split(LABEL_DIVIDER)[0]
-		if (speciesName !== individual.name) {
-			let dist = hammingDistance(individualSequence, sequenceMap[id])
-			if (shortestDist === undefined || dist < shortestDist) {
-				shortestDist = dist
-			}
+		if (speciesName === individual.name) {
+			continue
+		}
+
+		let dist = hammingDistance(individualSequence, sequenceMap[id])
+		if (shortestDist === undefined || dist < shortestDist) {
+			shortestDist = dist
 		}
 	}
 
