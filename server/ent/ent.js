@@ -170,7 +170,7 @@ function unflagIfRemovingDoesNotFix(results, rootNode) {
 				}
 			}
 		}
-		remove(results.nm, hybrid => unflag.indexOf(hybrid.ident) !== -1)
+		remove(results.nm, hybrid => unflag.includes(hybrid.ident))
 	}
 }
 
@@ -182,7 +182,7 @@ function getSmallestInterSpeciesDistance(individual, sequenceMap) {
 
 	for (let id in sequenceMap) {
 		let speciesName = id.split(LABEL_DIVIDER)[0]
-		if (speciesName != individual.name) {
+		if (speciesName !== individual.name) {
 			let dist = hammingDistance(individualSequence, sequenceMap[id])
 			if (shortestDist === undefined || dist < shortestDist) {
 				shortestDist = dist
@@ -275,7 +275,7 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 			}
 
 			// remove all the ones remaining in toRemove
-			remove(results.nm, hybrid => toRemove.indexOf(hybrid.ident) !== -1)
+			remove(results.nm, hybrid => toRemove.includes(hybrid.ident))
 		}
 	}
 }
