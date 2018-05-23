@@ -191,7 +191,7 @@ function unflagIfAllAreFlagged(results, rootNode, sequenceMap) {
 	// Count number of individuals in each species
 	let totalSpeciesCount = countBy(allIndividuals, individual => individual.name)
 
-	for (let speciesName in hybridSpeciesCount) {
+	for (let speciesName of Object.keys(hybridSpeciesCount)) {
 		// If we've flagged every individual in this species
 		if (hybridSpeciesCount[speciesName] !== totalSpeciesCount[speciesName]) {
 			continue
