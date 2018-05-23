@@ -1,7 +1,10 @@
 'use strict'
 
+const wrap = require('word-wrap')
+
 function buildFastaSequence({ species, sequence }) {
 	// `entry` is {species: string, sequence: string}
+	sequence = wrap(sequence, { cut: true, width: 80, trim: true, indent: '' })
 	return `> ${species}\n${sequence}`
 }
 
