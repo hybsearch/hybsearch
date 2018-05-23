@@ -6,6 +6,7 @@ const countBy = require('lodash/countBy')
 const groupBy = require('lodash/groupBy')
 const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
+const { getLeafNodes } = require('../lib/get-leaf-nodes')
 const { parseFasta } = require('../formats/fasta/parse')
 const hammingDistance = require('../hamdis/hamming-distance')
 
@@ -120,15 +121,7 @@ function isSpeciesMonophyletic(rootNode, speciesName) {
 	let MCRA = getMostRecentCommonAncestor(rootNode, speciesName)
 
 	// Determine whether everything under that node is of the same species
-	let leafNodes = []
-	const getLeafNodes = node => {
-		if (node.branchset) {
-			node.branchset.forEach(getLeafNodes)
-		} else {
-			leafNodes.push(node)
-		}
-	}
-	getLeafNodes(MCRA)
+	let leafNodes = getLeafNodes(MCRA)
 
 	let allEqual = leafNodes.every(n => n.name === speciesName)
 	return allEqual
