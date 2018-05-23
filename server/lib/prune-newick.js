@@ -104,7 +104,6 @@ function pruneOutliers(
 		}
 	}
 
-	let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 
 	// Now remove the nodes
 	let removedData = []
@@ -115,6 +114,7 @@ function pruneOutliers(
 			length: node.length,
 		}))
 
+		let toRemoveNames = toRemoveNodes.map(node => node.ident || node.name)
 		removeNodes(newick, toRemoveNames)
 		newick = removeRedundant(newick)
 		delete newick.length
