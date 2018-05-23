@@ -82,8 +82,7 @@ function render(newickData, newickNodes, nmResults) {
 		height: calcHeight,
 		formatLeafNodeLabel: node => {
 			let name = node.name.replace(/_/g, ' ')
-			// console.log(node)
-			return `${name} [${node.ident}] (${node.length})`
+			return `${name} (${node.ident}) [${node.length}]`
 		},
 		nonmonophyly: nmResults ? nmResults.nm.map(hybrid => hybrid.ident) : null,
 		onNodeClicked: onNodeClicked,

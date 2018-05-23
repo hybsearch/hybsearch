@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pseudemyscytbplushnfal 1`] = `
+Map {
+  "Pseudemys_suwanniensis__FLMNH135541" => Map {
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.0012195121951219512,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.0024390243902439024,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.003658536585365854,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.003658536585365854,
+    "Pseudemys_concinna__NA" => 0.07682926829268293,
+  },
+  "Pseudemys_suwanniensis__FLMNH11115" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.0012195121951219512,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.0012195121951219512,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.0024390243902439024,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.0024390243902439024,
+    "Pseudemys_concinna__NA" => 0.07682926829268293,
+  },
+  "Pseudemys_rubriventris__FLMNH150355" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.0024390243902439024,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.0012195121951219512,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.003658536585365854,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.003658536585365854,
+    "Pseudemys_concinna__NA" => 0.07560975609756097,
+  },
+  "Pseudemys_nelsoni__FLMNH52686" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.003658536585365854,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.0024390243902439024,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.003658536585365854,
+    "Pseudemys_nelsoni__FLMNH143606" => 0,
+    "Pseudemys_concinna__NA" => 0.07560975609756097,
+  },
+  "Pseudemys_nelsoni__FLMNH143606" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.003658536585365854,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.0024390243902439024,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.003658536585365854,
+    "Pseudemys_nelsoni__FLMNH52686" => 0,
+    "Pseudemys_concinna__NA" => 0.07560975609756097,
+  },
+  "Pseudemys_concinna__NA" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.07682926829268293,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.07682926829268293,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.07560975609756097,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.07560975609756097,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.07560975609756097,
+  },
+  "Pseudemys_concinna__NA2" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.07439024390243902,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.07439024390243902,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.07317073170731707,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.07317073170731707,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.07317073170731707,
+  },
+  "Pseudemys_floridana__LSUMZ83551" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.21707317073170732,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.21707317073170732,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.21707317073170732,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.21707317073170732,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.21707317073170732,
+  },
+  "Pseudemys_floridana__LSUMZ83549" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.22073170731707317,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.22073170731707317,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.22073170731707317,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.22073170731707317,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.22073170731707317,
+  },
+  "Pseudemys_floridana__HBS123560" => Map {
+    "Pseudemys_suwanniensis__FLMNH135541" => 0.22195121951219512,
+    "Pseudemys_suwanniensis__FLMNH11115" => 0.22195121951219512,
+    "Pseudemys_rubriventris__FLMNH150355" => 0.22195121951219512,
+    "Pseudemys_nelsoni__FLMNH52686" => 0.22195121951219512,
+    "Pseudemys_nelsoni__FLMNH143606" => 0.22195121951219512,
+  },
+}
+`;

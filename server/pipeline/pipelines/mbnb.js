@@ -1,6 +1,7 @@
 'use strict'
 
 const ent = require('../../ent')
+const fromPairs = require('lodash/fromPairs')
 const { consensusTreeToNewick, parse: parseNewick } = require('../../newick')
 const {
 	genbankToFasta,
@@ -78,14 +79,22 @@ let steps = [
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta], { outlierRemovalPercentage }) => {
-			let { removedData, prunedNewick } = pruneOutliers(
+			let { removedData, prunedNewick, diffRecords } = pruneOutliers(
 				newickJson,
 				alignedFasta,
 				{ outlierRemovalPercentage }
 			)
-			return [prunedNewick, removedData]
+
+			let diffRecordsObj = fromPairs(
+				[...diffRecords.entries()].map(([key, value]) => [
+					key,
+					fromPairs([...value.entries()]),
+				])
+			)
+
+			return [prunedNewick, removedData, diffRecordsObj]
 		},
-		output: ['newick-json:2', 'pruned-identifiers'],
+		output: ['newick-json:2', 'pruned-identifiers', 'newick-diff-records'],
 	},
 	{
 		// identifies the non-monophyletic sequences
