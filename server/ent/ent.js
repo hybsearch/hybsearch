@@ -3,6 +3,7 @@
 const combs = require('combinations-generator')
 const uniqBy = require('lodash/uniqBy')
 const countBy = require('lodash/countBy')
+const groupBy = require('lodash/groupBy')
 const remove = require('lodash/remove')
 const { removeNodes } = require('../lib/prune-newick')
 const { parseFasta } = require('../formats/fasta/parse')
@@ -139,16 +140,8 @@ function isSpeciesMonophyletic(rootNode, speciesName) {
 // We only want hybrids that, once removed, make their species monophyletic
 // Check if all the flagged ones have this property. Otherwise unflag them
 function unflagIfRemovingDoesNotFix(results, rootNode) {
-	let hybridSpeciesByName = {}
-	let totalHybridSpecies = 0
-	for (let hybrid of results.nm) {
-		let speciesName = hybrid.name
-		if (hybridSpeciesByName[speciesName] === undefined) {
-			hybridSpeciesByName[speciesName] = []
-			totalHybridSpecies += 1
-		}
-		hybridSpeciesByName[speciesName].push(hybrid)
-	}
+	let hybridSpeciesByName = groupBy(results.nm, hybrid => hybrid.name)
+	let totalHybridSpecies = Object.keys(hybridSpeciesByName).length
 
 	// For each species found (if at least 2)
 	if (totalHybridSpecies > 1) {
