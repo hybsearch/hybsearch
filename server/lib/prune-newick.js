@@ -83,8 +83,10 @@ function pruneOutliers(
 			}
 			let hammingDistance = distCache[i][j]
 			let gene2Length = geneLength[j]
-			// The hamming distance can be at most the size of the smaller sequence
-			// So to get the proportion, we divide it by the length of the smalle sequence
+
+			// The hamming distance can be at most the size of the smaller
+			// sequence. So to get the proportion, we divide it by the length
+			// of the smaller sequence.
 			let smallerGeneLength = Math.min(gene1Length, gene2Length)
 			let diffProportion = hammingDistance / smallerGeneLength
 
