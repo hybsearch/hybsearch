@@ -23,41 +23,7 @@ function pruneOutliers(
 
 	// Compute and store distances between each pair
 	let leafNodes = getLeafNodes(newick)
-	let distCache = {}
-	let geneLength = {}
-
-	for (let i = 0; i < leafNodes.length; i++) {
-		let node = leafNodes[i]
-		let species1 = node.name
-		distCache[i] = {}
-		// Compute actual gene length
-		geneLength[i] = 0
-
-		if (!sequenceMap[species1]) {
-			throw new Error(`could not find ${species1}`)
-		}
-
-		for (let letter of sequenceMap[species1]) {
-			if (letter !== '-') {
-				geneLength[i] += 1
-			}
-		}
-
-		for (let j = 0; j < leafNodes.length; j++) {
-			if (i === j) {
-				continue
-			}
-
-			let species2 = leafNodes[j].name
-
-			if (!sequenceMap[species2]) {
-				throw new Error(`could not find ${species2}`)
-			}
-
-			let dist = hammingDistance(sequenceMap[species1], sequenceMap[species2])
-			distCache[i][j] = dist
-		}
-	}
+	let {distances, geneLengths} = computeDistances(leafNodes, sequenceMap)
 
 	let toRemoveNodes = []
 	let diffRecords = new Map()
@@ -66,7 +32,7 @@ function pruneOutliers(
 	// Or if it is smaller than the cut off
 	for (let i = 0; i < leafNodes.length; i++) {
 		let node = leafNodes[i]
-		let gene1Length = geneLength[i]
+		let gene1Length = geneLengths[i]
 		let diffCount = 0
 
 		let diffRecord = diffRecords.get(node.name)
@@ -81,8 +47,8 @@ function pruneOutliers(
 			}
 
 			let innerNode = leafNodes[j]
-			let hammingDistance = distCache[i][j]
-			let gene2Length = geneLength[j]
+			let hammingDistance = distances[i][j]
+			let gene2Length = geneLengths[j]
 
 			// The hamming distance can be at most the size of the smaller
 			// sequence. So to get the proportion, we divide it by the length
@@ -128,4 +94,44 @@ function pruneOutliers(
 		removedData: [],
 		diffRecords: diffRecords,
 	}
+}
+
+function computeDistances(nodes, sequenceMap) {
+	let distances = {}
+	let geneLengths = {}
+
+	for (let i = 0; i < nodes.length; i++) {
+		let node = nodes[i]
+		let species1 = node.name
+		distances[i] = {}
+		// Compute actual gene length
+		geneLengths[i] = 0
+
+		if (!sequenceMap[species1]) {
+			throw new Error(`could not find ${species1}`)
+		}
+
+		for (let letter of sequenceMap[species1]) {
+			if (letter !== '-') {
+				geneLengths[i] += 1
+			}
+		}
+
+		for (let j = 0; j < nodes.length; j++) {
+			if (i === j) {
+				continue
+			}
+
+			let species2 = nodes[j].name
+
+			if (!sequenceMap[species2]) {
+				throw new Error(`could not find ${species2}`)
+			}
+
+			let dist = hammingDistance(sequenceMap[species1], sequenceMap[species2])
+			distances[i][j] = dist
+		}
+	}
+
+	return {geneLengths, distances}
 }
