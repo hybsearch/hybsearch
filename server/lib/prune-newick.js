@@ -109,7 +109,6 @@ function pruneOutliers(
 	if (toRemoveNodes.length > 0) {
 		removedData = toRemoveNodes.map(node => ({
 			name: node.name,
-			ident: node.ident,
 			length: node.length,
 		}))
 
