@@ -204,7 +204,7 @@ jobs:
     environment: &electron-builder-env
       <<: *default-environment
       DEBUG: electron-builder
-      builder-args: --windows
+      platform: --windows
     steps:
       - checkout:
           path: /root/project
@@ -219,10 +219,10 @@ jobs:
           if [[ $CIRCLE_TAG ]]; then
             compression=default
           fi
-          cd electron && electron-builder -c.compression=$compression $builder-args
+          cd electron && electron-builder -c.compression=$compression $platform
 
   build-app-mac:
     <<: *electron-builder-base
     environment:
       <<: *electron-builder-env
-      builder-args: --macos
+      platform: --macos
