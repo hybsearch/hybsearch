@@ -12,6 +12,8 @@ function fixFastaSource(fasta) {
 
 			if (/UNVERIFIED/.test(word1)) {
 				return null
+			} else if (/sp\./.test(word2)) {
+				return null
 			}
 
 			accession = accession.replace(/[^a-z0-9_]/gi, 'x')
