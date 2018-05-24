@@ -206,6 +206,11 @@ jobs:
       - run: cd electron && npm install --production
       - run: cd electron && npm run build:setup
       - run: |
+          # there's no reason to compress
+          compression=store
+          if [[ $CIRCLE_TAG ]]; then
+            compression=default
+          fi
           cd electron && electron-builder -c.compression=$compression $builder-args
 
   build-app-mac:
