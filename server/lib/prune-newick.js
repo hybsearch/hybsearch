@@ -23,7 +23,7 @@ function pruneOutliers(
 
 	// Compute and store distances between each pair
 	let leafNodes = getLeafNodes(newick)
-	let {distances, geneLengths} = computeDistances(leafNodes, sequenceMap)
+	let { distances, geneLengths } = computeDistances(leafNodes, sequenceMap)
 
 	let toRemoveNodes = []
 	let diffRecords = new Map()
@@ -133,5 +133,5 @@ function computeDistances(nodes, sequenceMap) {
 		}
 	}
 
-	return {geneLengths, distances}
+	return { geneLengths, distances }
 }
