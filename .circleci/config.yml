@@ -195,6 +195,7 @@ jobs:
       - image: electronuserland/builder:wine
     environment: &electron-builder-env
       <<: *default-environment
+      DEBUG: electron-builder
       builder-args: --windows
     steps:
       - checkout:
