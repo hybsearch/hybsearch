@@ -39,17 +39,18 @@ workflows:
     jobs:
       - build
       - lint
+      - pretty
       - test-app
       - test-server
       - test-pipeline-mbnb:
           requires: [build]
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           context: docker-hub
       - build-app-windows:
-          requires: [lint, test-app]
+          requires: [lint, pretty, test-app]
       - build-app-mac:
-          requires: [lint, test-app]
+          requires: [lint, pretty, test-app]
 
   on_tag:
     jobs:
@@ -61,6 +62,8 @@ workflows:
               only: /^v.*/
       - lint:
           filters: *filters
+      - pretty:
+          filters: *filters
       - test-app:
           filters: *filters
       - test-server:
@@ -69,14 +72,14 @@ workflows:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
           context: docker-hub
       - build-app-windows:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
       - build-app-mac:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
 
   cron_weekly:
@@ -118,6 +121,11 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run lint
+  pretty:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: npm install
       - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
