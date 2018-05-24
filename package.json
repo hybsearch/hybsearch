@@ -11,6 +11,7 @@
   "scripts": {
     "start": "cd electron && npm start",
     "test": "jest",
+    "update-electron-version": "node ./scripts/update-subpackage-version.js electron",
     "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.js\"",
     "pretty-check": "npm run prettify -- --list-different",
     "p": "pretty-quick",

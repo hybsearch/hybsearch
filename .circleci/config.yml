@@ -39,17 +39,18 @@ workflows:
     jobs:
       - build
       - lint
+      - pretty
       - test-app
       - test-server
       - test-pipeline-mbnb:
           requires: [build]
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           context: docker-hub
       - build-app-windows:
-          requires: [lint, test-app]
+          requires: [lint, pretty, test-app]
       - build-app-mac:
-          requires: [lint, test-app]
+          requires: [lint, pretty, test-app]
 
   on_tag:
     jobs:
@@ -61,6 +62,8 @@ workflows:
               only: /^v.*/
       - lint:
           filters: *filters
+      - pretty:
+          filters: *filters
       - test-app:
           filters: *filters
       - test-server:
@@ -69,14 +72,14 @@ workflows:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
           context: docker-hub
       - build-app-windows:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
       - build-app-mac:
-          requires: [lint, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
           filters: *filters
 
   cron_weekly:
@@ -118,6 +121,11 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run lint
+  pretty:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: npm install
       - run: npm run pretty-check
 
   # check that the whole pipeline runs at all
@@ -193,24 +201,28 @@ jobs:
     <<: *defaults
     docker:
       - image: electronuserland/builder:wine
+    environment: &electron-builder-env
+      <<: *default-environment
+      DEBUG: electron-builder
+      platform: --windows
     steps:
       - checkout:
           path: /root/project
-      - run: &install-electron-builder npm i -g electron-builder parcel-bundler
-      - run: &electron-pkg-version
-          name: Update the electron package version number
-          command: node -e 'let ver=require("./package.json").version;let ePth="./electron/package.json";let electronPkg=require(ePth);electronPkg.version=ver;fs.writeFileSync(ePth, JSON.stringify(electronPkg), "utf-8")'
+      - run: npm i -g electron-builder
+      - run: npm i
+      - run: npm run update-electron-version
       - run: cd electron && npm install --production
       - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --windows
+      - run: |
+          # there's no reason to compress
+          compression=store
+          if [[ $CIRCLE_TAG ]]; then
+            compression=default
+          fi
+          cd electron && electron-builder -c.compression=$compression $platform
 
   build-app-mac:
     <<: *electron-builder-base
-    steps:
-      - checkout:
-          path: /root/project
-      - run: *install-electron-builder
-      - run: *electron-pkg-version
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: cd electron && electron-builder --macos
+    environment:
+      <<: *electron-builder-env
+      platform: --macos
