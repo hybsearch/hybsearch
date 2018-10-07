@@ -137,7 +137,7 @@ phylogram.radialRightAngleDiagonal = () => {
 		})
 		.projection(d => {
 			let r = d.y
-			let a = (d.x - 90) / 180 * Math.PI
+			let a = ((d.x - 90) / 180) * Math.PI
 			return [r * Math.cos(a), r * Math.sin(a)]
 		})
 }
