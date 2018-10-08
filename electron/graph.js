@@ -68,7 +68,7 @@ function render(newickData, newickNodes, nmResults) {
 	// Scale the generated tree based on largest branch length
 	const smallest = getSmallestLength(newickNodes)
 	const largest = getLargestLength(newickNodes)
-	const ratio = largest / smallest * 15
+	const ratio = (largest / smallest) * 15
 	const maxWidth = document.getElementById('phylogram').offsetWidth - 420 // Accounts for label widths
 	const calcWidth = Math.max(500, Math.min(maxWidth, ratio))
 

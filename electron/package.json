@@ -63,16 +63,16 @@
     "d3": "^3.5.17",
     "electron-is-dev": "^0.3.0",
     "electron-unhandled": "^1.1.0",
-    "electron-updater": "^2.21.10",
+    "electron-updater": "^3.0.3",
     "json-stringify-safe": "^5.0.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "loud-rejection": "^1.6.0",
     "normalize.css": "^8.0.0",
-    "pretty-ms": "^3.1.0",
+    "pretty-ms": "^3.2.0",
     "public-ip": "^2.4.0"
   },
   "devDependencies": {
-    "electron": "^2.0.1",
+    "electron": "^2.0.11",
     "spectron": "^3.8.0"
   }
 }
