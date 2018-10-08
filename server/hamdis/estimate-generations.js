@@ -19,7 +19,7 @@ function estimateGenerations(
 	let divergenceTime = percentDifferent / mutationRate
 
 	// Lastly, find number of generations
-	let generationCount = divergenceTime * 1000000 / genLength
+	let generationCount = (divergenceTime * 1000000) / genLength
 
 	return { divergenceTime, generationCount }
 }

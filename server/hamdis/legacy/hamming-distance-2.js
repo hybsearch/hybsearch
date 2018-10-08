@@ -48,7 +48,7 @@ function estimate_gen(ham /*: number */, len /*: number */) /*: number */ {
 	console.log('divtime:', divtime)
 
 	// Lastly, find number of generations
-	let gen = divtime * 1000000 / gen_length
+	let gen = (divtime * 1000000) / gen_length
 	return gen
 }
 
