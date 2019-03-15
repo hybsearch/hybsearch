@@ -201,7 +201,7 @@ function onData(phase, data) {
 		copyButton.addEventListener('click', ev => {
 			ev.preventDefault()
 			// use innertext here for the formatting
-			clipboard.writeText(results.innerText)
+			// clipboard.writeText(results.innerText)
 			copyButton.textContent = 'Copied!'
 		})
 
@@ -361,9 +361,9 @@ function createResultsDialog(node, result, stage) {
 		ev.preventDefault()
 		ev.stopPropagation()
 		if (typeof result === 'string') {
-			clipboard.writeText(result)
+			// clipboard.writeText(result)
 		} else {
-			clipboard.writeText(safeStringify(result))
+			// clipboard.writeText(safeStringify(result))
 		}
 		copyButton.textContent = 'Copied!'
 		setTimeout(() => {
