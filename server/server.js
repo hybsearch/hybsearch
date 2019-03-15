@@ -12,6 +12,7 @@ const logger = require('koa-logger')
 const { trimMessage } = require('./lib/trim-message')
 const Job = require('./job')
 const getFiles = require('./lib/get-files')
+const handler = require('koa-static-server')
 const { loadFile } = getFiles
 
 const PORT = parseInt(process.env.PORT, 10) || 8080
@@ -91,6 +92,7 @@ router.get('/uptime', ctx => {
 
 app.use(logger())
 app.use(compress())
+app.use(handler({ rootDir: './ui/out', rootPath: '/app' }))
 app.use(router.routes())
 app.use(router.allowedMethods())
 
