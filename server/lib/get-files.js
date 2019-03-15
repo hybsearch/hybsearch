@@ -8,10 +8,7 @@ const DIR = process.env.DOCKER
 	: path.join(__dirname, '..', '..', 'data')
 
 async function getFiles() {
-	return fs
-		.readdirSync(DIR)
-		.filter(file => /\.(fasta|gb)$/.test(file))
-		.map(f => ({ filename: f, filepath: f }))
+	return []
 }
 
 async function loadFile(filename) {
