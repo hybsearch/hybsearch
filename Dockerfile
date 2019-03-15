@@ -1,5 +1,12 @@
 FROM docker.io/amd64/node:8-stretch AS hyb-node
 
+RUN curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -qy --no-install-recommends yarn
+
+RUN which yarn
+RUN ls -la $(which yarn)
+
 FROM docker.io/hybsearch/jml:stretch AS hyb-jml
 
 FROM hybsearch/docker-base:v1.4 AS hyb-beast
@@ -24,6 +31,7 @@ FROM docker.io/hybsearch/docker-base:v1.4
 #
 # NOTE This could probably get tuned up to be more dynamic...
 COPY --from=hyb-node ["/usr/local/", "/usr/local/"]
+COPY --from=hyb-node ["/opt/", "/opt/"]
 
 COPY --from=hyb-beast ["/beast/beast/bin/beast", "/usr/local/bin/"]
 COPY --from=hyb-beast ["/beast/beast/lib/beast.jar", "/usr/local/lib/"]
@@ -60,11 +68,13 @@ WORKDIR /hybsearch
 ADD ["requirements.txt", "./"]
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD ["package.json", "package-lock.json", "./"]
-RUN npm install
+ADD ["package.json", "yarn.lock", "./"]
+# ADD ["node_modules/", "."]
+RUN yarn --production --frozen-lockfile
 
-ADD . /hybsearch
+ADD ["./server/ui", "./server/ui"]
+RUN yarn build
 
-RUN cd ui/ && npm run build
+ADD ["./server", "./server"]
 
-CMD npm start -- 8080
+CMD npm run server -- 8080
