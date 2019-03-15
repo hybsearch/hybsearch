@@ -97,8 +97,9 @@ app.use(router.allowedMethods())
 let workers = new Map()
 
 // listen for new websocket connections
-wss.on('connection', ws => {
+wss.on('connection', (ws, req) => {
 	let worker
+	let ip = req.connection.remoteAddress
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
@@ -109,10 +110,10 @@ wss.on('connection', ws => {
 		if (message.type === 'start-pipeline') {
 			worker = new Job(message)
 			workers.set(worker.id, worker)
-			worker.addClient(ws, message.ip)
+			worker.addClient(ws, ip)
 		} else if (message.type === 'follow-pipeline') {
 			worker = workers.get(message.id)
-			worker.addClient(ws, message.ip)
+			worker.addClient(ws, ip)
 		}
 
 		// forward the message to the pipeline
