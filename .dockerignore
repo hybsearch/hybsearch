@@ -5,3 +5,4 @@
 .eslintcache
 /.git/
 /node_modules/
+.cache/

@@ -2,7 +2,26 @@ FROM docker.io/amd64/node:8-stretch AS hyb-node
 
 RUN curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -qy --no-install-recommends yarn
+RUN apt-get update \
+    && apt-get install -qy --no-install-recommends yarn jq \
+    && apt-get clean autoclean \
+    && rm -rfv /var/lib/apt/ \
+               /var/lib/cache/ \
+               /var/lib/log/
+
+WORKDIR /app
+
+ADD ["package.json", "yarn.lock", "./"]
+
+# yarn --production _should_ ignore devDependencies, but it doesn't, so we'll just remove them instead
+RUN jq -r '.devDependencies|keys|.[]' < ./package.json | xargs yarn remove
+RUN yarn --production --frozen-lockfile
+
+ADD ["./server/ui", "./server/ui"]
+RUN yarn build
+
+# shrink the _final_ image so we can just copy node_modules across
+RUN yarn remove parcel-bundler
 
 FROM docker.io/hybsearch/jml:stretch AS hyb-jml
 
@@ -65,12 +84,7 @@ WORKDIR /hybsearch
 ADD ["requirements.txt", "./"]
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD ["package.json", "yarn.lock", "./"]
-# ADD ["node_modules/", "."]
-RUN yarn --production --frozen-lockfile
-
-ADD ["./server/ui", "./server/ui"]
-RUN yarn build
+COPY --from=hyb-node ["/app/", "./"]
 
 ADD ["./server", "./server"]
 
