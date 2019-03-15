@@ -62,11 +62,9 @@ let steps = [
 	{
 		input: ['newick-json:1', 'aligned-fasta'],
 		transform: ([newickJson, alignedFasta], { outlierRemovalPercentage }) => {
-			let { prunedNewick } = pruneOutliers(
-				newickJson,
-				alignedFasta,
-				{ outlierRemovalPercentage }
-			)
+			let { prunedNewick } = pruneOutliers(newickJson, alignedFasta, {
+				outlierRemovalPercentage,
+			})
 
 			return [prunedNewick]
 		},
