@@ -1,25 +1,32 @@
 'use strict'
 
-const { clipboard } = require('electron')
-const path = require('path')
 const safeStringify = require('json-stringify-safe')
 const { load, setEntResults } = require('./graph')
 const makeTableFromObjectList = require('./lib/html-table')
 const prettyMs = require('pretty-ms')
-const publicIp = require('public-ip')
-const fs = require('fs')
 const fromPairs = require('lodash/fromPairs')
 
-function run() {
+function readFile(file) {
+	return new Promise((resolve, reject) => {
+		let reader = new FileReader();
+		reader.onload = function(evt) {
+			resolve(evt.target.result);
+		};
+		reader.onerror = function(error) {
+			reject(error);
+		};
+		reader.readAsText(file);
+	})
+}
+
+async function run() {
 	// get the file
 	let filepicker = document.querySelector('#load-file')
-	let filedropdown = document.querySelector('#pick-file')
-	let filepath = filepicker.files.length
-		? filepicker.files[0].path
-		: filedropdown.value
+	let file = filepicker.files[0]
 
-	console.log(`The file is ${filepath}`)
-	const data = fs.readFileSync(filepath, 'utf-8')
+	console.log('The file is', file)
+
+	let data = await readFile(file)
 
 	// start the loading bar
 	let loader = document.querySelector('#loader')
@@ -43,18 +50,9 @@ function run() {
 	opts = fromPairs(opts)
 
 	// start the pipeline
-	submitJob({ pipeline, filepath, data, options: opts })
+	submitJob({ pipeline, filepath: file.name, data, options: opts })
 
 	return false
-}
-
-async function getIp() {
-	try {
-		return (await publicIp.v6()) || (await publicIp.v4())
-	} catch (err) {
-		// return the "unspecified address" address
-		return '::'
-	}
 }
 
 async function submitJob({
@@ -65,9 +63,8 @@ async function submitJob({
 	options,
 }) {
 	const ws = socket
-	const ip = await getIp()
 
-	document.title = path.basename(filepath)
+	// document.title = path.basename(filepath)
 
 	ws.addEventListener('message', packet => onMessage(packet.data))
 	ws.addEventListener('disconnect', (...args) =>
@@ -86,7 +83,6 @@ async function submitJob({
 		filepath,
 		data,
 		options,
-		ip,
 	}
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
@@ -105,8 +101,6 @@ async function followJob({ socket = global.socket, pipelineId }, { filename }) {
 	document.querySelector('#existing-jobs').hidden = true
 	document.querySelector('#newick-input').hidden = true
 
-	const ip = (await publicIp.v6()) || (await publicIp.v4())
-
 	document.title = filename
 
 	const ws = socket
@@ -122,7 +116,7 @@ async function followJob({ socket = global.socket, pipelineId }, { filename }) {
 		throw new Error('socket not ready!')
 	}
 
-	let payload = { type: 'follow-pipeline', id: pipelineId, ip }
+	let payload = { type: 'follow-pipeline', id: pipelineId }
 	ws.send(JSON.stringify(payload), err => {
 		if (err) {
 			console.error('server error', err)

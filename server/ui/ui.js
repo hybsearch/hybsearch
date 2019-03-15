@@ -1,19 +1,17 @@
 'use strict'
 
-const isDev = require('electron-is-dev')
 const groupBy = require('lodash/groupBy')
 const mapValues = require('lodash/mapValues')
 const toPairs = require('lodash/toPairs')
 const uniq = require('lodash/uniq')
 const prettyMs = require('pretty-ms')
-const getFiles = require('./lib/get-files')
 const { attachListeners, follow } = require('./run')
 
 attachListeners()
 
 const fetchJson = (...args) => fetch(...args).then(r => r.json())
 
-if (!isDev) {
+if (process.env.NODE_ENV === 'production') {
 	// set the server to default to thing3 in production
 	document.querySelector('#server-url').value = 'ws://thing3.cs.stolaf.edu:80/'
 }
@@ -110,7 +108,7 @@ function connectionClosed() {
 }
 
 function populateFilePicker(files) {
-	files = files.length ? files : getFiles()
+	files = files.length ? files : []
 
 	const groupedFiles = groupBy(files, ({ filename }) => {
 		if (/\.aln/.test(filename)) {

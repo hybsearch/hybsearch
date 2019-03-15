@@ -9,70 +9,31 @@
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "main": "main.js",
   "scripts": {
-    "build": "npm run build:setup && npm run build:app",
-    "build:setup": "npm run clean && npm run build:copy && npm run build:js && npm run build:css",
-    "build:app": "electron-builder --macos --windows --linux",
-    "build:copy": "mkdir -p out/data && cp -v index.html index.css out/ && cp -rv ../data/*.gb ../data/*.fasta out/data/",
-    "build:css": "PATH=$PATH:../node_modules/.bin; parcel build -t electron --no-minify --detailed-report --out-dir out index.css",
-    "build:js": "PATH=$PATH:../node_modules/.bin; parcel build -t electron --no-minify --detailed-report --out-dir out index.js",
+    "build": "parcel build --detailed-report --out-dir out --public-url /app index.html",
     "clean": "rm -rf dist/ out/",
-    "pack": "electron-builder --dir",
     "test": "PATH=$PATH:../node_modules/.bin; jest",
     "lint": "cd .. && npm run lint",
     "p": "PATH=$PATH:../node_modules/.bin; pretty-quick",
     "prettify": "cd .. && npm run prettify",
     "pretty-check": "cd .. && npm run pretty-check",
-    "start": "electron ./main.js"
+    "start": "parcel --out-dir out --public-url /app index.html"
   },
-  "build": {
-    "appId": "edu.stolaf.bio.hybsearch",
-    "productName": "HybSearch",
-    "mac": {
-      "target": [
-        {
-          "target": "zip",
-          "arch": "x64"
-        }
-      ]
-    },
-    "win": {
-      "target": [
-        {
-          "target": "portable",
-          "arch": "x64"
-        }
-      ]
-    },
-    "linux": {
-      "target": [
-        {
-          "target": "tar.gz",
-          "arch": "x64"
-        }
-      ],
-      "category": "Education"
-    },
-    "files": [
-      "out/",
-      "main.js",
-      "package.json",
-      "node_modules/"
-    ]
-  },
+  "browserslist": [
+    "last 1 Firefox version",
+    "last 1 Chrome version",
+    "last 1 Safari version",
+    "last 1 Edge version"
+  ],
   "dependencies": {
     "d3": "^3.5.17",
-    "electron-is-dev": "^1.0.1",
-    "electron-unhandled": "^1.1.0",
-    "electron-updater": "^3.1.2",
     "json-stringify-safe": "^5.0.1",
     "lodash": "^4.17.11",
     "loud-rejection": "^1.6.0",
     "normalize.css": "^8.0.0",
-    "pretty-ms": "^4.0.0",
-    "public-ip": "^2.4.0"
+    "pretty-ms": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "^3.0.3",
-    "spectron": "^4.0.0"
+    "@babel/core": "^7.3.4",
+    "parcel-bundler": "^1.12.2"
   }
 }
