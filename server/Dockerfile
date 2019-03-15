@@ -65,4 +65,6 @@ RUN npm install
 
 ADD . /hybsearch
 
+RUN cd ui/ && npm run build
+
 CMD npm start -- 8080
