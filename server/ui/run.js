@@ -130,6 +130,10 @@ function onData(phase, data) {
 	if (phase.startsWith('newick-json:')) {
 		// Once we get the parsed newick tree, we can render the tree while
 		// the pipeline continues
+		let newick = document.querySelector('#newick-container')
+		newick.hidden = false
+		newick.querySelector('pre').textContent = safeStringify(data, null, 2)
+
 		document.querySelector('#phylogram').hidden = false
 		load(data)
 	} else if (phase === 'pruned-identifiers') {
