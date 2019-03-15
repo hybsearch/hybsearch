@@ -6,3 +6,5 @@
 /.git/
 /node_modules/
 .cache/
+__supporting__/
+__tests__/
