@@ -40,17 +40,17 @@ workflows:
       - build
       - lint
       - pretty
-      - test-app
+      - test-build
       - test-server
       - test-pipeline-mbnb:
           requires: [build]
       - deploy-docker:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           context: docker-hub
       - build-app-windows:
-          requires: [lint, pretty, test-app]
+          requires: [lint, pretty, test-build]
       - build-app-mac:
-          requires: [lint, pretty, test-app]
+          requires: [lint, pretty, test-build]
 
   on_tag:
     jobs:
@@ -64,7 +64,7 @@ workflows:
           filters: *filters
       - pretty:
           filters: *filters
-      - test-app:
+      - test-build:
           filters: *filters
       - test-server:
           filters: *filters
@@ -72,21 +72,21 @@ workflows:
           requires: [build]
           filters: *filters
       - deploy-docker:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           filters: *filters
           context: docker-hub
       - build-app-windows:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           filters: *filters
       - build-app-mac:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-app]
+          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           filters: *filters
 
   cron_weekly:
     jobs:
       - build
-      - test-app
       - test-server
+      - test-build
       - test-pipeline-mbnb:
           requires: [build]
     triggers:
@@ -119,14 +119,14 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm install
-      - run: npm run lint
+      - run: yarn
+      - run: yarn lint
   pretty:
     <<: *defaults
     steps:
       - checkout
-      - run: npm install
-      - run: npm run pretty-check
+      - run: yarn
+      - run: yarn pretty-check
 
   # check that the whole pipeline runs at all
   test-pipeline-mbnb:
@@ -143,20 +143,16 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm install
-      - run: cd server && npm install
-      - run: cd server && npm test
+      - run: yarn
+      - run: yarn test
 
-  # test ent.js against all our sample files
-  test-app:
+  # test the server-side js code
+  test-build:
     <<: *defaults
-    docker:
-      - image: circleci/node:8-stretch-browsers
     steps:
       - checkout
-      - run: npm install
-      - run: cd electron && npm install
-      - run: cd electron && npm test
+      - run: yarn
+      - run: yarn build
 
   # deploy the docker images to Docker Hub
   deploy-docker:
@@ -195,34 +191,3 @@ jobs:
               docker tag "$image_id" "$DEST_NAME:latest"
               docker push "$DEST_NAME:latest"
             fi
-
-  # deploy the compiled electron binaries to GitHub Releases
-  build-app-windows: &electron-builder-base
-    <<: *defaults
-    docker:
-      - image: electronuserland/builder:wine
-    environment: &electron-builder-env
-      <<: *default-environment
-      DEBUG: electron-builder
-      platform: --windows
-    steps:
-      - checkout:
-          path: /root/project
-      - run: npm i -g electron-builder
-      - run: npm i
-      - run: npm run update-electron-version
-      - run: cd electron && npm install --production
-      - run: cd electron && npm run build:setup
-      - run: |
-          # there's no reason to compress
-          compression=store
-          if [[ $CIRCLE_TAG ]]; then
-            compression=default
-          fi
-          cd electron && electron-builder -c.compression=$compression $platform
-
-  build-app-mac:
-    <<: *electron-builder-base
-    environment:
-      <<: *electron-builder-env
-      platform: --macos
