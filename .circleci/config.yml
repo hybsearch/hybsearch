@@ -47,10 +47,6 @@ workflows:
       - deploy-docker:
           requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           context: docker-hub
-      - build-app-windows:
-          requires: [lint, pretty, test-build]
-      - build-app-mac:
-          requires: [lint, pretty, test-build]
 
   on_tag:
     jobs:
@@ -75,12 +71,6 @@ workflows:
           requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
           filters: *filters
           context: docker-hub
-      - build-app-windows:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
-          filters: *filters
-      - build-app-mac:
-          requires: [lint, pretty, test-server, test-pipeline-mbnb, test-build]
-          filters: *filters
 
   cron_weekly:
     jobs:
