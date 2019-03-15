@@ -9,13 +9,12 @@
   "license": "MIT",
   "author": "The Hybsearch Team <hybsearch@stolaf.edu>",
   "scripts": {
-    "start": "cd electron && npm start",
+    "start": "cd server/ui/ && npm start",
     "test": "jest",
-    "update-electron-version": "node ./scripts/update-subpackage-version.js electron",
-    "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.js\"",
+    "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\"",
     "pretty-check": "npm run prettify -- --list-different",
     "p": "pretty-quick",
-    "prettify": "prettier --write \"server/**/*.js\" \"server/**/hyb-*\" \"electron/**/*.{js,css}\""
+    "prettify": "prettier --write \"server/**/*.{js,css}\" \"server/**/hyb-*\""
   },
   "prettier": {
     "overrides": [
