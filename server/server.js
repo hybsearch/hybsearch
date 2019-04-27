@@ -12,6 +12,7 @@ const logger = require('koa-logger')
 const { trimMessage } = require('./lib/trim-message')
 const Job = require('./job')
 const getFiles = require('./lib/get-files')
+const handler = require('koa-static-server')
 const { loadFile } = getFiles
 
 const PORT = parseInt(process.env.PORT, 10) || 8080
@@ -91,14 +92,16 @@ router.get('/uptime', ctx => {
 
 app.use(logger())
 app.use(compress())
+app.use(handler({ rootDir: './ui/out', rootPath: '/app' }))
 app.use(router.routes())
 app.use(router.allowedMethods())
 
 let workers = new Map()
 
 // listen for new websocket connections
-wss.on('connection', ws => {
+wss.on('connection', (ws, req) => {
 	let worker
+	let ip = req.connection.remoteAddress
 
 	ws.on('message', communique => {
 		// when we get a message from the GUI
@@ -109,10 +112,10 @@ wss.on('connection', ws => {
 		if (message.type === 'start-pipeline') {
 			worker = new Job(message)
 			workers.set(worker.id, worker)
-			worker.addClient(ws, message.ip)
+			worker.addClient(ws, ip)
 		} else if (message.type === 'follow-pipeline') {
 			worker = workers.get(message.id)
-			worker.addClient(ws, message.ip)
+			worker.addClient(ws, ip)
 		}
 
 		// forward the message to the pipeline

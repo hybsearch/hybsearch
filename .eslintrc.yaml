@@ -45,7 +45,7 @@ rules:
   curly: [error, all]
 
   # Forbid use of `==` operator (use `===` instead)
-  eqeqeq: error
+  eqeqeq: [error, smart]
 
   # Forbid ++ and -- (use += 1 and -= 1 instead)
   no-plusplus: [error, {allowForLoopAfterthoughts: true}]

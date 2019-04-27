@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+/data/
+/scripts/
+.eslintcache
+/.git/
+/node_modules/
+.cache/
+__supporting__/
+__tests__/
