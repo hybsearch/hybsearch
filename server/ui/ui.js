@@ -269,9 +269,15 @@ const handleNewSteps = payload => {
 		([key, val]) =>
 			// prettier-ignore
 			`<div class="option-row">
-				<label>${val.label}: <input name="${key}" type="${val.type}" value="${val.default}" placeholder="${val.description}"></label>
+				<label>
+					${val.label}:
+						${val.type === 'textarea'
+							? `<textarea name="${key}" placeholder="${val.description}">${val.default}</textarea>`
+							: `<input name="${key}" type="${val.type}" value="${val.default}" placeholder="${val.description}">`}
+				</label>
 			</div>`
 	)
+
 	if (options.length) {
 		optionsEl.removeAttribute('hidden')
 		optionsContainer.innerHTML = options.join('')
