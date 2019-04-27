@@ -21,26 +21,30 @@ $ mb
 # Created consensus tree file: {ORIG_FILENAME}.con.tre
 */
 
-function insertCommandBlock(data) {
-	let cmdBlock = dedent`
-	begin mrbayes;
-		set autoclose=yes nowarn=yes;
-		lset nst=6 rates=invgamma;
-		prset topologypr = uniform;
-		prset brlenspr = clock:uniform;
-		mcmc ngen=20000 samplefreq=100;
-		sumt;
-	end;`
-	return data.replace('end;', `end;\n${cmdBlock}\n`)
+let cmdBlock = `
+	set autoclose=yes nowarn=yes;
+	lset nst=6 rates=invgamma;
+	prset topologypr = uniform;
+	prset brlenspr = clock:uniform;
+	mcmc ngen=20000 samplefreq=100;
+	sumt;
+`
+
+function insertCommandBlock(data, config) {
+	config = dedent`
+		begin mrbayes;
+			${config || cmdBlock}
+		end;`
+	return data.replace('end;', `end;\n${config}\n`)
 }
 
 module.exports = mrbayes
-async function mrbayes(data) {
+async function mrbayes(data, config) {
 	const inputFile = tempy.file()
 	const outputFile = inputFile + '.con.tre'
 
 	// we can control mrbayes with a "command block"
-	data = insertCommandBlock(data)
+	data = insertCommandBlock(data, config)
 
 	fs.writeFileSync(inputFile, data, 'utf-8')
 

@@ -28,7 +28,7 @@ const readJmlOutputFile = filepath => {
 }
 
 module.exports = jml
-async function jml({ phylipData, trees, phylipMapping }) {
+async function jml({ phylipData, trees, phylipMapping, config }) {
 	let workDir = tempy.directory()
 
 	let phylipFile = path.join(workDir, 'input.phy')
@@ -38,7 +38,7 @@ async function jml({ phylipData, trees, phylipMapping }) {
 	fs.writeFileSync(treesFile, trees, 'utf-8')
 
 	let controlFile = path.join(workDir, 'jml.input.ctl')
-	let controlData = generateControlFile(phylipData)
+	let controlData = generateControlFile(phylipData, config)
 	fs.writeFileSync(controlFile, controlData, 'utf-8')
 
 	// find binary via `which`

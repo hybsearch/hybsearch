@@ -37,6 +37,33 @@ let options = {
 		label: "BEAST's 'chainLength' parameter",
 		description: 'another desc',
 	},
+	mrBayesConfig: {
+		default: `
+set autoclose=yes nowarn=yes;
+lset nst=6 rates=invgamma;
+prset topologypr = uniform;
+prset brlenspr = clock:uniform;
+mcmc ngen=20000 samplefreq=100;
+sumt;`.trim(),
+		type: 'textarea',
+		label: 'MrBayes Config',
+		description: '',
+	},
+	jmlConfig: {
+		default: `
+# species and seqperspecies are automatically set,
+# but can be overridden here if needed
+locusrate = 1.0
+heredityscalar = 0.25
+seqgencommand = -mHKY -f0.2678,0.1604,0.2031,0.3687 -t1.5161 -i0 -a0.2195 -l810
+significancelevel = 0.9999
+burnin = 0
+thinning = 1
+seed = -1`.trim(),
+		type: 'textarea',
+		label: 'JML Config',
+		description: '',
+	},
 }
 
 let steps = [
@@ -64,7 +91,7 @@ let steps = [
 	{
 		// does whatever mrbayes does
 		input: ['aligned-nexus'],
-		transform: ([data]) => [mrBayes(data)],
+		transform: ([data], { mrBayesConfig }) => [mrBayes(data, mrBayesConfig)],
 		output: ['consensus-tree'],
 	},
 	{
@@ -149,11 +176,15 @@ let steps = [
 	{
 		// run JML
 		input: ['phylipified-trees', 'aligned-phylip', 'phylip-identifier-map'],
-		transform: ([phylipifiedTrees, alignedPhylip, phylipIdentMap]) => [
+		transform: (
+			[phylipifiedTrees, alignedPhylip, phylipIdentMap],
+			{ jmlConfig }
+		) => [
 			jml({
 				phylipData: alignedPhylip,
 				trees: phylipifiedTrees,
 				phylipMapping: phylipIdentMap,
+				config: jmlConfig,
 			}),
 		],
 		output: ['jml-output'],
