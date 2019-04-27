@@ -8,14 +8,14 @@ const fromPairs = require('lodash/fromPairs')
 
 function readFile(file) {
 	return new Promise((resolve, reject) => {
-		let reader = new FileReader();
+		let reader = new FileReader()
 		reader.onload = function(evt) {
-			resolve(evt.target.result);
-		};
+			resolve(evt.target.result)
+		}
 		reader.onerror = function(error) {
-			reject(error);
-		};
-		reader.readAsText(file);
+			reject(error)
+		}
+		reader.readAsText(file)
 	})
 }
 
