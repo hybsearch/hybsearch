@@ -12,7 +12,7 @@
     "server": "cd server && env NODE_ENV=production ./server.js",
     "build": "parcel build --detailed-report --out-dir ./server/ui/out --public-url /app ./server/ui/index.html",
     "clean": "rm -rf server/ui/out/",
-    "start": "parcel --out-dir out --public-url /app index.html",
+    "start": "parcel --out-dir out --public-url /app ./server/ui/index.html",
     "test": "jest",
     "lint": "eslint --cache \"server/**/*.js\" \"server/**/hyb-*\"",
     "pretty-check": "npm run prettify -- --list-different",
