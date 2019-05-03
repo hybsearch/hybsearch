@@ -11,11 +11,7 @@ attachListeners()
 
 const fetchJson = (...args) => fetch(...args).then(r => r.json())
 
-if (process.env.NODE_ENV === 'production') {
-	// set the server to default to thing3 in production
-	document.querySelector('#server-url').value = 'ws://thing3.cs.stolaf.edu:80/'
-}
-
+document.querySelector('#server-url').value = new URL(window.location).origin.replace(/^http/, 'ws')
 global.socket = new WebSocket(document.querySelector('#server-url').value)
 initWebsocket()
 
@@ -39,16 +35,6 @@ function destroyWebsocket() {
 	global.socket.removeEventListener('error', connectionRefused)
 	global.socket.close()
 }
-
-document.querySelector('#use-thing3').addEventListener('click', () => {
-	const newUri = document.querySelector('#use-thing3').dataset.url
-	updateWebSocket(newUri)
-})
-
-document.querySelector('#use-localhost').addEventListener('click', () => {
-	const newUri = document.querySelector('#use-localhost').dataset.url
-	updateWebSocket(newUri)
-})
 
 document.querySelector('#server-url').addEventListener('change', ev => {
 	console.log('uri changed')
