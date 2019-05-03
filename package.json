@@ -43,6 +43,7 @@
     "last 1 Edge version"
   ],
   "dependencies": {
+    "@koa/cors": "2",
     "combinations-generator": "^1.0.1",
     "comma-separated-values": "^3.6.4",
     "d3": "^3.5.17",
