@@ -46,7 +46,7 @@
     "@koa/cors": "2",
     "combinations-generator": "^1.0.1",
     "comma-separated-values": "^3.6.4",
-    "d3": "^3.5.17",
+    "d3": "^5.9.2",
     "dedent": "^0.7.0",
     "execa": "^1.0.0",
     "get-stdin": "^7.0.0",
